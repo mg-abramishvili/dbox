@@ -16,6 +16,7 @@
                             <a href="/front-videoalbums/{{ $videoalbum->id }}">
                                 <div class="row align-items-center">
                                     <div class="col-12">
+                                    <span style="font-size: 15px; color: #fff; display: block; text-align: center;">{{$videoalbum->created_at->format('d.m.Y')}}</span>
                                         <div class="gallery-list-item-pic" style="background: url({{ $videoalbum->cover }}); background-size: cover; background-position: 50% 50%:"></div>
                                     </div>
                                     <div class="col-12">

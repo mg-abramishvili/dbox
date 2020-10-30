@@ -11,7 +11,7 @@ class FrontPhotoalbumController extends Controller
     public function index()
     {
         $settings = Setting::where('id', '1')->first();
-        $photoalbums = Photoalbum::get();
+        $photoalbums = Photoalbum::orderBy('created_at', 'desc')->get();
         return view('front.photoalbums.index', compact('photoalbums', 'settings'));
     }
 

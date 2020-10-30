@@ -11,7 +11,7 @@ class FrontVideoalbumController extends Controller
     public function index()
     {
         $settings = Setting::where('id', '1')->first();
-        $videoalbums = Videoalbum::get();
+        $videoalbums = Videoalbum::orderBy('created_at', 'desc')->get();
         return view('front.videoalbums.index', compact('videoalbums', 'settings'));
     }
 

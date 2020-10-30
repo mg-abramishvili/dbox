@@ -418,7 +418,9 @@ table {
 /* TYPE 2*/
 
 .type-2 {
-    margin-top: 80px;
+    margin-top: 60px;
+    background-color: rgba(255,255,255,0.95);
+    padding: 50px;
 }
 
 .type-2 .image {
@@ -696,3 +698,63 @@ table {
 }
 
 /* TYPE 5 */
+
+
+
+/* TYPE 6 */
+
+.type-6 {
+    margin-top: 80px;
+}
+
+.type-6 h1 {
+    margin-top: 0;
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.type-6 .item {
+    display: block;
+    text-align: center;
+    font-size: 26px;
+    color: #fff;
+    margin-bottom: 30px;
+    padding: 0 60px;
+}
+
+.type-6 .image {
+    height: 250px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.type-6 .backbutton {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 220px;
+    height: 80px;
+    background-color: #F76325;
+    border-radius: 20px;
+    font-size: 26px;
+    line-height: 80px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+}
+
+.type-6 .backbutton a {
+    display: block;
+    color: #fff;
+}
+
+/* TYPE 6 */
