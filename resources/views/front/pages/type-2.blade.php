@@ -9,6 +9,6 @@
         </div>
     </div>
     <div class="backbutton">
-        <a href="/">Назад</a>
+        <a href="/"><img src="/img/home.svg"></a>
     </div>
 </div>

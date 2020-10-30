@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
 
-                    <h1 style="text-align: center;">{{ $photoalbum->title }}</h1>
+                    <h1 style="text-align: center; color: #fff; font-size: 34px;">{{ $photoalbum->title }}</h1>
 
                     @if(is_array($photoalbum->gallery))
                     <div class="gallery">
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="backbutton">
-                <a href="/front-photoalbums">Назад</a>
+                <a href="/"><img src="/img/home.svg"></a>
             </div>
         </div>
     </div>
