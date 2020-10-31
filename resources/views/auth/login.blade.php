@@ -64,6 +64,7 @@
                     </form>
                 </div>
             </div>
+            <a href="/" style="margin-top: 20px; display: block; text-align: center;">Вернуться на главную страницу</a>
         </div>
     </div>
 </div>
