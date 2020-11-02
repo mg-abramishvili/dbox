@@ -1,7 +1,8 @@
 <div class="type-6">
     <div class="row">
+    @if($settings->theme == 'kadet')
         <div class="col-12"><h1 style="text-align:center;">{{ $page->title }}</h1></div>
-
+        @endif
         
             @foreach($childs->children as $child)
             <div class="col-4">
@@ -12,6 +13,10 @@
             </div>
             @endforeach
 
+
+
+            @if($settings->theme == 'kadet')
+        
             <script>
                     $('.item span').each(function() {
         var word = $(this).html();
@@ -22,10 +27,7 @@
         $(this).html('<strong style="font-weight: 400; text-transform: uppercase;">' + word.substring(0, index) + '</strong><br/>' + word.substring(index, word.length));
     });
             </script>
-        
+        @endif
 
-    </div>
-    <div class="backbutton">
-        <a href="/"><img src="/img/home.svg"></a>
     </div>
 </div>

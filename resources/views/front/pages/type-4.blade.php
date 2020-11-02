@@ -1,6 +1,8 @@
 <div class="type-4">
     <div class="row">
+    @if($settings->theme == 'kadet')
         <div class="col-12"><h1 style="text-align:center;">{{ $page->title }}</h1></div>
+        @endif
         <div class="col-12">
             <div class="text">{!! $page->text !!}</div>
         </div>
@@ -28,7 +30,5 @@
             </script>
         </div>
     </div>
-    <div class="backbutton">
-        <a href="/"><img src="/img/home.svg"></a>
-    </div>
+    
 </div>

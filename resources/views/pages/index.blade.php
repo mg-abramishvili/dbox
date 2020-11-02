@@ -31,6 +31,8 @@
                                     @foreach($page->children as $pg)
                                         <li>
                                             {{ $pg->title }}
+                                            <a href="/pages/{{$pg->id}}/edit">Правка</a>
+                                            <a href="/pages/delete/{{$pg->id}}">Удалить</a>
                                         </li>
                                     @endforeach
                             </td>

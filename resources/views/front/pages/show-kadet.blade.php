@@ -18,4 +18,6 @@
             @include('front.pages.type-6')
         @endif
     </div>
-
+    <div class="backbutton">
+        <a href="/"><img src="/img/home.svg"></a>
+    </div>

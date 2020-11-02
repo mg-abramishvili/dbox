@@ -1,6 +1,8 @@
 <div class="type-3">
     <div class="row">
-        <div class="col-12"><h1>{{ $page->title }}</h1></div>
+    @if($settings->theme == 'kadet')
+        <div class="col-12"><h1 style="text-align:center;">{{ $page->title }}</h1></div>
+        @endif
         <div class="col-6">
             <div class="text">{!! $page->text !!}</div>
         </div>
@@ -20,8 +22,5 @@
                 });
             </script>
         </div>
-    </div>
-    <div class="backbutton">
-        <a href="/">Назад</a>
     </div>
 </div>

@@ -27,35 +27,27 @@
                 <div class="col-2 header-map"><a href="/front-pages/7" style="color: #fff;">План <br>здания</a></div>
             </div>
         </div>
-        <div class="header-bottom">Новости и мероприятия</div>
+        <div class="header-bottom">{{ $page->title }}</div>
     </div>
 
     <div class="container" style="margin-top: 45px;">
-        <div class="news">
-            <div class="row">
-                <div class="col-12">
-                    <ul class="news-list">
-                        @foreach($news as $new)
-                        <li class="news-list-item">  
-                            <div class="row align-items-center">
-                                <div class="col-9">
-                                    <h2>{{ $new->title }}</h2>
-                                    <div class="news-list-item-text-preview">
-                                        {{ \Illuminate\Support\Str::limit($new->text ?? '', 100, $end='...') }}
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <a href="/front-news/{{ $new->id }}">Подробнее</a>
-                                </div>
-                            </div>
-                        </li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-            <div class="backbutton">
-                
-            </div>
+        <div class="page-item">
+        @if($page->page_type == '1')
+            @include('front.pages.type-1')
+        @elseif($page->page_type == '2')
+            @include('front.pages.type-2')
+        @elseif($page->page_type == '3')
+            @include('front.pages.type-3')
+        @elseif($page->page_type == '4')
+            @include('front.pages.type-4')
+        @elseif($page->page_type == '5')
+            @include('front.pages.type-5')
+        @elseif($page->page_type == '6')
+            @include('front.pages.type-6')
+        @elseif($page->page_type == '7')
+            @include('front.pages.type-7')
+        @endif
+            
         </div>
     </div>
 
@@ -64,9 +56,12 @@
 </div>
 <div class="backbutton">
                 <a href="/"><img src="/img/home.svg" alt=""></a>
-                <span>Новости и мероприятия</span>
+                <span>{{ $page->title }}</span>
             </div>
 <div class="footer">
         Выберите интересующий Вас раздел и нажмите на него ...
     </div>
+
+
+        
 

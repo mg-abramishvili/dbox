@@ -38,6 +38,32 @@ main {
     opacity: 0.1;
 }*/
 
+.backbutton {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 220px;
+    height: 80px;
+    background-color: #F76325;
+    border-radius: 20px;
+    font-size: 26px;
+    line-height: 80px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+}
+
+.backbutton a {
+    display: block;
+    color: #fff;
+}
+
+.backbutton img {
+    width: 75px;
+}
+
 .index-item {
     height: 200px;
     background-color: fff;
@@ -401,32 +427,6 @@ table {
     background: #555;
 }
 
-.type-1 .backbutton {
-    position: absolute;
-    bottom: 50px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 220px;
-    height: 80px;
-    background-color: #F76325;
-    border-radius: 20px;
-    font-size: 26px;
-    line-height: 80px;
-    color: #fff;
-    font-weight: 700;
-    text-align: center;
-}
-
-.type-1 .backbutton a {
-    display: block;
-    color: #fff;
-}
-
-.type-1 .backbutton img {
-    width: 75px;
-}
-
 /* TYPE 1 */
 
 
@@ -478,32 +478,6 @@ table {
     background: #555;
 }
 
-.type-2 .backbutton {
-    position: absolute;
-    bottom: 50px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 220px;
-    height: 80px;
-    background-color: #F76325;
-    border-radius: 20px;
-    font-size: 26px;
-    line-height: 80px;
-    color: #fff;
-    font-weight: 700;
-    text-align: center;
-}
-
-.type-2 .backbutton a {
-    display: block;
-    color: #fff;
-}
-
-.type-2 .backbutton img {
-    width: 75px;
-}
-
 /* TYPE 2 */
 
 
@@ -548,28 +522,6 @@ table {
 
 .type-3 #gallery .col-6:nth-of-type(1n+5) {
     display: none;
-}
-
-.type-3 .backbutton {
-    position: absolute;
-    bottom: 50px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 220px;
-    height: 80px;
-    background-color: #F76325;
-    border-radius: 20px;
-    font-size: 26px;
-    line-height: 80px;
-    color: #fff;
-    font-weight: 700;
-    text-align: center;
-}
-
-.type-3 .backbutton a {
-    display: block;
-    color: #fff;
 }
 
 /* TYPE 3 */
@@ -620,32 +572,6 @@ table {
 
 .type-4 .gallery-item {
     width: 25%;
-}
-
-.type-4 .backbutton {
-    position: absolute;
-    bottom: 50px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 220px;
-    height: 80px;
-    background-color: #F76325;
-    border-radius: 20px;
-    font-size: 26px;
-    line-height: 80px;
-    color: #fff;
-    font-weight: 700;
-    text-align: center;
-}
-
-.type-4 .backbutton a {
-    display: block;
-    color: #fff;
-}
-
-.type-4 .backbutton img {
-    width: 75px;
 }
 
 /* TYPE 4 */
@@ -702,28 +628,6 @@ table {
     display: none;
 }
 
-.type-5 .backbutton {
-    position: absolute;
-    bottom: 50px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 220px;
-    height: 80px;
-    background-color: #F76325;
-    border-radius: 20px;
-    font-size: 26px;
-    line-height: 80px;
-    color: #fff;
-    font-weight: 700;
-    text-align: center;
-}
-
-.type-5 .backbutton a {
-    display: block;
-    color: #fff;
-}
-
 /* TYPE 5 */
 
 
@@ -760,32 +664,6 @@ table {
     display: block;
     margin: 0 auto;
     margin-bottom: 20px;
-}
-
-.type-6 .backbutton {
-    position: absolute;
-    bottom: 50px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 220px;
-    height: 80px;
-    background-color: #F76325;
-    border-radius: 20px;
-    font-size: 26px;
-    line-height: 80px;
-    color: #fff;
-    font-weight: 700;
-    text-align: center;
-}
-
-.type-6 .backbutton a {
-    display: block;
-    color: #fff;
-}
-
-.type-6 .backbutton img {
-    width: 75px;
 }
 
 /* TYPE 6 */

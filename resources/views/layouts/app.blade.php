@@ -50,9 +50,9 @@
                     <li class="nav-item {{ Request::is('videoalbums') ? 'active' : '' }}">
                         <a href="{{ url('/videoalbums') }}" class="nav-link">Видеогалерея</a>
                     </li>
-                    <li class="nav-item {{ Request::is('settings') ? 'active' : '' }}">
+                    <!--<li class="nav-item {{ Request::is('settings') ? 'active' : '' }}">
                         <a href="{{ url('/settings') }}" class="nav-link">Настройки</a>
-                    </li>
+                    </li>-->
                     <li class="nav-item">
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

@@ -8,9 +8,23 @@
     <div class="header">
         <div class="header-top">
             <div class="row align-items-center">
-                <div class="col-4 header-date">01.01.2020</div>
-                <div class="col-4"><h1>{{ $settings->title }}</h1></div>
-                <div class="col-4 header-map">План <br>здания</div>
+                <div class="col-2 header-date">
+                    
+                </div>
+                <script>
+                        $(function() {
+                            startRefresh();
+                        });
+
+                        function startRefresh() {
+                            setTimeout(startRefresh,1000);
+                            $.get('/time.php', function(data) {
+                                $('.header-date').html(data);    
+                            });
+                        }
+                    </script>
+                <div class="col-8"><h1>{{ $settings->title }}</h1></div>
+                <div class="col-2 header-map"><a href="/front-pages/7" style="color: #fff;">План <br>здания</a></div>
             </div>
         </div>
         <div class="header-bottom">Главный экран</div>
@@ -67,7 +81,9 @@
 
 
 </div>
-
+<div class="backbutton">
+                <a href="/"><img src="/img/home.svg" alt=""></a>
+            </div>
 <div class="footer">
         Выберите интересующий Вас раздел и нажмите на него ...
     </div>

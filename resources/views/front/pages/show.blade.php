@@ -5,7 +5,7 @@
 
         @if($settings->theme == 'kadet')
             @include('front.pages.show-kadet')
-        @elseif($page->page_type == 'detsad')
+        @elseif($settings->theme == 'detsad')
             @include('front.pages.show-detsad')
         @endif
 
