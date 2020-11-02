@@ -63,6 +63,17 @@ class PageController extends Controller
             ]);
 
         }
+        if (request()->file('pdf')) {
+            $file = request()->file('pdf');
+
+            $filename = md5(time() . rand(1, 100000)) . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path() . '/uploads', $filename);
+
+            return \Response::make('/uploads/' . $filename, 200, [
+                'Content-Disposition' => 'inline',
+            ]);
+
+        }
         if (request()->file('gallery')) {
             $file1 = request()->file('gallery');
             for ($i = 0; $i < count($file1); $i++) {
@@ -114,6 +125,11 @@ class PageController extends Controller
         }
         $pages->gallery = $data['gallery'];
 
+        if (!isset($data['pdf'])) {
+            $data['pdf'] = null;
+        }
+        $pages->pdf = $data['pdf'];
+
         if (!isset($data['video'])) {
             $data['video'] = null;
         }
@@ -137,6 +153,11 @@ class PageController extends Controller
             $data['gallery'] = [];
         }
         $pages->gallery = $data['gallery'];
+
+        if (!isset($data['pdf'])) {
+            $data['pdf'] = null;
+        }
+        $pages->pdf = $data['pdf'];
 
         if (!isset($data['video'])) {
             $data['video'] = null;

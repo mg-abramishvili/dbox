@@ -24,6 +24,7 @@ class CreatePagesTable extends Migration
             $table->string('image_second')->nullable();
             $table->string('image_third')->nullable();
             $table->string('video')->nullable();
+            $table->string('pdf')->nullable();
             $table->longtext('gallery')->nullable();
             $table->string('parent_id')->nullable();
             $table->timestamps();
