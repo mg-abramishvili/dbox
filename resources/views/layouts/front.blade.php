@@ -22,7 +22,7 @@
         <script src="{{ asset('js/flickity.pkgd.min.js') }}"></script>
 
         <script>
-            //document.oncontextmenu = new Function("return false;");
+            document.oncontextmenu = new Function("return false;");
         </script>
 
         <script>
