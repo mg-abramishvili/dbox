@@ -56,6 +56,10 @@
 </div>
 <div class="backbutton">
                 <a href="/"><img src="/img/home.svg" alt=""></a>
+
+                @if(!empty($page->parent_id))
+                <a href="/front-pages/{{ $page->parent_id }}" style="margin-left: 50px; color: #fff; font-size: 20px; line-height: 72px;"><i style="display: inline-block; padding-right: 20px; padding-left: 30px; font-style: normal;">Назад</i></a>
+                @endif
                 <span>{{ $page->title }}</span>
             </div>
 <div class="footer">

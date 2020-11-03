@@ -55,6 +55,7 @@
 </div>
 <div class="backbutton">
                 <a href="/"><img src="/img/home.svg" alt=""></a>
+                <a href="/front-news" style="margin-left: 50px; color: #fff; font-size: 20px; line-height: 72px;"><i style="display: inline-block; padding-right: 20px; padding-left: 30px; font-style: normal;">Новости</i></a>
                 <span>{{ $news->title }}</span>
             </div>
 <div class="footer">
