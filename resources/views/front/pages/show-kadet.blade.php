@@ -16,6 +16,10 @@
             @include('front.pages.type-5')
         @elseif($page->page_type == '6')
             @include('front.pages.type-6')
+        @elseif($page->page_type == '7')
+            @include('front.pages.type-7')
+        @elseif($page->page_type == '8')
+            @include('front.pages.type-8')
         @endif
     </div>
     <div class="backbutton">

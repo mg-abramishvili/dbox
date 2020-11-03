@@ -667,3 +667,27 @@ table {
 }
 
 /* TYPE 6 */
+
+
+
+/* TYPE-8 */
+
+.type-8 #prevBtn,
+.type-8 #nextBtn {
+    position: absolute; top: 450px; box-shadow: none; border: 0; width: 100px; height: 100px; border-radius: 100%; background-color: #fff; color: #333; line-height: 100px; font-size: 100px;
+}
+
+.type-8 #prevBtn {
+    left: 50px;
+}
+
+.type-8 #nextBtn {
+    right: 50px;
+}
+
+.type-8 #prevBtn:focus,
+.type-8 #nextBtn:focus {
+    outline: none !important;;
+}
+
+/* TYPE-8 */

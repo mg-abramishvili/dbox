@@ -21,6 +21,8 @@
         <link rel="stylesheet" href="{{ asset('css/flickity.css') }}">
         <script src="{{ asset('js/flickity.pkgd.min.js') }}"></script>
 
+        <script src="{{ asset('js/turn.min.js') }}"></script>
+
         <script>
             document.oncontextmenu = new Function("return false;");
         </script>

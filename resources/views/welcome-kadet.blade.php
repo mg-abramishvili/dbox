@@ -3,7 +3,7 @@
     <link href="{{ asset('css/style-kadet.css') }}" rel="stylesheet">
 @endsection
 
-    <div class="container" style="margin-top: 90px;">
+    <div class="container" style="margin-top: 90px; display:none;">
 
         <div class="row">
 
@@ -106,6 +106,62 @@
                 @endforeach
                 @endif
             </div>-->
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top: 20px; ">
+    <img src="/kadet/logo.png" style="width: 150px; display: block; margin: 0 auto; margin-bottom: 20px">
+            <h1 style="font-size: 30px; font-weight: bold; line-height: 1.4; margin: 0; text-align: center; color: {{ $settings->titlecolor }}; color: #fff;     height: 85px;">{{ $settings->title }}</h1>
+        <div class="row">
+        <div class="col-6">
+            @if(isset($page1))
+                    <a href="/front-pages/{{ $page1->id }}" class="index-item index-item-1" style="height: 725px;">
+                    <p>{{ $page1->title }}</p>
+                        <div class="index-item-pic" style="@if($page1->image) background: url({{ $page1->image }}); background-size: cover; background-position: 50% 50%; @endif"></div>
+                        
+                    </a>
+            @endif
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    @if(isset($page2))
+                    <div class="col-6">
+                        <a href="/front-pages/{{ $page2->id }}" class="index-item index-item-2" style="height: 350px;">
+                        <p>{{ $page2->title }}</p>
+                            <div class="index-item-pic" style="@if($page2->image) background: url({{ $page2->image }}); background-size: cover; background-position: 50% 50%; @endif"></div>
+                            
+                        </a>
+                    </div>
+                    @endif
+                    @if(isset($page3))
+                    <div class="col-6">
+                        <a href="/front-pages/{{ $page3->id }}" class="index-item index-item-3" style="height: 350px;">
+                        <p>{{ $page3->title }}</p>
+                            <div class="index-item-pic" style="@if($page3->image) background: url({{ $page3->image }}); background-size: cover; background-position: 50% 50%; @endif"></div>
+                            
+                        </a>
+                    </div>
+                    @endif
+                    @if(isset($page4))
+                    <div class="col-6">
+                        <a href="/front-pages/{{ $page4->id }}" class="index-item index-item-4" style="height: 350px;">
+                        <p>{{ $page4->title }}</p>
+                            <div class="index-item-pic" style="@if($page4->image) background: url({{ $page4->image }}); background-size: cover; background-position: 50% 50%; @endif"></div>
+                            
+                        </a>
+                    </div>
+                    @endif
+                    @if(isset($page5))
+                    <div class="col-6">
+                        <a href="/front-pages/{{ $page5->id }}" class="index-item index-item-5" style="height: 350px;">
+                        <p>{{ $page5->title }}</p>
+                            <div class="index-item-pic" style="@if($page5->image) background: url({{ $page5->image }}); background-size: cover; background-position: 50% 50%; @endif"></div>
+                            
+                        </a>
+                    </div>
+                    @endif
+                </div>
             </div>
         </div>
     </div>

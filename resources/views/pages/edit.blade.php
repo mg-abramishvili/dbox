@@ -28,6 +28,7 @@
                         <option value="5">5</option>
                         <option value="6">6</option>
                         <option value="7">7</option>
+                        <option value="8">8</option>
                     </select>
 
                     <script>
@@ -67,7 +68,7 @@
                 </dd>
             </div>
 
-            <div class="row align-items-center mb-2 type type-1 type-2 type-3 type-4 type-5 type-6">
+            <div class="row align-items-center mb-2 type type-1 type-2 type-3 type-4 type-5 type-6 type-7 type-8">
                 <dt class="col-sm-3">
                     Картинка
                 </dt>
@@ -85,7 +86,7 @@
                 </dd>
             </div>
 
-            <div class="row align-items-center mb-2 type type-3 type-4">
+            <div class="row align-items-center mb-2 type type-3 type-4 type-8">
                 <dt class="col-sm-3">
                     Галерея
                 </dt>
