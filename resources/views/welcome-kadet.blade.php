@@ -116,50 +116,43 @@
         <div class="row">
         <div class="col-6">
             @if(isset($page1))
-                    <a href="/front-pages/{{ $page1->id }}" class="index-item index-item-1" style="height: 725px;">
-                    <p>{{ $page1->title }}</p>
-                        <div class="index-item-pic" style="@if($page1->image) background: url({{ $page1->image }}); background-size: cover; background-position: 50% 50%; @endif"></div>
+                    <a href="/front-pages/{{ $page1->id }}" class="index-item index-item-1" style="height: 350px;">
+                    <p style="left: 30px; right: 30px; bottom: auto; top: 50%; transform: translateY(-50%); font-size: 45px; text-align: center;border: 0;">{{ $page1->title }}</p>
+                        <div class="index-item-pic" style="background: #d71e1b; "></div>
                         
                     </a>
-            @endif
+                    @endif
+
+                    @if(isset($page2))
+                        <a href="/front-pages/{{ $page2->id }}" class="index-item index-item-2" style="height: 350px;">
+                        <p style="left: 30px; right: 30px; bottom: auto; top: 50%; transform: translateY(-50%); font-size: 45px; text-align: center; background: #2C9CDB; border: 0;">{{ $page2->title }}</p>
+                            <div class="index-item-pic" style="background: #2C9CDB;"></div>
+                            
+                        </a>
+                    @endif
+            
             </div>
             <div class="col-6">
-                <div class="row">
-                    @if(isset($page2))
-                    <div class="col-6">
-                        <a href="/front-pages/{{ $page2->id }}" class="index-item index-item-2" style="height: 350px;">
-                        <p>{{ $page2->title }}</p>
-                            <div class="index-item-pic" style="@if($page2->image) background: url({{ $page2->image }}); background-size: cover; background-position: 50% 50%; @endif"></div>
+            @if(isset($page3))
+                        <a href="/front-pages/{{ $page3->id }}" class="index-item index-item-3" style="height: 225px; margin-bottom: 25px;">
+                        <p style="left: 30px; right: 30px; bottom: auto; top: 50%; transform: translateY(-50%); font-size: 45px; text-align: center; background: #2C9CDB; border: 0;">{{ $page3->title }}</p>
+                            <div class="index-item-pic" style="background: #2C9CDB;"></div>
                             
                         </a>
-                    </div>
-                    @endif
-                    @if(isset($page3))
-                    <div class="col-6">
-                        <a href="/front-pages/{{ $page3->id }}" class="index-item index-item-3" style="height: 350px;">
-                        <p>{{ $page3->title }}</p>
-                            <div class="index-item-pic" style="@if($page3->image) background: url({{ $page3->image }}); background-size: cover; background-position: 50% 50%; @endif"></div>
-                            
-                        </a>
-                    </div>
                     @endif
                     @if(isset($page4))
-                    <div class="col-6">
-                        <a href="/front-pages/{{ $page4->id }}" class="index-item index-item-4" style="height: 350px;">
-                        <p>{{ $page4->title }}</p>
-                            <div class="index-item-pic" style="@if($page4->image) background: url({{ $page4->image }}); background-size: cover; background-position: 50% 50%; @endif"></div>
+                        <a href="/front-pages/{{ $page4->id }}" class="index-item index-item-4" style="height: 225px; margin-bottom: 25px;">
+                        <p style="left: 30px; right: 30px; bottom: auto; top: 50%; transform: translateY(-50%); font-size: 45px; text-align: center; background: #d71e1b; border: 0;">{{ $page4->title }}</p>
+                            <div class="index-item-pic" style="background: #d71e1b;"></div>
                             
                         </a>
-                    </div>
                     @endif
                     @if(isset($page5))
-                    <div class="col-6">
-                        <a href="/front-pages/{{ $page5->id }}" class="index-item index-item-5" style="height: 350px;">
-                        <p>{{ $page5->title }}</p>
-                            <div class="index-item-pic" style="@if($page5->image) background: url({{ $page5->image }}); background-size: cover; background-position: 50% 50%; @endif"></div>
+                        <a href="/front-pages/{{ $page5->id }}" class="index-item index-item-5" style="height: 225px;">
+                        <p style="left: 30px; right: 30px; bottom: auto; top: 50%; transform: translateY(-50%); font-size: 45px; text-align: center; background: #2C9CDB; border: 0;">{{ $page5->title }}</p>
+                            <div class="index-item-pic" style="background: #2C9CDB;"></div>
                             
                         </a>
-                    </div>
                     @endif
                 </div>
             </div>
