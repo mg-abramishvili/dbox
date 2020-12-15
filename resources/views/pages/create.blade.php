@@ -15,11 +15,20 @@
                     Тип страницы
                 </dt>
                 <dd class="col-sm-9">
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="page_type">
+                    <select name="page_type" id="page_type" class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
                 </dd>
             </div>
 
-            <div class="row align-items-center mb-2">
+            <div class="row align-items-center mb-2 type type-1 type-2 type-3 type-4 type-5 type-6 type-7 type-8">
                 <dt class="col-sm-3">
                     Заголовок
                 </dt>
@@ -28,25 +37,16 @@
                 </dd>
             </div>
 
-            <div class="row align-items-center mb-2">
+            <div class="row align-items-center mb-2 type type-1 type-2 type-3 type-4 type-5">
                 <dt class="col-sm-3">
                     Текст
                 </dt>
                 <dd class="col-sm-9">
-                    <textarea rows="7" type="text" class="form-control" name="text"></textarea>
+                    <textarea rows="7" type="text" class="form-control" name="text">.</textarea>
                 </dd>
             </div>
 
-            <div class="row align-items-center mb-2">
-                <dt class="col-sm-3">
-                    PDF
-                </dt>
-                <dd class="col-sm-9">
-                    <input class="pdf" type="file" name="pdf" x-ref="pdf">
-                </dd>
-            </div>
-
-            <div class="row align-items-center mb-2">
+            <div class="row align-items-center mb-2 type type-1 type-2 type-3 type-4 type-5 type-6 type-7 type-8">
                 <dt class="col-sm-3">
                     Картинка
                 </dt>
@@ -55,21 +55,45 @@
                 </dd>
             </div>
 
-            <div class="row align-items-center mb-2">
-                <dt class="col-sm-3">
-                    Цвет значка
-                </dt>
-                <dd class="col-sm-9">
-                    <input type="color" class="form-control" id="exampleFormControlInput1" name="image_color">
-                </dd>
-            </div>
-
-            <div class="row align-items-center mb-2">
+            <div class="row align-items-center mb-2 type type-3 type-4 type-8">
                 <dt class="col-sm-3">
                     Галерея
                 </dt>
                 <dd class="col-sm-9">
                     <input class="gallery" type="file" name="gallery[]" multiple>
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-2 type type-7">
+                <dt class="col-sm-3">
+                    PDF
+                </dt>
+                <dd class="col-sm-9">
+                    <input class="pdf" type="file" name="pdf" x-ref="pdf">
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-2">    
+                <dt class="col-sm-3">
+                    Родительская страница
+                </dt>
+                <dd class="col-sm-9">
+
+                    <select name="parent_id" id="parent_id" class="form-control">
+                        <option value="" selected="selected">Выберите</option>
+                        @foreach($parentlist as $parentlistitem)
+                        <option value="{{$parentlistitem->id}}">{{$parentlistitem->title}}</option>
+                        @endforeach
+                    </select>
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-2" style="display:none;">
+                <dt class="col-sm-3">
+                    Цвет значка
+                </dt>
+                <dd class="col-sm-9">
+                    <input type="color" class="form-control" id="exampleFormControlInput1" name="image_color">
                 </dd>
             </div>
 
@@ -246,6 +270,31 @@
                 method:'POST'
             });
         }
+    </script>
+
+<script>
+        $('#page_type').change(function () {
+        var select=$(this).find(':selected').val();        
+        $(".type").hide();
+        $('.' + 'type-' + select).show();
+
+        }).change();
+    </script>
+
+<script>
+      $('#text').summernote({
+        height: 300,
+        toolbar: [
+    // [groupName, [list of button]]
+    ['style', ['bold', 'italic', 'underline', 'clear']],
+    ['font', ['strikethrough', 'superscript', 'subscript']],
+    ['fontsize', ['fontsize']],
+    ['color', ['color']],
+    ['para', ['ul', 'ol', 'paragraph']],
+    ['table', ['table']],
+    ['height', ['height']]
+  ]
+      });
     </script>
 
     <script>

@@ -77,15 +77,6 @@
                 </dd>
             </div>
 
-            <div class="row align-items-center mb-2 type type-1 type-2 type-3 type-4 type-5">    
-                <dt class="col-sm-3">
-                    Цвет значка
-                </dt>
-                <dd class="col-sm-9">
-                    <input type="color" class="form-control" id="exampleFormControlInput1"  name="image_color" value="{{$page->image_color}}">
-                </dd>
-            </div>
-
             <div class="row align-items-center mb-2 type type-3 type-4 type-8">
                 <dt class="col-sm-3">
                     Галерея
@@ -128,7 +119,7 @@
 
                     <script>
                         var optionValues =[];
-                        $('#page_type option').each(function(){
+                        $('#parent_id option').each(function(){
                         if($.inArray(this.value, optionValues) >-1){
                             $(this).remove()
                         }else{

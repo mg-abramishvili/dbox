@@ -17,21 +17,15 @@ class PageController extends Controller
 
     public function create()
     {
-
-        return view('pages.create');
-
+        $parentlist = Page::all();
+        return view('pages.create', compact('parentlist'));
     }
 
     public function edit($id)
     {
-
         $page = Page::find($id);
-
         $parentlist = Page::all();
-
         return view('pages.edit', compact('page', 'parentlist'));
-
-
     }
 
     public function file($type)
@@ -134,6 +128,11 @@ class PageController extends Controller
             $data['video'] = null;
         }
         $pages->video = $data['video'];
+
+        if (!isset($data['parent_id'])) {
+            $data['parent_id'] = null;
+        }
+        $pages->parent_id = $data['parent_id'];
         
         $pages->save();
         return redirect('/pages');
@@ -147,7 +146,6 @@ class PageController extends Controller
         $pages->title = $data['title'];
         $pages->text = $data['text'];
         $pages->image = $data['image'];
-        $pages->image_color = $data['image_color'];
 
         if (!isset($data['gallery'])) {
             $data['gallery'] = [];

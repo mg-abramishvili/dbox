@@ -38,7 +38,7 @@
                             </td>
                             <td style="width: 200px;">
                                 <a href="/pages/{{$page->id}}/edit" class="btn btn-sm btn-warning">Правка</a>
-                                <a href="/pages/delete/{{$page->id}}" class="btn btn-sm btn-danger">Удалить</a>
+                                <!--<a href="/pages/delete/{{$page->id}}" class="btn btn-sm btn-danger">Удалить</a>-->
                             </td>
                         </tr>
                     @endif
