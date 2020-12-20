@@ -86,7 +86,7 @@
                     Тип страницы
                 </dt>
                 <dd class="col-sm-9">
-                    <div class="row" style="height:250px; overflow-y:scroll;">
+                    <div class="row" id="typez" style="height:250px; overflow-y:scroll;">
                         @foreach($types as $type)
                         <div class="col-3 type-radio">
                             <div class="radio">
@@ -102,7 +102,7 @@
                 </dd>
             </div>
 
-            <div class="row align-items-center mb-4 type type-1 type-2 type-3 type-4 type-5 type-6 type-7 type-8">
+            <div class="row align-items-center mb-4">
                 <dt class="col-sm-3">
                     Заголовок
                 </dt>
@@ -358,8 +358,8 @@
     </script>
 
 <script>
-        $('#page_type').change(function () {
-        var select=$(this).find(':selected').val();        
+        $('#typez').change(function () {
+        var select=$(this).find(':checked').val();        
         $(".type").hide();
         $('.' + 'type-' + select).show();
 
@@ -380,24 +380,6 @@
     ['height', ['height']]
   ]
       });
-    </script>
-
-    <script>
-        ;(function($){
-	$.fn.form_color = function(options){
-		this.each(function(){
-			$(this).on("change", function(){
-				this.title = this.value;
-				this.dataset.value = this.value;
-			}).trigger("change");
-		});
-		return this;
-	};
-})(jQuery);
-
-$(function(){
-	$("input[type='color']").form_color();
-});
     </script>
 
 @endsection

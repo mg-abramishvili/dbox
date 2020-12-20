@@ -18,11 +18,43 @@ class TypeSeeder extends Seeder
     {
         DB::table('types')->insert([
         [
-            'type' => 'Тип 1',
+            'id' => '1',
+            'type' => 'Текст + 1 картинка',
             'image' => '/img/no-image.jpg',
         ],
         [
-            'type' => 'Тип 2',
+            'id' => '2',
+            'type' => 'Текст + 2 картинки',
+            'image' => '/img/no-image2.jpg',
+        ],
+        [
+            'id' => '3',
+            'type' => 'Галерея',
+            'image' => '/img/no-image.jpg',
+        ],
+        [
+            'id' => '4',
+            'type' => 'Галерея',
+            'image' => '/img/no-image2.jpg',
+        ],
+        [
+            'id' => '5',
+            'type' => 'Видеоролик',
+            'image' => '/img/no-image.jpg',
+        ],
+        [
+            'id' => '6',
+            'type' => 'Страница для создания раздела',
+            'image' => '/img/no-image2.jpg',
+        ],
+        [
+            'id' => '7',
+            'type' => 'PDF-документ',
+            'image' => '/img/no-image.jpg',
+        ],
+        [
+            'id' => '8',
+            'type' => 'Книга',
             'image' => '/img/no-image2.jpg',
         ],
         ]);
