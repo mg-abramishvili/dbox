@@ -20,12 +20,7 @@ class SettingKadetSeeder extends Seeder
             'id' => '1',
             'theme' => 'kadet',
             'title' => 'Северо-Кавказское суворовское военное училище',
-            'titlecolor' => '#333333',
             'logo' => '/logo-h.png',
-            'background' => '/img/_9.jpg',
-            'blur' => '0',
-            'galcolor' => '#2C9CDB',
-            'newscolor' => '#F76325'
         ]);
     }
 }

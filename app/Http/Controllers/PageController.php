@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Setting;
 use App\Models\Page;
+use App\Models\Icon;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -18,14 +19,16 @@ class PageController extends Controller
     public function create()
     {
         $parentlist = Page::all();
-        return view('pages.create', compact('parentlist'));
+        $icons = Icon::all();
+        return view('pages.create', compact('parentlist', 'icons'));
     }
 
     public function edit($id)
     {
         $page = Page::find($id);
         $parentlist = Page::all();
-        return view('pages.edit', compact('page', 'parentlist'));
+        $icons = Icon::all();
+        return view('pages.edit', compact('page', 'parentlist', 'icons'));
     }
 
     public function file($type)
@@ -104,7 +107,7 @@ class PageController extends Controller
         return redirect('/pages');
     }
 
-    public function store()
+    public function store(Request $request)
     {
         $data = request()->all();
         $pages = new Page();
@@ -135,10 +138,11 @@ class PageController extends Controller
         $pages->parent_id = $data['parent_id'];
         
         $pages->save();
+        $pages->icons()->attach($request->icons, ['page_id' => $pages->id]);
         return redirect('/pages');
     }
 
-    public function update()
+    public function update(Request $request)
     {
         $data = request()->all();
         $pages = Page::find($data['id']);
@@ -174,6 +178,8 @@ class PageController extends Controller
         ]);
         
         $pages->save();
+        $pages->icons()->detach();
+        $pages->icons()->attach($request->icons, ['page_id' => $pages->id]);
         return redirect('/pages');
 
     }

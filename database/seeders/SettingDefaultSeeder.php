@@ -20,12 +20,7 @@ class SettingDefaultSeeder extends Seeder
             'id' => '1',
             'theme' => 'default',
             'title' => 'Default',
-            'titlecolor' => '#333333',
             'logo' => '/img/sber.png',
-            'background' => '/img/_9.jpg',
-            'blur' => '0',
-            'galcolor' => '#2C9CDB',
-            'newscolor' => '#F76325'
         ]);
     }
 }

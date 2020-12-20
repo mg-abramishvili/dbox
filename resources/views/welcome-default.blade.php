@@ -38,9 +38,10 @@
                         @endif
                     </div>
                     <div class="col-7">
-                        <div class="news">
-
-                        </div>
+                        <a href="/front-news/" class="news">
+                            <img src="/img/icon-news.svg">
+                            Новости
+                        </a>
                     </div>
                 </div>
             </div>

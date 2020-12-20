@@ -1,6 +1,38 @@
 @extends('layouts.app')
 @section('content')
 
+    <style>
+        .radio {
+            background: grey;
+            margin-bottom: 20px;
+        }
+
+        input[type="radio"] {
+            border: 2px solid red;
+        }
+
+        input[type="radio"]:checked+label {
+            border: 4px solid #3171B8;
+        } 
+
+        .radio label {
+            width: 100%;
+            height: 70px;
+            position: relative;
+        }
+
+        .radio img {
+            width: auto;
+            height: auto;
+            max-width: 70%;
+            max-height: 70%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
     <div class="px-4 py-4">
         <div class="row align-items-center mb-4">
             <div class="col-6">
@@ -53,6 +85,26 @@
                     @error('title')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-2 type type-1 type-2 type-3 type-4 type-5 type-6 type-7 type-8">
+                <dt class="col-sm-3">
+                    Значок
+                </dt>
+                <dd class="col-sm-9">
+                    <div class="row" style="height:250px; overflow-y:scroll;">
+                        @foreach($icons as $icon)
+                        <div class="col-2">
+                            <div class="radio">
+                            <input name="icons" id="{{ $icon->id }}" type="radio" @foreach($page->icons as $t)@if($icon->id == $t->id)checked @endif @endforeach value="{{ $icon->id }}">
+                            <label for="{{ $icon->id }}">
+                                <img src="{{ $icon->icon }}" style="width:100%">
+                            </label>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
                 </dd>
             </div>
 

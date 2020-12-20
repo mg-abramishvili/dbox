@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             SettingDefaultSeeder::class,
             PageDefaultSeeder::class,
 
+            IconSeeder::class,
             NewsSeeder::class,
 
             GallerySeeder::class,

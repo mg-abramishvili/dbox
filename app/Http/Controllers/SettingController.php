@@ -11,7 +11,6 @@ class SettingController extends Controller
     {
         $settings = Setting::where('id', '1')->first();
         return view('settings.edit', compact('settings'));
-
     }
 
     public function file($type)
@@ -20,8 +19,6 @@ class SettingController extends Controller
         switch ($type) {
             case 'upload':
                 return $this->upload();
-
-
         }
 
         return \Response::make('success', 200, [
@@ -31,19 +28,6 @@ class SettingController extends Controller
 
     public function upload()
     {
-
-        if (request()->file('background')) {
-            $file = request()->file('background');
-
-            $filename = md5(time() . rand(1, 100000)) . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path() . '/uploads', $filename);
-
-            return \Response::make('/uploads/' . $filename, 200, [
-                'Content-Disposition' => 'inline',
-            ]);
-
-        }
-
         if (request()->file('logo')) {
             $file = request()->file('logo');
 
@@ -53,26 +37,16 @@ class SettingController extends Controller
             return \Response::make('/uploads/' . $filename, 200, [
                 'Content-Disposition' => 'inline',
             ]);
-
         }
-
-
     }
 
     public function update()
     {
-
         $data = request()->all();
         $settings = Setting::find($data['id']);
         $settings->theme = $data['theme'];
         $settings->title = $data['title'];
-        $settings->titlecolor = $data['titlecolor'];
         $settings->logo = $data['logo'];
-        $settings->background = $data['background'];
-        $settings->blur = $data['blur'];
-        $settings->galcolor = $data['galcolor'];
-        $settings->newscolor = $data['newscolor'];
-
         $settings->save();
         return redirect('/settings');
     }

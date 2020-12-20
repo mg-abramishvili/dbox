@@ -22,9 +22,6 @@
                             <td style="width: 100px; font-size: 13px;">
                                 {{$page->created_at->format('d.m.Y')}}
                             </td>
-                            <td style="width: 135px;">
-                                <img src="{{$page->image}}" style="height: 60px; max-width: 130px;">
-                            </td>
                             <td style="text-align: left; padding-left: 20px; padding-right: 20px;">
                                 {{$page->title}}
                                 <br>
@@ -38,7 +35,7 @@
                             </td>
                             <td style="width: 200px;">
                                 <a href="/pages/{{$page->id}}/edit" class="btn btn-sm btn-warning">Правка</a>
-                                <!--<a href="/pages/delete/{{$page->id}}" class="btn btn-sm btn-danger">Удалить</a>-->
+                                <a href="/pages/delete/{{$page->id}}" class="btn btn-sm btn-danger">Удалить</a>
                             </td>
                         </tr>
                     @endif

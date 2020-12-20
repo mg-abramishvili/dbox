@@ -11,10 +11,12 @@
     @endif
     -->
 
-    @if($settings->theme == 'detsad')
+    @if($settings->theme == 'default')
+        @include('front.news.index-default')
+    @elseif($settings->theme == 'detsad')
         @include('front.news.index-detsad')
     @elseif($settings->theme == 'kadet')
-    @include('front.news.index-kadet')
+        @include('front.news.index-kadet')
     @endif
 
 </div>

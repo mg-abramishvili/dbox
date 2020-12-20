@@ -20,12 +20,7 @@ class SettingDetsadSeeder extends Seeder
             'id' => '1',
             'theme' => 'detsad',
             'title' => 'Детский сад №210',
-            'titlecolor' => '#333333',
             'logo' => '/logo-h.png',
-            'background' => '/img/_9.jpg',
-            'blur' => '0',
-            'galcolor' => '#2C9CDB',
-            'newscolor' => '#F76325'
         ]);
     }
 }
