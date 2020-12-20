@@ -10,7 +10,7 @@ class News extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'text', 'image', 'gallery'
+        'title', 'text', 'image',
     ];
-    protected $casts=['gallery'=>'json'];
+
 }

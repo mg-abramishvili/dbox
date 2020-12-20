@@ -15,7 +15,13 @@
                     Заголовок
                 </dt>
                 <dd class="col-sm-9">
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="title">
+                    <input type="text" class="form-control" name="title">
+                    @if ($errors->has('title'))
+                        <div class="alert alert-danger">
+                            <!--{{ $errors->first('title') }}-->
+                            Укажите заголовок
+                        </div>
+                    @endif
                 </dd>
             </div>
 
@@ -25,6 +31,12 @@
                 </dt>
                 <dd class="col-sm-9">
                     <textarea rows="7" type="text" class="form-control" name="text"></textarea>
+                    @if ($errors->has('text'))
+                        <div class="alert alert-danger">
+                            <!--{{ $errors->first('text') }}-->
+                            Заполните текст
+                        </div>
+                    @endif
                 </dd>
             </div>
 
@@ -34,15 +46,12 @@
                 </dt>
                 <dd class="col-sm-9">
                     <input class="image" type="file" name="image" x-ref="image">
-                </dd>
-            </div>
-
-            <div class="row align-items-center mb-2">
-                <dt class="col-sm-3">
-                    Галлерея
-                </dt>
-                <dd class="col-sm-9">
-                    <input class="gallery" type="file" name="gallery[]" multiple>
+                    @if ($errors->has('image'))
+                        <div class="alert alert-danger">
+                            <!--{{ $errors->first('image') }}-->
+                            Загрузите картинку
+                        </div>
+                    @endif
                 </dd>
             </div>
 

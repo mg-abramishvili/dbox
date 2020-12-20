@@ -84,38 +84,37 @@ class NewsController extends Controller
         return redirect('/news');
     }
 
-    public function store()
+    public function store(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'text' => 'required',
+            'image' => 'required',
+        ]);
+
         $data = request()->all();
         $news = new News();
         $news->title = $data['title'];
         $news->text = $data['text'];
         $news->image = $data['image'];
-        if (!isset($data['gallery'])) {
-            $data['gallery'] = [];
-        }
-        $news->gallery = $data['gallery'];
         $news->save();
         return redirect('/news');
     }
 
-    public function update()
+    public function update(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'text' => 'required',
+            'image' => 'required',
+        ]);
 
         $data = request()->all();
         $news = News::find($data['id']);
         $news->title = $data['title'];
         $news->text = $data['text'];
         $news->image = $data['image'];
-        if (!isset($data['gallery'])) {
-            $data['gallery'] = [];
-        }
-        $news->gallery = $data['gallery'];
-        $news->save();
-
-
         $news->save();
         return redirect('/news');
-
     }
 }
