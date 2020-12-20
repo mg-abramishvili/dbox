@@ -10,7 +10,7 @@ class Page extends Model
     use HasFactory;
 
     protected $fillable = [
-        'page_type', 'title', 'text', 'image', 'video', 'pdf', 'gallery', 'parent_id'
+        'title', 'text', 'image', 'video', 'pdf', 'gallery', 'parent_id'
     ];
     
     protected $casts=['gallery'=>'json'];
@@ -18,6 +18,11 @@ class Page extends Model
     public function children()
     {
         return $this->hasMany('App\Models\Page', 'parent_id', 'id');
+    }
+
+    public function types()
+    {
+        return $this->belongsToMany('App\Models\Type');
     }
 
     public function icons()

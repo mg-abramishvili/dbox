@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Setting;
 use App\Models\Page;
 use App\Models\Icon;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -20,7 +21,8 @@ class PageController extends Controller
     {
         $parentlist = Page::all();
         $icons = Icon::all();
-        return view('pages.create', compact('parentlist', 'icons'));
+        $types = Type::all();
+        return view('pages.create', compact('parentlist', 'icons', 'types'));
     }
 
     public function edit($id)
@@ -28,7 +30,8 @@ class PageController extends Controller
         $page = Page::find($id);
         $parentlist = Page::all();
         $icons = Icon::all();
-        return view('pages.edit', compact('page', 'parentlist', 'icons'));
+        $types = Type::all();
+        return view('pages.edit', compact('page', 'parentlist', 'icons', 'types'));
     }
 
     public function file($type)
@@ -111,11 +114,9 @@ class PageController extends Controller
     {
         $data = request()->all();
         $pages = new Page();
-        $pages->page_type = $data['page_type'];
         $pages->title = $data['title'];
         $pages->text = $data['text'];
         $pages->image = $data['image'];
-        $pages->image_color = $data['image_color'];
 
         if (!isset($data['gallery'])) {
             $data['gallery'] = [];
@@ -138,6 +139,7 @@ class PageController extends Controller
         $pages->parent_id = $data['parent_id'];
         
         $pages->save();
+        $pages->types()->attach($request->types, ['page_id' => $pages->id]);
         $pages->icons()->attach($request->icons, ['page_id' => $pages->id]);
         return redirect('/pages');
     }
@@ -146,7 +148,6 @@ class PageController extends Controller
     {
         $data = request()->all();
         $pages = Page::find($data['id']);
-        $pages->page_type = $data['page_type'];
         $pages->title = $data['title'];
         $pages->text = $data['text'];
         $pages->image = $data['image'];
@@ -178,6 +179,8 @@ class PageController extends Controller
         ]);
         
         $pages->save();
+        $pages->types()->detach();
+        $pages->types()->attach($request->types, ['page_id' => $pages->id]);
         $pages->icons()->detach();
         $pages->icons()->attach($request->icons, ['page_id' => $pages->id]);
         return redirect('/pages');

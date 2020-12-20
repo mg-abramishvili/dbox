@@ -2,26 +2,65 @@
 @section('content')
 
     <style>
-        .radio {
+        .type-radio .radio {
+            margin-bottom: 20px;
+        }
+
+        .type-radio span {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            z-index: 10;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        .type-radio input[type="radio"] {
+            border: 2px solid red;
+        }
+
+        .type-radio input[type="radio"]:checked+label {
+            border: 4px solid #3171B8;
+        } 
+
+        .type-radio .radio label {
+            width: 100%;
+            height: 180px;
+            position: relative;
+        }
+
+        .type-radio .radio img {
+            width: auto;
+            height: auto;
+            max-width: 80%;
+            max-height: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .icon-radio .radio {
             background: grey;
             margin-bottom: 20px;
         }
 
-        input[type="radio"] {
+        .icon-radio input[type="radio"] {
             border: 2px solid red;
         }
 
-        input[type="radio"]:checked+label {
+        .icon-radio input[type="radio"]:checked+label {
             border: 4px solid #3171B8;
         } 
 
-        .radio label {
+        .icon-radio .radio label {
             width: 100%;
             height: 70px;
             position: relative;
         }
 
-        .radio img {
+        .icon-radio .radio img {
             width: auto;
             height: auto;
             max-width: 70%;
@@ -50,29 +89,19 @@
                     Тип страницы
                 </dt>
                 <dd class="col-sm-9">
-
-                    <select name="page_type" id="page_type" class="form-control">
-                        <option value="{{$page->page_type}}">{{$page->page_type}}</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                    </select>
-
-                    <script>
-                        var optionValues =[];
-                        $('#page_type option').each(function(){
-                        if($.inArray(this.value, optionValues) >-1){
-                            $(this).remove()
-                        }else{
-                            optionValues.push(this.value);
-                        }
-                        });
-                    </script>
+                    <div class="row">
+                        @foreach($types as $type)
+                            <div class="col-3 type-radio">
+                                <div class="radio">
+                                <input name="types" id="{{ $type->id }}" type="radio" @foreach($page->types as $t)@if($type->id == $t->id)checked @endif @endforeach value="{{ $type->id }}">
+                                <label for="{{ $type->id }}">
+                                    <img src="{{ $type->image }}" style="width:100%">
+                                    <span>{{ $type->type }}</span>
+                                </label>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
                 </dd>
             </div>
 
@@ -95,7 +124,7 @@
                 <dd class="col-sm-9">
                     <div class="row" style="height:250px; overflow-y:scroll;">
                         @foreach($icons as $icon)
-                        <div class="col-2">
+                        <div class="col-2 icon-radio">
                             <div class="radio">
                             <input name="icons" id="{{ $icon->id }}" type="radio" @foreach($page->icons as $t)@if($icon->id == $t->id)checked @endif @endforeach value="{{ $icon->id }}">
                             <label for="{{ $icon->id }}">
@@ -304,12 +333,14 @@
             },
 
             files: [
+                @if(isset($page->pdf))
                 {
                     source: '{{ $page->pdf }}',
                     options: {
                         type: 'local',
                     }
                 }
+                @endif
             ]
 
         });
@@ -456,47 +487,28 @@
         }
     </script>
 
-<script>
-        ;(function($){
-	$.fn.form_color = function(options){
-		this.each(function(){
-			$(this).on("change", function(){
-				this.title = this.value;
-				this.dataset.value = this.value;
-			}).trigger("change");
-		});
-		return this;
-	};
-})(jQuery);
-
-$(function(){
-	$("input[type='color']").form_color();
-});
-    </script>
-
     <script>
-        $('#page_type').change(function () {
+        /*$('#page_type').change(function () {
         var select=$(this).find(':selected').val();        
         $(".type").hide();
         $('.' + 'type-' + select).show();
 
-        }).change();
+        }).change();*/
     </script>
 
-<script>
-      $('#text').summernote({
+    <script>
+        $('#text').summernote({
         height: 300,
         toolbar: [
-    // [groupName, [list of button]]
-    ['style', ['bold', 'italic', 'underline', 'clear']],
-    ['font', ['strikethrough', 'superscript', 'subscript']],
-    ['fontsize', ['fontsize']],
-    ['color', ['color']],
-    ['para', ['ul', 'ol', 'paragraph']],
-    ['table', ['table']],
-    ['height', ['height']]
-  ]
-      });
+        ['style', ['bold', 'italic', 'underline', 'clear']],
+        ['font', ['strikethrough', 'superscript', 'subscript']],
+        ['fontsize', ['fontsize']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['table', ['table']],
+        ['height', ['height']]
+        ]
+        });
     </script>
 
 @endsection
