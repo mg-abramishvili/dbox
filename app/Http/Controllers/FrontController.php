@@ -16,7 +16,7 @@ class FrontController extends Controller
         $settings = Setting::where('id', '1')->first();
 
         $news = News::orderBy('created_at', 'desc')->first();
-        $pages = Page::orderBy('created_at', 'asc')->where('parent_id', NULL)->skip(6)->take(50)->get();
+        $pages = Page::orderBy('created_at', 'asc')->where('parent_id', NULL)->get();
         $photoalbums = Photoalbum::orderBy('created_at', 'desc')->first();
         $videoalbums = Videoalbum::orderBy('created_at', 'desc')->first();
 

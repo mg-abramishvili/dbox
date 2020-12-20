@@ -48,21 +48,20 @@
 
             <div class="col-6">
                 <div class="user-pages">
-                    <div class="user-pages-item-item">
-                        Страница один
-                    </div>
-                    <div class="user-pages-item-item">
-                        Страница два
-                    </div>
-                    <div class="user-pages-item-item">
-                        Страница три
-                    </div>
-                    <div class="user-pages-item-item">
-                        Страница четыре
-                    </div>
-                    <div class="user-pages-item-item">
-                        Страница пять
-                    </div>
+                    @foreach($pages as $page)
+                        <div class="user-pages-item-item">
+                            <a href="/front-pages/{{ $page->id }}">
+                                @if($page->icons()->exists())
+                                    @foreach($page->icons as $icon)
+                                        <img src="{{ $icon->icon }}">
+                                    @endforeach
+                                @else
+                                    <img src="/img/icons/014-passport.svg">
+                                @endif
+                                {{ $page->title }}
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
             </div>
 

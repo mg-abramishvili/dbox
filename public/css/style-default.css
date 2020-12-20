@@ -201,10 +201,30 @@ main {
 
 .user-pages-item-item {
     height: 380px;
-    border: 1px solid #ccc;
     position: relative;
     text-align: center;
     border-radius: 10px;
+    color: #fff;
+    font-size: 34px;
+    padding-top: 50px;
+}
+
+.user-pages-item-item a {
+    display: block;
+    color: #fff;
+}
+
+.user-pages-item-item a:hover,
+.user-pages-item-item a:focus {
+    text-decoration: none;
+    color: #fff;
+}
+
+.user-pages-item-item img {
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 /* MAIN PAGE */
