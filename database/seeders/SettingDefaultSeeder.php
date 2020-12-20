@@ -21,7 +21,7 @@ class SettingDefaultSeeder extends Seeder
             'theme' => 'default',
             'title' => 'Default',
             'titlecolor' => '#333333',
-            'logo' => '/logo-h.png',
+            'logo' => '/img/sber.png',
             'background' => '/img/_9.jpg',
             'blur' => '0',
             'galcolor' => '#2C9CDB',

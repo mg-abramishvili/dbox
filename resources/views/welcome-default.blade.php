@@ -10,11 +10,11 @@
             <div class="col-12">
                 <div class="header">
                     <div class="row align-items-center">
-                        <div class="col-4">
-                            logo
+                        <div class="col-4 header-logo">
+                            <a href="/"><img src="{{ $settings->logo }}"></a>
                         </div>
-                        <div class="col-8">
-                            text
+                        <div class="col-8 header-text">
+                            {{ $settings->title }}
                         </div>
                     </div>
                 </div>
@@ -23,12 +23,19 @@
             <div class="col-6">
                 <div class="row">
                     <div class="col-5">
-                        <div class="photogalleries">
-                            
-                        </div>
-                        <div class="videogalleries">
-                            
-                        </div>
+                        @if(isset($photoalbums))
+                            <a href="/front-photoalbums/" class="photogalleries">
+                                <img src="/img/icon-photogal.svg">
+                                Фотогалерея
+                            </a>
+                        @endif
+
+                        @if(isset($videoalbums))
+                            <a href="/front-videoalbums/" class="videogalleries">
+                                <img src="/img/icon-videogal.svg">
+                                Видеогалерея
+                            </a>
+                        @endif
                     </div>
                     <div class="col-7">
                         <div class="news">
