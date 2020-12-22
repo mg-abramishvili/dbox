@@ -131,7 +131,7 @@
                 </dd>
             </div>
 
-            <div class="row align-items-center mb-4 type type-1 type-2 type-3 type-5">
+            <div class="row align-items-center mb-4 type type-1 type-2 type-3">
                 <dt class="col-sm-3">
                     Текст
                 </dt>
@@ -140,7 +140,7 @@
                 </dd>
             </div>
 
-            <div class="row align-items-center mb-4 type type-2 type-3 type-4 type-5 type-6 type-7 type-8">
+            <div class="row align-items-center mb-4 type type-2 type-3 type-4 type-6 type-7 type-8">
                 <dt class="col-sm-3">
                     Картинка
                 </dt>
@@ -169,6 +169,15 @@
                 </dt>
                 <dd class="col-sm-9">
                     <input class="pdf" type="file" name="pdf" x-ref="pdf">
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-2 type type-5">
+                <dt class="col-sm-3">
+                    Видео
+                </dt>
+                <dd class="col-sm-9">
+                    <input class="video" type="file" name="video" x-ref="video">
                 </dd>
             </div>
 
@@ -209,6 +218,59 @@
                 remove: (filename, load) => {
                     load('1');
                     return  ajax_delete('deleteimage');
+
+                },
+                process: (fieldName, file, metadata, load, error, progress, abort, transfer, options) => {
+                    const formData = new FormData();
+                    formData.append(fieldName, file, file.name);
+                    const request = new XMLHttpRequest();
+                    request.open('POST', '/pages/file/upload');
+                    request.upload.onprogress = (e) => {
+                        progress(e.lengthComputable, e.loaded, e.total);
+                    };
+                    request.onload = function() {
+                        if (request.status >= 200 && request.status < 300) {
+                            load(request.responseText);
+                        }
+                        else {
+                            error('oh no');
+                        }
+                    };
+                    request.send(formData);
+                    return {
+                        abort: () => {
+                            request.abort();
+                            abort();
+                        }
+                    };
+                },
+                revert: (filename, load) => {
+                    load(filename)
+                },
+                load: (source, load, error, progress, abort, headers) => {
+                    var myRequest = new Request(source);
+                    fetch(myRequest).then(function(response) {
+                        response.blob().then(function(myBlob) {
+                            load(myBlob)
+                        });
+                    });
+                },
+            },
+        });
+        $('.video').filepond({
+            allowMultiple: false,
+            allowReorder: false,
+            imagePreviewHeight: 140,
+            labelIdle: 'Нажмите для загрузки файлов',
+            labelFileProcessing: 'Загрузка',
+            labelFileProcessingComplete: 'Загружено',
+            labelTapToCancel: '',
+            labelTapToUndo: '',
+
+            server: {
+                remove: (filename, load) => {
+                    load('1');
+                    return  ajax_delete('deletevideo');
 
                 },
                 process: (fieldName, file, metadata, load, error, progress, abort, transfer, options) => {
