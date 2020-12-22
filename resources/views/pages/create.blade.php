@@ -131,7 +131,7 @@
                 </dd>
             </div>
 
-            <div class="row align-items-center mb-4 type type-1 type-2 type-3 type-4 type-5">
+            <div class="row align-items-center mb-4 type type-1 type-2 type-3 type-5">
                 <dt class="col-sm-3">
                     Текст
                 </dt>
@@ -140,12 +140,17 @@
                 </dd>
             </div>
 
-            <div class="row align-items-center mb-4 type type-1 type-2 type-3 type-4 type-5 type-6 type-7 type-8">
+            <div class="row align-items-center mb-4 type type-2 type-3 type-4 type-5 type-6 type-7 type-8">
                 <dt class="col-sm-3">
                     Картинка
                 </dt>
                 <dd class="col-sm-9">
                     <input class="image" type="file" name="image" x-ref="image">
+                    <div class="form-check">
+                        <input type="hidden" name="image_as_icon" value="0">
+                        <input type="checkbox" name="image_as_icon" id="image_as_icon" value="1">
+                        <label for="image_as_icon">Задать как значок</label>
+                    </div>
                 </dd>
             </div>
 
@@ -174,7 +179,7 @@
                 <dd class="col-sm-9">
 
                     <select name="parent_id" id="parent_id" class="form-control">
-                        <option value="" selected="selected">Выберите</option>
+                        <option disabled selected value> -- Выберите -- </option>
                         @foreach($parentlist as $parentlistitem)
                         <option value="{{$parentlistitem->id}}">{{$parentlistitem->title}}</option>
                         @endforeach

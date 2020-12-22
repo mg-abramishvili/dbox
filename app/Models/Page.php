@@ -10,7 +10,7 @@ class Page extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'text', 'image', 'video', 'pdf', 'gallery', 'parent_id'
+        'title', 'text', 'image', 'image_as_icon', 'video', 'pdf', 'gallery', 'parent_id'
     ];
     
     protected $casts=['gallery'=>'json'];

@@ -116,7 +116,13 @@ class PageController extends Controller
         $pages = new Page();
         $pages->title = $data['title'];
         $pages->text = $data['text'];
+        
+        if (!isset($data['image'])) {
+            $data['image'] = null;
+        }
         $pages->image = $data['image'];
+
+        $pages->image_as_icon = $data['image_as_icon'];
 
         if (!isset($data['gallery'])) {
             $data['gallery'] = [];
@@ -150,7 +156,13 @@ class PageController extends Controller
         $pages = Page::find($data['id']);
         $pages->title = $data['title'];
         $pages->text = $data['text'];
+
+        if (!isset($data['image'])) {
+            $data['image'] = null;
+        }
         $pages->image = $data['image'];
+
+        $pages->image_as_icon = $data['image_as_icon'];
 
         if (!isset($data['gallery'])) {
             $data['gallery'] = [];

@@ -1,33 +1,44 @@
 <div class="type-6">
     <div class="row">
-    @if($settings->theme == 'kadet')
-        <div class="col-12"><h1 style="text-align:center;">{{ $page->title }}</h1></div>
-        @endif
-        
-            @foreach($childs->children as $child)
-            <div class="col-4">
-                <a href="/front-pages/{{ $child->id }}" class="item">
-                    <div class="image" style="background-image: url({{ $child->image }});"></div>
-                    <span>{{ $child->title }}</span>
-                </a>
+        <div class="col-12">
+            <div class="user-pages">
+                @foreach($childs->children as $child)
+                    <div class="user-pages-item-item">
+                        <a href="/front-pages/{{ $child->id }}">
+                            @if($child->image_as_icon == 1)
+                                <div class="user-pages-item-image" style="background-image:url({{ $child->image }});"></div>
+                            @else
+                                @if($child->icons()->exists())
+                                    @foreach($child->icons as $icon)
+                                        <img src="{{ $icon->icon }}">
+                                    @endforeach
+                                @else
+                                    <img src="/img/icons/014-passport.svg">
+                                @endif
+                            @endif
+                            {{ $child->title }}
+                        </a>
+                    </div>
+                @endforeach
             </div>
-            @endforeach
-
-
-
-            @if($settings->theme == 'kadet')
-        
-            <script>
-                    $('.item span').each(function() {
-        var word = $(this).html();
-        var index = word.indexOf(' ');
-        if(index == -1) {
-            index = word.length;
-        }
-        $(this).html('<strong style="font-weight: 400; text-transform: uppercase;">' + word.substring(0, index) + '</strong><br/>' + word.substring(index, word.length));
-    });
-            </script>
-        @endif
-
+        </div>
     </div>
 </div>
+@section('scripts')
+    @parent
+    <script>
+        var divs = $(".user-pages .user-pages-item-item");
+            for(var i = 0; i < divs.length; i+=2) {
+            divs.slice(i, i+2).wrapAll("<div class='user-pages-item'></div>");
+        }
+    </script>
+
+    <script>
+        $('.user-pages').flickity({
+        cellAlign: 'left',
+        contain: true,
+        prevNextButtons: false,
+        pageDots: false,
+        });
+    </script>
+@endsection

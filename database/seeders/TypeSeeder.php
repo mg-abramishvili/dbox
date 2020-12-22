@@ -19,17 +19,17 @@ class TypeSeeder extends Seeder
         DB::table('types')->insert([
         [
             'id' => '1',
+            'type' => 'Только текст',
+            'image' => '/img/no-image2.jpg',
+        ],
+        [
+            'id' => '2',
             'type' => 'Текст + 1 картинка',
             'image' => '/img/no-image.jpg',
         ],
         [
-            'id' => '2',
-            'type' => 'Текст + 2 картинки',
-            'image' => '/img/no-image2.jpg',
-        ],
-        [
             'id' => '3',
-            'type' => 'Галерея',
+            'type' => 'Текст + картинки',
             'image' => '/img/no-image.jpg',
         ],
         [

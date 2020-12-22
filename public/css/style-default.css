@@ -223,6 +223,19 @@ main {
     margin-bottom: 20px;
 }
 
+.user-pages-item-image {
+    width: 175px;
+    height: 175px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 100%;
+    border: 8px solid #fff;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
 /* MAIN PAGE */
 
 
@@ -416,10 +429,6 @@ main {
 
 /* PAGE TYPE 1 */
 
-.type-1 .page-detail-image {
-    height: 700px;
-}
-
 .type-1 .page-detail-text {
     height: 700px;
     overflow-y: auto;
@@ -455,3 +464,138 @@ main {
 }
 
 /* PAGE TYPE 1 */
+
+
+
+
+/* PAGE TYPE 2 */
+
+.type-2 .page-detail-image {
+    height: 700px;
+    border-radius: 12px;
+}
+
+.type-2 .page-detail-text {
+    height: 700px;
+    overflow-y: auto;
+    padding-right: 40px;
+    font-size: 24px !important;
+    line-height: 1.6 !important;
+}
+
+.type-2 .page-detail-text h1 {
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.type-2 .page-detail-text p {
+    margin-bottom: 30px !important;
+}
+
+.type-2 .page-detail-text::-webkit-scrollbar {
+    width: 10px;
+}
+
+.type-2 .page-detail-text::-webkit-scrollbar-track {
+    background: #B8BDBD;
+}
+
+.type-2 .page-detail-text::-webkit-scrollbar-thumb {
+    background: #8A4E9F;
+    border: 1px solid #B8BDBD;
+}
+
+.type-2 .page-detail-text::-webkit-scrollbar-thumb:hover {
+    background: #8A4E9F;
+}
+
+/* PAGE TYPE 2 */
+
+
+
+/* PAGE TYPE 3 */
+
+.type-3 #gallery a {
+    height: 700px;
+    margin-bottom: 30px;
+    display: block;
+    border-radius: 25px;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.type-3 .page-detail-text {
+    height: 700px;
+    overflow-y: auto;
+    padding-right: 40px;
+    font-size: 24px !important;
+    line-height: 1.6 !important;
+}
+
+.type-3 .page-detail-text h1 {
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.type-3 .page-detail-text p {
+    margin-bottom: 30px !important;
+}
+
+.type-3 .page-detail-text::-webkit-scrollbar {
+    width: 10px;
+}
+
+.type-3 .page-detail-text::-webkit-scrollbar-track {
+    background: #B8BDBD;
+}
+
+.type-3 .page-detail-text::-webkit-scrollbar-thumb {
+    background: #8A4E9F;
+    border: 1px solid #B8BDBD;
+}
+
+.type-3 .page-detail-text::-webkit-scrollbar-thumb:hover {
+    background: #8A4E9F;
+}
+
+/* PAGE TYPE 3 */
+
+
+
+
+/* PAGE TYPE 4 */
+
+.type-4 .gallery-item {
+    width: 100%;
+}
+
+/* PAGE TYPE 4 */
+
+
+
+
+/* PAGE TYPE 6 */
+
+.type-6 .user-pages {
+    height: auto;
+    background: none;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: -40px;
+}
+
+.type-6 .user-pages-item {
+    width: 25%;
+}
+
+.type-6 .user-pages-item-item {
+    height: 345px;
+    background-color: #ffc940;
+    margin: 40px 20px;
+}
+
+.type-6 .user-pages-item-item img {
+    width: 40%;
+}
+
+/* PAGE TYPE 6 */

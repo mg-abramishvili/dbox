@@ -51,12 +51,16 @@
                     @foreach($pages as $page)
                         <div class="user-pages-item-item">
                             <a href="/front-pages/{{ $page->id }}">
-                                @if($page->icons()->exists())
-                                    @foreach($page->icons as $icon)
-                                        <img src="{{ $icon->icon }}">
-                                    @endforeach
+                                @if($page->image_as_icon == 1)
+                                    <div class="user-pages-item-image" style="background-image:url({{ $page->image }});"></div>
                                 @else
-                                    <img src="/img/icons/014-passport.svg">
+                                    @if($page->icons()->exists())
+                                        @foreach($page->icons as $icon)
+                                            <img src="{{ $icon->icon }}">
+                                        @endforeach
+                                    @else
+                                        <img src="/img/icons/014-passport.svg">
+                                    @endif
                                 @endif
                                 {{ $page->title }}
                             </a>

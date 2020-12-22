@@ -1,31 +1,23 @@
 <div class="type-4">
     <div class="row">
-    @if($settings->theme == 'kadet')
-        <div class="col-12"><h1 style="text-align:center;">{{ $page->title }}</h1></div>
-        @endif
         <div class="col-12">
-            <div class="text">{!! $page->text !!}</div>
-        </div>
-        <div class="col-12">
-            <div id="gallery">
-                @if(is_array($page->gallery))
+            @if(is_array($page->gallery))
+            <div class="gallery-detail">
                 @foreach($page->gallery as $k=>$v)
-                    <div class="gallery-item" style="height: 250px; margin-bottom: 30px; background: url({{$v}}); background-size: contain; background-repeat: no-repeat; background-position: 50% 50%;">
-                        <a href="{{$v}}" style="display: block; width: 100%; height: 100px;"></a>
+                    <div class="gallery-detail-item">
+                        <img src="{{ $v }}" />
                     </div>
                 @endforeach
-                @endif
             </div>
+            @endif
+
             <script>
-                $('#gallery').flickity({
-                cellAlign: 'left',
+                $('.gallery-detail').flickity({
+                cellAlign: 'center',
                 contain: true,
+                imagesLoaded: true,
                 pageDots: false,
-                });            
-            </script>
-            <script>
-                lightGallery(document.getElementById('gallery'), {
-                    selector: 'a'
+                wrapAround: true,
                 });
             </script>
         </div>

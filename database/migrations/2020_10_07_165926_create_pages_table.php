@@ -17,7 +17,8 @@ class CreatePagesTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('text')->nullable();
-            $table->string('image');
+            $table->string('image')->nullable();
+            $table->string('image_as_icon')->default('0');
             $table->string('video')->nullable();
             $table->string('pdf')->nullable();
             $table->longtext('gallery')->nullable();

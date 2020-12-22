@@ -155,6 +155,19 @@
                 </dt>
                 <dd class="col-sm-9">
                     <input class="image" type="file" name="image" x-ref="image">
+                    @if ($page->image_as_icon == 0)
+                    <div class="form-check">
+                        <input type="hidden" name="image_as_icon" value="0">
+                        <input type="checkbox" name="image_as_icon" value="1" id="image_as_icon">
+                        <label for="image_as_icon">Задать как значок</label>
+                    </div>
+                    @else
+                    <div class="form-check">
+                        <input type="hidden" name="image_as_icon" value="0">
+                        <input type="checkbox" name="image_as_icon" value="1" id="image_as_icon" checked>
+                        <label for="image_as_icon">Задать как значок</label>
+                    </div>
+                    @endif
                 </dd>
             </div>
 
@@ -190,24 +203,12 @@
                     Родительская страница
                 </dt>
                 <dd class="col-sm-9">
-
                     <select name="parent_id" id="parent_id" class="form-control">
-                        <option value="{{$page->parent_id}}">{{$page->parent_id}}</option>
+                        <option disabled selected value> -- Выберите -- </option>
                         @foreach($parentlist as $parentlistitem)
-                        <option value="{{$parentlistitem->id}}">{{$parentlistitem->title}}</option>
+                        <option value="{{$parentlistitem->id}}" @if($parentlistitem->id == $page->parent_id) selected @endif>{{$parentlistitem->title}}</option>
                         @endforeach
                     </select>
-
-                    <script>
-                        var optionValues =[];
-                        $('#parent_id option').each(function(){
-                        if($.inArray(this.value, optionValues) >-1){
-                            $(this).remove()
-                        }else{
-                            optionValues.push(this.value);
-                        }
-                        });
-                    </script>
                 </dd>
             </div>
 
@@ -270,12 +271,14 @@
             },
 
             files: [
+                @if(isset($page->image))
                 {
                     source: '{{ $page->image }}',
                     options: {
                         type: 'local',
                     }
                 }
+                @endif
             ]
 
         });
