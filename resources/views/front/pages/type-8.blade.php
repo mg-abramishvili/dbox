@@ -1,7 +1,7 @@
-<div class="type-8" style="height: 1080px;">
-    <div class="row align-items-center" style="height: 1080px;">
+<div class="type-8" style="height: 680px;">
+    <div class="row align-items-center" style="height: 680px;">
         
-<div class="col-12" style="top: -60px;">
+<div class="col-12" style="top: -30px;">
 
 <style>
     #flipbook {
@@ -29,12 +29,13 @@
 
 
         </div>
-    </div><button id="prevBtn"><</button>
-<button id="nextBtn">></button>
+    </div>
+    <button id="prevBtn" style="position: absolute; z-index:999;"><</button>
+    <button id="nextBtn" style="position: absolute; z-index:999;">></button>
 </div>
 <div class="col-12" style="opacity:0;">
 
-        <div id="sizer" style="border: 1px solid black; display:block; margin: 0 auto; width: 1400px;">
+        <div id="sizer" style="border: 1px solid black; display:block; margin: 0 auto; width: 1200px;">
             @if(is_array($page->gallery))
                 @foreach($page->gallery as $k=>$v)
                 <div style="width: 50%; float: left;">

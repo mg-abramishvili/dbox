@@ -183,12 +183,6 @@ class PageController extends Controller
             $data['parent_id'] = null;
         }
         $pages->parent_id = $data['parent_id'];
-
-        request()->validate([
-            'title' => 'required',
-            'text' => 'required',
-            'image' => 'required',
-        ]);
         
         $pages->save();
         $pages->types()->detach();

@@ -32,6 +32,8 @@
                         @include('front.pages.type-6')
                     @elseif($type->id == '7')
                         @include('front.pages.type-7')
+                    @elseif($type->id == '8')
+                        @include('front.pages.type-8')
                     @endif
 
                 @endforeach
