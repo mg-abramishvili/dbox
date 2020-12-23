@@ -30,8 +30,10 @@
 
         </div>
     </div>
-    <button id="prevBtn" style="position: absolute; z-index:999;"><</button>
-    <button id="nextBtn" style="position: absolute; z-index:999;">></button>
+    <div class="buttons">
+    <button id="prevBtn"><</button>
+    <button id="nextBtn">></button>
+    </div>
 </div>
 <div class="col-12" style="opacity:0;">
 

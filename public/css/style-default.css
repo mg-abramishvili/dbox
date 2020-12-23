@@ -645,3 +645,29 @@ main {
   }
 
 /* PAGE TYPE 7 */
+
+
+
+/* PAGE TYPE 8 */
+
+.buttons {
+    position: absolute;
+    z-index: 20;
+    left: 50px;
+    right: 50px;
+    text-align: center;
+}
+
+#prevBtn,
+#nextBtn {
+    background: #ffc940;
+    color: #fff;
+    padding: 10px 30px;
+    box-shadow: none;
+    border: 0;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+/* PAGE TYPE 8 */
