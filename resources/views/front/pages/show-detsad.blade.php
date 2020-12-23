@@ -32,21 +32,26 @@
 
     <div class="container" style="margin-top: 45px;">
         <div class="page-item">
-        @if($page->page_type == '1')
-            @include('front.pages.type-1')
-        @elseif($page->page_type == '2')
-            @include('front.pages.type-2')
-        @elseif($page->page_type == '3')
-            @include('front.pages.type-3')
-        @elseif($page->page_type == '4')
-            @include('front.pages.type-4')
-        @elseif($page->page_type == '5')
-            @include('front.pages.type-5')
-        @elseif($page->page_type == '6')
-            @include('front.pages.type-6')
-        @elseif($page->page_type == '7')
-            @include('front.pages.type-7')
-        @endif
+        @foreach($page->types as $type)
+                    @if($type->id == '1')
+                        @include('front.pages.type-1')
+                    @elseif($type->id == '2')
+                        @include('front.pages.type-2')
+                    @elseif($type->id == '3')
+                        @include('front.pages.type-3')
+                    @elseif($type->id == '4')
+                        @include('front.pages.type-4')
+                    @elseif($type->id == '5')
+                        @include('front.pages.type-5')
+                    @elseif($type->id == '6')
+                        @include('front.pages.type-6')
+                    @elseif($type->id == '7')
+                        @include('front.pages.type-7')
+                    @elseif($type->id == '8')
+                        @include('front.pages.type-8')
+                    @endif
+
+                @endforeach
             
         </div>
     </div>

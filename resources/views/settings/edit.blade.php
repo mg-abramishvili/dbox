@@ -41,7 +41,7 @@
                     Ориентация экрана
                 </dt>
                 <dd class="col-sm-9">
-                    <select class="form-control">
+                    <select class="form-control" disabled>
                         <option value="">Горизонтальная</option>
                         <option value="">Вертикальная</option>
                     </select>
