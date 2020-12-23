@@ -82,20 +82,19 @@
                 var vid = "";
                 var count = "";
                 var keycheck = $('#key-input').val();
-                $.getJSON('http://touchlab.su/api/keys', function(data) {
-                    $.each(data.data, function(i, v) {
-                        if (v.key == keycheck) {
-                            if (v.status == 'waiting') {
-                                
-                                vid = v.id;
-                                count = 'y';
+                $.getJSON('http://touchlab.su/api/key/view/' + keycheck, function(data) {
+                    
+                    if (data.key == keycheck) {
+                        if (data.status == 'waiting') {
+                            
+                            datakey = data.key;
+                            count = 'y';
 
-                            }
-                            else {
-                                count = 'a';
-                            }
                         }
-                    });
+                        else {
+                            count = 'a';
+                        }
+                    }
 
                     if (count == 'y') {
                         alert('Ключ принят');
@@ -106,18 +105,21 @@
                         alert('Этот ключ уже был активирован');
                     }
                     else {
-                        alert('Введите ключ');
+                        alert('Неверный ключ!');
                     }
 
                     $.ajax({
                         type:"POST",
-                        url:"http://touchlab.su/api/key/update/"+ vid +"",
+                        url:"http://touchlab.su/api/key/activate/"+ datakey +"",
                         data:"status=active",
                         dataType:"json",
                         success: function(data) {
                             alert('Активация успешна!');
                             window.location = "http://localhost";
-                        }
+                        },
+                        error: function(data) {
+                            console.log(data);
+                        },
                     });
 
                 });
