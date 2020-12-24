@@ -11,6 +11,8 @@
             @include('front.pages.show-kadet')
         @elseif($settings->theme == 'detsad')
             @include('front.pages.show-detsad')
+        @elseif($settings->theme == 'book')
+            @include('front.pages.show-book')
         @endif
 
 </div>

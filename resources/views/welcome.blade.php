@@ -11,6 +11,8 @@
         @include('welcome-detsad')
     @elseif($settings->theme == 'kadet')
         @include('welcome-kadet')
+    @elseif($settings->theme == 'book')
+        @include('welcome-book')
     @endif
 
 </div>

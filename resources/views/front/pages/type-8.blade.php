@@ -7,13 +7,16 @@
     #flipbook {
         animation-name: fade;
         animation-duration: 2s;
+        position: relative;
     }
 
-    @keyframes fade {
-  0% {opacity: 0;}
-  50% {opacity: 0;}
-  100% {opacity: 1;}
-}
+        @keyframes fade {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+    }
+
+    
 </style>
 
         <div id="flipbook" style="margin: 0 auto;">
@@ -26,7 +29,7 @@
             @endif
         </div>
 
-
+        <img src="/img/book.png" class="ccover" style="opacity: 0;">
 
         </div>
     </div>
@@ -53,6 +56,9 @@ $("#flipbook").turn({
 	width: $('#sizer div:first').find('img').width() * 2,
 	height: $('#sizer div:first').find('img').height(),
 });
+    var ccover_width = $('#sizer div:first').find('img').width() * 2 + 140;
+	var ccover_height = $('#sizer div:first').find('img').height() + 40;
+    $('.ccover').height(ccover_height).width(ccover_width);
 }, 1000);
 $("#pageFld").val($("#flipbook").turn("page"));
 
