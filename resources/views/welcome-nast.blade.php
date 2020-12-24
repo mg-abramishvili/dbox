@@ -3,7 +3,7 @@
     <link href="{{ asset('css/style-nast.css') }}" rel="stylesheet">
 @endsection
 
-<div class="default">
+<div class="nast">
     <div class="container">
         <div class="row">
             

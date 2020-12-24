@@ -13,6 +13,8 @@
 
     @if($settings->theme == 'default')
         @include('front.news.index-default')
+    @elseif($settings->theme == 'nast')
+        @include('front.news.index-nast')
     @elseif($settings->theme == 'detsad')
         @include('front.news.index-detsad')
     @elseif($settings->theme == 'kadet')
