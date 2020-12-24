@@ -5,6 +5,8 @@
 
         @if($settings->theme == 'default')
             @include('front.videoalbums.show-default')
+        @elseif($settings->theme == 'nast')
+            @include('front.videoalbums.show-nast')
         @elseif($settings->theme == 'kadet')
             @include('front.videoalbums.show-kadet')
         @elseif($page->page_type == 'detsad')
