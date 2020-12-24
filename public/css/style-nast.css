@@ -724,10 +724,11 @@ footer {
     height: 345px;
     background-color: #ffc940;
     margin: 40px 20px;
+    padding-top: 55px;
 }
 
 .type-6 .user-pages-item-item img {
-    width: 40%;
+    width: 35%;
 }
 
 /* PAGE TYPE 6 */
@@ -737,7 +738,7 @@ footer {
 /* PAGE TYPE 7 */
 
 .type-7 .text {
-    height: 650px;
+    height: 750px;
     overflow: hidden;
     overflow-y: scroll;
 }

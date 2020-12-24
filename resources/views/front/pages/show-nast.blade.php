@@ -29,11 +29,30 @@
                 @endforeach
             </div>
 
-            <div class="footer">
-                <a href="/" class="home-button">
-                    <img src="/img/icon-footer-home.svg">
-                </a>
-            </div>
-
         </div>
+
+        @foreach($page->types as $type)
+            @if($type->id == '6')
+                <footer>
+                    <div class="home">
+                        <a href="/" class="home-home"><img src="/img/nast-home.png"></a>
+                    </div>
+                    <div class="container">
+                        Выберите интересующий Вас разздел и нажмите на него
+                    </div>
+                </footer>
+            @else
+                <footer>
+                    <div class="home">
+                        <a href="/" class="home-home"><img src="/img/nast-home.png"></a>
+                        <a href="#" onclick="window.history.go(-1); return false;" class="home-back"><img src="/img/nast-back.png"></a>
+                    </div>
+                    <div class="container">
+                        Выберите интересующий Вас разздел и нажмите на него
+                    </div>
+                </footer>
+            @endif
+        @endforeach
+        
+
     </div>

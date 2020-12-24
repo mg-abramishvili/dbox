@@ -1,5 +1,5 @@
-<div class="type-8" style="height: 680px;">
-    <div class="row align-items-center" style="height: 680px;">
+<div class="type-8" style="height: 780px;">
+    <div class="row align-items-center" style="height: 780px;">
         
 <div class="col-12" style="top: -30px;">
 

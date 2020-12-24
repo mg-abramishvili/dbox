@@ -5,7 +5,7 @@
 
         @if($settings->theme == 'default')
             @include('front.pages.show-default')
-        @if($settings->theme == 'nast')
+        @elseif($settings->theme == 'nast')
             @include('front.pages.show-nast')
         @elseif($settings->theme == 'kadet')
             @include('front.pages.show-kadet')
