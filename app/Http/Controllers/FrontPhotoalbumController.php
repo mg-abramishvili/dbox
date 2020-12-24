@@ -12,7 +12,8 @@ class FrontPhotoalbumController extends Controller
     {
         $settings = Setting::where('id', '1')->first();
         $photoalbums = Photoalbum::orderBy('created_at', 'desc')->get();
-        return view('front.photoalbums.index', compact('photoalbums', 'settings'));
+        $photoalbums_nast = Photoalbum::orderBy('created_at', 'desc')->paginate(8);
+        return view('front.photoalbums.index', compact('photoalbums', 'settings', 'photoalbums_nast'));
     }
 
     public function show($id)
