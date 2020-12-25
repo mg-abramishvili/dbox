@@ -10,6 +10,7 @@
             <div class="col-7 col-7-f">
                 <div class="row">
 
+                    @if(count($news))
                     <div class="col-12">
                         <a href="/front-news/" class="news">
                             <h2>Новости</h2>
@@ -25,6 +26,7 @@
                             </div>
                         </a>
                     </div>
+                    @endif
                     
                     @if(isset($photoalbums))
                         <div class="col-6">
