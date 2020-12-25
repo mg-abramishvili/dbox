@@ -29,7 +29,15 @@
             @endif
         </div>
 
-        <img src="/img/book.png" class="ccover" style="opacity: 0;">
+        @if($settings->theme == 'default')
+            <img src="/img/book.png" class="ccover" style="opacity: 0;">
+        @elseif($settings->theme == 'nast')
+            <img src="/img/book_old.png" class="ccover" style="opacity: 0;">
+        @elseif($settings->theme == 'book')
+            <img src="/img/book_old.png" class="ccover" style="opacity: 0;">
+        @elseif($settings->theme == 'book')
+            <img src="/img/book_old.png" class="ccover" style="opacity: 0;">
+        @endif
 
         </div>
     </div>

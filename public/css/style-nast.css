@@ -793,14 +793,33 @@ footer {
 
 #prevBtn,
 #nextBtn {
-    background: #ffc940;
+    background: linear-gradient(#2384C6, #2C50A3);
     color: #fff;
-    padding: 10px 30px;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    line-height: 40px;
     box-shadow: none;
     border: 0;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
-    border-radius: 10px;
+}
+
+#flipbook {
+    z-index: 999;
+}
+
+.ccover {
+    opacity: 1 !important;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    display: block;
+    margin: 0 auto;
+    animation-name: fade;
+    animation-duration: 2s;
+    z-index: 0;
 }
 
 /* PAGE TYPE 8 */
