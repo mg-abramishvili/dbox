@@ -4,6 +4,7 @@
     <style>
         .type-radio .radio {
             margin-bottom: 20px;
+            background: lightgray;
         }
 
         .type-radio span {
@@ -27,6 +28,7 @@
         .type-radio .radio label {
             width: 100%;
             height: 180px;
+            height: auto;
             position: relative;
         }
 
@@ -39,6 +41,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            display: none;
         }
 
         .icon-radio .radio {
@@ -136,7 +139,7 @@
                     Текст
                 </dt>
                 <dd class="col-sm-9">
-                    <textarea rows="7" type="text" class="form-control" name="text">.</textarea>
+                    <textarea rows="7" type="text" class="form-control" id="text" name="text">.</textarea>
                 </dd>
             </div>
 

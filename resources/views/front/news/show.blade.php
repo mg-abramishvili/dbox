@@ -4,13 +4,17 @@
 <div class="wrapper" style="">
 
     @if($settings->theme == 'default')
-        @include('front.news.show-default')
+        @include('front.news.default.show')
+
     @elseif($settings->theme == 'nast')
-        @include('front.news.show-nast')
+        @include('front.news.nast.show')
+
     @elseif($settings->theme == 'detsad')
-        @include('front.news.show-detsad')
+        @include('front.news.detsad.show')
+
     @elseif($settings->theme == 'kadet')
-        @include('front.news.show-kadet')
+        @include('front.news.kadet.show')
+        
     @endif
 
 </div>

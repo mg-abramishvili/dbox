@@ -3,22 +3,18 @@
 
 <div class="wrapper" style="">
 
-    <!--
-    @if($settings->blur == 1)
-        <div class="bg" style="background: url({{ $settings->background }}); background-size: cover; background-position: 50% 50%; position: absolute; left: -50px; right: -50px; top: -50px; bottom: -50px; width: calc(100% + 100px); height: calc(100% + 100px); filter: blur(8px);"></div>
-    @else
-        <div class="bg" style="background: url({{ $settings->background }}); background-size: cover; background-position: 50% 50%; position: absolute; left: -50px; right: -50px; top: -50px; bottom: -50px; width: calc(100% + 100px); height: calc(100% + 100px);"></div>
-    @endif
-    -->
-
     @if($settings->theme == 'default')
-        @include('front.news.index-default')
+        @include('front.news.default.index')
+
     @elseif($settings->theme == 'nast')
-        @include('front.news.index-nast')
+        @include('front.news.nast.index')
+
     @elseif($settings->theme == 'detsad')
-        @include('front.news.index-detsad')
+        @include('front.news.detsad.index')
+
     @elseif($settings->theme == 'kadet')
-        @include('front.news.index-kadet')
+        @include('front.news.kadet.index')
+
     @endif
 
 </div>
