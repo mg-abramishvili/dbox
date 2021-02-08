@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
-class SettingDetsadSeeder extends Seeder
+class SettingSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,9 +18,10 @@ class SettingDetsadSeeder extends Seeder
     {
         DB::table('settings')->insert([
             'id' => '1',
-            'theme' => 'detsad',
-            'title' => 'Детский сад №210',
-            'logo' => '/logo-h.png',
+            'theme' => 'default',
+            'orientation' => 'horizontal',
+            'title' => 'Default',
+            'logo' => '/img/sber.png',
         ]);
     }
 }

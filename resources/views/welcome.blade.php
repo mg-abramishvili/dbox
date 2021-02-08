@@ -12,19 +12,24 @@
 
     @elseif($settings->theme == 'nast')
         @if($settings->orientation == 'horizontal')
-            @include('front.welcome.welcome-nast-horizontal')
+            @include('front.welcome.nast.horizontal')
         @elseif($settings->orientation == 'vertical')
-            @include('front.welcome.welcome-nast-vertical')
+            @include('front.welcome.nast.vertical')
         @endif
 
     @elseif($settings->theme == 'detsad')
-        @include('welcome-detsad')
-
-    @elseif($settings->theme == 'kadet')
-        @include('welcome-kadet')
+        @if($settings->orientation == 'horizontal')
+            @include('front.welcome.detsad.horizontal')
+        @elseif($settings->orientation == 'vertical')
+            @include('front.welcome.detsad.horizontal')
+        @endif
 
     @elseif($settings->theme == 'book')
-        @include('welcome-book')
+        @if($settings->orientation == 'horizontal')
+            @include('front.welcome.book.horizontal')
+        @elseif($settings->orientation == 'vertical')
+            @include('front.welcome.book.horizontal')
+        @endif
 
     @endif
 

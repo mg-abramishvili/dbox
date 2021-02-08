@@ -18,7 +18,7 @@ class CreateSettingsTable extends Migration
             $table->string('theme');
             $table->string('orientation');
             $table->string('title');
-            $table->string('logo');
+            $table->string('logo')->nullable();
             $table->timestamps();
         });
     }

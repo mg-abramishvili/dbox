@@ -15,20 +15,11 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UserSeeder::class,
-            //SettingKadetSeeder::class,
-            //PageKadetSeeder::class,
-            //PageKadet2Seeder::class,
-
-            //SettingDetsadSeeder::class,
-            //PageDetsadSeeder::class,
-
-            SettingDefaultSeeder::class,
-            PageDefaultSeeder::class,
-
+            SettingSeeder::class,
+            PageSeeder::class,
             TypeSeeder::class,
             IconSeeder::class,
             NewsSeeder::class,
-
             GallerySeeder::class,
             VideoGallerySeeder::class,
         ]);

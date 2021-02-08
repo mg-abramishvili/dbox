@@ -46,8 +46,12 @@ class SettingController extends Controller
         $settings = Setting::find($data['id']);
         $settings->theme = $data['theme'];
         $settings->title = $data['title'];
-        $settings->logo = $data['logo'];
+
+        if (isset($data['logo'])) {
+            $settings->logo = $data['logo'];
+        }
+
         $settings->save();
-        return redirect('/settings');
+        return redirect('/');
     }
 }

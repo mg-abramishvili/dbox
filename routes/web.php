@@ -48,5 +48,5 @@ Route::post('pages/file/{method}','App\Http\Controllers\PageController@file');
 Route::resource('/front-pages', FrontPageController::class);
 
 // Settings
-Route::resource('/settings', SettingController::class)->middleware('auth');
+Route::resource('/settings', SettingController::class);
 Route::post('settings/file/{method}','App\Http\Controllers\SettingController@file');
