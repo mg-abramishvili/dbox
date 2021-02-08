@@ -39,6 +39,7 @@
         contain: true,
         prevNextButtons: false,
         pageDots: false,
+        imagesLoaded: true,
         });
     </script>
 @endsection

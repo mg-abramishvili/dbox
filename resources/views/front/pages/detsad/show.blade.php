@@ -32,27 +32,27 @@
 
     <div class="container" style="margin-top: 45px;">
         <div class="page-item">
-        @foreach($page->types as $type)
-                    @if($type->id == '1')
-                        @include('front.pages_types.type-1.horizontal')
-                    @elseif($type->id == '2')
-                        @include('front.pages_types.type-2.horizontal')
-                    @elseif($type->id == '3')
-                        @include('front.pages_types.type-3.horizontal')
-                    @elseif($type->id == '4')
-                        @include('front.pages_types.type-4.horizontal')
-                    @elseif($type->id == '5')
-                        @include('front.pages_types.type-5.horizontal')
-                    @elseif($type->id == '6')
-                        @include('front.pages_types.type-6.horizontal')
-                    @elseif($type->id == '7')
-                        @include('front.pages_types.type-7.horizontal')
-                    @elseif($type->id == '8')
-                        @include('front.pages_types.type-8.horizontal')
-                    @endif
-
-                @endforeach
-            
+            @forelse($page->types as $type)
+                @if($type->id == '1')
+                    @include('front.pages_types.type-1.horizontal')
+                @elseif($type->id == '2')
+                    @include('front.pages_types.type-2.horizontal')
+                @elseif($type->id == '3')
+                    @include('front.pages_types.type-3.horizontal')
+                @elseif($type->id == '4')
+                    @include('front.pages_types.type-4.horizontal')
+                @elseif($type->id == '5')
+                    @include('front.pages_types.type-5.horizontal')
+                @elseif($type->id == '6')
+                    @include('front.pages_types.type-6.horizontal')
+                @elseif($type->id == '7')
+                    @include('front.pages_types.type-7.horizontal')
+                @elseif($type->id == '8')
+                    @include('front.pages_types.type-8.horizontal')
+                @endif
+            @empty
+                <p>Не задан тип страницы</p>
+            @endforelse
         </div>
     </div>
 

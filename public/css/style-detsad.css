@@ -34,7 +34,7 @@ main {
     height: 1080px;
     overflow: hidden;
     margin: 0 auto;
-    background: url(/detsad/bg.jpg) center center;
+    background: url(/img/detsad/bg.jpg) center center;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -162,23 +162,23 @@ h1 {
 }
 
 .index-item-1 {
-    background-image: url(/detsad/btn-1.jpg);
+    background-image: url(/img/detsad/btn-1.jpg);
 }
 
 .index-item-2 {
-    background-image: url(/detsad/btn-2.jpg);
+    background-image: url(/img/detsad/btn-2.jpg);
 }
 
 .index-item-3 {
-    background-image: url(/detsad/btn-3.jpg);
+    background-image: url(/img/detsad/btn-3.jpg);
 }
 
 .index-item-4 {
-    background-image: url(/detsad/btn-4.jpg);
+    background-image: url(/img/detsad/btn-4.jpg);
 }
 
 .index-item-5 {
-    background-image: url(/detsad/btn-5.jpg);
+    background-image: url(/img/detsad/btn-5.jpg);
 }
 
 .index-item p {
