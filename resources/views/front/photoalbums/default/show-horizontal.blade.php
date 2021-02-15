@@ -1,6 +1,10 @@
 @section('styles')
     @parent
     <link href="{{ asset('css/style-default.css') }}" rel="stylesheet">
+    @if($settings->orientation == 'vertical')
+        @parent
+        <link href="{{ asset('css/style-default-vert.css') }}" rel="stylesheet">
+    @endif
 @endsection
 
     <div class="container">

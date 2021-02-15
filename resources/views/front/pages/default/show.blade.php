@@ -1,6 +1,9 @@
 @section('styles')
     @parent
     <link href="{{ asset('css/style-default.css') }}" rel="stylesheet">
+    @if($settings->orientation == 'vertical')
+        <link href="{{ asset('css/style-default-vert.css') }}" rel="stylesheet">
+    @endif
 @endsection
 
     <div class="default">
@@ -18,8 +21,14 @@
 
             <div class="page-item">
                 @forelse($page->types as $type)
+
                     @if($type->id == '1')
-                        @include('front.pages.default.type-1.horizontal')
+                        @if($settings->orientation == 'horizontal')
+                            @include('front.pages.default.type-1.horizontal')
+                        @elseif($settings->orientation == 'vertical')
+                            @include('front.pages.default.type-1.vertical')
+                        @endif
+
                     @elseif($type->id == '2')
                         @include('front.pages.default.type-2.horizontal')
                     @elseif($type->id == '3')

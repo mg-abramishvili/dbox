@@ -4,7 +4,11 @@
 <div class="wrapper" style="">
 
     @if($settings->theme == 'default')
-        @include('front.news.default.index')
+        @if($settings->orientation == 'horizontal')
+            @include('front.news.default.index-horizontal')
+        @elseif($settings->orientation == 'vertical')
+            @include('front.news.default.index-vertical')
+        @endif
 
     @elseif($settings->theme == 'nast')
         @include('front.news.nast.index')

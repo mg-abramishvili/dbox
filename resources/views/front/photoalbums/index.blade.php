@@ -4,7 +4,12 @@
 <div class="wrapper" style="">
 
         @if($settings->theme == 'default')
-            @include('front.photoalbums.default.index-horizontal')
+            @if($settings->orientation == 'horizontal')
+                @include('front.photoalbums.default.index-horizontal')
+            @elseif($settings->orientation == 'vertical')
+                @include('front.photoalbums.default.index-vertical')
+            @endif
+
         @elseif($settings->theme == 'nast')
             @include('front.photoalbums.nast.index-horizontal')
         @elseif($page->page_type == 'kadet')
