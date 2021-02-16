@@ -21,7 +21,7 @@
                 @foreach($photoalbums as $photoalbum)
                     <div class="gallery-list-item">
                         <a href="/front-photoalbums/{{ $photoalbum->id }}">
-                            <div class="gallery-list-item-pic" style="background: url({{ $photoalbum->cover }}); background-size: cover; background-position: 50% 50%:"></div>
+                            <div class="gallery-list-item-pic" style="background: url({{ $photoalbum->cover }}); background-size: cover; background-position: 50% 50%;"></div>
                             <h2>{{ $photoalbum->title }}</h2>
                         </a>
                     </div>

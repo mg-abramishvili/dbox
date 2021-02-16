@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             SettingSeeder::class,
             PageSeeder::class,
+            PageTypeSeeder::class,
             TypeSeeder::class,
             IconSeeder::class,
             NewsSeeder::class,

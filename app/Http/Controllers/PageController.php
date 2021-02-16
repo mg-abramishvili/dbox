@@ -107,6 +107,8 @@ class PageController extends Controller
         $pages = Page::find($id);
         $pages->delete();
         $pages->children()->delete();
+        $pages->types()->detach();
+        $pages->icons()->detach();
         return redirect('/pages');
     }
 
