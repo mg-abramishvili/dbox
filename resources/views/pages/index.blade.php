@@ -28,14 +28,16 @@
                                     @foreach($page->children as $pg)
                                         <li>
                                             {{ $pg->title }}
-                                            <a href="/pages/{{$pg->id}}/edit">Правка</a>
-                                            <a href="/pages/delete/{{$pg->id}}">Удалить</a>
+                                            <a href="/pages/{{$pg->id}}/edit" class="btn btn-sm btn-warning">Правка</a>
+                                            <a href="/pages/delete/{{$pg->id}}" class="btn btn-sm btn-danger">Удалить</a>
                                         </li>
                                     @endforeach
                             </td>
                             <td style="width: 200px;">
+                            @if(!$page->children->count())
                                 <a href="/pages/{{$page->id}}/edit" class="btn btn-sm btn-warning">Правка</a>
                                 <a href="/pages/delete/{{$page->id}}" class="btn btn-sm btn-danger">Удалить</a>
+                            @endif
                             </td>
                         </tr>
                     @endif
