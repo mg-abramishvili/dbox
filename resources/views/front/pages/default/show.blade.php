@@ -30,7 +30,12 @@
                         @endif
 
                     @elseif($type->id == '2')
-                        @include('front.pages.default.type-2.horizontal')
+                        @if($settings->orientation == 'horizontal')
+                            @include('front.pages.default.type-2.horizontal')
+                        @elseif($settings->orientation == 'vertical')
+                            @include('front.pages.default.type-2.vertical')
+                        @endif
+
                     @elseif($type->id == '3')
                         @include('front.pages.default.type-3.horizontal')
                     @elseif($type->id == '4')

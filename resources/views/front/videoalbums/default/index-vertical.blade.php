@@ -25,7 +25,7 @@
                 @foreach($videoalbums as $videoalbum)
                     <div class="gallery-list-item">
                         <a href="/front-videoalbums/{{ $videoalbum->id }}">
-                            <div class="gallery-list-item-pic" style="background: url({{ $videoalbum->cover }}); background-size: cover; background-position: 50% 50%:"></div>
+                            <div class="gallery-list-item-pic" style="background: url({{ $videoalbum->cover }}); background-size: cover; background-position: 50% 50%;"></div>
                             <h2>{{ $videoalbum->title }}</h2>
                         </a>
                     </div>
@@ -43,8 +43,8 @@
 
     <script>
         var divs = $(".gallery-list .gallery-list-item");
-            for(var i = 0; i < divs.length; i+=16) {
-            divs.slice(i, i+16).wrapAll("<div class='gallery-list-item-slide'></div>");
+            for(var i = 0; i < divs.length; i+=6) {
+            divs.slice(i, i+6).wrapAll("<div class='gallery-list-item-slide'></div>");
         }
     </script>
 

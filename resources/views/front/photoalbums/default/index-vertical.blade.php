@@ -43,8 +43,8 @@
 
     <script>
         var divs = $(".gallery-list .gallery-list-item");
-            for(var i = 0; i < divs.length; i+=16) {
-            divs.slice(i, i+16).wrapAll("<div class='gallery-list-item-slide'></div>");
+            for(var i = 0; i < divs.length; i+=6) {
+            divs.slice(i, i+6).wrapAll("<div class='gallery-list-item-slide'></div>");
         }
     </script>
 

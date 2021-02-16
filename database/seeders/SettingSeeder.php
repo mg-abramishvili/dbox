@@ -19,7 +19,7 @@ class SettingSeeder extends Seeder
         DB::table('settings')->insert([
             'id' => '1',
             'theme' => 'default',
-            'orientation' => 'vertical',
+            'orientation' => 'horizontal',
             'title' => 'Default',
             'logo' => '/img/sber.png',
         ]);
