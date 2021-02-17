@@ -11,12 +11,12 @@
                 <button id="prev"><</button>
                 <span><span id="page_num"></span> / <span id="page_count"></span></span>
                 <button id="next">></button>
-                <select id="spec" onchange="onSpecPage()">
+                <!--<select id="spec" onchange="onSpecPage()">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                </select>
+                </select>-->
             </div>
             <script>
             // If absolute URL from the remote server is provided, configure the CORS
