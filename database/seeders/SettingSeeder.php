@@ -20,8 +20,11 @@ class SettingSeeder extends Seeder
             'id' => '1',
             'theme' => 'default',
             'orientation' => 'horizontal',
-            'title' => 'Default',
+            'title' => 'Заголовок',
             'logo' => '/img/sber.png',
+            'module_photoalbums' => 'y',
+            'module_videoalbums' => 'y',
+            'module_news' => 'y',
         ]);
     }
 }

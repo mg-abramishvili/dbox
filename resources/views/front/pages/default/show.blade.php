@@ -38,16 +38,28 @@
 
                     @elseif($type->id == '3')
                         @include('front.pages.default.type-3.horizontal')
+
                     @elseif($type->id == '4')
                         @include('front.pages.default.type-4.horizontal')
+
                     @elseif($type->id == '5')
                         @include('front.pages.default.type-5.horizontal')
+
                     @elseif($type->id == '6')
                         @include('front.pages.default.type-6.horizontal')
+
                     @elseif($type->id == '7')
                         @include('front.pages.default.type-7.horizontal')
+
                     @elseif($type->id == '8')
                         @include('front.pages.default.type-8.horizontal')
+
+                    @elseif($type->id == '9')
+                        @if($settings->orientation == 'horizontal')
+                            @include('front.pages.default.type-9.horizontal')
+                        @elseif($settings->orientation == 'vertical')
+                            @include('front.pages.default.type-9.vertical')
+                        @endif
                     @endif
                 @empty
                     <p>Не задан тип страницы</p>

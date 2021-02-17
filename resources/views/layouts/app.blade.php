@@ -14,6 +14,7 @@
         <link href="{{ asset('css/filepond.css') }}" rel="stylesheet">
         <link href="{{ asset('css/filepond-plugin-image-preview.css') }}" rel="stylesheet">
         <script src="{{ asset('js/filepond-plugin-image-preview.js') }}"></script>
+        <script src="{{ asset('js/filepond-plugin-file-validate-type.js') }}"></script>
         <script src="{{ asset('js/filepond.js') }}"></script>
         <script src="{{ asset('js/filepond.jquery.js') }}"></script>
         

@@ -23,15 +23,15 @@
             <div class="col-6">
                 <div class="row">
                     <div class="col-5">
-                        @if(isset($photoalbums))
-                            <a href="/front-photoalbums/" class="photogalleries">
+                        @if($settings->module_photoalbums == 'y')
+                            <a href="/front-photoalbums/" class="photogalleries @if($settings->module_videoalbums == 'n') photogalleries-full @endif">
                                 <img src="/img/icon-photogal.svg">
                                 Фотогалерея
                             </a>
                         @endif
 
-                        @if(isset($videoalbums))
-                            <a href="/front-videoalbums/" class="videogalleries">
+                        @if($settings->module_videoalbums == 'y')
+                            <a href="/front-videoalbums/" class="videogalleries @if($settings->module_photoalbums == 'n') videogalleries-full @endif">
                                 <img src="/img/icon-videogal.svg">
                                 Видеогалерея
                             </a>

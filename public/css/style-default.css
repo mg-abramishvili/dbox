@@ -9,6 +9,7 @@ html {
 }
 
 body {
+    margin: 0 !important;
     font-size: 2vh;
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
@@ -138,6 +139,11 @@ main {
     margin-bottom: 4vh;
 }
 
+.photogalleries-full {
+    height: 83.5vh;
+    padding-top: 28vh;
+}
+
 .videogalleries {
     background-color: #4592c9;
     border-radius: 1vh;
@@ -160,6 +166,11 @@ main {
     width: 60%;
     margin: 0 auto;
     margin-bottom: 4vh;
+}
+
+.videogalleries-full {
+    height: 83.5vh;
+    padding-top: 28vh;
 }
 
 .news {
@@ -684,3 +695,15 @@ main {
 }
 
 /* PAGE TYPE 8 */
+
+
+/* type 9 */
+
+.excel-item {
+    width: 94vw;
+    height: 70vh;
+    overflow-x: scroll;
+    padding-top: 2vh;
+}
+
+/* type 9 */

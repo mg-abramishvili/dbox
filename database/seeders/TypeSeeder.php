@@ -53,6 +53,11 @@ class TypeSeeder extends Seeder
             'image' => '/img/no-image.jpg',
         ],
         [
+            'id' => '9',
+            'type' => 'Excel-файл',
+            'image' => '/img/no-image2.jpg',
+        ],
+        [
             'id' => '8',
             'type' => 'Книга',
             'image' => '/img/no-image2.jpg',
