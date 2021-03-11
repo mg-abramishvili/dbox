@@ -20,11 +20,15 @@
                 </div>
             </div>
             
+            @if($settings->module_news == 'y')
             <div class="col-6">
+            @else
+            <div class="col-5">
+            @endif
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col">
                         @if($settings->module_photoalbums == 'y')
-                            <a href="/front-photoalbums/" class="photogalleries @if($settings->module_videoalbums == 'n') photogalleries-full @endif">
+                            <a href="/front-photoalbums/" class="photogalleries @if($settings->module_videoalbums == 'n') photogalleries-full @endif @if($settings->module_news == 'n') photogalleries-nonews @endif">
                                 <img src="/img/icon-photogal.svg">
                                 Фотогалерея
                             </a>
@@ -37,16 +41,25 @@
                             </a>
                         @endif
                     </div>
+
+                    @if($settings->module_news == 'y')
                     <div class="col-7">
                         <a href="/front-news/" class="news">
                             <img src="/img/icon-news.svg">
                             Новости
                         </a>
                     </div>
+                    @endif
+
                 </div>
             </div>
 
+            @if($settings->module_news == 'y')
             <div class="col-6">
+            @else
+            <div class="col-7">
+            @endif
+
                 <div class="user-pages">
                     @foreach($pages as $page)
                         <div class="user-pages-item-item">
