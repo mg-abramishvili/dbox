@@ -45,13 +45,18 @@ class SettingController extends Controller
         $data = request()->all();
         $settings = Setting::find($data['id']);
         $settings->theme = $data['theme'];
+        $settings->orientation = $data['orientation'];
         $settings->title = $data['title'];
 
         if (isset($data['logo'])) {
             $settings->logo = $data['logo'];
         }
 
+        $settings->module_news = $data['module_news'];
+        $settings->module_photoalbums = $data['module_photoalbums'];
+        $settings->module_videoalbums = $data['module_videoalbums'];
+
         $settings->save();
-        return redirect('/');
+        return redirect('/settings');
     }
 }

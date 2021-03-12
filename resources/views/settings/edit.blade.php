@@ -43,9 +43,9 @@
                     Ориентация экрана
                 </dt>
                 <dd class="col-sm-9">
-                    <select class="form-control" disabled>
-                        <option value="">Горизонтальная</option>
-                        <option value="">Вертикальная</option>
+                    <select class="form-control" name="orientation">
+                        <option value="horizontal" @if($settings->orientation == "horizontal") selected @endif>Горизонтальная</option>
+                        <option value="vertical" @if($settings->orientation == "vertical") selected @endif>Вертикальная</option>
                     </select>
                 </dd>
             </div>
@@ -70,6 +70,46 @@
                     <input type="text" class="form-control" name="title" value="{{$settings->title}}">
                 </dd>
             </div>
+
+            <hr>
+
+            <div class="row align-items-center mb-2">    
+                <dt class="col-sm-3">
+                    Модуль "Новости"
+                </dt>
+                <dd class="col-sm-9">
+                    <select class="form-control" name="module_news">
+                        <option value="y" @if($settings->module_news == "y") selected @endif>Вкл</option>
+                        <option value="n" @if($settings->module_news == "n") selected @endif>Выкл</option>
+                    </select>
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-2">    
+                <dt class="col-sm-3">
+                    Модуль "Фотогалерея"
+                </dt>
+                <dd class="col-sm-9">
+                    <select class="form-control" name="module_photoalbums">
+                        <option value="y" @if($settings->module_photoalbums == "y") selected @endif>Вкл</option>
+                        <option value="n" @if($settings->module_photoalbums == "n") selected @endif>Выкл</option>
+                    </select>
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-2">    
+                <dt class="col-sm-3">
+                    Модуль "Видеогалерея"
+                </dt>
+                <dd class="col-sm-9">
+                    <select class="form-control" name="module_videoalbums">
+                        <option value="y" @if($settings->module_videoalbums == "y") selected @endif>Вкл</option>
+                        <option value="n" @if($settings->module_videoalbums == "n") selected @endif>Выкл</option>
+                    </select>
+                </dd>
+            </div>
+
+            <hr>
 
             <div class="row mt-5">
                 <div class="col-12">
