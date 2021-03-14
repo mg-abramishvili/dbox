@@ -20,6 +20,7 @@
                     <select name="theme" id="theme" class="form-control">
                         <option value="default" @if($settings->theme == "default") selected @endif>Стандартный 1</option>
                         <option value="nast" @if($settings->theme == "nast") selected @endif>Стандартный 2</option>
+                        <option value="med" @if($settings->theme == "med") selected @endif>Медцентр</option>
                         <option value="detsad" @if($settings->theme == "detsad") selected @endif>Детский сад</option>
                         <option value="book" @if($settings->theme == "book") selected @endif>Книга</option>
                         <!--<option value="kadet" @if($settings->theme == "kadet") selected @endif>Суворов</option>-->

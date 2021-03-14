@@ -10,7 +10,7 @@
             <div class="col-7 col-7-f">
                 <div class="row">
 
-                    @if(count($news))
+                    @if($settings->module_news == 'y')
                     <div class="col-12">
                         <a href="/front-news/" class="news">
                             <h2>Новости</h2>
@@ -28,7 +28,7 @@
                     </div>
                     @endif
                     
-                    @if(isset($photoalbums))
+                    @if($settings->module_photoalbums == 'y')
                         <div class="col-6">
                             <a href="/front-photoalbums/" class="photogalleries">
                                 <span>Фотогалерея</span>
@@ -36,7 +36,7 @@
                         </div>
                     @endif
 
-                    @if(isset($videoalbums))
+                    @if($settings->module_videoalbums == 'y')
                         <div class="col-6">
                             <a href="/front-videoalbums/" class="videogalleries">
                                 <span>Видеогалерея</span>
