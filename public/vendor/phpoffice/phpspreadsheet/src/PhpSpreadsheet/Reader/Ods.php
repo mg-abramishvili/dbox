@@ -4,9 +4,16 @@ namespace PhpOffice\PhpSpreadsheet\Reader;
 
 use DateTime;
 use DateTimeZone;
+use DOMAttr;
+use DOMDocument;
+use DOMElement;
+use DOMNode;
 use PhpOffice\PhpSpreadsheet\Calculation\Calculation;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
 use PhpOffice\PhpSpreadsheet\Cell\DataType;
+use PhpOffice\PhpSpreadsheet\DefinedName;
+use PhpOffice\PhpSpreadsheet\Reader\Exception as ReaderException;
+use PhpOffice\PhpSpreadsheet\Reader\Ods\PageSettings;
 use PhpOffice\PhpSpreadsheet\Reader\Ods\Properties as DocumentProperties;
 use PhpOffice\PhpSpreadsheet\Reader\Security\XmlScanner;
 use PhpOffice\PhpSpreadsheet\RichText\RichText;
@@ -15,6 +22,8 @@ use PhpOffice\PhpSpreadsheet\Shared\Date;
 use PhpOffice\PhpSpreadsheet\Shared\File;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
+use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
+use Throwable;
 use XMLReader;
 use ZipArchive;
 
@@ -33,8 +42,6 @@ class Ods extends BaseReader
      * Can the current IReader read the file?
      *
      * @param string $pFilename
-     *
-     * @throws Exception
      *
      * @return bool
      */
@@ -73,19 +80,15 @@ class Ods extends BaseReader
             }
 
             $zip->close();
-
-            return $mimeType === 'application/vnd.oasis.opendocument.spreadsheet';
         }
 
-        return false;
+        return $mimeType === 'application/vnd.oasis.opendocument.spreadsheet';
     }
 
     /**
      * Reads names of the worksheets from a file, without parsing the whole file to a PhpSpreadsheet object.
      *
      * @param string $pFilename
-     *
-     * @throws Exception
      *
      * @return string[]
      */
@@ -94,8 +97,8 @@ class Ods extends BaseReader
         File::assertFile($pFilename);
 
         $zip = new ZipArchive();
-        if (!$zip->open($pFilename)) {
-            throw new Exception('Could not open ' . $pFilename . ' for reading! Error opening file.');
+        if ($zip->open($pFilename) !== true) {
+            throw new ReaderException('Could not open ' . $pFilename . ' for reading! Error opening file.');
         }
 
         $worksheetNames = [];
@@ -139,8 +142,6 @@ class Ods extends BaseReader
      *
      * @param string $pFilename
      *
-     * @throws Exception
-     *
      * @return array
      */
     public function listWorksheetInfo($pFilename)
@@ -150,8 +151,8 @@ class Ods extends BaseReader
         $worksheetInfo = [];
 
         $zip = new ZipArchive();
-        if (!$zip->open($pFilename)) {
-            throw new Exception('Could not open ' . $pFilename . ' for reading! Error opening file.');
+        if ($zip->open($pFilename) !== true) {
+            throw new ReaderException('Could not open ' . $pFilename . ' for reading! Error opening file.');
         }
 
         $xml = new XMLReader();
@@ -199,18 +200,18 @@ class Ods extends BaseReader
                             // Step into the row
                             $xml->read();
                             do {
+                                $doread = true;
                                 if ($xml->name == 'table:table-cell' && $xml->nodeType == XMLReader::ELEMENT) {
                                     if (!$xml->isEmptyElement) {
                                         ++$currCells;
                                         $xml->next();
-                                    } else {
-                                        $xml->read();
+                                        $doread = false;
                                     }
                                 } elseif ($xml->name == 'table:covered-table-cell' && $xml->nodeType == XMLReader::ELEMENT) {
                                     $mergeSize = $xml->getAttribute('table:number-columns-repeated');
                                     $currCells += (int) $mergeSize;
-                                    $xml->read();
-                                } else {
+                                }
+                                if ($doread) {
                                     $xml->read();
                                 }
                             } while ($xml->name != 'table:table-row');
@@ -233,8 +234,6 @@ class Ods extends BaseReader
      *
      * @param string $pFilename
      *
-     * @throws Exception
-     *
      * @return Spreadsheet
      */
     public function load($pFilename)
@@ -250,9 +249,6 @@ class Ods extends BaseReader
      * Loads PhpSpreadsheet from file into PhpSpreadsheet instance.
      *
      * @param string $pFilename
-     * @param Spreadsheet $spreadsheet
-     *
-     * @throws Exception
      *
      * @return Spreadsheet
      */
@@ -261,16 +257,16 @@ class Ods extends BaseReader
         File::assertFile($pFilename);
 
         $timezoneObj = new DateTimeZone('Europe/London');
-        $GMT = new \DateTimeZone('UTC');
+        $GMT = new DateTimeZone('UTC');
 
         $zip = new ZipArchive();
-        if (!$zip->open($pFilename)) {
+        if ($zip->open($pFilename) !== true) {
             throw new Exception("Could not open {$pFilename} for reading! Error opening file.");
         }
 
         // Meta
 
-        $xml = simplexml_load_string(
+        $xml = @simplexml_load_string(
             $this->securityScanner->scan($zip->getFromName('meta.xml')),
             'SimpleXMLElement',
             Settings::getLibXmlLoaderOptions()
@@ -283,9 +279,19 @@ class Ods extends BaseReader
 
         (new DocumentProperties($spreadsheet))->load($xml, $namespacesMeta);
 
-        // Content
+        // Styles
 
-        $dom = new \DOMDocument('1.01', 'UTF-8');
+        $dom = new DOMDocument('1.01', 'UTF-8');
+        $dom->loadXML(
+            $this->securityScanner->scan($zip->getFromName('styles.xml')),
+            Settings::getLibXmlLoaderOptions()
+        );
+
+        $pageSettings = new PageSettings($dom);
+
+        // Main Content
+
+        $dom = new DOMDocument('1.01', 'UTF-8');
         $dom->loadXML(
             $this->securityScanner->scan($zip->getFromName('content.xml')),
             Settings::getLibXmlLoaderOptions()
@@ -296,25 +302,33 @@ class Ods extends BaseReader
         $textNs = $dom->lookupNamespaceUri('text');
         $xlinkNs = $dom->lookupNamespaceUri('xlink');
 
+        $pageSettings->readStyleCrossReferences($dom);
+
+        // Content
+
         $spreadsheets = $dom->getElementsByTagNameNS($officeNs, 'body')
             ->item(0)
             ->getElementsByTagNameNS($officeNs, 'spreadsheet');
 
         foreach ($spreadsheets as $workbookData) {
-            /** @var \DOMElement $workbookData */
+            /** @var DOMElement $workbookData */
             $tables = $workbookData->getElementsByTagNameNS($tableNs, 'table');
 
             $worksheetID = 0;
             foreach ($tables as $worksheetDataSet) {
-                /** @var \DOMElement $worksheetDataSet */
+                /** @var DOMElement $worksheetDataSet */
                 $worksheetName = $worksheetDataSet->getAttributeNS($tableNs, 'name');
 
                 // Check loadSheetsOnly
-                if (isset($this->loadSheetsOnly)
+                if (
+                    isset($this->loadSheetsOnly)
                     && $worksheetName
-                    && !in_array($worksheetName, $this->loadSheetsOnly)) {
+                    && !in_array($worksheetName, $this->loadSheetsOnly)
+                ) {
                     continue;
                 }
+
+                $worksheetStyleName = $worksheetDataSet->getAttributeNS($tableNs, 'style-name');
 
                 // Create sheet
                 if ($worksheetID > 0) {
@@ -326,13 +340,13 @@ class Ods extends BaseReader
                     // Use false for $updateFormulaCellReferences to prevent adjustment of worksheet references in
                     // formula cells... during the load, all formulae should be correct, and we're simply
                     // bringing the worksheet name in line with the formula, not the reverse
-                    $spreadsheet->getActiveSheet()->setTitle($worksheetName, false, false);
+                    $spreadsheet->getActiveSheet()->setTitle((string) $worksheetName, false, false);
                 }
 
                 // Go through every child of table element
                 $rowID = 1;
                 foreach ($worksheetDataSet->childNodes as $childNode) {
-                    /** @var \DOMElement $childNode */
+                    /** @var DOMElement $childNode */
 
                     // Filter elements which are not under the "table" ns
                     if ($childNode->namespaceURI != $tableNs) {
@@ -405,11 +419,11 @@ class Ods extends BaseReader
 
                                 // Content
 
-                                /** @var \DOMElement[] $paragraphs */
+                                /** @var DOMElement[] $paragraphs */
                                 $paragraphs = [];
 
                                 foreach ($cellData->childNodes as $item) {
-                                    /** @var \DOMElement $item */
+                                    /** @var DOMElement $item */
 
                                     // Filter text:p elements
                                     if ($item->nodeName == 'text:p') {
@@ -455,9 +469,10 @@ class Ods extends BaseReader
                                             $type = DataType::TYPE_NUMERIC;
                                             $dataValue = (float) $cellData->getAttributeNS($officeNs, 'value');
 
-                                            if (floor($dataValue) == $dataValue) {
-                                                $dataValue = (int) $dataValue;
-                                            }
+                                            // percentage should always be float
+                                            //if (floor($dataValue) == $dataValue) {
+                                            //    $dataValue = (int) $dataValue;
+                                            //}
                                             $formatting = NumberFormat::FORMAT_PERCENTAGE_00;
 
                                             break;
@@ -478,8 +493,6 @@ class Ods extends BaseReader
                                             if (floor($dataValue) == $dataValue) {
                                                 if ($dataValue == (int) $dataValue) {
                                                     $dataValue = (int) $dataValue;
-                                                } else {
-                                                    $dataValue = (float) $dataValue;
                                                 }
                                             }
 
@@ -537,30 +550,7 @@ class Ods extends BaseReader
                                 if ($hasCalculatedValue) {
                                     $type = DataType::TYPE_FORMULA;
                                     $cellDataFormula = substr($cellDataFormula, strpos($cellDataFormula, ':=') + 1);
-                                    $temp = explode('"', $cellDataFormula);
-                                    $tKey = false;
-                                    foreach ($temp as &$value) {
-                                        // Only replace in alternate array entries (i.e. non-quoted blocks)
-                                        if ($tKey = !$tKey) {
-                                            // Cell range reference in another sheet
-                                            $value = preg_replace('/\[([^\.]+)\.([^\.]+):\.([^\.]+)\]/U', '$1!$2:$3', $value);
-
-                                            // Cell reference in another sheet
-                                            $value = preg_replace('/\[([^\.]+)\.([^\.]+)\]/U', '$1!$2', $value);
-
-                                            // Cell range reference
-                                            $value = preg_replace('/\[\.([^\.]+):\.([^\.]+)\]/U', '$1:$2', $value);
-
-                                            // Simple cell reference
-                                            $value = preg_replace('/\[\.([^\.]+)\]/U', '$1', $value);
-
-                                            $value = Calculation::translateSeparator(';', ',', $value, $inBraces);
-                                        }
-                                    }
-                                    unset($value);
-
-                                    // Then rebuild the formula string
-                                    $cellDataFormula = implode('"', $temp);
+                                    $cellDataFormula = $this->convertToExcelFormulaValue($cellDataFormula);
                                 }
 
                                 if ($cellData->hasAttributeNS($tableNs, 'number-columns-repeated')) {
@@ -616,7 +606,8 @@ class Ods extends BaseReader
                                 }
 
                                 // Merged cells
-                                if ($cellData->hasAttributeNS($tableNs, 'number-columns-spanned')
+                                if (
+                                    $cellData->hasAttributeNS($tableNs, 'number-columns-spanned')
                                     || $cellData->hasAttributeNS($tableNs, 'number-rows-spanned')
                                 ) {
                                     if (($type !== DataType::TYPE_NULL) || (!$this->readDataOnly)) {
@@ -648,33 +639,106 @@ class Ods extends BaseReader
                             break;
                     }
                 }
+                $pageSettings->setPrintSettingsForWorksheet($spreadsheet->getActiveSheet(), $worksheetStyleName);
                 ++$worksheetID;
             }
-        }
 
+            $this->readDefinedRanges($spreadsheet, $workbookData, $tableNs);
+            $this->readDefinedExpressions($spreadsheet, $workbookData, $tableNs);
+        }
+        $spreadsheet->setActiveSheetIndex(0);
+
+        if ($zip->locateName('settings.xml') !== false) {
+            $this->processSettings($zip, $spreadsheet);
+        }
         // Return
         return $spreadsheet;
+    }
+
+    private function processSettings(ZipArchive $zip, Spreadsheet $spreadsheet): void
+    {
+        $dom = new DOMDocument('1.01', 'UTF-8');
+        $dom->loadXML(
+            $this->securityScanner->scan($zip->getFromName('settings.xml')),
+            Settings::getLibXmlLoaderOptions()
+        );
+        //$xlinkNs = $dom->lookupNamespaceUri('xlink');
+        $configNs = $dom->lookupNamespaceUri('config');
+        //$oooNs = $dom->lookupNamespaceUri('ooo');
+        $officeNs = $dom->lookupNamespaceUri('office');
+        $settings = $dom->getElementsByTagNameNS($officeNs, 'settings')
+            ->item(0);
+        $this->lookForActiveSheet($settings, $spreadsheet, $configNs);
+        $this->lookForSelectedCells($settings, $spreadsheet, $configNs);
+    }
+
+    private function lookForActiveSheet(DOMNode $settings, Spreadsheet $spreadsheet, string $configNs): void
+    {
+        foreach ($settings->getElementsByTagNameNS($configNs, 'config-item') as $t) {
+            if ($t->getAttributeNs($configNs, 'name') === 'ActiveTable') {
+                try {
+                    $spreadsheet->setActiveSheetIndexByName($t->nodeValue);
+                } catch (Throwable $e) {
+                    // do nothing
+                }
+
+                break;
+            }
+        }
+    }
+
+    private function lookForSelectedCells(DOMNode $settings, Spreadsheet $spreadsheet, string $configNs): void
+    {
+        foreach ($settings->getElementsByTagNameNS($configNs, 'config-item-map-named') as $t) {
+            if ($t->getAttributeNs($configNs, 'name') === 'Tables') {
+                foreach ($t->getElementsByTagNameNS($configNs, 'config-item-map-entry') as $ws) {
+                    $setRow = $setCol = '';
+                    $wsname = $ws->getAttributeNs($configNs, 'name');
+                    foreach ($ws->getElementsByTagNameNS($configNs, 'config-item') as $configItem) {
+                        $attrName = $configItem->getAttributeNs($configNs, 'name');
+                        if ($attrName === 'CursorPositionX') {
+                            $setCol = $configItem->nodeValue;
+                        }
+                        if ($attrName === 'CursorPositionY') {
+                            $setRow = $configItem->nodeValue;
+                        }
+                    }
+                    $this->setSelected($spreadsheet, $wsname, $setCol, $setRow);
+                }
+
+                break;
+            }
+        }
+    }
+
+    private function setSelected(Spreadsheet $spreadsheet, string $wsname, string $setCol, string $setRow): void
+    {
+        if (is_numeric($setCol) && is_numeric($setRow)) {
+            try {
+                $spreadsheet->getSheetByName($wsname)->setSelectedCellByColumnAndRow($setCol + 1, $setRow + 1);
+            } catch (Throwable $e) {
+                // do nothing
+            }
+        }
     }
 
     /**
      * Recursively scan element.
      *
-     * @param \DOMNode $element
-     *
      * @return string
      */
-    protected function scanElementForText(\DOMNode $element)
+    protected function scanElementForText(DOMNode $element)
     {
         $str = '';
         foreach ($element->childNodes as $child) {
-            /** @var \DOMNode $child */
+            /** @var DOMNode $child */
             if ($child->nodeType == XML_TEXT_NODE) {
                 $str .= $child->nodeValue;
             } elseif ($child->nodeType == XML_ELEMENT_NODE && $child->nodeName == 'text:s') {
                 // It's a space
 
                 // Multiple spaces?
-                /** @var \DOMAttr $cAttr */
+                /** @var DOMAttr $cAttr */
                 $cAttr = $child->attributes->getNamedItem('c');
                 if ($cAttr) {
                     $multiplier = (int) $cAttr->nodeValue;
@@ -704,5 +768,100 @@ class Ods extends BaseReader
         $value->createText($is);
 
         return $value;
+    }
+
+    private function convertToExcelAddressValue(string $openOfficeAddress): string
+    {
+        $excelAddress = $openOfficeAddress;
+
+        // Cell range 3-d reference
+        // As we don't support 3-d ranges, we're just going to take a quick and dirty approach
+        //  and assume that the second worksheet reference is the same as the first
+        $excelAddress = preg_replace('/\$?([^\.]+)\.([^\.]+):\$?([^\.]+)\.([^\.]+)/miu', '$1!$2:$4', $excelAddress);
+        // Cell range reference in another sheet
+        $excelAddress = preg_replace('/\$?([^\.]+)\.([^\.]+):\.([^\.]+)/miu', '$1!$2:$3', $excelAddress);
+        // Cell reference in another sheet
+        $excelAddress = preg_replace('/\$?([^\.]+)\.([^\.]+)/miu', '$1!$2', $excelAddress);
+        // Cell range reference
+        $excelAddress = preg_replace('/\.([^\.]+):\.([^\.]+)/miu', '$1:$2', $excelAddress);
+        // Simple cell reference
+        $excelAddress = preg_replace('/\.([^\.]+)/miu', '$1', $excelAddress);
+
+        return $excelAddress;
+    }
+
+    private function convertToExcelFormulaValue(string $openOfficeFormula): string
+    {
+        $temp = explode('"', $openOfficeFormula);
+        $tKey = false;
+        foreach ($temp as &$value) {
+            // Only replace in alternate array entries (i.e. non-quoted blocks)
+            if ($tKey = !$tKey) {
+                // Cell range reference in another sheet
+                $value = preg_replace('/\[\$?([^\.]+)\.([^\.]+):\.([^\.]+)\]/miu', '$1!$2:$3', $value);
+                // Cell reference in another sheet
+                $value = preg_replace('/\[\$?([^\.]+)\.([^\.]+)\]/miu', '$1!$2', $value);
+                // Cell range reference
+                $value = preg_replace('/\[\.([^\.]+):\.([^\.]+)\]/miu', '$1:$2', $value);
+                // Simple cell reference
+                $value = preg_replace('/\[\.([^\.]+)\]/miu', '$1', $value);
+
+                $value = Calculation::translateSeparator(';', ',', $value, $inBraces);
+            }
+        }
+
+        // Then rebuild the formula string
+        $excelFormula = implode('"', $temp);
+
+        return $excelFormula;
+    }
+
+    /**
+     * Read any Named Ranges that are defined in this spreadsheet.
+     */
+    private function readDefinedRanges(Spreadsheet $spreadsheet, DOMElement $workbookData, string $tableNs): void
+    {
+        $namedRanges = $workbookData->getElementsByTagNameNS($tableNs, 'named-range');
+        foreach ($namedRanges as $definedNameElement) {
+            $definedName = $definedNameElement->getAttributeNS($tableNs, 'name');
+            $baseAddress = $definedNameElement->getAttributeNS($tableNs, 'base-cell-address');
+            $range = $definedNameElement->getAttributeNS($tableNs, 'cell-range-address');
+
+            $baseAddress = $this->convertToExcelAddressValue($baseAddress);
+            $range = $this->convertToExcelAddressValue($range);
+
+            $this->addDefinedName($spreadsheet, $baseAddress, $definedName, $range);
+        }
+    }
+
+    /**
+     * Read any Named Formulae that are defined in this spreadsheet.
+     */
+    private function readDefinedExpressions(Spreadsheet $spreadsheet, DOMElement $workbookData, string $tableNs): void
+    {
+        $namedExpressions = $workbookData->getElementsByTagNameNS($tableNs, 'named-expression');
+        foreach ($namedExpressions as $definedNameElement) {
+            $definedName = $definedNameElement->getAttributeNS($tableNs, 'name');
+            $baseAddress = $definedNameElement->getAttributeNS($tableNs, 'base-cell-address');
+            $expression = $definedNameElement->getAttributeNS($tableNs, 'expression');
+
+            $baseAddress = $this->convertToExcelAddressValue($baseAddress);
+            $expression = $this->convertToExcelFormulaValue($expression);
+
+            $this->addDefinedName($spreadsheet, $baseAddress, $definedName, $expression);
+        }
+    }
+
+    /**
+     * Assess scope and store the Defined Name.
+     */
+    private function addDefinedName(Spreadsheet $spreadsheet, string $baseAddress, string $definedName, string $value): void
+    {
+        [$sheetReference] = Worksheet::extractSheetTitle($baseAddress, true);
+        $worksheet = $spreadsheet->getSheetByName($sheetReference);
+        // Worksheet might still be null if we're only loading selected sheets rather than the full spreadsheet
+        if ($worksheet !== null) {
+            $spreadsheet->addDefinedName(DefinedName::createInstance((string) $definedName, $worksheet, $value));
+        }
     }
 }
