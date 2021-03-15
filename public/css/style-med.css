@@ -320,3 +320,264 @@ footer {
 }
 
 /* PHOTOGALS */
+
+
+
+/* PAGE TYPE 1 */
+
+.type-1 .page-detail-text {
+    height: 75vh;
+    overflow-y: auto;
+    padding-right: 2vh;
+    font-size: 2vh !important;
+    line-height: 1.6 !important;
+}
+
+.type-1 .page-detail-text h1 {
+    font-weight: 700;
+    font-size: 4vh;
+    margin-bottom: 3vh !important;
+}
+
+.type-1 .page-detail-text p {
+    margin-bottom: 2vh !important;
+}
+
+.type-1 .page-detail-text::-webkit-scrollbar {
+    width: 1.5vh;
+}
+
+.type-1 .page-detail-text::-webkit-scrollbar-track {
+    background: #B8BDBD;
+}
+
+.type-1 .page-detail-text::-webkit-scrollbar-thumb {
+    background: #ffc940;
+    border: 1px solid #B8BDBD;
+}
+
+.type-1 .page-detail-text::-webkit-scrollbar-thumb:hover {
+    background: #ffc940;
+}
+
+/* PAGE TYPE 1 */
+
+
+
+
+/* PAGE TYPE 2 */
+
+.type-2 .page-detail-image {
+    height: 75vh;
+    border-radius: 1vh;
+}
+
+.type-2 .page-detail-text {
+    height: 75vh;
+    overflow-y: auto;
+    padding-right: 2vh;
+    font-size: 2vh !important;
+    line-height: 1.6 !important;
+}
+
+.type-2 .page-detail-text h1 {
+    font-weight: 700;
+    font-size: 4vh;
+}
+
+.type-2 .page-detail-text p {
+    margin-bottom: 2vh !important;
+}
+
+.type-2 .page-detail-text::-webkit-scrollbar {
+    width: 1.5vh;
+}
+
+.type-2 .page-detail-text::-webkit-scrollbar-track {
+    background: #B8BDBD;
+}
+
+.type-2 .page-detail-text::-webkit-scrollbar-thumb {
+    background: #ffc940;
+    border: 1px solid #B8BDBD;
+}
+
+.type-2 .page-detail-text::-webkit-scrollbar-thumb:hover {
+    background: #ffc940;
+}
+
+/* PAGE TYPE 2 */
+
+
+
+/* PAGE TYPE 3 */
+
+.type-3 #gallery a {
+    height: 75vh;
+    margin-bottom: 1.5vh;
+    display: block;
+    border-radius: 1vh;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.type-3 .page-detail-text {
+    height: 75vh;
+    overflow-y: auto;
+    padding-right: 2vh;
+    font-size: 2vh !important;
+    line-height: 1.6 !important;
+}
+
+.type-3 .page-detail-text h1 {
+    font-weight: 700;
+    font-size: 4vh;
+}
+
+.type-3 .page-detail-text p {
+    margin-bottom: 2vh !important;
+}
+
+.type-3 .page-detail-text::-webkit-scrollbar {
+    width: 1.5vh;
+}
+
+.type-3 .page-detail-text::-webkit-scrollbar-track {
+    background: #B8BDBD;
+}
+
+.type-3 .page-detail-text::-webkit-scrollbar-thumb {
+    background: #ffc940;
+    border: 1px solid #B8BDBD;
+}
+
+.type-3 .page-detail-text::-webkit-scrollbar-thumb:hover {
+    background: #ffc940;
+}
+
+/* PAGE TYPE 3 */
+
+
+
+
+/* PAGE TYPE 4 */
+
+.type-4 .gallery-item {
+    width: 100%;
+}
+
+/* PAGE TYPE 4 */
+
+
+
+
+/* PAGE TYPE 6 */
+
+.type-6 .user-pages {
+    height: auto;
+    background: none;
+    margin-left: -3vh;
+    margin-right: -3vh;
+    margin-top: -6vh;
+}
+
+.type-6 .user-pages-item {
+    width: 25%;
+}
+
+.type-6 .user-pages-item-item {
+    height: 40vh;
+    background-color: #ffc940;
+    margin: 6vh 3vh;
+}
+
+.type-6 .user-pages-item-item img {
+    width: 40%;
+    margin-bottom: 3vh;
+}
+
+/* PAGE TYPE 6 */
+
+
+
+/* PAGE TYPE 7 */
+
+.type-7 .text {
+    height: 73vh;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.type-7 .text::-webkit-scrollbar {
+    width: 1.5vh;
+}
+
+.type-7 .text::-webkit-scrollbar-track {
+    background: #B8BDBD;
+}
+
+.type-7 .text::-webkit-scrollbar-thumb {
+    background: #ffc940;
+    border: 1px solid #B8BDBD;
+}
+
+.type-7 .text::-webkit-scrollbar-thumb:hover {
+    background: #ffc940;
+}
+
+  .type-7 .pdf-nav {
+      text-align: center;
+      margin-top: 1vh;
+  }
+
+  .type-7 #prev,
+  .type-7 #next {
+    background: #ffc940;
+    color: #fff;
+    padding: 0.5vh 2vh;
+    box-shadow: none;
+    border: 0;
+    font-size: 2vh;
+    font-weight: bold;
+    border-radius: 1vh;
+  }
+
+/* PAGE TYPE 7 */
+
+
+
+/* PAGE TYPE 8 */
+
+.buttons {
+    position: absolute;
+    z-index: 20;
+    left: 50px;
+    right: 50px;
+    text-align: center;
+}
+
+#prevBtn,
+#nextBtn {
+    background: #ffc940;
+    color: #fff;
+    padding: 10px 30px;
+    box-shadow: none;
+    border: 0;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+/* PAGE TYPE 8 */
+
+
+/* type 9 */
+
+.excel-item {
+    width: 94vw;
+    height: 70vh;
+    overflow-x: scroll;
+    padding-top: 2vh;
+}
+
+/* type 9 */
