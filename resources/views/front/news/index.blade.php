@@ -10,6 +10,13 @@
             @include('front.news.default.index-vertical')
         @endif
 
+    @elseif($settings->theme == 'med')
+        @if($settings->orientation == 'horizontal')
+            @include('front.news.med.index-horizontal')
+        @elseif($settings->orientation == 'vertical')
+            @include('front.news.med.index-vertical')
+        @endif
+
     @elseif($settings->theme == 'nast')
         @include('front.news.nast.index')
 

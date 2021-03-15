@@ -10,12 +10,20 @@
                 @include('front.videoalbums.default.index-vertical')
             @endif
 
+        @elseif($settings->theme == 'med')
+            @if($settings->orientation == 'horizontal')
+                @include('front.videoalbums.med.index-horizontal')
+            @elseif($settings->orientation == 'vertical')
+                @include('front.videoalbums.med.index-vertical')
+            @endif
+
         @elseif($settings->theme == 'nast')
             @include('front.videoalbums.index-nast')
         @elseif($settings->theme == 'kadet')
             @include('front.videoalbums.index-kadet')
         @elseif($page->page_type == 'detsad')
             @include('front.videoalbums.index-detsad')
+
         @endif
 
 </div>

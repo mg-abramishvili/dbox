@@ -4,7 +4,18 @@
 <div class="wrapper" style="">
 
     @if($settings->theme == 'default')
-        @include('front.news.default.show')
+        @if($settings->orientation == 'horizontal')
+            @include('front.news.default.show-horizontal')
+        @elseif($settings->orientation == 'vertical')
+            @include('front.news.default.show-vertical')
+        @endif
+
+    @elseif($settings->theme == 'med')
+        @if($settings->orientation == 'horizontal')
+            @include('front.news.med.show-horizontal')
+        @elseif($settings->orientation == 'vertical')
+            @include('front.news.med.show-vertical')
+        @endif
 
     @elseif($settings->theme == 'nast')
         @include('front.news.nast.show')
@@ -14,7 +25,7 @@
 
     @elseif($settings->theme == 'kadet')
         @include('front.news.kadet.show')
-        
+
     @endif
 
 </div>
