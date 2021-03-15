@@ -1,6 +1,10 @@
 @section('styles')
     @parent
-    <link href="{{ asset('css/style-default.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style-med.css') }}" rel="stylesheet">
+    @if($settings->orientation == 'vertical')
+        @parent
+        <link href="{{ asset('css/style-med-vert.css') }}" rel="stylesheet">
+    @endif
 @endsection
 
     <div class="container">
@@ -21,13 +25,7 @@
                 @foreach($photoalbums as $photoalbum)
                     <div class="gallery-list-item">
                         <a href="/front-photoalbums/{{ $photoalbum->id }}">
-                            @if(is_array($photoalbum->gallery))
-                                @foreach($photoalbum->gallery as $k=>$v)
-                                    @if ($loop->first)
-                                        <div class="gallery-list-item-pic" style="background: url({{ $v }}); background-size: cover; background-position: 50% 50%;"></div>
-                                    @endif
-                                @endforeach
-                            @endif
+                            <div class="gallery-list-item-pic" style="background: url({{ $photoalbum->cover }}); background-size: cover; background-position: 50% 50%:"></div>
                             <h2>{{ $photoalbum->title }}</h2>
                         </a>
                     </div>
@@ -45,8 +43,8 @@
 
     <script>
         var divs = $(".gallery-list .gallery-list-item");
-            for(var i = 0; i < divs.length; i+=8) {
-            divs.slice(i, i+8).wrapAll("<div class='gallery-list-item-slide'></div>");
+            for(var i = 0; i < divs.length; i+=6) {
+            divs.slice(i, i+6).wrapAll("<div class='gallery-list-item-slide'></div>");
         }
     </script>
 

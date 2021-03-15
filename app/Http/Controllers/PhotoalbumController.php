@@ -89,7 +89,6 @@ class PhotoalbumController extends Controller
         $data = request()->all();
         $photoalbums = new Photoalbum();
         $photoalbums->title = $data['title'];
-        $photoalbums->cover = $data['cover'];
         if (!isset($data['gallery'])) {
             $data['gallery'] = [];
         }
@@ -104,7 +103,6 @@ class PhotoalbumController extends Controller
         $data = request()->all();
         $photoalbums = Photoalbum::find($data['id']);
         $photoalbums->title = $data['title'];
-        $photoalbums->cover = $data['cover'];
         if (!isset($data['gallery'])) {
             $data['gallery'] = [];
         }

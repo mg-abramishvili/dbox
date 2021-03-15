@@ -16,7 +16,6 @@ class CreatePhotoalbumsTable extends Migration
         Schema::create('photoalbums', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('cover');
             $table->longtext('gallery');
             $table->timestamps();
         });

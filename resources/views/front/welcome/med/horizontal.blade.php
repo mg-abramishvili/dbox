@@ -30,7 +30,7 @@
                         });
 
                         function startRefresh() {
-                            setTimeout(startRefresh,1000);
+                            setTimeout(startRefresh,60000);
                             $.get('/timeonly.php', function(data) {
                                 $('.header-time').html(data);    
                             });
@@ -95,7 +95,9 @@
 
     <footer>
         <div class="container">
-            HOME
+            <a href="/" class="med-home">
+                <img src="/img/medhome.svg" alt="">
+            </a>
         </div>
     </footer>
 

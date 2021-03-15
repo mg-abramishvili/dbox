@@ -19,151 +19,126 @@ class GallerySeeder extends Seeder
         DB::table('photoalbums')->insert([
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
             [
             'title' => 'Тестовый альбом',
-            'cover' => '/img/no-image.jpg',
             'gallery'=> '["\/img\/no-image.jpg","\/img\/no-image2.jpg","\/img\/no-image.jpg","\/img\/no-image2.jpg"]',
             'created_at' => '2020-09-01 00:00:00'
             ],
