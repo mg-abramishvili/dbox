@@ -7,7 +7,7 @@
                 <h1>Новости</h1>
             </div>
             <div class="col-6" style="text-align: right;">
-                <a href="/news/create" class="btn btn-primary">Создать новость</a>
+                <a href="/news/create" class="btn btn-primary">Добавить</a>
             </div>
         </div>
 
@@ -18,9 +18,6 @@
                 <tr>
                     <td style="width: 100px; font-size: 13px;">
                         {{$new->created_at->format('d.m.Y')}}
-                    </td>
-                    <td style="width: 135px;">
-                        <img src="{{$new->image}}" style="height: 60px; max-width: 130px;">
                     </td>
                     <td style="text-align: left; padding-left: 20px; padding-right: 20px;">
                         {{$new->title}}
@@ -35,7 +32,7 @@
                             @endforeach
                         @endif
                     </td>-->
-                    <td style="width: 200px;">
+                    <td style="width: 25%;">
                         <a href="/news/{{$new->id}}/edit" class="btn btn-sm btn-warning">Правка</a>
                         <a href="/news/delete/{{$new->id}}" class="btn btn-sm btn-danger">Удалить</a>
                     </td>

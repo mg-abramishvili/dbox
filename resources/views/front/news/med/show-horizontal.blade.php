@@ -44,10 +44,17 @@
     <div class="container" style="margin-top: 45px;">
         <div class="news-item">
             <div class="row">
+                @if($news->image)
                 <div class="col-4">
                     <div class="news-item-img" style="background-image: url({{ $news->image }});"></div>
                 </div>
+                @endif
+
+                @if($news->image)
                 <div class="col-8">
+                @else
+                <div class="col-12">
+                @endif
                     <div class="news-item-text">
                         <span>{{$news->created_at->format('d.m.Y')}}</span>
                         <h1>{{ $news->title }}</h1>

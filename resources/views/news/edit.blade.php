@@ -117,12 +117,14 @@
             },
 
             files: [
+            @if(isset($news->image))
                 {
                     source: '{{ $news->image }}',
                     options: {
                         type: 'local',
                     }
-                }
+                },
+            @endif
             ]
 
         });

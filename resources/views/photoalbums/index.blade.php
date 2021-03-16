@@ -7,7 +7,7 @@
                 <h1>Фотогалереи</h1>
             </div>
             <div class="col-6" style="text-align: right;">
-                <a href="/photoalbums/create" class="btn btn-primary">Создать галерею</a>
+                <a href="/photoalbums/create" class="btn btn-primary">Добавить</a>
             </div>
         </div>
 
@@ -19,9 +19,6 @@
                     <td style="width: 100px; font-size: 13px;">
                         {{$photoalbum->created_at->format('d.m.Y')}}
                     </td>
-                    <td style="width: 135px;">
-                        <img src="{{$photoalbum->cover}}" style="height: 60px; max-width: 130px;">
-                    </td>
                     <td style="text-align: left; padding-left: 20px; padding-right: 20px;">
                         {{$photoalbum->title}}
                     </td>
@@ -32,7 +29,7 @@
                             @endforeach
                         @endif
                     </td>-->
-                    <td style="width: 200px;">
+                    <td style="width: 25%;">
                         <a href="/photoalbums/{{$photoalbum->id}}/edit" class="btn btn-sm btn-warning">Правка</a>
                         <a href="/photoalbums/delete/{{$photoalbum->id}}" class="btn btn-sm btn-danger">Удалить</a>
                     </td>

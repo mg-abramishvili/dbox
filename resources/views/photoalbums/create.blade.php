@@ -4,7 +4,7 @@
     <div class="px-4 py-4">
         <div class="row align-items-center mb-4">
             <div class="col-6">
-                <h1>Создание галереи</h1>
+                <h1>Новая фотогалерея</h1>
             </div>
         </div>
 
@@ -12,19 +12,29 @@
             
             <div class="row align-items-center mb-2">
                 <dt class="col-sm-3">
-                    Заголовок
+                    Название
                 </dt>
                 <dd class="col-sm-9">
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="title">
+                    <input type="text" class="form-control" name="title">
+                    @if ($errors->has('title'))
+                        <div class="alert alert-danger">
+                            Укажите название
+                        </div>
+                    @endif
                 </dd>
             </div>
 
             <div class="row align-items-center mb-2">
                 <dt class="col-sm-3">
-                    Галлерея
+                    Картинки
                 </dt>
                 <dd class="col-sm-9">
                     <input class="gallery" type="file" name="gallery[]" multiple>
+                    @if ($errors->has('gallery'))
+                        <div class="alert alert-danger">
+                            Загрузите картинки
+                        </div>
+                    @endif
                 </dd>
             </div>
 

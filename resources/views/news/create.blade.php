@@ -4,7 +4,7 @@
     <div class="px-4 py-4">
         <div class="row align-items-center mb-4">
             <div class="col-6">
-                <h1>Создание новости</h1>
+                <h1>Добавление новости</h1>
             </div>
         </div>
 

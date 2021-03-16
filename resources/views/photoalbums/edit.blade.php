@@ -24,15 +24,6 @@
 
             <div class="row align-items-center mb-2">
                 <dt class="col-sm-3">
-                    Обложка
-                </dt>
-                <dd class="col-sm-9">
-                    <input class="cover" type="file" name="cover" x-ref="cover">
-                </dd>
-            </div>
-
-            <div class="row align-items-center mb-2">
-                <dt class="col-sm-3">
                     Галлерея
                 </dt>
                 <dd class="col-sm-9">

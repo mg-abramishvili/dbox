@@ -85,8 +85,13 @@ class PhotoalbumController extends Controller
         return redirect('/photoalbums');
     }
 
-    public function store()
+    public function store(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'gallery' => 'required',
+        ]);
+
         $data = request()->all();
         $photoalbums = new Photoalbum();
         $photoalbums->title = $data['title'];
@@ -98,8 +103,12 @@ class PhotoalbumController extends Controller
         return redirect('/photoalbums');
     }
 
-    public function update()
+    public function update(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'gallery' => 'required',
+        ]);
 
         $data = request()->all();
         $photoalbums = Photoalbum::find($data['id']);

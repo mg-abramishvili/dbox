@@ -90,14 +90,15 @@ class NewsController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'text' => 'required',
-            'image' => 'required',
         ]);
 
         $data = request()->all();
         $news = new News();
         $news->title = $data['title'];
         $news->text = $data['text'];
-        $news->image = $data['image'];
+        if (isset($data['image'])) {
+            $news->image = $data['image'];
+        }
         $news->save();
         return redirect('/news');
     }
@@ -107,14 +108,15 @@ class NewsController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'text' => 'required',
-            'image' => 'required',
         ]);
 
         $data = request()->all();
         $news = News::find($data['id']);
         $news->title = $data['title'];
         $news->text = $data['text'];
-        $news->image = $data['image'];
+        if (isset($data['image'])) {
+            $news->image = $data['image'];
+        }
         $news->save();
         return redirect('/news');
     }

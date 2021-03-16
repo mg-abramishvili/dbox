@@ -11,7 +11,7 @@ class FrontNewsController extends Controller
     public function index()
     {
         $settings = Setting::where('id', '1')->first();
-        $news = News::get();
+        $news = News::orderBy('created_at', 'desc')->get();
         $news_nast = News::paginate(3);
         return view('front.news.index', compact('news', 'settings', 'news_nast'));
     }
