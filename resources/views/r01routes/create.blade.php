@@ -88,11 +88,10 @@
     </div>
 
     @if ($errors->has('x_01'))
-                        <div class="alert alert-danger">
-                            <!--{{ $errors->first('x_01') }}-->
-                            Нарисуйте маршрут
-                        </div>
-                    @endif
+        <div class="alert alert-danger">
+            Нарисуйте маршрут
+        </div>
+    @endif
 
     <div class="p-4">
         <div class="row align-items-center mb-4">
@@ -109,6 +108,11 @@
                 </dt>
                 <dd class="col-sm-9">
                     <input type="text" class="form-control" name="title" id="title">
+                    @if ($errors->has('title'))
+                        <div class="alert alert-danger">
+                            Укажите название
+                        </div>
+                    @endif
                 </dd>
             </div>
 

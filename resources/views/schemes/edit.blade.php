@@ -5,7 +5,7 @@
         <div class="row align-items-center mb-4">
             <div class="col-6">
                 <h1>{{$schemes->title}}</h1>
-                <p style="color: #999">Редактирование схемы</p>
+                <p style="color: #999">Редактирование плана</p>
             </div>
         </div>
 
@@ -31,7 +31,7 @@
 
             <div class="row align-items-center mb-2">
                 <dt class="col-sm-3">
-                    Картинка
+                    Картинка с планом
                 </dt>
                 <dd class="col-sm-9">
                     <input class="image" type="file" name="image" x-ref="image">
@@ -39,7 +39,7 @@
                     @if ($errors->has('image'))
                         <div class="alert alert-danger">
                             <!--{{ $errors->first('image') }}-->
-                            Укажите картинку
+                            Загрузите картинку с планом
                         </div>
                     @endif
                 </dd>

@@ -41,6 +41,7 @@ class R01routeController extends Controller
     {
         $this->validate($request, [
             'scheme_id' => 'required',
+            'title' => 'required',
             'x_01' => 'required',
         ]);
 
@@ -150,23 +151,6 @@ class R01routeController extends Controller
         $r01routes->p_x_112 = $data['p_x_112'];
         $r01routes->p_y_112 = $data['p_y_112'];
         $r01routes->save();
-        return redirect('/r01routes');
-    }
-
-    public function update(Request $request)
-    {
-        $this->validate($request, [
-            'stores' => 'required',
-            'scheme_id' => 'required',
-            'x_01' => 'required',
-        ]);
-
-        $data = request()->all();
-        $r01routes = R01route::find($data['id']);
-        $r01routes->title = $data['title'];
-        $r01routes->save();
-        $r01routes->stores()->detach();
-        $r01routes->stores()->attach($request->stores, ['r01route_id' => $r01routes->id]);
         return redirect('/r01routes');
     }
 }
