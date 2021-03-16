@@ -20,6 +20,7 @@
 
         <link rel="stylesheet" href="{{ asset('css/flickity.css') }}">
         <script src="{{ asset('js/flickity.pkgd.min.js') }}"></script>
+        <script src="{{ asset('js/panzoom.js') }}"></script>
 
         <script src="{{ asset('js/turn.min.js') }}"></script>
 
@@ -183,5 +184,46 @@
                 });
             });
         </script>
+
+<script>
+        $(document).ready(function(){
+            $("svg").find("text").hide();
+            $("svg").find("text:first").show();
+            $("svg").find("text:last").show();
+            //$("#wrapper").html($("#wrapper").html());
+        });
+    </script>
+
+    <script> // ZOOM
+        const elem = document.getElementById('wrapper-inner');
+            const zoomInButton = document.getElementById('zoomin');
+            const zoomOutButton = document.getElementById('zoomout');
+            const resetButton = document.getElementById('reset');
+            const panzoom = Panzoom(elem, {
+                contain: 'outside',
+                duration: 200,
+                startX: 0,
+                startY: 0,
+                startScale: 1,
+                maxScale: 6,
+                minScale: 1,
+            });
+            const parent = elem.parentElement
+        parent.addEventListener('wheel', panzoom.zoomWithWheel);
+        zoomInButton.addEventListener('click', panzoom.zoomIn)
+        zoomOutButton.addEventListener('click', panzoom.zoomOut)
+        resetButton.addEventListener('click', panzoom.reset)
+    </script>
+
+<script>
+        document.onkeydown = function(e){
+            e = e || window.event;
+            var key = e.which || e.keyCode;
+            if(key===65){
+                window.location.href = "/login";
+            }
+        }        
+        </script>
+
     </body>
 </html>

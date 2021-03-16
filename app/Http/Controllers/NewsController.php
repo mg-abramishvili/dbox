@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Setting;
 use App\Models\News;
 use Illuminate\Http\Request;
 
@@ -9,24 +10,24 @@ class NewsController extends Controller
 {
     public function index()
     {
+        $settings = Setting::where('id', '1')->first();
         $news = News::get();
-        return view('news.index', compact('news'));
+        return view('news.index', compact('news', 'settings'));
 
     }
 
     public function create()
     {
-
-        return view('news.create');
+        $settings = Setting::where('id', '1')->first();
+        return view('news.create', compact('settings'));
 
     }
 
     public function edit($id)
     {
-
+        $settings = Setting::where('id', '1')->first();
         $news = News::find($id);
-
-        return view('news.edit', compact('news'));
+        return view('news.edit', compact('news', 'settings'));
 
 
     }

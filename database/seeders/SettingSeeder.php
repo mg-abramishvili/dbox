@@ -18,13 +18,14 @@ class SettingSeeder extends Seeder
     {
         DB::table('settings')->insert([
             'id' => '1',
-            'theme' => 'default',
+            'theme' => 'med',
             'orientation' => 'horizontal',
             'title' => 'Заголовок',
-            'logo' => '/img/sber.png',
+            'logo' => '/img/med-logo.png',
             'module_photoalbums' => 'y',
             'module_videoalbums' => 'y',
             'module_news' => 'y',
+            'module_routes' => 'y',
         ]);
     }
 }

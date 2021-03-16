@@ -12,26 +12,29 @@ class PageController extends Controller
 {
     public function index()
     {
+        $settings = Setting::where('id', '1')->first();
         $pages = Page::get();
-        return view('pages.index', compact('pages'));
+        return view('pages.index', compact('pages', 'settings'));
 
     }
 
     public function create()
     {
+        $settings = Setting::where('id', '1')->first();
         $parentlist = Page::all();
         $icons = Icon::all();
         $types = Type::all();
-        return view('pages.create', compact('parentlist', 'icons', 'types'));
+        return view('pages.create', compact('parentlist', 'icons', 'types', 'settings'));
     }
 
     public function edit($id)
     {
+        $settings = Setting::where('id', '1')->first();
         $page = Page::find($id);
         $parentlist = Page::all();
         $icons = Icon::all();
         $types = Type::all();
-        return view('pages.edit', compact('page', 'parentlist', 'icons', 'types'));
+        return view('pages.edit', compact('page', 'parentlist', 'icons', 'types', 'settings'));
     }
 
     public function file($type)

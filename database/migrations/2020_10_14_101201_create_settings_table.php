@@ -22,6 +22,7 @@ class CreateSettingsTable extends Migration
             $table->string('module_photoalbums')->nullable();
             $table->string('module_videoalbums')->nullable();
             $table->string('module_news')->nullable();
+            $table->string('module_routes')->nullable();
             $table->timestamps();
         });
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Setting;
 use App\Models\Videoalbum;
 use Illuminate\Http\Request;
 
@@ -9,24 +10,24 @@ class VideoalbumController extends Controller
 {
     public function index()
     {
+        $settings = Setting::where('id', '1')->first();
         $videoalbums = Videoalbum::get();
-        return view('videoalbums.index', compact('videoalbums'));
+        return view('videoalbums.index', compact('videoalbums', 'settings'));
 
     }
 
     public function create()
     {
-
-        return view('videoalbums.create');
+        $settings = Setting::where('id', '1')->first();
+        return view('videoalbums.create', compact('settings'));
 
     }
 
     public function edit($id)
     {
-
+        $settings = Setting::where('id', '1')->first();
         $videoalbum = Videoalbum::find($id);
-
-        return view('videoalbums.edit', compact('videoalbum'));
+        return view('videoalbums.edit', compact('videoalbum', 'settings'));
 
 
     }

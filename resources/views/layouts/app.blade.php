@@ -42,18 +42,43 @@
                     <li class="nav-item {{ Request::is('pages') ? 'active' : '' }}">
                         <a href="{{ url('/pages') }}" class="nav-link">Страницы</a>
                     </li>
+
+                    @if($settings->module_news == 'y')
                     <li class="nav-item {{ Request::is('news') ? 'active' : '' }}">
                         <a href="{{ url('/news') }}" class="nav-link">Новости</a>
                     </li>
+                    @endif
+
+                    @if($settings->module_photoalbums == 'y')
                     <li class="nav-item {{ Request::is('photoalbums') ? 'active' : '' }}">
                         <a href="{{ url('/photoalbums') }}" class="nav-link">Фотогалерея</a>
                     </li>
+                    @endif
+
+                    @if($settings->module_videoalbums == 'y')
                     <li class="nav-item {{ Request::is('videoalbums') ? 'active' : '' }}">
                         <a href="{{ url('/videoalbums') }}" class="nav-link">Видеогалерея</a>
                     </li>
-                    <!--<li class="nav-item {{ Request::is('settings') ? 'active' : '' }}">
+                    @endif
+
+                    @if($settings->module_routes == 'y')
+                    <li class="nav-item {{ Request::is('schemes') ? 'active' : '' }}">
+                        <a href="{{ url('/schemes') }}" class="nav-link">Планы помещений</a>
+                    </li>
+                    @endif
+
+                    @if($settings->module_routes == 'y')
+                    <li class="nav-item {{ Request::is('r01routes') ? 'active' : '' }}">
+                        <a href="{{ url('/r01routes') }}" class="nav-link">↳ Маршруты от К1</a>
+                    </li>
+                    @endif
+
+                    @if(\Auth::user()->id == '1')
+                    <li class="nav-item {{ Request::is('settings') ? 'active' : '' }}">
                         <a href="{{ url('/settings') }}" class="nav-link">Настройки</a>
-                    </li>-->
+                    </li>
+                    @endif
+
                     <li class="nav-item">
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -68,5 +93,7 @@
         </div>
         @endauth
 
+
+        @yield('scripts')
     </body>
 </html>

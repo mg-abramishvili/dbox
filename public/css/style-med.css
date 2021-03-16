@@ -714,3 +714,75 @@ footer {
 }
 
 /* type 9 */
+
+
+
+
+/* ROUTES */
+
+.key-anim01,
+.key-anim02,
+.key-anim03,
+.key-anim04,
+.key-anim05,
+.key-anim06,
+.key-anim07,
+.key-anim08,
+.key-anim09,
+.key-anim10,
+.key-anim11,
+.key-anim12 {
+    stroke-dasharray: 10;
+    stroke-dashoffset: -2000;
+    animation: Drawpath 20s linear infinite;
+}
+
+@keyframes Drawpath {
+    from {
+        stroke-dashoffset: -2000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.wrapperm {
+    width: 1080px;
+    height: 800px;
+    position: relative;
+    margin: 0 auto;
+    overflow: visible;
+    background-color: #fff;
+}
+
+#wrapper-inner {
+    width: 800px;
+    height: 600px;
+}
+
+.map {
+    margin-top: 30px;
+}
+
+.map-slide {
+    width: 100%;
+}
+
+.map img {
+    width: 800px;
+    height: 450px;
+    display: block;
+    margin: 0 auto;
+}
+
+.map-path {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 800px;
+    height: 450px;
+}
+
+/* ROUTES */

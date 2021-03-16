@@ -110,6 +110,18 @@
                 </dd>
             </div>
 
+            <div class="row align-items-center mb-2">    
+                <dt class="col-sm-3">
+                    Модуль "Маршруты"
+                </dt>
+                <dd class="col-sm-9">
+                    <select class="form-control" name="module_routes">
+                        <option value="y" @if($settings->module_routes == "y") selected @endif>Вкл</option>
+                        <option value="n" @if($settings->module_routes == "n") selected @endif>Выкл</option>
+                    </select>
+                </dd>
+            </div>
+
             <hr>
 
             <div class="row mt-5">

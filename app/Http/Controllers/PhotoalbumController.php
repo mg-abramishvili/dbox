@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Setting;
 use App\Models\Photoalbum;
 use Illuminate\Http\Request;
 
@@ -9,24 +10,24 @@ class PhotoalbumController extends Controller
 {
     public function index()
     {
+        $settings = Setting::where('id', '1')->first();
         $photoalbums = Photoalbum::get();
-        return view('photoalbums.index', compact('photoalbums'));
+        return view('photoalbums.index', compact('photoalbums', 'settings'));
 
     }
 
     public function create()
     {
-
-        return view('photoalbums.create');
+        $settings = Setting::where('id', '1')->first();
+        return view('photoalbums.create', compact('settings'));
 
     }
 
     public function edit($id)
     {
-
+        $settings = Setting::where('id', '1')->first();
         $photoalbum = Photoalbum::find($id);
-
-        return view('photoalbums.edit', compact('photoalbum'));
+        return view('photoalbums.edit', compact('photoalbum', 'settings'));
 
 
     }
