@@ -108,6 +108,42 @@
                             </dd>
                         </div>
 
+                        <div class="row align-items-center mb-2">    
+                            <dt class="col-sm-3">
+                                Модуль "Новости"
+                            </dt>
+                            <dd class="col-sm-9">
+                                <input type="text" class="form-control" name="module_news" id="module_news">
+                            </dd>
+                        </div>
+
+                        <div class="row align-items-center mb-2">    
+                            <dt class="col-sm-3">
+                                Модуль "Фотоагалерея"
+                            </dt>
+                            <dd class="col-sm-9">
+                                <input type="text" class="form-control" name="module_photoalbums" id="module_photoalbums">
+                            </dd>
+                        </div>
+
+                        <div class="row align-items-center mb-2">    
+                            <dt class="col-sm-3">
+                                Модуль "Видеогалерея"
+                            </dt>
+                            <dd class="col-sm-9">
+                                <input type="text" class="form-control" name="module_videoalbums" id="module_videoalbums">
+                            </dd>
+                        </div>
+
+                        <div class="row align-items-center mb-2">    
+                            <dt class="col-sm-3">
+                                Модуль "Маршруты"
+                            </dt>
+                            <dd class="col-sm-9">
+                                <input type="text" class="form-control" name="module_routes" id="module_routes">
+                            </dd>
+                        </div>
+
                         <div class="row mt-5">
                             <div class="col-12">
                                 <button type="submit" class="btn btn-lg btn-success">Активировать</button>
@@ -141,6 +177,10 @@
                             dreambox_theme = data.parameters[0].dreambox_theme;
                             dreambox_orientation = data.parameters[0].dreambox_orientation;
                             dreambox_title = data.parameters[0].dreambox_title;
+                            dreambox_module_news = data.parameters[0].dreambox_module_news;
+                            dreambox_module_photoalbums = data.parameters[0].dreambox_module_photoalbums;
+                            dreambox_module_videoalbums = data.parameters[0].dreambox_module_videoalbums;
+                            dreambox_module_routes = data.parameters[0].dreambox_module_routes;
 
                             count = 'y';
 
@@ -166,6 +206,10 @@
                                 $('#theme').val(dreambox_theme);
                                 $('#orientation').val(dreambox_orientation);
                                 $('#title').val(dreambox_title);
+                                $('#module_news').val(dreambox_module_news);
+                                $('#module_photoalbums').val(dreambox_module_photoalbums);
+                                $('#module_videoalbums').val(dreambox_module_videoalbums);
+                                $('#module_routes').val(dreambox_module_routes);
                                 $.get('nta-y.php', function(data) {
                                 });
                             },
