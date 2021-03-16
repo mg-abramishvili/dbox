@@ -107,13 +107,19 @@
 
             <div class="row align-items-center mb-4">
                 <dt class="col-sm-3">
-                    Заголовок
+                    Название
                 </dt>
                 <dd class="col-sm-9">
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="title">
+                    <input type="text" class="form-control" name="title">
+                    @if ($errors->has('title'))
+                        <div class="alert alert-danger">
+                            Укажите название
+                        </div>
+                    @endif
                 </dd>
             </div>
 
+            @if(!$settings->theme == 'med')
             <div class="row align-items-center mb-4 type type-1 type-2 type-3 type-4 type-5 type-6 type-7 type-8 type-9">
                 <dt class="col-sm-3">
                     Значок
@@ -133,6 +139,7 @@
                     </div>
                 </dd>
             </div>
+            @endif
 
             <div class="row align-items-center mb-4 type type-1 type-2 type-3">
                 <dt class="col-sm-3">
@@ -198,11 +205,14 @@
                     Родительская страница
                 </dt>
                 <dd class="col-sm-9">
-
                     <select name="parent_id" id="parent_id" class="form-control">
                         <option disabled selected value> -- Выберите -- </option>
                         @foreach($parentlist as $parentlistitem)
-                        <option value="{{$parentlistitem->id}}">{{$parentlistitem->title}}</option>
+                            @foreach($parentlistitem->types as $partype)
+                                @if($partype->pivot->type_id == '6')
+                                    <option value="{{$parentlistitem->id}}">{{$parentlistitem->title}}</option>
+                                @endif
+                            @endforeach
                         @endforeach
                     </select>
                 </dd>

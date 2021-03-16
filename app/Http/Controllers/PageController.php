@@ -128,6 +128,10 @@ class PageController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required',
+        ]);
+        
         $data = request()->all();
         $pages = new Page();
         $pages->title = $data['title'];
@@ -173,6 +177,10 @@ class PageController extends Controller
 
     public function update(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required',
+        ]);
+
         $data = request()->all();
         $pages = Page::find($data['id']);
         $pages->title = $data['title'];

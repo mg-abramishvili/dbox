@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('content')
 
-    <style>
+<style>
         .type-radio .radio {
             margin-bottom: 20px;
+            background: lightgray;
         }
 
         .type-radio span {
@@ -27,6 +28,7 @@
         .type-radio .radio label {
             width: 100%;
             height: 180px;
+            height: auto;
             position: relative;
         }
 
@@ -39,6 +41,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            display: none;
         }
 
         .icon-radio .radio {
@@ -89,7 +92,7 @@
                     Тип страницы
                 </dt>
                 <dd class="col-sm-9">
-                    <div class="row">
+                    <div class="row" id="typez" style="height:250px; overflow-y:scroll;">
                         @foreach($types as $type)
                             <div class="col-3 type-radio">
                                 <div class="radio">
@@ -105,19 +108,22 @@
                 </dd>
             </div>
 
-            <div class="row align-items-center mb-2 type type-1 type-2 type-3 type-4 type-5 type-6">    
+            <div class="row align-items-center mb-2">    
                 <dt class="col-sm-3">
-                    Заголовок
+                    Название
                 </dt>
                 <dd class="col-sm-9">
-                    <input type="text" class="form-control" id="exampleFormControlInput1"  name="title" value="{{$page->title}}">
-                    @error('title')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
+                    <input type="text" class="form-control" name="title" value="{{$page->title}}">
+                    @if ($errors->has('title'))
+                        <div class="alert alert-danger">
+                            Укажите название
+                        </div>
+                    @endif
                 </dd>
             </div>
 
-            <div class="row align-items-center mb-2 type type-1 type-2 type-3 type-4 type-5 type-6 type-7 type-8">
+            @if(!$settings->theme == 'med')
+            <div class="row align-items-center mb-2 type type-1 type-2 type-3 type-4 type-5 type-6 type-7 type-8 type-9">
                 <dt class="col-sm-3">
                     Значок
                 </dt>
@@ -136,8 +142,9 @@
                     </div>
                 </dd>
             </div>
+            @endif
 
-            <div class="row align-items-center mb-2 type type-1 type-2 type-3 type-4 type-5 ">
+            <div class="row align-items-center mb-2 type type-1 type-2 type-3">
                 <dt class="col-sm-3">
                     Текст
                 </dt>
@@ -149,7 +156,7 @@
                 </dd>
             </div>
 
-            <div class="row align-items-center mb-2 type type-1 type-2 type-3 type-4 type-5 type-6 type-7 type-8">
+            <div class="row align-items-center mb-2 type type-2 type-3 type-4 type-6">
                 <dt class="col-sm-3">
                     Картинка
                 </dt>
@@ -189,6 +196,15 @@
                 </dd>
             </div>
 
+            <div class="row align-items-center mb-4 type type-9">
+                <dt class="col-sm-3">
+                    Excel-файл
+                </dt>
+                <dd class="col-sm-9">
+                    <input class="excel" type="file" name="excel" x-ref="excel">
+                </dd>
+            </div>
+
             <div class="row align-items-center mb-2 type type-5">
                 <dt class="col-sm-3">
                     Видео
@@ -206,7 +222,11 @@
                     <select name="parent_id" id="parent_id" class="form-control">
                         <option disabled selected value> -- Выберите -- </option>
                         @foreach($parentlist as $parentlistitem)
-                        <option value="{{$parentlistitem->id}}" @if($parentlistitem->id == $page->parent_id) selected @endif>{{$parentlistitem->title}}</option>
+                            @foreach($parentlistitem->types as $partype)
+                                @if($partype->pivot->type_id == '6')
+                                    <option value="{{$parentlistitem->id}}" @if($parentlistitem->id == $page->parent_id) selected @endif>{{$parentlistitem->title}}</option>
+                                @endif
+                            @endforeach
                         @endforeach
                     </select>
                 </dd>
@@ -339,6 +359,71 @@
                 @if(isset($page->pdf))
                 {
                     source: '{{ $page->pdf }}',
+                    options: {
+                        type: 'local',
+                    }
+                }
+                @endif
+            ]
+
+        });
+
+        $('.excel').filepond({
+            allowMultiple: false,
+            allowReorder: false,
+            imagePreviewHeight: 140,
+            labelIdle: 'Нажмите для загрузки файлов',
+            labelFileProcessing: 'Загрузка',
+            labelFileProcessingComplete: 'Загружено',
+            labelTapToCancel: '',
+            labelTapToUndo: '',
+
+            server: {
+                remove: (filename, load) => {
+                    load('1');
+                    return  ajax_delete('deleteexcel');
+                },
+                process: (fieldName, file, metadata, load, error, progress, abort, transfer, options) => {
+                    const formData = new FormData();
+                    formData.append(fieldName, file, file.name);
+                    const request = new XMLHttpRequest();
+                    request.open('POST', '/pages/file/upload');
+                    request.upload.onprogress = (e) => {
+                        progress(e.lengthComputable, e.loaded, e.total);
+                    };
+                    request.onload = function() {
+                        if (request.status >= 200 && request.status < 300) {
+                            load(request.responseText);
+                        }
+                        else {
+                            error('oh no');
+                        }
+                    };
+                    request.send(formData);
+                    return {
+                        abort: () => {
+                            request.abort();
+                            abort();
+                        }
+                    };
+                },
+                revert: (filename, load) => {
+                    load(filename)
+                },
+                load: (source, load, error, progress, abort, headers) => {
+                    var myRequest = new Request(source);
+                    fetch(myRequest).then(function(response) {
+                        response.blob().then(function(myBlob) {
+                            load(myBlob)
+                        });
+                    });
+                },
+            },
+
+            files: [
+                @if(isset($page->excel))
+                {
+                    source: '{{ $page->excel }}',
                     options: {
                         type: 'local',
                     }
@@ -490,13 +575,13 @@
         }
     </script>
 
-    <script>
-        /*$('#page_type').change(function () {
-        var select=$(this).find(':selected').val();        
+<script>
+        $('#typez').change(function () {
+        var select=$(this).find(':checked').val();        
         $(".type").hide();
         $('.' + 'type-' + select).show();
 
-        }).change();*/
+        }).change();
     </script>
 
     <script>
