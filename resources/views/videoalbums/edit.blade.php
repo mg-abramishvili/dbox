@@ -5,7 +5,7 @@
         <div class="row align-items-center mb-4">
             <div class="col-6">
                 <h1>{{$videoalbum->title}}</h1>
-                <p style="color: #999">Редактирование галереи</p>
+                <p style="color: #999">Редактирование видео</p>
             </div>
         </div>
 
@@ -15,16 +15,18 @@
 
             <div class="row align-items-center mb-2">    
                 <dt class="col-sm-3">
-                    Заголовок
+                    Название
                 </dt>
                 <dd class="col-sm-9">
-                    <input type="text" class="form-control" id="exampleFormControlInput1"  name="title" value="{{$videoalbum->title}}">
+                    <input type="text" class="form-control"  name="title" value="{{$videoalbum->title}}">
                 </dd>
             </div>
 
             <div class="row align-items-center mb-2">
                 <dt class="col-sm-3">
                     Обложка
+                    <br>
+                    <p class="field_desc">необязательно</p>
                 </dt>
                 <dd class="col-sm-9">
                     <input class="cover" type="file" name="cover" x-ref="cover">
@@ -33,7 +35,7 @@
 
             <div class="row align-items-center mb-2">
                 <dt class="col-sm-3">
-                    Галлерея
+                    Видеоролик
                 </dt>
                 <dd class="col-sm-9">
                     <input class="gallery" type="file" name="gallery">
@@ -100,12 +102,14 @@
             },
 
             files: [
+            @if(isset($videoalbum->cover))
                 {
                     source: '{{ $videoalbum->cover }}',
                     options: {
                         type: 'local',
                     }
-                }
+                },
+            @endif
             ]
 
         });

@@ -16,7 +16,7 @@ class CreateVideoalbumsTable extends Migration
         Schema::create('videoalbums', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('cover');
+            $table->string('cover')->nullable();
             $table->longtext('gallery');
             $table->timestamps();
         });

@@ -46,7 +46,11 @@
                 @foreach($videoalbums as $videoalbum)
                     <div class="gallery-list-item">
                         <a href="/front-videoalbums/{{ $videoalbum->id }}">
-                            <div class="gallery-list-item-pic" style="background: url({{ $videoalbum->cover }}); background-size: cover; background-position: 50% 50%:"></div>
+                            @if($videoalbum->cover)
+                            <div class="gallery-list-item-pic" style="background: url({{ $videoalbum->cover }}); background-size: cover; background-position: 50% 50%;"></div>
+                            @else
+                            <div class="gallery-list-item-pic" style="background: url('/img/Video-Placeholder.jpg'); background-size: cover; background-position: 50% 50%;"></div>
+                            @endif
                             <h2>{{ $videoalbum->title }}</h2>
                         </a>
                     </div>

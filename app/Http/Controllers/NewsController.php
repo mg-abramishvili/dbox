@@ -116,6 +116,8 @@ class NewsController extends Controller
         $news->text = $data['text'];
         if (isset($data['image'])) {
             $news->image = $data['image'];
+        } else {
+            $news->image = NULL;
         }
         $news->save();
         return redirect('/news');

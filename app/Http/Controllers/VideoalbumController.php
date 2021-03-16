@@ -83,24 +83,39 @@ class VideoalbumController extends Controller
         return redirect('/videoalbums');
     }
 
-    public function store()
+    public function store(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'gallery' => 'required',
+        ]);
+
         $data = request()->all();
         $videoalbums = new Videoalbum();
         $videoalbums->title = $data['title'];
-        $videoalbums->cover = $data['cover'];
+        if (isset($data['cover'])) {
+            $videoalbums->cover = $data['cover'];
+        }
         $videoalbums->gallery = $data['gallery'];
         $videoalbums->save();
         return redirect('/videoalbums');
     }
 
-    public function update()
+    public function update(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'gallery' => 'required',
+        ]);
 
         $data = request()->all();
         $videoalbums = Videoalbum::find($data['id']);
         $videoalbums->title = $data['title'];
-        $videoalbums->cover = $data['cover'];
+        if (isset($data['cover'])) {
+            $videoalbums->cover = $data['cover'];
+        } else {
+            $videoalbums->cover = NULL;
+        }
         $videoalbums->gallery = $data['gallery'];
         $videoalbums->save();
 
