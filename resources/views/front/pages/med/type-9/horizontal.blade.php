@@ -34,6 +34,7 @@
 
                 <script>
                     $('table').css('width','auto');
+                    $('table').css('margin','0 auto');
                     $('table tr td').css('font-weight','400');
                     $('table tr td').css('font-style','normal');
                     $('table tr td').css('min-width','110px');

@@ -708,8 +708,9 @@ footer {
 
 .excel-item {
     width: 94vw;
+    width: auto;
     height: 70vh;
-    overflow-x: scroll;
+    overflow-y: scroll;
     padding-top: 2vh;
 }
 

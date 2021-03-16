@@ -30,7 +30,7 @@
                         });
 
                         function startRefresh() {
-                            setTimeout(startRefresh,60000);
+                            setTimeout(startRefresh,30000);
                             $.get('/timeonly.php', function(data) {
                                 $('.header-time').html(data);    
                             });
