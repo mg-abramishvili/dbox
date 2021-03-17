@@ -87,7 +87,7 @@
             <button value="_" id="v40">_</button>-->
             <br>
         </div>
-            <button class="globebutton" style="width: 220px;">RU/EN</button>
+            <button class="globebutton" style="width: 20vh;">RU/EN</button>
             <button value="" id="backspace">&#x2190</button>
             <button value="" id="clear">&times;</button>
         </div>
