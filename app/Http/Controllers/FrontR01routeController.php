@@ -12,8 +12,10 @@ class FrontR01routeController extends Controller
 {
     public function index()
     {
-        $r01routes = R01route::get();
-        return view('front.routes.index', compact('r01routes'));
+        $settings = Setting::where('id', '1')->first();
+        $r01routes = R01route::all();
+        $schemes = Scheme::orderBy('created_at', 'asc')->first();
+        return view('front.routes.index', compact('r01routes', 'settings', 'schemes'));
     }
 
     public function show($id)

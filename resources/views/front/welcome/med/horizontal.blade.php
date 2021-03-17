@@ -44,6 +44,27 @@
     <div class="container container-index">
         <div class="row">
 
+            @foreach($pages as $page)
+                <div class="col-6">
+                    <div class="user-pages-item-item">
+                        <a href="/front-pages/{{ $page->id }}" class="index-button">
+                            @if($page->image_as_icon == 1)
+                                <div class="user-pages-item-image" style="background-image:url({{ $page->image }});"></div>
+                            @else
+                                @if($page->icons()->exists())
+                                    @foreach($page->icons as $icon)
+                                        <!--<img src="{{ $icon->icon }}">-->
+                                    @endforeach
+                                @else
+                                    
+                                @endif
+                            @endif
+                            <span>{{ $page->title }}</span>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+
             @if($settings->module_photoalbums == 'y')
                 <div class="col-6">
                     <a href="/front-photoalbums/" class="index-button">
@@ -67,28 +88,14 @@
                     </a>
                 </div>
             @endif
-            
-            @foreach($pages as $page)
-                <div class="col-6">
-                    <div class="user-pages-item-item">
-                        <a href="/front-pages/{{ $page->id }}" class="index-button">
-                            @if($page->image_as_icon == 1)
-                                <div class="user-pages-item-image" style="background-image:url({{ $page->image }});"></div>
-                            @else
-                                @if($page->icons()->exists())
-                                    @foreach($page->icons as $icon)
-                                        <!--<img src="{{ $icon->icon }}">-->
-                                    @endforeach
-                                @else
-                                    
-                                @endif
-                            @endif
-                            <span>{{ $page->title }}</span>
-                        </a>
-                    </div>
-                </div>
-            @endforeach
 
+            @if($settings->module_routes == 'y')
+                <div class="col-6">
+                    <a href="/front-r01routes/" class="index-button">
+                        <span>План клиники</span>
+                    </a>
+                </div>
+            @endif
 
         </div>
     </div>
