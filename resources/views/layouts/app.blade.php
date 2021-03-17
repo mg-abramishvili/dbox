@@ -73,6 +73,12 @@
                     </li>
                     @endif
 
+                    @if($settings->module_reviews == 'y')
+                    <li class="nav-item {{ Request::is('reviews') ? 'active' : '' }}">
+                        <a href="{{ url('/reviews') }}" class="nav-link">Отзывы</a>
+                    </li>
+                    @endif
+
                     @if(\Auth::user()->id == '1')
                     <li class="nav-item {{ Request::is('settings') ? 'active' : '' }}">
                         <a href="{{ url('/settings') }}" class="nav-link">Настройки</a>

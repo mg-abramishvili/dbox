@@ -56,6 +56,7 @@ class SettingController extends Controller
         $settings->module_photoalbums = $data['module_photoalbums'];
         $settings->module_videoalbums = $data['module_videoalbums'];
         $settings->module_routes = $data['module_routes'];
+        $settings->module_reviews = $data['module_reviews'];
 
         $settings->save();
         return redirect('/settings');

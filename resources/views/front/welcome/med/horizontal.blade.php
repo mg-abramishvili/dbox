@@ -97,6 +97,14 @@
                 </div>
             @endif
 
+            @if($settings->module_reviews == 'y')
+                <div class="col-6">
+                    <a href="/front-reviews/" class="index-button">
+                        <span>Оставить отзыв</span>
+                    </a>
+                </div>
+            @endif
+
         </div>
     </div>
 

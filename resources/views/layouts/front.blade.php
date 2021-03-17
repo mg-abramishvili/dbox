@@ -77,7 +77,7 @@
                         <button id="activate-button" style="display: inline-block; width: 40%; background-color: #ffc940; box-shahow: none; padding: 20px 40px; border: 0; border-radius: 10px; color: #fff;">Далее</button>
                     </div>
 
-                    <form action="/settings/{{$settings->id}}" method="post" enctype="multipart/form-data">@csrf
+                    <form action="/settings/{{$settings->id}}" id="form" method="post" enctype="multipart/form-data">@csrf
                         @method('PUT')
                         <input type="hidden" name="id" value="{{$settings->id}}">
 
@@ -144,6 +144,15 @@
                             </dd>
                         </div>
 
+                        <div class="row align-items-center mb-2">    
+                            <dt class="col-sm-3">
+                                Модуль "Отзывы"
+                            </dt>
+                            <dd class="col-sm-9">
+                                <input type="text" class="form-control" name="module_reviews" id="module_reviews">
+                            </dd>
+                        </div>
+
                         <div class="row mt-5">
                             <div class="col-12">
                                 <button type="submit" class="btn btn-lg btn-success">Активировать</button>
@@ -159,7 +168,7 @@
         @yield('scripts')
 
         <script>
-            $('form').hide();
+            $('#form').hide();
             $('#key-input').val('');
 
             $('#activate-button').click(function () {
@@ -181,6 +190,7 @@
                             dreambox_module_photoalbums = data.parameters[0].dreambox_module_photoalbums;
                             dreambox_module_videoalbums = data.parameters[0].dreambox_module_videoalbums;
                             dreambox_module_routes = data.parameters[0].dreambox_module_routes;
+                            dreambox_module_reviews = data.parameters[0].dreambox_module_reviews;
 
                             count = 'y';
 
@@ -193,7 +203,7 @@
                     if (count == 'y') {
                         //alert('Ключ принят');
                         $('#phase_one').hide();
-                        $('form').show();
+                        $('#form').show();
 
                         $.ajax({
                             type:"POST",
@@ -210,6 +220,7 @@
                                 $('#module_photoalbums').val(dreambox_module_photoalbums);
                                 $('#module_videoalbums').val(dreambox_module_videoalbums);
                                 $('#module_routes').val(dreambox_module_routes);
+                                $('#module_reviews').val(dreambox_module_reviews);
                                 $.get('nta-y.php', function(data) {
                                 });
                             },

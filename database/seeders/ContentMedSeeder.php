@@ -23,10 +23,11 @@ class ContentMedSeeder extends Seeder
             'orientation' => 'horizontal',
             'title' => 'Заголовок',
             'logo' => '/img/med-logo.png',
-            'module_photoalbums' => 'y',
+            'module_photoalbums' => 'n',
             'module_videoalbums' => 'n',
             'module_news' => 'y',
             'module_routes' => 'y',
+            'module_reviews' => 'y',
         ]);
 
         // СТРАНИЦЫ

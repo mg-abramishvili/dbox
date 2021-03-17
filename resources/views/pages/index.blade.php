@@ -19,14 +19,11 @@
 
                     @else
                         <tr>
-                            <td style="width: 100px; font-size: 13px;">
-                                {{$page->created_at->format('d.m.Y')}}
-                            </td>
                             <td style="text-align: left; padding-left: 20px; padding-right: 20px;">
                                 {{$page->title}}
                                 <br>
                                     @foreach($page->children as $pg)
-                                        <li>
+                                        <li class="mt-4">
                                             {{ $pg->title }}
                                             <a href="/pages/{{$pg->id}}/edit" class="btn btn-sm btn-warning">Правка</a>
                                             <a href="/pages/delete/{{$pg->id}}" class="btn btn-sm btn-danger">Удалить</a>

@@ -33,6 +33,8 @@ use App\Http\Controllers\FrontR07routeController;
 use App\Http\Controllers\FrontR08routeController;
 use App\Http\Controllers\FrontR09routeController;
 use App\Http\Controllers\FrontR10routeController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\FrontReviewController;
 
 Route::get('/','App\Http\Controllers\FrontController@index');
 
@@ -124,6 +126,14 @@ Route::resource('/front-r08routes', FrontR08routeController::class);
 Route::resource('/front-r09routes', FrontR09routeController::class);
 // FRONT R10ROUTES
 Route::resource('/front-r10routes', FrontR10routeController::class);
+
+// Reviews
+Route::resource('/reviews', ReviewController::class)->middleware('auth');
+Route::get('reviews/delete/{id}','App\Http\Controllers\ReviewController@delete');
+// Reviews Front
+Route::get('/front-reviews', 'App\Http\Controllers\FrontReviewController@create');
+Route::post('/front-reviews', 'App\Http\Controllers\FrontReviewController@store');
+Route::get('/front-reviews-success', 'App\Http\Controllers\FrontReviewController@review_success');
 
 // Settings
 Route::resource('/settings', SettingController::class);
