@@ -59,6 +59,6 @@ class SettingController extends Controller
         $settings->module_reviews = $data['module_reviews'];
 
         $settings->save();
-        return redirect('/settings');
+        return redirect('/');
     }
 }

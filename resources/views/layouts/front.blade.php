@@ -68,7 +68,7 @@
             @php } @endphp
             @php } elseif ($hnta == 'n') { @endphp
 
-                <div style="position: absolute; top: 20vh; left: 0; right: 0; display: block; width: 50vw; margin: 0 auto; text-align: center; font-size: 40px;">
+                <div style="position: absolute; top: 20vh; left: 0; right: 0; display: block; width: 50vw; margin: 0 auto; text-align: center; font-size: 2vh;">
                     
                     <img src="/logo-h.png" style="width: 340px; display: block; margin: 0 auto;margin-bottom: 125px">
                     
