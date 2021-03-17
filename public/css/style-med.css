@@ -118,6 +118,7 @@ header {
     height: 70vh;
     overflow-y: auto;
     overflow-x: hidden;
+    margin: 0 auto;
 }
 
 /* MAIN PAGE */
@@ -611,24 +612,6 @@ footer {
 
 /* PAGE TYPE 6 */
 
-.type-6 .user-pages {
-    height: auto;
-    background: none;
-    margin-left: -3vh;
-    margin-right: -3vh;
-    margin-top: -6vh;
-}
-
-.type-6 .user-pages-item {
-    width: 25%;
-}
-
-.type-6 .user-pages-item-item {
-    height: 40vh;
-    background-color: #ffc940;
-    margin: 6vh 3vh;
-}
-
 .type-6 .user-pages-item-item img {
     width: 40%;
     margin-bottom: 3vh;
@@ -793,6 +776,7 @@ footer {
 .med-route-sidebar {
     background-color: #d6d6d6;
     padding: 5vh;
+    margin-top: -2vh;
 }
 
 .med-route-sidebar input {
@@ -816,7 +800,7 @@ footer {
     padding: 0;
     margin: 0;
     list-style-type: none;
-    height: 35vh;
+    height: 32vh;
     overflow-y: auto;
 }
 

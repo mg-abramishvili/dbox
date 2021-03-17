@@ -6,6 +6,8 @@
     <link href="{{ asset('css/style-med.css') }}" rel="stylesheet">
 @endsection
 
+<div class="wrapper" style="">
+
 <header>
         <div class="container">
             <div class="row align-items-center">
@@ -252,6 +254,18 @@
     <button id="prev-route-slide" class="prevnexrroutslide"><<</button>
     <button id="next-route-slide" class="prevnexrroutslide">>></button>
 </div>
+
+<footer>
+        <div class="container">
+            <a href="/" class="med-home med-home-sub">
+                <img src="/img/medhome.svg" alt="">
+            </a>
+            <a href="/front-r01routes" class="med-footer-second"><span>План клиники</span></a>
+            <a class="med-footer-third"><span>{{ $route->title }}</span></a>
+        </div>
+    </footer>
+
+    </div>
 
 @endsection
 

@@ -6,6 +6,8 @@
     <link href="{{ asset('css/style-med.css') }}" rel="stylesheet">
 @endsection
 
+<div class="wrapper" style="">
+
 <header>
         <div class="container">
             <div class="row align-items-center">
@@ -49,18 +51,38 @@
                     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Поиск ...">
                     @include('front.keyboard')
                     <ul id="myUL">
-                        @foreach($r01routes as $route)
+                    @foreach ($r01routes as $scheme => $route)
+                        @foreach($route as $routeItem)
+                            @if($loop->first)
+                                @foreach($routeItem->schemes as $sch)
+                                    <h4><strong>{{ $sch->title }}</strong></h4>
+                                @endforeach
+                            @endif
+                        @endforeach
+                        @foreach($route as $routeItem)
                             <li>
-                                <a href="/front-r01routes/{{ $route->id }}">{{ $route->title }}</a>
+                                <a href="/front-r01routes/{{ $routeItem->id }}">{{ $routeItem->title }}</a>
                             </li>
                         @endforeach
+                    @endforeach
                     </ul>
                 </div>
             </div>
             <div class="col-8">
-                <img src="{{ $schemes->image }}" style="width:100%;">
+                <img src="{{ $schemes->image }}" style="width:auto; height: auto; max-width: 100%; max-height: 70vh; display:block; margin: 0 auto;">
             </div>
         </div>
     </div>    
+
+    <footer>
+        <div class="container">
+            <a href="/" class="med-home med-home-sub">
+                <img src="/img/medhome.svg" alt="">
+            </a>
+            <a href="/front-r01routes" class="med-footer-second"><span>План клиники</span></a>
+        </div>
+    </footer>
+
+ </div>
 
 @endsection
