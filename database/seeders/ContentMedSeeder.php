@@ -21,7 +21,7 @@ class ContentMedSeeder extends Seeder
             'id' => '1',
             'theme' => 'med',
             'orientation' => 'horizontal',
-            'title' => 'Заголовок',
+            'title' => NULL,
             'logo' => '/img/med-logo.png',
             'module_photoalbums' => 'n',
             'module_videoalbums' => 'n',
