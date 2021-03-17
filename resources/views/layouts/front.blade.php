@@ -254,9 +254,9 @@
             });
             const parent = elem.parentElement
         parent.addEventListener('wheel', panzoom.zoomWithWheel);
-        zoomInButton.addEventListener('click', panzoom.zoomIn)
-        zoomOutButton.addEventListener('click', panzoom.zoomOut)
-        resetButton.addEventListener('click', panzoom.reset)
+        //zoomInButton.addEventListener('click', panzoom.zoomIn);
+        //zoomOutButton.addEventListener('click', panzoom.zoomOut);
+        //resetButton.addEventListener('click', panzoom.reset);
     </script>
 
 <script>

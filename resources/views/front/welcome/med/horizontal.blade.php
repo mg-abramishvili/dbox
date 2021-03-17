@@ -65,18 +65,10 @@
                 </div>
             @endforeach
 
-            @if($settings->module_photoalbums == 'y')
+            @if($settings->module_routes == 'y')
                 <div class="col-6">
-                    <a href="/front-photoalbums/" class="index-button">
-                        <span>Фотогалерея</span>
-                    </a>
-                </div>
-            @endif
-
-            @if($settings->module_videoalbums == 'y')
-                <div class="col-6">
-                    <a href="/front-videoalbums/" class="index-button">
-                        <span>Видеогалерея</span>
+                    <a href="/front-r01routes/" class="index-button">
+                        <span>План клиники</span>
                     </a>
                 </div>
             @endif
@@ -89,10 +81,18 @@
                 </div>
             @endif
 
-            @if($settings->module_routes == 'y')
+            @if($settings->module_photoalbums == 'y')
                 <div class="col-6">
-                    <a href="/front-r01routes/" class="index-button">
-                        <span>План клиники</span>
+                    <a href="/front-photoalbums/" class="index-button">
+                        <span>Фотогалерея</span>
+                    </a>
+                </div>
+            @endif
+
+            @if($settings->module_videoalbums == 'y')
+                <div class="col-6">
+                    <a href="/front-videoalbums/" class="index-button">
+                        <span>Видеогалерея</span>
                     </a>
                 </div>
             @endif

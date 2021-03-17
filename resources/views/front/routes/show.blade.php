@@ -234,25 +234,27 @@
     <style>
         .prevnexrroutslide {
             position: absolute;
-            font-size: 50px;
+            font-size: 3vh;
             font-weight: 700;
             box-shadow: none;
             border: 0;
-            padding: 15px 45px;
-            background-color: #FBCA27;
+            padding: 1.5vh 3vh;
+            background-color: #2886bb;
             color: #fff;
             z-index: 20;
-            top: 1000px;
-            right: 50px;
-            left: 50px;
+            top: 85vh;
+            right: 3vh;
+            left: 3vh;
             margin: 0 auto;
-            width: 150px;
-            border-radius: 10px;
+            width: 12.5vh;
+            border-radius: 1vh;
         }
     </style>
 
+@if(count($route->schemes2))
     <button id="prev-route-slide" class="prevnexrroutslide"><<</button>
     <button id="next-route-slide" class="prevnexrroutslide">>></button>
+@endif
 </div>
 
 <footer>
@@ -275,13 +277,13 @@
             $("#map").css('opacity', '0');
             setTimeout(function () {
                 panzoom.reset({ startScale: 2 })
-            }, 250);
-            setTimeout(function () {
-                panzoom.reset({ startScale: 1 })
             }, 350);
             setTimeout(function () {
+                panzoom.reset({ startScale: 1, startX: 180, startY: 80, })
+            }, 700);
+            setTimeout(function () {
                 $("#map").css('opacity', '1');
-            }, 750)
+            }, 1000)
         });
     </script>
 

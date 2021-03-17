@@ -15,14 +15,14 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UserSeeder::class,
-            SettingSeeder::class,
-            PageSeeder::class,
-            PageTypeSeeder::class,
             TypeSeeder::class,
             IconSeeder::class,
             NewsSeeder::class,
             GallerySeeder::class,
             VideoGallerySeeder::class,
+
+            // Медцентр            
+            // ContentMedSeeder::class,
         ]);
     }
 }
