@@ -748,8 +748,8 @@ footer {
 }
 
 .wrapperm {
-    width: 1080px;
-    height: 800px;
+    width: 800px;
+    height: 450px;
     position: relative;
     margin: 0 auto;
     overflow: visible;
@@ -758,11 +758,11 @@ footer {
 
 #wrapper-inner {
     width: 800px;
-    height: 600px;
+    height: 450px;
 }
 
 .map {
-    margin-top: 30px;
+    margin-top: -4vh;
 }
 
 .map-slide {

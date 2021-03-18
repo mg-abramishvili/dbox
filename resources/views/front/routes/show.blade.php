@@ -279,7 +279,7 @@
                 panzoom.reset({ startScale: 2 })
             }, 350);
             setTimeout(function () {
-                panzoom.reset({ startScale: 1, startX: 180, startY: 80, })
+                panzoom.reset({ startScale: 1, startX: 0, startY: 0, })
             }, 700);
             setTimeout(function () {
                 $("#map").css('opacity', '1');
