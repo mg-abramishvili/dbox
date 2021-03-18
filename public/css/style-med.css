@@ -443,7 +443,7 @@ footer {
   
 
   .news-item-text h1 {
-      color: #87499C;
+      color: #2886bb;
       font-size: 4vh;
       font-weight: 700;
       text-align: left;
@@ -453,7 +453,7 @@ footer {
 
   .news-item-text span {
       display: block;
-      color: #A4BF49;
+      color: #777;
       margin-bottom: 1.5vh;
       font-size: 2.5vh;
   }
@@ -788,7 +788,7 @@ footer {
 
 .med-route-sidebar {
     background-color: #d6d6d6;
-    padding: 5vh;
+    padding: 3vh;
     margin-top: -2vh;
 }
 
@@ -804,15 +804,23 @@ footer {
 }
 
 .keyboard button {
-    width: 3vh;
+    width: 4.2vh;
+    height: 4.2vh;
+    line-height: 4.2vh;
     margin-bottom: 0.5vh;
     background-color: #fff;
     font-size: 1.5vh;
     text-align: center;
-    height: 3.5vh;
-    line-height: 3.5vh;
     padding: 0;
     border: 0.1vh solid;
+}
+
+.keyboard .globebutton {
+    width: 7vh;
+}
+
+.keyboard .spacebutton {
+    width: 10vh;
 }
 
 #myUL {
@@ -839,3 +847,54 @@ footer {
 }
 
 /* ROUTES */
+
+
+
+/* REVIEWS */
+
+.keyboard-reviews .keyboard {
+    margin-top: 7vh;
+}
+
+.keyboard-reviews .keyboard button {
+    width: 6vh;
+    height: 6vh;
+    line-height: 6vh;
+    font-size: 2.5vh;
+}
+
+.keyboard-reviews .keyboard .globebutton {
+    width: 12vh;
+}
+
+.keyboard-reviews .keyboard .spacebutton {
+    width: 17vh;
+}
+
+.review-form input[type="text"] {
+    border: 1px solid #333;
+    font-size: 3vh;
+}
+
+.review-form textarea {
+    resize: none;
+    height: 40vh;
+    border: 1px solid #333;
+}
+
+.review-form .btn-med {
+    background-color: #2886bb;
+    color: #fff;
+    font-size: 3vh;
+    padding: 2vh 4vh;
+    border-radius: 1vh;
+}
+
+.review-h1 {
+    font-weight: 700;
+    font-size: 4vh;
+    margin-top: 0 !important;
+    margin-bottom: 5vh !important;
+}
+
+/* REVIEWS */

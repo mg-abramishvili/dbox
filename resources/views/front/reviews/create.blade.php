@@ -45,22 +45,31 @@
     </header>
 
     <div class="container">
-        <form action="/front-reviews" method="post" enctype="multipart/form-data">@csrf
+        <h1 class="review-h1">Оставьте отзыв</h1>
+        <div class="row">
+            <div class="col-6">
+                <form action="/front-reviews" method="post" enctype="multipart/form-data" class="review-form">@csrf
 
-            <input type="text" class="form-control" name="title" placeholder="Имя (необязательно)">
+                    <!--<input type="text" class="form-control mb-3" name="name" placeholder="Имя (необязательно)">-->
+            
+                    <textarea rows="7" type="text" id="myInput" onkeyup="myFunction()" class="form-control mb-4" name="review"></textarea>
+                    @if ($errors->has('review'))
+                        <div class="alert alert-danger">
+                            Напишите отзыв
+                        </div>
+                    @endif
 
-            <textarea rows="7" type="text" class="form-control" name="review"></textarea>
-            @if ($errors->has('review'))
-                <div class="alert alert-danger">
-                    Напишите отзыв
+                    <button type="submit" class="btn btn-lg btn-med">Отправить</button>
+
+                </form>
+            </div>
+            <div class="col-6">
+                <div class="keyboard-reviews">
+                    @include('front.keyboard')
                 </div>
-            @endif
-
-            <button type="submit" class="btn btn-lg btn-success">Отправить</button>
-
-        </form>
-
+            </div>
         </div>
+    </div>
 
 <footer>
     <div class="container">
@@ -72,4 +81,30 @@
 </footer>
 
                     </div>
+@endsection
+@section('scripts')
+<script> // КЛАВИАТУРА
+    $(document).ready(function(){
+    $('#v1,#v2,#v3,#v4,#v5,#v6,#v7,#v8,#v9,#v10,#v11,#v12,#v13,#v14,#v15,#v16,#v17,#v18,#v19,#v20,#v21,#v22,#v23,#v24,#v25,#v26,#v27,#v28,#v29,#v30,#v31,#v32,#v33,#v34,#v35,#v36,#v37,#v38,#v39,#v40,#v41,#rv01,#rv02,#rv03,#rv04,#rv05,#rv06,#rv07,#rv08,#rv09,#rv10,#rv11,#rv12,#rv13,#rv14,#rv15,#rv16,#rv17,#rv18,#rv19,#rv20,#rv21,#rv22,#rv23,#rv24,#rv25,#rv26,#rv27,#rv28,#rv29,#rv30,#rv31,#rv32,#rv33,#rv34,#rv35,#rv36,#rv37,#rv38,#rv39,#rv40,#rv41').click(function(){
+         var v = $(this).val();
+        var total = $('#myInput').val($('#myInput').val() + v);
+     });
+   $('#clear').click(function(){
+       $('#myInput').val('');
+     });
+   $('#backspace').click(function(){
+       $('#myInput').val($('#myInput').val().substring(0, $('#myInput').val().length - 1));
+     });
+ });
+</script>
+
+<script> // ПЕРЕКЛЮЧЕНИЕ КЛАВИАТУРЫ
+$('.k-eng').hide();
+$('.globebutton').on('click',
+function()
+{
+    $('.k-rus, .k-eng').toggle()
+}
+);
+</script>
 @endsection
