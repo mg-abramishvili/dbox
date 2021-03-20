@@ -17,6 +17,13 @@
             @include('front.news.med.show-vertical')
         @endif
 
+    @elseif($settings->theme == 'muzei')
+        @if($settings->orientation == 'horizontal')
+            @include('front.news.muzei.show-horizontal')
+        @elseif($settings->orientation == 'vertical')
+            @include('front.news.muzei.show-vertical')
+        @endif
+
     @elseif($settings->theme == 'nast')
         @include('front.news.nast.show')
 

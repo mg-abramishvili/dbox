@@ -15,6 +15,9 @@
         @elseif($settings->theme == 'med')
             @include('front.pages.med.show')
 
+        @elseif($settings->theme == 'muzei')
+            @include('front.pages.muzei.show')
+
         @elseif($settings->theme == 'book')
             @include('front.pages.book.show')
 
