@@ -27,6 +27,14 @@
             @include('front.welcome.med.vertical')
         @endif
 
+    <!-- Тема Музей -->
+    @elseif($settings->theme == 'muzei')
+        @if($settings->orientation == 'horizontal')
+            @include('front.welcome.muzei.horizontal')
+        @elseif($settings->orientation == 'vertical')
+            @include('front.welcome.muzei.vertical')
+        @endif
+
     <!-- Тема Детсад -->
     @elseif($settings->theme == 'detsad')
         @if($settings->orientation == 'horizontal')

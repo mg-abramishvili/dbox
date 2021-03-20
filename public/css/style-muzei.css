@@ -16,17 +16,18 @@ body {
 }
 
 .container {
-    max-width: 95vw;
+    max-width: 100vw;
+    padding: 0;
 }
 
 .row {
-    margin-left: -2vh;
-    margin-right: -2vh;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
-    padding-left: 2vh;
-    padding-right: 2vh;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 main {
@@ -41,54 +42,8 @@ main {
     max-height: 100vh;
     overflow: hidden;
     margin: 0 auto;
-    background: #fff;
+    background: #171F19;
     border: 1px solid #ccc;
-}
-
-header {
-    padding: 2vh;
-    background-color: #f5f5f5;
-    margin-bottom: 7vh;
-}
-
-.header-logo img {
-    width: auto;
-    height: auto;
-    max-width: 10vh;
-    max-height: 10vh;
-    display: block;
-    margin: 0 auto;
-}
-
-.calendar {
-    text-align: center;
-    background: #96dbfc;
-    width: 15vh;
-    font-weight: 700;
-}
-
-.calendar span {
-    padding: 1vh 1vh;
-    display: block;
-    line-height: 1.1;
-}
-
-.calendar span small {
-    display: block;
-}
-
-.calendar strong {
-    font-size: 4.5vh;
-    display: block;
-    color: #35ace2;
-    font-weight: 400;
-    background: #ebebeb;
-    width: 100%;
-}
-
-.header-time {
-    font-size: 6vh;
-    color: #999;
 }
 
 /* MAIN PAGE */
@@ -96,17 +51,17 @@ header {
 .index-button {
     background-color: #d6d6d6;
     padding: 2vh;
-    height: 16vh;
+    height: 11vh;
     display: block;
-    margin-bottom: 5vh;
     text-align: center;
     color: #333;
-    font-size: 3.5vh;
+    font-size: 3.25vh;
     position: relative;
+    border: 0.25vh solid #BDB79F;
 
     color: #fff;
-    background-color: #53b5e2;
-    font-weight: 700;
+    background-color: #4B7F2B;
+    text-transform: uppercase;
 }
 
 .index-button:hover,
@@ -123,12 +78,90 @@ header {
     right: 1vh;
 }
 
-.container-index {
-    width: 70vw;
-    height: 70vh;
-    overflow-y: auto;
-    overflow-x: hidden;
+.m-content {
+    height: 100vh;
+}
+
+.m-buttons {
+    border: 0.25vh solid #BDB79F;
+}
+
+.m-buttons .col-6:nth-child(4n+1) .index-button,
+.m-buttons .col-6:nth-child(4n+4) .index-button {
+    background-color: #4B7F2B;
+}
+
+.m-buttons .col-6:nth-child(4n+2) .index-button,
+.m-buttons .col-6:nth-child(4n+3) .index-button {
+    background-color: #976545;
+}
+
+.m-banner {
+    height: 55.5vh;
+    background-size: cover;
+    background-position: 50% 50%;
+    border-left: 0.5vh solid #BDB79F;
+}
+
+.m-sidebar {
+    position: relative;
+    text-align: center;
+    padding-top: 7vh;
+    height: 100vh;
+}
+
+.m-logo {
+    background-color: #fff;
+    width: 25vh;
+    height: 25vh;
+    position: relative;
+    border-radius: 100%;
+    border: 1vh solid #966545;
+    display: block;
     margin: 0 auto;
+    margin-bottom: 3vh;
+}
+
+.m-logo img {
+    width: auto;
+    height: auto;
+    max-width: 75%;
+    max-height: 75%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    display: block;
+    margin: 0 auto;
+}
+
+.m-title p {
+    color: #e6e5dc;
+    margin: 0;
+    font-size: 3vh;
+    padding: 0 3vh;
+    text-transform: uppercase;
+}
+
+.m-sidebar-button {
+    color: #4b7f2b;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 3vh;
+    position: absolute;
+    bottom: 5vh;
+    padding: 3.5vh;
+    padding-bottom: 0;
+}
+
+.m-sidebar-button img {
+    display: block;
+    width: 100%;
+    margin-top: 2vh;
 }
 
 /* MAIN PAGE */
