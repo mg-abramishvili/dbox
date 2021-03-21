@@ -10,14 +10,12 @@ class FrontPageController extends Controller
 {
     public function show($id)
     {
-
         $settings = Setting::where('id', '1')->first();
-
         $page = Page::find($id);
-
+        $pages = Page::all();
         $childs = Page::where('id', $id)->first();
 
-        return view('front.pages.show', compact('page', 'childs', 'settings'));
+        return view('front.pages.show', compact('page', 'pages', 'childs', 'settings'));
 
     }
 }

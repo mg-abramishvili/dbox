@@ -29,6 +29,22 @@
             </div>
         </div>
         <div class="col-9">
+            <div class="page-title">
+                <div class="breadcrumbs">
+                    ←
+                    <a href="/">Главная</a>
+                    @if($page->parent_id)
+                    /
+                    @foreach ($pages as $parent_page)
+                        @if($parent_page->id == $page->parent_id)
+                        <a href="/front-pages/{{ $parent_page->id }}">{{ $parent_page->title }}</a>
+                        @endif
+                    @endforeach
+                    /
+                    @endif
+                </div>
+                <h1>{{ $page->title }}</h1>
+            </div>
             <div class="page-item">
                 @forelse($page->types as $type)
 
