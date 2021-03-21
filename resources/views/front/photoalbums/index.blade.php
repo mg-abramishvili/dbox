@@ -26,6 +26,14 @@
             @elseif($settings->orientation == 'vertical')
                 @include('front.photoalbums.med.index-vertical')
             @endif
+
+            <!-- Тема Музей -->
+        @elseif($settings->theme == 'muzei')
+            @if($settings->orientation == 'horizontal')
+                @include('front.photoalbums.muzei.index-horizontal')
+            @elseif($settings->orientation == 'vertical')
+                @include('front.photoalbums.muzei.index-vertical')
+            @endif
             
         @endif
 
