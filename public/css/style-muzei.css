@@ -582,24 +582,84 @@ main {
 
 
 
+
+.subindex-buttons {
+    overflow-x: auto;
+    width: 100%;
+    white-space: nowrap;
+    padding-left: 1vh;
+}
+
+.subindex-button {
+    height: calc(100vh - 13.5vh);
+    display: inline-flex;
+    width: 22.5vw;
+    position: relative;
+    border: 0.5vh solid #BDB79F;
+    margin-left: -1vh;
+}
+
+.subindex-button:nth-child(2n+1):before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    background: rgb(75,127,43);
+    background: linear-gradient(to bottom, rgba(75,127,43,0.8) 0%, rgba(75,127,43,0) 100%);
+}
+
+.subindex-button:nth-child(2n):before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    background: rgb(151,101,69);
+    background: linear-gradient(to bottom, rgba(151,101,69,0.8) 0%, rgba(151,101,69,0) 100%);
+}
+
+.subindex-button span {
+    color: #fff;
+    font-size: 3.5vh;
+    position: absolute;
+    left: 2.5vh;
+    right: 2.5vh;
+    top: 5vh;
+    text-align: left;
+    white-space: normal;
+    text-transform: uppercase;
+    z-index: 3;
+}
+
 /* PAGE TYPE 6 */
 
 .user-pages-item-image {
-    width: 12vh;
-    height: 12vh;
+    width: 100%;
+    height: 100%;
     background-size: cover;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
 }
 
 .type-6 .user-pages-item-item img {
     width: 40%;
     margin-bottom: 3vh;
-}
-
-.t6-p {
-    font-size: 3vh;
-    text-align: left;
-    padding-left: 16vh;
-    padding-right: 2vh;
 }
 
 /* PAGE TYPE 6 */
@@ -609,7 +669,7 @@ main {
 /* PAGE TYPE 7 */
 
 .type-7 .text {
-    height: 62vh;
+    height: 80vh;
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -623,12 +683,12 @@ main {
 }
 
 .type-7 .text::-webkit-scrollbar-thumb {
-    background: #2886bb;
+    background: #976545;
     border: 1px solid #B8BDBD;
 }
 
 .type-7 .text::-webkit-scrollbar-thumb:hover {
-    background: #2886bb;
+    background: #976545;
 }
 
   .type-7 .pdf-nav {
@@ -638,7 +698,7 @@ main {
 
   .type-7 #prev,
   .type-7 #next {
-    background: #2886bb;
+    background: #976545;
     color: #fff;
     padding: 0.5vh 2vh;
     box-shadow: none;

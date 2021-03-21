@@ -3,7 +3,6 @@
         <div class="col-12">
             <div class="page-detail-text">
                 {!! $page->text !!}
-                {!! $page->text !!}
             </div>
         </div>
     </div>
