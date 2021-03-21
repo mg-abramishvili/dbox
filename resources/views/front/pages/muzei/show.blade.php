@@ -6,46 +6,29 @@
     @endif
 @endsection
 
-    <div class="muzei">
+<div class="muzei">
 
-    <header>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-4">
-                    <div class="calendar">
-                        <strong>
-                            {{ \Carbon\Carbon::now()->locale('ru')->isoFormat('D')}}
-                        </strong>
-                        <span>
-                            {{ \Carbon\Carbon::now()->locale('ru')->isoFormat('MMMM')}}
-                            <small>{{ \Carbon\Carbon::now()->locale('ru')->isoFormat('dddd')}}</small>
-                        </span>
-                    </div>
-                </div>
-                <div class="col-4 header-logo">
+    <div class="container">
+
+    <div class="row">
+        <div class="col-3">
+            <div class="m-sidebar">
+                <div class="m-logo">
                     <a href="/"><img src="{{ $settings->logo }}"></a>
                 </div>
-                <div class="col-4 text-right">
-                    <div class="header-time"></div>
-                    <script>
-                        $(function() {
-                            startRefresh();
-                        });
-
-                        function startRefresh() {
-                            setTimeout(startRefresh,60000);
-                            $.get('/timeonly.php', function(data) {
-                                $('.header-time').html(data);    
-                            });
-                        }
-                    </script>
+                <div class="m-title">
+                    <p>{{ $settings->title }}</p>
                 </div>
+
+                @if($settings->module_videoalbums == 'y')
+                    <a href="/front-videoalbums/" class="m-sidebar-button">
+                        <span>Видеогалерея</span>
+                        <img src="/img/muzei/vdbtn.png">
+                    </a>
+                @endif
             </div>
         </div>
-    </header>
-
-        <div class="container">
-
+        <div class="col-9">
             <div class="page-item">
                 @forelse($page->types as $type)
 
@@ -92,15 +75,9 @@
                     <p>Не задан тип страницы</p>
                 @endforelse
             </div>
-
         </div>
-
-        <footer>
-        <div class="container">
-            <a href="/" class="med-home med-home-sub">
-                <img src="/img/medhome.svg" alt="">
-            </a>
-            <a href="/front-pages/{{ $page->id }}" class="med-footer-second"><span>{{ $page->title }}</span></a>
-        </div>
-    </footer>
     </div>
+
+    </div>
+
+</div>
