@@ -76,6 +76,20 @@ main {
     transform: translateY(-50%);
     left: 1vh;
     right: 1vh;
+    z-index: 10;
+}
+
+.index-button-image {
+    background-size: cover;
+    background-position: 50% 50%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .m-content {
@@ -90,6 +104,20 @@ main {
 .m-buttons .col-6:nth-child(4n+1) .index-button,
 .m-buttons .col-6:nth-child(4n+4) .index-button {
     background-color: #4B7F2B;
+}
+
+.m-buttons .index-button-overlay:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    background: rgba(0,0,0, 0.5);
 }
 
 .m-buttons .col-6:nth-child(4n+2) .index-button,
@@ -309,12 +337,12 @@ main {
 }
   
 .news-list::-webkit-scrollbar-thumb {
-    background: #2886bb;
+    background: #976545;
     border: 1px solid #B8BDBD;
   }
   
   .news-list::-webkit-scrollbar-thumb:hover {
-    background: #2886bb;
+    background: #976545;
   }
 
 .news-list-item a {
@@ -373,13 +401,13 @@ main {
 }
   
 .news-item-text::-webkit-scrollbar-thumb {
-    background: #2886bb;
+    background: #976545;
     border: 1px solid #B8BDBD;
   }
   
 
   .news-item-text h1 {
-      color: #2886bb;
+      color: #976545;
       font-size: 4vh;
       font-weight: 700;
       text-align: left;
@@ -505,12 +533,12 @@ main {
 }
 
 .type-2 .page-detail-text::-webkit-scrollbar-thumb {
-    background: #2886bb;
+    background: #976545;
     border: 1px solid #B8BDBD;
 }
 
 .type-2 .page-detail-text::-webkit-scrollbar-thumb:hover {
-    background: #2886bb;
+    background: #976545;
 }
 
 /* PAGE TYPE 2 */
@@ -554,12 +582,12 @@ main {
 }
 
 .type-3 .page-detail-text::-webkit-scrollbar-thumb {
-    background: #2886bb;
+    background: #976545;
     border: 1px solid #B8BDBD;
 }
 
 .type-3 .page-detail-text::-webkit-scrollbar-thumb:hover {
-    background: #2886bb;
+    background: #976545;
 }
 
 /* PAGE TYPE 3 */
@@ -720,7 +748,7 @@ main {
 
 #prevBtn,
 #nextBtn {
-    background: #2886bb;
+    background: #976545;
     color: #fff;
     padding: 1vh 2vh;
     box-shadow: none;
@@ -737,7 +765,7 @@ main {
 .excel-item {
     width: 94vw;
     width: auto;
-    height: 70vh;
+    height: 85vh;
     overflow-y: scroll;
     padding-top: 2vh;
 }
@@ -814,17 +842,20 @@ main {
     height: 450px;
 }
 
-.med-route-sidebar {
+.muzei-route-sidebar {
     background-color: #d6d6d6;
     padding: 3vh;
-    margin-top: -2vh;
-    background-color: #53b5e2;
+    background-color: #976545;
 }
 
-.med-route-sidebar input {
+.muzei-route-sidebar input {
     width: 100%;
     padding: 0.5vh;
     font-size: 2vh;
+}
+
+.routes-index {
+    padding: 4vh;
 }
 
 .keyboard {
@@ -833,9 +864,9 @@ main {
 }
 
 .keyboard button {
-    width: 4.2vh;
-    height: 4.2vh;
-    line-height: 4.2vh;
+    width: 3.25vh;
+    height: 3.25vh;
+    line-height: 3.25vh;
     margin-bottom: 0.5vh;
     background-color: #fff;
     font-size: 1.5vh;
@@ -856,7 +887,7 @@ main {
     padding: 0;
     margin: 0;
     list-style-type: none;
-    height: 32vh;
+    height: 50vh;
     overflow-y: auto;
 }
 
@@ -912,7 +943,7 @@ main {
 }
 
 .review-form .btn-med {
-    background-color: #2886bb;
+    background-color: #976545;
     color: #fff;
     font-size: 3vh;
     padding: 2vh 4vh;

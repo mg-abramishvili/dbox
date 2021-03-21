@@ -1,28 +1,52 @@
-@extends('layouts.front')
-@section('content')
+@section('styles')
+    @parent
+    <link href="{{ asset('css/style-med.css') }}" rel="stylesheet">
+@endsection
 
-<div class="catlist-list catlist-list2" style="padding: 0 20px; margin-bottom: 20px;">
-        @foreach($tagsall as $tagallitem)
-            <div class="catlist-item">
-                <a href="/front-tags6/{{ $tagallitem->id }}">
-                    <img src="/img/catlist01.png">
-                    <p>{{ $tagallitem->title }}</p>
-                </a>
+    <header>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-4">
+                    <div class="calendar">
+                        <strong>
+                            {{ \Carbon\Carbon::now()->locale('ru')->isoFormat('D')}}
+                        </strong>
+                        <span>
+                            {{ \Carbon\Carbon::now()->locale('ru')->isoFormat('MMMM')}}
+                            <small>{{ \Carbon\Carbon::now()->locale('ru')->isoFormat('dddd')}}</small>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-4 header-logo">
+                    <a href="/"><img src="{{ $settings->logo }}"></a>
+                </div>
+                <div class="col-4 text-right">
+                    <div class="header-time"></div>
+                    <script>
+                        $(function() {
+                            startRefresh();
+                        });
+
+                        function startRefresh() {
+                            setTimeout(startRefresh,60000);
+                            $.get('/timeonly.php', function(data) {
+                                $('.header-time').html(data);    
+                            });
+                        }
+                    </script>
+                </div>
             </div>
-        @endforeach
-    </div>
+        </div>
+    </header>
 
 <div>
-    <div class="wrapper" id="wrapper">
+    <div class="wrapperm" id="wrapper">
         <div id="wrapper-inner">
         
         <div class="map map-image map-image{{ $route->id }}" id="map">
             <div class="slide">
                 @foreach($route->schemes as $scheme)
                 <img src="{{$scheme->image}}"/>
-                    @foreach($scheme->marks as $mark)
-                        <div style="position: absolute; left: {{$mark->x_01}}px; top: {{$mark->y_01}}px; z-index:10; width: 20px; height: 20px; background: url(@foreach($mark->markimages as $markimage){{$markimage->image}}@endforeach) center center; background-size: contain; background-repeat: no-repeat;"></div>
-                    @endforeach
                 @endforeach
 
                 <div class="routesbox route{{ $route->id }}">
@@ -105,9 +129,6 @@
             <div class="slide">
                 @foreach($route->schemes2 as $scheme2)
                 <img src="{{$scheme2->image}}"/>
-                    @foreach($scheme2->marks as $mark2)
-                        <div style="position: absolute; left: {{$mark2->x_01}}px; top: {{$mark2->y_01}}px; z-index:10; width: 20px; height: 20px; background: url(@foreach($mark2->markimages as $markimage2){{$markimage2->image}}@endforeach) center center; background-size: contain; background-repeat: no-repeat;"></div>
-                    @endforeach
                 @endforeach
 
                 <div class="routesbox route{{ $route->id }}">
@@ -196,7 +217,7 @@
                 draggable: false,
                 imagesLoaded: true,
                 pageDots: false,
-                //prevNextButtons: false,
+                prevNextButtons: false,
             });
         </script>
 
@@ -204,43 +225,41 @@
 </div>
 
 <div class="store-about">
-    @foreach($route->stores as $store)
-        <h1>{{ $store->title }}</h1>
-        @foreach($store->tags as $tag)
-            <p>{{ $tag->title }}</p>
-        @endforeach
-    @endforeach
+
+    <style>
+        .prevnexrroutslide {
+            position: absolute;
+            font-size: 3vh;
+            font-weight: 700;
+            box-shadow: none;
+            border: 0;
+            padding: 1.5vh 3vh;
+            background-color: #2886bb;
+            color: #fff;
+            z-index: 20;
+            top: 85vh;
+            right: 3vh;
+            left: 3vh;
+            margin: 0 auto;
+            width: 12.5vh;
+            border-radius: 1vh;
+        }
+    </style>
+
+@if(count($route->schemes2))
+    <button id="prev-route-slide" class="prevnexrroutslide"><<</button>
+    <button id="next-route-slide" class="prevnexrroutslide">>></button>
+@endif
 </div>
 
-<div class="footer">
-    <a href="/6"><img src="/img/home.png"/></a>
-    <a href="javascript:history.back()"><img src="/img/back.png"/></a>
+    <footer>
+        <div class="container">
+            <a href="/" class="med-home med-home-sub">
+                <img src="/img/medhome.svg" alt="">
+            </a>
+            <a href="/front-r01routes" class="med-footer-second"><span>План клиники</span></a>
+            <a class="med-footer-third"><span>{{ $route->title }}</span></a>
+        </div>
+    </footer>
+
 </div>
-
-@endsection
-
-@section('scripts')
-    <script>
-        $(document).ready(function(){
-            $("#map").css('opacity', '0');
-            setTimeout(function () {
-                panzoom.reset({ startScale: 2 })
-            }, 250);
-            setTimeout(function () {
-                panzoom.reset({ startScale: 1 })
-            }, 350);
-            setTimeout(function () {
-                $("#map").css('opacity', '1');
-            }, 750)
-        });
-    </script>
-
-        <script>
-            $('.catlist-list').flickity({
-            cellAlign: 'left',
-            contain: true,
-            prevNextButtons: false,
-            pageDots: false,
-            });
-        </script>
-    @endsection

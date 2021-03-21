@@ -35,19 +35,13 @@
                     @foreach($pages as $page)
                         <div class="col-6">
                             <div class="user-pages-item-item">
-                                <a href="/front-pages/{{ $page->id }}" class="index-button">
+                                <a href="/front-pages/{{ $page->id }}" class="index-button @if($page->image_as_icon == 1) index-button-overlay @endif">
                                     @if($page->image_as_icon == 1)
-                                        <div class="user-pages-item-image" style="background-image:url({{ $page->image }});"></div>
+                                        <div class="index-button-image" style="background-image:url({{ $page->image }});"></div>
+                                        <span>{{ $page->title }}</span>
                                     @else
-                                        @if($page->icons()->exists())
-                                            @foreach($page->icons as $icon)
-                                                <!--<img src="{{ $icon->icon }}">-->
-                                            @endforeach
-                                        @else
-                                            
-                                        @endif
+                                        <span>{{ $page->title }}</span>
                                     @endif
-                                    <span>{{ $page->title }}</span>
                                 </a>
                             </div>
                         </div>
@@ -56,7 +50,7 @@
                     @if($settings->module_routes == 'y')
                         <div class="col-6">
                             <a href="/front-r01routes/" class="index-button">
-                                <span>План клиники</span>
+                                <span>План музея</span>
                             </a>
                         </div>
                     @endif
