@@ -77,6 +77,8 @@
                         <button id="activate-button" style="display: inline-block; width: 40%; background-color: #ffc940; box-shahow: none; padding: 20px 40px; border: 0; border-radius: 10px; color: #fff;">Далее</button>
                     </div>
 
+                    <div id="activating" style="font-size: 3vh; text-align: center; color: green;">Активация ...</div>
+
                     <form action="/settings/{{$settings->id}}" id="form" method="post" enctype="multipart/form-data">@csrf
                         @method('PUT')
                         <input type="hidden" name="id" value="{{$settings->id}}">
@@ -164,7 +166,7 @@
 
                         <div class="row mt-5">
                             <div class="col-12">
-                                <button type="submit" class="btn btn-lg btn-success">Активировать</button>
+                                <button type="submit" id="submit-final" class="btn btn-lg btn-success">Активировать</button>
                             </div>
                         </div>
             
@@ -178,6 +180,7 @@
 
         <script>
             $('#form').hide();
+            $('#activating').hide();
             $('#key-input').val('');
 
             $('#activate-button').click(function () {
@@ -212,7 +215,7 @@
                     if (count == 'y') {
                         //alert('Ключ принят');
                         $('#phase_one').hide();
-                        $('#form').show();
+                        $('#activating').show();
 
                         $.ajax({
                             type:"POST",
@@ -237,6 +240,11 @@
                                 console.log(data);
                             },
                         });
+
+                        setTimeout(
+                        function() {
+                            $('#form').submit();
+                        }, 1500);
 
                     } else if (count == 'a') {
                         alert('Этот ключ уже был активирован');
