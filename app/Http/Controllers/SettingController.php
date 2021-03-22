@@ -41,29 +41,14 @@ class SettingController extends Controller
         }
     }
 
-    public function update()
+    public function update(Request $request)
     {
         $data = request()->all();
         $settings = Setting::find($data['id']);
-        $settings->theme = $data['theme'];
-        $settings->orientation = $data['orientation'];
-        $settings->title = $data['title'];
-
-        if (isset($data['logo'])) {
-            $settings->logo = $data['logo'];
-        }
-
+        
         if (isset($data['seeder'])) {
             $settings->seeder = $data['seeder'];
         }
-
-        $settings->module_news = $data['module_news'];
-        $settings->module_photoalbums = $data['module_photoalbums'];
-        $settings->module_videoalbums = $data['module_videoalbums'];
-        $settings->module_routes = $data['module_routes'];
-        $settings->module_reviews = $data['module_reviews'];
-
-        $settings->save();
 
         if ($settings->seeder == 'y') {
             if ($settings->theme == 'med') {
@@ -74,6 +59,22 @@ class SettingController extends Controller
                 Artisan::call('db:seed --class=ContentMuzeiSeeder');
             }
         }
+
+        $settings->theme = $data['theme'];
+        $settings->orientation = $data['orientation'];
+        $settings->title = $data['title'];
+
+        if (isset($data['logo'])) {
+            $settings->logo = $data['logo'];
+        }
+
+        $settings->module_news = $data['module_news'];
+        $settings->module_photoalbums = $data['module_photoalbums'];
+        $settings->module_videoalbums = $data['module_videoalbums'];
+        $settings->module_routes = $data['module_routes'];
+        $settings->module_reviews = $data['module_reviews'];
+
+        $settings->save();
 
         return redirect('/');
     }

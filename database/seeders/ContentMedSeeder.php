@@ -9,17 +9,20 @@ use Illuminate\Support\Str;
 
 class ContentMedSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         // НАСТРОЙКИ
-        DB::table('settings')->where('id', '1')->update([
+        DB::table('settings')->insert([
+            'id' => '1',
             'theme' => 'med',
+            'orientation' => 'horizontal',
+            'title' => NULL,
             'logo' => '/img/med-logo.png',
+            'module_photoalbums' => 'y',
+            'module_videoalbums' => 'y',
+            'module_news' => 'y',
+            'module_routes' => 'y',
+            'module_reviews' => 'y',
         ]);
 
         // СТРАНИЦЫ

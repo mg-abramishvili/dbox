@@ -20,7 +20,6 @@ class DatabaseSeeder extends Seeder
             NewsSeeder::class,
             GallerySeeder::class,
             VideoGallerySeeder::class,
-            SettingsSeeder::class,
         ]);
     }
 }
