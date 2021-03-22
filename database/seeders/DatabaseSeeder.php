@@ -20,9 +20,7 @@ class DatabaseSeeder extends Seeder
             NewsSeeder::class,
             GallerySeeder::class,
             VideoGallerySeeder::class,
-
-            // Медцентр            
-            // ContentMedSeeder::class,
+            SettingsSeeder::class,
         ]);
     }
 }
