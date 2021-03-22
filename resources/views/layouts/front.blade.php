@@ -164,6 +164,15 @@
                             </dd>
                         </div>
 
+                        <div class="row align-items-center mb-2">    
+                            <dt class="col-sm-3">
+                                Serial Key
+                            </dt>
+                            <dd class="col-sm-9">
+                                <input type="text" class="form-control" name="serial_key" id="serial_key">
+                            </dd>
+                        </div>
+
                         <div class="row mt-5">
                             <div class="col-12">
                                 <button type="submit" id="submit-final" class="btn btn-lg btn-success">Активировать</button>
@@ -178,124 +187,46 @@
 
         @yield('scripts')
 
+        @include('layouts.act')
+
         <script>
-            $('#form').hide();
-            $('#activating').hide();
-            $('#key-input').val('');
-
-            $('#activate-button').click(function () {
-                var vid = "";
-                var count = "";
-                var keycheck = $('#key-input').val();
-                $.getJSON('http://touchlab.su/api/key/view/' + keycheck, function(data) {
-                    
-                    if (data.key == keycheck) {
-                        if (data.status == 'waiting') {
-                            
-                            datakey = data.key;
-                            program = data.programs[0].title;
-
-                            dreambox_theme = data.parameters[0].dreambox_theme;
-                            dreambox_orientation = data.parameters[0].dreambox_orientation;
-                            dreambox_title = data.parameters[0].dreambox_title;
-                            dreambox_module_news = data.parameters[0].dreambox_module_news;
-                            dreambox_module_photoalbums = data.parameters[0].dreambox_module_photoalbums;
-                            dreambox_module_videoalbums = data.parameters[0].dreambox_module_videoalbums;
-                            dreambox_module_routes = data.parameters[0].dreambox_module_routes;
-                            dreambox_module_reviews = data.parameters[0].dreambox_module_reviews;
-
-                            count = 'y';
-
-                        }
-                        else {
-                            count = 'a';
-                        }
-                    }
-
-                    if (count == 'y') {
-                        //alert('Ключ принят');
-                        $('#phase_one').hide();
-                        $('#activating').show();
-                        //$('#form').show();
-
-                        $.ajax({
-                            type:"POST",
-                            url:"http://touchlab.su/api/key/activate/"+ datakey +"",
-                            data:"status=active",
-                            dataType:"json",
-                            success: function(data) {
-                                //alert('Активация успешна!');
-                                //window.location = "http://localhost";
-                                $('#theme').val(dreambox_theme);
-                                $('#orientation').val(dreambox_orientation);
-                                $('#title').val(dreambox_title);
-                                $('#module_news').val(dreambox_module_news);
-                                $('#module_photoalbums').val(dreambox_module_photoalbums);
-                                $('#module_videoalbums').val(dreambox_module_videoalbums);
-                                $('#module_routes').val(dreambox_module_routes);
-                                $('#module_reviews').val(dreambox_module_reviews);
-                                $.get('nta-y.php', function(data) {
-                                });
-                            },
-                            error: function(data) {
-                                console.log(data);
-                            },
-                        });
-
-                        setTimeout(
-                        function() {
-                            $('#form').submit();
-                        }, 3500);
-
-                    } else if (count == 'a') {
-                        alert('Этот ключ уже был активирован');
-                    }
-
-                })
-                .fail(function(jqXHR, textStatus, errorThrown) {
-                    alert('Неверный ключ!');
-                });
+            $(document).ready(function(){
+                $("svg").find("text").hide();
+                $("svg").find("text:first").show();
+                $("svg").find("text:last").show();
+                //$("#wrapper").html($("#wrapper").html());
             });
         </script>
 
-<script>
-        $(document).ready(function(){
-            $("svg").find("text").hide();
-            $("svg").find("text:first").show();
-            $("svg").find("text:last").show();
-            //$("#wrapper").html($("#wrapper").html());
-        });
-    </script>
+        <script> // ZOOM
+            const elem = document.getElementById('wrapper-inner');
+                const zoomInButton = document.getElementById('zoomin');
+                const zoomOutButton = document.getElementById('zoomout');
+                const resetButton = document.getElementById('reset');
+                const panzoom = Panzoom(elem, {
+                    contain: 'outside',
+                    duration: 200,
+                    startX: 0,
+                    startY: 0,
+                    startScale: 1,
+                    maxScale: 6,
+                    minScale: 1,
+                });
+                const parent = elem.parentElement
+            parent.addEventListener('wheel', panzoom.zoomWithWheel);
+            //zoomInButton.addEventListener('click', panzoom.zoomIn);
+            //zoomOutButton.addEventListener('click', panzoom.zoomOut);
+            //resetButton.addEventListener('click', panzoom.reset);
+        </script>
 
-    <script> // ZOOM
-        const elem = document.getElementById('wrapper-inner');
-            const zoomInButton = document.getElementById('zoomin');
-            const zoomOutButton = document.getElementById('zoomout');
-            const resetButton = document.getElementById('reset');
-            const panzoom = Panzoom(elem, {
-                contain: 'outside',
-                duration: 200,
-                startX: 0,
-                startY: 0,
-                startScale: 1,
-                maxScale: 6,
-                minScale: 1,
-            });
-            const parent = elem.parentElement
-        parent.addEventListener('wheel', panzoom.zoomWithWheel);
-        //zoomInButton.addEventListener('click', panzoom.zoomIn);
-        //zoomOutButton.addEventListener('click', panzoom.zoomOut);
-        //resetButton.addEventListener('click', panzoom.reset);
-    </script>
-
-<script>
-        document.onkeydown = function(e){
-            e = e || window.event;
-            var key = e.which || e.keyCode;
-            if(key == 65 && e.ctrlKey){
-                window.location.href = "/login";
-            }
-        }        
+        <script>
+            document.onkeydown = function(e){
+                e = e || window.event;
+                var key = e.which || e.keyCode;
+                if(key == 65 && e.ctrlKey){
+                    window.location.href = "/login";
+                }
+            }        
         </script>
 
     </body>

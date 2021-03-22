@@ -12,17 +12,11 @@ class ContentMuzeiSeeder extends Seeder
     public function run()
     {
         // НАСТРОЙКИ
-        DB::table('settings')->insert([
-            'id' => '1',
-            'theme' => 'muzei',
+        DB::table('settings')->where('id', '1')->update([
+            'theme' => 'med',
             'orientation' => 'horizontal',
             'title' => 'Название музея',
-            'logo' => '/img/med-logo.png',
-            'module_photoalbums' => 'y',
-            'module_videoalbums' => 'y',
-            'module_news' => 'y',
-            'module_routes' => 'y',
-            'module_reviews' => 'y',
+            'logo' => '/img/sber.png',
         ]);
 
         // СТРАНИЦЫ

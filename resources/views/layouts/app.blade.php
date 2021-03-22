@@ -92,6 +92,12 @@
                         </form>
                     </li>
                 </ul>
+                @if($settings->serial_key)
+                    <div style="font-size: 12px; color: #999;">
+                        Лицензионный ключ:<br>
+                        {{ $settings->serial_key }}
+                    </div>
+                @endif
             </nav>
             <main>
                 @yield('content')

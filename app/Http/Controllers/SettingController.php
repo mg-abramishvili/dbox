@@ -43,20 +43,22 @@ class SettingController extends Controller
 
     public function update()
     {
-        $data = request()->all();
-        $settings = Setting::find($data['id']);
+        $data0 = request()->all();
+        $settings0 = Setting::find($data0['id']);
 
-        if (isset($data['seeder'])) {
-            if ($data['seeder'] == 'y') {
-                if ($settings->theme == 'med') {
+        if (isset($data0['seeder'])) {
+            if($data0['seeder'] == 'y') {
+                if($data0['theme'] == 'med') {
                     Artisan::call('migrate:fresh --seed');
                     Artisan::call('db:seed --class=ContentMedSeeder');
-                } else if ($settings->theme == 'muzei') {
+                } elseif ($data0['theme'] == 'muzei') {
                     Artisan::call('migrate:fresh --seed');
                     Artisan::call('db:seed --class=ContentMuzeiSeeder');
                 }
             }
         }
+        
+        $settings0->save();
 
         $data = request()->all();
         $settings = Setting::find($data['id']);
@@ -66,6 +68,10 @@ class SettingController extends Controller
 
         if (isset($data['logo'])) {
             $settings->logo = $data['logo'];
+        }
+
+        if (isset($data['serial_key'])) {
+            $settings->serial_key = $data['serial_key'];
         }
 
         $settings->module_news = $data['module_news'];
