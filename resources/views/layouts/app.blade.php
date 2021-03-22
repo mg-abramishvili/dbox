@@ -91,13 +91,15 @@
                             <button type="submit" class="nav-link" style="background: transparent; border: 0; box-shadow: none;">Выйти</button>
                         </form>
                     </li>
+                    @if($settings->serial_key)
+                        <li class="nav-item">
+                            <a class="nav-link" style="font-size: 12px; color: #b6b5b5;">
+                                Лицензионный ключ:<br>
+                                {{ $settings->serial_key }}
+                            </a>
+                        </li>
+                    @endif
                 </ul>
-                @if($settings->serial_key)
-                    <div style="font-size: 12px; color: #999;">
-                        Лицензионный ключ:<br>
-                        {{ $settings->serial_key }}
-                    </div>
-                @endif
             </nav>
             <main>
                 @yield('content')
