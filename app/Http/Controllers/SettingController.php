@@ -41,25 +41,25 @@ class SettingController extends Controller
         }
     }
 
-    public function update(Request $request)
+    public function update()
     {
         $data = request()->all();
         $settings = Setting::find($data['id']);
-        
-        if (isset($data['seeder'])) {
-            $settings->seeder = $data['seeder'];
-        }
 
-        if ($settings->seeder == 'y') {
-            if ($settings->theme == 'med') {
-                Artisan::call('migrate:fresh --seed');
-                Artisan::call('db:seed --class=ContentMedSeeder');
-            } elseif ($settings->theme == 'muzei') {
-                Artisan::call('migrate:fresh --seed');
-                Artisan::call('db:seed --class=ContentMuzeiSeeder');
+        if (isset($data['seeder'])) {
+            if ($data['seeder'] == 'y') {
+                if ($settings->theme == 'med') {
+                    Artisan::call('migrate:fresh --seed');
+                    Artisan::call('db:seed --class=ContentMedSeeder');
+                } else if ($settings->theme == 'muzei') {
+                    Artisan::call('migrate:fresh --seed');
+                    Artisan::call('db:seed --class=ContentMuzeiSeeder');
+                }
             }
         }
 
+        $data = request()->all();
+        $settings = Setting::find($data['id']);
         $settings->theme = $data['theme'];
         $settings->orientation = $data['orientation'];
         $settings->title = $data['title'];

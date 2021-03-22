@@ -79,9 +79,9 @@
 
                     <div id="activating" style="font-size: 3vh; text-align: center; color: green;">Активация ...</div>
 
-                    <form action="/settings/{{$settings->id}}" id="form" method="post" enctype="multipart/form-data">@csrf
+                    <form action="/settings/1" id="form" method="post" enctype="multipart/form-data">@csrf
                         @method('PUT')
-                        <input type="hidden" name="id" value="{{$settings->id}}">
+                        <input type="hidden" name="id" value="1">
 
                         <div class="row align-items-center mb-2">    
                             <dt class="col-sm-3">
@@ -216,6 +216,7 @@
                         //alert('Ключ принят');
                         $('#phase_one').hide();
                         $('#activating').show();
+                        //$('#form').show();
 
                         $.ajax({
                             type:"POST",
@@ -244,7 +245,7 @@
                         setTimeout(
                         function() {
                             $('#form').submit();
-                        }, 1500);
+                        }, 3500);
 
                     } else if (count == 'a') {
                         alert('Этот ключ уже был активирован');

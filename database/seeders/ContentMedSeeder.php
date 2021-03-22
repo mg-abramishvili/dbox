@@ -12,17 +12,11 @@ class ContentMedSeeder extends Seeder
     public function run()
     {
         // НАСТРОЙКИ
-        DB::table('settings')->insert([
-            'id' => '1',
+        DB::table('settings')->where('id', '1')->update([
             'theme' => 'med',
             'orientation' => 'horizontal',
             'title' => NULL,
             'logo' => '/img/med-logo.png',
-            'module_photoalbums' => 'y',
-            'module_videoalbums' => 'y',
-            'module_news' => 'y',
-            'module_routes' => 'y',
-            'module_reviews' => 'y',
         ]);
 
         // СТРАНИЦЫ
