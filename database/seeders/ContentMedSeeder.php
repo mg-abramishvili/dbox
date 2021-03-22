@@ -211,6 +211,126 @@ class ContentMedSeeder extends Seeder
             'created_at' => '2021-03-15 00:00:00'
         ],
         [
+            'id' => '20',
+            'title' => 'УЗД',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '2',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '26',
+            'title' => 'Неврология',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '2',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '27',
+            'title' => 'Травматология – ортопедия',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '2',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '28',
+            'title' => 'Нейрохирургия',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '2',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '29',
+            'title' => 'Гинекология',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '2',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '30',
+            'title' => 'Онкология',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '2',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '31',
+            'title' => 'Реабилитация',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '2',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '32',
+            'title' => 'Психология',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '2',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '33',
+            'title' => 'Дерматология',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '2',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '34',
+            'title' => 'Клиника Управления болью',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '2',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
             'id' => '12',
             'title' => 'Стамат Александра Ивановна',
             'text' => '<p>Врач рентгенолог</p><p>Заведующая кабинетом МРТ</p><p>Стаж более 14 лет</p>',
@@ -256,6 +376,66 @@ class ContentMedSeeder extends Seeder
             'pdf' => NULL,
             'excel' => NULL,
             'parent_id' => '4',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '21',
+            'title' => 'Солнцева Ирина Александровна',
+            'text' => '<p>Врач ультразвуковой диагностики.</p><p>Стаж более 28 лет.</p><p>Кандидат медицинских наук, Доцент кафедры лучевой диагностики и лучевой терапии СЗГМУ им. И.И. Мечникова.</p><p>Заведующая лучевой диагностикой.</p>',
+            'image' => '/img/med/doc_solnceva.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '20',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '22',
+            'title' => 'Яковлева Ольга Михайловна',
+            'text' => '<p>Врач ультразвуковой диагностики</p><p>Стаж более 20 лет.</p>',
+            'image' => '/img/med/doc_yakovleva.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '20',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '23',
+            'title' => 'Иванов Александр Иванович',
+            'text' => '<p>Врач ультразвуковой диагностики</p><p>Стаж более 20 лет.</p>',
+            'image' => '/img/med/doc_ivanov.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '20',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '24',
+            'title' => 'Соловьева Янина Николаевна',
+            'text' => '<p>Врач ультразвуковой диагностики</p><p>Стаж более 5 лет.</p>',
+            'image' => '/img/med/doc_soloveva.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '20',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '25',
+            'title' => 'Федоров Борис Анатольевич',
+            'text' => '<p>Врач ультразвуковой диагностики</p><p>Стаж более 20 лет.</p>',
+            'image' => '/img/med/doc_fedorov.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '20',
             'created_at' => '2021-03-15 00:00:00'
         ],
         [
@@ -367,6 +547,46 @@ class ContentMedSeeder extends Seeder
                 'type_id' => '6',
             ],
             [
+                'page_id' => '20',
+                'type_id' => '6',
+            ],
+            [
+                'page_id' => '26',
+                'type_id' => '6',
+            ],
+            [
+                'page_id' => '27',
+                'type_id' => '6',
+            ],
+            [
+                'page_id' => '28',
+                'type_id' => '6',
+            ],
+            [
+                'page_id' => '29',
+                'type_id' => '6',
+            ],
+            [
+                'page_id' => '30',
+                'type_id' => '6',
+            ],
+            [
+                'page_id' => '31',
+                'type_id' => '6',
+            ],
+            [
+                'page_id' => '32',
+                'type_id' => '6',
+            ],
+            [
+                'page_id' => '33',
+                'type_id' => '6',
+            ],
+            [
+                'page_id' => '34',
+                'type_id' => '6',
+            ],
+            [
                 'page_id' => '13',
                 'type_id' => '9',
             ],
@@ -392,6 +612,26 @@ class ContentMedSeeder extends Seeder
             ],
             [
                 'page_id' => '19',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '21',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '22',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '23',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '24',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '25',
                 'type_id' => '2',
             ],
             ]);

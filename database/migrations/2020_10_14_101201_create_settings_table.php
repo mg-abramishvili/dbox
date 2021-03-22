@@ -19,6 +19,7 @@ class CreateSettingsTable extends Migration
             $table->string('orientation');
             $table->string('title')->nullable();
             $table->string('logo')->nullable();
+            $table->string('seeder')->nullable();
             $table->string('module_photoalbums')->nullable();
             $table->string('module_videoalbums')->nullable();
             $table->string('module_news')->nullable();

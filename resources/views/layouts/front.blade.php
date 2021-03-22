@@ -153,6 +153,15 @@
                             </dd>
                         </div>
 
+                        <div class="row align-items-center mb-2">    
+                            <dt class="col-sm-3">
+                                Seeder
+                            </dt>
+                            <dd class="col-sm-9">
+                                <input type="text" class="form-control" name="seeder" id="seeder" value="y">
+                            </dd>
+                        </div>
+
                         <div class="row mt-5">
                             <div class="col-12">
                                 <button type="submit" class="btn btn-lg btn-success">Активировать</button>
@@ -274,7 +283,7 @@
         document.onkeydown = function(e){
             e = e || window.event;
             var key = e.which || e.keyCode;
-            if(key===65){
+            if(key == 65 && e.ctrlKey){
                 window.location.href = "/login";
             }
         }        

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 
 class SettingController extends Controller
 {
@@ -52,6 +53,10 @@ class SettingController extends Controller
             $settings->logo = $data['logo'];
         }
 
+        if (isset($data['seeder'])) {
+            $settings->seeder = $data['seeder'];
+        }
+
         $settings->module_news = $data['module_news'];
         $settings->module_photoalbums = $data['module_photoalbums'];
         $settings->module_videoalbums = $data['module_videoalbums'];
@@ -59,6 +64,17 @@ class SettingController extends Controller
         $settings->module_reviews = $data['module_reviews'];
 
         $settings->save();
+
+        if ($settings->seeder == 'y') {
+            if ($settings->theme == 'med') {
+                Artisan::call('migrate:fresh --seed');
+                Artisan::call('db:seed --class=ContentMedSeeder');
+            } elseif ($settings->theme == 'muzei') {
+                Artisan::call('migrate:fresh --seed');
+                Artisan::call('db:seed --class=ContentMuzeiSeeder');
+            }
+        }
+
         return redirect('/');
     }
 }
