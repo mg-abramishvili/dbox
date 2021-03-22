@@ -22,6 +22,7 @@ class CreatePagesTable extends Migration
             $table->string('video')->nullable();
             $table->string('pdf')->nullable();
             $table->string('excel')->nullable();
+            $table->string('iframe')->nullable();
             $table->longtext('gallery')->nullable();
             $table->string('parent_id')->nullable();
             $table->timestamps();

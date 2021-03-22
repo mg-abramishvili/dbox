@@ -24,6 +24,13 @@ class CreateSettingsTable extends Migration
             $table->string('module_news')->nullable();
             $table->string('module_routes')->nullable();
             $table->string('module_reviews')->nullable();
+            $table->string('module_banner_one')->nullable();
+            $table->string('module_banner_two')->nullable();
+            $table->string('module_banner_three')->nullable();
+            $table->string('module_vtour')->nullable();
+            $table->string('module_vi')->nullable();
+            $table->string('module_email')->nullable();
+            $table->string('module_printer')->nullable();
             $table->timestamps();
         });
     }
