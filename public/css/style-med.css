@@ -764,11 +764,14 @@ footer {
     margin: 0 auto;
     overflow: visible;
     background-color: #fff;
+    transform: scale(1.5);
+    transform-origin: 50% 0%;
 }
 
 #wrapper-inner {
     width: 800px;
     height: 450px;
+    margin-top: 4vh;
 }
 
 .map {
@@ -891,6 +894,7 @@ footer {
     resize: none;
     height: 36vh;
     border: 1px solid #333;
+    font-size: 3vh;
 }
 
 .review-form .btn-med {

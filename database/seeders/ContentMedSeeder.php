@@ -214,7 +214,43 @@ class ContentMedSeeder extends Seeder
             'id' => '12',
             'title' => 'Стамат Александра Ивановна',
             'text' => '<p>Врач рентгенолог</p><p>Заведующая кабинетом МРТ</p><p>Стаж более 14 лет</p>',
-            'image' => '/img/med/stamat.jpg',
+            'image' => '/img/med/doc_stamat.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '4',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '17',
+            'title' => 'Грибанова Татьяна Геннадьевна',
+            'text' => '<p>Врач рентгенолог</p><p>Стаж более 14 лет</p>',
+            'image' => '/img/med/doc_gribanova.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '4',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '18',
+            'title' => 'Романова Диана Даниловна',
+            'text' => '<p>Врач рентгенолог</p><p>Стаж более 6 лет</p>',
+            'image' => '/img/med/doc_romanova.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '4',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '19',
+            'title' => 'Овчинников Артем Сергеевич',
+            'text' => '<p>Врач рентгенолог</p><p>Стаж более 8 лет</p>',
+            'image' => '/img/med/doc_ovchinnikov.jpg',
             'gallery' => NULL,
             'image_as_icon' => '1',
             'pdf' => NULL,
@@ -345,6 +381,18 @@ class ContentMedSeeder extends Seeder
             [
                 'page_id' => '16',
                 'type_id' => '9',
+            ],
+            [
+                'page_id' => '17',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '18',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '19',
+                'type_id' => '2',
             ],
             ]);
 

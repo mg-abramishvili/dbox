@@ -42,7 +42,7 @@
         $(document).ready(function(){
             $("#map").css('opacity', '0');
             setTimeout(function () {
-                panzoom.reset({ startScale: 2 })
+                panzoom.reset({ startScale: 2, })
             }, 350);
             setTimeout(function () {
                 panzoom.reset({ startScale: 1, startX: 0, startY: 0, })
