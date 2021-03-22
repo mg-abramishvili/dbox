@@ -49,9 +49,15 @@
                     @foreach ($r01routes as $scheme => $route)
                         @foreach($route as $routeItem)
                             @if($loop->first)
-                                @foreach($routeItem->schemes as $sch)
-                                    <h4><strong>{{ $sch->title }}</strong></h4>
-                                @endforeach
+                                @if($routeItem->schemes2->count())
+                                    @foreach ($routeItem->schemes2 as $rs)
+                                        {{ $rs->title }}
+                                    @endforeach
+                                @else
+                                    @foreach ($routeItem->schemes as $rs)
+                                        {{ $rs->title }}
+                                    @endforeach
+                                @endif
                             @endif
                         @endforeach
                         @foreach($route as $routeItem)

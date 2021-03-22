@@ -76,7 +76,7 @@
         <a href="/" class="med-home med-home-sub">
             <img src="/img/medhome.svg" alt="">
         </a>
-        <a href="/front-photoalbums" class="med-footer-second"><span>Фотогалерея</span></a>
+        <a href="/front-reviews" class="med-footer-second"><span>Оставить отзыв</span></a>
     </div>
 </footer>
 

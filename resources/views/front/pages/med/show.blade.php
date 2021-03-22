@@ -96,11 +96,20 @@
         </div>
 
         <footer>
-        <div class="container">
-            <a href="/" class="med-home med-home-sub">
-                <img src="/img/medhome.svg" alt="">
-            </a>
-            <a href="/front-pages/{{ $page->id }}" class="med-footer-second"><span>{{ $page->title }}</span></a>
-        </div>
-    </footer>
+            <div class="container">
+                <a href="/" class="med-home med-home-sub">
+                    <img src="/img/medhome.svg" alt="">
+                </a>
+                @if($page->parent_id)
+                    @foreach ($pages as $parent_page)
+                        @if($parent_page->id == $page->parent_id)
+                        <a href="/front-pages/{{ $parent_page->id }}" class="med-footer-second"><span>{{ $parent_page->title }}</span></a>
+                        <a class="med-footer-third"><span>{{ $page->title }}</span></a>
+                        @endif
+                    @endforeach
+                @else
+                    <a href="/front-pages/{{ $page->id }}" class="med-footer-second"><span>{{ $page->title }}</span></a>
+                @endif
+            </div>
+        </footer>
     </div>
