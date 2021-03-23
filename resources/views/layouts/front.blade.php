@@ -58,13 +58,15 @@
             @php } @endphp
             @php } elseif ($hnta == 'n') { @endphp
 
-                <div style="position: absolute; top: 20vh; left: 0; right: 0; display: block; width: 50vw; margin: 0 auto; text-align: center; font-size: 2vh;">
+                <div style="position: absolute; top: 15vh; left: 0; right: 0; display: block; width: 50vw; margin: 0 auto; text-align: center; font-size: 2vh;">
                     
-                    <img src="/logo-h.png" style="width: 340px; display: block; margin: 0 auto;margin-bottom: 125px">
+                    <img src="/logo-h.png" style="width: 240px; display: block; margin: 0 auto;margin-bottom: 50px">
                     
                     <div id="phase_one">
-                        <input type="text" id="key-input" placeholder="Введите ключ, вместе со знаками -" style="display: inline-block; padding: 18px 40px; border-radius: 10px; width: 59%; text-transform: uppercase;">
+                        <input type="text" id="key-input" placeholder="Введите ключ, вместе со знаками -" style="display: inline-block; padding: 18px 40px; border-radius: 10px; width: 59%;">
                         <button id="activate-button" style="display: inline-block; width: 40%; background-color: #ffc940; box-shahow: none; padding: 20px 40px; border: 0; border-radius: 10px; color: #fff;">Активировать</button>
+
+                        @include('layouts.act-keyboard')
                     </div>
 
                     <div id="activating" style="font-size: 3vh; text-align: center; color: green;">Активация ...</div>
