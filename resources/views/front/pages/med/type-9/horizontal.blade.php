@@ -1,3 +1,11 @@
+<script>
+    $(document).ready(function(){
+        setTimeout(function () {
+            $(".excel-item").css('opacity', '1');
+        }, 1000);
+    });
+</script>
+
 <div class="type-9">
     <div class="row">
         <div class="col-12">
@@ -9,7 +17,7 @@
                     <h1 class="mb-4">{{ $page->title }}</h1>
                 @endif
 
-                <div class="excel-item">
+                <div class="excel-item" style="opacity: 0;">
                     @php
                     include 'vendor/autoload.php';
 

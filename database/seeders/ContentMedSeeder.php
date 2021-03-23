@@ -309,6 +309,18 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '34',
+            'title' => 'Старшая медицинская сестра',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '2',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '50',
             'title' => 'Клиника Управления болью',
             'text' => '',
             'image' => NULL,
@@ -428,6 +440,225 @@ class ContentMedSeeder extends Seeder
             'created_at' => '2021-03-15 00:00:00'
         ],
         [
+            'id' => '35',
+            'title' => 'Шаповал Николай Сергеевич',
+            'text' => '<p>Врач-невролог.</p><p>Специалист по лечению боли.</p><p>Стаж более 8 лет.</p>',
+            'image' => '/img/med/doc_shapoval.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '26',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '36',
+            'title' => 'Синельников Андрей Константинович',
+            'text' => '<p>Врач-невролог.</p><p>Специалист по лечению головной и лицевой боли, спастической кривошеи, блефароспазма.</p><p>Стаж более 10 лет.</p>',
+            'image' => '/img/med/doc_sidelnikov.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '26',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '37',
+            'title' => 'Черненко Валерий Юрьевич',
+            'text' => '<p>Врач-невролог.</p><p>Специалист по лечению боли.</p><p>Стаж более 8 лет.</p>',
+            'image' => '/img/med/doc_chernenko.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '26',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '38',
+            'title' => 'Бизюков Олег Валерьевич',
+            'text' => '<p>Врач травматолог – ортопед.</p><p>Стаж более 21 г.</p>',
+            'image' => '/img/med/doc_bizyukov.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '27',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '39',
+            'title' => 'Тюликов Константин Владимирович',
+            'text' => '<p>Врач-нейрохирург.</p><p>Специалист по лечению боли.</p><p>Врач высшей категории.</p><p>Кандидат медицинских наук.</p><p>Стаж более 14 лет.</p>',
+            'image' => '/img/med/doc_tyulikov.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '28',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '40',
+            'title' => 'Трушин Павел Вадимович',
+            'text' => '<p>Врач-нейрохирург.</p><p>Специалист по лечению боли.</p><p>Врач высшей категории.</p><p>Кандидат медицинских наук.</p><p>Стаж работы по специальности более 10 лет.</p>',
+            'image' => '/img/no-image.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '28',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '41',
+            'title' => 'Гамзатова Зайнаб Хизриенва',
+            'text' => '<p>Врач акушер-гинеколог, эндокринолог.</p><p>Стаж более 18 лет.</p><p>Кандидат медицинских наук.</p><p>Заведующая отделения гинекология.</p>',
+            'image' => '/img/med/doc_gamzatova.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '29',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '42',
+            'title' => 'Фролова Маргарита Сергеевна',
+            'text' => '<p>Врач акушер-гинеколог.</p><p>Стаж более 5 лет.</p>',
+            'image' => '/img/med/doc_frolova.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '29',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '43',
+            'title' => 'Кочаткова Анна Александровна',
+            'text' => '<p>Главный врач.</p><p>Врач Онколог (в т. ч. маммолог).</p><p>Стаж более 14 лет.</p><p>Химиотерапевт.</p><p>Кандидат медицинских наук.</p>',
+            'image' => '/img/med/doc_kochatkova.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '30',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '44',
+            'title' => 'Лифанова Виктория Юрьевна',
+            'text' => '<p>Врач онколог-маммолог.</p><p>Хирург.</p><p>Химиотерапевт.</p><p>Стаж более 5 лет.</p>',
+            'image' => '/img/med/doc_lifanova.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '30',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '45',
+            'title' => 'Саломатина Эллина Леонардовна',
+            'text' => '<p>Врач-физиотерапевт, рефлексотерапевт.</p><p>Стаж более 33 лет.</p>',
+            'image' => '/img/med/doc_salomatina.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '31',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '46',
+            'title' => 'Кочурин Николай Сергеевич',
+            'text' => '<p>Инструктор ЛФК.</p><p>Массажист.</p><p>Стаж более 10 лет.</p>',
+            'image' => '/img/med/doc_kochurin.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '31',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '47',
+            'title' => 'Романенков Андрей Андреевич',
+            'text' => '<p>Врач Мануальный терапевт.</p><p>Стаж более 9 лет.</p>',
+            'image' => '/img/no-image.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '31',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '48',
+            'title' => 'Генделева Елена Юрьевна',
+            'text' => '<p>Психолог, преподаватель психологии.</p><p>Стаж более 6 лет.</p><p>Член Национальной Ассоциации EMDR России.</p>',
+            'image' => '/img/med/doc_gendeleva.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '32',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '49',
+            'title' => 'Соколов Григорий Никитич',
+            'text' => '<p>Врач дерматолог.</p><p>Врач высшей категории.</p><p>Кандидат медицинских наук.</p><p>Доцент кафедры дерматовенерологии Санкт-Петербургского Государственного Университета им.акад. И.П. Павлова.</p><p>Стаж более 25 лет.</p>
+            ',
+            'image' => '/img/med/doc_sokolov.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '33',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '51',
+            'title' => 'Сулейменова Ольга Сергеевна',
+            'text' => '<p>Стаж более 24 лет.</p>
+            ',
+            'image' => '/img/med/doc_suleymenova.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '34',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '52',
+            'title' => 'Гальперин Марк Яковлевич',
+            'text' => '<p>Специалист по лечению боли в клинике Е. Малышевой.</p><p>Врач-анестезиолог, альголог.</p><p>Стаж более 30 лет.</p>
+            ',
+            'image' => '/img/med/doc_galperin.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '50',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '53',
+            'title' => 'Шубин Дмитрий Николаевич',
+            'text' => '<p>Врач-невролог, мануальный терапевт.</p><p>Специалист по лечению боли в клинике Е. Малышевой.</p><p>Стаж более 30 лет.</p>',
+            'image' => '/img/med/doc_shubin.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => '50',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
             'id' => '3',
             'title' => 'Прейскурант',
             'text' => '',
@@ -484,6 +715,234 @@ class ContentMedSeeder extends Seeder
             'image_as_icon' => '0',
             'pdf' => NULL,
             'excel' => '/img/med/04.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '54',
+            'title' => 'Терапия',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/05.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '55',
+            'title' => 'Нейрохирургия',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/06.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '56',
+            'title' => 'Неврология',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/07.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '57',
+            'title' => 'Травматология и ортопедия',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/08.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '58',
+            'title' => 'Гастроэнтерология',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/09.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '59',
+            'title' => 'Гинекология',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/10.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '60',
+            'title' => 'Урология',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/11.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '61',
+            'title' => 'Оториноларингология',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/12.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '62',
+            'title' => 'Реабилитация',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/13.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '63',
+            'title' => 'Сестринское дело',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/14.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '64',
+            'title' => 'Хирургия',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/15.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '65',
+            'title' => 'Дерматология',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/16.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '66',
+            'title' => 'Управление болью',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/17.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '67',
+            'title' => 'Лаборатория',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/18.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '68',
+            'title' => 'Онкология',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/19.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '69',
+            'title' => 'Нейрохирургия РИЦ',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/20.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '70',
+            'title' => 'Телемедицина',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/21.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '71',
+            'title' => 'Выездные медицинские услуги',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/22.xlsx',
+            'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '72',
+            'title' => 'КДЦ Управления делами Президент',
+            'text' => '',
+            'image' => NULL,
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => '/img/med/22.xlsx',
             'parent_id' => '3',
             'created_at' => '2021-03-15 00:00:00'
         ],
@@ -622,6 +1081,158 @@ class ContentMedSeeder extends Seeder
             [
                 'page_id' => '25',
                 'type_id' => '2',
+            ],
+            [
+                'page_id' => '35',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '36',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '37',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '38',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '39',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '40',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '41',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '42',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '43',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '44',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '45',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '46',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '47',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '48',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '49',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '50',
+                'type_id' => '6',
+            ],
+            [
+                'page_id' => '51',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '52',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '53',
+                'type_id' => '2',
+            ],
+            [
+                'page_id' => '54',
+                'type_id' => '9',
+            ],
+            [
+                'page_id' => '55',
+                'type_id' => '9',
+            ],
+            [
+                'page_id' => '56',
+                'type_id' => '9',
+            ],
+            [
+                'page_id' => '57',
+                'type_id' => '9',
+            ],
+            [
+                'page_id' => '58',
+                'type_id' => '9',
+            ],
+            [
+                'page_id' => '59',
+                'type_id' => '9',
+            ],
+            [
+                'page_id' => '60',
+                'type_id' => '9',
+            ],
+            [
+                'page_id' => '61',
+                'type_id' => '9',
+            ],
+            [
+                'page_id' => '62',
+                'type_id' => '9',
+            ],
+            [
+                'page_id' => '63',
+                'type_id' => '9',
+            ],
+            [
+                'page_id' => '64',
+                'type_id' => '9',
+            ],
+            [
+                'page_id' => '65',
+                'type_id' => '9',
+            ],
+            [
+                'page_id' => '66',
+                'type_id' => '9',
+            ],
+            [
+                'page_id' => '67',
+                'type_id' => '9',
+            ],
+            [
+                'page_id' => '68',
+                'type_id' => '9',
+            ],
+            [
+                'page_id' => '69',
+                'type_id' => '9',
+            ],
+            [
+                'page_id' => '70',
+                'type_id' => '9',
+            ],
+            [
+                'page_id' => '71',
+                'type_id' => '9',
+            ],
+            [
+                'page_id' => '72',
+                'type_id' => '9',
             ],
             ]);
 
