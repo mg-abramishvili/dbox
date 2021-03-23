@@ -21,15 +21,40 @@ class CreateSettingsTable extends Migration
             $table->string('logo')->nullable();
             $table->string('serial_key')->nullable();
             $table->string('seeder')->nullable();
+
             $table->string('module_photoalbums')->nullable();
+            $table->string('module_photoalbums_sort')->nullable();
+            $table->string('module_photoalbums_text')->nullable();
+            $table->string('module_photoalbums_parent')->nullable();
+
             $table->string('module_videoalbums')->nullable();
+            $table->string('module_videoalbums_sort')->nullable();
+            $table->string('module_videoalbums_text')->nullable();
+            $table->string('module_videoalbums_parent')->nullable();
+
             $table->string('module_news')->nullable();
+            $table->string('module_news_sort')->nullable();
+            $table->string('module_news_text')->nullable();
+            $table->string('module_news_parent')->nullable();
+
             $table->string('module_routes')->nullable();
+            $table->string('module_routes_sort')->nullable();
+            $table->string('module_routes_text')->nullable();
+            $table->string('module_routes_parent')->nullable();
+
             $table->string('module_reviews')->nullable();
+            $table->string('module_reviews_sort')->nullable();
+            $table->string('module_reviews_text')->nullable();
+            $table->string('module_reviews_parent')->nullable();
+
+            $table->string('module_vtour')->nullable();
+            $table->string('module_vtour_sort')->nullable();
+            $table->string('module_vtour_text')->nullable();
+            $table->string('module_vtour_parent')->nullable();
+
             $table->string('module_banner_one')->nullable();
             $table->string('module_banner_two')->nullable();
             $table->string('module_banner_three')->nullable();
-            $table->string('module_vtour')->nullable();
             $table->string('module_vi')->nullable();
             $table->string('module_email')->nullable();
             $table->string('module_printer')->nullable();

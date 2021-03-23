@@ -51,11 +51,11 @@
                             @if($loop->first)
                                 @if($routeItem->schemes2->count())
                                     @foreach ($routeItem->schemes2 as $rs)
-                                        {{ $rs->title }}
+                                        <strong style="text-transform: uppercase">{{ $rs->title }}</strong>
                                     @endforeach
                                 @else
                                     @foreach ($routeItem->schemes as $rs)
-                                        {{ $rs->title }}
+                                        <strong style="text-transform: uppercase">{{ $rs->title }}</strong>
                                     @endforeach
                                 @endif
                             @endif

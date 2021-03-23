@@ -17,12 +17,16 @@ class ContentMedSeeder extends Seeder
             'orientation' => 'horizontal',
             'title' => NULL,
             'logo' => '/img/med-logo.png',
+            'module_news_sort' => '07',
+            'module_routes_sort' => '04',
+            'module_reviews_sort' => '05',
         ]);
 
         // СТРАНИЦЫ
         DB::table('pages')->insert([
         [
             'id' => '1',
+            'sort' => '01',
             'title' => 'Информация о клинике',
             'text' => '',
             'image' => NULL,
@@ -35,6 +39,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '6',
+            'sort' => NULL,
             'title' => 'Карточка организации',
             'text' => '<p>ООО «МАРТ»</p>
             <p>Адрес юридического лица: Россия, 199178, город Санкт-Петербург, Малый В.О. проспект, д. 54, корп. 3, лит. Ж</p>
@@ -63,6 +68,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '7',
+            'sort' => NULL,
             'title' => 'Часы работы',
             'text' => '<p>Все дни недели с 08.00 до 22.00 кабинет МРТ</p>
 
@@ -102,6 +108,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '8',
+            'sort' => NULL,
             'title' => 'Положение о скидках',
             'text' => '',
             'image' => NULL,
@@ -114,6 +121,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '9',
+            'sort' => NULL,
             'title' => 'Правила посещения клиники',
             'text' => '<p>Для вашего удобства мы напоминаем за сутки о намеченном визите звонком или SMS-сообщением.</p>
 
@@ -137,6 +145,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '10',
+            'sort' => NULL,
             'title' => 'Общество защиты прав потребителей',
             'text' => '<p><b>Общество защиты прав потребителей</b><br>
             Телефон 576-66-62; 576-78-51</p>
@@ -165,6 +174,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '11',
+            'sort' => NULL,
             'title' => 'Лицензия',
             'text' => '',
             'image' => NULL,
@@ -177,6 +187,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '2',
+            'sort' => '02',
             'title' => 'Наши врачи',
             'text' => '',
             'image' => NULL,
@@ -189,6 +200,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '4',
+            'sort' => NULL,
             'title' => 'МРТ',
             'text' => '',
             'image' => NULL,
@@ -201,6 +213,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '20',
+            'sort' => NULL,
             'title' => 'УЗД',
             'text' => '',
             'image' => NULL,
@@ -213,6 +226,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '26',
+            'sort' => NULL,
             'title' => 'Неврология',
             'text' => '',
             'image' => NULL,
@@ -225,6 +239,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '27',
+            'sort' => NULL,
             'title' => 'Травматология – ортопедия',
             'text' => '',
             'image' => NULL,
@@ -237,6 +252,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '28',
+            'sort' => NULL,
             'title' => 'Нейрохирургия',
             'text' => '',
             'image' => NULL,
@@ -249,6 +265,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '29',
+            'sort' => NULL,
             'title' => 'Гинекология',
             'text' => '',
             'image' => NULL,
@@ -261,6 +278,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '30',
+            'sort' => NULL,
             'title' => 'Онкология',
             'text' => '',
             'image' => NULL,
@@ -273,6 +291,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '31',
+            'sort' => NULL,
             'title' => 'Реабилитация',
             'text' => '',
             'image' => NULL,
@@ -285,6 +304,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '32',
+            'sort' => NULL,
             'title' => 'Психология',
             'text' => '',
             'image' => NULL,
@@ -297,6 +317,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '33',
+            'sort' => NULL,
             'title' => 'Дерматология',
             'text' => '',
             'image' => NULL,
@@ -309,6 +330,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '34',
+            'sort' => NULL,
             'title' => 'Старшая медицинская сестра',
             'text' => '',
             'image' => NULL,
@@ -321,6 +343,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '50',
+            'sort' => NULL,
             'title' => 'Клиника Управления болью',
             'text' => '',
             'image' => NULL,
@@ -333,6 +356,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '12',
+            'sort' => NULL,
             'title' => 'Стамат Александра Ивановна',
             'text' => '<p>Врач рентгенолог</p><p>Заведующая кабинетом МРТ</p><p>Стаж более 14 лет</p>',
             'image' => '/img/med/doc_stamat.jpg',
@@ -345,6 +369,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '17',
+            'sort' => NULL,
             'title' => 'Грибанова Татьяна Геннадьевна',
             'text' => '<p>Врач рентгенолог</p><p>Стаж более 14 лет</p>',
             'image' => '/img/med/doc_gribanova.jpg',
@@ -357,6 +382,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '18',
+            'sort' => NULL,
             'title' => 'Романова Диана Даниловна',
             'text' => '<p>Врач рентгенолог</p><p>Стаж более 6 лет</p>',
             'image' => '/img/med/doc_romanova.jpg',
@@ -369,6 +395,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '19',
+            'sort' => NULL,
             'title' => 'Овчинников Артем Сергеевич',
             'text' => '<p>Врач рентгенолог</p><p>Стаж более 8 лет</p>',
             'image' => '/img/med/doc_ovchinnikov.jpg',
@@ -381,6 +408,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '21',
+            'sort' => NULL,
             'title' => 'Солнцева Ирина Александровна',
             'text' => '<p>Врач ультразвуковой диагностики.</p><p>Стаж более 28 лет.</p><p>Кандидат медицинских наук, Доцент кафедры лучевой диагностики и лучевой терапии СЗГМУ им. И.И. Мечникова.</p><p>Заведующая лучевой диагностикой.</p>',
             'image' => '/img/med/doc_solnceva.jpg',
@@ -393,6 +421,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '22',
+            'sort' => NULL,
             'title' => 'Яковлева Ольга Михайловна',
             'text' => '<p>Врач ультразвуковой диагностики</p><p>Стаж более 20 лет.</p>',
             'image' => '/img/med/doc_yakovleva.jpg',
@@ -405,6 +434,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '23',
+            'sort' => NULL,
             'title' => 'Иванов Александр Иванович',
             'text' => '<p>Врач ультразвуковой диагностики</p><p>Стаж более 20 лет.</p>',
             'image' => '/img/med/doc_ivanov.jpg',
@@ -417,6 +447,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '24',
+            'sort' => NULL,
             'title' => 'Соловьева Янина Николаевна',
             'text' => '<p>Врач ультразвуковой диагностики</p><p>Стаж более 5 лет.</p>',
             'image' => '/img/med/doc_soloveva.jpg',
@@ -429,6 +460,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '25',
+            'sort' => NULL,
             'title' => 'Федоров Борис Анатольевич',
             'text' => '<p>Врач ультразвуковой диагностики</p><p>Стаж более 20 лет.</p>',
             'image' => '/img/med/doc_fedorov.jpg',
@@ -441,6 +473,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '35',
+            'sort' => NULL,
             'title' => 'Шаповал Николай Сергеевич',
             'text' => '<p>Врач-невролог.</p><p>Специалист по лечению боли.</p><p>Стаж более 8 лет.</p>',
             'image' => '/img/med/doc_shapoval.jpg',
@@ -453,6 +486,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '36',
+            'sort' => NULL,
             'title' => 'Синельников Андрей Константинович',
             'text' => '<p>Врач-невролог.</p><p>Специалист по лечению головной и лицевой боли, спастической кривошеи, блефароспазма.</p><p>Стаж более 10 лет.</p>',
             'image' => '/img/med/doc_sidelnikov.jpg',
@@ -465,6 +499,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '37',
+            'sort' => NULL,
             'title' => 'Черненко Валерий Юрьевич',
             'text' => '<p>Врач-невролог.</p><p>Специалист по лечению боли.</p><p>Стаж более 8 лет.</p>',
             'image' => '/img/med/doc_chernenko.jpg',
@@ -477,6 +512,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '38',
+            'sort' => NULL,
             'title' => 'Бизюков Олег Валерьевич',
             'text' => '<p>Врач травматолог – ортопед.</p><p>Стаж более 21 г.</p>',
             'image' => '/img/med/doc_bizyukov.jpg',
@@ -489,6 +525,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '39',
+            'sort' => NULL,
             'title' => 'Тюликов Константин Владимирович',
             'text' => '<p>Врач-нейрохирург.</p><p>Специалист по лечению боли.</p><p>Врач высшей категории.</p><p>Кандидат медицинских наук.</p><p>Стаж более 14 лет.</p>',
             'image' => '/img/med/doc_tyulikov.jpg',
@@ -501,6 +538,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '40',
+            'sort' => NULL,
             'title' => 'Трушин Павел Вадимович',
             'text' => '<p>Врач-нейрохирург.</p><p>Специалист по лечению боли.</p><p>Врач высшей категории.</p><p>Кандидат медицинских наук.</p><p>Стаж работы по специальности более 10 лет.</p>',
             'image' => '/img/no-image.jpg',
@@ -513,6 +551,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '41',
+            'sort' => NULL,
             'title' => 'Гамзатова Зайнаб Хизриенва',
             'text' => '<p>Врач акушер-гинеколог, эндокринолог.</p><p>Стаж более 18 лет.</p><p>Кандидат медицинских наук.</p><p>Заведующая отделения гинекология.</p>',
             'image' => '/img/med/doc_gamzatova.jpg',
@@ -525,6 +564,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '42',
+            'sort' => NULL,
             'title' => 'Фролова Маргарита Сергеевна',
             'text' => '<p>Врач акушер-гинеколог.</p><p>Стаж более 5 лет.</p>',
             'image' => '/img/med/doc_frolova.jpg',
@@ -537,6 +577,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '43',
+            'sort' => NULL,
             'title' => 'Кочаткова Анна Александровна',
             'text' => '<p>Главный врач.</p><p>Врач Онколог (в т. ч. маммолог).</p><p>Стаж более 14 лет.</p><p>Химиотерапевт.</p><p>Кандидат медицинских наук.</p>',
             'image' => '/img/med/doc_kochatkova.jpg',
@@ -549,6 +590,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '44',
+            'sort' => NULL,
             'title' => 'Лифанова Виктория Юрьевна',
             'text' => '<p>Врач онколог-маммолог.</p><p>Хирург.</p><p>Химиотерапевт.</p><p>Стаж более 5 лет.</p>',
             'image' => '/img/med/doc_lifanova.jpg',
@@ -561,6 +603,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '45',
+            'sort' => NULL,
             'title' => 'Саломатина Эллина Леонардовна',
             'text' => '<p>Врач-физиотерапевт, рефлексотерапевт.</p><p>Стаж более 33 лет.</p>',
             'image' => '/img/med/doc_salomatina.jpg',
@@ -573,6 +616,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '46',
+            'sort' => NULL,
             'title' => 'Кочурин Николай Сергеевич',
             'text' => '<p>Инструктор ЛФК.</p><p>Массажист.</p><p>Стаж более 10 лет.</p>',
             'image' => '/img/med/doc_kochurin.jpg',
@@ -585,6 +629,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '47',
+            'sort' => NULL,
             'title' => 'Романенков Андрей Андреевич',
             'text' => '<p>Врач Мануальный терапевт.</p><p>Стаж более 9 лет.</p>',
             'image' => '/img/no-image.jpg',
@@ -597,6 +642,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '48',
+            'sort' => NULL,
             'title' => 'Генделева Елена Юрьевна',
             'text' => '<p>Психолог, преподаватель психологии.</p><p>Стаж более 6 лет.</p><p>Член Национальной Ассоциации EMDR России.</p>',
             'image' => '/img/med/doc_gendeleva.jpg',
@@ -609,6 +655,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '49',
+            'sort' => NULL,
             'title' => 'Соколов Григорий Никитич',
             'text' => '<p>Врач дерматолог.</p><p>Врач высшей категории.</p><p>Кандидат медицинских наук.</p><p>Доцент кафедры дерматовенерологии Санкт-Петербургского Государственного Университета им.акад. И.П. Павлова.</p><p>Стаж более 25 лет.</p>
             ',
@@ -622,6 +669,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '51',
+            'sort' => NULL,
             'title' => 'Сулейменова Ольга Сергеевна',
             'text' => '<p>Стаж более 24 лет.</p>
             ',
@@ -635,6 +683,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '52',
+            'sort' => NULL,
             'title' => 'Гальперин Марк Яковлевич',
             'text' => '<p>Специалист по лечению боли в клинике Е. Малышевой.</p><p>Врач-анестезиолог, альголог.</p><p>Стаж более 30 лет.</p>
             ',
@@ -648,6 +697,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '53',
+            'sort' => NULL,
             'title' => 'Шубин Дмитрий Николаевич',
             'text' => '<p>Врач-невролог, мануальный терапевт.</p><p>Специалист по лечению боли в клинике Е. Малышевой.</p><p>Стаж более 30 лет.</p>',
             'image' => '/img/med/doc_shubin.jpg',
@@ -660,6 +710,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '3',
+            'sort' => '03',
             'title' => 'Прейскурант',
             'text' => '',
             'image' => NULL,
@@ -672,6 +723,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '13',
+            'sort' => NULL,
             'title' => 'Общий прейскурант',
             'text' => '',
             'image' => NULL,
@@ -684,6 +736,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '14',
+            'sort' => NULL,
             'title' => 'МРТ',
             'text' => '',
             'image' => NULL,
@@ -696,6 +749,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '15',
+            'sort' => NULL,
             'title' => 'УЗД',
             'text' => '',
             'image' => NULL,
@@ -708,6 +762,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '16',
+            'sort' => NULL,
             'title' => 'Функциональная диагностика',
             'text' => '',
             'image' => NULL,
@@ -720,6 +775,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '54',
+            'sort' => NULL,
             'title' => 'Терапия',
             'text' => '',
             'image' => NULL,
@@ -732,6 +788,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '55',
+            'sort' => NULL,
             'title' => 'Нейрохирургия',
             'text' => '',
             'image' => NULL,
@@ -744,6 +801,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '56',
+            'sort' => NULL,
             'title' => 'Неврология',
             'text' => '',
             'image' => NULL,
@@ -756,6 +814,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '57',
+            'sort' => NULL,
             'title' => 'Травматология и ортопедия',
             'text' => '',
             'image' => NULL,
@@ -768,6 +827,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '58',
+            'sort' => NULL,
             'title' => 'Гастроэнтерология',
             'text' => '',
             'image' => NULL,
@@ -780,6 +840,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '59',
+            'sort' => NULL,
             'title' => 'Гинекология',
             'text' => '',
             'image' => NULL,
@@ -792,6 +853,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '60',
+            'sort' => NULL,
             'title' => 'Урология',
             'text' => '',
             'image' => NULL,
@@ -804,6 +866,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '61',
+            'sort' => NULL,
             'title' => 'Оториноларингология',
             'text' => '',
             'image' => NULL,
@@ -816,6 +879,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '62',
+            'sort' => NULL,
             'title' => 'Реабилитация',
             'text' => '',
             'image' => NULL,
@@ -828,6 +892,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '63',
+            'sort' => NULL,
             'title' => 'Сестринское дело',
             'text' => '',
             'image' => NULL,
@@ -840,6 +905,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '64',
+            'sort' => NULL,
             'title' => 'Хирургия',
             'text' => '',
             'image' => NULL,
@@ -852,6 +918,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '65',
+            'sort' => NULL,
             'title' => 'Дерматология',
             'text' => '',
             'image' => NULL,
@@ -864,6 +931,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '66',
+            'sort' => NULL,
             'title' => 'Управление болью',
             'text' => '',
             'image' => NULL,
@@ -876,6 +944,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '67',
+            'sort' => NULL,
             'title' => 'Лаборатория',
             'text' => '',
             'image' => NULL,
@@ -888,6 +957,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '68',
+            'sort' => NULL,
             'title' => 'Онкология',
             'text' => '',
             'image' => NULL,
@@ -900,6 +970,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '69',
+            'sort' => NULL,
             'title' => 'Нейрохирургия РИЦ',
             'text' => '',
             'image' => NULL,
@@ -912,6 +983,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '70',
+            'sort' => NULL,
             'title' => 'Телемедицина',
             'text' => '',
             'image' => NULL,
@@ -924,6 +996,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '71',
+            'sort' => NULL,
             'title' => 'Выездные медицинские услуги',
             'text' => '',
             'image' => NULL,
@@ -936,6 +1009,7 @@ class ContentMedSeeder extends Seeder
         ],
         [
             'id' => '72',
+            'sort' => NULL,
             'title' => 'КДЦ Управления делами Президент',
             'text' => '',
             'image' => NULL,
@@ -944,6 +1018,19 @@ class ContentMedSeeder extends Seeder
             'pdf' => NULL,
             'excel' => '/img/med/22.xlsx',
             'parent_id' => '3',
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '73',
+            'sort' => '06',
+            'title' => 'Отзыв по QR-коду',
+            'text' => '<p>Отсканируйте QR-код с помощью Вашего смартфона и оставьте Ваше отзыв на нашем сайте.</p><p>Для этого перейдите в раздел "Отзывы" и нажмите на кнопку "Оставить отзыв".</p>',
+            'image' => '/img/med/qr.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '0',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'parent_id' => NULL,
             'created_at' => '2021-03-15 00:00:00'
         ],
         ]);
@@ -1233,6 +1320,10 @@ class ContentMedSeeder extends Seeder
             [
                 'page_id' => '72',
                 'type_id' => '9',
+            ],
+            [
+                'page_id' => '73',
+                'type_id' => '2',
             ],
             ]);
 

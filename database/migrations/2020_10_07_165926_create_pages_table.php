@@ -25,6 +25,7 @@ class CreatePagesTable extends Migration
             $table->string('iframe')->nullable();
             $table->longtext('gallery')->nullable();
             $table->string('parent_id')->nullable();
+            $table->string('sort')->nullable();
             $table->timestamps();
         });
     }

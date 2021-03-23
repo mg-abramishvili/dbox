@@ -201,7 +201,7 @@
                     startX: 0,
                     startY: 0,
                     startScale: 1,
-                    maxScale: 6,
+                    maxScale: 1,
                     minScale: 1,
                 });
                 const parent = elem.parentElement

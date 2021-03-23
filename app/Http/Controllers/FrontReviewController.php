@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Review;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use App\Mail\SendReview;
+use Illuminate\Support\Facades\Mail;
 
 class FrontReviewController extends Controller
 {
@@ -26,6 +28,10 @@ class FrontReviewController extends Controller
         }
         $reviews->review = $data['review'];
         $reviews->save();
+
+        $review = Review::latest()->first();
+        //Mail::to('mg@abramishvili.net')->send(new SendReview($review));
+
         return redirect('/front-reviews-success');
     }
 

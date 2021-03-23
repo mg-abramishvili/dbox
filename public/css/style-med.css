@@ -125,10 +125,27 @@ header {
 
 .container-index {
     width: 70vw;
-    height: 70vh;
+    height: 63vh;
     overflow-y: auto;
     overflow-x: hidden;
     margin: 0 auto;
+}
+
+.container-index::-webkit-scrollbar {
+    width: 1vw;
+}
+  
+.container-index::-webkit-scrollbar-track {
+    background: #dddddd;
+}
+  
+.container-index::-webkit-scrollbar-thumb {
+    background: #2886bb;
+    border: 1px solid #B8BDBD;
+  }
+  
+  .container-index::-webkit-scrollbar-thumb:hover {
+    background: #2886bb;
 }
 
 /* MAIN PAGE */
@@ -365,16 +382,16 @@ footer {
     list-style-type: none;
     height: 67vh;
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     margin-top: -2vh;
 }
 
 .news-list::-webkit-scrollbar {
-    width: 1vh;
+    width: 2vw;
 }
   
 .news-list::-webkit-scrollbar-track {
-    background: #B8BDBD;
+    background: #dddddd;
 }
   
 .news-list::-webkit-scrollbar-thumb {
@@ -382,9 +399,9 @@ footer {
     border: 1px solid #B8BDBD;
   }
   
-  .news-list::-webkit-scrollbar-thumb:hover {
+.news-list::-webkit-scrollbar-thumb:hover {
     background: #2886bb;
-  }
+}
 
 .news-list-item {
     background-color: #E0E6E6;
@@ -430,26 +447,30 @@ footer {
 }
 
 .news-item-text {
-    padding: 2vh 2vh;
+    padding: 3vh 3vh;
     font-size: 2vh;
     line-height: 1.75;
     height: 65vh;
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .news-item-text::-webkit-scrollbar {
-    width: 1vh;
+    width: 2vw;
 }
   
 .news-item-text::-webkit-scrollbar-track {
-    background: #B8BDBD;
+    background: #dddddd;
 }
   
 .news-item-text::-webkit-scrollbar-thumb {
     background: #2886bb;
     border: 1px solid #B8BDBD;
   }
+  
+.news-item-text::-webkit-scrollbar-thumb:hover {
+    background: #2886bb;
+}
   
 
   .news-item-text h1 {
@@ -493,18 +514,18 @@ footer {
 }
 
 .type-1 .page-detail-text::-webkit-scrollbar {
-    width: 1.5vh;
+    width: 2vw;
 }
-
+  
 .type-1 .page-detail-text::-webkit-scrollbar-track {
-    background: #B8BDBD;
+    background: #dddddd;
 }
-
+  
 .type-1 .page-detail-text::-webkit-scrollbar-thumb {
     background: #2886bb;
     border: 1px solid #B8BDBD;
-}
-
+  }
+  
 .type-1 .page-detail-text::-webkit-scrollbar-thumb:hover {
     background: #2886bb;
 }
@@ -539,18 +560,18 @@ footer {
 }
 
 .type-2 .page-detail-text::-webkit-scrollbar {
-    width: 1.5vh;
+    width: 2vw;
 }
-
+  
 .type-2 .page-detail-text::-webkit-scrollbar-track {
-    background: #B8BDBD;
+    background: #dddddd;
 }
-
+  
 .type-2 .page-detail-text::-webkit-scrollbar-thumb {
     background: #2886bb;
     border: 1px solid #B8BDBD;
-}
-
+  }
+  
 .type-2 .page-detail-text::-webkit-scrollbar-thumb:hover {
     background: #2886bb;
 }
@@ -633,6 +654,10 @@ footer {
     background-position: 50% 50%;
 }
 
+.type-6 {
+    padding: 0 1.6vh;
+}
+
 .type-6 .user-pages-item-item img {
     width: 40%;
     margin-bottom: 3vh;
@@ -655,21 +680,23 @@ footer {
     height: 62vh;
     overflow: hidden;
     overflow-y: scroll;
+    margin: 0 auto;
+    width: 70vw;
 }
 
 .type-7 .text::-webkit-scrollbar {
-    width: 1.5vh;
+    width: 2vw;
 }
-
+  
 .type-7 .text::-webkit-scrollbar-track {
-    background: #B8BDBD;
+    background: #dddddd;
 }
-
+  
 .type-7 .text::-webkit-scrollbar-thumb {
     background: #2886bb;
     border: 1px solid #B8BDBD;
-}
-
+  }
+  
 .type-7 .text::-webkit-scrollbar-thumb:hover {
     background: #2886bb;
 }
@@ -727,6 +754,24 @@ footer {
     height: 70vh;
     overflow-y: scroll;
     padding-top: 2vh;
+    margin-top: -4vh;
+}
+
+.excel-item::-webkit-scrollbar {
+    width: 2vw;
+}
+  
+.excel-item::-webkit-scrollbar-track {
+    background: #dddddd;
+}
+  
+.excel-item::-webkit-scrollbar-thumb {
+    background: #2886bb;
+    border: 1px solid #B8BDBD;
+  }
+  
+.excel-item::-webkit-scrollbar-thumb:hover {
+    background: #2886bb;
 }
 
 /* type 9 */
@@ -848,6 +893,23 @@ footer {
     list-style-type: none;
     height: 32vh;
     overflow-y: auto;
+}
+
+#myUL::-webkit-scrollbar {
+    width: 2vw;
+}
+  
+#myUL::-webkit-scrollbar-track {
+    background: #dddddd;
+}
+  
+#myUL::-webkit-scrollbar-thumb {
+    background: #2886bb;
+    border: 1px solid #B8BDBD;
+  }
+  
+#myUL::-webkit-scrollbar-thumb:hover {
+    background: #2886bb;
 }
 
 #myUL li {
