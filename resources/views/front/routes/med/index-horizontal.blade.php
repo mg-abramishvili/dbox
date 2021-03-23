@@ -300,8 +300,9 @@ $carousel_{{ $route->id }}.on( 'select.flickity', function( event, index ) {
         $(".map-image").hide();
         $('.prevnexrroutslide').hide();
         $(".map-image{{ $route->id }}").show();
-        $('#prev-route-slide{{ $route->id }}').show();
+        $('#prev-route-slide{{ $route->id }}').hide();
         $('#next-route-slide{{ $route->id }}').show();
+        $('.map-image{{ $route->id }}').flickity('previous');
     });
 </script>
 
