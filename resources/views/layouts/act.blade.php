@@ -6,7 +6,7 @@
     $('#activate-button').click(function () {
         var vid = "";
         var count = "";
-        var keycheck = $('#key-input').val();
+        var keycheck = $('#key-input').toUpperCase().val();
         $.getJSON('http://touchlab.su/api/key/view/' + keycheck, function(data) {
             
             if (data.key == keycheck) {
