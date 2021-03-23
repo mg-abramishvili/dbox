@@ -63,8 +63,8 @@
                     <img src="/logo-h.png" style="width: 340px; display: block; margin: 0 auto;margin-bottom: 125px">
                     
                     <div id="phase_one">
-                        <input type="text" id="key-input" placeholder="Введите ключ" style="display: inline-block; padding: 18px 40px; border-radius: 10px; width: 59%;">
-                        <button id="activate-button" style="display: inline-block; width: 40%; background-color: #ffc940; box-shahow: none; padding: 20px 40px; border: 0; border-radius: 10px; color: #fff;">Далее</button>
+                        <input type="text" id="key-input" placeholder="Введите ключ, вместе со знаками -" style="display: inline-block; padding: 18px 40px; border-radius: 10px; width: 59%; text-transform: uppercase;">
+                        <button id="activate-button" style="display: inline-block; width: 40%; background-color: #ffc940; box-shahow: none; padding: 20px 40px; border: 0; border-radius: 10px; color: #fff;">Активировать</button>
                     </div>
 
                     <div id="activating" style="font-size: 3vh; text-align: center; color: green;">Активация ...</div>
