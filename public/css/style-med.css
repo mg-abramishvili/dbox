@@ -814,7 +814,7 @@ footer {
     margin: 0 auto;
     overflow: visible;
     background-color: #fff;
-    transform: scale(1.5);
+    transform: scale(1.25);
     transform-origin: 50% 0%;
 }
 

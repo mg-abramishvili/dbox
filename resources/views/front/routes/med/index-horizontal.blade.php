@@ -3,6 +3,26 @@
     <link href="{{ asset('css/style-med.css') }}" rel="stylesheet">
 @endsection
 
+<style>
+    .prevnexrroutslide {
+        position: absolute;
+        font-size: 3vh;
+        font-weight: 700;
+        box-shadow: none;
+        border: 0;
+        padding: 1.5vh 3vh;
+        background-color: #2886bb;
+        color: #fff;
+        z-index: 20;
+        top: 65vh;
+        right: 3vh;
+        left: 3vh;
+        margin: 0 auto;
+        width: 12.5vh;
+        border-radius: 1vh;
+    }
+</style>
+
     <header>
         <div class="container">
             <div class="row align-items-center">
@@ -38,11 +58,11 @@
             </div>
         </div>
     </header>
-
+    
     <div class="container">
         <div class="row">
             <div class="col-5">
-                <div class="med-route-sidebar">
+                <div class="med-route-sidebar invisible">
                     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Поиск ...">
                     @include('front.keyboard')
                     <ul id="myUL">
@@ -71,7 +91,7 @@
             </div>
             <div class="col-7">
                 
-                <div class="wrapperm" id="wrapper">
+                <div class="wrapperm invisible" id="wrapper">
                     <div id="wrapper-inner">
                     
                     @foreach ($routes as $route)
@@ -243,75 +263,81 @@
                         @endif
                     </div>
 
-                    @if(count($route->schemes2))
-                    <button id="prev-route-slide{{ $route->id }}" class="prevnexrroutslide" style="position:absolute; z-index:999; margin-top: -5vh;"><<</button>
-                    <button id="next-route-slide{{ $route->id }}" class="prevnexrroutslide" style="position:absolute; z-index:999; margin-top: -5vh; margin-left: 5vh;">>></button>
-                    @endif
 
-                    <script>
-                        var $carousel_{{ $route->id }} = $('.map-image{{ $route->id }}').flickity({
-                            cellAlign: 'left',
-                            contain: true,
-                            draggable: false,
-                            imagesLoaded: true,
-                            pageDots: false,
-                            prevNextButtons: false,
-                        });
-
-$('#prev-route-slide{{ $route->id }}').on( 'click', function() {
-    $(".map-image{{ $route->id }}").css('opacity', '0');
-    panzoom.reset({ startScale: 1 })
-    setTimeout(function () {
-        panzoom.reset({ startScale: 1.1 })
-    }, 250);
-    setTimeout(function () {
-        panzoom.reset({ startScale: 1 });
-        $(".map-image{{ $route->id }}").css('opacity', '1');
-    }, 500);
-    $carousel_{{ $route->id }}.flickity('previous');
-});
-$('#next-route-slide{{ $route->id }}').on( 'click', function() {
-    $(".map-image{{ $route->id }}").css('opacity', '0');
-    panzoom.reset({ startScale: 1 })
-    setTimeout(function () {
-        panzoom.reset({ startScale: 1.1 })
-    }, 250);
-    setTimeout(function () {
-        panzoom.reset({ startScale: 1 });
-        $(".map-image{{ $route->id }}").css('opacity', '1');
-    }, 500);
-    $carousel_{{ $route->id }}.flickity('next');
-});
-
-$carousel_{{ $route->id }}.on( 'select.flickity', function( event, index ) {
-                if (index == 0) {
-                    $('#prev-route-slide{{ $route->id }}').hide();
-                    $('#next-route-slide{{ $route->id }}').show();
-                }
-                if (index == 1) {
-                    $('#prev-route-slide{{ $route->id }}').show();
-                    $('#next-route-slide{{ $route->id }}').hide();
-                }
-            });
-                    </script>
-
-<script>
-    $('#route_push_{{ $route->id }}').on('click', function() {
-        $(".map-image").hide();
-        $('.prevnexrroutslide').hide();
-        $(".map-image{{ $route->id }}").show();
-        $('#prev-route-slide{{ $route->id }}').hide();
-        $('#next-route-slide{{ $route->id }}').show();
-        $('.map-image{{ $route->id }}').flickity('previous');
-    });
-</script>
 
                     @endforeach
 
-                    
+                   
 
                 </div>
             </div>
+
+            @foreach($routes as $route)
+            @if(count($route->schemes2))
+            <button id="prev-route-slide{{ $route->id }}" class="prevnexrroutslide invisible"><<</button>
+            <button id="next-route-slide{{ $route->id }}" class="prevnexrroutslide invisible">>></button>
+            @endif
+
+            <script>
+                var $carousel_{{ $route->id }} = $('.map-image{{ $route->id }}').flickity({
+                    cellAlign: 'left',
+                    contain: true,
+                    draggable: false,
+                    imagesLoaded: true,
+                    pageDots: false,
+                    prevNextButtons: false,
+                });
+
+$('#prev-route-slide{{ $route->id }}').on( 'click', function() {
+$(".map-image{{ $route->id }}").css('opacity', '0');
+panzoom.reset({ startScale: 1 })
+setTimeout(function () {
+panzoom.reset({ startScale: 1.1 })
+}, 250);
+setTimeout(function () {
+panzoom.reset({ startScale: 1 });
+$(".map-image{{ $route->id }}").css('opacity', '1');
+}, 500);
+$carousel_{{ $route->id }}.flickity('previous');
+});
+$('#next-route-slide{{ $route->id }}').on( 'click', function() {
+$(".map-image{{ $route->id }}").css('opacity', '0');
+panzoom.reset({ startScale: 1 })
+setTimeout(function () {
+panzoom.reset({ startScale: 1.1 })
+}, 250);
+setTimeout(function () {
+panzoom.reset({ startScale: 1 });
+$(".map-image{{ $route->id }}").css('opacity', '1');
+}, 500);
+$carousel_{{ $route->id }}.flickity('next');
+});
+
+$carousel_{{ $route->id }}.on( 'select.flickity', function( event, index ) {
+        if (index == 0) {
+            $('#prev-route-slide{{ $route->id }}').hide();
+            $('#next-route-slide{{ $route->id }}').show();
+        }
+        if (index == 1) {
+            $('#prev-route-slide{{ $route->id }}').show();
+            $('#next-route-slide{{ $route->id }}').hide();
+        }
+    });
+            </script>
+
+<script>
+$('#route_push_{{ $route->id }}').on('click', function() {
+$(".map-image").hide();
+$('.prevnexrroutslide').hide();
+$(".map-image{{ $route->id }}").show();
+$(".map-image{{ $route->id }}").css('opacity', '1');
+$(".map svg").css('opacity', '1');
+$('#prev-route-slide{{ $route->id }}').hide();
+$('#next-route-slide{{ $route->id }}').show();
+$('.map-image{{ $route->id }}').flickity('previous');
+});
+</script>
+            @endforeach
 
             </div>
         </div>

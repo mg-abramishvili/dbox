@@ -100,18 +100,17 @@ if (txtValue.toUpperCase().indexOf(filter) > -1) {
           </script>
 
     <script>
-        $(document).ready(function(){
-            $("#map").css('opacity', '0');
-            setTimeout(function () {
-                panzoom.reset({ startScale: 2, })
-            }, 350);
-            setTimeout(function () {
-                panzoom.reset({ startScale: 1, startX: 0, startY: 0, })
-            }, 700);
-            setTimeout(function () {
-                $("#map").css('opacity', '1');
-            }, 1000)
-        });
+        setTimeout(function () {
+            $(".prevnexrroutslide").removeClass('invisible');
+            $('.prevnexrroutslide').hide();
+            $(".med-route-sidebar").removeClass('invisible');
+            $(".med-route-sidebar").addClass('visible');
+            $(".wrapperm").removeClass('invisible');
+            $(".wrapperm").addClass('visible');
+            $(".map").css('opacity', '0');
+            $(".map svg").css('opacity', '0');
+            $(".map").first().css('opacity', '1');
+        }, 100);
     </script>
 
 @endsection
