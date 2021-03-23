@@ -58,6 +58,15 @@ class CreateSettingsTable extends Migration
             $table->string('module_vi')->nullable();
             $table->string('module_email')->nullable();
             $table->string('module_printer')->nullable();
+
+            $table->string('smtp_host')->nullable();
+            $table->string('smtp_port')->nullable();
+            $table->string('smtp_sec')->nullable();
+            $table->string('smtp_user')->nullable();
+            $table->string('smtp_password')->nullable();
+            $table->string('email_from')->nullable();
+            $table->string('email_to')->nullable();
+
             $table->timestamps();
         });
     }

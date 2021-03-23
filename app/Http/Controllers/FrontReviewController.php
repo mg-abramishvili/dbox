@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Config;
 use App\Models\Review;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -29,8 +29,17 @@ class FrontReviewController extends Controller
         $reviews->review = $data['review'];
         $reviews->save();
 
+        $smtp = Setting::where('id', '1')->first();
+
+        Config::set('mail.mailers.smtp.host', $smtp->smtp_host);
+        Config::set('mail.mailers.smtp.username', $smtp->smtp_user);
+        Config::set('mail.mailers.smtp.password', $smtp->smtp_password);
+        Config::set('mail.mailers.smtp.encryption', $smtp->smtp_sec);
+        Config::set('mail.mailers.smtp.port', $smtp->smtp_port);
+        Config::set('mail.from.address', $smtp->email_from);
+
         $review = Review::latest()->first();
-        //Mail::to('mg@abramishvili.net')->send(new SendReview($review));
+        Mail::to($smtp->email_to)->send(new SendReview($review));
 
         return redirect('/front-reviews-success');
     }

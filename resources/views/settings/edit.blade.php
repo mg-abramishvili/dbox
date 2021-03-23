@@ -14,6 +14,46 @@
 
             <div class="row align-items-center mb-2">    
                 <dt class="col-sm-3">
+                    SMTP-сервер
+                    <br>и отправка E-mail
+                </dt>
+                <dd class="col-sm-9">
+                    <div class="row">
+                        <div class="col-12">
+                            <label>Сервер (хост)</label>
+                            <input type="text" class="form-control mb-1" name="smtp_host" placeholder="Сервер (хост)" value="{{$settings->smtp_host}}">
+                        </div>
+                        <div class="col-6">
+                            <label>Порт</label>
+                            <input type="text" class="form-control mb-1" name="smtp_port" placeholder="Порт" value="{{$settings->smtp_port}}">
+                        </div>
+                        <div class="col-6">
+                            <label>SSL</label>
+                            <input type="text" class="form-control mb-1" name="smtp_sec" placeholder="SSL" value="{{$settings->smtp_sec}}">
+                        </div>
+                        <div class="col-6">
+                            <label>Логин</label>
+                            <input type="text" class="form-control mb-1" name="smtp_user" placeholder="Логин" value="{{$settings->smtp_user}}">
+                        </div>
+                        <div class="col-6">
+                            <label>Пароль</label>
+                            <input type="text" class="form-control" name="smtp_password" placeholder="Пароль" value="{{$settings->smtp_password}}">
+                        </div>
+                        <div class="col-6">
+                            <label>От кого</label>
+                            <input type="text" class="form-control mb-1" name="email_from" placeholder="От кого" value="{{$settings->email_from}}">
+                        </div>
+                        <div class="col-6">
+                            <label>Куда</label>
+                            <input type="text" class="form-control" name="email_to" placeholder="Куда" value="{{$settings->email_to}}">
+                        </div>
+                    </div>
+                </dd>
+            </div>
+
+            <div style="@if(\Auth::user()->id == '1') display: block; @else display: none; @endif">
+            <div class="row align-items-center mb-2">    
+                <dt class="col-sm-3">
                     Тема
                 </dt>
                 <dd class="col-sm-9">
@@ -136,6 +176,7 @@
             </div>
 
             <hr>
+            </div>
 
             <div class="row mt-5">
                 <div class="col-12">

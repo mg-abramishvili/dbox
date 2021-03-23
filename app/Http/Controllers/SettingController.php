@@ -80,6 +80,28 @@ class SettingController extends Controller
         $settings->module_routes = $data['module_routes'];
         $settings->module_reviews = $data['module_reviews'];
 
+        if (isset($data['smtp_host'])) {
+            $settings->smtp_host = $data['smtp_host'];
+        }
+        if (isset($data['smtp_port'])) {
+            $settings->smtp_port = $data['smtp_port'];
+        }
+        if (isset($data['smtp_sec'])) {
+            $settings->smtp_sec = $data['smtp_sec'];
+        }
+        if (isset($data['smtp_user'])) {
+            $settings->smtp_user = $data['smtp_user'];
+        }
+        if (isset($data['smtp_password'])) {
+            $settings->smtp_password = $data['smtp_password'];
+        }
+        if (isset($data['email_from'])) {
+            $settings->email_from = $data['email_from'];
+        }
+        if (isset($data['email_to'])) {
+            $settings->email_to = $data['email_to'];
+        }
+
         $settings->save();
 
         return redirect('/');

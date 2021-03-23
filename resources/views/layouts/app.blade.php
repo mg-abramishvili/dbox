@@ -79,11 +79,9 @@
                     </li>
                     @endif
 
-                    @if(\Auth::user()->id == '1')
                     <li class="nav-item {{ Request::is('settings') ? 'active' : '' }}">
                         <a href="{{ url('/settings') }}" class="nav-link">Настройки</a>
                     </li>
-                    @endif
 
                     <li class="nav-item">
                         <form method="POST" action="{{ route('logout') }}">
