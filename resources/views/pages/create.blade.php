@@ -91,6 +91,10 @@
                 <dd class="col-sm-9">
                     <div class="row" id="typez" style="height:250px; overflow-y:scroll;">
                         @foreach($types as $type)
+                        
+                        @if($type->id == '8')
+                        @elseif($type->id == '10')
+                        @else
                         <div class="col-3 type-radio">
                             <div class="radio">
                                 <input name="types" id="type{{ $type->id }}" type="radio" value="{{ $type->id }}">
@@ -100,6 +104,8 @@
                                 </label>
                             </div>
                         </div>
+                        @endif
+
                         @endforeach
                     </div>
                 </dd>

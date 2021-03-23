@@ -62,6 +62,11 @@ class TypeSeeder extends Seeder
             'type' => 'Книга',
             'image' => '/img/no-image2.jpg',
         ],
+        [
+            'id' => '10',
+            'type' => 'iFrame',
+            'image' => '/img/no-image2.jpg',
+        ],
         ]);
     }
 }

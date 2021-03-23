@@ -28,16 +28,6 @@
             document.oncontextmenu = new Function("return false;");
         </script>
 
-        <script>
-            document.onkeydown = function(e){
-                e = e || window.event;
-                var key = e.which || e.keyCode;
-                if(key===65){
-                    window.location.href = "http://localhost/pages";
-                }
-            }        
-        </script>
-
     </head>
     <body>
 
@@ -223,7 +213,7 @@
             document.onkeydown = function(e){
                 e = e || window.event;
                 var key = e.which || e.keyCode;
-                if(key == 65 && e.ctrlKey){
+                if(key == 81 && e.ctrlKey){
                     window.location.href = "/login";
                 }
             }        

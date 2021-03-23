@@ -561,8 +561,12 @@ footer {
 
 /* PAGE TYPE 3 */
 
+#lg-download {
+    display: none;
+}
+
 .type-3 #gallery a {
-    height: 75vh;
+    height: 65vh;
     margin-bottom: 1.5vh;
     display: block;
     border-radius: 1vh;
@@ -571,7 +575,7 @@ footer {
 }
 
 .type-3 .page-detail-text {
-    height: 75vh;
+    height: 65vh;
     overflow-y: auto;
     padding-right: 2vh;
     font-size: 2vh !important;
