@@ -62,6 +62,12 @@
                     <button type="submit" class="btn btn-lg btn-med">Отправить</button>
 
                 </form>
+
+                <script>
+                    $('form').submit(function() {
+                        $(this).find("button[type='submit']").hide();
+                    });
+                </script>
             </div>
             <div class="col-6">
                 <div class="keyboard-reviews">
