@@ -4,6 +4,10 @@
     $('#key-input').val('');
 
     $('#activate-button').click(function () {
+        $("#activate-button").hide();
+        setTimeout(function() {
+            $("#activate-button").show();
+        }, 3000);
         var vid = "";
         var count = "";
         var keycheck = $('#key-input').val();
