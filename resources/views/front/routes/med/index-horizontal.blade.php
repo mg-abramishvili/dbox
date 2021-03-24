@@ -6,7 +6,7 @@
 <style>
     .prevnexrroutslide {
         position: absolute;
-        font-size: 3vh;
+        font-size: 2.5vh;
         font-weight: 700;
         box-shadow: none;
         border: 0;
@@ -18,7 +18,7 @@
         right: 3vh;
         left: 3vh;
         margin: 0 auto;
-        width: 12.5vh;
+        width: 25vw;
         border-radius: 1vh;
     }
 </style>
@@ -90,11 +90,23 @@
                 </div>
             </div>
             <div class="col-7">
+
+                @foreach ($routes as $route)
+                    @foreach($route->schemes as $scheme)
+                        <span id="title{{ $route->id }}" class="title_zh title_zh1 invisible" style="color: #333; font-size: 3vh; text-transform: uppercase; font-weight: 700; text-align: center; position: absolute; top: 0; left: 1vh; right: 1vh;">{{ $scheme->title }}</span>
+                        @if(count($route->schemes2))
+                            @foreach($route->schemes2 as $scheme2)
+                                <span id="title2{{ $route->id }}" class="title_zh title_zh2 invisible" style="color: #333; font-size: 3vh; text-transform: uppercase; font-weight: 700; text-align: center; position: absolute; top: 0; left: 1vh; right: 1vh;">{{ $scheme2->title }}</span>
+                            @endforeach
+                        @endif
+                    @endforeach
+                @endforeach
                 
                 <div class="wrapperm invisible" id="wrapper">
                     <div id="wrapper-inner">
                     
                     @foreach ($routes as $route)
+
                     <div class="map map-image map-image{{ $route->id }}" id="map">
                         <div class="slide">
                             @foreach($route->schemes as $scheme)
@@ -274,8 +286,8 @@
 
             @foreach($routes as $route)
             @if(count($route->schemes2))
-            <button id="prev-route-slide{{ $route->id }}" class="prevnexrroutslide invisible"><<</button>
-            <button id="next-route-slide{{ $route->id }}" class="prevnexrroutslide invisible">>></button>
+            <button id="prev-route-slide{{ $route->id }}" class="prevnexrroutslide invisible">< Начало маршрута</button>
+            <button id="next-route-slide{{ $route->id }}" class="prevnexrroutslide invisible">Продолжение маршрута ></button>
             @endif
 
             <script>
@@ -299,6 +311,10 @@ panzoom.reset({ startScale: 1 });
 $(".map-image{{ $route->id }}").css('opacity', '1');
 }, 500);
 $carousel_{{ $route->id }}.flickity('previous');
+$('.title_zh').removeClass('visible');
+$('.title_zh').addClass('invisible');
+$('#title{{ $route->id }}').removeClass('invisible');
+$('#title{{ $route->id }}').addClass('visible');
 });
 $('#next-route-slide{{ $route->id }}').on( 'click', function() {
 $(".map-image{{ $route->id }}").css('opacity', '0');
@@ -311,18 +327,13 @@ panzoom.reset({ startScale: 1 });
 $(".map-image{{ $route->id }}").css('opacity', '1');
 }, 500);
 $carousel_{{ $route->id }}.flickity('next');
+$('.title_zh').removeClass('visible');
+$('.title_zh').addClass('invisible');
+$('#title2{{ $route->id }}').removeClass('invisible');
+$('#title2{{ $route->id }}').addClass('visible');
 });
 
-$carousel_{{ $route->id }}.on( 'select.flickity', function( event, index ) {
-        if (index == 0) {
-            $('#prev-route-slide{{ $route->id }}').hide();
-            $('#next-route-slide{{ $route->id }}').show();
-        }
-        if (index == 1) {
-            $('#prev-route-slide{{ $route->id }}').show();
-            $('#next-route-slide{{ $route->id }}').hide();
-        }
-    });
+
             </script>
 
 <script>
@@ -335,6 +346,21 @@ $(".map svg").css('opacity', '1');
 $('#prev-route-slide{{ $route->id }}').hide();
 $('#next-route-slide{{ $route->id }}').show();
 $('.map-image{{ $route->id }}').flickity('previous');
+$('.title_zh').removeClass('visible');
+$('.title_zh').addClass('invisible');
+$('#title{{ $route->id }}').removeClass('invisible');
+$('#title{{ $route->id }}').addClass('visible');
+
+$carousel_{{ $route->id }}.on( 'select.flickity', function( event, index ) {
+        if (index == 0) {
+            $('#prev-route-slide{{ $route->id }}').hide();
+            $('#next-route-slide{{ $route->id }}').show();
+        }
+        if (index == 1) {
+            $('#prev-route-slide{{ $route->id }}').show();
+            $('#next-route-slide{{ $route->id }}').hide();
+        }
+    });
 });
 </script>
             @endforeach

@@ -110,6 +110,8 @@ if (txtValue.toUpperCase().indexOf(filter) > -1) {
             $(".map").css('opacity', '0');
             $(".map svg").css('opacity', '0');
             $(".map").first().css('opacity', '1');
+            $(".title_zh").first().removeClass('invisible');
+            $(".title_zh").first().addClass('visible');
         }, 100);
     </script>
 

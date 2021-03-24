@@ -93,6 +93,56 @@ header {
 
 /* MAIN PAGE */
 
+
+
+
+
+::-webkit-scrollbar {
+width: 2vw;
+}
+
+::-webkit-scrollbar-track {
+background: #dddddd;
+}
+
+::-webkit-scrollbar-thumb {
+background: #2886bb;
+border: 1px solid #B8BDBD;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #2886bb;
+}
+
+/* Buttons */
+::-webkit-scrollbar-button:single-button {
+background-color: #dddddd;
+display: block;
+border-style: solid;
+height: 1.5vw;
+width: 2vw;
+}
+/* Up */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+border-width: 0 1vw 1vw 1vw;
+border-color: transparent transparent #808080 transparent;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+border-color: transparent transparent #777777 transparent;
+}
+/* Down */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+border-width: 1vw 1vw 0 1vw;
+border-color: #808080 transparent transparent transparent;
+}
+
+::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+border-color: #777777 transparent transparent transparent;
+}
+
+
+
 .index-button {
     background-color: #d6d6d6;
     padding: 2vh;
@@ -129,23 +179,6 @@ header {
     overflow-y: auto;
     overflow-x: hidden;
     margin: 0 auto;
-}
-
-.container-index::-webkit-scrollbar {
-    width: 1vw;
-}
-  
-.container-index::-webkit-scrollbar-track {
-    background: #dddddd;
-}
-  
-.container-index::-webkit-scrollbar-thumb {
-    background: #2886bb;
-    border: 1px solid #B8BDBD;
-  }
-  
-  .container-index::-webkit-scrollbar-thumb:hover {
-    background: #2886bb;
 }
 
 /* MAIN PAGE */
@@ -386,23 +419,6 @@ footer {
     margin-top: -2vh;
 }
 
-.news-list::-webkit-scrollbar {
-    width: 2vw;
-}
-  
-.news-list::-webkit-scrollbar-track {
-    background: #dddddd;
-}
-  
-.news-list::-webkit-scrollbar-thumb {
-    background: #2886bb;
-    border: 1px solid #B8BDBD;
-  }
-  
-.news-list::-webkit-scrollbar-thumb:hover {
-    background: #2886bb;
-}
-
 .news-list-item {
     background-color: #E0E6E6;
     padding: 3.3vh 4vh;
@@ -455,24 +471,6 @@ footer {
     overflow-y: auto;
 }
 
-.news-item-text::-webkit-scrollbar {
-    width: 2vw;
-}
-  
-.news-item-text::-webkit-scrollbar-track {
-    background: #dddddd;
-}
-  
-.news-item-text::-webkit-scrollbar-thumb {
-    background: #2886bb;
-    border: 1px solid #B8BDBD;
-  }
-  
-.news-item-text::-webkit-scrollbar-thumb:hover {
-    background: #2886bb;
-}
-  
-
   .news-item-text h1 {
       color: #2886bb;
       font-size: 4vh;
@@ -513,23 +511,6 @@ footer {
     margin-bottom: 2vh !important;
 }
 
-.type-1 .page-detail-text::-webkit-scrollbar {
-    width: 2vw;
-}
-  
-.type-1 .page-detail-text::-webkit-scrollbar-track {
-    background: #dddddd;
-}
-  
-.type-1 .page-detail-text::-webkit-scrollbar-thumb {
-    background: #2886bb;
-    border: 1px solid #B8BDBD;
-  }
-  
-.type-1 .page-detail-text::-webkit-scrollbar-thumb:hover {
-    background: #2886bb;
-}
-
 /* PAGE TYPE 1 */
 
 
@@ -557,23 +538,6 @@ footer {
 
 .type-2 .page-detail-text p {
     margin-bottom: 2vh !important;
-}
-
-.type-2 .page-detail-text::-webkit-scrollbar {
-    width: 2vw;
-}
-  
-.type-2 .page-detail-text::-webkit-scrollbar-track {
-    background: #dddddd;
-}
-  
-.type-2 .page-detail-text::-webkit-scrollbar-thumb {
-    background: #2886bb;
-    border: 1px solid #B8BDBD;
-  }
-  
-.type-2 .page-detail-text::-webkit-scrollbar-thumb:hover {
-    background: #2886bb;
 }
 
 /* PAGE TYPE 2 */
@@ -610,23 +574,6 @@ footer {
 
 .type-3 .page-detail-text p {
     margin-bottom: 2vh !important;
-}
-
-.type-3 .page-detail-text::-webkit-scrollbar {
-    width: 1.5vh;
-}
-
-.type-3 .page-detail-text::-webkit-scrollbar-track {
-    background: #B8BDBD;
-}
-
-.type-3 .page-detail-text::-webkit-scrollbar-thumb {
-    background: #2886bb;
-    border: 1px solid #B8BDBD;
-}
-
-.type-3 .page-detail-text::-webkit-scrollbar-thumb:hover {
-    background: #2886bb;
 }
 
 /* PAGE TYPE 3 */
@@ -682,23 +629,6 @@ footer {
     overflow-y: scroll;
     margin: 0 auto;
     width: 70vw;
-}
-
-.type-7 .text::-webkit-scrollbar {
-    width: 2vw;
-}
-  
-.type-7 .text::-webkit-scrollbar-track {
-    background: #dddddd;
-}
-  
-.type-7 .text::-webkit-scrollbar-thumb {
-    background: #2886bb;
-    border: 1px solid #B8BDBD;
-  }
-  
-.type-7 .text::-webkit-scrollbar-thumb:hover {
-    background: #2886bb;
 }
 
   .type-7 .pdf-nav {
@@ -757,23 +687,6 @@ footer {
     margin-top: -4vh;
 }
 
-.excel-item::-webkit-scrollbar {
-    width: 2vw;
-}
-  
-.excel-item::-webkit-scrollbar-track {
-    background: #dddddd;
-}
-  
-.excel-item::-webkit-scrollbar-thumb {
-    background: #2886bb;
-    border: 1px solid #B8BDBD;
-  }
-  
-.excel-item::-webkit-scrollbar-thumb:hover {
-    background: #2886bb;
-}
-
 /* type 9 */
 
 
@@ -816,6 +729,7 @@ footer {
     background-color: #fff;
     transform: scale(1.25);
     transform-origin: 50% 0%;
+    margin-top: 4vh;
 }
 
 #wrapper-inner {
@@ -893,23 +807,6 @@ footer {
     list-style-type: none;
     height: 32vh;
     overflow-y: auto;
-}
-
-#myUL::-webkit-scrollbar {
-    width: 2vw;
-}
-  
-#myUL::-webkit-scrollbar-track {
-    background: #dddddd;
-}
-  
-#myUL::-webkit-scrollbar-thumb {
-    background: #2886bb;
-    border: 1px solid #B8BDBD;
-  }
-  
-#myUL::-webkit-scrollbar-thumb:hover {
-    background: #2886bb;
 }
 
 #myUL li {
