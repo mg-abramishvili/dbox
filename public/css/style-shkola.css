@@ -5,7 +5,7 @@ html {
   user-select: none;
   -webkit-touch-callout: none;
   -khtml-user-select: none;
-  cursor: none;
+  /*cursor: none;*/
 }
 
 body {
@@ -20,13 +20,13 @@ body {
 }
 
 .row {
-    margin-left: -2vh;
-    margin-right: -2vh;
+    margin-left: -1.5vh;
+    margin-right: -1.5vh;
 }
 
 .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
-    padding-left: 2vh;
-    padding-right: 2vh;
+    padding-left: 1.5vh;
+    padding-right: 1.5vh;
 }
 
 main {
@@ -42,35 +42,86 @@ main {
     overflow: hidden;
     margin: 0 auto;
     background: #fff;
+    background: #dce6f0;;
+    background: url('/img/shkola/bg.jpg');
     border: 1px solid #ccc;
 }
 
 header {
     padding: 2vh;
-    background-color: #f5f5f5;
+    /*background-color: #f5f5f5;
+    background-color: #c7d8ea;*/
     margin-bottom: 7vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: 3vh;
 }
 
-.header-logo img {
+header .container {
+    width: 90vw;
+}
+
+.header-logo a {
+    color: #333;
+    display: block;
+}
+
+.header-logo-img {
+    display: inline-block;
+    vertical-align: middle;
+    background: white;
+    margin-top: -6.5vh;
+    padding: 3vh;
+    border-bottom-left-radius: 2vh;
+    border-bottom-right-radius: 2vh;
+    padding-top: 6vh;
+    padding-bottom: 3vh;
+    width: auto;
+    width: 12vw;
+    height: 22vh;
+    position: relative;
+}
+
+.header-logo-img img {
     width: auto;
     height: auto;
-    max-width: 20vh;
-    max-height: 10vh;
+    max-width: 80%;
+    max-height: 60%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
     display: block;
     margin: 0 auto;
+    margin-top: 0.7vh;
 }
 
-.calendar {
+.header-title {
+    font-size: 4.5vh;
+    text-transform: uppercase;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -3vh;
+    margin-left: 4vh;
+}
+
+/*.calendar {
     text-align: center;
     background: #96dbfc;
     width: 15vh;
     font-weight: 700;
-}
+}*/
 
 .calendar span {
-    padding: 1vh 1vh;
     display: block;
     line-height: 1.1;
+    color: #777;
+    font-size: 2.5vh;
+    font-weight: 700;
 }
 
 .calendar span small {
@@ -88,7 +139,7 @@ header {
 
 .header-time {
     font-size: 6vh;
-    color: #999;
+    color: #333;
 }
 
 /* MAIN PAGE */
@@ -106,12 +157,12 @@ background: #dddddd;
 }
 
 ::-webkit-scrollbar-thumb {
-background: #2886bb;
+background: #5da7fe;
 border: 1px solid #B8BDBD;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-background: #2886bb;
+background: #5da7fe;
 }
 
 /* Buttons */
@@ -145,40 +196,70 @@ border-color: #777777 transparent transparent transparent;
 
 .index-button {
     background-color: #d6d6d6;
-    padding: 2vh;
-    height: 16vh;
+    padding: 3vh;
+    height: 30vh;
     display: block;
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
     text-align: center;
     color: #333;
     font-size: 3.5vh;
     position: relative;
 
-    color: #fff;
-    background-color: #53b5e2;
+    color: #333;
+    background-color: #fff;
     font-weight: 700;
+    border-radius: 2vh;
+    border: 0.3vh solid #c5d0db;
+    box-shadow: 0 0vh 0.5vh #c5d0db;
 }
 
 .index-button:hover,
 .index-button:focus {
     color: #fff;
-    background-color: #6bc1e9;
+    background-color: #5da7fe;
+}
+
+.index-button-icon {
+    width: 11vh;
+    height: 11vh;
+    position: relative;
+    border-radius: 100%;
+    background-color: #5da7fe;
+    border: 0.5vh solid #5da7fe;
+}
+
+.index-button-icon img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    max-width: 70%;
+    max-height: 70%;
+    left: 0;
+    right: 0;
+    display: block;
+    margin: 0 auto;
 }
 
 .index-button span {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 1vh;
-    right: 1vh;
+    top: 11vh;
+    left: 3vh;
+    right: 3vh;
+    margin-top: 6vh;
+    text-align: left;
+    font-size: 3vh;
+    line-height: 1.4;
 }
 
 .container-index {
-    width: 70vw;
-    height: 63vh;
+    width: 90vw;
+    height: 80vh;
     overflow-y: auto;
     overflow-x: hidden;
     margin: 0 auto;
+    margin-top: 25vh;
 }
 
 /* MAIN PAGE */
@@ -196,8 +277,8 @@ footer {
     right: 0;
 }
 
-.med-home {
-    background-color: #2886bb;
+.shkola-home {
+    background-color: #5da7fe;
     width: 15vh;
     height: 7vh;
     display: inline-block;
@@ -208,11 +289,11 @@ footer {
     vertical-align: middle;
 }
 
-.med-home-sub {
+.shkola-home-sub {
     background-color: #b1b1b1;
 }
 
-.med-home:after {
+.shkola-home:after {
     content: '';
     position: absolute;
     top: 50%;
@@ -224,24 +305,24 @@ footer {
     border: 3.5vh solid;
     border-bottom-color: transparent;
     border-top-color: transparent;
-    border-left-color: #2886bb;
+    border-left-color: #5da7fe;
     border-right-color: transparent;
 }
 
-.med-home-sub:after {
+.shkola-home-sub:after {
     border-left-color: #b1b1b1;
 }
 
-.med-home img {
+.shkola-home img {
     width: 60%;
     margin-top: 0.75vh;
 }
 
-.med-footer-second {
+.shkola-footer-second {
     vertical-align: middle;
     color: #fff;
     position: relative;
-    background-color: #2886bb;
+    background-color: #5da7fe;
     width: auto;
     height: 7vh;
     display: inline-block;
@@ -252,7 +333,7 @@ footer {
     margin-right: 5vh;
 }
 
-.med-footer-second:before {
+.shkola-footer-second:before {
     content: '';
     position: absolute;
     top: 50%;
@@ -267,7 +348,7 @@ footer {
     border-right-color: transparent;
 }
 
-.med-footer-second:after {
+.shkola-footer-second:after {
     content: '';
     position: absolute;
     top: 50%;
@@ -279,16 +360,16 @@ footer {
     border: 3.5vh solid;
     border-bottom-color: transparent;
     border-top-color: transparent;
-    border-left-color: #2886bb;
+    border-left-color: #5da7fe;
     border-right-color: transparent;
 }
 
-.med-footer-second span {
+.shkola-footer-second span {
     display: block;
     margin-right: 2vh;
 }
 
-.med-footer-third {
+.shkola-footer-third {
     font-size: 2vh;
     color: #222;
 }
@@ -432,7 +513,7 @@ footer {
     margin: 0;
     font-size: 3.5vh;
     font-weight: bold;
-    color: #2886bb;
+    color: #5da7fe;
     margin-bottom: 1.5vh;
 }
 
@@ -440,7 +521,7 @@ footer {
     display: block;
     width: calc(100% - 3vh);
     float: right;
-    background-color: #2886bb;
+    background-color: #5da7fe;
     text-align: center;
     font-size: 3vh;
     color: #fff;
@@ -472,7 +553,7 @@ footer {
 }
 
   .news-item-text h1 {
-      color: #2886bb;
+      color: #5da7fe;
       font-size: 4vh;
       font-weight: 700;
       text-align: left;
@@ -595,10 +676,12 @@ footer {
 /* PAGE TYPE 6 */
 
 .user-pages-item-image {
-    width: 12vh;
-    height: 12vh;
+    width: 11vh;
+    height: 11vh;
     background-size: cover;
     background-position: 50% 50%;
+    border-radius: 100%;
+    border: 0.5vh solid #5da7fe;
 }
 
 .type-6 {
@@ -613,8 +696,6 @@ footer {
 .t6-p {
     font-size: 3vh;
     text-align: left;
-    padding-left: 16vh;
-    padding-right: 2vh;
 }
 
 /* PAGE TYPE 6 */
@@ -638,7 +719,7 @@ footer {
 
   .type-7 #prev,
   .type-7 #next {
-    background: #2886bb;
+    background: #5da7fe;
     color: #fff;
     padding: 0.5vh 2vh;
     box-shadow: none;
@@ -664,7 +745,7 @@ footer {
 
 #prevBtn,
 #nextBtn {
-    background: #2886bb;
+    background: #5da7fe;
     color: #fff;
     padding: 1vh 2vh;
     box-shadow: none;
@@ -763,14 +844,14 @@ footer {
     height: 450px;
 }
 
-.med-route-sidebar {
+.shkola-route-sidebar {
     background-color: #d6d6d6;
     padding: 3vh;
     margin-top: -2vh;
     background-color: #53b5e2;
 }
 
-.med-route-sidebar input {
+.shkola-route-sidebar input {
     width: 100%;
     padding: 0.5vh;
     font-size: 2vh;
@@ -861,8 +942,8 @@ footer {
     font-size: 3vh;
 }
 
-.review-form .btn-med {
-    background-color: #2886bb;
+.review-form .btn-shkola {
+    background-color: #5da7fe;
     color: #fff;
     font-size: 3vh;
     padding: 2vh 4vh;

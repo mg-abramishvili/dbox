@@ -35,6 +35,14 @@
             @include('front.welcome.muzei.vertical')
         @endif
 
+    <!-- Тема Школа -->
+    @elseif($settings->theme == 'shkola')
+        @if($settings->orientation == 'horizontal')
+            @include('front.welcome.shkola.horizontal')
+        @elseif($settings->orientation == 'vertical')
+            @include('front.welcome.shkola.vertical')
+        @endif
+
     <!-- Тема Детсад -->
     @elseif($settings->theme == 'detsad')
         @if($settings->orientation == 'horizontal')

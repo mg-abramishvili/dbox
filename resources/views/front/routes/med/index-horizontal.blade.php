@@ -3,25 +3,25 @@
     <link href="{{ asset('css/style-med.css') }}" rel="stylesheet">
 @endsection
 
-<style>
-    .prevnexrroutslide {
-        position: absolute;
-        font-size: 2.5vh;
-        font-weight: 700;
-        box-shadow: none;
-        border: 0;
-        padding: 1.5vh 3vh;
-        background-color: #2886bb;
-        color: #fff;
-        z-index: 20;
-        top: 65vh;
-        right: 3vh;
-        left: 3vh;
-        margin: 0 auto;
-        width: 25vw;
-        border-radius: 1vh;
-    }
-</style>
+    <style>
+        .prevnexrroutslide {
+            position: absolute;
+            font-size: 2.5vh;
+            font-weight: 700;
+            box-shadow: none;
+            border: 0;
+            padding: 1.5vh 3vh;
+            background-color: #2886bb;
+            color: #fff;
+            z-index: 20;
+            top: 65vh;
+            right: 3vh;
+            left: 3vh;
+            margin: 0 auto;
+            width: 25vw;
+            border-radius: 1vh;
+        }
+    </style>
 
     <header>
         <div class="container">
@@ -275,94 +275,89 @@
                         @endif
                     </div>
 
-
-
                     @endforeach
-
-                   
 
                 </div>
             </div>
 
             @foreach($routes as $route)
-            @if(count($route->schemes2))
-            <button id="prev-route-slide{{ $route->id }}" class="prevnexrroutslide invisible">< Начало маршрута</button>
-            <button id="next-route-slide{{ $route->id }}" class="prevnexrroutslide invisible">Продолжение маршрута ></button>
-            @endif
+                @if(count($route->schemes2))
+                    <button id="prev-route-slide{{ $route->id }}" class="prevnexrroutslide invisible">< Начало маршрута</button>
+                    <button id="next-route-slide{{ $route->id }}" class="prevnexrroutslide invisible">Продолжение маршрута ></button>
+                @endif
 
-            <script>
-                var $carousel_{{ $route->id }} = $('.map-image{{ $route->id }}').flickity({
-                    cellAlign: 'left',
-                    contain: true,
-                    draggable: false,
-                    imagesLoaded: true,
-                    pageDots: false,
-                    prevNextButtons: false,
-                });
+                <script>
+                    var $carousel_{{ $route->id }} = $('.map-image{{ $route->id }}').flickity({
+                        cellAlign: 'left',
+                        contain: true,
+                        draggable: false,
+                        imagesLoaded: true,
+                        pageDots: false,
+                        prevNextButtons: false,
+                    });
 
-$('#prev-route-slide{{ $route->id }}').on( 'click', function() {
-$(".map-image{{ $route->id }}").css('opacity', '0');
-panzoom.reset({ startScale: 1 })
-setTimeout(function () {
-panzoom.reset({ startScale: 1.1 })
-}, 250);
-setTimeout(function () {
-panzoom.reset({ startScale: 1 });
-$(".map-image{{ $route->id }}").css('opacity', '1');
-}, 500);
-$carousel_{{ $route->id }}.flickity('previous');
-$('.title_zh').removeClass('visible');
-$('.title_zh').addClass('invisible');
-$('#title{{ $route->id }}').removeClass('invisible');
-$('#title{{ $route->id }}').addClass('visible');
-});
-$('#next-route-slide{{ $route->id }}').on( 'click', function() {
-$(".map-image{{ $route->id }}").css('opacity', '0');
-panzoom.reset({ startScale: 1 })
-setTimeout(function () {
-panzoom.reset({ startScale: 1.1 })
-}, 250);
-setTimeout(function () {
-panzoom.reset({ startScale: 1 });
-$(".map-image{{ $route->id }}").css('opacity', '1');
-}, 500);
-$carousel_{{ $route->id }}.flickity('next');
-$('.title_zh').removeClass('visible');
-$('.title_zh').addClass('invisible');
-$('#title2{{ $route->id }}').removeClass('invisible');
-$('#title2{{ $route->id }}').addClass('visible');
-});
+                    $('#prev-route-slide{{ $route->id }}').on( 'click', function() {
+                    $(".map-image{{ $route->id }}").css('opacity', '0');
+                    panzoom.reset({ startScale: 1 })
+                    setTimeout(function () {
+                    panzoom.reset({ startScale: 1.1 })
+                    }, 250);
+                    setTimeout(function () {
+                    panzoom.reset({ startScale: 1 });
+                    $(".map-image{{ $route->id }}").css('opacity', '1');
+                    }, 500);
+                    $carousel_{{ $route->id }}.flickity('previous');
+                    $('.title_zh').removeClass('visible');
+                    $('.title_zh').addClass('invisible');
+                    $('#title{{ $route->id }}').removeClass('invisible');
+                    $('#title{{ $route->id }}').addClass('visible');
+                    });
+                    $('#next-route-slide{{ $route->id }}').on( 'click', function() {
+                    $(".map-image{{ $route->id }}").css('opacity', '0');
+                    panzoom.reset({ startScale: 1 })
+                    setTimeout(function () {
+                    panzoom.reset({ startScale: 1.1 })
+                    }, 250);
+                    setTimeout(function () {
+                    panzoom.reset({ startScale: 1 });
+                    $(".map-image{{ $route->id }}").css('opacity', '1');
+                    }, 500);
+                    $carousel_{{ $route->id }}.flickity('next');
+                    $('.title_zh').removeClass('visible');
+                    $('.title_zh').addClass('invisible');
+                    $('#title2{{ $route->id }}').removeClass('invisible');
+                    $('#title2{{ $route->id }}').addClass('visible');
+                    });
+                </script>
 
+                <script>
+                    $('#route_push_{{ $route->id }}').on('click', function() {
+                    $(".map-image").hide();
+                    $('.prevnexrroutslide').hide();
+                    $(".map-image{{ $route->id }}").show();
+                    $(".map-image{{ $route->id }}").css('opacity', '1');
+                    $(".map svg").css('opacity', '1');
+                    $('#prev-route-slide{{ $route->id }}').hide();
+                    $('#next-route-slide{{ $route->id }}').show();
+                    $('.map-image{{ $route->id }}').flickity('previous');
+                    $('.title_zh').removeClass('visible');
+                    $('.title_zh').addClass('invisible');
+                    $('#title{{ $route->id }}').removeClass('invisible');
+                    $('#title{{ $route->id }}').addClass('visible');
 
-            </script>
+                    $carousel_{{ $route->id }}.on( 'select.flickity', function( event, index ) {
+                            if (index == 0) {
+                                $('#prev-route-slide{{ $route->id }}').hide();
+                                $('#next-route-slide{{ $route->id }}').show();
+                            }
+                            if (index == 1) {
+                                $('#prev-route-slide{{ $route->id }}').show();
+                                $('#next-route-slide{{ $route->id }}').hide();
+                            }
+                        });
+                    });
+                </script>
 
-<script>
-$('#route_push_{{ $route->id }}').on('click', function() {
-$(".map-image").hide();
-$('.prevnexrroutslide').hide();
-$(".map-image{{ $route->id }}").show();
-$(".map-image{{ $route->id }}").css('opacity', '1');
-$(".map svg").css('opacity', '1');
-$('#prev-route-slide{{ $route->id }}').hide();
-$('#next-route-slide{{ $route->id }}').show();
-$('.map-image{{ $route->id }}').flickity('previous');
-$('.title_zh').removeClass('visible');
-$('.title_zh').addClass('invisible');
-$('#title{{ $route->id }}').removeClass('invisible');
-$('#title{{ $route->id }}').addClass('visible');
-
-$carousel_{{ $route->id }}.on( 'select.flickity', function( event, index ) {
-        if (index == 0) {
-            $('#prev-route-slide{{ $route->id }}').hide();
-            $('#next-route-slide{{ $route->id }}').show();
-        }
-        if (index == 1) {
-            $('#prev-route-slide{{ $route->id }}').show();
-            $('#next-route-slide{{ $route->id }}').hide();
-        }
-    });
-});
-</script>
             @endforeach
 
             </div>
@@ -377,3 +372,33 @@ $carousel_{{ $route->id }}.on( 'select.flickity', function( event, index ) {
             <a href="/front-r01routes" class="med-footer-second"><span>План клиники</span></a>
         </div>
     </footer>
+
+    <script>
+        $(document).ready(function(){
+            $("svg").find("text").hide();
+            $("svg").find("text:first").show();
+            $("svg").find("text:last").show();
+            //$("#wrapper").html($("#wrapper").html());
+        });
+    </script>
+
+    <script> // ZOOM
+        const elem = document.getElementById('wrapper-inner');
+            const zoomInButton = document.getElementById('zoomin');
+            const zoomOutButton = document.getElementById('zoomout');
+            const resetButton = document.getElementById('reset');
+            const panzoom = Panzoom(elem, {
+                contain: 'outside',
+                duration: 200,
+                startX: 0,
+                startY: 0,
+                startScale: 1,
+                maxScale: 1,
+                minScale: 1,
+            });
+            const parent = elem.parentElement
+        parent.addEventListener('wheel', panzoom.zoomWithWheel);
+        //zoomInButton.addEventListener('click', panzoom.zoomIn);
+        //zoomOutButton.addEventListener('click', panzoom.zoomOut);
+        //resetButton.addEventListener('click', panzoom.reset);
+    </script>

@@ -62,6 +62,7 @@
                         <option value="nast" @if($settings->theme == "nast") selected @endif>Стандартный 2</option>
                         <option value="med" @if($settings->theme == "med") selected @endif>Медцентр</option>
                         <option value="muzei" @if($settings->theme == "muzei") selected @endif>Музей</option>
+                        <option value="shkola" @if($settings->theme == "shkola") selected @endif>Школа</option>
                         <option value="detsad" @if($settings->theme == "detsad") selected @endif>Детский сад</option>
                         <option value="book" @if($settings->theme == "book") selected @endif>Книга</option>
                         <!--<option value="kadet" @if($settings->theme == "kadet") selected @endif>Суворов</option>-->
