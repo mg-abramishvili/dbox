@@ -24,6 +24,13 @@
             @include('front.routes.muzei.index-vertical')
         @endif
 
+    @elseif($settings->theme == 'shkola')
+        @if($settings->orientation == 'horizontal')
+            @include('front.routes.shkola.index-horizontal')
+        @elseif($settings->orientation == 'vertical')
+            @include('front.routes.shkola.index-vertical')
+        @endif
+
     @elseif($settings->theme == 'nast')
         @include('front.routes.nast.index')
 

@@ -16,6 +16,13 @@
             @include('front.routes.med.show-vertical')
         @endif
 
+    @elseif($settings->theme == 'shkola')
+        @if($settings->orientation == 'horizontal')
+            @include('front.routes.shkola.show-horizontal')
+        @elseif($settings->orientation == 'vertical')
+            @include('front.routes.shkola.show-vertical')
+        @endif
+
     @elseif($settings->theme == 'muzei')
         @if($settings->orientation == 'horizontal')
             @include('front.routes.muzei.show-horizontal')
