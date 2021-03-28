@@ -994,6 +994,11 @@ footer {
     box-shadow: 0 0vh 0.5vh #c5d0db;
 }
 
+.keyboard-reviews .keyboard button:hover,
+.keyboard-reviews .keyboard button:focus {
+    outline: none;
+}
+
 .keyboard-reviews .keyboard .globebutton {
     width: 12vh;
 }
