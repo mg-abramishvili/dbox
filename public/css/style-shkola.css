@@ -507,15 +507,19 @@ footer {
     padding: 0;
     margin: 0;
     list-style-type: none;
-    height: 67vh;
+    height: 62vh;
     overflow: hidden;
     overflow-y: auto;
     margin-top: -2vh;
 }
 
 .news-list-item {
-    background-color: #E0E6E6;
-    padding: 3.3vh 4vh;
+    background-color: #fff;
+    border-radius: 2vh;
+    border: 0.3vh solid #c5d0db;
+    box-shadow: 0 0vh 0.5vh #c5d0db;
+    padding: 3vh 5vh;
+    margin-bottom: 2vh;
 }
 
 .news-list-item:nth-child(2n+2) {
@@ -546,12 +550,15 @@ footer {
 }
 
 .news-item {
-    background-color: #f5f5f5;
-    margin-top: -2vh;
+    background-color: #fff;
+    border-radius: 2vh;
+    border: 0.3vh solid #c5d0db;
+    box-shadow: 0 0vh 0.5vh #c5d0db;
+    padding: 3vh 5vh;
 }
 
 .news-item-img {
-    height: 65vh;
+    height: 57vh;
     background-size: cover;
     background-position: 50% 50%;
 }
@@ -560,7 +567,7 @@ footer {
     padding: 3vh 3vh;
     font-size: 2vh;
     line-height: 1.75;
-    height: 65vh;
+    height: 57vh;
     overflow: hidden;
     overflow-y: auto;
 }

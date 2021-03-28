@@ -17,6 +17,13 @@
                 @include('front.videoalbums.med.index-vertical')
             @endif
 
+        @elseif($settings->theme == 'shkola')
+            @if($settings->orientation == 'horizontal')
+                @include('front.videoalbums.shkola.index-horizontal')
+            @elseif($settings->orientation == 'vertical')
+                @include('front.videoalbums.shkola.index-vertical')
+            @endif
+
         @elseif($settings->theme == 'nast')
             @include('front.videoalbums.index-nast')
         @elseif($settings->theme == 'kadet')

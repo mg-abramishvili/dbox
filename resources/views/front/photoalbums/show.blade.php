@@ -26,6 +26,14 @@
             @elseif($settings->orientation == 'vertical')
                 @include('front.photoalbums.med.show-vertical')
             @endif
+
+        <!-- Тема Школа -->
+        @elseif($settings->theme == 'shkola')
+            @if($settings->orientation == 'horizontal')
+                @include('front.photoalbums.shkola.show-horizontal')
+            @elseif($settings->orientation == 'vertical')
+                @include('front.photoalbums.shkola.show-vertical')
+            @endif
             
         @endif
 

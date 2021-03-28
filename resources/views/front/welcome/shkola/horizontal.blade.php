@@ -106,6 +106,9 @@
 
             @if($settings->module_reviews == 'y')
                 <a href="/front-reviews/" class="index-button" @if($settings->module_reviews_sort) data-index="sort_{{ $settings->module_reviews_sort }} @endif">
+                    <div class="index-button-icon">
+                        <img src="/img/icons/021-email.svg">
+                    </div>
                     <span>Оставить отзыв</span>
                 </a>
             @endif

@@ -27,6 +27,14 @@
                 @include('front.photoalbums.med.index-vertical')
             @endif
 
+        <!-- Тема Школа -->
+        @elseif($settings->theme == 'shkola')
+            @if($settings->orientation == 'horizontal')
+                @include('front.photoalbums.shkola.index-horizontal')
+            @elseif($settings->orientation == 'vertical')
+                @include('front.photoalbums.shkola.index-vertical')
+            @endif
+
             <!-- Тема Музей -->
         @elseif($settings->theme == 'muzei')
             @if($settings->orientation == 'horizontal')

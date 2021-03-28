@@ -40,7 +40,7 @@
         </div>
     </header>
 
-    <div class="container" style="margin-top: 45px;">
+    <div class="container" style="width: 90vw; margin-top: 25vh;">
         <div class="news-item">
             <div class="row">
                 @if($news->image)
