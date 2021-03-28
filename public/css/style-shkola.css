@@ -68,6 +68,11 @@ header .container {
     display: block;
 }
 
+.header-logo a:focus {
+    text-decoration: none;
+    color: #333;
+}
+
 .header-logo-img {
     display: inline-block;
     vertical-align: middle;
@@ -265,11 +270,11 @@ border-color: #777777 transparent transparent transparent;
     text-align: left;
     font-size: 3vh;
     line-height: 1.4;
-    text-align: center;
 }
 
 .index-button-full span {
     margin-top: 25vh;
+    text-align: center;
 }
 
 .container-index {
@@ -645,16 +650,20 @@ footer {
 /* PAGE TYPE 2 */
 
 .type-2 .page-detail-image {
-    height: 65vh;
-    border-radius: 1vh;
+    height: 63vh;
+    border-radius: 2vh;
 }
 
 .type-2 .page-detail-text {
-    height: 65vh;
+    height: 63vh;
     overflow-y: auto;
-    padding-right: 2vh;
+    padding: 4vh;
     font-size: 2vh !important;
     line-height: 1.6 !important;
+    background: white;
+    border-radius: 2vh;
+    border: 0.3vh solid #c5d0db;
+    box-shadow: 0 0vh 0.5vh #c5d0db;
 }
 
 .type-2 .page-detail-text h1 {
@@ -758,6 +767,9 @@ footer {
     overflow-y: scroll;
     margin: 0 auto;
     width: 70vw;
+    border-radius: 2vh;
+    border: 0.3vh solid #c5d0db;
+    box-shadow: 0 0vh 0.5vh #c5d0db;
 }
 
   .type-7 .pdf-nav {
@@ -977,6 +989,9 @@ footer {
     height: 6vh;
     line-height: 6vh;
     font-size: 2.5vh;
+    border-radius: 1vh;
+    border: 0.3vh solid #c5d0db;
+    box-shadow: 0 0vh 0.5vh #c5d0db;
 }
 
 .keyboard-reviews .keyboard .globebutton {
@@ -997,6 +1012,10 @@ footer {
     height: 36vh;
     border: 1px solid #333;
     font-size: 3vh;
+    border-radius: 2vh;
+    border: 0.3vh solid #c5d0db;
+    box-shadow: 0 0vh 0.5vh #c5d0db;
+    padding: 3vh;
 }
 
 .review-form .btn-shkola {
