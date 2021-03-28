@@ -211,6 +211,9 @@ border-color: #777777 transparent transparent transparent;
     border-radius: 2vh;
     border: 0.3vh solid #c5d0db;
     box-shadow: 0 0vh 0.5vh #c5d0db;
+    width: 21vw;
+    margin: 0 0.7vw;
+    margin-bottom: 3vh;
 }
 
 .index-button:hover,
@@ -260,6 +263,16 @@ border-color: #777777 transparent transparent transparent;
     overflow-x: hidden;
     margin: 0 auto;
     margin-top: 25vh;
+    overflow: visible;
+}
+
+.container-index .flickity-viewport {
+    overflow: visible;
+}
+
+.container-index .flickity-slider {
+    margin-left: -0.6vw;
+    margin-right: -0.6vw;
 }
 
 /* MAIN PAGE */

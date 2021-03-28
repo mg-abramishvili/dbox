@@ -24,6 +24,13 @@
             @include('front.news.muzei.show-vertical')
         @endif
 
+    @elseif($settings->theme == 'shkola')
+        @if($settings->orientation == 'horizontal')
+            @include('front.news.shkola.show-horizontal')
+        @elseif($settings->orientation == 'vertical')
+            @include('front.news.shkola.show-vertical')
+        @endif
+
     @elseif($settings->theme == 'nast')
         @include('front.news.nast.show')
 
