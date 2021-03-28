@@ -41,6 +41,8 @@
             @include('front.welcome.shkola.horizontal')
         @elseif($settings->orientation == 'vertical')
             @include('front.welcome.shkola.vertical')
+        @elseif($settings->orientation == 'square')
+            @include('front.welcome.shkola.square')
         @endif
 
     <!-- Тема Детсад -->

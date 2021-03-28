@@ -1,0 +1,43 @@
+.wrapper {
+    width: 1280px;
+    max-width: 1280px;
+    height: 1024px;
+    max-height: 1024px;
+}
+
+header .container {
+    width: 95vw;
+}
+
+.container-index {
+    width: 95vw;
+    height: 80vh;
+    margin-top: 25vh;
+}
+
+.index-button span {
+    font-size: 2.7vh;
+}
+
+.index-button {
+    width: 26vw;
+    margin: 0 1.2vw;
+    margin-bottom: 3.5vh;
+}
+
+.index-button-full {
+
+}
+
+.container-index .flickity-viewport {
+    margin-left: -1vw;
+}
+
+.container-index .flickity-slider {
+    margin-left: 0vw;
+    margin-right: 0vw;
+}
+
+.type-1 .page-detail-text {
+    height: 60vh;
+}

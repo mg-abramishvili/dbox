@@ -4,6 +4,9 @@
     @if($settings->orientation == 'vertical')
         <link href="{{ asset('css/style-shkola-vert.css') }}" rel="stylesheet">
     @endif
+    @if($settings->orientation == 'square')
+        <link href="{{ asset('css/style-shkola-square.css') }}" rel="stylesheet">
+    @endif
 @endsection
 
     <div class="shkola">
@@ -43,7 +46,15 @@
             </div>
         </header>
 
-        <div class="container" style="margin-top: 25vh; width: 90vw;">
+        <div class="container"
+            @if($settings->orientation == 'horizontal')
+                style="margin-top: 25vh; width: 90vw;"
+            @elseif($settings->orientation == 'vertical')
+                style="margin-top: 25vh; width: 90vw;"
+            @elseif($settings->orientation == 'square')
+                style="margin-top: 25vh; width: 95vw;"
+            @endif
+        >
 
             <div class="page-item">
                 @forelse($page->types as $type)
@@ -53,6 +64,8 @@
                             @include('front.pages.shkola.type-1.horizontal')
                         @elseif($settings->orientation == 'vertical')
                             @include('front.pages.shkola.type-1.vertical')
+                        @elseif($settings->orientation == 'square')
+                            @include('front.pages.shkola.type-1.square')
                         @endif
 
                     @elseif($type->id == '2')
@@ -60,32 +73,73 @@
                             @include('front.pages.shkola.type-2.horizontal')
                         @elseif($settings->orientation == 'vertical')
                             @include('front.pages.shkola.type-2.vertical')
+                        @elseif($settings->orientation == 'square')
+                            @include('front.pages.shkola.type-2.square')
                         @endif
 
                     @elseif($type->id == '3')
+                        @if($settings->orientation == 'horizontal')
                         @include('front.pages.shkola.type-3.horizontal')
+                    @elseif($settings->orientation == 'vertical')
+                        @include('front.pages.shkola.type-3.vertical')
+                    @elseif($settings->orientation == 'square')
+                        @include('front.pages.shkola.type-3.square')
+                    @endif
 
                     @elseif($type->id == '4')
+                        @if($settings->orientation == 'horizontal')
                         @include('front.pages.shkola.type-4.horizontal')
+                    @elseif($settings->orientation == 'vertical')
+                        @include('front.pages.shkola.type-4.vertical')
+                    @elseif($settings->orientation == 'square')
+                        @include('front.pages.shkola.type-4.square')
+                    @endif
 
                     @elseif($type->id == '5')
+                        @if($settings->orientation == 'horizontal')
                         @include('front.pages.shkola.type-5.horizontal')
+                    @elseif($settings->orientation == 'vertical')
+                        @include('front.pages.shkola.type-5.vertical')
+                    @elseif($settings->orientation == 'square')
+                        @include('front.pages.shkola.type-5.square')
+                    @endif
 
                     @elseif($type->id == '6')
+                        @if($settings->orientation == 'horizontal')
                         @include('front.pages.shkola.type-6.horizontal')
+                    @elseif($settings->orientation == 'vertical')
+                        @include('front.pages.shkola.type-6.vertical')
+                    @elseif($settings->orientation == 'square')
+                        @include('front.pages.shkola.type-6.square')
+                    @endif
 
                     @elseif($type->id == '7')
+                        @if($settings->orientation == 'horizontal')
                         @include('front.pages.shkola.type-7.horizontal')
+                    @elseif($settings->orientation == 'vertical')
+                        @include('front.pages.shkola.type-7.vertical')
+                    @elseif($settings->orientation == 'square')
+                        @include('front.pages.shkola.type-7.square')
+                    @endif
 
                     @elseif($type->id == '8')
+                        @if($settings->orientation == 'horizontal')
                         @include('front.pages.shkola.type-8.horizontal')
+                    @elseif($settings->orientation == 'vertical')
+                        @include('front.pages.shkola.type-8.vertical')
+                    @elseif($settings->orientation == 'square')
+                        @include('front.pages.shkola.type-8.square')
+                    @endif
 
                     @elseif($type->id == '9')
                         @if($settings->orientation == 'horizontal')
-                            @include('front.pages.shkola.type-9.horizontal')
-                        @elseif($settings->orientation == 'vertical')
-                            @include('front.pages.shkola.type-9.vertical')
-                        @endif
+                        @include('front.pages.shkola.type-9.horizontal')
+                    @elseif($settings->orientation == 'vertical')
+                        @include('front.pages.shkola.type-9.vertical')
+                    @elseif($settings->orientation == 'square')
+                        @include('front.pages.shkola.type-9.square')
+                    @endif
+
                     @endif
                 @empty
                     <p>Не задан тип страницы</p>

@@ -89,6 +89,7 @@
                     <select class="form-control" name="orientation">
                         <option value="horizontal" @if($settings->orientation == "horizontal") selected @endif>Горизонтальная</option>
                         <option value="vertical" @if($settings->orientation == "vertical") selected @endif>Вертикальная</option>
+                        <option value="square" @if($settings->orientation == "square") selected @endif>Квадрат</option>
                     </select>
                 </dd>
             </div>
