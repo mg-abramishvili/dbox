@@ -42,7 +42,7 @@
     </div>
 </header>
 
-    <div class="container">
+    <div class="container"  style="margin-top: 25vh; width: 90vw;">
 
         @if(is_array($photoalbum->gallery))
         <div class="gallery-detail">

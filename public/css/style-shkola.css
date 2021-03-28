@@ -216,6 +216,10 @@ border-color: #777777 transparent transparent transparent;
     margin-bottom: 3vh;
 }
 
+.index-button-full {
+    height: 63vh;
+}
+
 .index-button:hover,
 .index-button:focus {
     color: #fff;
@@ -229,6 +233,13 @@ border-color: #777777 transparent transparent transparent;
     border-radius: 100%;
     background-color: #5da7fe;
     border: 0.5vh solid #5da7fe;
+}
+
+.index-button-full .index-button-icon {
+    width: 18vh;
+    height: 18vh;
+    margin: 0 auto;
+    margin-top: 10vh;
 }
 
 .index-button-icon img {
@@ -254,6 +265,11 @@ border-color: #777777 transparent transparent transparent;
     text-align: left;
     font-size: 3vh;
     line-height: 1.4;
+    text-align: center;
+}
+
+.index-button-full span {
+    margin-top: 25vh;
 }
 
 .container-index {
@@ -436,6 +452,10 @@ footer {
 .gallery-list-item-pic {
     height: 24vh;
     margin-bottom: 1vh;
+    background-color: #fff;
+    border-radius: 2vh;
+    border: 0.3vh solid #c5d0db;
+    box-shadow: 0 0vh 0.5vh #c5d0db;
 }
 
 .gallery-list .flickity-page-dots {
@@ -495,6 +515,7 @@ footer {
     height: auto;
     max-width: 100%;
     max-height: 70vh;
+    border-radius: 2vh;
 }
 
 /* VIDEOALBUM */
@@ -595,11 +616,15 @@ footer {
 /* PAGE TYPE 1 */
 
 .type-1 .page-detail-text {
-    height: 65vh;
+    height: 62vh;
     overflow-y: auto;
-    padding-right: 2vh;
+    padding: 5vh 6vh;
     font-size: 2vh !important;
     line-height: 1.6 !important;
+    background-color: #fff;
+    border-radius: 2vh;
+    border: 0.3vh solid #c5d0db;
+    box-shadow: 0 0vh 0.5vh #c5d0db;
 }
 
 .type-1 .page-detail-text h1 {
@@ -704,8 +729,11 @@ footer {
     border: 0.5vh solid #5da7fe;
 }
 
-.type-6 {
-    padding: 0 1.6vh;
+.index-button-full .user-pages-item-image {
+    width: 20vh;
+    height: 20vh;
+    margin: 0 auto;
+    margin-top: 7vh;
 }
 
 .type-6 .user-pages-item-item img {

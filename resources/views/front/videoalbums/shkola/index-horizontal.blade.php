@@ -38,7 +38,7 @@
     </div>
 </header>
 
-    <div class="container">
+    <div class="container" style="width: 90vw; margin-top: 25vh;">
 
         <div class="gallery">
             <div class="gallery-list">
