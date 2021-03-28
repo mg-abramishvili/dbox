@@ -9,6 +9,18 @@ header .container {
     width: 95vw;
 }
 
+.header-time {
+    font-size: 5vh;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 1vh;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 1vh;
+}
+
 .container-index {
     width: 95vw;
     height: 80vh;
@@ -40,4 +52,34 @@ header .container {
 
 .type-1 .page-detail-text {
     height: 60vh;
+}
+
+.wrapperm {
+    transform: scale(0.85);
+    transform-origin: 0% 0%;
+    margin-top: 4vh;
+}
+
+.keyboard button {
+    width: 2.7vh;
+    height: 2.7vh;
+    line-height: 2.7vh;
+}
+
+.med-route-sidebar {
+    margin-top: -7vh;
+}
+
+#myUL {
+    height: 35vh;
+    padding-right: 1vh;
+}
+
+#myUL li a {
+    border-radius: 1vh;
+    border-color: #5da7fe;
+}
+
+.prevnexrroutslide {
+    background-color: #5da7fe !important;
 }

@@ -29,6 +29,8 @@
             @include('front.routes.shkola.index-horizontal')
         @elseif($settings->orientation == 'vertical')
             @include('front.routes.shkola.index-vertical')
+        @elseif($settings->orientation == 'square')
+            @include('front.routes.shkola.index-square')
         @endif
 
     @elseif($settings->theme == 'nast')
