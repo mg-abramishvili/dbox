@@ -43,7 +43,7 @@
         contain: true,
         prevNextButtons: false,
         pageDots: false,
-        groupCells: 4,
+        groupCells: 3,
         draggable: '>1',
         });
     </script>

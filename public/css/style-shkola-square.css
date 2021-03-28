@@ -20,13 +20,13 @@ header .container {
 }
 
 .index-button {
-    width: 26vw;
+    width: 28.7vw;
     margin: 0 1.2vw;
     margin-bottom: 3.5vh;
 }
 
 .index-button-full {
-
+    width: 26vw;
 }
 
 .container-index .flickity-viewport {
