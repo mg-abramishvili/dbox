@@ -1,10 +1,7 @@
 @section('styles')
     @parent
     <link href="{{ asset('css/style-med.css') }}" rel="stylesheet">
-    @if($settings->orientation == 'vertical')
-        @parent
-        <link href="{{ asset('css/style-med-vert.css') }}" rel="stylesheet">
-    @endif
+    <link href="{{ asset('css/style-med-vert.css') }}" rel="stylesheet">
 @endsection
 
     <div class="container">

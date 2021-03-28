@@ -33,6 +33,8 @@
                 @include('front.photoalbums.shkola.index-horizontal')
             @elseif($settings->orientation == 'vertical')
                 @include('front.photoalbums.shkola.index-vertical')
+            @elseif($settings->orientation == 'square')
+                @include('front.photoalbums.shkola.index-square')
             @endif
 
             <!-- Тема Музей -->

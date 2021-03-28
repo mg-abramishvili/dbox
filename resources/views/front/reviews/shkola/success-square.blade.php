@@ -1,6 +1,7 @@
 @section('styles')
     @parent
     <link href="{{ asset('css/style-shkola.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style-shkola-square.css') }}" rel="stylesheet">
 @endsection
 
 <header>
@@ -38,38 +39,16 @@
     </div>
 </header>
 
-    <div class="container"  style="margin-top: 25vh; width: 90vw;">
+    <div class="container">
+        
+            <p style="font-size: 5vh; text-align: center; margin-top: 24vh;">Ваш отзыв принят!</p>
 
-        @if(is_array($photoalbum->gallery))
-        <div class="gallery-detail">
-            @foreach($photoalbum->gallery as $k=>$v)
-                <div class="gallery-detail-item">
-                    <img src="{{ $v }}" />
-                </div>
-            @endforeach
         </div>
-        @endif
 
-        <script>
-            $('.gallery-detail').flickity({
-            cellAlign: 'center',
-            contain: true,
-            imagesLoaded: true,
-            pageDots: false,
-            wrapAround: true,
-            });
-        </script>
-                
-
-
+<footer>
+    <div class="container">
+        <a href="/" class="shkola-home shkola-home-sub">
+            <img src="/img/medhome.svg" alt="">
+        </a>
     </div>
-
-    <footer>
-        <div class="container">
-            <a href="/" class="shkola-home shkola-home-sub">
-                <img src="/img/medhome.svg" alt="">
-            </a>
-            <a href="/front-photoalbums" class="shkola-footer-second"><span>Фотогалерея</span></a>
-            <a class="shkola-footer-third"><span>{{ $photoalbum->title }}</span></a>
-        </div>
-    </footer>
+</footer>

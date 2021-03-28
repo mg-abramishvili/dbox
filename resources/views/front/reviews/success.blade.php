@@ -17,6 +17,8 @@
             @include('front.reviews.shkola.success-horizontal')
         @elseif($settings->orientation == 'vertical')
             @include('front.reviews.shkola.success-vertical')
+        @elseif($settings->orientation == 'square')
+            @include('front.reviews.shkola.success-square')
         @endif
 
     @endif

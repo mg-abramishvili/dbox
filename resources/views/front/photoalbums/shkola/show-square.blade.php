@@ -1,6 +1,7 @@
 @section('styles')
     @parent
     <link href="{{ asset('css/style-shkola.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style-shkola-square.css') }}" rel="stylesheet">
 @endsection
 
 <header>
@@ -38,7 +39,7 @@
     </div>
 </header>
 
-    <div class="container"  style="margin-top: 25vh; width: 90vw;">
+    <div class="container"  style="margin-top: 25vh; width: 95vw;">
 
         @if(is_array($photoalbum->gallery))
         <div class="gallery-detail">

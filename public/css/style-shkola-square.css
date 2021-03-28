@@ -83,3 +83,9 @@ header .container {
 .prevnexrroutslide {
     background-color: #5da7fe !important;
 }
+
+.keyboard-reviews .keyboard button {
+    width: 5vh;
+    height: 5vh;
+    line-height: 5vh;
+}

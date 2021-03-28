@@ -17,6 +17,8 @@
             @include('front.reviews.shkola.create-horizontal')
         @elseif($settings->orientation == 'vertical')
             @include('front.reviews.shkola.create-vertical')
+        @elseif($settings->orientation == 'square')
+            @include('front.reviews.shkola.create-square')
         @endif
 
     @endif

@@ -22,6 +22,8 @@
                 @include('front.videoalbums.shkola.index-horizontal')
             @elseif($settings->orientation == 'vertical')
                 @include('front.videoalbums.shkola.index-vertical')
+            @elseif($settings->orientation == 'square')
+                @include('front.videoalbums.shkola.index-square')
             @endif
 
         @elseif($settings->theme == 'nast')

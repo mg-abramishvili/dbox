@@ -1,6 +1,7 @@
 @section('styles')
     @parent
     <link href="{{ asset('css/style-shkola.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style-shkola-square.css') }}" rel="stylesheet">
 @endsection
 
 <header>
@@ -38,29 +39,16 @@
     </div>
 </header>
 
-    <div class="container"  style="margin-top: 25vh; width: 90vw;">
+    <div class="container" style="width: 95vw; margin-top: 25vh;">
 
-        @if(is_array($photoalbum->gallery))
-        <div class="gallery-detail">
-            @foreach($photoalbum->gallery as $k=>$v)
-                <div class="gallery-detail-item">
-                    <img src="{{ $v }}" />
-                </div>
-            @endforeach
-        </div>
-        @endif
+    <div class="videoalbum-detail">
+    <video src="{{ $videoalbum->gallery }}" autoplay controls disablePictureInPicture controlsList="nodownload"></video>
+    </div>
+    
+        
 
-        <script>
-            $('.gallery-detail').flickity({
-            cellAlign: 'center',
-            contain: true,
-            imagesLoaded: true,
-            pageDots: false,
-            wrapAround: true,
-            });
-        </script>
+
                 
-
 
     </div>
 
@@ -69,7 +57,7 @@
             <a href="/" class="shkola-home shkola-home-sub">
                 <img src="/img/medhome.svg" alt="">
             </a>
-            <a href="/front-photoalbums" class="shkola-footer-second"><span>Фотогалерея</span></a>
-            <a class="shkola-footer-third"><span>{{ $photoalbum->title }}</span></a>
+            <a href="/front-videoalbums" class="shkola-footer-second"><span>Видеогалерея</span></a>
+            <a class="shkola-footer-third"><span>{{ $videoalbum->title }}</span></a>
         </div>
     </footer>

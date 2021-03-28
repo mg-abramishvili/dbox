@@ -33,6 +33,8 @@
                 @include('front.photoalbums.shkola.show-horizontal')
             @elseif($settings->orientation == 'vertical')
                 @include('front.photoalbums.shkola.show-vertical')
+            @elseif($settings->orientation == 'square')
+                @include('front.photoalbums.shkola.show-square')
             @endif
             
         @endif

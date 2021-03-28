@@ -29,6 +29,8 @@
             @include('front.news.shkola.show-horizontal')
         @elseif($settings->orientation == 'vertical')
             @include('front.news.shkola.show-vertical')
+        @elseif($settings->orientation == 'square')
+            @include('front.news.shkola.show-square')
         @endif
 
     @elseif($settings->theme == 'nast')
