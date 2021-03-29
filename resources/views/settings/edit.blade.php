@@ -51,6 +51,15 @@
                 </dd>
             </div>
 
+            <div class="row align-items-center mb-2">    
+                <dt class="col-sm-3">
+                    Логотип
+                </dt>
+                <dd class="col-sm-9">
+                    <input class="logo" type="file" name="logo" x-ref="logo">
+                </dd>
+            </div>
+
             <div style="@if(\Auth::user()->id == '1') display: block; @else display: none; @endif">
             <div class="row align-items-center mb-2">    
                 <dt class="col-sm-3">
@@ -92,18 +101,6 @@
                         <option value="square" @if($settings->orientation == "square") selected @endif>Квадрат</option>
                     </select>
                 </dd>
-            </div>
-
-            <div class="row align-items-center mb-2">    
-                <dt class="col-sm-3">
-                    Логотип
-                </dt>
-                <dd class="col-sm-9">
-
-                <input class="logo" type="file" name="logo" x-ref="logo">
-
-                </dd>
-
             </div>
 
             <div class="row align-items-center mb-2">    

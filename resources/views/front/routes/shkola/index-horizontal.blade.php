@@ -368,7 +368,7 @@
             <a href="/" class="shkola-home shkola-home-sub">
                 <img src="/img/shkolahome.svg" alt="">
             </a>
-            <a href="/front-r01routes" class="shkola-footer-second"><span>План клиники</span></a>
+            <a href="/front-r01routes" class="shkola-footer-second"><span>План школы</span></a>
         </div>
     </footer>
 

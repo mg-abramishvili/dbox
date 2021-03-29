@@ -51,6 +51,9 @@ class SettingController extends Controller
                 if($data0['theme'] == 'med') {
                     Artisan::call('migrate:fresh --seed');
                     Artisan::call('db:seed --class=ContentMedSeeder');
+                } elseif ($data0['theme'] == 'shkola') {
+                    Artisan::call('migrate:fresh --seed');
+                    Artisan::call('db:seed --class=ContentShkolaSeeder');
                 } elseif ($data0['theme'] == 'muzei') {
                     Artisan::call('migrate:fresh --seed');
                     Artisan::call('db:seed --class=ContentMuzeiSeeder');

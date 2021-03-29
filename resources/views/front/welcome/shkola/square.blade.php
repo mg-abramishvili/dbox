@@ -72,7 +72,7 @@
                     <div class="index-button-icon">
                         <img src="/img/icons/019-home-1.svg">
                     </div>
-                    <span>План клиники</span>
+                    <span>План школы</span>
                 </a>
             @endif
 
@@ -144,7 +144,7 @@
         contain: true,
         prevNextButtons: false,
         pageDots: false,
-        groupCells: 4,
+        groupCells: 3,
         draggable: '>1',
         });
     </script>
