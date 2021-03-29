@@ -40,32 +40,27 @@
         </div>
     </header>
 
-    <div class="container" style="margin-top: 27vh; width: 90vw;">
-        <div class="news">
-            <div class="row">
-                <div class="col-12">
-                    <ul class="news-list">
-                        @foreach($news as $new)
-                        <li class="news-list-item">  
-                            <div class="row align-items-center">
-                                <div class="col-9">
-                                    <h2>{{ $new->title }}</h2>
-                                    <div class="news-list-item-text-preview">
-                                        {{ \Illuminate\Support\Str::limit($new->text ?? '', 100, $end='...') }}
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <a href="/front-news/{{ $new->id }}">Подробнее</a>
-                                </div>
-                            </div>
-                        </li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-            <div class="backbutton">
-                
-            </div>
+    <div class="container container-index" style="margin-top: 25vh;">
+        <div class="news sortable">
+            @foreach($news as $new)
+                <a href="/front-news/{{ $new->id }}" class="index-button index-button-full">
+                    @if($new->image)
+                        <div class="user-pages-item-image" style="background-image:url({{ $new->image }});"></div>
+                        <span class="t6-p">
+                            <small style="font-size: 1vw; color: #999; display:block; margin-bottom: 1vh;">{{ \Carbon\Carbon::parse($new->created_at)->locale('ru')->isoFormat('D.MM.YYYY')}}</small>
+                            {{ $new->title }}
+                        </span>
+                    @else
+                        <div class="index-button-icon">
+                            <img src="/img/icons/002-newspaper.svg">
+                        </div>
+                        <span>
+                            <small style="font-size: 1vw; color: #999; display:block; margin-bottom: 1vh;">{{ \Carbon\Carbon::parse($new->created_at)->locale('ru')->isoFormat('D.MM.YYYY')}}</small>
+                            {{ $new->title }}
+                        </span>
+                    @endif
+                </a>
+            @endforeach
         </div>
     </div>
 
@@ -73,10 +68,33 @@
     <footer>
         <div class="container">
             <a href="/" class="shkola-home shkola-home-sub">
-                <img src="/img/medhome.svg" alt="">
+                <img src="/img/shkolahome.svg" alt="">
             </a>
             <a href="/front-news" class="shkola-footer-second"><span>Новости</span></a>
         </div>
     </footer>
 </div>
 
+@section('scripts')
+    @parent
+    <script>
+        asc=false;   
+        var sorted=$('.index-button').sort(function(a,b){
+                return (asc ==
+                    ($(a).data('index') <  $(b).data('index'))) ? 1 : -1;
+            });
+            asc = asc ? false : true;
+            $('.sortable').html(sorted);
+    </script>
+
+    <script>
+        $('.sortable').flickity({
+        cellAlign: 'left',
+        contain: true,
+        prevNextButtons: false,
+        pageDots: false,
+        groupCells: 4,
+        draggable: '>1',
+        });
+    </script>
+@endsection

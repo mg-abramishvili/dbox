@@ -64,7 +64,7 @@
     <footer>
         <div class="container">
             <a href="/" class="shkola-home shkola-home-sub">
-                <img src="/img/medhome.svg" alt="">
+                <img src="/img/shkolahome.svg" alt="">
             </a>
             <a href="/front-photoalbums" class="shkola-footer-second"><span>Фотогалерея</span></a>
         </div>

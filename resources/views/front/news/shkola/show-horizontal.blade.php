@@ -70,7 +70,7 @@
     <footer>
         <div class="container">
             <a href="/" class="shkola-home shkola-home-sub">
-                <img src="/img/medhome.svg" alt="">
+                <img src="/img/shkolahome.svg" alt="">
             </a>
             <a href="/front-news" class="shkola-footer-second"><span>Новости</span></a>
             <a class="shkola-footer-third"><span>{{ $news->title }}</span></a>

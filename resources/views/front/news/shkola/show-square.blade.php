@@ -45,13 +45,13 @@
         <div class="news-item">
             <div class="row">
                 @if($news->image)
-                <div class="col-4">
+                <div class="col-5">
                     <div class="news-item-img" style="background-image: url({{ $news->image }});"></div>
                 </div>
                 @endif
 
                 @if($news->image)
-                <div class="col-8">
+                <div class="col-7">
                 @else
                 <div class="col-12">
                 @endif
@@ -71,7 +71,7 @@
     <footer>
         <div class="container">
             <a href="/" class="shkola-home shkola-home-sub">
-                <img src="/img/medhome.svg" alt="">
+                <img src="/img/shkolahome.svg" alt="">
             </a>
             <a href="/front-news" class="shkola-footer-second"><span>Новости</span></a>
             <a class="shkola-footer-third"><span>{{ $news->title }}</span></a>
