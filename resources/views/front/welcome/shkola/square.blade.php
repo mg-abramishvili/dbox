@@ -144,7 +144,7 @@
         contain: true,
         prevNextButtons: false,
         pageDots: false,
-        groupCells: 3,
+        groupCells: 4,
         draggable: '>1',
         });
     </script>

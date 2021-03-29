@@ -238,6 +238,8 @@ border-color: #777777 transparent transparent transparent;
     border-radius: 100%;
     background-color: #5da7fe;
     border: 0.5vh solid #5da7fe;
+    margin: 0 auto;
+    margin-top: 1vh;
 }
 
 .index-button-full .index-button-icon {
@@ -270,6 +272,7 @@ border-color: #777777 transparent transparent transparent;
     text-align: left;
     font-size: 3vh;
     line-height: 1.4;
+    text-align: center;
 }
 
 .index-button-full span {
@@ -739,6 +742,7 @@ footer {
     background-position: 50% 50%;
     border-radius: 100%;
     border: 0.5vh solid #5da7fe;
+    margin: 0 auto;
 }
 
 .index-button-full .user-pages-item-image {
