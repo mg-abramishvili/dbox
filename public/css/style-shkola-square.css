@@ -13,6 +13,10 @@ header .container {
     font-size: 5vh;
 }
 
+.header-title {
+    font-size: 3vh;
+}
+
 ::-webkit-scrollbar-track {
     border-radius: 1vh;
 }

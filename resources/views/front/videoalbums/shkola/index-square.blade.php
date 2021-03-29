@@ -7,7 +7,7 @@
 <header>
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-6 header-logo">
+            <div class="col-8 header-logo">
                 <a href="/">
                     <div class="header-logo-img">
                         <img src="{{ $settings->logo }}">
@@ -15,7 +15,7 @@
                     <p class="header-title">{{ $settings->title }}</p>
                 </a>
             </div>
-            <div class="col-6 text-right">
+            <div class="col-4 text-right">
                 <div class="calendar">
                     <span>
                         {{ \Carbon\Carbon::now()->locale('ru')->isoFormat('D MMMM, dddd')}}

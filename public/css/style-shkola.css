@@ -105,13 +105,14 @@ header .container {
 }
 
 .header-title {
-    font-size: 4.5vh;
+    font-size: 4.25vh;
     text-transform: uppercase;
     margin: 0;
     display: inline-block;
     vertical-align: middle;
     margin-top: -3vh;
     margin-left: 4vh;
+    width: calc(100% - 17vw);
 }
 
 /*.calendar {
