@@ -28,13 +28,9 @@
                                     <a href="/pages/{{$page->id}}/edit" class="btn btn-sm btn-warning">Правка</a>
                                 @endif
                                 <br>
-                                    @foreach($page->children as $pg)
-                                        <li class="mt-4">
-                                            {{ $pg->title }}
-                                            <a href="/pages/{{$pg->id}}/edit" class="btn btn-sm btn-warning">Правка</a>
-                                            <a href="/pages/delete/{{$pg->id}}" class="btn btn-sm btn-danger">Удалить</a>
-                                        </li>
-                                    @endforeach
+                                @if(count($page->children))
+                                    @include('pages.sub ', ['children' => $page->children])
+                                @endif
                             </td>
                         </tr>
                     @endif

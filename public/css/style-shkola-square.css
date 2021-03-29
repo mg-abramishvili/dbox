@@ -27,9 +27,28 @@ header .container {
     margin-top: 25vh;
 }
 
+.container-index .flickity-prev-next-button {
+    top: auto;
+    bottom: -7.5vh;
+}
+
+.container-index .flickity-button {
+    background-color: #5da7fe;
+    color: #fff;
+}
+
+.container-index .flickity-button:disabled,
+.container-index .flickity-button:hover {
+    opacity: 1;
+    color: #fff;
+    background-color: #5da7fe;
+}
+
 .index-button span {
-    font-size: 2.7vh;
+    font-size: 2.5vh;
     text-align: center;
+    left: 1vh;
+    right: 1vh;
 }
 
 .index-button {
@@ -39,7 +58,36 @@ header .container {
 }
 
 .index-button-full {
-    width: 26vw;
+    width: 19vw;
+    height: 54vh;
+}
+
+.index-button-full span {
+    max-height: 14vh;
+    overflow: hidden;
+    margin-top: 20vh;
+}
+
+.index-button-full .index-button-icon,
+.index-button .index-button-icon {
+    margin: 0 auto;
+}
+
+.index-button-full .user-pages-item-image,
+.index-button .user-pages-item-image {
+    margin: 0 auto;
+}
+
+.index-button-full .index-button-icon {
+    width: 17vh;
+    height: 17vh;
+    margin-top: 6vh;
+}
+
+.index-button-full .user-pages-item-image {
+    width: 17vh;
+    height: 17vh;
+    margin-top: 6vh;
 }
 
 .container-index .flickity-viewport {
@@ -49,6 +97,14 @@ header .container {
 .container-index .flickity-slider {
     margin-left: 0vw;
     margin-right: 0vw;
+}
+
+.container-index .flickity-prev-next-button.previous {
+    left: 41vw;
+}
+
+.container-index .flickity-prev-next-button.next {
+    right: 41vw;
 }
 
 .type-1 .page-detail-text {

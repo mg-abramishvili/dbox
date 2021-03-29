@@ -39,9 +39,13 @@
 
     <script>
         $('.sortable').flickity({
-        cellAlign: 'left',
+        cellAlign: 'center',
         contain: true,
-        prevNextButtons: false,
+        @if($childs->children->count() > 4)
+            prevNextButtons: true,
+        @else
+            prevNextButtons: false,
+        @endif
         pageDots: false,
         groupCells: 3,
         draggable: '>1',

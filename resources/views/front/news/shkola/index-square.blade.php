@@ -90,11 +90,15 @@
 
     <script>
         $('.sortable').flickity({
-        cellAlign: 'left',
+        cellAlign: 'center',
         contain: true,
-        prevNextButtons: false,
+        @if($news->count() > 4)
+            prevNextButtons: true,
+        @else
+            prevNextButtons: false,
+        @endif
         pageDots: false,
-        groupCells: 3,
+        groupCells: 4,
         draggable: '>1',
         });
     </script>
