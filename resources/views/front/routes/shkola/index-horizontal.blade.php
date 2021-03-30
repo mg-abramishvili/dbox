@@ -31,7 +31,7 @@
                     <div class="header-logo-img">
                         <img src="{{ $settings->logo }}">
                     </div>
-                    <p class="header-title">{{ $settings->title }}</p>
+                    <p class="header-title"><?=str_replace('*', '<br>', $settings->title)?></p>
                 </a>
             </div>
             <div class="col-4 text-right">

@@ -60,6 +60,16 @@
                 </dd>
             </div>
 
+            <div class="row align-items-center mb-2">    
+                <dt class="col-sm-3">
+                    Заголовок
+                </dt>
+                <dd class="col-sm-9">
+                    <input type="text" class="form-control" name="title" value="{{$settings->title}}">
+                    <p><small>Для переноса текста на новую строку используйте символ *</small></p>
+                </dd>
+            </div>
+
             <div style="@if(\Auth::user()->id == '1') display: block; @else display: none; @endif">
             <div class="row align-items-center mb-2">    
                 <dt class="col-sm-3">
@@ -100,15 +110,6 @@
                         <option value="vertical" @if($settings->orientation == "vertical") selected @endif>Вертикальная</option>
                         <option value="square" @if($settings->orientation == "square") selected @endif>Квадрат</option>
                     </select>
-                </dd>
-            </div>
-
-            <div class="row align-items-center mb-2">    
-                <dt class="col-sm-3">
-                    Заголовок
-                </dt>
-                <dd class="col-sm-9">
-                    <input type="text" class="form-control" name="title" value="{{$settings->title}}">
                 </dd>
             </div>
 
