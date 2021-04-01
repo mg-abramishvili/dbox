@@ -138,3 +138,8 @@ Route::get('/front-reviews-success', 'App\Http\Controllers\FrontReviewController
 // Settings
 Route::resource('/settings', SettingController::class);
 Route::post('settings/file/{method}','App\Http\Controllers\SettingController@file');
+
+
+Route::get('/{vue?}', function () {
+    return view('layouts.vue');
+})->where('vue', '[\/\w\.-]*');
