@@ -3,17 +3,17 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+use App\Http\Controllers\Api\FrontController;
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/front/settings','App\Http\Controllers\Api\FrontController@settings');
+
+Route::get('/front/pages','App\Http\Controllers\Api\FrontController@pages');
+Route::get('/front/page/{id}','App\Http\Controllers\Api\FrontController@pageItem');
+
+Route::get('/front/news','App\Http\Controllers\Api\FrontController@news');
+
+Route::get('/front/photoalbums','App\Http\Controllers\Api\FrontController@photoalbums');
+
+Route::get('/front/videoalbums','App\Http\Controllers\Api\FrontController@videoalbums');
+
+Route::get('/front/r01routes','App\Http\Controllers\Api\FrontController@r01routes');
