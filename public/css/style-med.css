@@ -521,6 +521,7 @@ footer {
 .type-2 .page-detail-image {
     height: 65vh;
     border-radius: 1vh;
+    background-size: cover;
 }
 
 .type-2 .page-detail-text {
@@ -685,6 +686,29 @@ footer {
     overflow-y: scroll;
     padding-top: 2vh;
     margin-top: -4vh;
+    text-align: center;
+}
+
+.excel-item table {
+    border-collapse: collapse;
+    margin: 1rem 0;
+    display: inline-block;
+    overflow-x: auto;
+    text-align: left;
+}
+
+.excel-item table tr {
+    border-top: 1px solid #dfe2e5;
+}
+
+.excel-item table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+}
+
+.excel-item table td,
+.excel-item table th {
+    border: 1px solid #dfe2e5;
+    padding: .6em 1em;
 }
 
 /* type 9 */

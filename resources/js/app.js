@@ -4,6 +4,7 @@ window.Vue = require('vue');
 
 window.moment = require('moment');
 Vue.prototype.$moment = moment;
+moment.locale('ru');
 
 import App from './App.vue';
 import VueRouter from 'vue-router';

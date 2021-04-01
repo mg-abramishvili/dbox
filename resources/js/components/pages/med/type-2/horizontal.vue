@@ -4,7 +4,7 @@
 
         <div v-else class="row">
             <div class="col-5">
-                <div class="page-detail-image" v-bind:style="{ 'background-image': 'url(http://localhost' + page.image + ')' }"></div>
+                <div class="page-detail-image" v-bind:style="{ 'background-image': 'url(' + page.image + ')' }"></div>
             </div>
             <div class="col-7">
                 <div class="page-detail-text">

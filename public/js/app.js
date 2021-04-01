@@ -24057,10 +24057,7 @@ var render = function() {
             _c("div", { staticClass: "col-5" }, [
               _c("div", {
                 staticClass: "page-detail-image",
-                style: {
-                  "background-image":
-                    "url(http://localhost" + _vm.page.image + ")"
-                }
+                style: { "background-image": "url(" + _vm.page.image + ")" }
               })
             ]),
             _vm._v(" "),
@@ -41528,6 +41525,7 @@ __webpack_require__.r(__webpack_exports__);
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 window.moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 Vue.prototype.$moment = moment;
+moment.locale('ru');
 
 
 
