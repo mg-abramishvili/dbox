@@ -15,11 +15,11 @@
 </template>
 
 <script>
-    import MedPageType1Horizontal from '@/components/pages/med/type-1/horizontal'
-    import MedPageType2Horizontal from '@/components/pages/med/type-2/horizontal'
-    import MedPageType6Horizontal from '@/components/pages/med/type-6/horizontal'
-    import MedPageType7Horizontal from '@/components/pages/med/type-7/horizontal'
-    import MedPageType9Horizontal from '@/components/pages/med/type-9/horizontal'
+    import MedPageType1Horizontal from '../../components/pages/med/type-1/horizontal'
+    import MedPageType2Horizontal from '../../components/pages/med/type-2/horizontal'
+    import MedPageType6Horizontal from '../../components/pages/med/type-6/horizontal'
+    import MedPageType7Horizontal from '../../components/pages/med/type-7/horizontal'
+    import MedPageType9Horizontal from '../../components/pages/med/type-9/horizontal'
 
     export default {
         data() {
@@ -29,12 +29,12 @@
             }
         },
         created() {
-            fetch(`http://localhost/api/front/settings/`)
+            fetch(`/api/front/settings/`)
                 .then(response => response.json())
                 .then(json => {
                     this.settings = json;
                 });
-            fetch(`http://localhost/api/front/page/${this.$route.params.id}`)
+            fetch(`/api/front/page/${this.$route.params.id}`)
                 .then(response => response.json())
                 .then(json => {
                     this.page = json;

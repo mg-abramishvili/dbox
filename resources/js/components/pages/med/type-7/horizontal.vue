@@ -13,7 +13,7 @@
 </template>
 
 <script>
-    import MedLoader from '@/components/partials/med/loader.vue'
+    import MedLoader from '../../../../components/partials/med/loader.vue'
 
     export default {
         data() {

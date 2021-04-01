@@ -9,7 +9,7 @@
 </template>
 
 <script>
-    import MedR01RoutesHorizontal from '@/components/routes/med/r01routes-horizontal.vue'
+    import MedR01RoutesHorizontal from '../../components/routes/med/r01routes-horizontal.vue'
 
     export default {
         data() {
@@ -18,7 +18,7 @@
             }
         },
         created() {
-            fetch(`http://localhost/api/front/settings/`)
+            fetch(`/api/front/settings/`)
                 .then(response => response.json())
                 .then(json => {
                     this.settings = json;

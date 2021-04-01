@@ -11,7 +11,7 @@
 </template>
 
 <script>
-    import MedLoader from '@/components/partials/med/loader.vue'
+    import MedLoader from '../../../components/partials/med/loader.vue'
 
     export default {
         data() {
@@ -21,7 +21,7 @@
             }
         },
         created() {
-            fetch(`http://localhost/api/front/r01routes`)
+            fetch(`/api/front/r01routes`)
                 .then(response => response.json())
                 .then(json => {
                     this.r01routes = json;

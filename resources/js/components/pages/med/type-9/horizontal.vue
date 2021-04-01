@@ -19,7 +19,7 @@
 </template>
 
 <script>
-    import MedLoader from '@/components/partials/med/loader.vue'
+    import MedLoader from '../../../../components/partials/med/loader.vue'
     import { XlsxRead, XlsxTable } from "vue-xlsx"
 
     export default {
