@@ -4,8 +4,16 @@
 
         <div v-else class="row">
             <div class="col-5">
-                <input type="text" placeholder="Search ..." v-model="search">
                 
+                <input
+                :value="input"
+                class="input"
+                @input="onInputChange"
+                placeholder="Поиск..."
+                >
+
+                <SimpleKeyboard @onChange="onChange" @onKeyPress="onKeyPress" :input="input"/>
+  
                 <button v-for="routeListItem in filtered_r01routes" :key="routeListItem.id" @click="SelectRoute(routeListItem)">
                     {{ routeListItem.title }}
                 </button>
@@ -132,6 +140,7 @@
 
 <script>
     import MedLoader from '../../../components/partials/med/loader.vue'
+    import SimpleKeyboard from "./SimpleKeyboard";
 
     export default {
         data() {
@@ -144,8 +153,8 @@
                 selectedItemSchemeID: '',
                 selectedItemScheme2ID: '',
                 selectedItem: '',
-                search: '',
                 loading: true,
+                input: '',
             }
         },
         created() {
@@ -164,11 +173,11 @@
         },
           computed: {
             filtered_r01routes: function () {
-                if (this.search.trim() === '') {
+                if (this.input.trim() === '') {
                     return this.r01routes;
                 } else {
                     return this.r01routes.filter(item => {
-                    return item.title.toLowerCase().indexOf(this.search.toLowerCase()) >= 0;
+                    return item.title.toLowerCase().indexOf(this.input.toLowerCase()) >= 0;
                     });
                 }
             }
@@ -245,10 +254,20 @@
                 document.querySelectorAll('.prev_button').forEach(function(el) {
                     el.style.visibility = 'visible';
                 });
+            },
+            onChange(input) {
+                this.input = input;
+            },
+            onKeyPress(button) {
+                //console.log("button", button);
+            },
+            onInputChange(input) {
+                this.input = input.target.value;
             }
         },
         components: {
-            MedLoader
+            MedLoader,
+            SimpleKeyboard
         }
     }
 </script>

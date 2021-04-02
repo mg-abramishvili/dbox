@@ -800,6 +800,10 @@ footer {
     font-size: 2vh;
 }
 
+.hg-button-space {
+    width: 8vw;
+}
+
 .keyboard {
     margin-top: 0.5vh;
     margin-bottom: 3vh;
