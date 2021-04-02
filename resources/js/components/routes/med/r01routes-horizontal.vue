@@ -4,7 +4,9 @@
 
         <div v-else class="row">
             <div class="col-5">
-                <button v-for="routeListItem in r01routes" :key="routeListItem.id" @click="SelectRoute(routeListItem)">
+                <input type="text" placeholder="Search ..." v-model="search">
+                
+                <button v-for="routeListItem in filtered_r01routes" :key="routeListItem.id" @click="SelectRoute(routeListItem)">
                     {{ routeListItem.title }}
                 </button>
             </div>
@@ -142,6 +144,7 @@
                 selectedItemSchemeID: '',
                 selectedItemScheme2ID: '',
                 selectedItem: '',
+                search: '',
                 loading: true,
             }
         },
@@ -158,6 +161,17 @@
                     this.r01routes = json.data;
                     this.loading = false;
                 });
+        },
+          computed: {
+            filtered_r01routes: function () {
+                if (this.search.trim() === '') {
+                    return this.r01routes;
+                } else {
+                    return this.r01routes.filter(item => {
+                    return item.title.toLowerCase().indexOf(this.search.toLowerCase()) >= 0;
+                    });
+                }
+            }
         },
         methods: {
             SelectRoute(routeListItem) {

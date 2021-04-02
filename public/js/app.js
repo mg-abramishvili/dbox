@@ -1030,6 +1030,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -1042,6 +1044,7 @@ __webpack_require__.r(__webpack_exports__);
       selectedItemSchemeID: '',
       selectedItemScheme2ID: '',
       selectedItem: '',
+      search: '',
       loading: true
     };
   },
@@ -1061,9 +1064,22 @@ __webpack_require__.r(__webpack_exports__);
       _this.loading = false;
     });
   },
+  computed: {
+    filtered_r01routes: function filtered_r01routes() {
+      var _this2 = this;
+
+      if (this.search.trim() === '') {
+        return this.r01routes;
+      } else {
+        return this.r01routes.filter(function (item) {
+          return item.title.toLowerCase().indexOf(_this2.search.toLowerCase()) >= 0;
+        });
+      }
+    }
+  },
   methods: {
     SelectRoute: function SelectRoute(routeListItem) {
-      var _this2 = this;
+      var _this3 = this;
 
       this.selectedItemID = routeListItem.id;
       this.selectedItem = routeListItem.title;
@@ -1072,7 +1088,7 @@ __webpack_require__.r(__webpack_exports__);
       fetch("/api/front/r01route/".concat(this.selectedItemID)).then(function (response) {
         return response.json();
       }).then(function (json) {
-        _this2.route = json;
+        _this3.route = json;
       });
       document.querySelectorAll('.scheme_images').forEach(function (el) {
         el.style.visibility = 'hidden';
@@ -24661,27 +24677,50 @@ var render = function() {
             _c(
               "div",
               { staticClass: "col-5" },
-              _vm._l(_vm.r01routes, function(routeListItem) {
-                return _c(
-                  "button",
-                  {
-                    key: routeListItem.id,
-                    on: {
-                      click: function($event) {
-                        return _vm.SelectRoute(routeListItem)
-                      }
+              [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.search,
+                      expression: "search"
                     }
-                  },
-                  [
-                    _vm._v(
-                      "\n                " +
-                        _vm._s(routeListItem.title) +
-                        "\n            "
-                    )
-                  ]
-                )
-              }),
-              0
+                  ],
+                  attrs: { type: "text", placeholder: "Search ..." },
+                  domProps: { value: _vm.search },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.search = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm._l(_vm.filtered_r01routes, function(routeListItem) {
+                  return _c(
+                    "button",
+                    {
+                      key: routeListItem.id,
+                      on: {
+                        click: function($event) {
+                          return _vm.SelectRoute(routeListItem)
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(routeListItem.title) +
+                          "\n            "
+                      )
+                    ]
+                  )
+                })
+              ],
+              2
             ),
             _vm._v(" "),
             _c("div", { staticClass: "col-7" }, [
