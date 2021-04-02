@@ -9,6 +9,7 @@
 
 <script>
     import MedHeader from './components/partials/med/header'
+    import ShkolaHeader from './components/partials/shkola/header'
 
     export default {
         data() {
@@ -22,19 +23,15 @@
                 .then(json => {
                     this.settings = json;
                     if (this.settings.theme === 'med'){
-                        //require('/css/style-med.css');
+                        require('../../public/css/style-med.css');
                     } else if (this.settings.theme === 'shkola') {
-                        //require('/css/style-shkola.css');
+                        require('../../public/css/style-shkola.css');
                     }
                 });
         },
         components: {
-            MedHeader
+            MedHeader,
+            ShkolaHeader
         }
     }
 </script>
-
-<style lang="css" scoped>
-    @import '/css/bootstrap.min.css';
-    @import '/css/style-med.css';
-</style>
