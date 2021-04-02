@@ -57,6 +57,6 @@ class FrontController extends Controller
 	
 	public function r01routeItem($id)
     {
-        return R01route::where('id', $id)->with('schemes')->first();
+        return R01route::where('id', $id)->with('schemes', 'schemes2')->first();
     }
 }
