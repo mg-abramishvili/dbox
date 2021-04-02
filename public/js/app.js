@@ -1081,11 +1081,15 @@ __webpack_require__.r(__webpack_exports__);
       document.querySelectorAll('.map-path').forEach(function (el) {
         el.style.visibility = 'hidden';
       });
-      document.getElementById('svg1').style.visibility = 'visible';
+      document.querySelectorAll('.svg1').forEach(function (el) {
+        el.style.visibility = 'visible';
+      });
       document.querySelectorAll('.prevnextbutton').forEach(function (el) {
         el.style.visibility = 'hidden';
       });
-      document.getElementById('next_button').style.visibility = 'visible';
+      document.querySelectorAll('.next_button').forEach(function (el) {
+        el.style.visibility = 'visible';
+      });
     },
     PrevScheme: function PrevScheme(selectedItemSchemeID) {
       document.querySelectorAll('.scheme_images').forEach(function (el) {
@@ -1095,11 +1099,15 @@ __webpack_require__.r(__webpack_exports__);
       document.querySelectorAll('.map-path').forEach(function (el) {
         el.style.visibility = 'hidden';
       });
-      document.getElementById('svg1').style.visibility = 'visible';
+      document.querySelectorAll('.svg1').forEach(function (el) {
+        el.style.visibility = 'visible';
+      });
       document.querySelectorAll('.prevnextbutton').forEach(function (el) {
         el.style.visibility = 'hidden';
       });
-      document.getElementById('next_button').style.visibility = 'visible';
+      document.querySelectorAll('.next_button').forEach(function (el) {
+        el.style.visibility = 'visible';
+      });
     },
     NextScheme: function NextScheme(selectedItemScheme2ID) {
       document.querySelectorAll('.scheme_images').forEach(function (el) {
@@ -1109,11 +1117,15 @@ __webpack_require__.r(__webpack_exports__);
       document.querySelectorAll('.map-path').forEach(function (el) {
         el.style.visibility = 'hidden';
       });
-      document.getElementById('svg2').style.visibility = 'visible';
+      document.querySelectorAll('.svg2').forEach(function (el) {
+        el.style.visibility = 'visible';
+      });
       document.querySelectorAll('.prevnextbutton').forEach(function (el) {
         el.style.visibility = 'hidden';
       });
-      document.getElementById('prev_button').style.visibility = 'visible';
+      document.querySelectorAll('.prev_button').forEach(function (el) {
+        el.style.visibility = 'visible';
+      });
     }
   },
   components: {
@@ -24688,8 +24700,7 @@ var render = function() {
               _c(
                 "button",
                 {
-                  staticClass: "prevnextbutton",
-                  attrs: { id: "prev_button" },
+                  staticClass: "prevnextbutton prev_button",
                   on: {
                     click: function($event) {
                       return _vm.PrevScheme(_vm.selectedItemSchemeID)
@@ -24703,8 +24714,7 @@ var render = function() {
                 ? _c(
                     "button",
                     {
-                      staticClass: "prevnextbutton",
-                      attrs: { id: "next_button" },
+                      staticClass: "prevnextbutton next_button",
                       on: {
                         click: function($event) {
                           return _vm.NextScheme(_vm.selectedItemScheme2ID)
@@ -24743,11 +24753,11 @@ var render = function() {
                   _c(
                     "svg",
                     {
-                      staticClass: "map-path",
-                      attrs: { id: "svg1", viewBox: "0 0 800 450" }
+                      staticClass: "map-path svg1",
+                      attrs: { viewBox: "0 0 800 450" }
                     },
                     [
-                      _vm.route.x_01 !== null
+                      _vm.route.x_01
                         ? _c("path", {
                             staticClass: "key-anim01",
                             attrs: {
@@ -24759,12 +24769,12 @@ var render = function() {
                                 _vm.route.x_01 +
                                 " " +
                                 _vm.route.y_01 +
-                                ", undefined undefined"
+                                ", "
                             }
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_01 !== null
+                      _vm.route.x_01
                         ? _c("circle", {
                             attrs: {
                               id: "01",
@@ -24776,7 +24786,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_01 !== null
+                      _vm.route.x_01
                         ? _c(
                             "text",
                             {
@@ -24808,7 +24818,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_02 !== null
+                      _vm.route.x_02
                         ? _c("path", {
                             staticClass: "key-anim02",
                             attrs: {
@@ -24828,7 +24838,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_02 !== null
+                      _vm.route.x_02
                         ? _c("circle", {
                             attrs: {
                               id: "02",
@@ -24840,7 +24850,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_02 !== null
+                      _vm.route.x_02
                         ? _c(
                             "text",
                             {
@@ -24872,7 +24882,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_03 !== null
+                      _vm.route.x_03
                         ? _c("path", {
                             staticClass: "key-anim03",
                             attrs: {
@@ -24892,7 +24902,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_03 !== null
+                      _vm.route.x_03
                         ? _c("circle", {
                             attrs: {
                               id: "03",
@@ -24904,7 +24914,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_03 !== null
+                      _vm.route.x_03
                         ? _c(
                             "text",
                             {
@@ -24936,7 +24946,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_04 !== null
+                      _vm.route.x_04
                         ? _c("path", {
                             staticClass: "key-anim04",
                             attrs: {
@@ -24956,7 +24966,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_04 !== null
+                      _vm.route.x_04
                         ? _c("circle", {
                             attrs: {
                               id: "04",
@@ -24968,7 +24978,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_04 !== null
+                      _vm.route.x_04
                         ? _c(
                             "text",
                             {
@@ -25000,7 +25010,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_05 !== null
+                      _vm.route.x_05
                         ? _c("path", {
                             staticClass: "key-anim05",
                             attrs: {
@@ -25020,7 +25030,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_05 !== null
+                      _vm.route.x_05
                         ? _c("circle", {
                             attrs: {
                               id: "05",
@@ -25032,7 +25042,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_05 !== null
+                      _vm.route.x_05
                         ? _c(
                             "text",
                             {
@@ -25064,7 +25074,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_06 !== null
+                      _vm.route.x_06
                         ? _c("path", {
                             staticClass: "key-anim06",
                             attrs: {
@@ -25084,7 +25094,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_06 !== null
+                      _vm.route.x_06
                         ? _c("circle", {
                             attrs: {
                               id: "06",
@@ -25096,7 +25106,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_06 !== null
+                      _vm.route.x_06
                         ? _c(
                             "text",
                             {
@@ -25128,7 +25138,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_07 !== null
+                      _vm.route.x_07
                         ? _c("path", {
                             staticClass: "key-anim07",
                             attrs: {
@@ -25148,7 +25158,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_07 !== null
+                      _vm.route.x_07
                         ? _c("circle", {
                             attrs: {
                               id: "07",
@@ -25160,7 +25170,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_07 !== null
+                      _vm.route.x_07
                         ? _c(
                             "text",
                             {
@@ -25192,7 +25202,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_08 !== null
+                      _vm.route.x_08
                         ? _c("path", {
                             staticClass: "key-anim08",
                             attrs: {
@@ -25212,7 +25222,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_08 !== null
+                      _vm.route.x_08
                         ? _c("circle", {
                             attrs: {
                               id: "08",
@@ -25224,7 +25234,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_08 !== null
+                      _vm.route.x_08
                         ? _c(
                             "text",
                             {
@@ -25256,7 +25266,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_09 !== null
+                      _vm.route.x_09
                         ? _c("path", {
                             staticClass: "key-anim09",
                             attrs: {
@@ -25276,7 +25286,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_09 !== null
+                      _vm.route.x_09
                         ? _c("circle", {
                             attrs: {
                               id: "09",
@@ -25288,7 +25298,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_09 !== null
+                      _vm.route.x_09
                         ? _c(
                             "text",
                             {
@@ -25320,7 +25330,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_10 !== null
+                      _vm.route.x_10
                         ? _c("path", {
                             staticClass: "key-anim10",
                             attrs: {
@@ -25340,7 +25350,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_10 !== null
+                      _vm.route.x_10
                         ? _c("circle", {
                             attrs: {
                               id: "10",
@@ -25352,7 +25362,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_10 !== null
+                      _vm.route.x_10
                         ? _c(
                             "text",
                             {
@@ -25384,7 +25394,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_11 !== null
+                      _vm.route.x_11
                         ? _c("path", {
                             staticClass: "key-anim11",
                             attrs: {
@@ -25404,7 +25414,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_11 !== null
+                      _vm.route.x_11
                         ? _c("circle", {
                             attrs: {
                               id: "11",
@@ -25416,7 +25426,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_11 !== null
+                      _vm.route.x_11
                         ? _c(
                             "text",
                             {
@@ -25448,7 +25458,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_12 !== null
+                      _vm.route.x_12
                         ? _c("path", {
                             staticClass: "key-anim12",
                             attrs: {
@@ -25468,7 +25478,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_12 !== null
+                      _vm.route.x_12
                         ? _c("circle", {
                             attrs: {
                               id: "12",
@@ -25480,7 +25490,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_12 !== null
+                      _vm.route.x_12
                         ? _c(
                             "text",
                             {
@@ -25517,11 +25527,11 @@ var render = function() {
                   _c(
                     "svg",
                     {
-                      staticClass: "map-path",
-                      attrs: { id: "svg2", viewBox: "0 0 800 450" }
+                      staticClass: "map-path svg2",
+                      attrs: { viewBox: "0 0 800 450" }
                     },
                     [
-                      _vm.route.x_101 !== null
+                      _vm.route.x_101
                         ? _c("path", {
                             staticClass: "key-anim01",
                             attrs: {
@@ -25533,12 +25543,12 @@ var render = function() {
                                 _vm.route.x_101 +
                                 " " +
                                 _vm.route.y_101 +
-                                ", undefined undefined"
+                                ", "
                             }
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_101 !== null
+                      _vm.route.x_101
                         ? _c("circle", {
                             attrs: {
                               id: "01",
@@ -25550,7 +25560,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_101 !== null
+                      _vm.route.x_101
                         ? _c(
                             "text",
                             {
@@ -25582,7 +25592,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_102 !== null
+                      _vm.route.x_102
                         ? _c("path", {
                             staticClass: "key-anim02",
                             attrs: {
@@ -25602,7 +25612,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_102 !== null
+                      _vm.route.x_102
                         ? _c("circle", {
                             attrs: {
                               id: "02",
@@ -25614,7 +25624,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_102 !== null
+                      _vm.route.x_102
                         ? _c(
                             "text",
                             {
@@ -25646,7 +25656,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_103 !== null
+                      _vm.route.x_103
                         ? _c("path", {
                             staticClass: "key-anim03",
                             attrs: {
@@ -25666,7 +25676,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_103 !== null
+                      _vm.route.x_103
                         ? _c("circle", {
                             attrs: {
                               id: "03",
@@ -25678,7 +25688,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_103 !== null
+                      _vm.route.x_103
                         ? _c(
                             "text",
                             {
@@ -25710,7 +25720,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_104 !== null
+                      _vm.route.x_104
                         ? _c("path", {
                             staticClass: "key-anim04",
                             attrs: {
@@ -25730,7 +25740,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_104 !== null
+                      _vm.route.x_104
                         ? _c("circle", {
                             attrs: {
                               id: "04",
@@ -25742,7 +25752,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_104 !== null
+                      _vm.route.x_104
                         ? _c(
                             "text",
                             {
@@ -25774,7 +25784,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_105 !== null
+                      _vm.route.x_105
                         ? _c("path", {
                             staticClass: "key-anim05",
                             attrs: {
@@ -25794,7 +25804,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_105 !== null
+                      _vm.route.x_105
                         ? _c("circle", {
                             attrs: {
                               id: "05",
@@ -25806,7 +25816,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_105 !== null
+                      _vm.route.x_105
                         ? _c(
                             "text",
                             {
@@ -25838,7 +25848,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_106 !== null
+                      _vm.route.x_106
                         ? _c("path", {
                             staticClass: "key-anim06",
                             attrs: {
@@ -25858,7 +25868,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_106 !== null
+                      _vm.route.x_106
                         ? _c("circle", {
                             attrs: {
                               id: "06",
@@ -25870,7 +25880,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_106 !== null
+                      _vm.route.x_106
                         ? _c(
                             "text",
                             {
@@ -25902,7 +25912,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_107 !== null
+                      _vm.route.x_107
                         ? _c("path", {
                             staticClass: "key-anim07",
                             attrs: {
@@ -25922,7 +25932,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_107 !== null
+                      _vm.route.x_107
                         ? _c("circle", {
                             attrs: {
                               id: "07",
@@ -25934,7 +25944,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_107 !== null
+                      _vm.route.x_107
                         ? _c(
                             "text",
                             {
@@ -25966,7 +25976,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_108 !== null
+                      _vm.route.x_108
                         ? _c("path", {
                             staticClass: "key-anim08",
                             attrs: {
@@ -25986,7 +25996,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_108 !== null
+                      _vm.route.x_108
                         ? _c("circle", {
                             attrs: {
                               id: "08",
@@ -25998,7 +26008,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_108 !== null
+                      _vm.route.x_108
                         ? _c(
                             "text",
                             {
@@ -26030,7 +26040,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_109 !== null
+                      _vm.route.x_109
                         ? _c("path", {
                             staticClass: "key-anim09",
                             attrs: {
@@ -26050,7 +26060,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_109 !== null
+                      _vm.route.x_109
                         ? _c("circle", {
                             attrs: {
                               id: "09",
@@ -26062,7 +26072,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_109 !== null
+                      _vm.route.x_109
                         ? _c(
                             "text",
                             {
@@ -26094,7 +26104,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_110 !== null
+                      _vm.route.x_110
                         ? _c("path", {
                             staticClass: "key-anim10",
                             attrs: {
@@ -26114,7 +26124,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_110 !== null
+                      _vm.route.x_110
                         ? _c("circle", {
                             attrs: {
                               id: "10",
@@ -26126,7 +26136,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_110 !== null
+                      _vm.route.x_110
                         ? _c(
                             "text",
                             {
@@ -26158,7 +26168,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_111 !== null
+                      _vm.route.x_111
                         ? _c("path", {
                             staticClass: "key-anim11",
                             attrs: {
@@ -26178,7 +26188,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_111 !== null
+                      _vm.route.x_111
                         ? _c("circle", {
                             attrs: {
                               id: "11",
@@ -26190,7 +26200,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_111 !== null
+                      _vm.route.x_111
                         ? _c(
                             "text",
                             {
@@ -26222,7 +26232,7 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_112 !== null
+                      _vm.route.x_112
                         ? _c("path", {
                             staticClass: "key-anim12",
                             attrs: {
@@ -26242,7 +26252,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_112 !== null
+                      _vm.route.x_112
                         ? _c("circle", {
                             attrs: {
                               id: "12",
@@ -26254,7 +26264,7 @@ var render = function() {
                           })
                         : _vm._e(),
                       _vm._v(" "),
-                      _vm.route.x_112 !== null
+                      _vm.route.x_112
                         ? _c(
                             "text",
                             {
