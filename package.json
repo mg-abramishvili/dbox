@@ -27,6 +27,8 @@
         "moment": "^2.29.1",
         "simple-keyboard": "^3.0.26",
         "simple-keyboard-layouts": "^3.0.27",
+        "swiper": "^6.5.3",
+        "vue-awesome-swiper": "^4.1.1",
         "vue-router": "^3.5.1",
         "vue-xlsx": "^0.2.1",
         "xlsx": "^0.16.9"

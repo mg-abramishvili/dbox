@@ -1,5 +1,5 @@
 <template>
-    <div class="type-2">
+    <div class="type-2" style="margin-top: -2vh;">
         <MedLoader v-if="loading" />
 
         <div v-else class="row">

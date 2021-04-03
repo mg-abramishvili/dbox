@@ -1,13 +1,13 @@
 <template>
     <div v-if="settings.theme === 'med'">
         <div v-if="settings.orientation === 'horizontal'">
-            <MedNewsItemHorizontal />
+            <MedPhotoalbumItemHorizontal />
         </div>
     </div>
 </template>
 
 <script>
-    import MedNewsItemHorizontal from '../../components/news/med/show-horizontal'
+    import MedPhotoalbumItemHorizontal from '../../components/photoalbums/med/show-horizontal'
 
     export default {
         data() {
@@ -24,7 +24,7 @@
                 });
         },
         components: {
-            MedNewsItemHorizontal
+            MedPhotoalbumItemHorizontal
         }
     }
 </script>

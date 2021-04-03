@@ -42,12 +42,12 @@ class FrontController extends Controller
 
     public function photoalbums()
     {
-        return Photoalbum::orderBy('created_at', 'desc')->first();
+        return Photoalbum::orderBy('created_at', 'desc')->get();
     }
 
     public function videoalbums()
     {
-        return Videoalbum::orderBy('created_at', 'desc')->first();
+        return Videoalbum::orderBy('created_at', 'desc')->get();
     }
 	
 	public function schemes()
