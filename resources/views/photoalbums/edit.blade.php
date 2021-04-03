@@ -24,7 +24,7 @@
 
             <div class="row align-items-center mb-2">
                 <dt class="col-sm-3">
-                    Галлерея
+                    Галерея
                 </dt>
                 <dd class="col-sm-9">
                     <input class="gallery" type="file" name="gallery[]" multiple>
