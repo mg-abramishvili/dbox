@@ -423,14 +423,14 @@
   --scrollbar-bg-color: auto;
 
   --sidebar-bg-color: rgba(245, 246, 247, 1);
-  --toolbar-bg-color: rgba(249, 249, 250, 1);
-  --toolbar-border-color: rgba(204, 204, 204, 1);
+  --toolbar-bg-color: transparent !important;
+  --toolbar-border-color: transparent !important;
   --button-hover-color: rgba(221, 222, 223, 1);
   --toggled-btn-bg-color: rgba(0, 0, 0, 0.3);
   --dropdown-btn-bg-color: rgba(215, 215, 219, 1);
   --separator-color: rgba(0, 0, 0, 0.3);
-  --field-color: rgba(6, 6, 6, 1);
-  --field-bg-color: rgba(255, 255, 255, 1);
+  --field-color: #222;
+  --field-bg-color: transparent !important;
   --field-border-color: rgba(187, 187, 188, 1);
   --findbar-nextprevious-btn-bg-color: rgba(227, 228, 230, 1);
   --outline-color: rgba(0, 0, 0, 0.8);
@@ -494,14 +494,14 @@
     --scrollbar-bg-color: rgba(35, 35, 39, 1);
 
     --sidebar-bg-color: rgba(50, 50, 52, 1);
-    --toolbar-bg-color: rgba(56, 56, 61, 1);
-    --toolbar-border-color: rgba(12, 12, 13, 1);
+    --toolbar-bg-color: transparent !important;
+    --toolbar-border-color: transparent !important;
     --button-hover-color: rgba(102, 102, 103, 1);
     --toggled-btn-bg-color: rgba(0, 0, 0, 0.3);
     --dropdown-btn-bg-color: rgba(74, 74, 79, 1);
     --separator-color: rgba(0, 0, 0, 0.3);
-    --field-color: rgba(250, 250, 250, 1);
-    --field-bg-color: rgba(64, 64, 68, 1);
+    --field-color: #222;
+    --field-bg-color: transparent !important;
     --field-border-color: rgba(115, 115, 115, 1);
     --findbar-nextprevious-btn-bg-color: rgba(89, 89, 89, 1);
     --outline-color: rgba(255, 255, 255, 0.8);
@@ -940,6 +940,7 @@ html[dir="rtl"] #sidebarContent {
   bottom: 0;
   left: 0;
   outline: none;
+  margin-top: 20px !important;
 }
 #viewerContainer:not(.pdfPresentationMode) {
   transition-duration: 200ms;
@@ -1029,14 +1030,14 @@ html[dir="rtl"] #sidebarResizer {
   position: relative;
   height: 32px;
   background-color: rgba(249, 249, 250, 1);
-  background-color: var(--toolbar-bg-color);
+  background-color: transparent !important;
 }
 
 @media (prefers-color-scheme: dark) {
 
   #toolbarContainer {
   background-color: rgba(56, 56, 61, 1);
-  background-color: var(--toolbar-bg-color);
+  background-color: transparent !important;
   }
 }
 
@@ -1909,10 +1910,12 @@ html[dir="rtl"] .findbar * {
 html[dir="ltr"] .splitToolbarButton {
   margin: 2px 2px 0;
   display: inline-block;
+  display: none !important;
 }
 html[dir="rtl"] .splitToolbarButton {
   margin: 2px 2px 0;
   display: inline-block;
+  display: none !important;
 }
 html[dir="ltr"] .splitToolbarButton > .toolbarButton {
   border-radius: 2px;
@@ -2123,6 +2126,7 @@ html[dir="rtl"] .splitToolbarButtonSeparator {
   /* Opera does not support user-select, use <... unselectable="on"> instead */
   cursor: default;
   box-sizing: border-box;
+  background-color: gray;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -2598,6 +2602,10 @@ html[dir="rtl"] .toolbarButton.pageDown::before {
   }
 }
 
+#zoomIn {
+  margin-left: 30px;
+}
+
 .toolbarButton.zoomIn::before {
   content: url(images/toolbarButton-zoomIn.svg);
   content: var(--toolbarButton-zoomIn-icon);
@@ -3052,9 +3060,11 @@ html[dir="rtl"] .secondaryToolbarButton > span {
 }
 html[dir="ltr"] .verticalToolbarSeparator {
   margin-left: 2px;
+  display: none;
 }
 html[dir="rtl"] .verticalToolbarSeparator {
   margin-right: 2px;
+  display: none;
 }
 
 .horizontalToolbarSeparator {
@@ -3191,9 +3201,11 @@ html[dir="rtl"] .toolbarField[type="checkbox"] {
 
 html[dir="ltr"] #numPages.toolbarLabel {
   padding-left: 2px;
+  color: #777;
 }
 html[dir="rtl"] #numPages.toolbarLabel {
   padding-right: 2px;
+  color: #777;
 }
 
 #thumbnailView {

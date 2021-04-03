@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-if="settings.theme === 'med'">
-            <div v-for="type in page.types" class="container">
+            <div v-for="type in page.types" :key="type.id" class="container">
                 <div class="page-item">
                     <MedPageType1Horizontal v-if="type.id == '1'" />
                     <MedPageType2Horizontal v-else-if="type.id == '2'" />
@@ -10,6 +10,18 @@
                     <MedPageType9Horizontal v-else-if="type.id == '9'" />
                 </div>
             </div>
+
+            <footer>
+                <div class="container">
+                    <router-link to="/vue-index" class="med-home med-home-sub">
+                        <img src="/img/medhome.svg" alt="">
+                    </router-link>
+
+                    <router-link v-if="page.parent_id" :to="'/vue-pages/' + page.parent_id" class="med-footer-second"><span>{{parent_page}}</span></router-link>
+                    <a class="med-footer-third"><span>{{ page.title }}</span></a>
+                    
+                </div>
+            </footer>
         </div>
     </div>
 </template>
@@ -25,7 +37,8 @@
         data() {
             return {
                 settings: {},
-                page: {}
+                page: {},
+                parent_page: '',
             }
         },
         created() {
@@ -38,6 +51,13 @@
                 .then(response => response.json())
                 .then(json => {
                     this.page = json;
+                    if (json.parent_id !== null) {
+                        fetch(`/api/front/page/${this.page.parent_id}`)
+                            .then(response => response.json())
+                            .then(json => {
+                                this.parent_page = json.title;
+                            });
+                    }
                 });
         },
         components: {

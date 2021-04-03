@@ -1,11 +1,11 @@
 <template>
     <div class="type-7">
-        <MedLoader v-if="loading" />
+        
 
-        <div v-else class="row">
+        <div class="row">
             <div class="col-12">
                 <div class="text">
-                    <iframe :src="'/lib/pdfjs/web/viewer.html?file=' + 'http://localhost' + page.pdf" height="100%" width="100%"></iframe>
+                    <iframe :src="'/lib/pdfjs/web/viewer.html?file=' + page.pdf + '?random=' + (new Date()).getTime() + Math.floor(Math.random() * 1000000)" height="100%" width="100%" style="border: none;"></iframe>
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
             }
         },
         created() {
-            fetch(`http://localhost/api/front/page/${this.$route.params.id}`)
+            fetch(`/api/front/page/${this.$route.params.id}`)
                 .then(response => response.json())
                 .then(json => {
                     this.page = json;

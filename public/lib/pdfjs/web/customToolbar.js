@@ -15,17 +15,15 @@ let sheet = (function() {
   // there are 3 primary nav regions (toolbarViewerLeft, toolbarViewerMiddle, toolbarViewerRight)
 
   //adding elements to left part of toolbar
-  addElemFromSecondaryToPrimary('pageRotateCcw', 'toolbarViewerLeft')
-  addElemFromSecondaryToPrimary('pageRotateCw', 'toolbarViewerLeft')
-  addElemFromSecondaryToPrimary('zoomIn', 'toolbarViewerLeft')
-  addElemFromSecondaryToPrimary('zoomOut', 'toolbarViewerLeft')
+  addElemFromSecondaryToPrimary('pageNumber', 'toolbarViewerMiddle')
+  addElemFromSecondaryToPrimary('numPages', 'toolbarViewerMiddle')
 
   //adding elements to middle part of toolbar
   addElemFromSecondaryToPrimary('previous', 'toolbarViewerMiddle')
-  addElemFromSecondaryToPrimary('pageNumber', 'toolbarViewerMiddle')
-  addElemFromSecondaryToPrimary('numPages', 'toolbarViewerMiddle')
   addElemFromSecondaryToPrimary('next', 'toolbarViewerMiddle')
-
+  addElemFromSecondaryToPrimary('zoomIn', 'toolbarViewerMiddle')
+  addElemFromSecondaryToPrimary('zoomOut', 'toolbarViewerMiddle')
+  
   /* Hiding elements */
   removeElement('secondaryOpenFile')
   removeElement('secondaryToolbarToggle')
@@ -38,6 +36,7 @@ let sheet = (function() {
   removeElement('pageRotateCcw')
   removeElement('pageRotateCw')
   removeElement('viewFind')
+  removeElement('sidebarToggle')
  }
 
  

@@ -415,7 +415,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_news_med_index_horizontal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/news/med/index-horizontal */ "./resources/js/components/news/med/index-horizontal.vue");
+/* harmony import */ var _components_news_med_index_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/news/med/index-horizontal */ "./resources/js/components/news/med/index-horizontal.vue");
 //
 //
 //
@@ -442,7 +442,7 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   components: {
-    MedNewsAllHorizontal: _components_news_med_index_horizontal__WEBPACK_IMPORTED_MODULE_1__["default"]
+    MedNewsAllHorizontal: _components_news_med_index_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
@@ -667,6 +667,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -676,7 +688,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       settings: {},
-      page: {}
+      page: {},
+      parent_page: ''
     };
   },
   created: function created() {
@@ -691,6 +704,14 @@ __webpack_require__.r(__webpack_exports__);
       return response.json();
     }).then(function (json) {
       _this.page = json;
+
+      if (json.parent_id !== null) {
+        fetch("/api/front/page/".concat(_this.page.parent_id)).then(function (response) {
+          return response.json();
+        }).then(function (json) {
+          _this.parent_page = json.title;
+        });
+      }
     });
   },
   components: {
@@ -898,7 +919,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    fetch("http://localhost/api/front/page/".concat(this.$route.params.id)).then(function (response) {
+    fetch("/api/front/page/".concat(this.$route.params.id)).then(function (response) {
       return response.json();
     }).then(function (json) {
       _this.page = json;
@@ -1530,7 +1551,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "html {\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n  -webkit-touch-callout: none;\r\n  -khtml-user-select: none;\r\n  /*cursor: none;*/\r\n}\r\n\r\nbody {\r\n    margin: 0 !important;\r\n    font-size: 2vh;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    position: relative;\r\n}\r\n\r\n.container {\r\n    max-width: 95vw;\r\n}\r\n\r\n.row {\r\n    margin-left: -2vh;\r\n    margin-right: -2vh;\r\n}\r\n\r\n.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {\r\n    padding-left: 2vh;\r\n    padding-right: 2vh;\r\n}\r\n\r\nmain {\r\n    position: relative;\r\n}\r\n\r\n.wrapper {\r\n    position: relative;\r\n    width: 100vw;\r\n    max-width: 177.78vh;\r\n    height: 56.25vw;\r\n    max-height: 100vh;\r\n    overflow: hidden;\r\n    margin: 0 auto;\r\n    background: #fff;\r\n    border: 1px solid #ccc;\r\n}\r\n\r\nheader {\r\n    padding: 2vh;\r\n    background-color: #f5f5f5;\r\n    margin-bottom: 7vh;\r\n}\r\n\r\n.header-logo img {\r\n    width: auto;\r\n    height: auto;\r\n    max-width: 20vh;\r\n    max-height: 10vh;\r\n    display: block;\r\n    margin: 0 auto;\r\n}\r\n\r\n.calendar {\r\n    text-align: center;\r\n    background: #96dbfc;\r\n    width: 15vh;\r\n    font-weight: 700;\r\n}\r\n\r\n.calendar span {\r\n    padding: 1vh 1vh;\r\n    display: block;\r\n    line-height: 1.1;\r\n}\r\n\r\n.calendar span small {\r\n    display: block;\r\n}\r\n\r\n.calendar strong {\r\n    font-size: 4.5vh;\r\n    display: block;\r\n    color: #35ace2;\r\n    font-weight: 400;\r\n    background: #ebebeb;\r\n    width: 100%;\r\n}\r\n\r\n.header-time {\r\n    font-size: 6vh;\r\n    color: #999;\r\n}\r\n\r\n/* MAIN PAGE */\r\n\r\n\r\n\r\n\r\n\r\n::-webkit-scrollbar {\r\nwidth: 2vw;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\nbackground: #dddddd;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\nbackground: #2886bb;\r\nborder: 1px solid #B8BDBD;\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\nbackground: #2886bb;\r\n}\r\n\r\n/* Buttons */\r\n::-webkit-scrollbar-button:single-button {\r\nbackground-color: #dddddd;\r\ndisplay: block;\r\nborder-style: solid;\r\nheight: 1.5vw;\r\nwidth: 2vw;\r\n}\r\n/* Up */\r\n::-webkit-scrollbar-button:single-button:vertical:decrement {\r\nborder-width: 0 1vw 1vw 1vw;\r\nborder-color: transparent transparent #808080 transparent;\r\n}\r\n\r\n::-webkit-scrollbar-button:single-button:vertical:decrement:hover {\r\nborder-color: transparent transparent #777777 transparent;\r\n}\r\n/* Down */\r\n::-webkit-scrollbar-button:single-button:vertical:increment {\r\nborder-width: 1vw 1vw 0 1vw;\r\nborder-color: #808080 transparent transparent transparent;\r\n}\r\n\r\n::-webkit-scrollbar-button:vertical:single-button:increment:hover {\r\nborder-color: #777777 transparent transparent transparent;\r\n}\r\n\r\n\r\n\r\n.index-button {\r\n    background-color: #d6d6d6;\r\n    padding: 2vh;\r\n    height: 16vh;\r\n    display: block;\r\n    margin-bottom: 5vh;\r\n    text-align: center;\r\n    color: #333;\r\n    font-size: 3.5vh;\r\n    position: relative;\r\n\r\n    color: #fff;\r\n    background-color: #53b5e2;\r\n    font-weight: 700;\r\n}\r\n\r\n.index-button:hover,\r\n.index-button:focus {\r\n    color: #fff;\r\n    background-color: #6bc1e9;\r\n}\r\n\r\n.index-button span {\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    left: 1vh;\r\n    right: 1vh;\r\n}\r\n\r\n.container-index {\r\n    width: 70vw;\r\n    height: 63vh;\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    margin: 0 auto;\r\n}\r\n\r\n/* MAIN PAGE */\r\n\r\n\r\n\r\n/* FOOTER */\r\n\r\nfooter {\r\n    background-color: #e7e7e7;\r\n    height: 7vh;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n}\r\n\r\n.med-home {\r\n    background-color: #2886bb;\r\n    width: 15vh;\r\n    height: 7vh;\r\n    display: inline-block;\r\n    margin-left: -6vh;\r\n    padding-left: 6vh;\r\n    position: relative;\r\n    margin-right: 6vh;\r\n    vertical-align: middle;\r\n}\r\n\r\n.med-home-sub {\r\n    background-color: #b1b1b1;\r\n}\r\n\r\n.med-home:after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    right: 0;\r\n    margin-right: -7vh;\r\n    width: 0;\r\n    height: 0;\r\n    border: 3.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #2886bb;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.med-home-sub:after {\r\n    border-left-color: #b1b1b1;\r\n}\r\n\r\n.med-home img {\r\n    width: 60%;\r\n    margin-top: 0.75vh;\r\n}\r\n\r\n.med-footer-second {\r\n    vertical-align: middle;\r\n    color: #fff;\r\n    position: relative;\r\n    background-color: #2886bb;\r\n    width: auto;\r\n    height: 7vh;\r\n    display: inline-block;\r\n    padding-left: 6vh;\r\n    margin-left: -7vh;\r\n    font-size: 2.5vh;\r\n    padding-top: 1.5vh;\r\n    margin-right: 5vh;\r\n}\r\n\r\n.med-footer-second:before {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    left: 0;\r\n    width: 0;\r\n    height: 0;\r\n    border: 3.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #b1b1b1;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.med-footer-second:after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    right: 0;\r\n    margin-right: -7vh;\r\n    width: 0;\r\n    height: 0;\r\n    border: 3.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #2886bb;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.med-footer-second span {\r\n    display: block;\r\n    margin-right: 2vh;\r\n}\r\n\r\n.med-footer-third {\r\n    font-size: 2vh;\r\n    color: #222;\r\n}\r\n\r\n/* FOOTER */\r\n\r\n\r\n/* PHOTOGALS */\r\n\r\n.gallery-list {\r\n    overflow: hidden;\r\n    overflow-x: auto;\r\n    white-space: nowrap;\r\n    margin-left: -1vh;\r\n    margin-right: -1vh;\r\n}\r\n\r\n.gallery-list-item-slide {\r\n    width: 100%;\r\n    white-space: normal;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.gallery-list-item {\r\n    width: calc(25% - 2vh);\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    margin: 0 1vh;\r\n    white-space: normal;\r\n}\r\n\r\n.gallery-list-item a {\r\n    display: block;\r\n    text-align: center;\r\n}\r\n\r\n.gallery-list-item a:hover,\r\n.gallery-list-item a:focus {\r\n    text-decoration: none;\r\n}\r\n\r\n.gallery-list-item a h2 {\r\n    height: 7vh;\r\n    color: #333;\r\n    margin: 0;\r\n    line-height: 1.35;\r\n    font-size: 2vh;\r\n    overflow: hidden;\r\n}\r\n\r\n.gallery-list-item-pic {\r\n    height: 24vh;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.gallery-list .flickity-page-dots {\r\n    bottom: 0;\r\n}\r\n\r\n.gallery-list .flickity-page-dots .dot {\r\n    width: 5vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.gallery-detail {\r\n    padding: 0 2.5vh;\r\n}\r\n\r\n.gallery-detail-item {\r\n    width: 30%;\r\n    height: 60vh;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    opacity: 0.5;\r\n    margin: 0 5vh;\r\n}\r\n\r\n.gallery-detail-item img,\r\n.gallery-detail-item video {\r\n    display: block;\r\n    max-height: 100%;\r\n    transform: scale(0.25);\r\n}\r\n\r\n.gallery-detail-item.is-selected {\r\n    opacity: 1;\r\n    z-index: 20;\r\n}\r\n\r\n.gallery-detail-item.is-selected img,\r\n.gallery-detail-item.is-selected video {\r\n    transform: none;\r\n}\r\n\r\n/* PHOTOGALS */\r\n\r\n\r\n\r\n/* VIDEOALBUM */\r\n\r\n.videoalbum-detail {\r\n    width: 100%;\r\n    text-align: center;\r\n    margin-top: -2.5vh;\r\n}\r\n\r\n.videoalbum-detail video {\r\n    width: auto;\r\n    height: auto;\r\n    max-width: 100%;\r\n    max-height: 70vh;\r\n}\r\n\r\n/* VIDEOALBUM */\r\n\r\n\r\n\r\n/* NEWS */\r\n\r\n.news-list {\r\n    padding: 0;\r\n    margin: 0;\r\n    list-style-type: none;\r\n    height: 67vh;\r\n    overflow: hidden;\r\n    overflow-y: auto;\r\n    margin-top: -2vh;\r\n}\r\n\r\n.news-list-item {\r\n    background-color: #E0E6E6;\r\n    padding: 3.3vh 4vh;\r\n}\r\n\r\n.news-list-item:nth-child(2n+2) {\r\n    background-color: #fff;\r\n}\r\n\r\n.news-list-item h2 {\r\n    margin: 0;\r\n    font-size: 3.5vh;\r\n    font-weight: bold;\r\n    color: #2886bb;\r\n    margin-bottom: 1.5vh;\r\n}\r\n\r\n.news-list-item a {\r\n    display: block;\r\n    width: calc(100% - 3vh);\r\n    float: right;\r\n    background-color: #2886bb;\r\n    text-align: center;\r\n    font-size: 3vh;\r\n    color: #fff;\r\n    padding: 1.8vh;\r\n}\r\n\r\n.news-list-item-text-preview {\r\n    font-size: 2vh;\r\n}\r\n\r\n.news-item {\r\n    background-color: #f5f5f5;\r\n    margin-top: -2vh;\r\n}\r\n\r\n.news-item-img {\r\n    height: 65vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.news-item-text {\r\n    padding: 3vh 3vh;\r\n    font-size: 2vh;\r\n    line-height: 1.75;\r\n    height: 65vh;\r\n    overflow: hidden;\r\n    overflow-y: auto;\r\n}\r\n\r\n  .news-item-text h1 {\r\n      color: #2886bb;\r\n      font-size: 4vh;\r\n      font-weight: 700;\r\n      text-align: left;\r\n      margin: 0;\r\n      margin-bottom: 2vh;\r\n  }\r\n\r\n  .news-item-text span {\r\n      display: block;\r\n      color: #777;\r\n      margin-bottom: 1.5vh;\r\n      font-size: 2.5vh;\r\n  }\r\n\r\n/* NEWS */\r\n\r\n\r\n\r\n/* PAGE TYPE 1 */\r\n\r\n.type-1 .page-detail-text {\r\n    height: 65vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n}\r\n\r\n.type-1 .page-detail-text h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n    margin-bottom: 3vh !important;\r\n}\r\n\r\n.type-1 .page-detail-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n/* PAGE TYPE 1 */\r\n\r\n\r\n\r\n\r\n/* PAGE TYPE 2 */\r\n\r\n.type-2 .page-detail-image {\r\n    height: 65vh;\r\n    border-radius: 1vh;\r\n    background-size: cover;\r\n}\r\n\r\n.type-2 .page-detail-text {\r\n    height: 65vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n}\r\n\r\n.type-2 .page-detail-text h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n}\r\n\r\n.type-2 .page-detail-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n/* PAGE TYPE 2 */\r\n\r\n\r\n\r\n/* PAGE TYPE 3 */\r\n\r\n#lg-download {\r\n    display: none;\r\n}\r\n\r\n.type-3 #gallery a {\r\n    height: 65vh;\r\n    margin-bottom: 1.5vh;\r\n    display: block;\r\n    border-radius: 1vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-3 .page-detail-text {\r\n    height: 65vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n}\r\n\r\n.type-3 .page-detail-text h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n}\r\n\r\n.type-3 .page-detail-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n/* PAGE TYPE 3 */\r\n\r\n\r\n\r\n\r\n/* PAGE TYPE 4 */\r\n\r\n.type-4 .gallery-item {\r\n    width: 100%;\r\n}\r\n\r\n/* PAGE TYPE 4 */\r\n\r\n\r\n\r\n\r\n/* PAGE TYPE 6 */\r\n\r\n.user-pages-item-image {\r\n    width: 12vh;\r\n    height: 12vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-6 {\r\n    padding: 0 1.6vh;\r\n}\r\n\r\n.type-6 .user-pages-item-item img {\r\n    width: 40%;\r\n    margin-bottom: 3vh;\r\n}\r\n\r\n.t6-p {\r\n    font-size: 3vh;\r\n    text-align: left;\r\n    padding-left: 16vh;\r\n    padding-right: 2vh;\r\n}\r\n\r\n/* PAGE TYPE 6 */\r\n\r\n\r\n\r\n/* PAGE TYPE 7 */\r\n\r\n.type-7 .text {\r\n    height: 62vh;\r\n    overflow: hidden;\r\n    overflow-y: scroll;\r\n    margin: 0 auto;\r\n    width: 70vw;\r\n}\r\n\r\n  .type-7 .pdf-nav {\r\n      text-align: center;\r\n      margin-top: 1vh;\r\n  }\r\n\r\n  .type-7 #prev,\r\n  .type-7 #next {\r\n    background: #2886bb;\r\n    color: #fff;\r\n    padding: 0.5vh 2vh;\r\n    box-shadow: none;\r\n    border: 0;\r\n    font-size: 2vh;\r\n    font-weight: bold;\r\n    border-radius: 1vh;\r\n  }\r\n\r\n/* PAGE TYPE 7 */\r\n\r\n\r\n\r\n/* PAGE TYPE 8 */\r\n\r\n.buttons {\r\n    position: absolute;\r\n    z-index: 20;\r\n    left: 2vh;\r\n    right: 2vh;\r\n    text-align: center;\r\n}\r\n\r\n#prevBtn,\r\n#nextBtn {\r\n    background: #2886bb;\r\n    color: #fff;\r\n    padding: 1vh 2vh;\r\n    box-shadow: none;\r\n    border: 0;\r\n    font-size: 2.5vh;\r\n    font-weight: bold;\r\n}\r\n\r\n/* PAGE TYPE 8 */\r\n\r\n\r\n/* type 9 */\r\n\r\n.excel-item {\r\n    width: 94vw;\r\n    width: auto;\r\n    height: 70vh;\r\n    overflow-y: scroll;\r\n    padding-top: 2vh;\r\n    margin-top: -4vh;\r\n    text-align: center;\r\n}\r\n\r\n.excel-item table {\r\n    border-collapse: collapse;\r\n    margin: 1rem 0;\r\n    display: inline-block;\r\n    overflow-x: auto;\r\n    text-align: left;\r\n}\r\n\r\n.excel-item table tr {\r\n    border-top: 1px solid #dfe2e5;\r\n}\r\n\r\n.excel-item table tr:nth-child(2n) {\r\n    background-color: #f6f8fa;\r\n}\r\n\r\n.excel-item table td,\r\n.excel-item table th {\r\n    border: 1px solid #dfe2e5;\r\n    padding: .6em 1em;\r\n}\r\n\r\n/* type 9 */\r\n\r\n\r\n\r\n\r\n/* ROUTES */\r\n\r\n.key-anim01,\r\n.key-anim02,\r\n.key-anim03,\r\n.key-anim04,\r\n.key-anim05,\r\n.key-anim06,\r\n.key-anim07,\r\n.key-anim08,\r\n.key-anim09,\r\n.key-anim10,\r\n.key-anim11,\r\n.key-anim12 {\r\n    stroke-dasharray: 10;\r\n    stroke-dashoffset: -2000;\r\n    -webkit-animation: Drawpath 20s linear infinite;\r\n            animation: Drawpath 20s linear infinite;\r\n}\r\n\r\n@-webkit-keyframes Drawpath {\r\n    from {\r\n        stroke-dashoffset: -2000;\r\n    }\r\n    to {\r\n        stroke-dashoffset: 0;\r\n    }\r\n}\r\n\r\n@keyframes Drawpath {\r\n    from {\r\n        stroke-dashoffset: -2000;\r\n    }\r\n    to {\r\n        stroke-dashoffset: 0;\r\n    }\r\n}\r\n\r\n.wrapperm {\r\n    width: 800px;\r\n    height: 450px;\r\n    position: relative;\r\n    margin: 0 auto;\r\n    overflow: visible;\r\n    background-color: #fff;\r\n    transform: scale(1.25);\r\n    transform-origin: 50% 0%;\r\n    margin-top: 4vh;\r\n}\r\n\r\n#wrapper-inner {\r\n    width: 800px;\r\n    height: 450px;\r\n    margin-top: 4vh;\r\n}\r\n\r\n.map {\r\n    margin-top: -4vh;\r\n}\r\n\r\n.map-slide {\r\n    width: 100%;\r\n}\r\n\r\n.map img {\r\n    width: 800px;\r\n    height: 450px;\r\n    display: block;\r\n    margin: 0 auto;\r\n}\r\n\r\n.map-path {\r\n    position: absolute;\r\n    left: 0;\r\n    right: 0;\r\n    top: 0;\r\n    bottom: 0;\r\n    width: 800px;\r\n    height: 450px;\r\n}\r\n\r\n.med-route-sidebar {\r\n    background-color: #d6d6d6;\r\n    padding: 3vh;\r\n    margin-top: -2vh;\r\n    background-color: #53b5e2;\r\n}\r\n\r\n.med-route-sidebar input {\r\n    width: 100%;\r\n    padding: 0.5vh;\r\n    font-size: 2vh;\r\n}\r\n\r\n.hg-button-space {\r\n    width: 8vw;\r\n}\r\n\r\n.keyboard {\r\n    margin-top: 0.5vh;\r\n    margin-bottom: 3vh;\r\n}\r\n\r\n.keyboard button {\r\n    width: 4.2vh;\r\n    height: 4.2vh;\r\n    line-height: 4.2vh;\r\n    margin-bottom: 0.5vh;\r\n    background-color: #fff;\r\n    font-size: 1.5vh;\r\n    text-align: center;\r\n    padding: 0;\r\n    border: 0.1vh solid;\r\n}\r\n\r\n.keyboard .globebutton {\r\n    width: 7vh;\r\n}\r\n\r\n.keyboard .spacebutton {\r\n    width: 10vh;\r\n}\r\n\r\n#myUL {\r\n    padding: 0;\r\n    margin: 0;\r\n    list-style-type: none;\r\n    height: 32vh;\r\n    overflow-y: auto;\r\n}\r\n\r\n#myUL li {\r\n    display: block;\r\n    background-color: #fff;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n#myUL li a {\r\n    display: block;\r\n    color: #222;\r\n    font-size: 2vh;\r\n    font-weight: 700;\r\n    border: 0.25vh solid #96dbfc;\r\n    padding: 1vh 2vh;\r\n}\r\n\r\n/* ROUTES */\r\n\r\n\r\n\r\n/* REVIEWS */\r\n\r\n.keyboard-reviews .keyboard {\r\n    margin-top: 7vh;\r\n}\r\n\r\n.keyboard-reviews .keyboard button {\r\n    width: 6vh;\r\n    height: 6vh;\r\n    line-height: 6vh;\r\n    font-size: 2.5vh;\r\n}\r\n\r\n.keyboard-reviews .keyboard .globebutton {\r\n    width: 12vh;\r\n}\r\n\r\n.keyboard-reviews .keyboard .spacebutton {\r\n    width: 17vh;\r\n}\r\n\r\n.review-form input[type=\"text\"] {\r\n    border: 1px solid #333;\r\n    font-size: 3vh;\r\n}\r\n\r\n.review-form textarea {\r\n    resize: none;\r\n    height: 36vh;\r\n    border: 1px solid #333;\r\n    font-size: 3vh;\r\n}\r\n\r\n.review-form .btn-med {\r\n    background-color: #2886bb;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n    padding: 2vh 4vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.review-h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n    margin-top: 0 !important;\r\n    margin-bottom: 5vh !important;\r\n}\r\n\r\n/* REVIEWS */", ""]);
+exports.push([module.i, "html {\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n  -webkit-touch-callout: none;\r\n  -khtml-user-select: none;\r\n  /*cursor: none;*/\r\n}\r\n\r\nbody {\r\n    margin: 0 !important;\r\n    font-size: 2vh;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    position: relative;\r\n}\r\n\r\n.container {\r\n    max-width: 95vw;\r\n}\r\n\r\n.row {\r\n    margin-left: -2vh;\r\n    margin-right: -2vh;\r\n}\r\n\r\n.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {\r\n    padding-left: 2vh;\r\n    padding-right: 2vh;\r\n}\r\n\r\nmain {\r\n    position: relative;\r\n}\r\n\r\n.wrapper {\r\n    position: relative;\r\n    width: 100vw;\r\n    max-width: 177.78vh;\r\n    height: 56.25vw;\r\n    max-height: 100vh;\r\n    overflow: hidden;\r\n    margin: 0 auto;\r\n    background: #fff;\r\n    border: 1px solid #ccc;\r\n}\r\n\r\nheader {\r\n    padding: 2vh;\r\n    background-color: #f5f5f5;\r\n    margin-bottom: 7vh;\r\n}\r\n\r\n.header-logo img {\r\n    width: auto;\r\n    height: auto;\r\n    max-width: 20vh;\r\n    max-height: 10vh;\r\n    display: block;\r\n    margin: 0 auto;\r\n}\r\n\r\n.calendar {\r\n    text-align: center;\r\n    background: #96dbfc;\r\n    width: 15vh;\r\n    font-weight: 700;\r\n}\r\n\r\n.calendar span {\r\n    padding: 1vh 1vh;\r\n    display: block;\r\n    line-height: 1.1;\r\n}\r\n\r\n.calendar span small {\r\n    display: block;\r\n}\r\n\r\n.calendar strong {\r\n    font-size: 4.5vh;\r\n    display: block;\r\n    color: #35ace2;\r\n    font-weight: 400;\r\n    background: #ebebeb;\r\n    width: 100%;\r\n}\r\n\r\n.header-time {\r\n    font-size: 6vh;\r\n    color: #999;\r\n}\r\n\r\n/* MAIN PAGE */\r\n\r\n\r\n\r\n\r\n\r\n::-webkit-scrollbar {\r\nwidth: 2vw;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\nbackground: #dddddd;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\nbackground: #2886bb;\r\nborder: 1px solid #B8BDBD;\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\nbackground: #2886bb;\r\n}\r\n\r\n/* Buttons */\r\n::-webkit-scrollbar-button:single-button {\r\nbackground-color: #dddddd;\r\ndisplay: block;\r\nborder-style: solid;\r\nheight: 1.5vw;\r\nwidth: 2vw;\r\n}\r\n/* Up */\r\n::-webkit-scrollbar-button:single-button:vertical:decrement {\r\nborder-width: 0 1vw 1vw 1vw;\r\nborder-color: transparent transparent #808080 transparent;\r\n}\r\n\r\n::-webkit-scrollbar-button:single-button:vertical:decrement:hover {\r\nborder-color: transparent transparent #777777 transparent;\r\n}\r\n/* Down */\r\n::-webkit-scrollbar-button:single-button:vertical:increment {\r\nborder-width: 1vw 1vw 0 1vw;\r\nborder-color: #808080 transparent transparent transparent;\r\n}\r\n\r\n::-webkit-scrollbar-button:vertical:single-button:increment:hover {\r\nborder-color: #777777 transparent transparent transparent;\r\n}\r\n\r\n\r\n\r\n.index-button {\r\n    background-color: #d6d6d6;\r\n    padding: 2vh;\r\n    height: 16vh;\r\n    display: block;\r\n    margin-bottom: 5vh;\r\n    text-align: center;\r\n    color: #333;\r\n    font-size: 3.5vh;\r\n    position: relative;\r\n\r\n    color: #fff;\r\n    background-color: #53b5e2;\r\n    font-weight: 700;\r\n}\r\n\r\n.index-button:hover,\r\n.index-button:focus {\r\n    color: #fff;\r\n    background-color: #6bc1e9;\r\n}\r\n\r\n.index-button span {\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    left: 1vh;\r\n    right: 1vh;\r\n}\r\n\r\n.container-index {\r\n    width: 70vw;\r\n    height: 63vh;\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    margin: 0 auto;\r\n}\r\n\r\n/* MAIN PAGE */\r\n\r\n\r\n\r\n/* FOOTER */\r\n\r\nfooter {\r\n    background-color: #e7e7e7;\r\n    height: 7vh;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n}\r\n\r\n.med-home {\r\n    background-color: #2886bb;\r\n    width: 15vh;\r\n    height: 7vh;\r\n    display: inline-block;\r\n    margin-left: -6vh;\r\n    padding-left: 6vh;\r\n    position: relative;\r\n    margin-right: 6vh;\r\n    vertical-align: middle;\r\n}\r\n\r\n.med-home-sub {\r\n    background-color: #b1b1b1;\r\n}\r\n\r\n.med-home:after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    right: 0;\r\n    margin-right: -7vh;\r\n    width: 0;\r\n    height: 0;\r\n    border: 3.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #2886bb;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.med-home-sub:after {\r\n    border-left-color: #b1b1b1;\r\n}\r\n\r\n.med-home img {\r\n    width: 60%;\r\n    margin-top: 0.75vh;\r\n}\r\n\r\n.med-footer-second {\r\n    vertical-align: middle;\r\n    color: #fff;\r\n    position: relative;\r\n    background-color: #2886bb;\r\n    width: auto;\r\n    height: 7vh;\r\n    display: inline-block;\r\n    padding-left: 6vh;\r\n    margin-left: -7vh;\r\n    font-size: 2.5vh;\r\n    padding-top: 1.5vh;\r\n    margin-right: 5vh;\r\n}\r\n\r\n.med-footer-second:before {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    left: 0;\r\n    width: 0;\r\n    height: 0;\r\n    border: 3.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #b1b1b1;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.med-footer-second:after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    right: 0;\r\n    margin-right: -7vh;\r\n    width: 0;\r\n    height: 0;\r\n    border: 3.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #2886bb;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.med-footer-second span {\r\n    display: block;\r\n    margin-right: 2vh;\r\n}\r\n\r\n.med-footer-third {\r\n    font-size: 2vh;\r\n    color: #222;\r\n}\r\n\r\n/* FOOTER */\r\n\r\n\r\n/* PHOTOGALS */\r\n\r\n.gallery-list {\r\n    overflow: hidden;\r\n    overflow-x: auto;\r\n    white-space: nowrap;\r\n    margin-left: -1vh;\r\n    margin-right: -1vh;\r\n}\r\n\r\n.gallery-list-item-slide {\r\n    width: 100%;\r\n    white-space: normal;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.gallery-list-item {\r\n    width: calc(25% - 2vh);\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    margin: 0 1vh;\r\n    white-space: normal;\r\n}\r\n\r\n.gallery-list-item a {\r\n    display: block;\r\n    text-align: center;\r\n}\r\n\r\n.gallery-list-item a:hover,\r\n.gallery-list-item a:focus {\r\n    text-decoration: none;\r\n}\r\n\r\n.gallery-list-item a h2 {\r\n    height: 7vh;\r\n    color: #333;\r\n    margin: 0;\r\n    line-height: 1.35;\r\n    font-size: 2vh;\r\n    overflow: hidden;\r\n}\r\n\r\n.gallery-list-item-pic {\r\n    height: 24vh;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.gallery-list .flickity-page-dots {\r\n    bottom: 0;\r\n}\r\n\r\n.gallery-list .flickity-page-dots .dot {\r\n    width: 5vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.gallery-detail {\r\n    padding: 0 2.5vh;\r\n}\r\n\r\n.gallery-detail-item {\r\n    width: 30%;\r\n    height: 60vh;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    opacity: 0.5;\r\n    margin: 0 5vh;\r\n}\r\n\r\n.gallery-detail-item img,\r\n.gallery-detail-item video {\r\n    display: block;\r\n    max-height: 100%;\r\n    transform: scale(0.25);\r\n}\r\n\r\n.gallery-detail-item.is-selected {\r\n    opacity: 1;\r\n    z-index: 20;\r\n}\r\n\r\n.gallery-detail-item.is-selected img,\r\n.gallery-detail-item.is-selected video {\r\n    transform: none;\r\n}\r\n\r\n/* PHOTOGALS */\r\n\r\n\r\n\r\n/* VIDEOALBUM */\r\n\r\n.videoalbum-detail {\r\n    width: 100%;\r\n    text-align: center;\r\n    margin-top: -2.5vh;\r\n}\r\n\r\n.videoalbum-detail video {\r\n    width: auto;\r\n    height: auto;\r\n    max-width: 100%;\r\n    max-height: 70vh;\r\n}\r\n\r\n/* VIDEOALBUM */\r\n\r\n\r\n\r\n/* NEWS */\r\n\r\n.news-list {\r\n    padding: 0;\r\n    margin: 0;\r\n    list-style-type: none;\r\n    height: 67vh;\r\n    overflow: hidden;\r\n    overflow-y: auto;\r\n    margin-top: -2vh;\r\n}\r\n\r\n.news-list-item {\r\n    background-color: #E0E6E6;\r\n    padding: 3.3vh 4vh;\r\n}\r\n\r\n.news-list-item:nth-child(2n+2) {\r\n    background-color: #fff;\r\n}\r\n\r\n.news-list-item h2 {\r\n    margin: 0;\r\n    font-size: 3.5vh;\r\n    font-weight: bold;\r\n    color: #2886bb;\r\n    margin-bottom: 1.5vh;\r\n}\r\n\r\n.news-list-item a {\r\n    display: block;\r\n    width: calc(100% - 3vh);\r\n    float: right;\r\n    background-color: #2886bb;\r\n    text-align: center;\r\n    font-size: 3vh;\r\n    color: #fff;\r\n    padding: 1.8vh;\r\n}\r\n\r\n.news-list-item-text-preview {\r\n    font-size: 2vh;\r\n}\r\n\r\n.news-item {\r\n    background-color: #f5f5f5;\r\n    margin-top: -2vh;\r\n}\r\n\r\n.news-item-img {\r\n    height: 65vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.news-item-text {\r\n    padding: 3vh 3vh;\r\n    font-size: 2vh;\r\n    line-height: 1.75;\r\n    height: 65vh;\r\n    overflow: hidden;\r\n    overflow-y: auto;\r\n}\r\n\r\n  .news-item-text h1 {\r\n      color: #2886bb;\r\n      font-size: 4vh;\r\n      font-weight: 700;\r\n      text-align: left;\r\n      margin: 0;\r\n      margin-bottom: 2vh;\r\n  }\r\n\r\n  .news-item-text span {\r\n      display: block;\r\n      color: #777;\r\n      margin-bottom: 1.5vh;\r\n      font-size: 2.5vh;\r\n  }\r\n\r\n/* NEWS */\r\n\r\n\r\n\r\n/* PAGE TYPE 1 */\r\n\r\n.type-1 .page-detail-text {\r\n    height: 65vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n}\r\n\r\n.type-1 .page-detail-text h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n    margin-bottom: 3vh !important;\r\n}\r\n\r\n.type-1 .page-detail-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n/* PAGE TYPE 1 */\r\n\r\n\r\n\r\n\r\n/* PAGE TYPE 2 */\r\n\r\n.type-2 .page-detail-image {\r\n    height: 65vh;\r\n    border-radius: 1vh;\r\n    background-size: cover;\r\n}\r\n\r\n.type-2 .page-detail-text {\r\n    height: 65vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n}\r\n\r\n.type-2 .page-detail-text h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n}\r\n\r\n.type-2 .page-detail-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n/* PAGE TYPE 2 */\r\n\r\n\r\n\r\n/* PAGE TYPE 3 */\r\n\r\n#lg-download {\r\n    display: none;\r\n}\r\n\r\n.type-3 #gallery a {\r\n    height: 65vh;\r\n    margin-bottom: 1.5vh;\r\n    display: block;\r\n    border-radius: 1vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-3 .page-detail-text {\r\n    height: 65vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n}\r\n\r\n.type-3 .page-detail-text h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n}\r\n\r\n.type-3 .page-detail-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n/* PAGE TYPE 3 */\r\n\r\n\r\n\r\n\r\n/* PAGE TYPE 4 */\r\n\r\n.type-4 .gallery-item {\r\n    width: 100%;\r\n}\r\n\r\n/* PAGE TYPE 4 */\r\n\r\n\r\n\r\n\r\n/* PAGE TYPE 6 */\r\n\r\n.user-pages-item-image {\r\n    width: 12vh;\r\n    height: 12vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-6 {\r\n    padding: 0 1.6vh;\r\n}\r\n\r\n.type-6 .user-pages-item-item img {\r\n    width: 40%;\r\n    margin-bottom: 3vh;\r\n}\r\n\r\n.t6-p {\r\n    font-size: 3vh;\r\n    text-align: left;\r\n    padding-left: 16vh;\r\n    padding-right: 2vh;\r\n}\r\n\r\n/* PAGE TYPE 6 */\r\n\r\n\r\n\r\n/* PAGE TYPE 7 */\r\n\r\n.type-7 .text {\r\n    height: 62vh;\r\n    overflow: hidden;\r\n    margin: 0 auto;\r\n    width: 70vw;\r\n}\r\n\r\n  .type-7 .pdf-nav {\r\n      text-align: center;\r\n      margin-top: 1vh;\r\n  }\r\n\r\n  .type-7 #prev,\r\n  .type-7 #next {\r\n    background: #2886bb;\r\n    color: #fff;\r\n    padding: 0.5vh 2vh;\r\n    box-shadow: none;\r\n    border: 0;\r\n    font-size: 2vh;\r\n    font-weight: bold;\r\n    border-radius: 1vh;\r\n  }\r\n\r\n/* PAGE TYPE 7 */\r\n\r\n\r\n\r\n/* PAGE TYPE 8 */\r\n\r\n.buttons {\r\n    position: absolute;\r\n    z-index: 20;\r\n    left: 2vh;\r\n    right: 2vh;\r\n    text-align: center;\r\n}\r\n\r\n#prevBtn,\r\n#nextBtn {\r\n    background: #2886bb;\r\n    color: #fff;\r\n    padding: 1vh 2vh;\r\n    box-shadow: none;\r\n    border: 0;\r\n    font-size: 2.5vh;\r\n    font-weight: bold;\r\n}\r\n\r\n/* PAGE TYPE 8 */\r\n\r\n\r\n/* type 9 */\r\n\r\n.excel-item {\r\n    width: 94vw;\r\n    width: auto;\r\n    height: 70vh;\r\n    overflow-y: scroll;\r\n    padding-top: 2vh;\r\n    margin-top: -4vh;\r\n    text-align: center;\r\n}\r\n\r\n.excel-item table {\r\n    border-collapse: collapse;\r\n    margin: 1rem 0;\r\n    display: inline-block;\r\n    overflow-x: auto;\r\n    text-align: left;\r\n}\r\n\r\n.excel-item table tr {\r\n    border-top: 1px solid #dfe2e5;\r\n}\r\n\r\n.excel-item table tr:nth-child(2n) {\r\n    background-color: #f6f8fa;\r\n}\r\n\r\n.excel-item table td,\r\n.excel-item table th {\r\n    border: 1px solid #dfe2e5;\r\n    padding: .6em 1em;\r\n}\r\n\r\n/* type 9 */\r\n\r\n\r\n\r\n\r\n/* ROUTES */\r\n\r\n.key-anim01,\r\n.key-anim02,\r\n.key-anim03,\r\n.key-anim04,\r\n.key-anim05,\r\n.key-anim06,\r\n.key-anim07,\r\n.key-anim08,\r\n.key-anim09,\r\n.key-anim10,\r\n.key-anim11,\r\n.key-anim12 {\r\n    stroke-dasharray: 10;\r\n    stroke-dashoffset: -2000;\r\n    -webkit-animation: Drawpath 20s linear infinite;\r\n            animation: Drawpath 20s linear infinite;\r\n}\r\n\r\n@-webkit-keyframes Drawpath {\r\n    from {\r\n        stroke-dashoffset: -2000;\r\n    }\r\n    to {\r\n        stroke-dashoffset: 0;\r\n    }\r\n}\r\n\r\n@keyframes Drawpath {\r\n    from {\r\n        stroke-dashoffset: -2000;\r\n    }\r\n    to {\r\n        stroke-dashoffset: 0;\r\n    }\r\n}\r\n\r\n.wrapperm {\r\n    width: 800px;\r\n    height: 450px;\r\n    position: relative;\r\n    margin: 0 auto;\r\n    overflow: visible;\r\n    background-color: #fff;\r\n    transform: scale(1.25);\r\n    transform-origin: 50% 0%;\r\n    margin-top: 4vh;\r\n}\r\n\r\n#wrapper-inner {\r\n    width: 800px;\r\n    height: 450px;\r\n    margin-top: 4vh;\r\n}\r\n\r\n.map {\r\n    margin-top: -4vh;\r\n}\r\n\r\n.map-slide {\r\n    width: 100%;\r\n}\r\n\r\n.map img {\r\n    width: 800px;\r\n    height: 450px;\r\n    display: block;\r\n    margin: 0 auto;\r\n}\r\n\r\n.map-path {\r\n    position: absolute;\r\n    left: 0;\r\n    right: 0;\r\n    top: 0;\r\n    bottom: 0;\r\n    width: 800px;\r\n    height: 450px;\r\n}\r\n\r\n.med-route-sidebar {\r\n    background-color: #d6d6d6;\r\n    padding: 3vh;\r\n    margin-top: -2vh;\r\n    background-color: #53b5e2;\r\n}\r\n\r\n.med-route-sidebar input {\r\n    width: 100%;\r\n    padding: 0.5vh;\r\n    font-size: 2vh;\r\n}\r\n\r\n.hg-button-space {\r\n    width: 8vw;\r\n}\r\n\r\n.keyboard {\r\n    margin-top: 0.5vh;\r\n    margin-bottom: 3vh;\r\n}\r\n\r\n.keyboard button {\r\n    width: 4.2vh;\r\n    height: 4.2vh;\r\n    line-height: 4.2vh;\r\n    margin-bottom: 0.5vh;\r\n    background-color: #fff;\r\n    font-size: 1.5vh;\r\n    text-align: center;\r\n    padding: 0;\r\n    border: 0.1vh solid;\r\n}\r\n\r\n.keyboard .globebutton {\r\n    width: 7vh;\r\n}\r\n\r\n.keyboard .spacebutton {\r\n    width: 10vh;\r\n}\r\n\r\n#myUL {\r\n    padding: 0;\r\n    margin: 0;\r\n    list-style-type: none;\r\n    height: 32vh;\r\n    overflow-y: auto;\r\n}\r\n\r\n#myUL li {\r\n    display: block;\r\n    background-color: #fff;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n#myUL li a {\r\n    display: block;\r\n    color: #222;\r\n    font-size: 2vh;\r\n    font-weight: 700;\r\n    border: 0.25vh solid #96dbfc;\r\n    padding: 1vh 2vh;\r\n}\r\n\r\n/* ROUTES */\r\n\r\n\r\n\r\n/* REVIEWS */\r\n\r\n.keyboard-reviews .keyboard {\r\n    margin-top: 7vh;\r\n}\r\n\r\n.keyboard-reviews .keyboard button {\r\n    width: 6vh;\r\n    height: 6vh;\r\n    line-height: 6vh;\r\n    font-size: 2.5vh;\r\n}\r\n\r\n.keyboard-reviews .keyboard .globebutton {\r\n    width: 12vh;\r\n}\r\n\r\n.keyboard-reviews .keyboard .spacebutton {\r\n    width: 17vh;\r\n}\r\n\r\n.review-form input[type=\"text\"] {\r\n    border: 1px solid #333;\r\n    font-size: 3vh;\r\n}\r\n\r\n.review-form textarea {\r\n    resize: none;\r\n    height: 36vh;\r\n    border: 1px solid #333;\r\n    font-size: 3vh;\r\n}\r\n\r\n.review-form .btn-med {\r\n    background-color: #2886bb;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n    padding: 2vh 4vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.review-h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n    margin-top: 0 !important;\r\n    margin-bottom: 5vh !important;\r\n}\r\n\r\n/* REVIEWS */", ""]);
 
 // exports
 
@@ -24979,29 +25000,64 @@ var render = function() {
     _vm.settings.theme === "med"
       ? _c(
           "div",
-          _vm._l(_vm.page.types, function(type) {
-            return _c("div", { staticClass: "container" }, [
+          [
+            _vm._l(_vm.page.types, function(type) {
+              return _c("div", { key: type.id, staticClass: "container" }, [
+                _c(
+                  "div",
+                  { staticClass: "page-item" },
+                  [
+                    type.id == "1"
+                      ? _c("MedPageType1Horizontal")
+                      : type.id == "2"
+                      ? _c("MedPageType2Horizontal")
+                      : type.id == "6"
+                      ? _c("MedPageType6Horizontal")
+                      : type.id == "7"
+                      ? _c("MedPageType7Horizontal")
+                      : type.id == "9"
+                      ? _c("MedPageType9Horizontal")
+                      : _vm._e()
+                  ],
+                  1
+                )
+              ])
+            }),
+            _vm._v(" "),
+            _c("footer", [
               _c(
                 "div",
-                { staticClass: "page-item" },
+                { staticClass: "container" },
                 [
-                  type.id == "1"
-                    ? _c("MedPageType1Horizontal")
-                    : type.id == "2"
-                    ? _c("MedPageType2Horizontal")
-                    : type.id == "6"
-                    ? _c("MedPageType6Horizontal")
-                    : type.id == "7"
-                    ? _c("MedPageType7Horizontal")
-                    : type.id == "9"
-                    ? _c("MedPageType9Horizontal")
-                    : _vm._e()
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "med-home med-home-sub",
+                      attrs: { to: "/vue-index" }
+                    },
+                    [_c("img", { attrs: { src: "/img/medhome.svg", alt: "" } })]
+                  ),
+                  _vm._v(" "),
+                  _vm.page.parent_id
+                    ? _c(
+                        "router-link",
+                        {
+                          staticClass: "med-footer-second",
+                          attrs: { to: "/vue-pages/" + _vm.page.parent_id }
+                        },
+                        [_c("span", [_vm._v(_vm._s(_vm.parent_page))])]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("a", { staticClass: "med-footer-third" }, [
+                    _c("span", [_vm._v(_vm._s(_vm.page.title))])
+                  ])
                 ],
                 1
               )
             ])
-          }),
-          0
+          ],
+          2
         )
       : _vm._e()
   ])
@@ -25199,31 +25255,27 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "type-7" },
-    [
-      _vm.loading
-        ? _c("MedLoader")
-        : _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-12" }, [
-              _c("div", { staticClass: "text" }, [
-                _c("iframe", {
-                  attrs: {
-                    src:
-                      "/lib/pdfjs/web/viewer.html?file=" +
-                      "http://localhost" +
-                      _vm.page.pdf,
-                    height: "100%",
-                    width: "100%"
-                  }
-                })
-              ])
-            ])
-          ])
-    ],
-    1
-  )
+  return _c("div", { staticClass: "type-7" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("div", { staticClass: "text" }, [
+          _c("iframe", {
+            staticStyle: { border: "none" },
+            attrs: {
+              src:
+                "/lib/pdfjs/web/viewer.html?file=" +
+                _vm.page.pdf +
+                "?random=" +
+                new Date().getTime() +
+                Math.floor(Math.random() * 1000000),
+              height: "100%",
+              width: "100%"
+            }
+          })
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

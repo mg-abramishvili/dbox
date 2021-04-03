@@ -627,7 +627,6 @@ footer {
 .type-7 .text {
     height: 62vh;
     overflow: hidden;
-    overflow-y: scroll;
     margin: 0 auto;
     width: 70vw;
 }
