@@ -1,8 +1,8 @@
 <template>
     <div class="type-7">
-        
+        <MedLoader v-if="loading" />
 
-        <div class="row">
+        <div v-else class="row">
             <div class="col-12">
                 <div class="text">
                     <iframe :src="'/lib/pdfjs/web/viewer.html?file=' + page.pdf" height="100%" width="100%" style="border: none;"></iframe>
