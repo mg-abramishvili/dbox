@@ -1,32 +1,30 @@
 <template>
-    <div>
-        <h2>Новости</h2>
-        <ul>
-            <li v-for="newItem in news" v-bind:key="newItem.id">
-                <router-link :to="{name: 'NewsItem', params: {id: newItem.id}}">
-                    {{newItem.title}}
-                </router-link>
-            </li>
-        </ul>
-        <router-link to="/">На главную</router-link>
+    <div v-if="settings.theme === 'med'">
+        <div v-if="settings.orientation === 'horizontal'">
+            <MedNewsAllHorizontal />
+        </div>
     </div>
 </template>
 
 <script>
+    import MedNewsAllHorizontal from '../../components/news/med/index-horizontal'
+
     export default {
         data() {
             return {
-                news: []
+                settings: {}
             }
         },
         created() {
-            fetch(`https://jsonplaceholder.typicode.com/todos/`)
+            fetch(`/api/front/settings/`)
                 .then(response => response.json())
                 .then(json => {
-                    this.news = json;
+                    this.settings = json;
+                    this.loading = false;
                 });
         },
         components: {
+            MedNewsAllHorizontal
         }
     }
 </script>

@@ -33,7 +33,7 @@
                     Текст
                 </dt>
                 <dd class="col-sm-9">
-                    <textarea rows="7" type="text" class="form-control" name="text">{{$news->text}}</textarea>
+                    <textarea rows="7" type="text" class="form-control" id="text" name="text">{{$news->text}}</textarea>
                     @if ($errors->has('text'))
                         <div class="alert alert-danger">
                             <!--{{ $errors->first('text') }}-->
@@ -135,6 +135,22 @@
                 method:'POST'
             });
         }
+    </script>
+	
+	<script>
+      $('#text').summernote({
+        height: 300,
+        toolbar: [
+    // [groupName, [list of button]]
+    ['style', ['bold', 'italic', 'underline', 'clear']],
+    ['font', ['strikethrough']],
+    ['fontsize', ['fontsize']],
+    ['color', ['color']],
+    ['para', ['ul', 'ol', 'paragraph']],
+    ['table', ['table']],
+    ['height', ['height']]
+  ]
+      });
     </script>
 
 @endsection

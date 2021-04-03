@@ -11,6 +11,7 @@ Route::get('/front/pages','App\Http\Controllers\Api\FrontController@pages');
 Route::get('/front/page/{id}','App\Http\Controllers\Api\FrontController@pageItem');
 
 Route::get('/front/news','App\Http\Controllers\Api\FrontController@news');
+Route::get('/front/newsitem/{id}','App\Http\Controllers\Api\FrontController@newsItem');
 
 Route::get('/front/photoalbums','App\Http\Controllers\Api\FrontController@photoalbums');
 

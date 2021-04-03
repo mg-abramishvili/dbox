@@ -1,24 +1,31 @@
 <template>
-    <div>
-        <h1>{{ newItem.title }}</h1>
-        <p>id: {{ newItem.id }} </p>
-        <router-link to="/news">Назад</router-link>
+    <div v-if="settings.theme === 'med'">
+        <div v-if="settings.orientation === 'horizontal'">
+            <MedNewsItemHorizontal />
+        </div>
     </div>
 </template>
 
 <script>
+    import MedNewsItemHorizontal from '../../components/news/med/show-horizontal'
+
     export default {
         data() {
             return {
-                newItem: {}
+                settings: {},
+                newsItem: {}
             }
         },
         created() {
-            fetch(`https://jsonplaceholder.typicode.com/todos/${this.$route.params.id}`)
+            fetch(`/api/front/settings/`)
                 .then(response => response.json())
                 .then(json => {
-                    this.newItem = json;
+                    this.settings = json;
+                    this.loading = false;
                 });
         },
+        components: {
+            MedNewsItemHorizontal
+        }
     }
 </script>
