@@ -1227,10 +1227,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
-/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var swiper_swiper_bundle_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/swiper-bundle.css */ "./node_modules/swiper/swiper-bundle.css");
-/* harmony import */ var swiper_swiper_bundle_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(swiper_swiper_bundle_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_partials_med_loader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../components/partials/med/loader */ "./resources/js/components/partials/med/loader.vue");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var swiper_swiper_bundle_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/swiper-bundle.css */ "./node_modules/swiper/swiper-bundle.css");
+/* harmony import */ var swiper_swiper_bundle_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(swiper_swiper_bundle_css__WEBPACK_IMPORTED_MODULE_2__);
 //
 //
 //
@@ -1260,12 +1261,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       photoalbums: [],
+      loading: true,
       swiperOptions: {
         slidesPerView: 4,
         slidesPerColumn: 2,
@@ -1285,19 +1288,18 @@ __webpack_require__.r(__webpack_exports__);
       return response.json();
     }).then(function (json) {
       _this.photoalbums = json;
+      _this.loading = false;
     });
   },
   computed: {
     swiper: function swiper() {
-      return this.$refs.mySwiper.$swiper;
+      return this.$refs.PhotoalbumsAllSwiper.$swiper;
     }
   },
-  mounted: function mounted() {
-    this.swiper.slideTo(0, 1000, false);
-  },
   components: {
-    Swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__["Swiper"],
-    SwiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__["SwiperSlide"]
+    MedLoader: _components_partials_med_loader__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["Swiper"],
+    SwiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["SwiperSlide"]
   }
 });
 
@@ -38255,89 +38257,107 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "gallery" }, [
-      _c(
-        "div",
-        { staticClass: "gallery-list" },
-        [
-          _c(
-            "swiper",
-            { ref: "mySwiper", attrs: { options: _vm.swiperOptions } },
-            [
-              _vm._l(_vm.photoalbums, function(photoalbum) {
-                return _c(
-                  "swiper-slide",
-                  { key: photoalbum.id, staticClass: "gallery-list-item" },
+  return _c(
+    "div",
+    [
+      _vm.loading
+        ? _c("MedLoader")
+        : _vm.photoalbums.length
+        ? _c("div", { staticClass: "gallery" }, [
+            _c(
+              "div",
+              { staticClass: "gallery-list" },
+              [
+                _c(
+                  "swiper",
+                  {
+                    ref: "PhotoalbumsAllSwiper",
+                    attrs: { options: _vm.swiperOptions }
+                  },
                   [
-                    _c(
-                      "router-link",
-                      {
-                        attrs: {
-                          to: {
-                            name: "PhotoalbumItem",
-                            params: { id: photoalbum.id }
-                          }
-                        }
-                      },
-                      [
-                        _vm._l(photoalbum.gallery.slice(0, 1), function(cover) {
-                          return _c("div", {
-                            key: cover.id,
-                            staticClass: "gallery-list-item-pic",
-                            style: { "background-image": "url(" + cover + ")" }
-                          })
-                        }),
-                        _vm._v(" "),
-                        _c("h2", [_vm._v(_vm._s(photoalbum.title))])
-                      ],
-                      2
-                    )
+                    _vm._l(_vm.photoalbums, function(photoalbum) {
+                      return _c(
+                        "swiper-slide",
+                        {
+                          key: photoalbum.id,
+                          staticClass: "gallery-list-item"
+                        },
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              attrs: {
+                                to: {
+                                  name: "PhotoalbumItem",
+                                  params: { id: photoalbum.id }
+                                }
+                              }
+                            },
+                            [
+                              _vm._l(photoalbum.gallery.slice(0, 1), function(
+                                cover
+                              ) {
+                                return _c("div", {
+                                  key: cover.id,
+                                  staticClass: "gallery-list-item-pic",
+                                  style: {
+                                    "background-image": "url(" + cover + ")"
+                                  }
+                                })
+                              }),
+                              _vm._v(" "),
+                              _c("h2", [_vm._v(_vm._s(photoalbum.title))])
+                            ],
+                            2
+                          )
+                        ],
+                        1
+                      )
+                    }),
+                    _vm._v(" "),
+                    _c("div", {
+                      staticClass: "swiper-pagination",
+                      attrs: { slot: "pagination" },
+                      slot: "pagination"
+                    })
                   ],
-                  1
+                  2
                 )
-              }),
-              _vm._v(" "),
-              _c("div", {
-                staticClass: "swiper-pagination",
-                attrs: { slot: "pagination" },
-                slot: "pagination"
-              })
-            ],
-            2
-          )
-        ],
-        1
-      )
-    ]),
-    _vm._v(" "),
-    _c("footer", [
-      _c(
-        "div",
-        { staticClass: "container" },
-        [
-          _c(
-            "router-link",
-            {
-              staticClass: "med-home med-home-sub",
-              attrs: { to: "/vue-index" }
-            },
-            [_c("img", { attrs: { src: "/img/medhome.svg", alt: "" } })]
-          ),
-          _vm._v(" "),
-          _c(
-            "router-link",
-            {
-              staticClass: "med-footer-second",
-              attrs: { to: "/vue-photoalbums" }
-            },
-            [_c("span", [_vm._v("Фотогалерея")])]
-          )
-        ],
-        1
-      )
-    ])
-  ])
+              ],
+              1
+            )
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c("footer", [
+        _c(
+          "div",
+          { staticClass: "container" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "med-home med-home-sub",
+                attrs: { to: "/vue-index" }
+              },
+              [_c("img", { attrs: { src: "/img/medhome.svg", alt: "" } })]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "med-footer-second",
+                attrs: { to: "/vue-photoalbums" }
+              },
+              [_c("span", [_vm._v("Фотогалерея")])]
+            )
+          ],
+          1
+        )
+      ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

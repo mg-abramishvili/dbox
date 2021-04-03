@@ -1,9 +1,10 @@
 <template>
     <div>
-        
-        <div class="gallery">
+        <MedLoader v-if="loading" />
+
+        <div v-else-if="photoalbums.length" class="gallery">
             <div class="gallery-list">
-                <swiper ref="mySwiper" :options="swiperOptions">
+                <swiper ref="PhotoalbumsAllSwiper" :options="swiperOptions">
                     <swiper-slide v-for="photoalbum in photoalbums" :key="photoalbum.id" class="gallery-list-item">
                         <router-link :to="{name: 'PhotoalbumItem', params: {id: photoalbum.id}}">
                             <div v-for="cover in photoalbum.gallery.slice(0, 1)" :key="cover.id" class="gallery-list-item-pic" v-bind:style="{ 'background-image': 'url(' + cover + ')' }"></div>
@@ -14,7 +15,6 @@
                 </swiper>
             </div>
         </div>
-
 
         <footer>
             <div class="container">
@@ -28,6 +28,7 @@
 </template>
 
 <script>
+    import MedLoader from '../../../components/partials/med/loader'
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
     import 'swiper/swiper-bundle.css'
 
@@ -35,6 +36,7 @@
         data() {
             return {
                 photoalbums: [],
+                loading: true,
                 swiperOptions: {
                     slidesPerView: 4,
                     slidesPerColumn: 2,
@@ -52,17 +54,16 @@
                 .then(response => response.json())
                 .then(json => {
                     this.photoalbums = json;
+                    this.loading = false
                 });
         },
         computed: {
             swiper() {
-                return this.$refs.mySwiper.$swiper
+                return this.$refs.PhotoalbumsAllSwiper.$swiper
             }
         },
-        mounted() {
-            this.swiper.slideTo(0, 1000, false)
-        },
         components: {
+            MedLoader,
             Swiper,
             SwiperSlide
         },
