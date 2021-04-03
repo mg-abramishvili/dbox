@@ -1,29 +1,15 @@
 <template>
     <div>
-        <div class="container" style="margin-top: 45px;">
-            <div class="news-item">
-                <div class="row">
-                    <div v-if="newsItem.image" class="col-4">
-                        <div class="news-item-img" v-bind:style="{ 'background-image': 'url(' + newsItem.image + ')' }"></div>
-                    </div>
+        <MedLoader v-if="loading" />
 
-                    <div v-if="newsItem.image" class="col-8">
-                        <div class="news-item-text">
-                            <span>{{moment(newsItem.created_at).format('D MMMM YYYY')}}</span>
-                            <h1>{{ newsItem.title }}</h1>
-                            <div v-html="newsItem.text"></div>
-                        </div>
-                    </div>
-                    <div v-else class="col-12">
-                        <div class="news-item-text">
-                            <span>{{ newsItem.created_at }}</span>
-                            <h1>{{ newsItem.title }}</h1>
-                            <div v-html="newsItem.text"></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+        <div v-else-if="photoalbumItem" class="gallery-detail" style="margin-top: -4vh;">
+            <swiper ref="PhotoalbumsItemSwiper" :options="swiperOptions">
+                <swiper-slide v-for="photoalbumPic in photoalbumItem.gallery" class="gallery-detail-item">
+                    <img :src="photoalbumPic">
+                </swiper-slide>
+                <div class="swiper-button-prev" slot="button-prev"></div>
+                <div class="swiper-button-next" slot="button-next"></div>
+            </swiper>
         </div>
 
         <footer>
@@ -31,29 +17,49 @@
                 <router-link to="/vue-index" class="med-home med-home-sub">
                     <img src="/img/medhome.svg" alt="">
                 </router-link>
-                <router-link to="/vue-news" class="med-footer-second"><span>Новости</span></router-link>
-                <a class="med-footer-third"><span>{{ newsItem.title }}</span></a>
+                <router-link to="/vue-photoalbums" class="med-footer-second"><span>Фотогалерея</span></router-link>
+                <a class="med-footer-third"><span>{{ photoalbumItem.title }}</span></a>
             </div>
         </footer>
     </div>
 </template>
 
 <script>
+    import MedLoader from '../../../components/partials/med/loader'
+    import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+    import 'swiper/css/swiper.css'
+
     export default {
         data() {
             return {
-                newsItem: {},
-                moment: moment
+                photoalbumItem: {},
+                loading: true,
+                swiperOptions: {
+                    slidesPerView: 1,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev'
+                    }
+                }
             }
         },
         created() {
-            fetch(`/api/front/newsitem/${this.$route.params.id}`)
+            fetch(`/api/front/photoalbum/${this.$route.params.id}`)
                 .then(response => response.json())
                 .then(json => {
-                    this.newsItem = json;
+                    this.photoalbumItem = json;
+                    this.loading = false;
                 });
         },
+        computed: {
+            swiper() {
+                return this.$refs.PhotoalbumsItemSwiper.$swiper
+            }
+        },
         components: {
+            MedLoader,
+            Swiper,
+            SwiperSlide
         }
     }
 </script>

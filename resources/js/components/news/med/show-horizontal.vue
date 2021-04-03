@@ -1,6 +1,8 @@
 <template>
     <div>
-        <div class="container" style="margin-top: 45px;">
+        <MedLoader v-if="loading" />
+
+        <div v-else-if="newsItem" class="container" style="margin-top: 45px;">
             <div class="news-item">
                 <div class="row">
                     <div v-if="newsItem.image" class="col-4">
@@ -39,10 +41,13 @@
 </template>
 
 <script>
+    import MedLoader from '../../../components/partials/med/loader'
+
     export default {
         data() {
             return {
                 newsItem: {},
+                loading: true,
                 moment: moment
             }
         },
@@ -51,9 +56,11 @@
                 .then(response => response.json())
                 .then(json => {
                     this.newsItem = json;
+                    this.loading = false;
                 });
         },
         components: {
+            MedLoader
         }
     }
 </script>

@@ -44,6 +44,11 @@ class FrontController extends Controller
     {
         return Photoalbum::orderBy('created_at', 'desc')->get();
     }
+	
+	public function photoalbumItem($id)
+    {
+        return Photoalbum::where('id', $id)->first();
+    }
 
     public function videoalbums()
     {

@@ -11,7 +11,8 @@
                             <h2>{{ photoalbum.title }}</h2>
                         </router-link>
                     </swiper-slide>
-                    <div class="swiper-pagination" slot="pagination"></div>
+                    <div class="swiper-button-prev" slot="button-prev"></div>
+                    <div class="swiper-button-next" slot="button-next"></div>
                 </swiper>
             </div>
         </div>
@@ -30,7 +31,7 @@
 <script>
     import MedLoader from '../../../components/partials/med/loader'
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-    import 'swiper/swiper-bundle.css'
+    import 'swiper/css/swiper.css'
 
     export default {
         data() {
@@ -43,9 +44,10 @@
                     slidesPerGroup: 2,
                     spaceBetween: 30,
                     slidesPerColumnFill: 'row',
-                    pagination: {
-                        el: '.swiper-pagination'
-                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev'
+                    }
                 }
             }
         },

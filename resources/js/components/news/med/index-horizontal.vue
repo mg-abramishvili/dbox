@@ -1,6 +1,8 @@
 <template>
     <div>
-        <div class="container" style="margin-top: 45px;">
+        <MedLoader v-if="loading" />
+
+        <div v-else-if="news.length" class="container" style="margin-top: 45px;">
             <div class="news">
                 <div class="row">
                     <div class="col-12">
@@ -12,10 +14,10 @@
                                         <h2>{{ NewsItem.title }}</h2>
                                         <div class="news-list-item-text-preview">
                                             <div v-if="NewsItem.text.length <= 100">
-                                                {{ NewsItem.text }}
+                                                <div v-html="NewsItem.text"></div>
                                             </div>
                                             <div v-else>
-                                                {{ NewsItem.text.substring(0,100) + "..." }}
+                                                <div v-html="NewsItem.text.substring(0,100) + '...'"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -43,10 +45,13 @@
 </template>
 
 <script>
+    import MedLoader from '../../../components/partials/med/loader'
+
     export default {
         data() {
             return {
-                news: []
+                news: [],
+                loading: true,
             }
         },
         created() {
@@ -54,9 +59,11 @@
                 .then(response => response.json())
                 .then(json => {
                     this.news = json;
+                    this.loading = false;
                 });
         },
         components: {
+            MedLoader
         }
     }
 </script>
