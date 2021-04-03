@@ -176,7 +176,7 @@
                 </dd>
             </div>
 
-            <div style="display:none;">
+            <div style="display: none;">
             <div class="row align-items-center mb-2">
                 <dt class="col-sm-3">
                     x_01
@@ -1080,10 +1080,10 @@
 
             $(element).remove();
 
-            $("#x_"+tstr+"").val(x).change();
-            $("#y_"+tstr+"").val(y).change();
-            $("#p_x_"+tstr+"").val(previousx).change();
-            $("#p_y_"+tstr+"").val(previousy).change();
+            $("#x_"+tstr+"").val(x.toString().substring(0,3).split('.').join("")).change();
+            $("#y_"+tstr+"").val(y.toString().substring(0,3).split('.').join("")).change();
+            $("#p_x_"+tstr+"").val(previousx.toString().substring(0,3).split('.').join("")).change();
+            $("#p_y_"+tstr+"").val(previousy.toString().substring(0,3).split('.').join("")).change();
             
         });
     });
@@ -1118,10 +1118,10 @@
 
             $(element2).remove();
 
-            $("#x_1"+tstr2+"").val(x2).change();
-            $("#y_1"+tstr2+"").val(y2).change();
-            $("#p_x_1"+tstr2+"").val(previousx2).change();
-            $("#p_y_1"+tstr2+"").val(previousy2).change();
+            $("#x_1"+tstr2+"").val(x2.toString().substring(0,3).split('.').join("")).change();
+            $("#y_1"+tstr2+"").val(y2.toString().substring(0,3).split('.').join("")).change();
+            $("#p_x_1"+tstr2+"").val(previousx2.toString().substring(0,3).split('.').join("")).change();
+            $("#p_y_1"+tstr2+"").val(previousy2.toString().substring(0,3).split('.').join("")).change();
             
         });
     });

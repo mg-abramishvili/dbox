@@ -188,7 +188,7 @@ See https://github.com/adobe-type-tools/cmap-resources
         </div>  <!-- secondaryToolbar -->
 
         <div class="toolbar">
-          <div id="toolbarContainer">
+          <div id="toolbarContainer" style="opacity: 0;">
             <div id="toolbarViewer">
               <div id="toolbarViewerLeft">
                 <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar">
@@ -394,6 +394,13 @@ See https://github.com/adobe-type-tools/cmap-resources
 
     </div> <!-- outerContainer -->
     <div id="printContainer"></div>
+
+    <script>
+      function showIt() {
+        document.getElementById("toolbarContainer").style.opacity = "1";
+      }
+      setTimeout("showIt()", 500);
+    </script>
   </body>
 </html>
 

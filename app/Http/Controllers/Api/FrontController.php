@@ -55,6 +55,11 @@ class FrontController extends Controller
         return Videoalbum::orderBy('created_at', 'desc')->get();
     }
 	
+	public function videoalbumItem($id)
+    {
+        return Videoalbum::where('id', $id)->first();
+    }
+	
 	public function schemes()
 	{
 		return Scheme::all();

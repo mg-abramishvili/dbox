@@ -4,19 +4,23 @@
 
         <div v-else class="row">
             <div class="col-5">
-                
-                <input
-                :value="input"
-                class="input"
-                @input="onInputChange"
-                placeholder="Поиск..."
-                >
+                <div class="med-route-sidebar">
+                    <input
+                    :value="input"
+                    class="input"
+                    @input="onInputChange"
+                    placeholder="Поиск..."
+                    style="margin-bottom: 2vh;"
+                    >
 
-                <SimpleKeyboard @onChange="onChange" @onKeyPress="onKeyPress" :input="input"/>
-  
-                <button v-for="routeListItem in filtered_r01routes" :key="routeListItem.id" @click="SelectRoute(routeListItem)">
-                    {{ routeListItem.title }}
-                </button>
+                    <SimpleKeyboard @onChange="onChange" @onKeyPress="onKeyPress" :input="input"/>
+    
+                    <ul id="myUL" style="margin-top: 2vh;">
+                        <li v-for="routeListItem in filtered_r01routes" :key="routeListItem.id" @click="SelectRoute(routeListItem)">
+                            <a>{{ routeListItem.title }}</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="col-7"> 
                 <h6>{{selectedItemID}} <br>{{selectedItemSchemeID}} <br>{{selectedItemScheme2ID}} <br>{{selectedItem}}</h6><br><br>
@@ -135,6 +139,15 @@
                 </div>
             </div>
         </div>
+
+        <footer>
+            <div class="container">
+                <router-link to="/vue-index" class="med-home med-home-sub">
+                    <img src="/img/medhome.svg" alt="">
+                </router-link>
+                <a class="med-footer-second"><span>План клиники</span></a>
+            </div>
+        </footer>
     </div>
 </template>
 

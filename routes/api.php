@@ -17,6 +17,7 @@ Route::get('/front/photoalbums','App\Http\Controllers\Api\FrontController@photoa
 Route::get('/front/photoalbum/{id}','App\Http\Controllers\Api\FrontController@photoalbumItem');
 
 Route::get('/front/videoalbums','App\Http\Controllers\Api\FrontController@videoalbums');
+Route::get('/front/videoalbum/{id}','App\Http\Controllers\Api\FrontController@videoalbumItem');
 
 Route::get('/front/schemes','App\Http\Controllers\Api\FrontController@schemes');
 

@@ -23,12 +23,6 @@ class R01routeController extends Controller
         return view('r01routes.create', compact('schemes', 'settings'));
     }
 
-    public function edit($id)
-    {
-        $r01routes = R01route::find($id);
-        return view('r01routes.edit', compact('r01routes'));
-    }
-
     public function delete($id)
     {
         $r01routes = R01route::find($id);

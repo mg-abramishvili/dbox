@@ -319,6 +319,7 @@ footer {
 .gallery-list-item a {
     display: block;
     text-align: center;
+    margin: 0 1vh;
 }
 
 .gallery-list-item a:hover,
@@ -807,6 +808,10 @@ footer {
     width: 100%;
     padding: 0.5vh;
     font-size: 2vh;
+}
+
+.hg-theme-default {
+    background: transparent;
 }
 
 .hg-button-space {

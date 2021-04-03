@@ -4,7 +4,7 @@
 
         <div v-else-if="photoalbumItem" class="gallery-detail" style="margin-top: -4vh;">
             <swiper ref="PhotoalbumsItemSwiper" :options="swiperOptions">
-                <swiper-slide v-for="photoalbumPic in photoalbumItem.gallery" class="gallery-detail-item">
+                <swiper-slide v-for="photoalbumPic in photoalbumItem.gallery" :key="photoalbumPic" class="gallery-detail-item">
                     <img :src="photoalbumPic">
                 </swiper-slide>
                 <div class="swiper-button-prev" slot="button-prev"></div>

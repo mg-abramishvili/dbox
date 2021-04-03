@@ -5,6 +5,8 @@ import PageItem from './components/pages/PageItem.vue';
 import RoutesAll from './components/routes/RoutesAll.vue';
 import PhotoalbumsAll from './components/photoalbums/PhotoalbumsAll.vue';
 import PhotoalbumItem from './components/photoalbums/PhotoalbumItem.vue';
+import VideoalbumsAll from './components/videoalbums/VideoalbumsAll.vue';
+import VideoalbumItem from './components/videoalbums/VideoalbumItem.vue';
 
 export const routes = [
     {
@@ -28,6 +30,15 @@ export const routes = [
         path: '/vue-photoalbums/:id',
         name: 'PhotoalbumItem',
         component: PhotoalbumItem
+    },
+    {
+        path: '/vue-videoalbums',
+        component: VideoalbumsAll
+    },
+    {
+        path: '/vue-videoalbums/:id',
+        name: 'VideoalbumItem',
+        component: VideoalbumItem
     },
     {
         path: '/vue-pages/:id',
