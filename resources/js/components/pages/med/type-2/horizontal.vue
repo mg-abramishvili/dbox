@@ -27,7 +27,7 @@
             }
         },
         created() {
-            fetch(`http://localhost/api/front/page/${this.$route.params.id}`)
+            fetch(`/api/front/page/${this.$route.params.id}`)
                 .then(response => response.json())
                 .then(json => {
                     this.page = json;

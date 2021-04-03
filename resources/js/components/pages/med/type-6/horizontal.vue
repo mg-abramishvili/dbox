@@ -3,10 +3,10 @@
         <MedLoader v-if="loading" />
 
         <div v-else class="row">
-            <div v-for="child in page.children" class="col-6">
+            <div v-for="child in page.children" :key="child.id" class="col-6">
                 <div class="user-pages-item-item">
                     <router-link :to="{name: 'PageItem', params: {id: child.id}}" class="index-button">
-                        <div v-if="child.image_as_icon === '1'" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(http://localhost' + child.image + ')' }"></div>
+                        <div v-if="child.image_as_icon === '1'" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(' + child.image + ')' }"></div>
                         <span v-if="child.image_as_icon === '1'" class="t6-p">{{ child.title }}</span>
                         <span v-if="child.image_as_icon === '0'">{{ child.title }}</span>
                     </router-link>
@@ -27,7 +27,7 @@
             }
         },
         created() {
-            fetch(`http://localhost/api/front/page/${this.$route.params.id}`)
+            fetch(`/api/front/page/${this.$route.params.id}`)
                 .then(response => response.json())
                 .then(json => {
                     this.page = json;

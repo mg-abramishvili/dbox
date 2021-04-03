@@ -817,7 +817,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    fetch("http://localhost/api/front/page/".concat(this.$route.params.id)).then(function (response) {
+    fetch("/api/front/page/".concat(this.$route.params.id)).then(function (response) {
       return response.json();
     }).then(function (json) {
       _this.page = json;
@@ -870,7 +870,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    fetch("http://localhost/api/front/page/".concat(this.$route.params.id)).then(function (response) {
+    fetch("/api/front/page/".concat(this.$route.params.id)).then(function (response) {
       return response.json();
     }).then(function (json) {
       _this.page = json;
@@ -978,11 +978,11 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    fetch("http://localhost/api/front/page/".concat(this.$route.params.id)).then(function (response) {
+    fetch("/api/front/page/".concat(this.$route.params.id)).then(function (response) {
       return response.json();
     }).then(function (json) {
       _this.page = json;
-      fetch("http://localhost".concat(_this.page.excel)).then(function (response) {
+      fetch("".concat(_this.page.excel)).then(function (response) {
         return response.blob();
       }).then(function (blob) {
         _this.excel_file = blob;
@@ -25187,7 +25187,7 @@ var render = function() {
             "div",
             { staticClass: "row" },
             _vm._l(_vm.page.children, function(child) {
-              return _c("div", { staticClass: "col-6" }, [
+              return _c("div", { key: child.id, staticClass: "col-6" }, [
                 _c(
                   "div",
                   { staticClass: "user-pages-item-item" },
@@ -25205,8 +25205,7 @@ var render = function() {
                           ? _c("div", {
                               staticClass: "user-pages-item-image",
                               style: {
-                                "background-image":
-                                  "url(http://localhost" + child.image + ")"
+                                "background-image": "url(" + child.image + ")"
                               }
                             })
                           : _vm._e(),

@@ -32,11 +32,11 @@
             }
         },
         created() {
-            fetch(`http://localhost/api/front/page/${this.$route.params.id}`)
+            fetch(`/api/front/page/${this.$route.params.id}`)
                 .then(response => response.json())
                 .then(json => {
                     this.page = json;
-                    fetch(`http://localhost${this.page.excel}`)
+                    fetch(`${this.page.excel}`)
                         .then(response => response.blob())
                         .then(blob => {
                             this.excel_file = blob;
