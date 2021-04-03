@@ -85,25 +85,45 @@ class SettingController extends Controller
 
         if (isset($data['smtp_host'])) {
             $settings->smtp_host = $data['smtp_host'];
-        }
+        } else {
+			$settings->smtp_host = NULL;
+		}
+		
         if (isset($data['smtp_port'])) {
             $settings->smtp_port = $data['smtp_port'];
-        }
+        } else {
+			$settings->smtp_port = NULL;
+		}
+		
         if (isset($data['smtp_sec'])) {
             $settings->smtp_sec = $data['smtp_sec'];
-        }
+        } else {
+			$settings->smtp_sec = NULL;
+		}
+		
         if (isset($data['smtp_user'])) {
             $settings->smtp_user = $data['smtp_user'];
-        }
+        } else {
+			$settings->smtp_user = NULL;
+		}
+		
         if (isset($data['smtp_password'])) {
             $settings->smtp_password = $data['smtp_password'];
-        }
+        } else {
+			$settings->smtp_password = NULL;
+		}
+		
         if (isset($data['email_from'])) {
             $settings->email_from = $data['email_from'];
-        }
+        } else {
+			$settings->email_from = NULL;
+		}
+		
         if (isset($data['email_to'])) {
             $settings->email_to = $data['email_to'];
-        }
+        } else {
+			$settings->email_to = NULL;
+		}
 
         $settings->save();
 

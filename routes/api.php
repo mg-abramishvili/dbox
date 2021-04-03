@@ -24,3 +24,5 @@ Route::get('/front/scheme/{id}','App\Http\Controllers\Api\FrontController@scheme
 
 Route::get('/front/r01routes','App\Http\Controllers\Api\FrontController@r01routes');
 Route::get('/front/r01route/{id}','App\Http\Controllers\Api\FrontController@r01routeItem');
+
+Route::post('/front/review', 'App\Http\Controllers\FrontReviewController@store_post');

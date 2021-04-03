@@ -7,6 +7,7 @@ import PhotoalbumsAll from './components/photoalbums/PhotoalbumsAll.vue';
 import PhotoalbumItem from './components/photoalbums/PhotoalbumItem.vue';
 import VideoalbumsAll from './components/videoalbums/VideoalbumsAll.vue';
 import VideoalbumItem from './components/videoalbums/VideoalbumItem.vue';
+import CreateReview from './components/reviews/CreateReview.vue';
 
 export const routes = [
     {
@@ -48,5 +49,9 @@ export const routes = [
     {
         path: '/vue-r01routes',
         component: RoutesAll
+    },
+    {
+        path: '/vue-reviews',
+        component: CreateReview
     }
 ];
