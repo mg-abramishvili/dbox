@@ -62,7 +62,7 @@ class FrontController extends Controller
 	
 	public function schemes()
 	{
-		return Scheme::all();
+		return Scheme::orderBy('id', 'desc')->get();
 	}
 	
 	public function schemeItem($id)

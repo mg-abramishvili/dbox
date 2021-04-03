@@ -36339,7 +36339,7 @@ var render = function() {
                   _c(
                     "ul",
                     {
-                      staticStyle: { "margin-top": "2vh" },
+                      staticStyle: { "margin-top": "0.5vh" },
                       attrs: { id: "myUL" }
                     },
                     _vm._l(_vm.filtered_r01routes, function(routeListItem) {
@@ -36390,9 +36390,11 @@ var render = function() {
                     ])
                   }),
                   _vm._v(" "),
-                  _c("h5", { staticStyle: { display: "block" } }, [
-                    _vm._v(_vm._s(_vm.selectedItem))
-                  ])
+                  _vm.selectedItem
+                    ? _c("h5", { staticStyle: { display: "block" } }, [
+                        _vm._v(_vm._s(_vm.selectedItem))
+                      ])
+                    : _vm._e()
                 ],
                 2
               ),
@@ -36562,7 +36564,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_02
+                          _vm.route.x_02 && !_vm.route.x_03
                             ? _c(
                                 "text",
                                 {
@@ -36626,7 +36628,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_03
+                          _vm.route.x_03 && !_vm.route.x_04
                             ? _c(
                                 "text",
                                 {
@@ -36690,7 +36692,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_04
+                          _vm.route.x_04 && !_vm.route.x_05
                             ? _c(
                                 "text",
                                 {
@@ -36754,7 +36756,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_05
+                          _vm.route.x_05 && !_vm.route.x_06
                             ? _c(
                                 "text",
                                 {
@@ -36818,7 +36820,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_06
+                          _vm.route.x_06 && !_vm.route.x_07
                             ? _c(
                                 "text",
                                 {
@@ -36882,7 +36884,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_07
+                          _vm.route.x_07 && !_vm.route.x_08
                             ? _c(
                                 "text",
                                 {
@@ -36946,7 +36948,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_08
+                          _vm.route.x_08 && !_vm.route.x_09
                             ? _c(
                                 "text",
                                 {
@@ -37010,7 +37012,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_09
+                          _vm.route.x_09 && !_vm.route.x_10
                             ? _c(
                                 "text",
                                 {
@@ -37074,7 +37076,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_10
+                          _vm.route.x_10 && !_vm.route.x_11
                             ? _c(
                                 "text",
                                 {
@@ -37138,7 +37140,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_11
+                          _vm.route.x_11 && !_vm.route.x_12
                             ? _c(
                                 "text",
                                 {
@@ -37338,7 +37340,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_102
+                          _vm.route.x_102 && !_vm.route.x_103
                             ? _c(
                                 "text",
                                 {
@@ -37402,7 +37404,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_103
+                          _vm.route.x_103 && !_vm.route.x_104
                             ? _c(
                                 "text",
                                 {
@@ -37466,7 +37468,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_104
+                          _vm.route.x_104 && !_vm.route.x_105
                             ? _c(
                                 "text",
                                 {
@@ -37530,7 +37532,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_105
+                          _vm.route.x_105 && !_vm.route.x_106
                             ? _c(
                                 "text",
                                 {
@@ -37594,7 +37596,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_106
+                          _vm.route.x_106 && !_vm.route.x_107
                             ? _c(
                                 "text",
                                 {
@@ -37658,7 +37660,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_107
+                          _vm.route.x_107 && !_vm.route.x_108
                             ? _c(
                                 "text",
                                 {
@@ -37722,7 +37724,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_108
+                          _vm.route.x_108 && !_vm.route.x_109
                             ? _c(
                                 "text",
                                 {
@@ -37786,7 +37788,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_109
+                          _vm.route.x_109 && !_vm.route.x_110
                             ? _c(
                                 "text",
                                 {
@@ -37850,7 +37852,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_110
+                          _vm.route.x_110 && !_vm.route.x_111
                             ? _c(
                                 "text",
                                 {
@@ -37914,7 +37916,7 @@ var render = function() {
                               })
                             : _vm._e(),
                           _vm._v(" "),
-                          _vm.route.x_111
+                          _vm.route.x_111 && !_vm.route.x_112
                             ? _c(
                                 "text",
                                 {
