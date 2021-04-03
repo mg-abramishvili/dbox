@@ -5,7 +5,7 @@
                 <div class="col-8 header-logo">
                     <router-link to="/vue-index">
                         <div class="header-logo-img">
-                            <img :src="'http://localhost' + settings.logo">
+                            <img :src="settings.logo">
                         </div>
                         <p class="header-title">{{ settings.title }}</p>
                     </router-link>
@@ -34,7 +34,7 @@
             }
         },
         created() {
-            fetch(`http://localhost/api/front/settings/`)
+            fetch(`/api/front/settings/`)
                 .then(response => response.json())
                 .then(json => {
                     this.settings = json;

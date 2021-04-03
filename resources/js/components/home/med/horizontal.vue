@@ -8,7 +8,7 @@
                 <div v-for="page in pages" class="col-6" v-bind:key="page.id" :data-index="'sort_' + page.sort">
                     <div class="user-pages-item-item">
                         <router-link :to="{name: 'PageItem', params: {id: page.id}}" class="index-button">
-                            <div v-if="page.image_as_icon === '1'" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(http://localhost' + page.image + ')' }"></div>
+                            <div v-if="page.image_as_icon === '1'" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(' + page.image + ')' }"></div>
                             <span v-if="page.image_as_icon === '1'" class="t6-p">{{ page.title }}</span>
                             <span v-if="page.image_as_icon === '0'">{{ page.title }}</span>
                         </router-link>

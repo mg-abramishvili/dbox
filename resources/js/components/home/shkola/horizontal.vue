@@ -5,8 +5,8 @@
         <div v-else-if="pages.length" class="container container-index">
             <div class="sortable">
 
-                <router-link v-for="page in pages" :to="{name: 'PageItem', params: {id: page.id}}" class="index-button">
-                    <div v-if="page.image_as_icon === '1'" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(http://localhost' + page.image + ')' }"></div>
+                <router-link v-for="page in pages" v-bind:key="page.id" :to="{name: 'PageItem', params: {id: page.id}}" class="index-button">
+                    <div v-if="page.image_as_icon === '1'" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(' + page.image + ')' }"></div>
                     <span v-if="page.image_as_icon === '1'" class="t6-p">{{ page.title }}</span>
                     <span v-if="page.image_as_icon === '0'">{{ page.title }}</span>
                 </router-link>
@@ -29,13 +29,13 @@
             }
         },
         created() {
-            fetch(`http://localhost/api/front/pages/`)
+            fetch(`/api/front/pages/`)
                 .then(response => response.json())
                 .then(json => {
                     this.pages = json;
                     this.loading = false;
                 });
-            fetch(`http://localhost/api/front/news/`)
+            fetch(`/api/front/news/`)
                 .then(response => response.json())
                 .then(json => {
                     this.news = json;

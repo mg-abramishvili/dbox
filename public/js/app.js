@@ -1040,13 +1040,37 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       settings: {},
-      moment: moment
+      moment: moment,
+      time: '',
+      d: '',
+      mmmm: '',
+      dddd: ''
     };
+  },
+  methods: {
+    time_current: function time_current() {
+      this.time = moment().format('H:mm');
+    },
+    d_current: function d_current() {
+      this.d = moment().format('D');
+    },
+    mmmm_current: function mmmm_current() {
+      this.mmmm = moment().format('MMMM');
+    },
+    dddd_current: function dddd_current() {
+      this.dddd = moment().format('dddd');
+    }
+  },
+  mounted: function mounted() {
+    setInterval(this.time_current, 1000);
+    setInterval(this.d_current, 1000);
+    setInterval(this.mmmm_current, 1000);
+    setInterval(this.dddd_current, 1000);
   },
   created: function created() {
     var _this = this;
 
-    fetch("http://localhost/api/front/settings/").then(function (response) {
+    fetch("/api/front/settings/").then(function (response) {
       return response.json();
     }).then(function (json) {
       _this.settings = json;
@@ -1103,7 +1127,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    fetch("http://localhost/api/front/settings/").then(function (response) {
+    fetch("/api/front/settings/").then(function (response) {
       return response.json();
     }).then(function (json) {
       _this.settings = json;
@@ -24521,9 +24545,7 @@ var render = function() {
                                     staticClass: "user-pages-item-image",
                                     style: {
                                       "background-image":
-                                        "url(http://localhost" +
-                                        page.image +
-                                        ")"
+                                        "url(" + page.image + ")"
                                     }
                                   })
                                 : _vm._e(),
@@ -25357,7 +25379,7 @@ var render = function() {
             _c("strong", [
               _vm._v(
                 "\n                        " +
-                  _vm._s(_vm.moment().format("D")) +
+                  _vm._s(_vm.d) +
                   "\n                    "
               )
             ]),
@@ -25365,10 +25387,10 @@ var render = function() {
             _c("span", [
               _vm._v(
                 "\n                        " +
-                  _vm._s(_vm.moment().format("MMMM")) +
+                  _vm._s(_vm.mmmm) +
                   "\n                        "
               ),
-              _c("small", [_vm._v(_vm._s(_vm.moment().format("dddd")))])
+              _c("small", [_vm._v(_vm._s(_vm.dddd))])
             ])
           ])
         ]),
@@ -25378,9 +25400,7 @@ var render = function() {
           { staticClass: "col-4 header-logo" },
           [
             _c("router-link", { attrs: { to: "/vue-index" } }, [
-              _c("img", {
-                attrs: { src: "http://localhost" + _vm.settings.logo }
-              })
+              _c("img", { attrs: { src: _vm.settings.logo } })
             ])
           ],
           1
@@ -25389,9 +25409,7 @@ var render = function() {
         _c("div", { staticClass: "col-4 text-right" }, [
           _c("div", { staticClass: "header-time" }, [
             _vm._v(
-              "\n                    " +
-                _vm._s(_vm.moment().format("H:mm")) +
-                "\n                "
+              "\n                    " + _vm._s(_vm.time) + "\n                "
             )
           ])
         ])
@@ -25454,9 +25472,7 @@ var render = function() {
           [
             _c("router-link", { attrs: { to: "/vue-index" } }, [
               _c("div", { staticClass: "header-logo-img" }, [
-                _c("img", {
-                  attrs: { src: "http://localhost" + _vm.settings.logo }
-                })
+                _c("img", { attrs: { src: _vm.settings.logo } })
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "header-title" }, [
