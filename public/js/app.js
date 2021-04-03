@@ -36661,22 +36661,29 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "type-7" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "text" }, [
-          _c("iframe", {
-            staticStyle: { border: "none" },
-            attrs: {
-              src: "/lib/pdfjs/web/viewer.html?file=" + _vm.page.pdf,
-              height: "100%",
-              width: "100%"
-            }
-          })
-        ])
-      ])
-    ])
-  ])
+  return _c(
+    "div",
+    { staticClass: "type-7" },
+    [
+      _vm.loading
+        ? _c("MedLoader")
+        : _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-12" }, [
+              _c("div", { staticClass: "text" }, [
+                _c("iframe", {
+                  staticStyle: { border: "none" },
+                  attrs: {
+                    src: "/lib/pdfjs/web/viewer.html?file=" + _vm.page.pdf,
+                    height: "100%",
+                    width: "100%"
+                  }
+                })
+              ])
+            ])
+          ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
