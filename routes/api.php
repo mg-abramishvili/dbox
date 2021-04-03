@@ -20,6 +20,7 @@ Route::get('/front/videoalbums','App\Http\Controllers\Api\FrontController@videoa
 Route::get('/front/videoalbum/{id}','App\Http\Controllers\Api\FrontController@videoalbumItem');
 
 Route::get('/front/schemes','App\Http\Controllers\Api\FrontController@schemes');
+Route::get('/front/scheme/{id}','App\Http\Controllers\Api\FrontController@schemeItem');
 
 Route::get('/front/r01routes','App\Http\Controllers\Api\FrontController@r01routes');
 Route::get('/front/r01route/{id}','App\Http\Controllers\Api\FrontController@r01routeItem');

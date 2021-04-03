@@ -23,21 +23,27 @@
                 </div>
             </div>
             <div class="col-7"> 
-                <h6>{{selectedItemID}} <br>{{selectedItemSchemeID}} <br>{{selectedItemScheme2ID}} <br>{{selectedItem}}</h6><br><br>
+                <div class="route_about">
+                    <div v-for="scheme in schemes" :key="scheme.id">
+                        <div v-if="scheme.id == selectedItemSchemeID && current_slide === 1" class="scheme_title scheme_title_first">{{ scheme.title}}</div>
+                        <div v-if="scheme.id == selectedItemScheme2ID  && current_slide === 2" class="scheme_title scheme_title_second">{{ scheme.title}}</div>
+                    </div>
+                    <h5 style="display:block;">{{selectedItem}}</h5>
+                </div>
 
-                <button @click="PrevScheme(selectedItemSchemeID)" class="prevnextbutton prev_button">
+                <button v-if="current_slide === 2" @click="PrevScheme(selectedItemSchemeID)" class="prevnextbutton prev_button">
                     Начало маршрута
                 </button>
-                <button v-if="route.schemes2 && route.schemes2.length > 0" @click="NextScheme(selectedItemScheme2ID)" class="prevnextbutton next_button">
+                <button v-if="route.schemes2 && route.schemes2.length > 0 && current_slide === 1" @click="NextScheme(selectedItemScheme2ID)" class="prevnextbutton next_button">
                     Продолжить маршрут
                 </button>
 
-                <div id="map" style="position: relative;">
+                <div id="map" style="position: relative; width: 800px; height: 450px;">
                     <div v-for="scheme in schemes" :key="scheme.id" :id="'scheme_image_' + scheme.id" class="scheme_images">
                         <img :src="scheme.image" style="width:800px; height:450px;">
                     </div>
 
-                    <svg class="map-path svg1" viewBox="0 0 800 450">
+                    <svg v-if="current_slide === 1" class="map-path svg1" viewBox="0 0 800 450">
                         <path v-if="route.x_01" class="key-anim01" fill="none" stroke-width="5px" stroke="rgba(255,51,51,0.8)" :d="'M' + route.x_01 + ' ' + route.y_01 + ', '"></path>
                         <circle v-if="route.x_01" id="01" :cx="route.x_01" :cy="route.y_01" r="7" fill="#f33"></circle>
                         <text v-if="route.x_01" style="stroke: #ffffff; stroke-width: 0.5px;" :x='route.x_01' :y='route.y_01' font-family='Verdana' font-size='12' fill='red'><tspan dx='-20' dy='30' font-weight='bold'>{{ route.t_1_begin }}</tspan></text>
@@ -87,7 +93,7 @@
                         <text v-if="route.x_12" style="stroke: #ffffff; stroke-width: 0.5px;" :x='route.x_12' :y='route.y_12' font-family='Verdana' font-size='12' fill='red'><tspan dx='-20' dy='30' font-weight='bold'>{{ route.t_1_end }}</tspan></text>
                     </svg>
 
-                    <svg class="map-path svg2" viewBox="0 0 800 450">
+                    <svg v-if="current_slide === 2" class="map-path svg2" viewBox="0 0 800 450">
                         <path v-if="route.x_101" class="key-anim01" fill="none" stroke-width="5px" stroke="rgba(255,51,51,0.8)" :d="'M' + route.x_101 + ' ' + route.y_101 + ', '"></path>
                         <circle v-if="route.x_101" id="01" :cx="route.x_101" :cy="route.y_101" r="7" fill="#f33"></circle>
                         <text v-if="route.x_101" style="stroke: #ffffff; stroke-width: 0.5px;" :x='route.x_101' :y='route.y_101' font-family='Verdana' font-size='12' fill='red'><tspan dx='-20' dy='30' font-weight='bold'>{{ route.t_2_begin }}</tspan></text>
@@ -165,9 +171,11 @@
                 selectedItemID: '',
                 selectedItemSchemeID: '',
                 selectedItemScheme2ID: '',
+                selectedItemScheme_title: '',
                 selectedItem: '',
                 loading: true,
                 input: '',
+                current_slide: 1
             }
         },
         created() {
@@ -205,25 +213,13 @@
                 .then(response => response.json())
                 .then(json => {
                     this.route = json;
-                });
-                document.querySelectorAll('.scheme_images').forEach(function(el) {
+                                    document.querySelectorAll('.scheme_images').forEach(function(el) {
                     el.style.visibility = 'hidden';
                 });
                 document.getElementById('scheme_image_' + routeListItem.scheme_id)
                 .style.visibility = 'visible';
 
-                document.querySelectorAll('.map-path').forEach(function(el) {
-                    el.style.visibility = 'hidden';
-                });
-                document.querySelectorAll('.svg1').forEach(function(el) {
-                    el.style.visibility = 'visible';
-                });
-
-                document.querySelectorAll('.prevnextbutton').forEach(function(el) {
-                    el.style.visibility = 'hidden';
-                });
-                document.querySelectorAll('.next_button').forEach(function(el) {
-                    el.style.visibility = 'visible';
+                this.current_slide = 1;
                 });
             },
             PrevScheme(selectedItemSchemeID) {
@@ -233,19 +229,7 @@
                 document.getElementById('scheme_image_' + selectedItemSchemeID)
                 .style.visibility = 'visible';
 
-                document.querySelectorAll('.map-path').forEach(function(el) {
-                    el.style.visibility = 'hidden';
-                });
-                document.querySelectorAll('.svg1').forEach(function(el) {
-                    el.style.visibility = 'visible';
-                });
-
-                document.querySelectorAll('.prevnextbutton').forEach(function(el) {
-                    el.style.visibility = 'hidden';
-                });
-                document.querySelectorAll('.next_button').forEach(function(el) {
-                    el.style.visibility = 'visible';
-                });
+                this.current_slide = 1;
             },
             NextScheme(selectedItemScheme2ID) {
                 document.querySelectorAll('.scheme_images').forEach(function(el) {
@@ -254,19 +238,7 @@
                 document.getElementById('scheme_image_' + selectedItemScheme2ID)
                 .style.visibility = 'visible';
 
-                document.querySelectorAll('.map-path').forEach(function(el) {
-                    el.style.visibility = 'hidden';
-                });
-                document.querySelectorAll('.svg2').forEach(function(el) {
-                    el.style.visibility = 'visible';
-                });
-
-                document.querySelectorAll('.prevnextbutton').forEach(function(el) {
-                    el.style.visibility = 'hidden';
-                });
-                document.querySelectorAll('.prev_button').forEach(function(el) {
-                    el.style.visibility = 'visible';
-                });
+                this.current_slide = 2;
             },
             onChange(input) {
                 this.input = input;
@@ -290,5 +262,14 @@
         position: absolute;
         top: 0;
         left: 0;
+    }
+
+    .route_about {
+        height: 10vh;
+    }
+
+    .prevnextbutton {
+        position: absolute;
+        bottom: 1vh;
     }
 </style>

@@ -1698,6 +1698,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1710,9 +1716,11 @@ __webpack_require__.r(__webpack_exports__);
       selectedItemID: '',
       selectedItemSchemeID: '',
       selectedItemScheme2ID: '',
+      selectedItemScheme_title: '',
       selectedItem: '',
       loading: true,
-      input: ''
+      input: '',
+      current_slide: 1
     };
   },
   created: function created() {
@@ -1756,22 +1764,11 @@ __webpack_require__.r(__webpack_exports__);
         return response.json();
       }).then(function (json) {
         _this3.route = json;
-      });
-      document.querySelectorAll('.scheme_images').forEach(function (el) {
-        el.style.visibility = 'hidden';
-      });
-      document.getElementById('scheme_image_' + routeListItem.scheme_id).style.visibility = 'visible';
-      document.querySelectorAll('.map-path').forEach(function (el) {
-        el.style.visibility = 'hidden';
-      });
-      document.querySelectorAll('.svg1').forEach(function (el) {
-        el.style.visibility = 'visible';
-      });
-      document.querySelectorAll('.prevnextbutton').forEach(function (el) {
-        el.style.visibility = 'hidden';
-      });
-      document.querySelectorAll('.next_button').forEach(function (el) {
-        el.style.visibility = 'visible';
+        document.querySelectorAll('.scheme_images').forEach(function (el) {
+          el.style.visibility = 'hidden';
+        });
+        document.getElementById('scheme_image_' + routeListItem.scheme_id).style.visibility = 'visible';
+        _this3.current_slide = 1;
       });
     },
     PrevScheme: function PrevScheme(selectedItemSchemeID) {
@@ -1779,36 +1776,14 @@ __webpack_require__.r(__webpack_exports__);
         el.style.visibility = 'hidden';
       });
       document.getElementById('scheme_image_' + selectedItemSchemeID).style.visibility = 'visible';
-      document.querySelectorAll('.map-path').forEach(function (el) {
-        el.style.visibility = 'hidden';
-      });
-      document.querySelectorAll('.svg1').forEach(function (el) {
-        el.style.visibility = 'visible';
-      });
-      document.querySelectorAll('.prevnextbutton').forEach(function (el) {
-        el.style.visibility = 'hidden';
-      });
-      document.querySelectorAll('.next_button').forEach(function (el) {
-        el.style.visibility = 'visible';
-      });
+      this.current_slide = 1;
     },
     NextScheme: function NextScheme(selectedItemScheme2ID) {
       document.querySelectorAll('.scheme_images').forEach(function (el) {
         el.style.visibility = 'hidden';
       });
       document.getElementById('scheme_image_' + selectedItemScheme2ID).style.visibility = 'visible';
-      document.querySelectorAll('.map-path').forEach(function (el) {
-        el.style.visibility = 'hidden';
-      });
-      document.querySelectorAll('.svg2').forEach(function (el) {
-        el.style.visibility = 'visible';
-      });
-      document.querySelectorAll('.prevnextbutton').forEach(function (el) {
-        el.style.visibility = 'hidden';
-      });
-      document.querySelectorAll('.prev_button').forEach(function (el) {
-        el.style.visibility = 'visible';
-      });
+      this.current_slide = 2;
     },
     onChange: function onChange(input) {
       this.input = input;
@@ -2167,7 +2142,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.scheme_images[data-v-270675fe] {\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n", ""]);
+exports.push([module.i, "\n.scheme_images[data-v-270675fe] {\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n.route_about[data-v-270675fe] {\n    height: 10vh;\n}\n.prevnextbutton[data-v-270675fe] {\n    position: absolute;\n    bottom: 1vh;\n}\n", ""]);
 
 // exports
 
@@ -36389,32 +36364,57 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-7" }, [
-              _c("h6", [
-                _vm._v(_vm._s(_vm.selectedItemID) + " "),
-                _c("br"),
-                _vm._v(_vm._s(_vm.selectedItemSchemeID) + " "),
-                _c("br"),
-                _vm._v(_vm._s(_vm.selectedItemScheme2ID) + " "),
-                _c("br"),
-                _vm._v(_vm._s(_vm.selectedItem))
-              ]),
-              _c("br"),
-              _c("br"),
-              _vm._v(" "),
               _c(
-                "button",
-                {
-                  staticClass: "prevnextbutton prev_button",
-                  on: {
-                    click: function($event) {
-                      return _vm.PrevScheme(_vm.selectedItemSchemeID)
-                    }
-                  }
-                },
-                [_vm._v("\n                Начало маршрута\n            ")]
+                "div",
+                { staticClass: "route_about" },
+                [
+                  _vm._l(_vm.schemes, function(scheme) {
+                    return _c("div", { key: scheme.id }, [
+                      scheme.id == _vm.selectedItemSchemeID &&
+                      _vm.current_slide === 1
+                        ? _c(
+                            "div",
+                            { staticClass: "scheme_title scheme_title_first" },
+                            [_vm._v(_vm._s(scheme.title))]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      scheme.id == _vm.selectedItemScheme2ID &&
+                      _vm.current_slide === 2
+                        ? _c(
+                            "div",
+                            { staticClass: "scheme_title scheme_title_second" },
+                            [_vm._v(_vm._s(scheme.title))]
+                          )
+                        : _vm._e()
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c("h5", { staticStyle: { display: "block" } }, [
+                    _vm._v(_vm._s(_vm.selectedItem))
+                  ])
+                ],
+                2
               ),
               _vm._v(" "),
-              _vm.route.schemes2 && _vm.route.schemes2.length > 0
+              _vm.current_slide === 2
+                ? _c(
+                    "button",
+                    {
+                      staticClass: "prevnextbutton prev_button",
+                      on: {
+                        click: function($event) {
+                          return _vm.PrevScheme(_vm.selectedItemSchemeID)
+                        }
+                      }
+                    },
+                    [_vm._v("\n                Начало маршрута\n            ")]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.route.schemes2 &&
+              _vm.route.schemes2.length > 0 &&
+              _vm.current_slide === 1
                 ? _c(
                     "button",
                     {
@@ -36435,7 +36435,14 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "div",
-                { staticStyle: { position: "relative" }, attrs: { id: "map" } },
+                {
+                  staticStyle: {
+                    position: "relative",
+                    width: "800px",
+                    height: "450px"
+                  },
+                  attrs: { id: "map" }
+                },
                 [
                   _vm._l(_vm.schemes, function(scheme) {
                     return _c(
@@ -36454,1553 +36461,1557 @@ var render = function() {
                     )
                   }),
                   _vm._v(" "),
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "map-path svg1",
-                      attrs: { viewBox: "0 0 800 450" }
-                    },
-                    [
-                      _vm.route.x_01
-                        ? _c("path", {
-                            staticClass: "key-anim01",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_01 +
-                                " " +
-                                _vm.route.y_01 +
-                                ", "
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_01
-                        ? _c("circle", {
-                            attrs: {
-                              id: "01",
-                              cx: _vm.route.x_01,
-                              cy: _vm.route.y_01,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_01
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_01,
-                                y: _vm.route.y_01,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                  _vm.current_slide === 1
+                    ? _c(
+                        "svg",
+                        {
+                          staticClass: "map-path svg1",
+                          attrs: { viewBox: "0 0 800 450" }
+                        },
+                        [
+                          _vm.route.x_01
+                            ? _c("path", {
+                                staticClass: "key-anim01",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_01 +
+                                    " " +
+                                    _vm.route.y_01 +
+                                    ", "
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_01
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "01",
+                                  cx: _vm.route.x_01,
+                                  cy: _vm.route.y_01,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_01
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_01,
+                                    y: _vm.route.y_01,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_1_begin))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_begin))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_02
-                        ? _c("path", {
-                            staticClass: "key-anim02",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_02 +
-                                " " +
-                                _vm.route.y_02 +
-                                ", " +
-                                _vm.route.x_01 +
-                                " " +
-                                _vm.route.y_01
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_02
-                        ? _c("circle", {
-                            attrs: {
-                              id: "02",
-                              cx: _vm.route.x_02,
-                              cy: _vm.route.y_02,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_02
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_02,
-                                y: _vm.route.y_02,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_02
+                            ? _c("path", {
+                                staticClass: "key-anim02",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_02 +
+                                    " " +
+                                    _vm.route.y_02 +
+                                    ", " +
+                                    _vm.route.x_01 +
+                                    " " +
+                                    _vm.route.y_01
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_02
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "02",
+                                  cx: _vm.route.x_02,
+                                  cy: _vm.route.y_02,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_02
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_02,
+                                    y: _vm.route.y_02,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_03
-                        ? _c("path", {
-                            staticClass: "key-anim03",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_03 +
-                                " " +
-                                _vm.route.y_03 +
-                                ", " +
-                                _vm.route.x_02 +
-                                " " +
-                                _vm.route.y_02
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_03
-                        ? _c("circle", {
-                            attrs: {
-                              id: "03",
-                              cx: _vm.route.x_03,
-                              cy: _vm.route.y_03,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_03
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_03,
-                                y: _vm.route.y_03,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_03
+                            ? _c("path", {
+                                staticClass: "key-anim03",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_03 +
+                                    " " +
+                                    _vm.route.y_03 +
+                                    ", " +
+                                    _vm.route.x_02 +
+                                    " " +
+                                    _vm.route.y_02
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_03
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "03",
+                                  cx: _vm.route.x_03,
+                                  cy: _vm.route.y_03,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_03
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_03,
+                                    y: _vm.route.y_03,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_04
-                        ? _c("path", {
-                            staticClass: "key-anim04",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_04 +
-                                " " +
-                                _vm.route.y_04 +
-                                ", " +
-                                _vm.route.x_03 +
-                                " " +
-                                _vm.route.y_03
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_04
-                        ? _c("circle", {
-                            attrs: {
-                              id: "04",
-                              cx: _vm.route.x_04,
-                              cy: _vm.route.y_04,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_04
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_04,
-                                y: _vm.route.y_04,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_04
+                            ? _c("path", {
+                                staticClass: "key-anim04",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_04 +
+                                    " " +
+                                    _vm.route.y_04 +
+                                    ", " +
+                                    _vm.route.x_03 +
+                                    " " +
+                                    _vm.route.y_03
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_04
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "04",
+                                  cx: _vm.route.x_04,
+                                  cy: _vm.route.y_04,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_04
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_04,
+                                    y: _vm.route.y_04,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_05
-                        ? _c("path", {
-                            staticClass: "key-anim05",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_05 +
-                                " " +
-                                _vm.route.y_05 +
-                                ", " +
-                                _vm.route.x_04 +
-                                " " +
-                                _vm.route.y_04
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_05
-                        ? _c("circle", {
-                            attrs: {
-                              id: "05",
-                              cx: _vm.route.x_05,
-                              cy: _vm.route.y_05,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_05
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_05,
-                                y: _vm.route.y_05,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_05
+                            ? _c("path", {
+                                staticClass: "key-anim05",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_05 +
+                                    " " +
+                                    _vm.route.y_05 +
+                                    ", " +
+                                    _vm.route.x_04 +
+                                    " " +
+                                    _vm.route.y_04
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_05
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "05",
+                                  cx: _vm.route.x_05,
+                                  cy: _vm.route.y_05,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_05
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_05,
+                                    y: _vm.route.y_05,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_06
-                        ? _c("path", {
-                            staticClass: "key-anim06",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_06 +
-                                " " +
-                                _vm.route.y_06 +
-                                ", " +
-                                _vm.route.x_05 +
-                                " " +
-                                _vm.route.y_05
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_06
-                        ? _c("circle", {
-                            attrs: {
-                              id: "06",
-                              cx: _vm.route.x_06,
-                              cy: _vm.route.y_06,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_06
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_06,
-                                y: _vm.route.y_06,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_06
+                            ? _c("path", {
+                                staticClass: "key-anim06",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_06 +
+                                    " " +
+                                    _vm.route.y_06 +
+                                    ", " +
+                                    _vm.route.x_05 +
+                                    " " +
+                                    _vm.route.y_05
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_06
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "06",
+                                  cx: _vm.route.x_06,
+                                  cy: _vm.route.y_06,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_06
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_06,
+                                    y: _vm.route.y_06,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_07
-                        ? _c("path", {
-                            staticClass: "key-anim07",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_07 +
-                                " " +
-                                _vm.route.y_07 +
-                                ", " +
-                                _vm.route.x_06 +
-                                " " +
-                                _vm.route.y_06
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_07
-                        ? _c("circle", {
-                            attrs: {
-                              id: "07",
-                              cx: _vm.route.x_07,
-                              cy: _vm.route.y_07,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_07
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_07,
-                                y: _vm.route.y_07,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_07
+                            ? _c("path", {
+                                staticClass: "key-anim07",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_07 +
+                                    " " +
+                                    _vm.route.y_07 +
+                                    ", " +
+                                    _vm.route.x_06 +
+                                    " " +
+                                    _vm.route.y_06
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_07
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "07",
+                                  cx: _vm.route.x_07,
+                                  cy: _vm.route.y_07,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_07
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_07,
+                                    y: _vm.route.y_07,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_08
-                        ? _c("path", {
-                            staticClass: "key-anim08",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_08 +
-                                " " +
-                                _vm.route.y_08 +
-                                ", " +
-                                _vm.route.x_07 +
-                                " " +
-                                _vm.route.y_07
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_08
-                        ? _c("circle", {
-                            attrs: {
-                              id: "08",
-                              cx: _vm.route.x_08,
-                              cy: _vm.route.y_08,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_08
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_08,
-                                y: _vm.route.y_08,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_08
+                            ? _c("path", {
+                                staticClass: "key-anim08",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_08 +
+                                    " " +
+                                    _vm.route.y_08 +
+                                    ", " +
+                                    _vm.route.x_07 +
+                                    " " +
+                                    _vm.route.y_07
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_08
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "08",
+                                  cx: _vm.route.x_08,
+                                  cy: _vm.route.y_08,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_08
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_08,
+                                    y: _vm.route.y_08,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_09
-                        ? _c("path", {
-                            staticClass: "key-anim09",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_09 +
-                                " " +
-                                _vm.route.y_09 +
-                                ", " +
-                                _vm.route.x_08 +
-                                " " +
-                                _vm.route.y_08
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_09
-                        ? _c("circle", {
-                            attrs: {
-                              id: "09",
-                              cx: _vm.route.x_09,
-                              cy: _vm.route.y_09,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_09
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_09,
-                                y: _vm.route.y_09,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_09
+                            ? _c("path", {
+                                staticClass: "key-anim09",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_09 +
+                                    " " +
+                                    _vm.route.y_09 +
+                                    ", " +
+                                    _vm.route.x_08 +
+                                    " " +
+                                    _vm.route.y_08
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_09
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "09",
+                                  cx: _vm.route.x_09,
+                                  cy: _vm.route.y_09,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_09
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_09,
+                                    y: _vm.route.y_09,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_10
-                        ? _c("path", {
-                            staticClass: "key-anim10",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_10 +
-                                " " +
-                                _vm.route.y_10 +
-                                ", " +
-                                _vm.route.x_09 +
-                                " " +
-                                _vm.route.y_09
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_10
-                        ? _c("circle", {
-                            attrs: {
-                              id: "10",
-                              cx: _vm.route.x_10,
-                              cy: _vm.route.y_10,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_10
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_10,
-                                y: _vm.route.y_10,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_10
+                            ? _c("path", {
+                                staticClass: "key-anim10",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_10 +
+                                    " " +
+                                    _vm.route.y_10 +
+                                    ", " +
+                                    _vm.route.x_09 +
+                                    " " +
+                                    _vm.route.y_09
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_10
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "10",
+                                  cx: _vm.route.x_10,
+                                  cy: _vm.route.y_10,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_10
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_10,
+                                    y: _vm.route.y_10,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_11
-                        ? _c("path", {
-                            staticClass: "key-anim11",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_11 +
-                                " " +
-                                _vm.route.y_11 +
-                                ", " +
-                                _vm.route.x_10 +
-                                " " +
-                                _vm.route.y_10
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_11
-                        ? _c("circle", {
-                            attrs: {
-                              id: "11",
-                              cx: _vm.route.x_11,
-                              cy: _vm.route.y_11,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_11
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_11,
-                                y: _vm.route.y_11,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_11
+                            ? _c("path", {
+                                staticClass: "key-anim11",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_11 +
+                                    " " +
+                                    _vm.route.y_11 +
+                                    ", " +
+                                    _vm.route.x_10 +
+                                    " " +
+                                    _vm.route.y_10
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_11
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "11",
+                                  cx: _vm.route.x_11,
+                                  cy: _vm.route.y_11,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_11
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_11,
+                                    y: _vm.route.y_11,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_12
-                        ? _c("path", {
-                            staticClass: "key-anim12",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_12 +
-                                " " +
-                                _vm.route.y_12 +
-                                ", " +
-                                _vm.route.x_11 +
-                                " " +
-                                _vm.route.y_11
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_12
-                        ? _c("circle", {
-                            attrs: {
-                              id: "12",
-                              cx: _vm.route.x_12,
-                              cy: _vm.route.y_12,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_12
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_12,
-                                y: _vm.route.y_12,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_12
+                            ? _c("path", {
+                                staticClass: "key-anim12",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_12 +
+                                    " " +
+                                    _vm.route.y_12 +
+                                    ", " +
+                                    _vm.route.x_11 +
+                                    " " +
+                                    _vm.route.y_11
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_12
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "12",
+                                  cx: _vm.route.x_12,
+                                  cy: _vm.route.y_12,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_12
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_12,
+                                    y: _vm.route.y_12,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e()
-                    ]
-                  ),
+                            : _vm._e()
+                        ]
+                      )
+                    : _vm._e(),
                   _vm._v(" "),
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "map-path svg2",
-                      attrs: { viewBox: "0 0 800 450" }
-                    },
-                    [
-                      _vm.route.x_101
-                        ? _c("path", {
-                            staticClass: "key-anim01",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_101 +
-                                " " +
-                                _vm.route.y_101 +
-                                ", "
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_101
-                        ? _c("circle", {
-                            attrs: {
-                              id: "01",
-                              cx: _vm.route.x_101,
-                              cy: _vm.route.y_101,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_101
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_101,
-                                y: _vm.route.y_101,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                  _vm.current_slide === 2
+                    ? _c(
+                        "svg",
+                        {
+                          staticClass: "map-path svg2",
+                          attrs: { viewBox: "0 0 800 450" }
+                        },
+                        [
+                          _vm.route.x_101
+                            ? _c("path", {
+                                staticClass: "key-anim01",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_101 +
+                                    " " +
+                                    _vm.route.y_101 +
+                                    ", "
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_101
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "01",
+                                  cx: _vm.route.x_101,
+                                  cy: _vm.route.y_101,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_101
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_101,
+                                    y: _vm.route.y_101,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_2_begin))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_begin))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_102
-                        ? _c("path", {
-                            staticClass: "key-anim02",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_102 +
-                                " " +
-                                _vm.route.y_102 +
-                                ", " +
-                                _vm.route.x_101 +
-                                " " +
-                                _vm.route.y_101
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_102
-                        ? _c("circle", {
-                            attrs: {
-                              id: "02",
-                              cx: _vm.route.x_102,
-                              cy: _vm.route.y_102,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_102
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_102,
-                                y: _vm.route.y_102,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_102
+                            ? _c("path", {
+                                staticClass: "key-anim02",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_102 +
+                                    " " +
+                                    _vm.route.y_102 +
+                                    ", " +
+                                    _vm.route.x_101 +
+                                    " " +
+                                    _vm.route.y_101
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_102
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "02",
+                                  cx: _vm.route.x_102,
+                                  cy: _vm.route.y_102,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_102
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_102,
+                                    y: _vm.route.y_102,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_103
-                        ? _c("path", {
-                            staticClass: "key-anim03",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_103 +
-                                " " +
-                                _vm.route.y_103 +
-                                ", " +
-                                _vm.route.x_102 +
-                                " " +
-                                _vm.route.y_102
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_103
-                        ? _c("circle", {
-                            attrs: {
-                              id: "03",
-                              cx: _vm.route.x_103,
-                              cy: _vm.route.y_103,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_103
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_103,
-                                y: _vm.route.y_103,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_103
+                            ? _c("path", {
+                                staticClass: "key-anim03",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_103 +
+                                    " " +
+                                    _vm.route.y_103 +
+                                    ", " +
+                                    _vm.route.x_102 +
+                                    " " +
+                                    _vm.route.y_102
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_103
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "03",
+                                  cx: _vm.route.x_103,
+                                  cy: _vm.route.y_103,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_103
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_103,
+                                    y: _vm.route.y_103,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_104
-                        ? _c("path", {
-                            staticClass: "key-anim04",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_104 +
-                                " " +
-                                _vm.route.y_104 +
-                                ", " +
-                                _vm.route.x_103 +
-                                " " +
-                                _vm.route.y_103
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_104
-                        ? _c("circle", {
-                            attrs: {
-                              id: "04",
-                              cx: _vm.route.x_104,
-                              cy: _vm.route.y_104,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_104
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_104,
-                                y: _vm.route.y_104,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_104
+                            ? _c("path", {
+                                staticClass: "key-anim04",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_104 +
+                                    " " +
+                                    _vm.route.y_104 +
+                                    ", " +
+                                    _vm.route.x_103 +
+                                    " " +
+                                    _vm.route.y_103
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_104
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "04",
+                                  cx: _vm.route.x_104,
+                                  cy: _vm.route.y_104,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_104
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_104,
+                                    y: _vm.route.y_104,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_105
-                        ? _c("path", {
-                            staticClass: "key-anim05",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_105 +
-                                " " +
-                                _vm.route.y_105 +
-                                ", " +
-                                _vm.route.x_104 +
-                                " " +
-                                _vm.route.y_104
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_105
-                        ? _c("circle", {
-                            attrs: {
-                              id: "05",
-                              cx: _vm.route.x_105,
-                              cy: _vm.route.y_105,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_105
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_105,
-                                y: _vm.route.y_105,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_105
+                            ? _c("path", {
+                                staticClass: "key-anim05",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_105 +
+                                    " " +
+                                    _vm.route.y_105 +
+                                    ", " +
+                                    _vm.route.x_104 +
+                                    " " +
+                                    _vm.route.y_104
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_105
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "05",
+                                  cx: _vm.route.x_105,
+                                  cy: _vm.route.y_105,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_105
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_105,
+                                    y: _vm.route.y_105,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_106
-                        ? _c("path", {
-                            staticClass: "key-anim06",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_106 +
-                                " " +
-                                _vm.route.y_106 +
-                                ", " +
-                                _vm.route.x_105 +
-                                " " +
-                                _vm.route.y_105
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_106
-                        ? _c("circle", {
-                            attrs: {
-                              id: "06",
-                              cx: _vm.route.x_106,
-                              cy: _vm.route.y_106,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_106
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_106,
-                                y: _vm.route.y_106,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_106
+                            ? _c("path", {
+                                staticClass: "key-anim06",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_106 +
+                                    " " +
+                                    _vm.route.y_106 +
+                                    ", " +
+                                    _vm.route.x_105 +
+                                    " " +
+                                    _vm.route.y_105
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_106
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "06",
+                                  cx: _vm.route.x_106,
+                                  cy: _vm.route.y_106,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_106
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_106,
+                                    y: _vm.route.y_106,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_107
-                        ? _c("path", {
-                            staticClass: "key-anim07",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_107 +
-                                " " +
-                                _vm.route.y_107 +
-                                ", " +
-                                _vm.route.x_106 +
-                                " " +
-                                _vm.route.y_106
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_107
-                        ? _c("circle", {
-                            attrs: {
-                              id: "07",
-                              cx: _vm.route.x_107,
-                              cy: _vm.route.y_107,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_107
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_107,
-                                y: _vm.route.y_107,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_107
+                            ? _c("path", {
+                                staticClass: "key-anim07",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_107 +
+                                    " " +
+                                    _vm.route.y_107 +
+                                    ", " +
+                                    _vm.route.x_106 +
+                                    " " +
+                                    _vm.route.y_106
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_107
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "07",
+                                  cx: _vm.route.x_107,
+                                  cy: _vm.route.y_107,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_107
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_107,
+                                    y: _vm.route.y_107,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_108
-                        ? _c("path", {
-                            staticClass: "key-anim08",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_108 +
-                                " " +
-                                _vm.route.y_108 +
-                                ", " +
-                                _vm.route.x_107 +
-                                " " +
-                                _vm.route.y_107
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_108
-                        ? _c("circle", {
-                            attrs: {
-                              id: "08",
-                              cx: _vm.route.x_108,
-                              cy: _vm.route.y_108,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_108
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_108,
-                                y: _vm.route.y_108,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_108
+                            ? _c("path", {
+                                staticClass: "key-anim08",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_108 +
+                                    " " +
+                                    _vm.route.y_108 +
+                                    ", " +
+                                    _vm.route.x_107 +
+                                    " " +
+                                    _vm.route.y_107
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_108
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "08",
+                                  cx: _vm.route.x_108,
+                                  cy: _vm.route.y_108,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_108
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_108,
+                                    y: _vm.route.y_108,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_109
-                        ? _c("path", {
-                            staticClass: "key-anim09",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_109 +
-                                " " +
-                                _vm.route.y_109 +
-                                ", " +
-                                _vm.route.x_108 +
-                                " " +
-                                _vm.route.y_108
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_109
-                        ? _c("circle", {
-                            attrs: {
-                              id: "09",
-                              cx: _vm.route.x_109,
-                              cy: _vm.route.y_109,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_109
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_109,
-                                y: _vm.route.y_109,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_109
+                            ? _c("path", {
+                                staticClass: "key-anim09",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_109 +
+                                    " " +
+                                    _vm.route.y_109 +
+                                    ", " +
+                                    _vm.route.x_108 +
+                                    " " +
+                                    _vm.route.y_108
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_109
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "09",
+                                  cx: _vm.route.x_109,
+                                  cy: _vm.route.y_109,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_109
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_109,
+                                    y: _vm.route.y_109,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_110
-                        ? _c("path", {
-                            staticClass: "key-anim10",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_110 +
-                                " " +
-                                _vm.route.y_110 +
-                                ", " +
-                                _vm.route.x_109 +
-                                " " +
-                                _vm.route.y_109
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_110
-                        ? _c("circle", {
-                            attrs: {
-                              id: "10",
-                              cx: _vm.route.x_110,
-                              cy: _vm.route.y_110,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_110
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_110,
-                                y: _vm.route.y_110,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_110
+                            ? _c("path", {
+                                staticClass: "key-anim10",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_110 +
+                                    " " +
+                                    _vm.route.y_110 +
+                                    ", " +
+                                    _vm.route.x_109 +
+                                    " " +
+                                    _vm.route.y_109
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_110
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "10",
+                                  cx: _vm.route.x_110,
+                                  cy: _vm.route.y_110,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_110
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_110,
+                                    y: _vm.route.y_110,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_111
-                        ? _c("path", {
-                            staticClass: "key-anim11",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_111 +
-                                " " +
-                                _vm.route.y_111 +
-                                ", " +
-                                _vm.route.x_110 +
-                                " " +
-                                _vm.route.y_110
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_111
-                        ? _c("circle", {
-                            attrs: {
-                              id: "11",
-                              cx: _vm.route.x_111,
-                              cy: _vm.route.y_111,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_111
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_111,
-                                y: _vm.route.y_111,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_111
+                            ? _c("path", {
+                                staticClass: "key-anim11",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_111 +
+                                    " " +
+                                    _vm.route.y_111 +
+                                    ", " +
+                                    _vm.route.x_110 +
+                                    " " +
+                                    _vm.route.y_110
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_111
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "11",
+                                  cx: _vm.route.x_111,
+                                  cy: _vm.route.y_111,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_111
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_111,
+                                    y: _vm.route.y_111,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_112
-                        ? _c("path", {
-                            staticClass: "key-anim12",
-                            attrs: {
-                              fill: "none",
-                              "stroke-width": "5px",
-                              stroke: "rgba(255,51,51,0.8)",
-                              d:
-                                "M" +
-                                _vm.route.x_112 +
-                                " " +
-                                _vm.route.y_112 +
-                                ", " +
-                                _vm.route.x_111 +
-                                " " +
-                                _vm.route.y_111
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_112
-                        ? _c("circle", {
-                            attrs: {
-                              id: "12",
-                              cx: _vm.route.x_112,
-                              cy: _vm.route.y_112,
-                              r: "7",
-                              fill: "#f33"
-                            }
-                          })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.route.x_112
-                        ? _c(
-                            "text",
-                            {
-                              staticStyle: {
-                                stroke: "#ffffff",
-                                "stroke-width": "0.5px"
-                              },
-                              attrs: {
-                                x: _vm.route.x_112,
-                                y: _vm.route.y_112,
-                                "font-family": "Verdana",
-                                "font-size": "12",
-                                fill: "red"
-                              }
-                            },
-                            [
-                              _c(
-                                "tspan",
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_112
+                            ? _c("path", {
+                                staticClass: "key-anim12",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_112 +
+                                    " " +
+                                    _vm.route.y_112 +
+                                    ", " +
+                                    _vm.route.x_111 +
+                                    " " +
+                                    _vm.route.y_111
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_112
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "12",
+                                  cx: _vm.route.x_112,
+                                  cy: _vm.route.y_112,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_112
+                            ? _c(
+                                "text",
                                 {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
                                   attrs: {
-                                    dx: "-20",
-                                    dy: "30",
-                                    "font-weight": "bold"
+                                    x: _vm.route.x_112,
+                                    y: _vm.route.y_112,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
                                   }
                                 },
-                                [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
                               )
-                            ]
-                          )
-                        : _vm._e()
-                    ]
-                  )
+                            : _vm._e()
+                        ]
+                      )
+                    : _vm._e()
                 ],
                 2
               )

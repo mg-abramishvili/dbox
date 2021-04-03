@@ -65,6 +65,11 @@ class FrontController extends Controller
 		return Scheme::all();
 	}
 	
+	public function schemeItem($id)
+    {
+        return Scheme::where('id', $id)->first();
+    }
+	
 	public function r01routes()
 	{
 		return R01routeResource::collection(R01route::with('schemes')->orderBy('created_at', 'asc')->get());
