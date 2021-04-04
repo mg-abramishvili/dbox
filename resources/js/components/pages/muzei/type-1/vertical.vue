@@ -4,9 +4,8 @@
         
         <div v-else class="row">
             <div class="col-12">
+                <h1 class="h1-page">{{ page.title }}</h1>
                 <div class="page-detail-text">
-                    
-                    <h1 class="mb-4">{{ page.title }}</h1>
 
                     <div v-html="page.text"></div>
 

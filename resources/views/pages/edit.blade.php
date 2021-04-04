@@ -588,19 +588,53 @@
         }).change();
     </script>
 
-    <script>
-        $('#text').summernote({
-        height: 300,
-        toolbar: [
-        ['style', ['bold', 'italic', 'underline', 'clear']],
-        ['font', ['strikethrough']],
-        ['fontsize', ['fontsize']],
-        ['color', ['color']],
-        ['para', ['ul', 'ol', 'paragraph']],
-        ['table', ['table']],
-        ['height', ['height']]
-        ]
+<script>
+    jQuery(document).ready(function($) {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
         });
-    </script>
+
+        $('textarea[id="text"]').summernote({
+            height: 300,
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['height', ['height']],
+                ['insert', ['picture']],
+                ['view', ['fullscreen', 'codeview']],
+            ],
+            callbacks: {
+                onImageUpload: function(images) {
+                    for (var i = 0; i < images.length; i++) {
+                        uploadImage(images[i], this);
+                    }
+                },
+            }
+        });
+        function uploadImage(image, textarea) {
+            var data = new FormData();
+            data.append('image', image);
+            $.ajax({
+                data: data,
+                type: 'POST',
+                url: '/pg/upload/image',
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function(url) {
+                    $(textarea).summernote('insertImage', url, function ($img) {
+                        $img.css('max-width', '100%');
+                    });
+                }
+            });
+        }
+    });        
+</script>
 
 @endsection

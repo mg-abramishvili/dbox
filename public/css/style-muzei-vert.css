@@ -217,6 +217,11 @@
     height: 5vh;
 }
 
+.type-1 .page-detail-text {
+    height: 48vh;
+    font-size: 1.5vh !important;
+}
+
 .type-2 {
     padding: 2vh;
 }

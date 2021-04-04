@@ -67,6 +67,9 @@ Route::resource('/front-videoalbums', FrontVideoalbumController::class);
 Route::resource('/pages', PageController::class)->middleware('auth');
 Route::get('pages/delete/{id}','App\Http\Controllers\PageController@delete');
 Route::post('pages/file/{method}','App\Http\Controllers\PageController@file');
+Route::post('pg/upload/image', 'App\Http\Controllers\PageController@summernoteUpload');
+Route::delete('pg/remove/image', 'App\Http\Controllers\PageController@summernoteRemove');
+
 // Pages Front
 Route::resource('/front-pages', FrontPageController::class);
 

@@ -226,4 +226,9 @@ class PageController extends Controller
         return redirect('/pages');
 
     }
+
+    public function summernoteUpload(Request $request) {
+        $path = $request->file('image')->store('', 'uploads');
+        return '/uploads/'.$path;
+    }
 }
