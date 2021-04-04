@@ -1,13 +1,21 @@
 <template>
-    <div v-if="settings.theme === 'med'">
-        <div v-if="settings.orientation === 'horizontal'" class="container">
-            <MedCreateReviewHorizontal />
+    <div>
+        <div v-if="settings.theme === 'med'">
+            <div v-if="settings.orientation === 'horizontal'" class="container">
+                <MedCreateReviewHorizontal />
+            </div>
+        </div>
+        <div v-if="settings.theme === 'muzei'">
+            <div v-if="settings.orientation === 'vertical'" class="container">
+                <MuzeiCreateReviewVertical />
+            </div>
         </div>
     </div>
 </template>
 
 <script>
     import MedCreateReviewHorizontal from '../../components/reviews/med/create-horizontal'
+    import MuzeiCreateReviewVertical from '../../components/reviews/muzei/create-vertical'
 
     export default {
         data() {
@@ -23,7 +31,8 @@
                 });
         },
         components: {
-            MedCreateReviewHorizontal
+            MedCreateReviewHorizontal,
+            MuzeiCreateReviewVertical
         }
     }
 </script>

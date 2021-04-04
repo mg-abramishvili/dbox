@@ -161,7 +161,7 @@
 
 <script>
     import MuzeiLoader from '../../partials/muzei/loader.vue'
-    import SimpleKeyboard from "./SimpleKeyboard";
+    import SimpleKeyboard from "../../partials/SimpleKeyboard";
 
     export default {
         data() {

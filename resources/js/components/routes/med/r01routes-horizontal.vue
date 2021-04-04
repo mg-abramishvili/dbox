@@ -159,7 +159,7 @@
 
 <script>
     import MedLoader from '../../../components/partials/med/loader.vue'
-    import SimpleKeyboard from "./SimpleKeyboard";
+    import SimpleKeyboard from "../../partials/SimpleKeyboard";
 
     export default {
         data() {

@@ -1649,6 +1649,89 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/partials/SimpleKeyboard.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/partials/SimpleKeyboard.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var simple_keyboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! simple-keyboard */ "./node_modules/simple-keyboard/build/index.js");
+/* harmony import */ var simple_keyboard__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(simple_keyboard__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var simple_keyboard_build_css_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! simple-keyboard/build/css/index.css */ "./node_modules/simple-keyboard/build/css/index.css");
+/* harmony import */ var simple_keyboard_build_css_index_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(simple_keyboard_build_css_index_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var simple_keyboard_layouts_build_layouts_russian__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! simple-keyboard-layouts/build/layouts/russian */ "./node_modules/simple-keyboard-layouts/build/layouts/russian.js");
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "SimpleKeyboard",
+  props: {
+    keyboardClass: {
+      "default": "simple-keyboard",
+      type: String
+    },
+    input: {
+      type: String
+    }
+  },
+  data: function data() {
+    return {
+      keyboard: null
+    };
+  },
+  mounted: function mounted() {
+    this.keyboard = new simple_keyboard__WEBPACK_IMPORTED_MODULE_0___default.a(this.keyboardClass, {
+      onChange: this.onChange,
+      onKeyPress: this.onKeyPress,
+      //...layout,
+      layout: {
+        "default": ["1 2 3 4 5 6 7 8 9 0", "Й Ц У К Е Н Г Ш Щ З Х Ъ", "Ф Ы В А П Р О Л Д Ж Э", "Я Ч С М И Т Ь Б Ю ! ? , .", "{shift} {space} {bksp} {enter}"],
+        shift: ["1 2 3 4 5 6 7 8 9 0", "Q W E R T Y U I O P", 'A S D F G H J K L', "Z X C V B N M ! ? , .", "{shift} {space} {bksp} {enter}"]
+      },
+      display: {
+        '{bksp}': '←',
+        '{enter}': 'ENTER',
+        '{shift}': 'RU/EN',
+        '{space}': '            '
+      }
+    });
+  },
+  methods: {
+    onChange: function onChange(input) {
+      this.$emit("onChange", input);
+    },
+    onKeyPress: function onKeyPress(button) {
+      this.$emit("onKeyPress", button);
+      /**
+       * If you want to handle the shift and caps lock buttons
+       */
+
+      if (button === "{shift}" || button === "{lock}") this.handleShift();
+    },
+    handleShift: function handleShift() {
+      var currentLayout = this.keyboard.options.layoutName;
+      var shiftToggle = currentLayout === "default" ? "shift" : "default";
+      this.keyboard.setOptions({
+        layoutName: shiftToggle
+      });
+    }
+  },
+  watch: {
+    input: function input(_input) {
+      this.keyboard.setInput(_input);
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/partials/med/header.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/partials/med/header.vue?vue&type=script&lang=js& ***!
@@ -2320,6 +2403,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_reviews_med_create_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/reviews/med/create-horizontal */ "./resources/js/components/reviews/med/create-horizontal.vue");
+/* harmony import */ var _components_reviews_muzei_create_vertical__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/reviews/muzei/create-vertical */ "./resources/js/components/reviews/muzei/create-vertical.vue");
 //
 //
 //
@@ -2328,6 +2412,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2345,7 +2437,8 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   components: {
-    MedCreateReviewHorizontal: _components_reviews_med_create_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"]
+    MedCreateReviewHorizontal: _components_reviews_med_create_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"],
+    MuzeiCreateReviewVertical: _components_reviews_muzei_create_vertical__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -2500,6 +2593,175 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/reviews/muzei/create-vertical.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/reviews/muzei/create-vertical.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_partials_muzei_loader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/partials/muzei/loader */ "./resources/js/components/partials/muzei/loader.vue");
+/* harmony import */ var _partials_SimpleKeyboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../partials/SimpleKeyboard */ "./resources/js/components/partials/SimpleKeyboard.vue");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      settings: {},
+      loading: true,
+      show_form: true,
+      success: false,
+      error: false,
+      show_button: true,
+      input: ''
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    fetch("/api/front/settings/").then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      _this.settings = json;
+      _this.loading = false;
+    });
+  },
+  methods: {
+    createReview: function createReview(input) {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var url, data, response, json;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this2.show_button = false;
+                url = '/api/front/review';
+                data = {
+                  'review': input
+                };
+                _context.prev = 3;
+                _context.next = 6;
+                return fetch(url, {
+                  method: 'POST',
+                  body: JSON.stringify(data),
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                  }
+                });
+
+              case 6:
+                response = _context.sent;
+                _context.next = 9;
+                return response.json();
+
+              case 9:
+                json = _context.sent;
+                //document.querySelector('h5').innerHTML = json.message;
+                _this2.success = true;
+                _this2.error = false;
+                _this2.show_form = false;
+                setTimeout(function () {
+                  return _this2.$router.push({
+                    path: '/vue-index'
+                  });
+                }, 2000);
+                _context.next = 23;
+                break;
+
+              case 16:
+                _context.prev = 16;
+                _context.t0 = _context["catch"](3);
+                _this2.success = false;
+                _this2.error = true;
+                _this2.show_form = true;
+                _this2.show_button = true;
+                console.error('Ошибка:', _context.t0);
+
+              case 23:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[3, 16]]);
+      }))();
+    },
+    onChange: function onChange(input) {
+      this.input = input;
+    },
+    onKeyPress: function onKeyPress(button) {//console.log("button", button);
+    },
+    onInputChange: function onInputChange(input) {
+      this.input = input.target.value;
+    }
+  },
+  components: {
+    MuzeiLoader: _components_partials_muzei_loader__WEBPACK_IMPORTED_MODULE_1__["default"],
+    SimpleKeyboard: _partials_SimpleKeyboard__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/RoutesAll.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/routes/RoutesAll.vue?vue&type=script&lang=js& ***!
@@ -2551,89 +2813,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/med/SimpleKeyboard.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/routes/med/SimpleKeyboard.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var simple_keyboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! simple-keyboard */ "./node_modules/simple-keyboard/build/index.js");
-/* harmony import */ var simple_keyboard__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(simple_keyboard__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var simple_keyboard_build_css_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! simple-keyboard/build/css/index.css */ "./node_modules/simple-keyboard/build/css/index.css");
-/* harmony import */ var simple_keyboard_build_css_index_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(simple_keyboard_build_css_index_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var simple_keyboard_layouts_build_layouts_russian__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! simple-keyboard-layouts/build/layouts/russian */ "./node_modules/simple-keyboard-layouts/build/layouts/russian.js");
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: "SimpleKeyboard",
-  props: {
-    keyboardClass: {
-      "default": "simple-keyboard",
-      type: String
-    },
-    input: {
-      type: String
-    }
-  },
-  data: function data() {
-    return {
-      keyboard: null
-    };
-  },
-  mounted: function mounted() {
-    this.keyboard = new simple_keyboard__WEBPACK_IMPORTED_MODULE_0___default.a(this.keyboardClass, {
-      onChange: this.onChange,
-      onKeyPress: this.onKeyPress,
-      //...layout,
-      layout: {
-        "default": ["1 2 3 4 5 6 7 8 9 0", "Й Ц У К Е Н Г Ш Щ З Х Ъ", "Ф Ы В А П Р О Л Д Ж Э", "Я Ч С М И Т Ь Б Ю ! ? , .", "{shift} {space} {bksp} {enter}"],
-        shift: ["1 2 3 4 5 6 7 8 9 0", "Q W E R T Y U I O P", 'A S D F G H J K L', "Z X C V B N M ! ? , .", "{shift} {space} {bksp} {enter}"]
-      },
-      display: {
-        '{bksp}': '←',
-        '{enter}': 'ENTER',
-        '{shift}': 'RU/EN',
-        '{space}': '            '
-      }
-    });
-  },
-  methods: {
-    onChange: function onChange(input) {
-      this.$emit("onChange", input);
-    },
-    onKeyPress: function onKeyPress(button) {
-      this.$emit("onKeyPress", button);
-      /**
-       * If you want to handle the shift and caps lock buttons
-       */
-
-      if (button === "{shift}" || button === "{lock}") this.handleShift();
-    },
-    handleShift: function handleShift() {
-      var currentLayout = this.keyboard.options.layoutName;
-      var shiftToggle = currentLayout === "default" ? "shift" : "default";
-      this.keyboard.setOptions({
-        layoutName: shiftToggle
-      });
-    }
-  },
-  watch: {
-    input: function input(_input) {
-      this.keyboard.setInput(_input);
-    }
-  }
-});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/med/r01routes-horizontal.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/routes/med/r01routes-horizontal.vue?vue&type=script&lang=js& ***!
@@ -2644,7 +2823,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_partials_med_loader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../components/partials/med/loader.vue */ "./resources/js/components/partials/med/loader.vue");
-/* harmony import */ var _SimpleKeyboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SimpleKeyboard */ "./resources/js/components/routes/med/SimpleKeyboard.vue");
+/* harmony import */ var _partials_SimpleKeyboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../partials/SimpleKeyboard */ "./resources/js/components/partials/SimpleKeyboard.vue");
 //
 //
 //
@@ -2896,90 +3075,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   components: {
     MedLoader: _components_partials_med_loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    SimpleKeyboard: _SimpleKeyboard__WEBPACK_IMPORTED_MODULE_1__["default"]
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var simple_keyboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! simple-keyboard */ "./node_modules/simple-keyboard/build/index.js");
-/* harmony import */ var simple_keyboard__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(simple_keyboard__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var simple_keyboard_build_css_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! simple-keyboard/build/css/index.css */ "./node_modules/simple-keyboard/build/css/index.css");
-/* harmony import */ var simple_keyboard_build_css_index_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(simple_keyboard_build_css_index_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var simple_keyboard_layouts_build_layouts_russian__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! simple-keyboard-layouts/build/layouts/russian */ "./node_modules/simple-keyboard-layouts/build/layouts/russian.js");
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: "SimpleKeyboard",
-  props: {
-    keyboardClass: {
-      "default": "simple-keyboard",
-      type: String
-    },
-    input: {
-      type: String
-    }
-  },
-  data: function data() {
-    return {
-      keyboard: null
-    };
-  },
-  mounted: function mounted() {
-    this.keyboard = new simple_keyboard__WEBPACK_IMPORTED_MODULE_0___default.a(this.keyboardClass, {
-      onChange: this.onChange,
-      onKeyPress: this.onKeyPress,
-      //...layout,
-      layout: {
-        "default": ["1 2 3 4 5 6 7 8 9 0", "Й Ц У К Е Н Г Ш Щ З Х Ъ", "Ф Ы В А П Р О Л Д Ж Э", "Я Ч С М И Т Ь Б Ю ! ? , .", "{shift} {space} {bksp} {enter}"],
-        shift: ["1 2 3 4 5 6 7 8 9 0", "Q W E R T Y U I O P", 'A S D F G H J K L', "Z X C V B N M ! ? , .", "{shift} {space} {bksp} {enter}"]
-      },
-      display: {
-        '{bksp}': '←',
-        '{enter}': 'ENTER',
-        '{shift}': 'RU/EN',
-        '{space}': '            '
-      }
-    });
-  },
-  methods: {
-    onChange: function onChange(input) {
-      this.$emit("onChange", input);
-    },
-    onKeyPress: function onKeyPress(button) {
-      this.$emit("onKeyPress", button);
-      /**
-       * If you want to handle the shift and caps lock buttons
-       */
-
-      if (button === "{shift}" || button === "{lock}") this.handleShift();
-    },
-    handleShift: function handleShift() {
-      var currentLayout = this.keyboard.options.layoutName;
-      var shiftToggle = currentLayout === "default" ? "shift" : "default";
-      this.keyboard.setOptions({
-        layoutName: shiftToggle
-      });
-    }
-  },
-  watch: {
-    input: function input(_input) {
-      this.keyboard.setInput(_input);
-    }
+    SimpleKeyboard: _partials_SimpleKeyboard__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -2995,7 +3091,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _partials_muzei_loader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../partials/muzei/loader.vue */ "./resources/js/components/partials/muzei/loader.vue");
-/* harmony import */ var _SimpleKeyboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SimpleKeyboard */ "./resources/js/components/routes/muzei/SimpleKeyboard.vue");
+/* harmony import */ var _partials_SimpleKeyboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../partials/SimpleKeyboard */ "./resources/js/components/partials/SimpleKeyboard.vue");
 //
 //
 //
@@ -3249,7 +3345,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   components: {
     MuzeiLoader: _partials_muzei_loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    SimpleKeyboard: _SimpleKeyboard__WEBPACK_IMPORTED_MODULE_1__["default"]
+    SimpleKeyboard: _partials_SimpleKeyboard__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -3265,7 +3361,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_videoalbums_med_show_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/videoalbums/med/show-horizontal */ "./resources/js/components/videoalbums/med/show-horizontal.vue");
-/* harmony import */ var _components_videoalbums_muzei_show_vertical__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/videoalbums/muzei/show-vertical */ "./resources/js/components/videoalbums/muzei/show-vertical.vue");
+/* harmony import */ var _components_videoalbums_muzei_show_vertical__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/videoalbums/muzei/show-vertical */ "./resources/js/components/videoalbums/muzei/show-vertical.vue");
 //
 //
 //
@@ -3301,7 +3397,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   components: {
     MedVideoalbumItemHorizontal: _components_videoalbums_med_show_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"],
-    MuzeiVideoalbumItemVertical: _components_videoalbums_muzei_show_vertical__WEBPACK_IMPORTED_MODULE_2__["default"]
+    MuzeiVideoalbumItemVertical: _components_videoalbums_muzei_show_vertical__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -3317,7 +3413,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_videoalbums_med_index_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/videoalbums/med/index-horizontal */ "./resources/js/components/videoalbums/med/index-horizontal.vue");
-/* harmony import */ var _components_videoalbums_muzei_index_vertical__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/videoalbums/muzei/index-vertical */ "./resources/js/components/videoalbums/muzei/index-vertical.vue");
+/* harmony import */ var _components_videoalbums_muzei_index_vertical__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/videoalbums/muzei/index-vertical */ "./resources/js/components/videoalbums/muzei/index-vertical.vue");
 //
 //
 //
@@ -3353,7 +3449,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   components: {
     MedVideoalbumsAllHorizontal: _components_videoalbums_med_index_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"],
-    MuzeiVideoalbumsAllVertical: _components_videoalbums_muzei_index_vertical__WEBPACK_IMPORTED_MODULE_2__["default"]
+    MuzeiVideoalbumsAllVertical: _components_videoalbums_muzei_index_vertical__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -3725,7 +3821,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".wrapper {\r\n    position: relative;\r\n    width: 100vw;\r\n    max-width: 100vh;\r\n    max-height: 177.77vw;\r\n    height: 177.78vw;\r\n    overflow: hidden;\r\n    margin: 0 auto;\r\n    background: #171F19;\r\n    border: 1px solid #ccc;\r\n}\r\n\r\n.index-vert-sidebar {\r\n    position: relative;\r\n    height: 65vh;\r\n    border-top: 0.25vh solid #BDB79F;\r\n    border-left: 0.25vh solid #BDB79F;\r\n    border-bottom: 0.25vh solid #BDB79F;\r\n}\r\n\r\n.index-vert-sidebar .m-logo {\r\n    width: 14vh;\r\n    height: 14vh;\r\n    display: block;\r\n    margin: 0 auto;\r\n    margin-top: 3vh;\r\n    margin-bottom: 2vh;\r\n    border: 0.5vh solid #966545;\r\n}\r\n\r\n.index-vert-sidebar .m-title p {\r\n    font-size: 1.85vh;\r\n    text-align: center;\r\n}\r\n\r\n.index-vert-sidebar .m-sidebar-button {\r\n    font-size: 1.25vh;\r\n    text-align: center;\r\n    bottom: 4vh;\r\n}\r\n\r\n.banner-slide {\r\n    height: 35vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.index-button {\r\n    background-color: #d6d6d6;\r\n    padding: 2vh;\r\n    height: 8.1vh;\r\n    display: block;\r\n    text-align: center;\r\n    color: #333;\r\n    font-size: 2vh;\r\n    position: relative;\r\n    border: 0.125vh solid #BDB79F;\r\n\r\n    color: #fff;\r\n    background-color: #4B7F2B;\r\n    text-transform: uppercase;\r\n}\r\n\r\n.index-button:hover,\r\n.index-button:focus {\r\n    color: #fff;\r\n    background-color: #6bc1e9;\r\n}\r\n\r\n.index-button span {\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    left: 1vh;\r\n    right: 1vh;\r\n    z-index: 10;\r\n}\r\n\r\n.index-button-image {\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n    position: absolute;\r\n    z-index: 1;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.m-buttons {\r\n    border: 0.1vh solid #BDB79F;\r\n    border-top: 0.25vh solid #BDB79F;\r\n    border-bottom: 0.25vh solid #BDB79F;\r\n    height: 65vh;\r\n    overflow-y: auto;\r\n    background-color: #BDB79F;\r\n}\r\n\r\n.m-buttons .col-6:nth-child(4n+1) .index-button,\r\n.m-buttons .col-6:nth-child(4n+4) .index-button {\r\n    background-color: #4B7F2B;\r\n}\r\n\r\n.m-buttons .index-button-overlay:before {\r\n    content: '';\r\n    display: block;\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    right: 0;\r\n    top: 0;\r\n    bottom: 0;\r\n    z-index: 2;\r\n    background: rgba(0,0,0, 0.5);\r\n}\r\n\r\n.m-buttons .col-6:nth-child(4n+2) .index-button,\r\n.m-buttons .col-6:nth-child(4n+3) .index-button {\r\n    background-color: #976545;\r\n}\r\n\r\n.page-item {\r\n    background-color: #fff;\r\n    height: 65vh;\r\n    max-height: 65vh;\r\n}\r\n\r\n.header-sub {\r\n    height: 20vh;\r\n}\r\n\r\n.header-sub .m-logo {\r\n    width: 11vh;\r\n    height: 11vh;\r\n    margin-top: 3vh;\r\n    margin-bottom: 0;\r\n    border-width: 0.4vh;\r\n}\r\n\r\n.header-sub .m-logo a {\r\n    display: block;\r\n    height: 100%;\r\n}\r\n\r\n.header-sub .m-title p {\r\n    font-size: 1.75vh;\r\n    text-align: center;\r\n    padding-top: 2vh;\r\n}\r\n\r\n.PagesSwiper {\r\n    background: #171F19;\r\n}\r\n\r\n.PagesSwiper .index-button {\r\n    height: 57vh;\r\n}\r\n\r\n.PhotoalbumsSwiper .index-button,\r\n.VideoalbumsSwiper .index-button {\r\n    height: 57vh;\r\n}\r\n\r\n.gallery-detail {\r\n    padding: 0 2.5vh;\r\n}\r\n\r\n.gallery-detail-item {\r\n    /*width: 30%;\r\n    height: 60vh;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    opacity: 0.5;\r\n    margin: 0 5vh;*/\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 80vw;\r\n    height: 60vh;\r\n    margin: 0;\r\n    opacity: 1;\r\n}\r\n\r\n.gallery-detail-item img {\r\n    width: auto;\r\n    height: auto;\r\n    max-width: 80vw;\r\n    max-height: 60vh;\r\n    transform: none;\r\n}\r\n\r\n.swiper-button-next,\r\n.swiper-button-prev {\r\n    z-index: 999;\r\n}\r\n\r\n.gallery-detail-item video {\r\n    display: block;\r\n    max-height: 100%;\r\n    transform: scale(0.25);\r\n}\r\n\r\n.gallery-detail-item video {\r\n    display: block;\r\n    max-height: 100%;\r\n    transform: scale(0.25);\r\n}\r\n\r\n.h1-page {\r\n    font-weight: normal;\r\n    font-size: 2vh;\r\n    text-align: center;\r\n    margin-bottom: 2vh;\r\n    height: 5vh;\r\n}\r\n\r\n.type-1 .page-detail-text {\r\n    height: 48vh;\r\n    font-size: 1.5vh !important;\r\n}\r\n\r\n.type-2 {\r\n    padding: 2vh;\r\n}\r\n\r\n.type-2 .page-detail-text {\r\n    padding-left: 0;\r\n    height: 32.5vh;\r\n    font-size: 1.5vh !important;\r\n}\r\n\r\n.type-2 .page-detail-image {\r\n    height: 20vh;\r\n    margin-bottom: 2vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-3 {\r\n    padding: 2vh;\r\n}\r\n\r\n.type-3 .page-detail-text {\r\n    padding-left: 0;\r\n    height: 40vh;\r\n    font-size: 1.5vh !important;\r\n    overflow-y: auto;\r\n}\r\n\r\n.type3slider {\r\n    margin-top: 2vh;\r\n}\r\n\r\n.type3slider-item {\r\n    height: 12vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-7 .text {\r\n    height: 57vh;\r\n    width: 100%;\r\n}\r\n\r\n.type-7 iframe {\r\n    margin-bottom: 2vh;\r\n    height: 56vh;\r\n}\r\n\r\n.excel-item {\r\n    width: 94vw;\r\n    width: auto;\r\n    height: 57vh;\r\n    overflow-y: scroll;\r\n    text-align: center;\r\n    background-color: #fff;\r\n    padding: 2vh;\r\n}\r\n\r\n.excel-item table {\r\n    border-collapse: collapse;\r\n    margin: 1rem 0;\r\n    display: inline-block;\r\n    overflow-x: auto;\r\n    text-align: left;\r\n    font-size: 1.1vh;\r\n}\r\n\r\n.excel-item table tr {\r\n    border-top: 1px solid #dfe2e5;\r\n}\r\n\r\n.excel-item table tr:nth-child(2n) {\r\n    background-color: #f6f8fa;\r\n}\r\n\r\n.excel-item table td,\r\n.excel-item table th {\r\n    border: 1px solid #dfe2e5;\r\n    padding: .6em 1em;\r\n}\r\n\r\n\r\n/* FOOTER */\r\n\r\nfooter {\r\n    height: 5vh;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n}\r\n\r\n.muzei-home {\r\n    background-color: #2886bb;\r\n    width: 6vh;\r\n    height: 5vh;\r\n    display: inline-block;\r\n    position: relative;\r\n    margin-right: 3vh;\r\n    padding-left: 1vh;\r\n    vertical-align: middle;\r\n}\r\n\r\n.muzei-home-sub {\r\n    background-color: #4B7F2B;\r\n}\r\n\r\n.muzei-home:after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    right: 0;\r\n    margin-right: -5vh;\r\n    width: 0;\r\n    height: 0;\r\n    border: 2.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #2886bb;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.muzei-home-sub:after {\r\n    border-left-color: #4B7F2B;\r\n    z-index: 10;\r\n}\r\n\r\n.muzei-home img {\r\n    width: 4.5vh;\r\n    margin-top: 0.25vh;\r\n}\r\n\r\n.muzei-footer-second {\r\n    vertical-align: middle;\r\n    color: #fff;\r\n    position: relative;\r\n    background-color: #71a551;\r\n    width: auto;\r\n    height: 5vh;\r\n    display: inline-block;\r\n    padding-left: 4vh;\r\n    padding-right: 0.5vh;\r\n    margin-left: -3.5vh;\r\n    font-size: 1.5vh;\r\n    line-height: 5vh;\r\n    margin-right: 3vh;\r\n}\r\n\r\n.muzei-footer-second:before {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    left: 0;\r\n    width: 0;\r\n    height: 0;\r\n    border: 2.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #71a551;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.muzei-footer-second:after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    right: 0;\r\n    margin-right: -5vh;\r\n    width: 0;\r\n    height: 0;\r\n    border: 2.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #71a551;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.muzei-footer-second:focus,\r\n.muzei-footer-second:hover,\r\n.muzei-footer-third:focus,\r\n.muzei-footer-third:hover {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n\r\n.muzei-footer-second span {\r\n    display: block;\r\n    margin-right: 2vh;\r\n}\r\n\r\n.muzei-footer-third {\r\n    font-size: 1.5vh;\r\n    line-height: 5vh;\r\n    color: #fff;\r\n}\r\n\r\n/* FOOTER */\r\n\r\n\r\n", ""]);
+exports.push([module.i, ".wrapper {\r\n    position: relative;\r\n    width: 100vw;\r\n    max-width: 100vh;\r\n    max-height: 177.77vw;\r\n    height: 177.78vw;\r\n    overflow: hidden;\r\n    margin: 0 auto;\r\n    background: #171F19;\r\n    border: 1px solid #ccc;\r\n}\r\n\r\n.index-vert-sidebar {\r\n    position: relative;\r\n    height: 65vh;\r\n    border-top: 0.25vh solid #BDB79F;\r\n    border-left: 0.25vh solid #BDB79F;\r\n    border-bottom: 0.25vh solid #BDB79F;\r\n}\r\n\r\n.index-vert-sidebar .m-logo {\r\n    width: 14vh;\r\n    height: 14vh;\r\n    display: block;\r\n    margin: 0 auto;\r\n    margin-top: 3vh;\r\n    margin-bottom: 2vh;\r\n    border: 0.5vh solid #966545;\r\n}\r\n\r\n.index-vert-sidebar .m-title p {\r\n    font-size: 1.85vh;\r\n    text-align: center;\r\n}\r\n\r\n.index-vert-sidebar .m-sidebar-button {\r\n    font-size: 1.25vh;\r\n    text-align: center;\r\n    bottom: 4vh;\r\n}\r\n\r\n.banner-slide {\r\n    height: 35vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.index-button {\r\n    background-color: #d6d6d6;\r\n    padding: 2vh;\r\n    height: 8.1vh;\r\n    display: block;\r\n    text-align: center;\r\n    color: #333;\r\n    font-size: 2vh;\r\n    position: relative;\r\n    border: 0.125vh solid #BDB79F;\r\n\r\n    color: #fff;\r\n    background-color: #4B7F2B;\r\n    text-transform: uppercase;\r\n}\r\n\r\n.index-button:hover,\r\n.index-button:focus {\r\n    color: #fff;\r\n    background-color: #6bc1e9;\r\n}\r\n\r\n.index-button span {\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    left: 1vh;\r\n    right: 1vh;\r\n    z-index: 10;\r\n}\r\n\r\n.index-button-image {\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n    position: absolute;\r\n    z-index: 1;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.m-buttons {\r\n    border: 0.1vh solid #BDB79F;\r\n    border-top: 0.25vh solid #BDB79F;\r\n    border-bottom: 0.25vh solid #BDB79F;\r\n    height: 65vh;\r\n    overflow-y: auto;\r\n    background-color: #BDB79F;\r\n}\r\n\r\n.m-buttons .col-6:nth-child(4n+1) .index-button,\r\n.m-buttons .col-6:nth-child(4n+4) .index-button {\r\n    background-color: #4B7F2B;\r\n}\r\n\r\n.m-buttons .index-button-overlay:before {\r\n    content: '';\r\n    display: block;\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    right: 0;\r\n    top: 0;\r\n    bottom: 0;\r\n    z-index: 2;\r\n    background: rgba(0,0,0, 0.5);\r\n}\r\n\r\n.m-buttons .col-6:nth-child(4n+2) .index-button,\r\n.m-buttons .col-6:nth-child(4n+3) .index-button {\r\n    background-color: #976545;\r\n}\r\n\r\n.page-item {\r\n    background-color: #fff;\r\n    height: 65vh;\r\n    max-height: 65vh;\r\n}\r\n\r\n.header-sub {\r\n    height: 20vh;\r\n}\r\n\r\n.header-sub .m-logo {\r\n    width: 11vh;\r\n    height: 11vh;\r\n    margin-top: 3vh;\r\n    margin-bottom: 0;\r\n    border-width: 0.4vh;\r\n}\r\n\r\n.header-sub .m-logo a {\r\n    display: block;\r\n    height: 100%;\r\n}\r\n\r\n.header-sub .m-title p {\r\n    font-size: 1.75vh;\r\n    text-align: center;\r\n    padding-top: 2vh;\r\n}\r\n\r\n.PagesSwiper {\r\n    background: #171F19;\r\n}\r\n\r\n.PagesSwiper .index-button {\r\n    height: 57vh;\r\n}\r\n\r\n.PhotoalbumsSwiper .index-button,\r\n.VideoalbumsSwiper .index-button {\r\n    height: 57vh;\r\n}\r\n\r\n.gallery-detail {\r\n    padding: 0 2.5vh;\r\n}\r\n\r\n.gallery-detail-item {\r\n    /*width: 30%;\r\n    height: 60vh;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    opacity: 0.5;\r\n    margin: 0 5vh;*/\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 80vw;\r\n    height: 60vh;\r\n    margin: 0;\r\n    opacity: 1;\r\n}\r\n\r\n.gallery-detail-item img {\r\n    width: auto;\r\n    height: auto;\r\n    max-width: 80vw;\r\n    max-height: 60vh;\r\n    transform: none;\r\n}\r\n\r\n.swiper-button-next,\r\n.swiper-button-prev {\r\n    z-index: 999;\r\n}\r\n\r\n.gallery-detail-item video {\r\n    display: block;\r\n    max-height: 100%;\r\n    transform: scale(0.25);\r\n}\r\n\r\n.gallery-detail-item video {\r\n    display: block;\r\n    max-height: 100%;\r\n    transform: scale(0.25);\r\n}\r\n\r\n.h1-page {\r\n    font-weight: normal;\r\n    font-size: 2vh;\r\n    text-align: center;\r\n    margin-bottom: 2vh;\r\n    height: 5vh;\r\n}\r\n\r\n.type-1 .page-detail-text {\r\n    height: 48vh;\r\n    font-size: 1.5vh !important;\r\n}\r\n\r\n.type-2 {\r\n    padding: 2vh;\r\n}\r\n\r\n.type-2 .page-detail-text {\r\n    padding-left: 0;\r\n    height: 32.5vh;\r\n    font-size: 1.5vh !important;\r\n}\r\n\r\n.type-2 .page-detail-image {\r\n    height: 20vh;\r\n    margin-bottom: 2vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-3 {\r\n    padding: 2vh;\r\n}\r\n\r\n.type-3 .page-detail-text {\r\n    padding-left: 0;\r\n    height: 40vh;\r\n    font-size: 1.5vh !important;\r\n    overflow-y: auto;\r\n}\r\n\r\n.type3slider {\r\n    margin-top: 2vh;\r\n}\r\n\r\n.type3slider-item {\r\n    height: 12vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-7 .text {\r\n    height: 57vh;\r\n    width: 100%;\r\n}\r\n\r\n.type-7 iframe {\r\n    margin-bottom: 2vh;\r\n    height: 56vh;\r\n}\r\n\r\n.excel-item {\r\n    width: 94vw;\r\n    width: auto;\r\n    height: 57vh;\r\n    overflow-y: scroll;\r\n    text-align: center;\r\n    background-color: #fff;\r\n    padding: 2vh;\r\n}\r\n\r\n.excel-item table {\r\n    border-collapse: collapse;\r\n    margin: 1rem 0;\r\n    display: inline-block;\r\n    overflow-x: auto;\r\n    text-align: left;\r\n    font-size: 1.1vh;\r\n}\r\n\r\n.excel-item table tr {\r\n    border-top: 1px solid #dfe2e5;\r\n}\r\n\r\n.excel-item table tr:nth-child(2n) {\r\n    background-color: #f6f8fa;\r\n}\r\n\r\n.excel-item table td,\r\n.excel-item table th {\r\n    border: 1px solid #dfe2e5;\r\n    padding: .6em 1em;\r\n}\r\n\r\n.review-form textarea {\r\n    height: 25vh;\r\n    width: calc(100% - 4vh);\r\n    display: block;\r\n    margin: 0 auto;\r\n    font-size: 2.5vh;\r\n}\r\n\r\n.keyboard-reviews {\r\n    padding: 2vh;\r\n}\r\n\r\n.hg-theme-default .hg-button {\r\n    height: 3vh;\r\n}\r\n\r\n.btn-med {\r\n    background-color: #966545;\r\n    color: #fff;\r\n    padding: 1.25vh 4vh;\r\n    text-align: center;\r\n    border-radius: 1vh;\r\n    font-size: 2vh;\r\n    width: 32vw;\r\n    display: block;\r\n    margin: 0 auto;\r\n    margin-top: 2vh;\r\n}\r\n\r\n/* FOOTER */\r\n\r\nfooter {\r\n    height: 5vh;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n}\r\n\r\n.muzei-home {\r\n    background-color: #2886bb;\r\n    width: 6vh;\r\n    height: 5vh;\r\n    display: inline-block;\r\n    position: relative;\r\n    margin-right: 3vh;\r\n    padding-left: 1vh;\r\n    vertical-align: middle;\r\n}\r\n\r\n.muzei-home-sub {\r\n    background-color: #4B7F2B;\r\n}\r\n\r\n.muzei-home:after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    right: 0;\r\n    margin-right: -5vh;\r\n    width: 0;\r\n    height: 0;\r\n    border: 2.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #2886bb;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.muzei-home-sub:after {\r\n    border-left-color: #4B7F2B;\r\n    z-index: 10;\r\n}\r\n\r\n.muzei-home img {\r\n    width: 4.5vh;\r\n    margin-top: 0.25vh;\r\n}\r\n\r\n.muzei-footer-second {\r\n    vertical-align: middle;\r\n    color: #fff;\r\n    position: relative;\r\n    background-color: #71a551;\r\n    width: auto;\r\n    height: 5vh;\r\n    display: inline-block;\r\n    padding-left: 4vh;\r\n    padding-right: 0.5vh;\r\n    margin-left: -3.5vh;\r\n    font-size: 1.5vh;\r\n    line-height: 5vh;\r\n    margin-right: 3vh;\r\n}\r\n\r\n.muzei-footer-second:before {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    left: 0;\r\n    width: 0;\r\n    height: 0;\r\n    border: 2.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #71a551;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.muzei-footer-second:after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    right: 0;\r\n    margin-right: -5vh;\r\n    width: 0;\r\n    height: 0;\r\n    border: 2.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #71a551;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.muzei-footer-second:focus,\r\n.muzei-footer-second:hover,\r\n.muzei-footer-third:focus,\r\n.muzei-footer-third:hover {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n\r\n.muzei-footer-second span {\r\n    display: block;\r\n    margin-right: 2vh;\r\n}\r\n\r\n.muzei-footer-third {\r\n    font-size: 1.5vh;\r\n    line-height: 5vh;\r\n    color: #fff;\r\n}\r\n\r\n/* FOOTER */\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -39084,6 +39180,30 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/partials/SimpleKeyboard.vue?vue&type=template&id=0c1bb4fb&scoped=true&":
+/*!**************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/partials/SimpleKeyboard.vue?vue&type=template&id=0c1bb4fb&scoped=true& ***!
+  \**************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { class: _vm.keyboardClass })
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/partials/med/header.vue?vue&type=template&id=606f02d2&":
 /*!**********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/partials/med/header.vue?vue&type=template&id=606f02d2& ***!
@@ -39907,18 +40027,33 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.settings.theme === "med"
-    ? _c("div", [
-        _vm.settings.orientation === "horizontal"
-          ? _c(
-              "div",
-              { staticClass: "container" },
-              [_c("MedCreateReviewHorizontal")],
-              1
-            )
-          : _vm._e()
-      ])
-    : _vm._e()
+  return _c("div", [
+    _vm.settings.theme === "med"
+      ? _c("div", [
+          _vm.settings.orientation === "horizontal"
+            ? _c(
+                "div",
+                { staticClass: "container" },
+                [_c("MedCreateReviewHorizontal")],
+                1
+              )
+            : _vm._e()
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.settings.theme === "muzei"
+      ? _c("div", [
+          _vm.settings.orientation === "vertical"
+            ? _c(
+                "div",
+                { staticClass: "container" },
+                [_c("MuzeiCreateReviewVertical")],
+                1
+              )
+            : _vm._e()
+        ])
+      : _vm._e()
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -40067,6 +40202,145 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/reviews/muzei/create-vertical.vue?vue&type=template&id=4e9a62df&":
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/reviews/muzei/create-vertical.vue?vue&type=template&id=4e9a62df& ***!
+  \********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _vm.loading
+        ? _c("MuzeiLoader")
+        : _c("div", [
+            _vm.success
+              ? _c(
+                  "h5",
+                  {
+                    staticStyle: {
+                      "font-size": "5vh",
+                      "text-align": "center",
+                      "margin-top": "24vh"
+                    }
+                  },
+                  [_vm._v("Ваш отзыв принят!")]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.show_form
+              ? _c(
+                  "h1",
+                  { staticClass: "h1-page", staticStyle: { color: "#fff" } },
+                  [_vm._v("Оставьте отзыв")]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-12 review-form" }, [
+                _vm.show_form
+                  ? _c("textarea", {
+                      staticClass: "form-control input",
+                      staticStyle: { "margin-bottom": "2vh" },
+                      attrs: { placeholder: "Ваш отзыв..." },
+                      domProps: { value: _vm.input },
+                      on: { input: _vm.onInputChange }
+                    })
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.error
+                  ? _c(
+                      "h6",
+                      { staticClass: "alert alert-danger text-center" },
+                      [_vm._v("\n                    Ошибка\n                ")]
+                    )
+                  : _vm._e()
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-12" }, [
+                _vm.show_form
+                  ? _c(
+                      "div",
+                      { staticClass: "keyboard-reviews" },
+                      [
+                        _c("SimpleKeyboard", {
+                          attrs: { input: _vm.input },
+                          on: {
+                            onChange: _vm.onChange,
+                            onKeyPress: _vm.onKeyPress
+                          }
+                        }),
+                        _vm._v(" "),
+                        _vm.show_button
+                          ? _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-lg btn-med",
+                                on: {
+                                  click: function($event) {
+                                    return _vm.createReview(_vm.input)
+                                  }
+                                }
+                              },
+                              [_vm._v("Отправить")]
+                            )
+                          : _vm._e()
+                      ],
+                      1
+                    )
+                  : _vm._e()
+              ])
+            ])
+          ]),
+      _vm._v(" "),
+      _c("footer", [
+        _c(
+          "div",
+          { staticClass: "container" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "muzei-home muzei-home-sub",
+                attrs: { to: "/vue-index" }
+              },
+              [_c("img", { attrs: { src: "/img/medhome.svg", alt: "" } })]
+            ),
+            _vm._v(" "),
+            _vm._m(0)
+          ],
+          1
+        )
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "muzei-footer-third" }, [
+      _c("span", [_vm._v("Оставить отзыв")])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/RoutesAll.vue?vue&type=template&id=e0ef0ac6&":
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/routes/RoutesAll.vue?vue&type=template&id=e0ef0ac6& ***!
@@ -40109,30 +40383,6 @@ var render = function() {
         ])
       : _vm._e()
   ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/med/SimpleKeyboard.vue?vue&type=template&id=ab222db4&scoped=true&":
-/*!****************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/routes/med/SimpleKeyboard.vue?vue&type=template&id=ab222db4&scoped=true& ***!
-  \****************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { class: _vm.keyboardClass })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -41897,30 +42147,6 @@ var staticRenderFns = [
     ])
   }
 ]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=template&id=85c39388&scoped=true&":
-/*!******************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=template&id=85c39388&scoped=true& ***!
-  \******************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { class: _vm.keyboardClass })
-}
-var staticRenderFns = []
 render._withStripped = true
 
 
@@ -62816,6 +63042,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/partials/SimpleKeyboard.vue":
+/*!*************************************************************!*\
+  !*** ./resources/js/components/partials/SimpleKeyboard.vue ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SimpleKeyboard_vue_vue_type_template_id_0c1bb4fb_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SimpleKeyboard.vue?vue&type=template&id=0c1bb4fb&scoped=true& */ "./resources/js/components/partials/SimpleKeyboard.vue?vue&type=template&id=0c1bb4fb&scoped=true&");
+/* harmony import */ var _SimpleKeyboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SimpleKeyboard.vue?vue&type=script&lang=js& */ "./resources/js/components/partials/SimpleKeyboard.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SimpleKeyboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SimpleKeyboard_vue_vue_type_template_id_0c1bb4fb_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SimpleKeyboard_vue_vue_type_template_id_0c1bb4fb_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "0c1bb4fb",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/partials/SimpleKeyboard.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/partials/SimpleKeyboard.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/partials/SimpleKeyboard.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./SimpleKeyboard.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/partials/SimpleKeyboard.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/partials/SimpleKeyboard.vue?vue&type=template&id=0c1bb4fb&scoped=true&":
+/*!********************************************************************************************************!*\
+  !*** ./resources/js/components/partials/SimpleKeyboard.vue?vue&type=template&id=0c1bb4fb&scoped=true& ***!
+  \********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_template_id_0c1bb4fb_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./SimpleKeyboard.vue?vue&type=template&id=0c1bb4fb&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/partials/SimpleKeyboard.vue?vue&type=template&id=0c1bb4fb&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_template_id_0c1bb4fb_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_template_id_0c1bb4fb_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/partials/med/header.vue":
 /*!*********************************************************!*\
   !*** ./resources/js/components/partials/med/header.vue ***!
@@ -63717,6 +64012,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/reviews/muzei/create-vertical.vue":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/reviews/muzei/create-vertical.vue ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _create_vertical_vue_vue_type_template_id_4e9a62df___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./create-vertical.vue?vue&type=template&id=4e9a62df& */ "./resources/js/components/reviews/muzei/create-vertical.vue?vue&type=template&id=4e9a62df&");
+/* harmony import */ var _create_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./create-vertical.vue?vue&type=script&lang=js& */ "./resources/js/components/reviews/muzei/create-vertical.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _create_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _create_vertical_vue_vue_type_template_id_4e9a62df___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _create_vertical_vue_vue_type_template_id_4e9a62df___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/reviews/muzei/create-vertical.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/reviews/muzei/create-vertical.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/components/reviews/muzei/create-vertical.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_create_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./create-vertical.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/reviews/muzei/create-vertical.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_create_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/reviews/muzei/create-vertical.vue?vue&type=template&id=4e9a62df&":
+/*!**************************************************************************************************!*\
+  !*** ./resources/js/components/reviews/muzei/create-vertical.vue?vue&type=template&id=4e9a62df& ***!
+  \**************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_create_vertical_vue_vue_type_template_id_4e9a62df___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./create-vertical.vue?vue&type=template&id=4e9a62df& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/reviews/muzei/create-vertical.vue?vue&type=template&id=4e9a62df&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_create_vertical_vue_vue_type_template_id_4e9a62df___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_create_vertical_vue_vue_type_template_id_4e9a62df___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/routes/RoutesAll.vue":
 /*!******************************************************!*\
   !*** ./resources/js/components/routes/RoutesAll.vue ***!
@@ -63781,75 +64145,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RoutesAll_vue_vue_type_template_id_e0ef0ac6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RoutesAll_vue_vue_type_template_id_e0ef0ac6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/routes/med/SimpleKeyboard.vue":
-/*!***************************************************************!*\
-  !*** ./resources/js/components/routes/med/SimpleKeyboard.vue ***!
-  \***************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SimpleKeyboard_vue_vue_type_template_id_ab222db4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SimpleKeyboard.vue?vue&type=template&id=ab222db4&scoped=true& */ "./resources/js/components/routes/med/SimpleKeyboard.vue?vue&type=template&id=ab222db4&scoped=true&");
-/* harmony import */ var _SimpleKeyboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SimpleKeyboard.vue?vue&type=script&lang=js& */ "./resources/js/components/routes/med/SimpleKeyboard.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _SimpleKeyboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _SimpleKeyboard_vue_vue_type_template_id_ab222db4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _SimpleKeyboard_vue_vue_type_template_id_ab222db4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  "ab222db4",
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/routes/med/SimpleKeyboard.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/routes/med/SimpleKeyboard.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************!*\
-  !*** ./resources/js/components/routes/med/SimpleKeyboard.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./SimpleKeyboard.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/med/SimpleKeyboard.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/routes/med/SimpleKeyboard.vue?vue&type=template&id=ab222db4&scoped=true&":
-/*!**********************************************************************************************************!*\
-  !*** ./resources/js/components/routes/med/SimpleKeyboard.vue?vue&type=template&id=ab222db4&scoped=true& ***!
-  \**********************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_template_id_ab222db4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./SimpleKeyboard.vue?vue&type=template&id=ab222db4&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/med/SimpleKeyboard.vue?vue&type=template&id=ab222db4&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_template_id_ab222db4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_template_id_ab222db4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -63937,75 +64232,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_r01routes_horizontal_vue_vue_type_template_id_270675fe_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_r01routes_horizontal_vue_vue_type_template_id_270675fe_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/routes/muzei/SimpleKeyboard.vue":
-/*!*****************************************************************!*\
-  !*** ./resources/js/components/routes/muzei/SimpleKeyboard.vue ***!
-  \*****************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SimpleKeyboard_vue_vue_type_template_id_85c39388_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SimpleKeyboard.vue?vue&type=template&id=85c39388&scoped=true& */ "./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=template&id=85c39388&scoped=true&");
-/* harmony import */ var _SimpleKeyboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SimpleKeyboard.vue?vue&type=script&lang=js& */ "./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _SimpleKeyboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _SimpleKeyboard_vue_vue_type_template_id_85c39388_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _SimpleKeyboard_vue_vue_type_template_id_85c39388_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  "85c39388",
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/routes/muzei/SimpleKeyboard.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=script&lang=js&":
-/*!******************************************************************************************!*\
-  !*** ./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./SimpleKeyboard.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=template&id=85c39388&scoped=true&":
-/*!************************************************************************************************************!*\
-  !*** ./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=template&id=85c39388&scoped=true& ***!
-  \************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_template_id_85c39388_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./SimpleKeyboard.vue?vue&type=template&id=85c39388&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=template&id=85c39388&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_template_id_85c39388_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_template_id_85c39388_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
