@@ -1,27 +1,14 @@
 <template>
-    <header>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-4">
-                    <div class="calendar">
-                        <strong>
-                            {{ d }}
-                        </strong>
-                        <span>
-                            {{ mmmm }}
-                            <small>{{ dddd }}</small>
-                        </span>
-                    </div>
-                </div>
-                <div class="col-4 header-logo">
-                    <router-link to="/vue-index"><img :src="settings.logo"></router-link>
-                </div>
-                <div class="col-4 text-right">
-                    <div class="header-time">
-                        {{ time }}
-                    </div>
-                </div>
-            </div>
+    <header class="header-sub">
+        <div class="m-logo">
+            <router-link to="/vue-index">
+                <img :src="settings.logo">
+            </router-link>
+        </div>
+        <div class="m-title">
+            <router-link to="/vue-index">
+                <p>{{ settings.title }}</p>
+            </router-link>
         </div>
     </header>
 </template>

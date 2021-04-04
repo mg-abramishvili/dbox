@@ -12,6 +12,7 @@ import CreateReview from './components/reviews/CreateReview.vue';
 export const routes = [
     {
         path: '/vue-index',
+        name: 'vue-index',
         component: Home
     },
     {

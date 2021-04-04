@@ -1,6 +1,7 @@
 <template>
     <div class="wrapper">
         <MedHeader v-if="settings.theme === 'med'" />
+        <MuzeiHeader v-else-if="settings.theme === 'muzei' && $route.name !== 'vue-index'"/>
         <ShkolaHeader v-else-if="settings.theme === 'shkola'" />
         
         <router-view :key="$route.path" />
@@ -9,6 +10,7 @@
 
 <script>
     import MedHeader from './components/partials/med/header'
+    import MuzeiHeader from './components/partials/muzei/header'
     import ShkolaHeader from './components/partials/shkola/header'
 
     export default {
@@ -36,6 +38,7 @@
         },
         components: {
             MedHeader,
+            MuzeiHeader,
             ShkolaHeader
         }
     }

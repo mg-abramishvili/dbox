@@ -12,7 +12,7 @@
                 </div>
 
                 <swiper ref="PageSwiper" :options="swiperOptions" class="PageSwiper">
-                    <swiper-slide v-for="pic in page.gallery" class="type3slider">
+                    <swiper-slide v-for="pic in page.gallery" :key="pic" class="type3slider">
                         <div class="type3slider-item" v-bind:style="{ 'background-image': 'url(' + pic + ')' }"></div>
                     </swiper-slide>
                     <div v-if="page.gallery.length > 3" class="swiper-button-prev" slot="button-prev"></div>
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-    import MuzeLoader from '../../../partials/muzei/loader.vue'
+    import MuzeiLoader from '../../../partials/muzei/loader.vue'
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
 
@@ -59,7 +59,7 @@
             }
         },
         components: {
-            MuzeLoader,
+            MuzeiLoader,
             Swiper,
             SwiperSlide
         }

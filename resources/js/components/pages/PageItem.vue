@@ -26,19 +26,6 @@
         </div>
 
         <div v-if="settings.theme === 'muzei'">
-            <header class="header-sub">
-                <div class="m-logo">
-                    <router-link to="/vue-index">
-                        <img :src="settings.logo">
-                    </router-link>
-                </div>
-                <div class="m-title">
-                    <router-link to="/vue-index">
-                        <p>{{ settings.title }}</p>
-                    </router-link>
-                </div>
-            </header>
-
             <div v-for="type in page.types" class="container">
                 <div class="page-item">
                     <MuzeiPageType1Vertical v-if="type.id == '1'" />
