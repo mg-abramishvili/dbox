@@ -1,7 +1,8 @@
 <template>
     <div>
+
         <div v-if="settings.theme === 'med'">
-            <div v-for="type in page.types" :key="type.id" class="container">
+            <div v-for="type in page.types" class="container">
                 <div class="page-item">
                     <MedPageType1Horizontal v-if="type.id == '1'" />
                     <MedPageType2Horizontal v-else-if="type.id == '2'" />
@@ -23,6 +24,44 @@
                 </div>
             </footer>
         </div>
+
+        <div v-if="settings.theme === 'muzei'">
+            <header class="header-sub">
+                <div class="m-logo">
+                    <router-link to="/vue-index">
+                        <img :src="settings.logo">
+                    </router-link>
+                </div>
+                <div class="m-title">
+                    <router-link to="/vue-index">
+                        <p>{{ settings.title }}</p>
+                    </router-link>
+                </div>
+            </header>
+
+            <div v-for="type in page.types" class="container">
+                <div class="page-item">
+                    <MuzeiPageType1Vertical v-if="type.id == '1'" />
+                    <MuzeiPageType2Vertical v-else-if="type.id == '2'" />
+                    <MuzeiPageType3Vertical v-else-if="type.id == '3'" />
+                    <MuzeiPageType6Vertical v-else-if="type.id == '6'" />
+                    <MuzeiPageType7Vertical v-else-if="type.id == '7'" />
+                    <MuzeiPageType9Vertical v-else-if="type.id == '9'" />
+                </div>
+            </div>
+
+            <footer>
+                <div class="container">
+                    <router-link to="/vue-index" class="muzei-home muzei-home-sub">
+                        <img src="/img/medhome.svg" alt="">
+                    </router-link>
+
+                    <router-link v-if="page.parent_id" :to="'/vue-pages/' + page.parent_id" class="muzei-footer-second"><span>{{parent_page}}</span></router-link>
+                    <a class="muzei-footer-third"><span>{{ page.title }}</span></a>
+                    
+                </div>
+            </footer>
+        </div>
     </div>
 </template>
 
@@ -32,6 +71,13 @@
     import MedPageType6Horizontal from '../../components/pages/med/type-6/horizontal'
     import MedPageType7Horizontal from '../../components/pages/med/type-7/horizontal'
     import MedPageType9Horizontal from '../../components/pages/med/type-9/horizontal'
+
+    import MuzeiPageType1Vertical from '../../components/pages/muzei/type-1/vertical'
+    import MuzeiPageType2Vertical from '../../components/pages/muzei/type-2/vertical'
+    import MuzeiPageType3Vertical from '../../components/pages/muzei/type-3/vertical'
+    import MuzeiPageType6Vertical from '../../components/pages/muzei/type-6/vertical'
+    import MuzeiPageType7Vertical from '../../components/pages/muzei/type-7/vertical'
+    import MuzeiPageType9Vertical from '../../components/pages/muzei/type-9/vertical'
 
     export default {
         data() {
@@ -65,7 +111,13 @@
             MedPageType2Horizontal,
             MedPageType6Horizontal,
             MedPageType7Horizontal,
-            MedPageType9Horizontal
+            MedPageType9Horizontal,
+            MuzeiPageType1Vertical,
+            MuzeiPageType2Vertical,
+            MuzeiPageType3Vertical,
+            MuzeiPageType6Vertical,
+            MuzeiPageType7Vertical,
+            MuzeiPageType9Vertical
         }
     }
 </script>

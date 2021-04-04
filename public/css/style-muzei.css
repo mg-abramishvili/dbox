@@ -6,6 +6,7 @@ html {
   -webkit-touch-callout: none;
   -khtml-user-select: none;
   /*cursor: none;*/
+  background: #171F19;
 }
 
 body {
@@ -13,6 +14,7 @@ body {
     font-size: 2vh;
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
+    background: #171F19;
 }
 
 .container {
@@ -704,9 +706,10 @@ main {
 /* PAGE TYPE 7 */
 
 .type-7 .text {
-    height: 80vh;
+    height: 62vh;
     overflow: hidden;
-    overflow-y: scroll;
+    margin: 0 auto;
+    width: 70vw;
 }
 
 .type-7 .text::-webkit-scrollbar {

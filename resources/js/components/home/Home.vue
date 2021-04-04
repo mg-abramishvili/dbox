@@ -5,11 +5,17 @@
                 <MedHomeHorizontal />
             </div>
         </div>
+        <div v-if="settings.theme === 'muzei'">
+            <div v-if="settings.orientation === 'vertical'">
+                <MuzeiHomeVertical />
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
     import MedHomeHorizontal from '../../components/home/med/horizontal'
+    import MuzeiHomeVertical from '../../components/home/muzei/vertical'
 
     export default {
         data() {
@@ -22,11 +28,11 @@
                 .then(response => response.json())
                 .then(json => {
                     this.settings = json;
-                    this.loading = false;
                 });
         },
         components: {
-            MedHomeHorizontal
+            MedHomeHorizontal,
+            MuzeiHomeVertical
         }
     }
 </script>
