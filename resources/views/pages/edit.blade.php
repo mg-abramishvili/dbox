@@ -95,7 +95,6 @@
                     <div class="row" id="typez" style="height:250px; overflow-y:scroll;">
                         @foreach($types as $type)
                         @if($type->id == '8')
-                        @elseif($type->id == '10')
                         @else
                             <div class="col-3 type-radio">
                                 <div class="radio">
@@ -160,7 +159,7 @@
                 </dd>
             </div>
 
-            <div class="row align-items-center mb-2 type type-1 type-2 type-3 type-4 type-6">
+            <div class="row align-items-center mb-2 type type-1 type-2 type-3 type-4 type-6 type-10">
                 <dt class="col-sm-3">
                     Картинка
                 </dt>
@@ -206,6 +205,15 @@
                 </dt>
                 <dd class="col-sm-9">
                     <input class="excel" type="file" name="excel" x-ref="excel">
+                </dd>
+            </div>
+
+            <div class="row align-items-center mb-4 type type-10">
+                <dt class="col-sm-3">
+                    iFrame
+                </dt>
+                <dd class="col-sm-9">
+                    <input type="text" name="iframe" class="form-control" x-ref="iframe" value="{{ $page->iframe }}">
                 </dd>
             </div>
 

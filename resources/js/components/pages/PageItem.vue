@@ -27,13 +27,16 @@
 
         <div v-if="settings.theme === 'muzei'">
             <div v-for="type in page.types" class="container">
-                <div class="page-item">
+                <div v-if="type.id == '6'" class="page-item" style="background: #171F19;">
+                    <MuzeiPageType6Vertical v-if="type.id == '6'" />
+                </div>
+                <div v-else class="page-item">
                     <MuzeiPageType1Vertical v-if="type.id == '1'" />
                     <MuzeiPageType2Vertical v-else-if="type.id == '2'" />
                     <MuzeiPageType3Vertical v-else-if="type.id == '3'" />
-                    <MuzeiPageType6Vertical v-else-if="type.id == '6'" />
                     <MuzeiPageType7Vertical v-else-if="type.id == '7'" />
                     <MuzeiPageType9Vertical v-else-if="type.id == '9'" />
+                    <MuzeiPageType10Vertical v-else-if="type.id == '10'" />
                 </div>
             </div>
 
@@ -65,6 +68,7 @@
     import MuzeiPageType6Vertical from '../../components/pages/muzei/type-6/vertical'
     import MuzeiPageType7Vertical from '../../components/pages/muzei/type-7/vertical'
     import MuzeiPageType9Vertical from '../../components/pages/muzei/type-9/vertical'
+    import MuzeiPageType10Vertical from '../../components/pages/muzei/type-10/vertical'
 
     export default {
         data() {
@@ -104,7 +108,8 @@
             MuzeiPageType3Vertical,
             MuzeiPageType6Vertical,
             MuzeiPageType7Vertical,
-            MuzeiPageType9Vertical
+            MuzeiPageType9Vertical,
+            MuzeiPageType10Vertical
         }
     }
 </script>

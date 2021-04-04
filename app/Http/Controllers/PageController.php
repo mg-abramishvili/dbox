@@ -159,6 +159,11 @@ class PageController extends Controller
         }
         $pages->excel = $data['excel'];
 
+        if (!isset($data['iframe'])) {
+            $data['iframe'] = null;
+        }
+        $pages->iframe = $data['iframe'];
+
         if (!isset($data['video'])) {
             $data['video'] = null;
         }
@@ -207,6 +212,11 @@ class PageController extends Controller
             $data['excel'] = null;
         }
         $pages->excel = $data['excel'];
+
+        if (!isset($data['iframe'])) {
+            $data['iframe'] = null;
+        }
+        $pages->iframe = $data['iframe'];
 
         if (!isset($data['video'])) {
             $data['video'] = null;

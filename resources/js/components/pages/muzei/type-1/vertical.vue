@@ -1,6 +1,6 @@
 <template>
     <div class="type-1">
-        <MuzeLoader v-if="loading" />
+        <MuzeiLoader v-if="loading" />
         
         <div v-else class="row">
             <div class="col-12">
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-    import MuzeLoader from '../../../partials/muzei/loader.vue'
+    import MuzeiLoader from '../../../partials/muzei/loader.vue'
 
     export default {
         data() {
@@ -34,7 +34,7 @@
                 });
         },
         components: {
-            MuzeLoader
+            MuzeiLoader
         }
     }
 </script>

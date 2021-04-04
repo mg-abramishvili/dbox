@@ -1,15 +1,21 @@
 <template>
     <div>
         <div v-if="settings.theme === 'med'">
-            <div class="container">
+            <div v-if="settings.orientation === 'horizontal'" class="container">
                 <MedR01RoutesHorizontal />
+            </div>
+        </div>
+        <div v-if="settings.theme === 'muzei'">
+            <div v-if="settings.orientation === 'vertical'" class="container">
+                <MuzeiR01RoutesVertical />
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import MedR01RoutesHorizontal from '../../components/routes/med/r01routes-horizontal.vue'
+    import MedR01RoutesHorizontal from './med/r01routes-horizontal.vue'
+    import MuzeiR01RoutesVertical from './muzei/r01routes-vertical.vue'
 
     export default {
         data() {
@@ -25,7 +31,8 @@
                 });
         },
         components: {
-            MedR01RoutesHorizontal
+            MedR01RoutesHorizontal,
+            MuzeiR01RoutesVertical
         }
     }
 </script>

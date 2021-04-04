@@ -822,6 +822,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_pages_muzei_type_6_vertical__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/pages/muzei/type-6/vertical */ "./resources/js/components/pages/muzei/type-6/vertical.vue");
 /* harmony import */ var _components_pages_muzei_type_7_vertical__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/pages/muzei/type-7/vertical */ "./resources/js/components/pages/muzei/type-7/vertical.vue");
 /* harmony import */ var _components_pages_muzei_type_9_vertical__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/pages/muzei/type-9/vertical */ "./resources/js/components/pages/muzei/type-9/vertical.vue");
+/* harmony import */ var _components_pages_muzei_type_10_vertical__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/pages/muzei/type-10/vertical */ "./resources/js/components/pages/muzei/type-10/vertical.vue");
 //
 //
 //
@@ -876,6 +877,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
@@ -928,7 +933,8 @@ __webpack_require__.r(__webpack_exports__);
     MuzeiPageType3Vertical: _components_pages_muzei_type_3_vertical__WEBPACK_IMPORTED_MODULE_7__["default"],
     MuzeiPageType6Vertical: _components_pages_muzei_type_6_vertical__WEBPACK_IMPORTED_MODULE_8__["default"],
     MuzeiPageType7Vertical: _components_pages_muzei_type_7_vertical__WEBPACK_IMPORTED_MODULE_9__["default"],
-    MuzeiPageType9Vertical: _components_pages_muzei_type_9_vertical__WEBPACK_IMPORTED_MODULE_10__["default"]
+    MuzeiPageType9Vertical: _components_pages_muzei_type_9_vertical__WEBPACK_IMPORTED_MODULE_10__["default"],
+    MuzeiPageType10Vertical: _components_pages_muzei_type_10_vertical__WEBPACK_IMPORTED_MODULE_11__["default"]
   }
 });
 
@@ -1254,7 +1260,55 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   components: {
-    MuzeLoader: _partials_muzei_loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    MuzeiLoader: _partials_muzei_loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/muzei/type-10/vertical.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/pages/muzei/type-10/vertical.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _partials_muzei_loader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../partials/muzei/loader.vue */ "./resources/js/components/partials/muzei/loader.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      page: {},
+      loading: true
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    fetch("/api/front/page/".concat(this.$route.params.id)).then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      _this.page = json;
+      _this.loading = false;
+    });
+  },
+  components: {
+    MuzeiLoader: _partials_muzei_loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
@@ -1307,7 +1361,7 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   components: {
-    MuzeLoader: _partials_muzei_loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    MuzeiLoader: _partials_muzei_loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
@@ -1427,6 +1481,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -1498,6 +1556,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -1517,7 +1576,7 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   components: {
-    MuzeLoader: _partials_muzei_loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    MuzeiLoader: _partials_muzei_loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
@@ -1532,8 +1591,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _partials_med_loader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../partials/med/loader.vue */ "./resources/js/components/partials/med/loader.vue");
+/* harmony import */ var _partials_muzei_loader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../partials/muzei/loader.vue */ "./resources/js/components/partials/muzei/loader.vue");
 /* harmony import */ var vue_xlsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-xlsx */ "./node_modules/vue-xlsx/dist/vue-xlsx.es.js");
+//
 //
 //
 //
@@ -1581,7 +1641,7 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   components: {
-    MedLoader: _partials_med_loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    MuzeiLoader: _partials_muzei_loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     XlsxRead: vue_xlsx__WEBPACK_IMPORTED_MODULE_1__["XlsxRead"],
     XlsxTable: vue_xlsx__WEBPACK_IMPORTED_MODULE_1__["XlsxTable"]
   }
@@ -2449,7 +2509,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_routes_med_r01routes_horizontal_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/routes/med/r01routes-horizontal.vue */ "./resources/js/components/routes/med/r01routes-horizontal.vue");
+/* harmony import */ var _med_r01routes_horizontal_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./med/r01routes-horizontal.vue */ "./resources/js/components/routes/med/r01routes-horizontal.vue");
+/* harmony import */ var _muzei_r01routes_vertical_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./muzei/r01routes-vertical.vue */ "./resources/js/components/routes/muzei/r01routes-vertical.vue");
 //
 //
 //
@@ -2460,6 +2521,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2477,7 +2544,8 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   components: {
-    MedR01RoutesHorizontal: _components_routes_med_r01routes_horizontal_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    MedR01RoutesHorizontal: _med_r01routes_horizontal_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    MuzeiR01RoutesVertical: _muzei_r01routes_vertical_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -2834,6 +2902,359 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var simple_keyboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! simple-keyboard */ "./node_modules/simple-keyboard/build/index.js");
+/* harmony import */ var simple_keyboard__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(simple_keyboard__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var simple_keyboard_build_css_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! simple-keyboard/build/css/index.css */ "./node_modules/simple-keyboard/build/css/index.css");
+/* harmony import */ var simple_keyboard_build_css_index_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(simple_keyboard_build_css_index_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var simple_keyboard_layouts_build_layouts_russian__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! simple-keyboard-layouts/build/layouts/russian */ "./node_modules/simple-keyboard-layouts/build/layouts/russian.js");
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "SimpleKeyboard",
+  props: {
+    keyboardClass: {
+      "default": "simple-keyboard",
+      type: String
+    },
+    input: {
+      type: String
+    }
+  },
+  data: function data() {
+    return {
+      keyboard: null
+    };
+  },
+  mounted: function mounted() {
+    this.keyboard = new simple_keyboard__WEBPACK_IMPORTED_MODULE_0___default.a(this.keyboardClass, {
+      onChange: this.onChange,
+      onKeyPress: this.onKeyPress,
+      //...layout,
+      layout: {
+        "default": ["1 2 3 4 5 6 7 8 9 0", "Й Ц У К Е Н Г Ш Щ З Х Ъ", "Ф Ы В А П Р О Л Д Ж Э", "Я Ч С М И Т Ь Б Ю ! ? , .", "{shift} {space} {bksp} {enter}"],
+        shift: ["1 2 3 4 5 6 7 8 9 0", "Q W E R T Y U I O P", 'A S D F G H J K L', "Z X C V B N M ! ? , .", "{shift} {space} {bksp} {enter}"]
+      },
+      display: {
+        '{bksp}': '←',
+        '{enter}': 'ENTER',
+        '{shift}': 'RU/EN',
+        '{space}': '            '
+      }
+    });
+  },
+  methods: {
+    onChange: function onChange(input) {
+      this.$emit("onChange", input);
+    },
+    onKeyPress: function onKeyPress(button) {
+      this.$emit("onKeyPress", button);
+      /**
+       * If you want to handle the shift and caps lock buttons
+       */
+
+      if (button === "{shift}" || button === "{lock}") this.handleShift();
+    },
+    handleShift: function handleShift() {
+      var currentLayout = this.keyboard.options.layoutName;
+      var shiftToggle = currentLayout === "default" ? "shift" : "default";
+      this.keyboard.setOptions({
+        layoutName: shiftToggle
+      });
+    }
+  },
+  watch: {
+    input: function input(_input) {
+      this.keyboard.setInput(_input);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _partials_muzei_loader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../partials/muzei/loader.vue */ "./resources/js/components/partials/muzei/loader.vue");
+/* harmony import */ var _SimpleKeyboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SimpleKeyboard */ "./resources/js/components/routes/muzei/SimpleKeyboard.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      schemes: [],
+      map: {},
+      r01routes: {},
+      route: {},
+      selectedItemID: '',
+      selectedItemSchemeID: '',
+      selectedItemScheme2ID: '',
+      selectedItemScheme_title: '',
+      selectedItem: '',
+      loading: true,
+      input: '',
+      current_slide: 1
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    fetch("/api/front/schemes").then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      _this.schemes = json;
+      _this.loading = false;
+    });
+    fetch("/api/front/r01routes").then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      _this.r01routes = json.data;
+      _this.loading = false;
+    });
+  },
+  computed: {
+    filtered_r01routes: function filtered_r01routes() {
+      var _this2 = this;
+
+      if (this.input.trim() === '') {
+        return this.r01routes;
+      } else {
+        return this.r01routes.filter(function (item) {
+          return item.title.toLowerCase().indexOf(_this2.input.toLowerCase()) >= 0;
+        });
+      }
+    }
+  },
+  methods: {
+    SelectRoute: function SelectRoute(routeListItem) {
+      var _this3 = this;
+
+      this.selectedItemID = routeListItem.id;
+      this.selectedItem = routeListItem.title;
+      this.selectedItemSchemeID = routeListItem.scheme_id;
+      this.selectedItemScheme2ID = routeListItem.scheme2_id;
+      fetch("/api/front/r01route/".concat(this.selectedItemID)).then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        _this3.route = json;
+        document.querySelectorAll('.scheme_images').forEach(function (el) {
+          el.style.visibility = 'hidden';
+        });
+        document.getElementById('scheme_image_' + routeListItem.scheme_id).style.visibility = 'visible';
+        _this3.current_slide = 1;
+      });
+    },
+    PrevScheme: function PrevScheme(selectedItemSchemeID) {
+      document.querySelectorAll('.scheme_images').forEach(function (el) {
+        el.style.visibility = 'hidden';
+      });
+      document.getElementById('scheme_image_' + selectedItemSchemeID).style.visibility = 'visible';
+      this.current_slide = 1;
+    },
+    NextScheme: function NextScheme(selectedItemScheme2ID) {
+      document.querySelectorAll('.scheme_images').forEach(function (el) {
+        el.style.visibility = 'hidden';
+      });
+      document.getElementById('scheme_image_' + selectedItemScheme2ID).style.visibility = 'visible';
+      this.current_slide = 2;
+    },
+    onChange: function onChange(input) {
+      this.input = input;
+    },
+    onKeyPress: function onKeyPress(button) {//console.log("button", button);
+    },
+    onInputChange: function onInputChange(input) {
+      this.input = input.target.value;
+    }
+  },
+  components: {
+    MuzeiLoader: _partials_muzei_loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    SimpleKeyboard: _SimpleKeyboard__WEBPACK_IMPORTED_MODULE_1__["default"]
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/videoalbums/VideoalbumItem.vue?vue&type=script&lang=js&":
 /*!*************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/videoalbums/VideoalbumItem.vue?vue&type=script&lang=js& ***!
@@ -2844,6 +3265,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_videoalbums_med_show_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/videoalbums/med/show-horizontal */ "./resources/js/components/videoalbums/med/show-horizontal.vue");
+/* harmony import */ var _components_videoalbums_muzei_show_vertical__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/videoalbums/muzei/show-vertical */ "./resources/js/components/videoalbums/muzei/show-vertical.vue");
 //
 //
 //
@@ -2852,6 +3274,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2870,7 +3300,8 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   components: {
-    MedVideoalbumItemHorizontal: _components_videoalbums_med_show_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"]
+    MedVideoalbumItemHorizontal: _components_videoalbums_med_show_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"],
+    MuzeiVideoalbumItemVertical: _components_videoalbums_muzei_show_vertical__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
 });
 
@@ -2886,6 +3317,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_videoalbums_med_index_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/videoalbums/med/index-horizontal */ "./resources/js/components/videoalbums/med/index-horizontal.vue");
+/* harmony import */ var _components_videoalbums_muzei_index_vertical__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/videoalbums/muzei/index-vertical */ "./resources/js/components/videoalbums/muzei/index-vertical.vue");
 //
 //
 //
@@ -2894,6 +3326,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2912,7 +3352,8 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   components: {
-    MedVideoalbumsAllHorizontal: _components_videoalbums_med_index_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"]
+    MedVideoalbumsAllHorizontal: _components_videoalbums_med_index_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"],
+    MuzeiVideoalbumsAllVertical: _components_videoalbums_muzei_index_vertical__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
 });
 
@@ -3067,6 +3508,154 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/videoalbums/muzei/index-vertical.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/videoalbums/muzei/index-vertical.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_partials_muzei_loader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../components/partials/muzei/loader */ "./resources/js/components/partials/muzei/loader.vue");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/css/swiper.css */ "./node_modules/swiper/css/swiper.css");
+/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      videoalbums: [],
+      loading: true,
+      swiperOptions: {
+        slidesPerView: 3,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      },
+      slider_prev_next: false
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    fetch("/api/front/videoalbums").then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      _this.videoalbums = json;
+      _this.loading = false;
+
+      if (json.length > 8) {
+        _this.slider_prev_next = true;
+      }
+    });
+  },
+  computed: {
+    swiper: function swiper() {
+      return this.$refs.VideoalbumsSwiper.$swiper;
+    }
+  },
+  components: {
+    MuzeiLoader: _components_partials_muzei_loader__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["Swiper"],
+    SwiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["SwiperSlide"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/videoalbums/muzei/show-vertical.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/videoalbums/muzei/show-vertical.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_partials_muzei_loader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../components/partials/muzei/loader */ "./resources/js/components/partials/muzei/loader.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      videoalbumItem: {},
+      loading: true
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    fetch("/api/front/videoalbum/".concat(this.$route.params.id)).then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      _this.videoalbumItem = json;
+      _this.loading = false;
+    });
+  },
+  components: {
+    MuzeiLoader: _components_partials_muzei_loader__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/simple-keyboard/build/css/index.css":
 /*!******************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/simple-keyboard/build/css/index.css ***!
@@ -3136,7 +3725,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".wrapper {\r\n    position: relative;\r\n    width: 100vw;\r\n    max-width: 100vh;\r\n    max-height: 177.77vw;\r\n    height: 177.78vw;\r\n    overflow: hidden;\r\n    margin: 0 auto;\r\n    background: #171F19;\r\n    border: 1px solid #ccc;\r\n}\r\n\r\n.index-vert-sidebar {\r\n    position: relative;\r\n    height: 65vh;\r\n    border-top: 0.25vh solid #BDB79F;\r\n    border-left: 0.25vh solid #BDB79F;\r\n    border-bottom: 0.25vh solid #BDB79F;\r\n}\r\n\r\n.index-vert-sidebar .m-logo {\r\n    width: 14vh;\r\n    height: 14vh;\r\n    display: block;\r\n    margin: 0 auto;\r\n    margin-top: 3vh;\r\n    margin-bottom: 2vh;\r\n    border: 0.5vh solid #966545;\r\n}\r\n\r\n.index-vert-sidebar .m-title p {\r\n    font-size: 1.85vh;\r\n    text-align: center;\r\n}\r\n\r\n.index-vert-sidebar .m-sidebar-button {\r\n    font-size: 1.25vh;\r\n    text-align: center;\r\n    bottom: 4vh;\r\n}\r\n\r\n.banner-slide {\r\n    height: 35vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.index-button {\r\n    background-color: #d6d6d6;\r\n    padding: 2vh;\r\n    height: 8.1vh;\r\n    display: block;\r\n    text-align: center;\r\n    color: #333;\r\n    font-size: 2vh;\r\n    position: relative;\r\n    border: 0.125vh solid #BDB79F;\r\n\r\n    color: #fff;\r\n    background-color: #4B7F2B;\r\n    text-transform: uppercase;\r\n}\r\n\r\n.index-button:hover,\r\n.index-button:focus {\r\n    color: #fff;\r\n    background-color: #6bc1e9;\r\n}\r\n\r\n.index-button span {\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    left: 1vh;\r\n    right: 1vh;\r\n    z-index: 10;\r\n}\r\n\r\n.index-button-image {\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n    position: absolute;\r\n    z-index: 1;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.m-buttons {\r\n    border: 0.1vh solid #BDB79F;\r\n    border-top: 0.25vh solid #BDB79F;\r\n    border-bottom: 0.25vh solid #BDB79F;\r\n    height: 65vh;\r\n    overflow-y: auto;\r\n    background-color: #BDB79F;\r\n}\r\n\r\n.m-buttons .col-6:nth-child(4n+1) .index-button,\r\n.m-buttons .col-6:nth-child(4n+4) .index-button {\r\n    background-color: #4B7F2B;\r\n}\r\n\r\n.m-buttons .index-button-overlay:before {\r\n    content: '';\r\n    display: block;\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    right: 0;\r\n    top: 0;\r\n    bottom: 0;\r\n    z-index: 2;\r\n    background: rgba(0,0,0, 0.5);\r\n}\r\n\r\n.m-buttons .col-6:nth-child(4n+2) .index-button,\r\n.m-buttons .col-6:nth-child(4n+3) .index-button {\r\n    background-color: #976545;\r\n}\r\n\r\n.page-item {\r\n    background-color: #fff;\r\n    height: auto;\r\n    max-height: 65vh;\r\n}\r\n\r\n.header-sub {\r\n    height: 20vh;\r\n}\r\n\r\n.header-sub .m-logo {\r\n    width: 11vh;\r\n    height: 11vh;\r\n    margin-top: 3vh;\r\n    margin-bottom: 0;\r\n    border-width: 0.4vh;\r\n}\r\n\r\n.header-sub .m-logo a {\r\n    display: block;\r\n    height: 100%;\r\n}\r\n\r\n.header-sub .m-title p {\r\n    font-size: 1.75vh;\r\n    text-align: center;\r\n    padding-top: 2vh;\r\n}\r\n\r\n.PagesSwiper {\r\n    background: #171F19;\r\n}\r\n\r\n.PagesSwiper .index-button {\r\n    height: 50vh;\r\n}\r\n\r\n.PhotoalbumsSwiper .index-button {\r\n    height: 50vh;\r\n}\r\n\r\n.gallery-detail {\r\n    padding: 0 2.5vh;\r\n}\r\n\r\n.gallery-detail-item {\r\n    /*width: 30%;\r\n    height: 60vh;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    opacity: 0.5;\r\n    margin: 0 5vh;*/\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 80vw;\r\n    height: 60vh;\r\n    margin: 0;\r\n    opacity: 1;\r\n}\r\n\r\n.gallery-detail-item img {\r\n    width: auto;\r\n    height: auto;\r\n    max-width: 80vw;\r\n    max-height: 60vh;\r\n    transform: none;\r\n}\r\n\r\n.swiper-button-next,\r\n.swiper-button-prev {\r\n    z-index: 999;\r\n}\r\n\r\n.gallery-detail-item video {\r\n    display: block;\r\n    max-height: 100%;\r\n    transform: scale(0.25);\r\n}\r\n\r\n.gallery-detail-item video {\r\n    display: block;\r\n    max-height: 100%;\r\n    transform: scale(0.25);\r\n}\r\n\r\n.h1-page {\r\n    font-weight: normal;\r\n    font-size: 2vh;\r\n    text-align: center;\r\n    margin-bottom: 2vh;\r\n    height: 5vh;\r\n}\r\n\r\n.type-1 .page-detail-text {\r\n    height: 48vh;\r\n    font-size: 1.5vh !important;\r\n}\r\n\r\n.type-2 {\r\n    padding: 2vh;\r\n}\r\n\r\n.type-2 .page-detail-text {\r\n    padding-left: 0;\r\n    height: 32.5vh;\r\n    font-size: 1.5vh !important;\r\n}\r\n\r\n.type-2 .page-detail-image {\r\n    height: 20vh;\r\n    margin-bottom: 2vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-3 {\r\n    padding: 2vh;\r\n}\r\n\r\n.type-3 .page-detail-text {\r\n    padding-left: 0;\r\n    height: 40vh;\r\n    font-size: 1.5vh !important;\r\n    overflow-y: auto;\r\n}\r\n\r\n.type3slider {\r\n    margin-top: 2vh;\r\n}\r\n\r\n.type3slider-item {\r\n    height: 12vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-7 .text {\r\n    height: 65vh;\r\n    width: 100%;\r\n    padding-top: 2vh;\r\n}\r\n\r\n\r\n/* FOOTER */\r\n\r\nfooter {\r\n    height: 5vh;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n}\r\n\r\n.muzei-home {\r\n    background-color: #2886bb;\r\n    width: 6vh;\r\n    height: 5vh;\r\n    display: inline-block;\r\n    position: relative;\r\n    margin-right: 3vh;\r\n    padding-left: 1vh;\r\n    vertical-align: middle;\r\n}\r\n\r\n.muzei-home-sub {\r\n    background-color: #4B7F2B;\r\n}\r\n\r\n.muzei-home:after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    right: 0;\r\n    margin-right: -5vh;\r\n    width: 0;\r\n    height: 0;\r\n    border: 2.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #2886bb;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.muzei-home-sub:after {\r\n    border-left-color: #4B7F2B;\r\n    z-index: 10;\r\n}\r\n\r\n.muzei-home img {\r\n    width: 4.5vh;\r\n    margin-top: 0.25vh;\r\n}\r\n\r\n.muzei-footer-second {\r\n    vertical-align: middle;\r\n    color: #fff;\r\n    position: relative;\r\n    background-color: #71a551;\r\n    width: auto;\r\n    height: 5vh;\r\n    display: inline-block;\r\n    padding-left: 4vh;\r\n    padding-right: 0.5vh;\r\n    margin-left: -3.5vh;\r\n    font-size: 1.5vh;\r\n    line-height: 5vh;\r\n    margin-right: 3vh;\r\n}\r\n\r\n.muzei-footer-second:before {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    left: 0;\r\n    width: 0;\r\n    height: 0;\r\n    border: 2.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #71a551;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.muzei-footer-second:after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    right: 0;\r\n    margin-right: -5vh;\r\n    width: 0;\r\n    height: 0;\r\n    border: 2.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #71a551;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.muzei-footer-second:focus,\r\n.muzei-footer-second:hover,\r\n.muzei-footer-third:focus,\r\n.muzei-footer-third:hover {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n\r\n.muzei-footer-second span {\r\n    display: block;\r\n    margin-right: 2vh;\r\n}\r\n\r\n.muzei-footer-third {\r\n    font-size: 1.5vh;\r\n    line-height: 5vh;\r\n    color: #fff;\r\n}\r\n\r\n/* FOOTER */\r\n\r\n\r\n", ""]);
+exports.push([module.i, ".wrapper {\r\n    position: relative;\r\n    width: 100vw;\r\n    max-width: 100vh;\r\n    max-height: 177.77vw;\r\n    height: 177.78vw;\r\n    overflow: hidden;\r\n    margin: 0 auto;\r\n    background: #171F19;\r\n    border: 1px solid #ccc;\r\n}\r\n\r\n.index-vert-sidebar {\r\n    position: relative;\r\n    height: 65vh;\r\n    border-top: 0.25vh solid #BDB79F;\r\n    border-left: 0.25vh solid #BDB79F;\r\n    border-bottom: 0.25vh solid #BDB79F;\r\n}\r\n\r\n.index-vert-sidebar .m-logo {\r\n    width: 14vh;\r\n    height: 14vh;\r\n    display: block;\r\n    margin: 0 auto;\r\n    margin-top: 3vh;\r\n    margin-bottom: 2vh;\r\n    border: 0.5vh solid #966545;\r\n}\r\n\r\n.index-vert-sidebar .m-title p {\r\n    font-size: 1.85vh;\r\n    text-align: center;\r\n}\r\n\r\n.index-vert-sidebar .m-sidebar-button {\r\n    font-size: 1.25vh;\r\n    text-align: center;\r\n    bottom: 4vh;\r\n}\r\n\r\n.banner-slide {\r\n    height: 35vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.index-button {\r\n    background-color: #d6d6d6;\r\n    padding: 2vh;\r\n    height: 8.1vh;\r\n    display: block;\r\n    text-align: center;\r\n    color: #333;\r\n    font-size: 2vh;\r\n    position: relative;\r\n    border: 0.125vh solid #BDB79F;\r\n\r\n    color: #fff;\r\n    background-color: #4B7F2B;\r\n    text-transform: uppercase;\r\n}\r\n\r\n.index-button:hover,\r\n.index-button:focus {\r\n    color: #fff;\r\n    background-color: #6bc1e9;\r\n}\r\n\r\n.index-button span {\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    left: 1vh;\r\n    right: 1vh;\r\n    z-index: 10;\r\n}\r\n\r\n.index-button-image {\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n    position: absolute;\r\n    z-index: 1;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.m-buttons {\r\n    border: 0.1vh solid #BDB79F;\r\n    border-top: 0.25vh solid #BDB79F;\r\n    border-bottom: 0.25vh solid #BDB79F;\r\n    height: 65vh;\r\n    overflow-y: auto;\r\n    background-color: #BDB79F;\r\n}\r\n\r\n.m-buttons .col-6:nth-child(4n+1) .index-button,\r\n.m-buttons .col-6:nth-child(4n+4) .index-button {\r\n    background-color: #4B7F2B;\r\n}\r\n\r\n.m-buttons .index-button-overlay:before {\r\n    content: '';\r\n    display: block;\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    right: 0;\r\n    top: 0;\r\n    bottom: 0;\r\n    z-index: 2;\r\n    background: rgba(0,0,0, 0.5);\r\n}\r\n\r\n.m-buttons .col-6:nth-child(4n+2) .index-button,\r\n.m-buttons .col-6:nth-child(4n+3) .index-button {\r\n    background-color: #976545;\r\n}\r\n\r\n.page-item {\r\n    background-color: #fff;\r\n    height: 65vh;\r\n    max-height: 65vh;\r\n}\r\n\r\n.header-sub {\r\n    height: 20vh;\r\n}\r\n\r\n.header-sub .m-logo {\r\n    width: 11vh;\r\n    height: 11vh;\r\n    margin-top: 3vh;\r\n    margin-bottom: 0;\r\n    border-width: 0.4vh;\r\n}\r\n\r\n.header-sub .m-logo a {\r\n    display: block;\r\n    height: 100%;\r\n}\r\n\r\n.header-sub .m-title p {\r\n    font-size: 1.75vh;\r\n    text-align: center;\r\n    padding-top: 2vh;\r\n}\r\n\r\n.PagesSwiper {\r\n    background: #171F19;\r\n}\r\n\r\n.PagesSwiper .index-button {\r\n    height: 57vh;\r\n}\r\n\r\n.PhotoalbumsSwiper .index-button,\r\n.VideoalbumsSwiper .index-button {\r\n    height: 57vh;\r\n}\r\n\r\n.gallery-detail {\r\n    padding: 0 2.5vh;\r\n}\r\n\r\n.gallery-detail-item {\r\n    /*width: 30%;\r\n    height: 60vh;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    opacity: 0.5;\r\n    margin: 0 5vh;*/\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 80vw;\r\n    height: 60vh;\r\n    margin: 0;\r\n    opacity: 1;\r\n}\r\n\r\n.gallery-detail-item img {\r\n    width: auto;\r\n    height: auto;\r\n    max-width: 80vw;\r\n    max-height: 60vh;\r\n    transform: none;\r\n}\r\n\r\n.swiper-button-next,\r\n.swiper-button-prev {\r\n    z-index: 999;\r\n}\r\n\r\n.gallery-detail-item video {\r\n    display: block;\r\n    max-height: 100%;\r\n    transform: scale(0.25);\r\n}\r\n\r\n.gallery-detail-item video {\r\n    display: block;\r\n    max-height: 100%;\r\n    transform: scale(0.25);\r\n}\r\n\r\n.h1-page {\r\n    font-weight: normal;\r\n    font-size: 2vh;\r\n    text-align: center;\r\n    margin-bottom: 2vh;\r\n    height: 5vh;\r\n}\r\n\r\n.type-1 .page-detail-text {\r\n    height: 48vh;\r\n    font-size: 1.5vh !important;\r\n}\r\n\r\n.type-2 {\r\n    padding: 2vh;\r\n}\r\n\r\n.type-2 .page-detail-text {\r\n    padding-left: 0;\r\n    height: 32.5vh;\r\n    font-size: 1.5vh !important;\r\n}\r\n\r\n.type-2 .page-detail-image {\r\n    height: 20vh;\r\n    margin-bottom: 2vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-3 {\r\n    padding: 2vh;\r\n}\r\n\r\n.type-3 .page-detail-text {\r\n    padding-left: 0;\r\n    height: 40vh;\r\n    font-size: 1.5vh !important;\r\n    overflow-y: auto;\r\n}\r\n\r\n.type3slider {\r\n    margin-top: 2vh;\r\n}\r\n\r\n.type3slider-item {\r\n    height: 12vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-7 .text {\r\n    height: 57vh;\r\n    width: 100%;\r\n}\r\n\r\n.type-7 iframe {\r\n    margin-bottom: 2vh;\r\n    height: 56vh;\r\n}\r\n\r\n.excel-item {\r\n    width: 94vw;\r\n    width: auto;\r\n    height: 57vh;\r\n    overflow-y: scroll;\r\n    text-align: center;\r\n    background-color: #fff;\r\n    padding: 2vh;\r\n}\r\n\r\n.excel-item table {\r\n    border-collapse: collapse;\r\n    margin: 1rem 0;\r\n    display: inline-block;\r\n    overflow-x: auto;\r\n    text-align: left;\r\n    font-size: 1.1vh;\r\n}\r\n\r\n.excel-item table tr {\r\n    border-top: 1px solid #dfe2e5;\r\n}\r\n\r\n.excel-item table tr:nth-child(2n) {\r\n    background-color: #f6f8fa;\r\n}\r\n\r\n.excel-item table td,\r\n.excel-item table th {\r\n    border: 1px solid #dfe2e5;\r\n    padding: .6em 1em;\r\n}\r\n\r\n\r\n/* FOOTER */\r\n\r\nfooter {\r\n    height: 5vh;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n}\r\n\r\n.muzei-home {\r\n    background-color: #2886bb;\r\n    width: 6vh;\r\n    height: 5vh;\r\n    display: inline-block;\r\n    position: relative;\r\n    margin-right: 3vh;\r\n    padding-left: 1vh;\r\n    vertical-align: middle;\r\n}\r\n\r\n.muzei-home-sub {\r\n    background-color: #4B7F2B;\r\n}\r\n\r\n.muzei-home:after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    right: 0;\r\n    margin-right: -5vh;\r\n    width: 0;\r\n    height: 0;\r\n    border: 2.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #2886bb;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.muzei-home-sub:after {\r\n    border-left-color: #4B7F2B;\r\n    z-index: 10;\r\n}\r\n\r\n.muzei-home img {\r\n    width: 4.5vh;\r\n    margin-top: 0.25vh;\r\n}\r\n\r\n.muzei-footer-second {\r\n    vertical-align: middle;\r\n    color: #fff;\r\n    position: relative;\r\n    background-color: #71a551;\r\n    width: auto;\r\n    height: 5vh;\r\n    display: inline-block;\r\n    padding-left: 4vh;\r\n    padding-right: 0.5vh;\r\n    margin-left: -3.5vh;\r\n    font-size: 1.5vh;\r\n    line-height: 5vh;\r\n    margin-right: 3vh;\r\n}\r\n\r\n.muzei-footer-second:before {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    left: 0;\r\n    width: 0;\r\n    height: 0;\r\n    border: 2.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #71a551;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.muzei-footer-second:after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    right: 0;\r\n    margin-right: -5vh;\r\n    width: 0;\r\n    height: 0;\r\n    border: 2.5vh solid;\r\n    border-bottom-color: transparent;\r\n    border-top-color: transparent;\r\n    border-left-color: #71a551;\r\n    border-right-color: transparent;\r\n}\r\n\r\n.muzei-footer-second:focus,\r\n.muzei-footer-second:hover,\r\n.muzei-footer-third:focus,\r\n.muzei-footer-third:hover {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n\r\n.muzei-footer-second span {\r\n    display: block;\r\n    margin-right: 2vh;\r\n}\r\n\r\n.muzei-footer-third {\r\n    font-size: 1.5vh;\r\n    line-height: 5vh;\r\n    color: #fff;\r\n}\r\n\r\n/* FOOTER */\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -3232,6 +3821,25 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 // module
 exports.push([module.i, "\n.scheme_images[data-v-270675fe] {\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n.route_about[data-v-270675fe] {\n    height: 10vh;\n}\n.prevnextbutton[data-v-270675fe] {\n    position: absolute;\n    bottom: 1vh;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=style&index=0&id=4423c6a9&scoped=true&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=style&index=0&id=4423c6a9&scoped=true&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.scheme_images[data-v-4423c6a9] {\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n.route_about[data-v-4423c6a9] {\n    height: 10vh;\n}\n.prevnextbutton[data-v-4423c6a9] {\n    position: absolute;\n    bottom: 1vh;\n}\n", ""]);
 
 // exports
 
@@ -27820,6 +28428,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=style&index=0&id=4423c6a9&scoped=true&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=style&index=0&id=4423c6a9&scoped=true&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--6-2!../../../../../node_modules/vue-loader/lib??vue-loader-options!./r01routes-vertical.vue?vue&type=style&index=0&id=4423c6a9&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=style&index=0&id=4423c6a9&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -37651,26 +38289,38 @@ var render = function() {
           [
             _vm._l(_vm.page.types, function(type) {
               return _c("div", { staticClass: "container" }, [
-                _c(
-                  "div",
-                  { staticClass: "page-item" },
-                  [
-                    type.id == "1"
-                      ? _c("MuzeiPageType1Vertical")
-                      : type.id == "2"
-                      ? _c("MuzeiPageType2Vertical")
-                      : type.id == "3"
-                      ? _c("MuzeiPageType3Vertical")
-                      : type.id == "6"
-                      ? _c("MuzeiPageType6Vertical")
-                      : type.id == "7"
-                      ? _c("MuzeiPageType7Vertical")
-                      : type.id == "9"
-                      ? _c("MuzeiPageType9Vertical")
-                      : _vm._e()
-                  ],
-                  1
-                )
+                type.id == "6"
+                  ? _c(
+                      "div",
+                      {
+                        staticClass: "page-item",
+                        staticStyle: { background: "#171F19" }
+                      },
+                      [
+                        type.id == "6" ? _c("MuzeiPageType6Vertical") : _vm._e()
+                      ],
+                      1
+                    )
+                  : _c(
+                      "div",
+                      { staticClass: "page-item" },
+                      [
+                        type.id == "1"
+                          ? _c("MuzeiPageType1Vertical")
+                          : type.id == "2"
+                          ? _c("MuzeiPageType2Vertical")
+                          : type.id == "3"
+                          ? _c("MuzeiPageType3Vertical")
+                          : type.id == "7"
+                          ? _c("MuzeiPageType7Vertical")
+                          : type.id == "9"
+                          ? _c("MuzeiPageType9Vertical")
+                          : type.id == "10"
+                          ? _c("MuzeiPageType10Vertical")
+                          : _vm._e()
+                      ],
+                      1
+                    )
               ])
             }),
             _vm._v(" "),
@@ -38006,7 +38656,7 @@ var render = function() {
     { staticClass: "type-1" },
     [
       _vm.loading
-        ? _c("MuzeLoader")
+        ? _c("MuzeiLoader")
         : _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-12" }, [
               _c("h1", { staticClass: "h1-page" }, [
@@ -38016,6 +38666,46 @@ var render = function() {
               _c("div", { staticClass: "page-detail-text" }, [
                 _c("div", { domProps: { innerHTML: _vm._s(_vm.page.text) } })
               ])
+            ])
+          ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/muzei/type-10/vertical.vue?vue&type=template&id=3f088142&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/pages/muzei/type-10/vertical.vue?vue&type=template&id=3f088142& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "type-10" },
+    [
+      _vm.loading
+        ? _c("MuzeiLoader")
+        : _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-12" }, [
+              _c("iframe", {
+                staticStyle: { width: "100%", height: "65vh" },
+                attrs: { src: _vm.page.iframe, frameborder: "0" }
+              })
             ])
           ])
     ],
@@ -38049,7 +38739,7 @@ var render = function() {
     { staticClass: "type-2" },
     [
       _vm.loading
-        ? _c("MuzeLoader")
+        ? _c("MuzeiLoader")
         : _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-12" }, [
               _c("h1", { staticClass: "h1-page" }, [
@@ -38191,61 +38881,83 @@ var render = function() {
       _vm.loading
         ? _c("MuzeiLoader")
         : _c(
-            "swiper",
-            {
-              ref: "PagesSwiper",
-              staticClass: "PagesSwiper",
-              attrs: { options: _vm.swiperOptions }
-            },
+            "div",
             [
-              _vm._l(_vm.page.children, function(child) {
-                return _c(
-                  "swiper-slide",
-                  { key: child.id, staticClass: "user-pages-item-item" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "index-button",
-                        attrs: {
-                          to: { name: "PageItem", params: { id: child.id } }
-                        }
-                      },
+              _c(
+                "h1",
+                {
+                  staticClass: "h1-page",
+                  staticStyle: {
+                    background: "#171F19",
+                    color: "#fff",
+                    margin: "0",
+                    "padding-top": "2vh",
+                    height: "9vh"
+                  }
+                },
+                [_vm._v(_vm._s(_vm.page.title))]
+              ),
+              _vm._v(" "),
+              _c(
+                "swiper",
+                {
+                  ref: "PagesSwiper",
+                  staticClass: "PagesSwiper",
+                  attrs: { options: _vm.swiperOptions }
+                },
+                [
+                  _vm._l(_vm.page.children, function(child) {
+                    return _c(
+                      "swiper-slide",
+                      { key: child.id, staticClass: "user-pages-item-item" },
                       [
-                        child.image_as_icon === "1"
-                          ? _c("div", {
-                              staticClass: "user-pages-item-image",
-                              style: {
-                                "background-image": "url(" + child.image + ")"
-                              }
-                            })
-                          : _vm._e(),
-                        _vm._v(" "),
-                        _c("h2", [_vm._v(_vm._s(child.title))])
-                      ]
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "index-button",
+                            attrs: {
+                              to: { name: "PageItem", params: { id: child.id } }
+                            }
+                          },
+                          [
+                            child.image_as_icon === "1"
+                              ? _c("div", {
+                                  staticClass: "user-pages-item-image",
+                                  style: {
+                                    "background-image":
+                                      "url(" + child.image + ")"
+                                  }
+                                })
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _c("h2", [_vm._v(_vm._s(child.title))])
+                          ]
+                        )
+                      ],
+                      1
                     )
-                  ],
-                  1
-                )
-              }),
-              _vm._v(" "),
-              _vm.slider_prev_next
-                ? _c("div", {
-                    staticClass: "swiper-button-prev",
-                    attrs: { slot: "button-prev" },
-                    slot: "button-prev"
-                  })
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.slider_prev_next
-                ? _c("div", {
-                    staticClass: "swiper-button-next",
-                    attrs: { slot: "button-next" },
-                    slot: "button-next"
-                  })
-                : _vm._e()
+                  }),
+                  _vm._v(" "),
+                  _vm.slider_prev_next
+                    ? _c("div", {
+                        staticClass: "swiper-button-prev",
+                        attrs: { slot: "button-prev" },
+                        slot: "button-prev"
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.slider_prev_next
+                    ? _c("div", {
+                        staticClass: "swiper-button-next",
+                        attrs: { slot: "button-next" },
+                        slot: "button-next"
+                      })
+                    : _vm._e()
+                ],
+                2
+              )
             ],
-            2
+            1
           )
     ],
     1
@@ -38278,20 +38990,28 @@ var render = function() {
     { staticClass: "type-7" },
     [
       _vm.loading
-        ? _c("MuzeLoader")
+        ? _c("MuzeiLoader")
         : _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-12" }, [
-              _c("div", { staticClass: "text" }, [
-                _c("iframe", {
-                  staticStyle: { border: "none" },
-                  attrs: {
-                    src: "/lib/pdfjs/web/viewer.html?file=" + _vm.page.pdf,
-                    height: "100%",
-                    width: "100%"
-                  }
-                })
-              ])
-            ])
+            _c(
+              "div",
+              { staticClass: "col-12", staticStyle: { "padding-top": "2vh" } },
+              [
+                _c("h1", { staticClass: "h1-page" }, [
+                  _vm._v(_vm._s(_vm.page.title))
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "text" }, [
+                  _c("iframe", {
+                    staticStyle: { border: "none" },
+                    attrs: {
+                      src: "/lib/pdfjs/web/viewer.html?file=" + _vm.page.pdf,
+                      height: "100%",
+                      width: "100%"
+                    }
+                  })
+                ])
+              ]
+            )
           ])
     ],
     1
@@ -38324,9 +39044,18 @@ var render = function() {
     { staticClass: "type-9" },
     [
       _vm.loading
-        ? _c("MedLoader")
+        ? _c("MuzeiLoader")
         : _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-12" }, [
+              _c(
+                "h1",
+                {
+                  staticClass: "h1-page",
+                  staticStyle: { "margin-top": "2vh" }
+                },
+                [_vm._v(_vm._s(_vm.page.title))]
+              ),
+              _vm._v(" "),
               _c("div", { staticClass: "page-detail-text" }, [
                 _c(
                   "div",
@@ -39356,12 +40085,27 @@ var render = function() {
   return _c("div", [
     _vm.settings.theme === "med"
       ? _c("div", [
-          _c(
-            "div",
-            { staticClass: "container" },
-            [_c("MedR01RoutesHorizontal")],
-            1
-          )
+          _vm.settings.orientation === "horizontal"
+            ? _c(
+                "div",
+                { staticClass: "container" },
+                [_c("MedR01RoutesHorizontal")],
+                1
+              )
+            : _vm._e()
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.settings.theme === "muzei"
+      ? _c("div", [
+          _vm.settings.orientation === "vertical"
+            ? _c(
+                "div",
+                { staticClass: "container" },
+                [_c("MuzeiR01RoutesVertical")],
+                1
+              )
+            : _vm._e()
         ])
       : _vm._e()
   ])
@@ -41159,6 +41903,1792 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=template&id=85c39388&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=template&id=85c39388&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { class: _vm.keyboardClass })
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=template&id=4423c6a9&scoped=true&":
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=template&id=4423c6a9&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _vm.loading
+        ? _c("MuzeiLoader")
+        : _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-12", staticStyle: { order: "2" } }, [
+              _c(
+                "div",
+                { staticClass: "med-route-sidebar" },
+                [
+                  _c("input", {
+                    staticClass: "input",
+                    staticStyle: { "margin-bottom": "2vh" },
+                    attrs: { placeholder: "Поиск..." },
+                    domProps: { value: _vm.input },
+                    on: { input: _vm.onInputChange }
+                  }),
+                  _vm._v(" "),
+                  _c("SimpleKeyboard", {
+                    attrs: { input: _vm.input },
+                    on: { onChange: _vm.onChange, onKeyPress: _vm.onKeyPress }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "ul",
+                    {
+                      staticStyle: { "margin-top": "0.5vh" },
+                      attrs: { id: "myUL" }
+                    },
+                    _vm._l(_vm.filtered_r01routes, function(routeListItem) {
+                      return _c(
+                        "li",
+                        {
+                          key: routeListItem.id,
+                          on: {
+                            click: function($event) {
+                              return _vm.SelectRoute(routeListItem)
+                            }
+                          }
+                        },
+                        [_c("a", [_vm._v(_vm._s(routeListItem.title))])]
+                      )
+                    }),
+                    0
+                  )
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-12", staticStyle: { order: "1" } }, [
+              _c(
+                "div",
+                { staticClass: "route_about" },
+                [
+                  _vm._l(_vm.schemes, function(scheme) {
+                    return _c("div", { key: scheme.id }, [
+                      scheme.id == _vm.selectedItemSchemeID &&
+                      _vm.current_slide === 1
+                        ? _c(
+                            "div",
+                            { staticClass: "scheme_title scheme_title_first" },
+                            [_vm._v(_vm._s(scheme.title))]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      scheme.id == _vm.selectedItemScheme2ID &&
+                      _vm.current_slide === 2
+                        ? _c(
+                            "div",
+                            { staticClass: "scheme_title scheme_title_second" },
+                            [_vm._v(_vm._s(scheme.title))]
+                          )
+                        : _vm._e()
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _vm.selectedItem
+                    ? _c("h5", { staticStyle: { display: "block" } }, [
+                        _vm._v(_vm._s(_vm.selectedItem))
+                      ])
+                    : _vm._e()
+                ],
+                2
+              ),
+              _vm._v(" "),
+              _vm.current_slide === 2
+                ? _c(
+                    "button",
+                    {
+                      staticClass: "prevnextbutton prev_button",
+                      on: {
+                        click: function($event) {
+                          return _vm.PrevScheme(_vm.selectedItemSchemeID)
+                        }
+                      }
+                    },
+                    [_vm._v("\n                Начало маршрута\n            ")]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.route.schemes2 &&
+              _vm.route.schemes2.length > 0 &&
+              _vm.current_slide === 1
+                ? _c(
+                    "button",
+                    {
+                      staticClass: "prevnextbutton next_button",
+                      on: {
+                        click: function($event) {
+                          return _vm.NextScheme(_vm.selectedItemScheme2ID)
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                Продолжить маршрут\n            "
+                      )
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticStyle: {
+                    position: "relative",
+                    width: "800px",
+                    height: "450px"
+                  },
+                  attrs: { id: "map" }
+                },
+                [
+                  _vm._l(_vm.schemes, function(scheme) {
+                    return _c(
+                      "div",
+                      {
+                        key: scheme.id,
+                        staticClass: "scheme_images",
+                        attrs: { id: "scheme_image_" + scheme.id }
+                      },
+                      [
+                        _c("img", {
+                          staticStyle: { width: "800px", height: "450px" },
+                          attrs: { src: scheme.image }
+                        })
+                      ]
+                    )
+                  }),
+                  _vm._v(" "),
+                  _vm.current_slide === 1
+                    ? _c(
+                        "svg",
+                        {
+                          staticClass: "map-path svg1",
+                          attrs: { viewBox: "0 0 800 450" }
+                        },
+                        [
+                          _vm.route.x_01
+                            ? _c("path", {
+                                staticClass: "key-anim01",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_01 +
+                                    " " +
+                                    _vm.route.y_01 +
+                                    ", "
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_01
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "01",
+                                  cx: _vm.route.x_01,
+                                  cy: _vm.route.y_01,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_01
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_01,
+                                    y: _vm.route.y_01,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_begin))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_02
+                            ? _c("path", {
+                                staticClass: "key-anim02",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_02 +
+                                    " " +
+                                    _vm.route.y_02 +
+                                    ", " +
+                                    _vm.route.x_01 +
+                                    " " +
+                                    _vm.route.y_01
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_02
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "02",
+                                  cx: _vm.route.x_02,
+                                  cy: _vm.route.y_02,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_02 && !_vm.route.x_03
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_02,
+                                    y: _vm.route.y_02,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_03
+                            ? _c("path", {
+                                staticClass: "key-anim03",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_03 +
+                                    " " +
+                                    _vm.route.y_03 +
+                                    ", " +
+                                    _vm.route.x_02 +
+                                    " " +
+                                    _vm.route.y_02
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_03
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "03",
+                                  cx: _vm.route.x_03,
+                                  cy: _vm.route.y_03,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_03 && !_vm.route.x_04
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_03,
+                                    y: _vm.route.y_03,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_04
+                            ? _c("path", {
+                                staticClass: "key-anim04",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_04 +
+                                    " " +
+                                    _vm.route.y_04 +
+                                    ", " +
+                                    _vm.route.x_03 +
+                                    " " +
+                                    _vm.route.y_03
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_04
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "04",
+                                  cx: _vm.route.x_04,
+                                  cy: _vm.route.y_04,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_04 && !_vm.route.x_05
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_04,
+                                    y: _vm.route.y_04,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_05
+                            ? _c("path", {
+                                staticClass: "key-anim05",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_05 +
+                                    " " +
+                                    _vm.route.y_05 +
+                                    ", " +
+                                    _vm.route.x_04 +
+                                    " " +
+                                    _vm.route.y_04
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_05
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "05",
+                                  cx: _vm.route.x_05,
+                                  cy: _vm.route.y_05,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_05 && !_vm.route.x_06
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_05,
+                                    y: _vm.route.y_05,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_06
+                            ? _c("path", {
+                                staticClass: "key-anim06",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_06 +
+                                    " " +
+                                    _vm.route.y_06 +
+                                    ", " +
+                                    _vm.route.x_05 +
+                                    " " +
+                                    _vm.route.y_05
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_06
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "06",
+                                  cx: _vm.route.x_06,
+                                  cy: _vm.route.y_06,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_06 && !_vm.route.x_07
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_06,
+                                    y: _vm.route.y_06,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_07
+                            ? _c("path", {
+                                staticClass: "key-anim07",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_07 +
+                                    " " +
+                                    _vm.route.y_07 +
+                                    ", " +
+                                    _vm.route.x_06 +
+                                    " " +
+                                    _vm.route.y_06
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_07
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "07",
+                                  cx: _vm.route.x_07,
+                                  cy: _vm.route.y_07,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_07 && !_vm.route.x_08
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_07,
+                                    y: _vm.route.y_07,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_08
+                            ? _c("path", {
+                                staticClass: "key-anim08",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_08 +
+                                    " " +
+                                    _vm.route.y_08 +
+                                    ", " +
+                                    _vm.route.x_07 +
+                                    " " +
+                                    _vm.route.y_07
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_08
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "08",
+                                  cx: _vm.route.x_08,
+                                  cy: _vm.route.y_08,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_08 && !_vm.route.x_09
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_08,
+                                    y: _vm.route.y_08,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_09
+                            ? _c("path", {
+                                staticClass: "key-anim09",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_09 +
+                                    " " +
+                                    _vm.route.y_09 +
+                                    ", " +
+                                    _vm.route.x_08 +
+                                    " " +
+                                    _vm.route.y_08
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_09
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "09",
+                                  cx: _vm.route.x_09,
+                                  cy: _vm.route.y_09,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_09 && !_vm.route.x_10
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_09,
+                                    y: _vm.route.y_09,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_10
+                            ? _c("path", {
+                                staticClass: "key-anim10",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_10 +
+                                    " " +
+                                    _vm.route.y_10 +
+                                    ", " +
+                                    _vm.route.x_09 +
+                                    " " +
+                                    _vm.route.y_09
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_10
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "10",
+                                  cx: _vm.route.x_10,
+                                  cy: _vm.route.y_10,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_10 && !_vm.route.x_11
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_10,
+                                    y: _vm.route.y_10,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_11
+                            ? _c("path", {
+                                staticClass: "key-anim11",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_11 +
+                                    " " +
+                                    _vm.route.y_11 +
+                                    ", " +
+                                    _vm.route.x_10 +
+                                    " " +
+                                    _vm.route.y_10
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_11
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "11",
+                                  cx: _vm.route.x_11,
+                                  cy: _vm.route.y_11,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_11 && !_vm.route.x_12
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_11,
+                                    y: _vm.route.y_11,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_12
+                            ? _c("path", {
+                                staticClass: "key-anim12",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_12 +
+                                    " " +
+                                    _vm.route.y_12 +
+                                    ", " +
+                                    _vm.route.x_11 +
+                                    " " +
+                                    _vm.route.y_11
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_12
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "12",
+                                  cx: _vm.route.x_12,
+                                  cy: _vm.route.y_12,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_12
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_12,
+                                    y: _vm.route.y_12,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_1_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e()
+                        ]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.current_slide === 2
+                    ? _c(
+                        "svg",
+                        {
+                          staticClass: "map-path svg2",
+                          attrs: { viewBox: "0 0 800 450" }
+                        },
+                        [
+                          _vm.route.x_101
+                            ? _c("path", {
+                                staticClass: "key-anim01",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_101 +
+                                    " " +
+                                    _vm.route.y_101 +
+                                    ", "
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_101
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "01",
+                                  cx: _vm.route.x_101,
+                                  cy: _vm.route.y_101,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_101
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_101,
+                                    y: _vm.route.y_101,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_begin))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_102
+                            ? _c("path", {
+                                staticClass: "key-anim02",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_102 +
+                                    " " +
+                                    _vm.route.y_102 +
+                                    ", " +
+                                    _vm.route.x_101 +
+                                    " " +
+                                    _vm.route.y_101
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_102
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "02",
+                                  cx: _vm.route.x_102,
+                                  cy: _vm.route.y_102,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_102 && !_vm.route.x_103
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_102,
+                                    y: _vm.route.y_102,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_103
+                            ? _c("path", {
+                                staticClass: "key-anim03",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_103 +
+                                    " " +
+                                    _vm.route.y_103 +
+                                    ", " +
+                                    _vm.route.x_102 +
+                                    " " +
+                                    _vm.route.y_102
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_103
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "03",
+                                  cx: _vm.route.x_103,
+                                  cy: _vm.route.y_103,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_103 && !_vm.route.x_104
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_103,
+                                    y: _vm.route.y_103,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_104
+                            ? _c("path", {
+                                staticClass: "key-anim04",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_104 +
+                                    " " +
+                                    _vm.route.y_104 +
+                                    ", " +
+                                    _vm.route.x_103 +
+                                    " " +
+                                    _vm.route.y_103
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_104
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "04",
+                                  cx: _vm.route.x_104,
+                                  cy: _vm.route.y_104,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_104 && !_vm.route.x_105
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_104,
+                                    y: _vm.route.y_104,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_105
+                            ? _c("path", {
+                                staticClass: "key-anim05",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_105 +
+                                    " " +
+                                    _vm.route.y_105 +
+                                    ", " +
+                                    _vm.route.x_104 +
+                                    " " +
+                                    _vm.route.y_104
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_105
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "05",
+                                  cx: _vm.route.x_105,
+                                  cy: _vm.route.y_105,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_105 && !_vm.route.x_106
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_105,
+                                    y: _vm.route.y_105,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_106
+                            ? _c("path", {
+                                staticClass: "key-anim06",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_106 +
+                                    " " +
+                                    _vm.route.y_106 +
+                                    ", " +
+                                    _vm.route.x_105 +
+                                    " " +
+                                    _vm.route.y_105
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_106
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "06",
+                                  cx: _vm.route.x_106,
+                                  cy: _vm.route.y_106,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_106 && !_vm.route.x_107
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_106,
+                                    y: _vm.route.y_106,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_107
+                            ? _c("path", {
+                                staticClass: "key-anim07",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_107 +
+                                    " " +
+                                    _vm.route.y_107 +
+                                    ", " +
+                                    _vm.route.x_106 +
+                                    " " +
+                                    _vm.route.y_106
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_107
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "07",
+                                  cx: _vm.route.x_107,
+                                  cy: _vm.route.y_107,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_107 && !_vm.route.x_108
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_107,
+                                    y: _vm.route.y_107,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_108
+                            ? _c("path", {
+                                staticClass: "key-anim08",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_108 +
+                                    " " +
+                                    _vm.route.y_108 +
+                                    ", " +
+                                    _vm.route.x_107 +
+                                    " " +
+                                    _vm.route.y_107
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_108
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "08",
+                                  cx: _vm.route.x_108,
+                                  cy: _vm.route.y_108,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_108 && !_vm.route.x_109
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_108,
+                                    y: _vm.route.y_108,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_109
+                            ? _c("path", {
+                                staticClass: "key-anim09",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_109 +
+                                    " " +
+                                    _vm.route.y_109 +
+                                    ", " +
+                                    _vm.route.x_108 +
+                                    " " +
+                                    _vm.route.y_108
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_109
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "09",
+                                  cx: _vm.route.x_109,
+                                  cy: _vm.route.y_109,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_109 && !_vm.route.x_110
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_109,
+                                    y: _vm.route.y_109,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_110
+                            ? _c("path", {
+                                staticClass: "key-anim10",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_110 +
+                                    " " +
+                                    _vm.route.y_110 +
+                                    ", " +
+                                    _vm.route.x_109 +
+                                    " " +
+                                    _vm.route.y_109
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_110
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "10",
+                                  cx: _vm.route.x_110,
+                                  cy: _vm.route.y_110,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_110 && !_vm.route.x_111
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_110,
+                                    y: _vm.route.y_110,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_111
+                            ? _c("path", {
+                                staticClass: "key-anim11",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_111 +
+                                    " " +
+                                    _vm.route.y_111 +
+                                    ", " +
+                                    _vm.route.x_110 +
+                                    " " +
+                                    _vm.route.y_110
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_111
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "11",
+                                  cx: _vm.route.x_111,
+                                  cy: _vm.route.y_111,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_111 && !_vm.route.x_112
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_111,
+                                    y: _vm.route.y_111,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_112
+                            ? _c("path", {
+                                staticClass: "key-anim12",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-width": "5px",
+                                  stroke: "rgba(255,51,51,0.8)",
+                                  d:
+                                    "M" +
+                                    _vm.route.x_112 +
+                                    " " +
+                                    _vm.route.y_112 +
+                                    ", " +
+                                    _vm.route.x_111 +
+                                    " " +
+                                    _vm.route.y_111
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_112
+                            ? _c("circle", {
+                                attrs: {
+                                  id: "12",
+                                  cx: _vm.route.x_112,
+                                  cy: _vm.route.y_112,
+                                  r: "7",
+                                  fill: "#f33"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.route.x_112
+                            ? _c(
+                                "text",
+                                {
+                                  staticStyle: {
+                                    stroke: "#ffffff",
+                                    "stroke-width": "0.5px"
+                                  },
+                                  attrs: {
+                                    x: _vm.route.x_112,
+                                    y: _vm.route.y_112,
+                                    "font-family": "Verdana",
+                                    "font-size": "12",
+                                    fill: "red"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "tspan",
+                                    {
+                                      attrs: {
+                                        dx: "-20",
+                                        dy: "30",
+                                        "font-weight": "bold"
+                                      }
+                                    },
+                                    [_vm._v(_vm._s(_vm.route.t_2_end))]
+                                  )
+                                ]
+                              )
+                            : _vm._e()
+                        ]
+                      )
+                    : _vm._e()
+                ],
+                2
+              )
+            ])
+          ]),
+      _vm._v(" "),
+      _c("footer", [
+        _c(
+          "div",
+          { staticClass: "container" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "muzei-home muzei-home-sub",
+                attrs: { to: "/vue-index" }
+              },
+              [_c("img", { attrs: { src: "/img/medhome.svg", alt: "" } })]
+            ),
+            _vm._v(" "),
+            _vm._m(0)
+          ],
+          1
+        )
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "muzei-footer-third" }, [
+      _c("span", [_vm._v("План музея")])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/videoalbums/VideoalbumItem.vue?vue&type=template&id=5d49eb22&":
 /*!*****************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/videoalbums/VideoalbumItem.vue?vue&type=template&id=5d49eb22& ***!
@@ -41174,13 +43704,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.settings.theme === "med"
-    ? _c("div", [
-        _vm.settings.orientation === "horizontal"
-          ? _c("div", [_c("MedVideoalbumItemHorizontal")], 1)
-          : _vm._e()
-      ])
-    : _vm._e()
+  return _c("div", [
+    _vm.settings.theme === "med"
+      ? _c("div", [
+          _vm.settings.orientation === "horizontal"
+            ? _c("div", [_c("MedVideoalbumItemHorizontal")], 1)
+            : _vm._e()
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.settings.theme === "muzei"
+      ? _c("div", [
+          _vm.settings.orientation === "vertical"
+            ? _c("div", [_c("MuzeiVideoalbumItemVertical")], 1)
+            : _vm._e()
+        ])
+      : _vm._e()
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -41204,18 +43744,33 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.settings.theme === "med"
-    ? _c("div", [
-        _vm.settings.orientation === "horizontal"
-          ? _c(
-              "div",
-              { staticClass: "container" },
-              [_c("MedVideoalbumsAllHorizontal")],
-              1
-            )
-          : _vm._e()
-      ])
-    : _vm._e()
+  return _c("div", [
+    _vm.settings.theme === "med"
+      ? _c("div", [
+          _vm.settings.orientation === "horizontal"
+            ? _c(
+                "div",
+                { staticClass: "container" },
+                [_c("MedVideoalbumsAllHorizontal")],
+                1
+              )
+            : _vm._e()
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.settings.theme === "muzei"
+      ? _c("div", [
+          _vm.settings.orientation === "vertical"
+            ? _c(
+                "div",
+                { staticClass: "container" },
+                [_c("MuzeiVideoalbumsAllVertical")],
+                1
+              )
+            : _vm._e()
+        ])
+      : _vm._e()
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -41428,6 +43983,227 @@ var render = function() {
             ),
             _vm._v(" "),
             _c("a", { staticClass: "med-footer-third" }, [
+              _c("span", [_vm._v(_vm._s(_vm.videoalbumItem.title))])
+            ])
+          ],
+          1
+        )
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/videoalbums/muzei/index-vertical.vue?vue&type=template&id=1b61cef6&":
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/videoalbums/muzei/index-vertical.vue?vue&type=template&id=1b61cef6& ***!
+  \***********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _vm.loading
+        ? _c("MuzeiLoader")
+        : _vm.videoalbums.length
+        ? _c(
+            "div",
+            { staticClass: "gallery" },
+            [
+              _c(
+                "h1",
+                { staticClass: "h1-page", staticStyle: { color: "#fff" } },
+                [_vm._v("Видеогалерея")]
+              ),
+              _vm._v(" "),
+              _c(
+                "swiper",
+                {
+                  ref: "VideoalbumsSwiper",
+                  staticClass: "VideoalbumsSwiper",
+                  attrs: { options: _vm.swiperOptions }
+                },
+                [
+                  _vm._l(_vm.videoalbums, function(videoalbum) {
+                    return _c(
+                      "swiper-slide",
+                      {
+                        key: videoalbum.id,
+                        staticClass: "user-pages-item-item"
+                      },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "index-button",
+                            attrs: {
+                              to: {
+                                name: "VideoalbumItem",
+                                params: { id: videoalbum.id }
+                              }
+                            }
+                          },
+                          [
+                            videoalbum.cover
+                              ? _c("div", {
+                                  staticClass: "user-pages-item-image",
+                                  style: {
+                                    "background-image":
+                                      "url(" + videoalbum.cover + ")"
+                                  }
+                                })
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _c("h2", [_vm._v(_vm._s(videoalbum.title))])
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  }),
+                  _vm._v(" "),
+                  _vm.slider_prev_next
+                    ? _c("div", {
+                        staticClass: "swiper-button-prev",
+                        attrs: { slot: "button-prev" },
+                        slot: "button-prev"
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.slider_prev_next
+                    ? _c("div", {
+                        staticClass: "swiper-button-next",
+                        attrs: { slot: "button-next" },
+                        slot: "button-next"
+                      })
+                    : _vm._e()
+                ],
+                2
+              )
+            ],
+            1
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _c("footer", [
+        _c(
+          "div",
+          { staticClass: "container" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "muzei-home muzei-home-sub",
+                attrs: { to: "/vue-index" }
+              },
+              [_c("img", { attrs: { src: "/img/medhome.svg", alt: "" } })]
+            ),
+            _vm._v(" "),
+            _vm._m(0)
+          ],
+          1
+        )
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "muzei-footer-third" }, [
+      _c("span", [_vm._v("Видеогалерея")])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/videoalbums/muzei/show-vertical.vue?vue&type=template&id=1bf77802&":
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/videoalbums/muzei/show-vertical.vue?vue&type=template&id=1bf77802& ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _vm.loading
+        ? _c("MuzeiLoader")
+        : _vm.videoalbumItem
+        ? _c(
+            "div",
+            {
+              staticClass: "videoalbum-detail",
+              staticStyle: { "margin-top": "4vh" }
+            },
+            [
+              _c("video", {
+                attrs: {
+                  src: _vm.videoalbumItem.gallery,
+                  autoplay: "",
+                  controls: "",
+                  disablePictureInPicture: "",
+                  controlsList: "nodownload"
+                }
+              })
+            ]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _c("footer", [
+        _c(
+          "div",
+          { staticClass: "container" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "muzei-home muzei-home-sub",
+                attrs: { to: "/vue-index" }
+              },
+              [_c("img", { attrs: { src: "/img/medhome.svg", alt: "" } })]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "muzei-footer-second",
+                attrs: { to: "/vue-videoalbums/" }
+              },
+              [_c("span", [_vm._v("Видеогалерея")])]
+            ),
+            _vm._v(" "),
+            _c("a", { staticClass: "muzei-footer-third" }, [
               _c("span", [_vm._v(_vm._s(_vm.videoalbumItem.title))])
             ])
           ],
@@ -59626,6 +62402,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/pages/muzei/type-10/vertical.vue":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/pages/muzei/type-10/vertical.vue ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vertical_vue_vue_type_template_id_3f088142___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vertical.vue?vue&type=template&id=3f088142& */ "./resources/js/components/pages/muzei/type-10/vertical.vue?vue&type=template&id=3f088142&");
+/* harmony import */ var _vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./vertical.vue?vue&type=script&lang=js& */ "./resources/js/components/pages/muzei/type-10/vertical.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _vertical_vue_vue_type_template_id_3f088142___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _vertical_vue_vue_type_template_id_3f088142___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/pages/muzei/type-10/vertical.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/muzei/type-10/vertical.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/pages/muzei/type-10/vertical.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./vertical.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/muzei/type-10/vertical.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/muzei/type-10/vertical.vue?vue&type=template&id=3f088142&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/components/pages/muzei/type-10/vertical.vue?vue&type=template&id=3f088142& ***!
+  \*************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_vertical_vue_vue_type_template_id_3f088142___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./vertical.vue?vue&type=template&id=3f088142& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/muzei/type-10/vertical.vue?vue&type=template&id=3f088142&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_vertical_vue_vue_type_template_id_3f088142___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_vertical_vue_vue_type_template_id_3f088142___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/pages/muzei/type-2/vertical.vue":
 /*!*****************************************************************!*\
   !*** ./resources/js/components/pages/muzei/type-2/vertical.vue ***!
@@ -61097,6 +63942,162 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/routes/muzei/SimpleKeyboard.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/routes/muzei/SimpleKeyboard.vue ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SimpleKeyboard_vue_vue_type_template_id_85c39388_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SimpleKeyboard.vue?vue&type=template&id=85c39388&scoped=true& */ "./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=template&id=85c39388&scoped=true&");
+/* harmony import */ var _SimpleKeyboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SimpleKeyboard.vue?vue&type=script&lang=js& */ "./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SimpleKeyboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SimpleKeyboard_vue_vue_type_template_id_85c39388_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SimpleKeyboard_vue_vue_type_template_id_85c39388_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "85c39388",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/routes/muzei/SimpleKeyboard.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./SimpleKeyboard.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=template&id=85c39388&scoped=true&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=template&id=85c39388&scoped=true& ***!
+  \************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_template_id_85c39388_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./SimpleKeyboard.vue?vue&type=template&id=85c39388&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/muzei/SimpleKeyboard.vue?vue&type=template&id=85c39388&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_template_id_85c39388_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SimpleKeyboard_vue_vue_type_template_id_85c39388_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/routes/muzei/r01routes-vertical.vue":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/routes/muzei/r01routes-vertical.vue ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _r01routes_vertical_vue_vue_type_template_id_4423c6a9_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./r01routes-vertical.vue?vue&type=template&id=4423c6a9&scoped=true& */ "./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=template&id=4423c6a9&scoped=true&");
+/* harmony import */ var _r01routes_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./r01routes-vertical.vue?vue&type=script&lang=js& */ "./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _r01routes_vertical_vue_vue_type_style_index_0_id_4423c6a9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./r01routes-vertical.vue?vue&type=style&index=0&id=4423c6a9&scoped=true&lang=css& */ "./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=style&index=0&id=4423c6a9&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _r01routes_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _r01routes_vertical_vue_vue_type_template_id_4423c6a9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _r01routes_vertical_vue_vue_type_template_id_4423c6a9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "4423c6a9",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/routes/muzei/r01routes-vertical.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_r01routes_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./r01routes-vertical.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_r01routes_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=style&index=0&id=4423c6a9&scoped=true&lang=css&":
+/*!******************************************************************************************************************************!*\
+  !*** ./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=style&index=0&id=4423c6a9&scoped=true&lang=css& ***!
+  \******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_r01routes_vertical_vue_vue_type_style_index_0_id_4423c6a9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--6-2!../../../../../node_modules/vue-loader/lib??vue-loader-options!./r01routes-vertical.vue?vue&type=style&index=0&id=4423c6a9&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=style&index=0&id=4423c6a9&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_r01routes_vertical_vue_vue_type_style_index_0_id_4423c6a9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_r01routes_vertical_vue_vue_type_style_index_0_id_4423c6a9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_r01routes_vertical_vue_vue_type_style_index_0_id_4423c6a9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_r01routes_vertical_vue_vue_type_style_index_0_id_4423c6a9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_r01routes_vertical_vue_vue_type_style_index_0_id_4423c6a9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=template&id=4423c6a9&scoped=true&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=template&id=4423c6a9&scoped=true& ***!
+  \****************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_r01routes_vertical_vue_vue_type_template_id_4423c6a9_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./r01routes-vertical.vue?vue&type=template&id=4423c6a9&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/routes/muzei/r01routes-vertical.vue?vue&type=template&id=4423c6a9&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_r01routes_vertical_vue_vue_type_template_id_4423c6a9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_r01routes_vertical_vue_vue_type_template_id_4423c6a9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/videoalbums/VideoalbumItem.vue":
 /*!****************************************************************!*\
   !*** ./resources/js/components/videoalbums/VideoalbumItem.vue ***!
@@ -61368,6 +64369,144 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_show_horizontal_vue_vue_type_template_id_18040ac6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_show_horizontal_vue_vue_type_template_id_18040ac6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/videoalbums/muzei/index-vertical.vue":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/videoalbums/muzei/index-vertical.vue ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _index_vertical_vue_vue_type_template_id_1b61cef6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-vertical.vue?vue&type=template&id=1b61cef6& */ "./resources/js/components/videoalbums/muzei/index-vertical.vue?vue&type=template&id=1b61cef6&");
+/* harmony import */ var _index_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-vertical.vue?vue&type=script&lang=js& */ "./resources/js/components/videoalbums/muzei/index-vertical.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _index_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _index_vertical_vue_vue_type_template_id_1b61cef6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _index_vertical_vue_vue_type_template_id_1b61cef6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/videoalbums/muzei/index-vertical.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/videoalbums/muzei/index-vertical.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/components/videoalbums/muzei/index-vertical.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./index-vertical.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/videoalbums/muzei/index-vertical.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/videoalbums/muzei/index-vertical.vue?vue&type=template&id=1b61cef6&":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/components/videoalbums/muzei/index-vertical.vue?vue&type=template&id=1b61cef6& ***!
+  \*****************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vertical_vue_vue_type_template_id_1b61cef6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./index-vertical.vue?vue&type=template&id=1b61cef6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/videoalbums/muzei/index-vertical.vue?vue&type=template&id=1b61cef6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vertical_vue_vue_type_template_id_1b61cef6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vertical_vue_vue_type_template_id_1b61cef6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/videoalbums/muzei/show-vertical.vue":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/videoalbums/muzei/show-vertical.vue ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _show_vertical_vue_vue_type_template_id_1bf77802___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./show-vertical.vue?vue&type=template&id=1bf77802& */ "./resources/js/components/videoalbums/muzei/show-vertical.vue?vue&type=template&id=1bf77802&");
+/* harmony import */ var _show_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./show-vertical.vue?vue&type=script&lang=js& */ "./resources/js/components/videoalbums/muzei/show-vertical.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _show_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _show_vertical_vue_vue_type_template_id_1bf77802___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _show_vertical_vue_vue_type_template_id_1bf77802___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/videoalbums/muzei/show-vertical.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/videoalbums/muzei/show-vertical.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/videoalbums/muzei/show-vertical.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_show_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./show-vertical.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/videoalbums/muzei/show-vertical.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_show_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/videoalbums/muzei/show-vertical.vue?vue&type=template&id=1bf77802&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/components/videoalbums/muzei/show-vertical.vue?vue&type=template&id=1bf77802& ***!
+  \****************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_show_vertical_vue_vue_type_template_id_1bf77802___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./show-vertical.vue?vue&type=template&id=1bf77802& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/videoalbums/muzei/show-vertical.vue?vue&type=template&id=1bf77802&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_show_vertical_vue_vue_type_template_id_1bf77802___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_show_vertical_vue_vue_type_template_id_1bf77802___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

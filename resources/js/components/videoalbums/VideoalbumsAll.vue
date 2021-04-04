@@ -1,13 +1,21 @@
 <template>
-    <div v-if="settings.theme === 'med'">
-        <div v-if="settings.orientation === 'horizontal'" class="container">
-            <MedVideoalbumsAllHorizontal />
+    <div>
+        <div v-if="settings.theme === 'med'">
+            <div v-if="settings.orientation === 'horizontal'" class="container">
+                <MedVideoalbumsAllHorizontal />
+            </div>
+        </div>
+        <div v-if="settings.theme === 'muzei'">
+            <div v-if="settings.orientation === 'vertical'" class="container">
+                <MuzeiVideoalbumsAllVertical />
+            </div>
         </div>
     </div>
 </template>
 
 <script>
     import MedVideoalbumsAllHorizontal from '../../components/videoalbums/med/index-horizontal'
+    import MuzeiVideoalbumsAllVertical from '../../components/videoalbums/muzei/index-vertical'
 
     export default {
         data() {
@@ -24,7 +32,8 @@
                 });
         },
         components: {
-            MedVideoalbumsAllHorizontal
+            MedVideoalbumsAllHorizontal,
+            MuzeiVideoalbumsAllVertical
         }
     }
 </script>

@@ -1,9 +1,10 @@
 <template>
     <div class="type-9">
-        <MedLoader v-if="loading" />
+        <MuzeiLoader v-if="loading" />
         
         <div v-else class="row">
             <div class="col-12">
+                <h1 class="h1-page" style="margin-top: 2vh;">{{ page.title }}</h1>
                 <div class="page-detail-text">
                     
                     <div class="excel-item">
@@ -19,7 +20,7 @@
 </template>
 
 <script>
-    import MedLoader from '../../../partials/med/loader.vue'
+    import MuzeiLoader from '../../../partials/muzei/loader.vue'
     import { XlsxRead, XlsxTable } from "vue-xlsx"
 
     export default {
@@ -45,7 +46,7 @@
                 });
         },
         components: {
-            MedLoader,
+            MuzeiLoader,
             XlsxRead,
             XlsxTable
         }

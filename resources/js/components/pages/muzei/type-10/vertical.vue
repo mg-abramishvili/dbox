@@ -1,13 +1,11 @@
 <template>
-    <div class="type-7">
+    <div class="type-10">
         <MuzeiLoader v-if="loading" />
-
+        
         <div v-else class="row">
-            <div class="col-12" style="padding-top: 2vh;">
-                <h1 class="h1-page">{{ page.title }}</h1>
-                <div class="text">
-                    <iframe :src="'/lib/pdfjs/web/viewer.html?file=' + page.pdf" height="100%" width="100%" style="border: none;"></iframe>
-                </div>
+            <div class="col-12">
+                <!--<h1 class="h1-page">{{ page.title }}</h1>-->
+                <iframe :src="page.iframe" frameborder="0" style="width: 100%; height: 65vh;"></iframe>
             </div>
         </div>
     </div>

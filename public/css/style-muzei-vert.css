@@ -124,7 +124,7 @@
 
 .page-item {
     background-color: #fff;
-    height: auto;
+    height: 65vh;
     max-height: 65vh;
 }
 
@@ -156,11 +156,12 @@
 }
 
 .PagesSwiper .index-button {
-    height: 50vh;
+    height: 57vh;
 }
 
-.PhotoalbumsSwiper .index-button {
-    height: 50vh;
+.PhotoalbumsSwiper .index-button,
+.VideoalbumsSwiper .index-button {
+    height: 57vh;
 }
 
 .gallery-detail {
@@ -261,9 +262,46 @@
 }
 
 .type-7 .text {
-    height: 65vh;
+    height: 57vh;
     width: 100%;
-    padding-top: 2vh;
+}
+
+.type-7 iframe {
+    margin-bottom: 2vh;
+    height: 56vh;
+}
+
+.excel-item {
+    width: 94vw;
+    width: auto;
+    height: 57vh;
+    overflow-y: scroll;
+    text-align: center;
+    background-color: #fff;
+    padding: 2vh;
+}
+
+.excel-item table {
+    border-collapse: collapse;
+    margin: 1rem 0;
+    display: inline-block;
+    overflow-x: auto;
+    text-align: left;
+    font-size: 1.1vh;
+}
+
+.excel-item table tr {
+    border-top: 1px solid #dfe2e5;
+}
+
+.excel-item table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+}
+
+.excel-item table td,
+.excel-item table th {
+    border: 1px solid #dfe2e5;
+    padding: .6em 1em;
 }
 
 
