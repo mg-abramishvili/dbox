@@ -74,19 +74,33 @@
     left: 1vh;
     right: 1vh;
     z-index: 10;
+    text-shadow: 0 1px 16px rgba(0,0,0,0.5),
+                 0 1px 32px rgba(0,0,0,0.5),
+                 0 1px 64px rgba(0,0,0,0.5);
 }
 
-.index-button-image {
-    background-size: cover;
-    background-position: 50% 50%;
+.index-button .index-button-image,
+.index-button .index-button-image:after {
     position: absolute;
-    z-index: 1;
     top: 0;
-    bottom: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: 1;
+}
+
+.index-button .index-button-image:after {
+    content: '';
+    z-index: 2;
+    background-color: rgb(104 76 52 / 65%);
+}
+
+.m-buttons .col-12:nth-child(2n+1) .index-button .index-button-image:after {
+    background-color: rgb(119 157 85 / 64%);
 }
 
 .m-buttons {
@@ -98,28 +112,45 @@
     background-color: #BDB79F;
 }
 
-.m-buttons .col-6:nth-child(4n+1) .index-button,
-.m-buttons .col-6:nth-child(4n+4) .index-button {
-    background-color: #4B7F2B;
+.m-buttons .col-12:nth-child(2n+2) .index-button {
+    background-color: #976545;
 }
 
-.m-buttons .index-button-overlay:before {
-    content: '';
-    display: block;
+.user-pages-item-item .user-pages-item-image:after {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    top: 0;
     left: 0;
     right: 0;
-    top: 0;
     bottom: 0;
-    z-index: 2;
-    background: rgba(0,0,0, 0.5);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: 1;
 }
 
-.m-buttons .col-6:nth-child(4n+2) .index-button,
-.m-buttons .col-6:nth-child(4n+3) .index-button {
-    background-color: #976545;
+.user-pages-item-item .user-pages-item-image:after {
+    content: '';
+    z-index: 2;
+    background-color: rgba(176, 110, 69, 0.46);
+}
+
+.user-pages-item-item:nth-child(2n+1) .user-pages-item-image:after {
+    background-color: rgba(75, 122, 45, 0.31);
+}
+
+.user-pages-item-item h2 {
+    position: absolute;
+    top: 2vh;
+    left: 2vh;
+    right: 2vh;
+    text-align: left;
+    z-index: 10;
+    line-height: 1.45;
+    font-size: 1.7vh;
+    text-shadow: 0 1px 16px rgba(0,0,0,0.5),
+    0 1px 32px rgba(0,0,0,0.5),
+    0 1px 64px rgba(0,0,0,0.5);
 }
 
 .page-item {

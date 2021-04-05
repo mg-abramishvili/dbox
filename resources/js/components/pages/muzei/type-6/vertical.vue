@@ -46,8 +46,12 @@
                 .then(json => {
                     this.page = json;
                     this.loading = false
-                    if (json.length > 8) {
-                        this.slider_prev_next = true
+                    if (json.length > 3) {
+                        this.slider_prev_next = true,
+                        this.swiperOptions.centerInsufficientSlides = false
+                    } else {
+                        this.slider_prev_next = false,
+                        this.swiperOptions.centerInsufficientSlides = true
                     }
                 });
         },
