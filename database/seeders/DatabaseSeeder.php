@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             TypeSeeder::class,
             IconSeeder::class,
-            //NewsSeeder::class,
+            NewsSeeder::class,
             GallerySeeder::class,
             VideoGallerySeeder::class,
             SettingsSeeder::class,
