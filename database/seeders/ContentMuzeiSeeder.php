@@ -30,6 +30,7 @@ class ContentMuzeiSeeder extends Seeder
             'image_as_icon' => '1',
             'pdf' => NULL,
             'excel' => NULL,
+            'iframe' => NULL,
             'parent_id' => NULL,
             'created_at' => '2021-03-14 00:00:00'
         ],
@@ -42,6 +43,7 @@ class ContentMuzeiSeeder extends Seeder
             'image_as_icon' => '1',
             'pdf' => NULL,
             'excel' => NULL,
+            'iframe' => NULL,
             'parent_id' => '1',
             'created_at' => '2021-03-15 00:00:00'
         ],
@@ -54,6 +56,7 @@ class ContentMuzeiSeeder extends Seeder
             'image_as_icon' => '1',
             'pdf' => NULL,
             'excel' => NULL,
+            'iframe' => NULL,
             'parent_id' => '1',
             'created_at' => '2021-03-15 00:00:00'
         ],
@@ -66,6 +69,7 @@ class ContentMuzeiSeeder extends Seeder
             'image_as_icon' => '1',
             'pdf' => '/img/pdf-test2.pdf',
             'excel' => NULL,
+            'iframe' => NULL,
             'parent_id' => '1',
             'created_at' => '2021-03-15 00:00:00'
         ],
@@ -78,6 +82,7 @@ class ContentMuzeiSeeder extends Seeder
             'image_as_icon' => '1',
             'pdf' => NULL,
             'excel' => NULL,
+            'iframe' => NULL,
             'parent_id' => NULL,
             'created_at' => '2021-03-15 00:00:00'
         ],
@@ -90,6 +95,7 @@ class ContentMuzeiSeeder extends Seeder
             'image_as_icon' => '1',
             'pdf' => NULL,
             'excel' => '/img/excel.xlsx',
+            'iframe' => NULL,
             'parent_id' => NULL,
             'created_at' => '2021-03-15 00:00:00'
         ],
@@ -102,6 +108,20 @@ class ContentMuzeiSeeder extends Seeder
             'image_as_icon' => '1',
             'pdf' => NULL,
             'excel' => NULL,
+            'iframe' => NULL,
+            'parent_id' => NULL,
+            'created_at' => '2021-03-15 00:00:00'
+        ],
+        [
+            'id' => '8',
+            'title' => 'Виртуальный тур',
+            'text' => '.',
+            'image' => '/img/muzei/6.jpg',
+            'gallery' => NULL,
+            'image_as_icon' => '1',
+            'pdf' => NULL,
+            'excel' => NULL,
+            'iframe' => 'https://rusmuseumvrm.ru/data/vtours/ekaterina_velikaya/index.html?lp=1&lang=ru',
             'parent_id' => NULL,
             'created_at' => '2021-03-15 00:00:00'
         ],
@@ -136,6 +156,10 @@ class ContentMuzeiSeeder extends Seeder
             [
                 'page_id' => '7',
                 'type_id' => '1',
+            ],
+            [
+                'page_id' => '8',
+                'type_id' => '10',
             ],
             ]);
 

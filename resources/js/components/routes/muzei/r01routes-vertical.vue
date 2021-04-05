@@ -2,24 +2,33 @@
     <div>
         <MuzeiLoader v-if="loading" />
 
-        <div v-else class="row">
-            <div class="col-12" style="order: 2;">
-                <div class="med-route-sidebar">
+        <div v-else class="row" style="padding: 2vh; padding-top: 0;">
+            <div class="col-12">
+                <div v-if="search_panel" class="search_panel">
+                    <button
+                    @click="search_panel_button_close()"
+                    style="position: absolute; width: 4vh; height: 4vh; background-color: #976545; color: #fff; font-size: 3vh; line-height: 3vh; text-align: center; border: 0; border-radius: 100%; right: 0; margin-top: -3vh; margin-right: -1.5vh;"
+                    >&times;</button>
+
                     <input
                     :value="input"
                     class="input"
                     @input="onInputChange"
                     placeholder="Поиск..."
-                    style="margin-bottom: 2vh;"
                     >
-
                     <SimpleKeyboard @onChange="onChange" @onKeyPress="onKeyPress" :input="input"/>
-    
+                </div>
+                <button v-if="search_panel === false" @click="search_panel_button()" class="search_button">Поиск</button>
+            </div>
+            <div class="col-12" style="order: 2;">
+                <div class="med-route-sidebar">
+
                     <ul id="myUL" style="margin-top: 0.5vh;">
                         <li v-for="routeListItem in filtered_r01routes" :key="routeListItem.id" @click="SelectRoute(routeListItem)">
                             <a>{{ routeListItem.title }}</a>
                         </li>
                     </ul>
+                    
                 </div>
             </div>
             <div class="col-12" style="order: 1;"> 
@@ -177,7 +186,8 @@
                 selectedItem: '',
                 loading: true,
                 input: '',
-                current_slide: 1
+                current_slide: 1,
+                search_panel: false,
             }
         },
         created() {
@@ -250,6 +260,13 @@
             },
             onInputChange(input) {
                 this.input = input.target.value;
+            },
+
+            search_panel_button() {
+                this.search_panel = true;
+            },
+            search_panel_button_close() {
+                this.search_panel = false;
             }
         },
         components: {
@@ -273,5 +290,70 @@
     .prevnextbutton {
         position: absolute;
         bottom: 1vh;
+    }
+
+    .route_about {
+        color: #fff;
+        text-align: center;
+    }
+
+    .input {
+        width: 100%;
+        padding: 0.5vh 2vh;
+    }
+
+    #map {
+        transform: scale(1.253);
+        transform-origin: 0 0;
+        margin-top: -4vh;
+        margin-bottom: 11vh;
+    }
+
+    #myUL {
+        height: 28vh;
+    }
+
+    .search_panel {
+        position: absolute;
+        z-index: 10;
+        width: 100%;
+        top: 0;
+        margin-top: -20vh;
+        background: #fff;
+        padding: 1.5vh;
+    }
+
+    .prevnextbutton {
+        background-color: #976545;
+        color: #fff;
+        font-size: 1.25vh;
+        padding: 0.5vh 2vh;
+        display: block;
+        margin: 0 auto;
+        width: 30vw;
+        border-radius: 1vh;
+        left: 0;
+        right: 0;
+        border: 0;
+    }
+
+    .prevnextbutton:focus {
+        outline: none;
+    }
+
+    #myUL li a {
+        font-size: 1.5vh;
+    }
+
+    .search_button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgba(255,255,255,0.5);
+        border: 0;
+        color: #222;
+        padding: 1vh 2vh;
+        font-size: 1.5vh;
+        z-index: 10;
     }
 </style>
