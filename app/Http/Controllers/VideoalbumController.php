@@ -118,9 +118,6 @@ class VideoalbumController extends Controller
         }
         $videoalbums->gallery = $data['gallery'];
         $videoalbums->save();
-
-
-        $videoalbums->save();
         return redirect('/videoalbums');
 
     }

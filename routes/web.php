@@ -13,6 +13,7 @@ use App\Http\Controllers\FrontPageController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\SchemeController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\R01routeController;
 use App\Http\Controllers\R02routeController;
 use App\Http\Controllers\R03routeController;
@@ -62,6 +63,11 @@ Route::get('videoalbums/delete/{id}','App\Http\Controllers\VideoalbumController@
 Route::post('videoalbums/file/{method}','App\Http\Controllers\VideoalbumController@file');
 // Videoalbums Front
 Route::resource('/front-videoalbums', FrontVideoalbumController::class);
+
+// Banners
+Route::resource('/banners', BannerController::class)->middleware('auth');
+Route::get('banners/delete/{id}','App\Http\Controllers\BannerController@delete');
+Route::post('banners/file/{method}','App\Http\Controllers\BannerController@file');
 
 // Pages
 Route::resource('/pages', PageController::class)->middleware('auth');

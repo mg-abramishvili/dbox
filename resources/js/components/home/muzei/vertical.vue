@@ -4,9 +4,13 @@
 
         <div v-else class="container">
 
-            <div class="banner">
-                <div class="banner-slide" style="background-image: url(/img/muzei/mbn.jpg)"></div>
-            </div>
+            <swiper ref="BannerSwiper" :options="swiperOptions" class="BannerSwiper">
+                <swiper-slide v-for="banner in banners" :key="banner.id" class="banner">
+                    <div class="banner-slide" v-bind:style="{ 'background-image': 'url(' + banner.image + ')' }"></div>
+                </swiper-slide>
+                <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev"></div>
+                <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next"></div>
+            </swiper>
 
             <div class="row">
                 <div class="col-4">
@@ -72,6 +76,8 @@
 
 <script>
     import MuzeiLoader from '../../../components/partials/muzei/loader'
+    import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+    import 'swiper/css/swiper.css'
 
     export default {
         data() {
@@ -80,8 +86,21 @@
                 pages: [],
                 news: [],
                 schemes: [],
+                banners: [],
                 photoalbum_last: {},
                 loading: true,
+                swiperOptions: {
+                    slidesPerView: 1,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev'
+                    },
+                    allowTouchMove: false,
+                     autoplay: {
+                        delay: 5000,
+                    },
+                },
+                slider_prev_next: false,
             }
         },
         created() {
@@ -89,6 +108,18 @@
                 .then(response => response.json())
                 .then(json => {
                     this.settings = json;
+                });
+            fetch(`/api/front/banners/`)
+                .then(response => response.json())
+                .then(json => {
+                    this.banners = json;
+                    if (json.length > 1) {
+                        this.slider_prev_next = false,
+                        this.swiperOptions.centerInsufficientSlides = false
+                    } else {
+                        this.slider_prev_next = false,
+                        this.swiperOptions.centerInsufficientSlides = true
+                    }
                 });
             fetch(`/api/front/pages/`)
                 .then(response => response.json())
@@ -112,8 +143,15 @@
                     this.photoalbum_last = json;
                 });
         },
+        computed: {
+            swiper() {
+                return this.$refs.BannerSwiper.$swiper
+            }
+        },
         components: {
-            MuzeiLoader
-        }
+            MuzeiLoader,
+            Swiper,
+            SwiperSlide
+        },
     }
 </script>

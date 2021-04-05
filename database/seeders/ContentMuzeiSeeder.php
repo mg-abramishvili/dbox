@@ -20,6 +20,16 @@ class ContentMuzeiSeeder extends Seeder
         ]);
 
         // СТРАНИЦЫ
+        DB::table('banners')->insert([
+        [
+            'id' => '1',
+            'title' => '1',
+            'image' => '/img/muzei/mbn.jpg',
+            'created_at' => '2021-03-14 00:00:00'
+        ],
+        ]);
+
+        // СТРАНИЦЫ
         DB::table('pages')->insert([
         [
             'id' => '1',

@@ -127,6 +127,6 @@ class SettingController extends Controller
 
         $settings->save();
 
-        return redirect('/');
+        return redirect('/vue-index');
     }
 }

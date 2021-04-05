@@ -10,6 +10,7 @@ use App\Models\Videoalbum;
 use App\Models\Setting;
 use App\Models\Scheme;
 use App\Models\R01route;
+use App\Models\Banner;
 use App\Http\Resources\R01routeResource;
 use Illuminate\Http\Request;
 
@@ -68,6 +69,11 @@ class FrontController extends Controller
 	public function videoalbumItem($id)
     {
         return Videoalbum::where('id', $id)->first();
+    }
+
+    public function banners()
+    {
+        return Banner::orderBy('created_at', 'desc')->get();
     }
 	
 	public function schemes()

@@ -39,6 +39,11 @@
     bottom: 4vh;
 }
 
+.BannerSwiper,
+.banner {
+    height: 35vh;
+}
+
 .banner-slide {
     height: 35vh;
     background-size: cover;

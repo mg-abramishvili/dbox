@@ -79,6 +79,10 @@
                     </li>
                     @endif
 
+                    <li class="nav-item {{ Request::is('banners') ? 'active' : '' }}">
+                        <a href="{{ url('/banners') }}" class="nav-link">Баннеры</a>
+                    </li>
+
                     <li class="nav-item {{ Request::is('settings') ? 'active' : '' }}">
                         <a href="{{ url('/settings') }}" class="nav-link">Настройки</a>
                     </li>

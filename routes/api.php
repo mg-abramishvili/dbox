@@ -21,6 +21,8 @@ Route::get('/front/photoalbum-last','App\Http\Controllers\Api\FrontController@ph
 Route::get('/front/videoalbums','App\Http\Controllers\Api\FrontController@videoalbums');
 Route::get('/front/videoalbum/{id}','App\Http\Controllers\Api\FrontController@videoalbumItem');
 
+Route::get('/front/banners','App\Http\Controllers\Api\FrontController@banners');
+
 Route::get('/front/schemes','App\Http\Controllers\Api\FrontController@schemes');
 Route::get('/front/scheme/{id}','App\Http\Controllers\Api\FrontController@schemeItem');
 
