@@ -1,6 +1,39 @@
 @extends('layouts.app')
 @section('content')
 
+    <style>
+        .pages-table {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            padding-left: 15px;
+        }
+
+        .pages-table .btn-sm {
+            font-size: 0.600rem;
+            padding: 0.15rem 0.4rem;
+        }
+
+        .pages-table li {
+            font-weight: bold;
+        }
+
+        .pages-table-sub {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            padding-left: 15px;
+        }
+
+        .pages-table-sub li {
+            font-weight: normal;
+        }
+
+        .pages-table-sub li:before {
+            content: '↳';
+        }
+    </style>
+
     <div class="px-4 py-4">
         <div class="row align-items-center mb-4">
             <div class="col-6">
@@ -12,76 +45,31 @@
         </div>
 
         <div class="page">
-
-            <table class="table table-bordered table-hover">
+            <ul class="pages-table">
                 @forelse($pages as $page)
                     @if(isset($page->parent_id))
-
+                    
                     @else
-                        <tr>
-                            <td style="text-align: left; padding-left: 20px; padding-right: 20px;">
-                                {{$page->title}}
-                                @if(!$page->children->count())
-                                    <a href="/pages/{{$page->id}}/edit" class="btn btn-sm btn-warning">Правка</a>
-                                    <a href="/pages/delete/{{$page->id}}" class="btn btn-sm btn-danger">Удалить</a>
-                                @else
-                                    <a href="/pages/{{$page->id}}/edit" class="btn btn-sm btn-warning">Правка</a>
-                                @endif
-                                <br>
-                                @if(count($page->children))
-                                    @include('pages.sub ', ['children' => $page->children])
-                                @endif
-                            </td>
-                        </tr>
+                        <li class="mt-4">
+                            {{$page->title}}
+                            @if(!$page->children->count())
+                                <a href="/pages/{{$page->id}}/edit" class="btn btn-sm btn-outline-primary">Правка</a>
+                                <a href="/pages/delete/{{$page->id}}" class="btn btn-sm btn-outline-danger">Удалить</a>
+                            @else
+                                <a href="/pages/{{$page->id}}/edit" class="btn btn-sm btn-outline-primary">Правка</a>
+                            @endif
+                            <br>
+                            @if(count($page->children))
+                                @include('pages.sub ', ['children' => $page->children])
+                            @endif
+                        </li>
                     @endif
                 @empty
-                <tr>
-                    <td style="text-align: center;">
-                        Пусто &#9785;
-                    </td>
-                </tr>
+                <li>
+                    Пусто &#9785;
+                </li>
                 @endforelse
-            </table>
-
-
-
-
-
-            <table class="table table-bordered table-hover" style="display:none;">
-                @forelse($pages as $page)
-                <tr>
-                    <td style="width: 100px; font-size: 13px;">
-                        {{$page->created_at->format('d.m.Y')}}
-                    </td>
-                    <td style="width: 135px;">
-                        <img src="{{$page->image}}" style="height: 60px; max-width: 130px;">
-                    </td>
-                    <td style="text-align: left; padding-left: 20px; padding-right: 20px;">
-                        {{$page->title}}
-                    </td>
-                    <!--<td>
-                        {{$page->text}}
-                    </td>
-                    <td>
-                        @if(is_array($page->gallery))
-                            @foreach($page->gallery as $k=>$v)
-                                <img src="{{$v}}" style="height: 80px">
-                            @endforeach
-                        @endif
-                    </td>-->
-                    <td style="width: 200px;">
-                        <a href="/pages/{{$page->id}}/edit" class="btn btn-sm btn-warning">Правка</a>
-                        <a href="/pages/delete/{{$page->id}}" class="btn btn-sm btn-danger">Удалить</a>
-                    </td>
-                </tr>
-                @empty
-                <tr>
-                    <td style="text-align: center;">
-                        Пусто &#9785;
-                    </td>
-                </tr>
-                @endforelse
-            </table>
+            </ul>
 
         </div>
     </div>
