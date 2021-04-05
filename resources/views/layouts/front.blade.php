@@ -25,7 +25,7 @@
         <script src="{{ asset('js/turn.min.js') }}"></script>
 
         <script>
-            document.oncontextmenu = new Function("return false;");
+            //document.oncontextmenu = new Function("return false;");
         </script>
 
     </head>
@@ -47,9 +47,9 @@
         @php if ($hnta == 'y') { @endphp
             @php if ($h1 == $h2) { @endphp
                 
-                <main>
-                    @yield('content')
-                </main>
+                <script>window.location.replace("/vue-index");
+                    </script>
+                
 
             @php } else { @endphp
 
@@ -58,13 +58,13 @@
             @php } @endphp
             @php } elseif ($hnta == 'n') { @endphp
 
-                <div style="position: absolute; top: 15vh; left: 0; right: 0; display: block; width: 50vw; margin: 0 auto; text-align: center; font-size: 2vh;">
+                <div style="position: absolute; top: 15vh; left: 0; right: 0; display: block; margin: 0 auto; text-align: center; font-size: 22px;">
                     
                     <img src="/logo-h.png" style="width: 240px; display: block; margin: 0 auto;margin-bottom: 50px">
                     
                     <div id="phase_one">
-                        <input type="text" id="key-input" placeholder="Введите ключ, вместе со знаками -" style="display: inline-block; padding: 18px 40px; border-radius: 10px; width: 59%;">
-                        <button id="activate-button" style="display: inline-block; width: 40%; background-color: #ffc940; box-shahow: none; padding: 20px 40px; border: 0; border-radius: 10px; color: #fff;">Активировать</button>
+                        <input type="text" id="key-input" placeholder="Введите ключ, вместе со знаками -" style="display: inline-block; padding: 18px 40px; border-radius: 10px; width: 500px;">
+                        <button id="activate-button" style="display: inline-block; width: 200px; background-color: #ffc940; box-shahow: none; padding: 20px 40px; border: 0; border-radius: 10px; color: #fff;">Активировать</button>
 
                         @include('layouts.act-keyboard')
                     </div>
