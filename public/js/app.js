@@ -998,10 +998,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_pages_muzei_type_1_vertical__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/pages/muzei/type-1/vertical */ "./resources/js/components/pages/muzei/type-1/vertical.vue");
 /* harmony import */ var _components_pages_muzei_type_2_vertical__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/pages/muzei/type-2/vertical */ "./resources/js/components/pages/muzei/type-2/vertical.vue");
 /* harmony import */ var _components_pages_muzei_type_3_vertical__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/pages/muzei/type-3/vertical */ "./resources/js/components/pages/muzei/type-3/vertical.vue");
-/* harmony import */ var _components_pages_muzei_type_6_vertical__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/pages/muzei/type-6/vertical */ "./resources/js/components/pages/muzei/type-6/vertical.vue");
-/* harmony import */ var _components_pages_muzei_type_7_vertical__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/pages/muzei/type-7/vertical */ "./resources/js/components/pages/muzei/type-7/vertical.vue");
-/* harmony import */ var _components_pages_muzei_type_9_vertical__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/pages/muzei/type-9/vertical */ "./resources/js/components/pages/muzei/type-9/vertical.vue");
-/* harmony import */ var _components_pages_muzei_type_10_vertical__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/pages/muzei/type-10/vertical */ "./resources/js/components/pages/muzei/type-10/vertical.vue");
+/* harmony import */ var _components_pages_muzei_type_4_vertical__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/pages/muzei/type-4/vertical */ "./resources/js/components/pages/muzei/type-4/vertical.vue");
+/* harmony import */ var _components_pages_muzei_type_6_vertical__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/pages/muzei/type-6/vertical */ "./resources/js/components/pages/muzei/type-6/vertical.vue");
+/* harmony import */ var _components_pages_muzei_type_7_vertical__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/pages/muzei/type-7/vertical */ "./resources/js/components/pages/muzei/type-7/vertical.vue");
+/* harmony import */ var _components_pages_muzei_type_9_vertical__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/pages/muzei/type-9/vertical */ "./resources/js/components/pages/muzei/type-9/vertical.vue");
+/* harmony import */ var _components_pages_muzei_type_10_vertical__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../components/pages/muzei/type-10/vertical */ "./resources/js/components/pages/muzei/type-10/vertical.vue");
 //
 //
 //
@@ -1059,6 +1060,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 
 
 
@@ -1110,10 +1115,11 @@ __webpack_require__.r(__webpack_exports__);
     MuzeiPageType1Vertical: _components_pages_muzei_type_1_vertical__WEBPACK_IMPORTED_MODULE_5__["default"],
     MuzeiPageType2Vertical: _components_pages_muzei_type_2_vertical__WEBPACK_IMPORTED_MODULE_6__["default"],
     MuzeiPageType3Vertical: _components_pages_muzei_type_3_vertical__WEBPACK_IMPORTED_MODULE_7__["default"],
-    MuzeiPageType6Vertical: _components_pages_muzei_type_6_vertical__WEBPACK_IMPORTED_MODULE_8__["default"],
-    MuzeiPageType7Vertical: _components_pages_muzei_type_7_vertical__WEBPACK_IMPORTED_MODULE_9__["default"],
-    MuzeiPageType9Vertical: _components_pages_muzei_type_9_vertical__WEBPACK_IMPORTED_MODULE_10__["default"],
-    MuzeiPageType10Vertical: _components_pages_muzei_type_10_vertical__WEBPACK_IMPORTED_MODULE_11__["default"]
+    MuzeiPageType4Vertical: _components_pages_muzei_type_4_vertical__WEBPACK_IMPORTED_MODULE_8__["default"],
+    MuzeiPageType6Vertical: _components_pages_muzei_type_6_vertical__WEBPACK_IMPORTED_MODULE_9__["default"],
+    MuzeiPageType7Vertical: _components_pages_muzei_type_7_vertical__WEBPACK_IMPORTED_MODULE_10__["default"],
+    MuzeiPageType9Vertical: _components_pages_muzei_type_9_vertical__WEBPACK_IMPORTED_MODULE_11__["default"],
+    MuzeiPageType10Vertical: _components_pages_muzei_type_10_vertical__WEBPACK_IMPORTED_MODULE_12__["default"]
   }
 });
 
@@ -1618,6 +1624,79 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     swiper: function swiper() {
       return this.$refs.PageSwiper.$swiper;
+    }
+  },
+  components: {
+    MuzeiLoader: _partials_muzei_loader_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["Swiper"],
+    SwiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["SwiperSlide"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/muzei/type-4/vertical.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/pages/muzei/type-4/vertical.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _partials_muzei_loader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../partials/muzei/loader.vue */ "./resources/js/components/partials/muzei/loader.vue");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/css/swiper.css */ "./node_modules/swiper/css/swiper.css");
+/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      page: {},
+      loading: true,
+      swiperOptions: {
+        slidesPerView: 1,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      }
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    fetch("/api/front/page/".concat(this.$route.params.id)).then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      _this.page = json;
+      _this.loading = false;
+    });
+  },
+  computed: {
+    swiper: function swiper() {
+      return this.$refs.PhotoalbumsItemSwiper.$swiper;
     }
   },
   components: {
@@ -38889,6 +38968,18 @@ var render = function() {
                       ],
                       1
                     )
+                  : type.id == "4"
+                  ? _c(
+                      "div",
+                      {
+                        staticClass: "page-item",
+                        staticStyle: { background: "#171F19" }
+                      },
+                      [
+                        type.id == "4" ? _c("MuzeiPageType4Vertical") : _vm._e()
+                      ],
+                      1
+                    )
                   : _c(
                       "div",
                       { staticClass: "page-item" },
@@ -39436,6 +39527,83 @@ var render = function() {
               1
             )
           ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/muzei/type-4/vertical.vue?vue&type=template&id=45184045&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/pages/muzei/type-4/vertical.vue?vue&type=template&id=45184045& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "type-4" },
+    [
+      _vm.loading
+        ? _c("MuzeiLoader")
+        : _c(
+            "div",
+            { staticClass: "gallery-detail" },
+            [
+              _c(
+                "h1",
+                { staticClass: "h1-page", staticStyle: { color: "#fff" } },
+                [_vm._v(_vm._s(_vm.page.title))]
+              ),
+              _vm._v(" "),
+              _c(
+                "swiper",
+                {
+                  ref: "PhotoalbumsItemSwiper",
+                  attrs: { options: _vm.swiperOptions }
+                },
+                [
+                  _vm._l(_vm.page.gallery, function(photoalbumPic) {
+                    return _c(
+                      "swiper-slide",
+                      {
+                        key: photoalbumPic,
+                        staticClass: "gallery-detail-item"
+                      },
+                      [_c("img", { attrs: { src: photoalbumPic } })]
+                    )
+                  }),
+                  _vm._v(" "),
+                  _c("div", {
+                    staticClass: "swiper-button-prev",
+                    attrs: { slot: "button-prev" },
+                    slot: "button-prev"
+                  }),
+                  _vm._v(" "),
+                  _c("div", {
+                    staticClass: "swiper-button-next",
+                    attrs: { slot: "button-next" },
+                    slot: "button-next"
+                  })
+                ],
+                2
+              )
+            ],
+            1
+          )
     ],
     1
   )
@@ -63460,6 +63628,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_vertical_vue_vue_type_template_id_633a76a6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_vertical_vue_vue_type_template_id_633a76a6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/muzei/type-4/vertical.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/pages/muzei/type-4/vertical.vue ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vertical_vue_vue_type_template_id_45184045___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vertical.vue?vue&type=template&id=45184045& */ "./resources/js/components/pages/muzei/type-4/vertical.vue?vue&type=template&id=45184045&");
+/* harmony import */ var _vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./vertical.vue?vue&type=script&lang=js& */ "./resources/js/components/pages/muzei/type-4/vertical.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _vertical_vue_vue_type_template_id_45184045___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _vertical_vue_vue_type_template_id_45184045___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/pages/muzei/type-4/vertical.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/muzei/type-4/vertical.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/pages/muzei/type-4/vertical.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./vertical.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/muzei/type-4/vertical.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vertical_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/muzei/type-4/vertical.vue?vue&type=template&id=45184045&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/pages/muzei/type-4/vertical.vue?vue&type=template&id=45184045& ***!
+  \************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_vertical_vue_vue_type_template_id_45184045___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./vertical.vue?vue&type=template&id=45184045& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pages/muzei/type-4/vertical.vue?vue&type=template&id=45184045&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_vertical_vue_vue_type_template_id_45184045___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_vertical_vue_vue_type_template_id_45184045___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

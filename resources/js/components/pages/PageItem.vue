@@ -30,6 +30,9 @@
                 <div v-if="type.id == '6'" class="page-item" style="background: #171F19;">
                     <MuzeiPageType6Vertical v-if="type.id == '6'" />
                 </div>
+                <div v-else-if="type.id == '4'" class="page-item" style="background: #171F19;">
+                    <MuzeiPageType4Vertical v-if="type.id == '4'" />
+                </div>
                 <div v-else class="page-item">
                     <MuzeiPageType1Vertical v-if="type.id == '1'" />
                     <MuzeiPageType2Vertical v-else-if="type.id == '2'" />
@@ -65,6 +68,7 @@
     import MuzeiPageType1Vertical from '../../components/pages/muzei/type-1/vertical'
     import MuzeiPageType2Vertical from '../../components/pages/muzei/type-2/vertical'
     import MuzeiPageType3Vertical from '../../components/pages/muzei/type-3/vertical'
+    import MuzeiPageType4Vertical from '../../components/pages/muzei/type-4/vertical'
     import MuzeiPageType6Vertical from '../../components/pages/muzei/type-6/vertical'
     import MuzeiPageType7Vertical from '../../components/pages/muzei/type-7/vertical'
     import MuzeiPageType9Vertical from '../../components/pages/muzei/type-9/vertical'
@@ -106,6 +110,7 @@
             MuzeiPageType1Vertical,
             MuzeiPageType2Vertical,
             MuzeiPageType3Vertical,
+            MuzeiPageType4Vertical,
             MuzeiPageType6Vertical,
             MuzeiPageType7Vertical,
             MuzeiPageType9Vertical,
