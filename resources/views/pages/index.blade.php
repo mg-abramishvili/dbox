@@ -2,35 +2,81 @@
 @section('content')
 
     <style>
-        .pages-table {
+        .tree {
             padding: 0;
             margin: 0;
             list-style-type: none;
-            padding-left: 15px;
+            margin-left: 30px;
         }
 
-        .pages-table .btn-sm {
+        .tree .btn-sm {
             font-size: 0.600rem;
             padding: 0.15rem 0.4rem;
         }
 
-        .pages-table li {
+        .tree ul {
+            margin-left: 20px;
+        }
+
+        .tree li {
+            list-style-type: none;
+            margin:10px;
+            position: relative;
+        }
+
+        .tree li::before {
+            content: "";
+            position: absolute;
+            top:-7px;
+            left:-20px;
+            border-left: 1px solid #ccc;
+            border-bottom:1px solid #ccc;
+            border-radius:0 0 0 0px;
+            width:20px;
+            height:15px;
+        }
+
+        .tree li::after {
+            position:absolute;
+            content:"";
+            top:8px;
+            left:-20px;
+            border-left: 1px solid #ccc;
+            border-top:1px solid #ccc;
+            border-radius:0px 0 0 0;
+            width:20px;
+            height:100%;
+        }
+
+        .tree li:last-child::after  {
+            display:none;
+        }
+
+        .tree li:last-child:before{
+            border-radius: 0 0 0 5px;
+        }
+
+        ul.tree>li:first-child::before {
+            display:none;
+        }
+
+        ul.tree>li:first-child::after {
+            border-radius:5px 0 0 0;
+        }
+
+        .tree li span {
+            border: 1px #ccc solid;
+            border-radius: 5px;
+            padding: 5px 10px;
+            display: inline-block;
+        }
+
+        .tree li {
             font-weight: bold;
         }
 
-        .pages-table-sub {
-            padding: 0;
-            margin: 0;
-            list-style-type: none;
-            padding-left: 15px;
-        }
-
-        .pages-table-sub li {
+        .tree ul li span {
             font-weight: normal;
-        }
-
-        .pages-table-sub li:before {
-            content: '↳';
         }
     </style>
 
@@ -45,12 +91,13 @@
         </div>
 
         <div class="page">
-            <ul class="pages-table">
+            <ul class="tree">
                 @forelse($pages as $page)
                     @if(isset($page->parent_id))
                     
                     @else
-                        <li class="mt-4">
+                        <li>
+                            <span>
                             {{$page->title}}
                             @if(!$page->children->count())
                                 <a href="/pages/{{$page->id}}/edit" class="btn btn-sm btn-outline-primary">Правка</a>
@@ -58,7 +105,7 @@
                             @else
                                 <a href="/pages/{{$page->id}}/edit" class="btn btn-sm btn-outline-primary">Правка</a>
                             @endif
-                            <br>
+                            </span>
                             @if(count($page->children))
                                 @include('pages.sub ', ['children' => $page->children])
                             @endif
