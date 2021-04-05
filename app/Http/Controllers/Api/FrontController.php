@@ -35,6 +35,11 @@ class FrontController extends Controller
         return News::orderBy('created_at', 'desc')->take(2)->get();
     }
 	
+	public function newsAll()
+    {
+        return News::orderBy('created_at', 'desc')->get();
+    }
+	
 	public function newsItem($id)
     {
         return News::where('id', $id)->first();

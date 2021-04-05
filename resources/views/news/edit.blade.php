@@ -148,7 +148,8 @@
     ['color', ['color']],
     ['para', ['ul', 'ol', 'paragraph']],
     ['table', ['table']],
-    ['height', ['height']]
+    ['height', ['height']],
+    ['view', ['fullscreen', 'codeview']],
   ]
       });
     </script>
