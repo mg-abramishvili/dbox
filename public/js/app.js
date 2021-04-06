@@ -2762,6 +2762,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'CreateReview',
   data: function data() {
     return {
       settings: {}
@@ -3130,6 +3131,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'RoutesAll',
   data: function data() {
     return {
       settings: {}
@@ -37845,7 +37847,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "keep-alive",
-        { attrs: { exclude: "VideoalbumItem" } },
+        { attrs: { exclude: /VideoalbumItem|RoutesAll|CreateReview/ } },
         [_c("router-view", { key: _vm.$route.path })],
         1
       )
@@ -65820,9 +65822,11 @@ var routes = [{
   component: _components_pages_PageItem_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
 }, {
   path: '/vue-r01routes',
+  name: 'RoutesAll',
   component: _components_routes_RoutesAll_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
 }, {
   path: '/vue-reviews',
+  name: 'CreateReview',
   component: _components_reviews_CreateReview_vue__WEBPACK_IMPORTED_MODULE_9__["default"]
 }];
 

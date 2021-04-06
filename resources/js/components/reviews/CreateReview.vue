@@ -18,6 +18,7 @@
     import MuzeiCreateReviewVertical from '../../components/reviews/muzei/create-vertical'
 
     export default {
+        name: 'CreateReview',
         data() {
             return {
                 settings: {}

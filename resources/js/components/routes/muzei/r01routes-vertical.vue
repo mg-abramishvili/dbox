@@ -203,7 +203,7 @@
                     this.loading = false;
                 });
         },
-          computed: {
+        computed: {
             filtered_r01routes: function () {
                 if (this.input.trim() === '') {
                     return this.r01routes;

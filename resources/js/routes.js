@@ -49,10 +49,12 @@ export const routes = [
     },
     {
         path: '/vue-r01routes',
+        name: 'RoutesAll',
         component: RoutesAll
     },
     {
         path: '/vue-reviews',
+        name: 'CreateReview',
         component: CreateReview
     }
 ];

@@ -4,7 +4,7 @@
         <MuzeiHeader v-show="settings.theme === 'muzei' && $route.name !== 'vue-index'"/>
         <ShkolaHeader v-show="settings.theme === 'shkola'" />
         
-        <keep-alive exclude="VideoalbumItem">
+        <keep-alive :exclude="/VideoalbumItem|RoutesAll|CreateReview/">
             <router-view :key="$route.path" />
         </keep-alive>
     </div>

@@ -18,6 +18,7 @@
     import MuzeiR01RoutesVertical from './muzei/r01routes-vertical.vue'
 
     export default {
+        name: 'RoutesAll',
         data() {
             return {
                 settings: {},
