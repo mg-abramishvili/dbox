@@ -39,6 +39,50 @@
     bottom: 4vh;
 }
 
+::-webkit-scrollbar {
+width: 2vw;
+}
+
+::-webkit-scrollbar-track {
+background: #dddddd;
+}
+
+::-webkit-scrollbar-thumb {
+background: #966545;
+border: 1px solid #B8BDBD;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #966545;
+}
+
+/* Buttons */
+::-webkit-scrollbar-button:single-button {
+background-color: #dddddd;
+display: block;
+border-style: solid;
+height: 1.5vw;
+width: 2vw;
+}
+/* Up */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+border-width: 0 1vw 1vw 1vw;
+border-color: transparent transparent #808080 transparent;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+border-color: transparent transparent #777777 transparent;
+}
+/* Down */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+border-width: 1vw 1vw 0 1vw;
+border-color: #808080 transparent transparent transparent;
+}
+
+::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+border-color: #777777 transparent transparent transparent;
+}
+
 .BannerSwiper,
 .banner {
     height: 35vh;
@@ -457,6 +501,20 @@
     background-size: cover;
     background-position: 50% 50%;
     margin-bottom: 2vh;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    border-radius: 100%;
+    width: 3vh;
+    height: 3vh;
+    color: #fff;
+    font-size: 2vh;
+    background-color: #4B7F2B;
+    border: 0.2vh solid #fff;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+    font-size: 1.5vh;
 }
 
 

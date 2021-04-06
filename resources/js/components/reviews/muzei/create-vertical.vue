@@ -3,7 +3,7 @@
         <MuzeiLoader v-if="loading" />
 
         <div v-else>
-            <h5 v-if="success" style="font-size: 5vh; text-align: center; margin-top: 24vh;">Ваш отзыв принят!</h5>
+            <h5 v-if="success" style="font-size: 4vh; text-align: center; margin-top: 24vh; color: #fff;">Ваш отзыв принят!</h5>
             <h1 v-if="show_form" class="h1-page" style="color: #fff;">Оставьте отзыв</h1>
 
             <div class="row">

@@ -330,23 +330,6 @@ main {
     padding: 4vh;
 }
 
-.news-list::-webkit-scrollbar {
-    width: 1vh;
-}
-  
-.news-list::-webkit-scrollbar-track {
-    background: #B8BDBD;
-}
-  
-.news-list::-webkit-scrollbar-thumb {
-    background: #976545;
-    border: 1px solid #B8BDBD;
-  }
-  
-  .news-list::-webkit-scrollbar-thumb:hover {
-    background: #976545;
-  }
-
 .news-list-item a {
     display: block;
     color: #fff;
@@ -391,21 +374,8 @@ main {
     line-height: 1.75;
     height: 65vh;
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
-
-.news-item-text::-webkit-scrollbar {
-    width: 1vh;
-}
-  
-.news-item-text::-webkit-scrollbar-track {
-    background: #B8BDBD;
-}
-  
-.news-item-text::-webkit-scrollbar-thumb {
-    background: #976545;
-    border: 1px solid #B8BDBD;
-  }
   
 
   .news-item-text h1 {
@@ -485,23 +455,6 @@ main {
     margin-bottom: 2vh !important;
 }
 
-.type-1 .page-detail-text::-webkit-scrollbar {
-    width: 1.5vh;
-}
-
-.type-1 .page-detail-text::-webkit-scrollbar-track {
-    background: #B8BDBD;
-}
-
-.type-1 .page-detail-text::-webkit-scrollbar-thumb {
-    background: #976545;
-    border: 1px solid #B8BDBD;
-}
-
-.type-1 .page-detail-text::-webkit-scrollbar-thumb:hover {
-    background: #976545;
-}
-
 /* PAGE TYPE 1 */
 
 
@@ -536,23 +489,6 @@ main {
     margin-bottom: 2vh !important;
 }
 
-.type-2 .page-detail-text::-webkit-scrollbar {
-    width: 1.5vh;
-}
-
-.type-2 .page-detail-text::-webkit-scrollbar-track {
-    background: #B8BDBD;
-}
-
-.type-2 .page-detail-text::-webkit-scrollbar-thumb {
-    background: #976545;
-    border: 1px solid #B8BDBD;
-}
-
-.type-2 .page-detail-text::-webkit-scrollbar-thumb:hover {
-    background: #976545;
-}
-
 /* PAGE TYPE 2 */
 
 
@@ -583,23 +519,6 @@ main {
 
 .type-3 .page-detail-text p {
     margin-bottom: 2vh !important;
-}
-
-.type-3 .page-detail-text::-webkit-scrollbar {
-    width: 1.5vh;
-}
-
-.type-3 .page-detail-text::-webkit-scrollbar-track {
-    background: #B8BDBD;
-}
-
-.type-3 .page-detail-text::-webkit-scrollbar-thumb {
-    background: #976545;
-    border: 1px solid #B8BDBD;
-}
-
-.type-3 .page-detail-text::-webkit-scrollbar-thumb:hover {
-    background: #976545;
 }
 
 /* PAGE TYPE 3 */
@@ -712,23 +631,6 @@ main {
     width: 70vw;
 }
 
-.type-7 .text::-webkit-scrollbar {
-    width: 1.5vh;
-}
-
-.type-7 .text::-webkit-scrollbar-track {
-    background: #B8BDBD;
-}
-
-.type-7 .text::-webkit-scrollbar-thumb {
-    background: #976545;
-    border: 1px solid #B8BDBD;
-}
-
-.type-7 .text::-webkit-scrollbar-thumb:hover {
-    background: #976545;
-}
-
   .type-7 .pdf-nav {
       text-align: center;
       margin-top: 1vh;
@@ -780,13 +682,11 @@ main {
     width: 94vw;
     width: auto;
     height: 85vh;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-top: 2vh;
 }
 
 /* type 9 */
-
-
 
 
 /* ROUTES */
