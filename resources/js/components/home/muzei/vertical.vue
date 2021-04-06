@@ -1,8 +1,7 @@
 <template>
     <div>
-        <MuzeiLoader v-if="loading" />
 
-        <div v-else class="container">
+        <div class="container">
 
             <swiper ref="BannerSwiper" :options="swiperOptions" class="BannerSwiper">
                 <swiper-slide v-for="banner in banners" :key="banner.id" class="banner">

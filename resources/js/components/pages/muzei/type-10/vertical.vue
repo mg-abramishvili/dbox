@@ -1,8 +1,7 @@
 <template>
     <div class="type-10">
-        <MuzeiLoader v-if="loading" />
         
-        <div v-else class="row">
+        <div class="row">
             <div class="col-12">
                 <!--<h1 class="h1-page">{{ page.title }}</h1>-->
                 <iframe :src="page.iframe" frameborder="0" style="width: 100%; height: 65vh;"></iframe>

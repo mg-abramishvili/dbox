@@ -1,8 +1,7 @@
 <template>
     <div class="type-6 container-index">
 
-        <MuzeiLoader v-if="loading" />
-        <div v-else>
+        <div v-if="page.children">
         <h1 class="h1-page" style="background: #171F19; color: #fff; margin: 0; padding-top: 2vh; height: 9vh;">{{ page.title }}</h1>
 
         <swiper ref="PagesSwiper" :options="swiperOptions" class="PagesSwiper">
@@ -27,11 +26,10 @@
     export default {
         data() {
             return {
-                page: {},
-                loading: true,
+                page: [],
+                loading: false,
                 swiperOptions: {
                     slidesPerView: 3,
-                    simulateTouch: false,
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev'
@@ -45,12 +43,9 @@
                 .then(response => response.json())
                 .then(json => {
                     this.page = json;
-                    this.loading = false
                     if (json.children.length > 3) {
-                        this.slider_prev_next = true,
                         this.swiperOptions.centerInsufficientSlides = false
                     } else {
-                        this.slider_prev_next = false,
                         this.swiperOptions.centerInsufficientSlides = true
                     }
                 });

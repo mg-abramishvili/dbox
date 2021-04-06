@@ -1,8 +1,7 @@
 <template>
     <div>
-        <MuzeiLoader v-if="loading" />
 
-        <div v-else-if="videoalbums.length" class="gallery">
+        <div v-if="videoalbums.length" class="gallery">
             <h1 class="h1-page" style="color: #fff;">Видеогалерея</h1>
             <swiper ref="VideoalbumsSwiper" :options="swiperOptions" class="VideoalbumsSwiper">
                 <swiper-slide v-for="videoalbum in videoalbums" :key="videoalbum.id" class="user-pages-item-item">

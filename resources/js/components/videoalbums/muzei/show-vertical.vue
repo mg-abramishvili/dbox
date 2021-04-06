@@ -1,8 +1,7 @@
 <template>
     <div>
-        <MuzeiLoader v-if="loading" />
 
-        <div v-else-if="videoalbumItem" class="videoalbum-detail" style="margin-top: 4vh;">
+        <div class="videoalbum-detail" style="margin-top: 4vh;">
             <video :src="videoalbumItem.gallery" autoplay controls disablePictureInPicture controlsList="nodownload"></video>
         </div>
 

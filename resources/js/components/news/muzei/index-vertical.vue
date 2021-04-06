@@ -1,8 +1,7 @@
 <template>
     <div>
-        <MuzeiLoader v-if="loading" />
 
-        <div v-else-if="news.length" class="container">
+        <div class="container">
             <h1 class="h1-page" style="color: #fff;">Новости</h1>
             <div class="news">
                 <ul class="news-list">

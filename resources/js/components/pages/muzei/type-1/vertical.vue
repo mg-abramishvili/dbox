@@ -1,8 +1,7 @@
 <template>
     <div class="type-1">
-        <MuzeiLoader v-if="loading" />
         
-        <div v-else class="row">
+        <div class="row">
             <div class="col-12">
                 <h1 class="h1-page">{{ page.title }}</h1>
                 <div class="page-detail-text">

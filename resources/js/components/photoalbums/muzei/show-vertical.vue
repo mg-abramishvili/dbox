@@ -1,8 +1,7 @@
 <template>
     <div>
-        <MuzeiLoader v-if="loading" />
 
-        <div v-else-if="photoalbumItem" class="gallery-detail">
+        <div class="gallery-detail">
             <h1 class="h1-page" style="color: #fff;">{{ photoalbumItem.title }}</h1>
             <swiper ref="PhotoalbumsItemSwiper" :options="swiperOptions">
                 <swiper-slide v-for="photoalbumPic in photoalbumItem.gallery" :key="photoalbumPic" class="gallery-detail-item">

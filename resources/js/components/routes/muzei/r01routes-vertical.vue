@@ -1,8 +1,7 @@
 <template>
     <div>
-        <MuzeiLoader v-if="loading" />
 
-        <div v-else class="row" style="padding: 2vh; padding-top: 0;">
+        <div class="row" style="padding: 2vh; padding-top: 0;">
             <div class="col-12">
                 <div v-if="search_panel" class="search_panel">
                     <button

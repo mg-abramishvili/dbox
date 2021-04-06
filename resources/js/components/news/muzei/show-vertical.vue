@@ -1,8 +1,7 @@
 <template>
     <div>
-        <MuzeiLoader v-if="loading" />
 
-        <div v-else-if="newsItem" class="container" style="margin-top: 45px;">
+        <div class="container" style="margin-top: 45px;">
             <div class="news-item">
                 <div class="row">
 
