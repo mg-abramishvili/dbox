@@ -235,6 +235,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -3732,6 +3734,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'VideoalbumItem',
   data: function data() {
     return {
       settings: {}
@@ -37805,15 +37808,47 @@ var render = function() {
     "div",
     { staticClass: "wrapper" },
     [
-      _vm.settings.theme === "med"
-        ? _c("MedHeader")
-        : _vm.settings.theme === "muzei" && _vm.$route.name !== "vue-index"
-        ? _c("MuzeiHeader")
-        : _vm.settings.theme === "shkola"
-        ? _c("ShkolaHeader")
-        : _vm._e(),
+      _c("MedHeader", {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.settings.theme === "med",
+            expression: "settings.theme === 'med'"
+          }
+        ]
+      }),
       _vm._v(" "),
-      _c("router-view", { key: _vm.$route.path })
+      _c("MuzeiHeader", {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value:
+              _vm.settings.theme === "muzei" && _vm.$route.name !== "vue-index",
+            expression:
+              "settings.theme === 'muzei' && $route.name !== 'vue-index'"
+          }
+        ]
+      }),
+      _vm._v(" "),
+      _c("ShkolaHeader", {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.settings.theme === "shkola",
+            expression: "settings.theme === 'shkola'"
+          }
+        ]
+      }),
+      _vm._v(" "),
+      _c(
+        "keep-alive",
+        { attrs: { exclude: "VideoalbumItem" } },
+        [_c("router-view", { key: _vm.$route.path })],
+        1
+      )
     ],
     1
   )

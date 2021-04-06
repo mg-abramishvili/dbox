@@ -1,10 +1,12 @@
 <template>
     <div class="wrapper">
-        <MedHeader v-if="settings.theme === 'med'" />
-        <MuzeiHeader v-else-if="settings.theme === 'muzei' && $route.name !== 'vue-index'"/>
-        <ShkolaHeader v-else-if="settings.theme === 'shkola'" />
+        <MedHeader v-show="settings.theme === 'med'" />
+        <MuzeiHeader v-show="settings.theme === 'muzei' && $route.name !== 'vue-index'"/>
+        <ShkolaHeader v-show="settings.theme === 'shkola'" />
         
-        <router-view :key="$route.path" />
+        <keep-alive exclude="VideoalbumItem">
+            <router-view :key="$route.path" />
+        </keep-alive>
     </div>
 </template>
 

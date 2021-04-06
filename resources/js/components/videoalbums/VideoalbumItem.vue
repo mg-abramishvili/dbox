@@ -18,6 +18,7 @@
     import MuzeiVideoalbumItemVertical from '../../components/videoalbums/muzei/show-vertical'
 
     export default {
+        name: 'VideoalbumItem',
         data() {
             return {
                 settings: {}
