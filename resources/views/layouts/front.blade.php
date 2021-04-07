@@ -25,7 +25,7 @@
         <script src="{{ asset('js/turn.min.js') }}"></script>
 
         <script>
-            //document.oncontextmenu = new Function("return false;");
+            document.oncontextmenu = new Function("return false;");
         </script>
 
     </head>
