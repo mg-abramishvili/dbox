@@ -29,8 +29,9 @@
 }
 
 .index-vert-sidebar .m-title p {
-    font-size: 1.85vh;
+    font-size: 1.25vh;
     text-align: center;
+    padding: 0 1vh;
 }
 
 .index-vert-sidebar .m-sidebar-button {
@@ -204,8 +205,9 @@ border-color: #777777 transparent transparent transparent;
 
 .page-item {
     background-color: #fff;
-    height: 65vh;
-    max-height: 65vh;
+    height: 60vh;
+    max-height: 60vh;
+    margin-top: 1vh;
 }
 
 .header-sub {
@@ -226,7 +228,7 @@ border-color: #777777 transparent transparent transparent;
 }
 
 .header-sub .m-title p {
-    font-size: 1.75vh;
+    font-size: 1.7vh;
     text-align: center;
     padding-top: 2vh;
 }
@@ -296,21 +298,29 @@ border-color: #777777 transparent transparent transparent;
     text-align: center;
     margin-bottom: 2vh;
     height: 5vh;
+    margin-top: 2vh;
+}
+
+.type-1 {
+    padding: 0;
 }
 
 .type-1 .page-detail-text {
-    height: 48vh;
+    height: 51vh;
     font-size: 1.5vh !important;
+    padding: 4vh;
 }
 
 .type-2 {
-    padding: 2vh;
+    padding: 0;
 }
 
 .type-2 .page-detail-text {
     padding-left: 0;
-    height: 32.5vh;
+    height: 31vh;
     font-size: 1.5vh !important;
+    padding: 4vh;
+    padding-top: 2vh;
 }
 
 .type-2 .page-detail-image {
@@ -318,15 +328,18 @@ border-color: #777777 transparent transparent transparent;
     margin-bottom: 2vh;
     background-size: cover;
     background-position: 50% 50%;
+    margin: 0 4vh;
 }
 
 .type-3 {
-    padding: 2vh;
+    padding: 0;
 }
 
 .type-3 .page-detail-text {
     padding-left: 0;
-    height: 40vh;
+    padding: 4vh;
+    padding-top: 2vh;
+    height: 35vh;
     font-size: 1.5vh !important;
     overflow-y: auto;
 }
@@ -342,7 +355,7 @@ border-color: #777777 transparent transparent transparent;
 }
 
 .type-7 .text {
-    height: 57vh;
+    height: 48vh;
     width: 100%;
 }
 
@@ -468,6 +481,7 @@ border-color: #777777 transparent transparent transparent;
     left: 2vh;
     z-index: 10;
     height: 7vh;
+    color: #fff;
 }
 
 .news-list-item-text-preview {

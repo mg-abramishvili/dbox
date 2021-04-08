@@ -1,18 +1,20 @@
 <template>
     <div>
 
-        <div v-if="photoalbums.length" class="gallery">
+        <div class="container">
             <h1 class="h1-page" style="color: #fff;">Фотогалерея</h1>
-            <swiper ref="PhotoalbumsSwiper" :options="swiperOptions" class="PhotoalbumsSwiper">
-                <swiper-slide v-for="photoalbum in photoalbums" :key="photoalbum.id" class="user-pages-item-item">
-                    <router-link :to="{name: 'PhotoalbumItem', params: {id: photoalbum.id}}" class="index-button">
-                        <div v-for="cover in photoalbum.gallery.slice(0, 1)" :key="cover.id" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(' + cover + ')' }"></div>
-                        <h2>{{ photoalbum.title }}</h2>
-                    </router-link>
-                </swiper-slide>
-                <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev"></div>
-                <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next"></div>
-            </swiper>
+            <div class="news">
+                <ul class="news-list">
+                            
+                    <li v-for="photoalbum in photoalbums" :key="photoalbum.id" class="news-list-item">  
+                        <router-link :to="{name: 'PhotoalbumItem', params: {id: photoalbum.id}}">
+                            <h2>{{ photoalbum.title }}</h2>
+                            <div v-for="cover in photoalbum.gallery.slice(0, 1)" :key="cover" class="news-item-image" v-bind:style="{ 'background-image': 'url(' + cover + ')' }"></div>
+                        </router-link>
+                    </li>
+
+                </ul>
+            </div>
         </div>
 
         <footer>

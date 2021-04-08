@@ -1,18 +1,20 @@
 <template>
     <div>
 
-        <div v-if="videoalbums.length" class="gallery">
+        <div class="container">
             <h1 class="h1-page" style="color: #fff;">Видеогалерея</h1>
-            <swiper ref="VideoalbumsSwiper" :options="swiperOptions" class="VideoalbumsSwiper">
-                <swiper-slide v-for="videoalbum in videoalbums" :key="videoalbum.id" class="user-pages-item-item">
-                    <router-link :to="{name: 'VideoalbumItem', params: {id: videoalbum.id}}" class="index-button">
-                        <div v-if="videoalbum.cover" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(' + videoalbum.cover + ')' }"></div>
-                        <h2>{{ videoalbum.title }}</h2>
-                    </router-link>
-                </swiper-slide>
-                <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev"></div>
-                <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next"></div>
-            </swiper>
+            <div class="news">
+                <ul class="news-list">
+                            
+                    <li v-for="videoalbum in videoalbums" :key="videoalbum.id" class="news-list-item">  
+                        <router-link :to="{name: 'VideoalbumItem', params: {id: videoalbum.id}}">
+                            <h2>{{ videoalbum.title }}</h2>
+                            <div v-if="videoalbum.cover" class="news-item-image" v-bind:style="{ 'background-image': 'url(' + videoalbum.cover + ')' }"></div>
+                        </router-link>
+                    </li>
+
+                </ul>
+            </div>
         </div>
 
         <footer>
