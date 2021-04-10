@@ -14,7 +14,7 @@
     
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
-        document.oncontextmenu = new Function("return false;");
+        //document.oncontextmenu = new Function("return false;");
     </script>
     <script>
         document.onkeydown = function(e){

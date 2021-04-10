@@ -13,11 +13,11 @@
                 <div class="col-4 text-right">
                     <div class="calendar">
                         <span>
-                            {{ moment().format('D MMMM, dddd') }}
+                            {{ date }}
                         </span>
                     </div>
                     <div class="header-time">
-                        {{ moment().format('H:mm') }}
+                        {{ time }}
                     </div>
                 </div>
             </div>
@@ -30,8 +30,22 @@
         data() {
             return {
                 settings: {},
-                moment: moment
+                moment: moment,
+                time: '',
+                date: '',
             }
+        },
+                methods:{
+            time_current:function() {
+                this.time = moment().format('H:mm')
+            },
+            date_current:function() {
+                this.date = moment().format('D MMMM, dddd')
+            },
+        },
+        mounted() {
+            setInterval(this.time_current,1000);
+            setInterval(this.date_current,1000);
         },
         created() {
             fetch(`/api/front/settings/`)

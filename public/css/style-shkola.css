@@ -66,6 +66,7 @@ header .container {
 .header-logo a {
     color: #333;
     display: block;
+    text-decoration: none;
 }
 
 .header-logo a:focus {
