@@ -1,20 +1,30 @@
 <template>
     <div>
+
         <div v-if="settings.theme === 'med'">
             <div v-if="settings.orientation === 'horizontal'">
                 <MedNewsAllHorizontal />
             </div>
         </div>
+
+        <div v-if="settings.theme === 'shkola'">
+            <div v-if="settings.orientation === 'horizontal'">
+                <ShkolaNewsAllHorizontal />
+            </div>
+        </div>
+
         <div v-if="settings.theme === 'muzei'">
             <div v-if="settings.orientation === 'vertical'">
                 <MuzeiNewsAllVertical />
             </div>
         </div>
+
     </div>
 </template>
 
 <script>
     import MedNewsAllHorizontal from '../../components/news/med/index-horizontal'
+    import ShkolaNewsAllHorizontal from '../../components/news/shkola/index-horizontal'
     import MuzeiNewsAllVertical from '../../components/news/muzei/index-vertical'
 
     export default {
@@ -32,7 +42,8 @@
         },
         components: {
             MedNewsAllHorizontal,
-            MuzeiNewsAllVertical
+            MuzeiNewsAllVertical,
+            ShkolaNewsAllHorizontal
         }
     }
 </script>
