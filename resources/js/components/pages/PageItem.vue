@@ -1,7 +1,8 @@
 <template>
     <div>
 
-        <div v-if="settings.theme === 'med'">
+        <!-- Медцентр Горизонт -->
+        <div v-if="settings.theme === 'med' && settings.orientation === 'horizontal'">
             <div v-for="type in page.types" class="container">
                 <div class="page-item">
                     <MedPageType1Horizontal v-if="type.id == '1'" />
@@ -11,21 +12,39 @@
                     <MedPageType9Horizontal v-else-if="type.id == '9'" />
                 </div>
             </div>
-
             <footer>
                 <div class="container">
                     <router-link to="/vue-index" class="med-home med-home-sub">
                         <img src="/img/medhome.svg" alt="">
                     </router-link>
-
                     <router-link v-if="page.parent_id" :to="'/vue-pages/' + page.parent_id" class="med-footer-second"><span>{{parent_page}}</span></router-link>
                     <a class="med-footer-third"><span>{{ page.title }}</span></a>
-                    
                 </div>
             </footer>
         </div>
 
-        <div v-if="settings.theme === 'muzei'">
+        <!-- Школа Горизонт -->
+        <div v-if="settings.theme === 'shkola' && settings.orientation === 'horizontal'">
+            <div v-for="type in page.types" class="container">
+                <div class="page-item">
+                    <ShkolaPageType1Horizontal v-if="type.id == '1'" />
+                    <ShkolaPageType2Horizontal v-if="type.id == '2'" />
+                    <ShkolaPageType3Horizontal v-if="type.id == '3'" />
+                    <ShkolaPageType4Horizontal v-if="type.id == '4'" />
+                    <ShkolaPageType5Horizontal v-if="type.id == '5'" />
+                    <ShkolaPageType6Horizontal v-if="type.id == '6'" />
+                    <ShkolaPageType7Horizontal v-if="type.id == '7'" />
+                    <ShkolaPageType9Horizontal v-if="type.id == '9'" />
+                    <ShkolaPageType10Horizontal v-if="type.id == '10'" />
+                </div>
+            </div>
+            <footer>
+                footer
+            </footer>
+        </div>
+
+        <!-- Музей Вертикаль -->
+        <div v-if="settings.theme === 'muzei' && settings.orientation === 'vertical'">
             <div v-for="type in page.types" class="container">
                 <div v-if="type.id == '6'" class="page-item" style="background: #171F19;">
                     <MuzeiPageType6Vertical v-if="type.id == '6'" />
@@ -45,7 +64,6 @@
                     <MuzeiPageType10Vertical v-else-if="type.id == '10'" />
                 </div>
             </div>
-
             <footer>
                 <div class="container">
                     <router-link to="/vue-index" class="muzei-home muzei-home-sub">
@@ -58,6 +76,7 @@
                 </div>
             </footer>
         </div>
+
     </div>
 </template>
 
@@ -67,6 +86,16 @@
     import MedPageType6Horizontal from '../../components/pages/med/type-6/horizontal'
     import MedPageType7Horizontal from '../../components/pages/med/type-7/horizontal'
     import MedPageType9Horizontal from '../../components/pages/med/type-9/horizontal'
+
+    import ShkolaPageType1Horizontal from '../../components/pages/shkola/type-1/horizontal'
+    import ShkolaPageType2Horizontal from '../../components/pages/shkola/type-2/horizontal'
+    import ShkolaPageType3Horizontal from '../../components/pages/shkola/type-3/horizontal'
+    import ShkolaPageType4Horizontal from '../../components/pages/shkola/type-4/horizontal'
+    import ShkolaPageType5Horizontal from '../../components/pages/shkola/type-5/horizontal'
+    import ShkolaPageType6Horizontal from '../../components/pages/shkola/type-6/horizontal'
+    import ShkolaPageType7Horizontal from '../../components/pages/shkola/type-7/horizontal'
+    import ShkolaPageType9Horizontal from '../../components/pages/shkola/type-9/horizontal'
+    import ShkolaPageType10Horizontal from '../../components/pages/shkola/type-10/horizontal'
 
     import MuzeiPageType1Vertical from '../../components/pages/muzei/type-1/vertical'
     import MuzeiPageType2Vertical from '../../components/pages/muzei/type-2/vertical'
@@ -119,7 +148,16 @@
             MuzeiPageType6Vertical,
             MuzeiPageType7Vertical,
             MuzeiPageType9Vertical,
-            MuzeiPageType10Vertical
+            MuzeiPageType10Vertical,
+            ShkolaPageType1Horizontal,
+            ShkolaPageType2Horizontal,
+            ShkolaPageType3Horizontal,
+            ShkolaPageType4Horizontal,
+            ShkolaPageType5Horizontal,
+            ShkolaPageType6Horizontal,
+            ShkolaPageType7Horizontal,
+            ShkolaPageType9Horizontal,
+            ShkolaPageType10Horizontal
         }
     }
 </script>
