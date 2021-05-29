@@ -25,6 +25,11 @@ class FrontController extends Controller
     {
         return Page::orderBy('created_at', 'asc')->where('parent_id', NULL)->get();
     }
+
+    public function pages_all()
+    {
+        return Page::orderBy('created_at', 'asc')->get();
+    }
 	
 	public function pageItem($id)
     {

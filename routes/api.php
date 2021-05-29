@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\FrontController;
 Route::get('/front/settings','App\Http\Controllers\Api\FrontController@settings');
 
 Route::get('/front/pages','App\Http\Controllers\Api\FrontController@pages');
+Route::get('/front/pages_all','App\Http\Controllers\Api\FrontController@pages_all');
 Route::get('/front/page/{id}','App\Http\Controllers\Api\FrontController@pageItem');
 
 Route::get('/front/news','App\Http\Controllers\Api\FrontController@news');

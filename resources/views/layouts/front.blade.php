@@ -25,7 +25,7 @@
         <script src="{{ asset('js/turn.min.js') }}"></script>
 
         <script>
-            document.oncontextmenu = new Function("return false;");
+            //document.oncontextmenu = new Function("return false;");
         </script>
 
     </head>
@@ -47,8 +47,8 @@
         @php if ($hnta == 'y') { @endphp
             @php if ($h1 == $h2) { @endphp
                 
-                <script>window.location.replace("/vue-index");
-                    </script>
+                <!--<script>window.location.replace("/vue-index");
+                    </script>-->
                 
 
             @php } else { @endphp
