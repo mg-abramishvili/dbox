@@ -415,6 +415,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_type_6_horizontal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/type-6/horizontal */ "./resources/js/components/shkola/pages/type-6/horizontal.vue");
 /* harmony import */ var _pages_type_7_horizontal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/type-7/horizontal */ "./resources/js/components/shkola/pages/type-7/horizontal.vue");
 /* harmony import */ var _pages_type_9_horizontal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../pages/type-9/horizontal */ "./resources/js/components/shkola/pages/type-9/horizontal.vue");
+/* harmony import */ var _pages_type_10_horizontal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../pages/type-10/horizontal */ "./resources/js/components/shkola/pages/type-10/horizontal.vue");
 //
 //
 //
@@ -455,6 +456,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 
 
 
@@ -510,8 +513,8 @@ __webpack_require__.r(__webpack_exports__);
     //ShkolaPageType5Horizontal,
     ShkolaPageType6Horizontal: _pages_type_6_horizontal__WEBPACK_IMPORTED_MODULE_4__["default"],
     ShkolaPageType7Horizontal: _pages_type_7_horizontal__WEBPACK_IMPORTED_MODULE_5__["default"],
-    ShkolaPageType9Horizontal: _pages_type_9_horizontal__WEBPACK_IMPORTED_MODULE_6__["default"] //ShkolaPageType10Horizontal
-
+    ShkolaPageType9Horizontal: _pages_type_9_horizontal__WEBPACK_IMPORTED_MODULE_6__["default"],
+    ShkolaPageType10Horizontal: _pages_type_10_horizontal__WEBPACK_IMPORTED_MODULE_7__["default"]
   }
 });
 
@@ -546,6 +549,48 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       page: {}
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    fetch("/api/front/page/".concat(this.$route.params.id)).then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      _this.page = json;
+    });
+  },
+  components: {}
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/shkola/pages/type-10/horizontal.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/shkola/pages/type-10/horizontal.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      page: {},
+      loading: true
     };
   },
   created: function created() {
@@ -34381,6 +34426,10 @@ var render = function() {
                         _vm._v(" "),
                         type.id == "9"
                           ? _c("ShkolaPageType9Horizontal")
+                          : _vm._e(),
+                        _vm._v(" "),
+                        type.id == "10"
+                          ? _c("ShkolaPageType10Horizontal")
                           : _vm._e()
                       ],
                       1
@@ -34510,6 +34559,39 @@ var render = function() {
           _vm._v(" "),
           _c("div", { domProps: { innerHTML: _vm._s(_vm.page.text) } })
         ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/shkola/pages/type-10/horizontal.vue?vue&type=template&id=7eca3632&":
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/shkola/pages/type-10/horizontal.vue?vue&type=template&id=7eca3632& ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "type-10" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("iframe", {
+          staticStyle: { width: "100%", height: "64vh" },
+          attrs: { src: _vm.page.iframe, frameborder: "0" }
+        })
       ])
     ])
   ])
@@ -54083,6 +54165,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_horizontal_vue_vue_type_template_id_0e0f6e14___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_horizontal_vue_vue_type_template_id_0e0f6e14___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/shkola/pages/type-10/horizontal.vue":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/shkola/pages/type-10/horizontal.vue ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _horizontal_vue_vue_type_template_id_7eca3632___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./horizontal.vue?vue&type=template&id=7eca3632& */ "./resources/js/components/shkola/pages/type-10/horizontal.vue?vue&type=template&id=7eca3632&");
+/* harmony import */ var _horizontal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./horizontal.vue?vue&type=script&lang=js& */ "./resources/js/components/shkola/pages/type-10/horizontal.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _horizontal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _horizontal_vue_vue_type_template_id_7eca3632___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _horizontal_vue_vue_type_template_id_7eca3632___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/shkola/pages/type-10/horizontal.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/shkola/pages/type-10/horizontal.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/shkola/pages/type-10/horizontal.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_horizontal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./horizontal.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/shkola/pages/type-10/horizontal.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_horizontal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/shkola/pages/type-10/horizontal.vue?vue&type=template&id=7eca3632&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/components/shkola/pages/type-10/horizontal.vue?vue&type=template&id=7eca3632& ***!
+  \****************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_horizontal_vue_vue_type_template_id_7eca3632___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./horizontal.vue?vue&type=template&id=7eca3632& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/shkola/pages/type-10/horizontal.vue?vue&type=template&id=7eca3632&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_horizontal_vue_vue_type_template_id_7eca3632___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_horizontal_vue_vue_type_template_id_7eca3632___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

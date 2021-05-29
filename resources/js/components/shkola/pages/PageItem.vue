@@ -11,6 +11,7 @@
                     <ShkolaPageType6Horizontal v-if="type.id == '6'" />
                     <ShkolaPageType7Horizontal v-if="type.id == '7'" />
                     <ShkolaPageType9Horizontal v-if="type.id == '9'" />
+                    <ShkolaPageType10Horizontal v-if="type.id == '10'" />
                 </div>
             </div>
             <footer>
@@ -46,6 +47,7 @@
     import ShkolaPageType6Horizontal from '../pages/type-6/horizontal'
     import ShkolaPageType7Horizontal from '../pages/type-7/horizontal'
     import ShkolaPageType9Horizontal from '../pages/type-9/horizontal'
+    import ShkolaPageType10Horizontal from '../pages/type-10/horizontal'
 
     export default {
         data() {
@@ -91,7 +93,7 @@
             ShkolaPageType6Horizontal,
             ShkolaPageType7Horizontal,
             ShkolaPageType9Horizontal,
-            //ShkolaPageType10Horizontal
+            ShkolaPageType10Horizontal
         }
     }
 </script>
