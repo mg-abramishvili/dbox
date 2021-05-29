@@ -2,27 +2,22 @@
     <div>
         <ShkolaHeaderHorizontal />
 
-        <div class="container">
-        <div class="row" style="padding: 2vh; padding-top: 0;">
-            <div class="col-12">
+        <div class="container" style="margin-top: 17vh; width: 90vw;">
+        <div class="row">
+            <div class="col-4">
+                <div class="med-route-sidebar" style="margin-top: 8vh; padding: 2vh;">
+
                 <div v-if="search_panel" class="search_panel">
-                    <button
-                    @click="search_panel_button_close()"
-                    style="position: absolute; width: 4vh; height: 4vh; background-color: #976545; color: #fff; font-size: 3vh; line-height: 3vh; text-align: center; border: 0; border-radius: 100%; right: 0; margin-top: -3vh; margin-right: -1.5vh;"
-                    >&times;</button>
 
                     <input
                     :value="input"
                     class="input"
                     @input="onInputChange"
                     placeholder="Поиск..."
+                    style="margin-bottom: 2vh;"
                     >
                     <SimpleKeyboard @onChange="onChange" @onKeyPress="onKeyPress" :input="input"/>
                 </div>
-                <button v-if="search_panel === false" @click="search_panel_button()" class="search_button">Поиск</button>
-            </div>
-            <div class="col-12" style="order: 2;">
-                <div class="med-route-sidebar">
 
                     <ul id="myUL" style="margin-top: 0.5vh;">
                         <li v-for="routeListItem in filtered_r01routes" :key="routeListItem.id" @click="SelectRoute(routeListItem)">
@@ -32,7 +27,7 @@
                     
                 </div>
             </div>
-            <div class="col-12" style="order: 1;"> 
+            <div class="col-8" style="order: 1;"> 
                 <div class="route_about">
                     <div v-for="scheme in schemes" :key="scheme.id">
                         <div v-if="scheme.id == selectedItemSchemeID && current_slide === 1" class="scheme_title scheme_title_first">{{ scheme.title}}</div>
@@ -159,11 +154,11 @@
 
         <footer>
             <div class="container">
-                <router-link to="/vue-index" class="muzei-home muzei-home-sub">
-                    <img src="/img/medhome.svg" alt="">
+                <router-link :to="{name: 'shkola_Home'}" class="shkola-home shkola-home-sub">
+                    <img src="/img/shkolahome.svg" alt="">
                 </router-link>
 
-                <a class="muzei-footer-third"><span>План музея</span></a>
+                <a class="shkola-footer-second"><span>План школы</span></a>
                 
             </div>
         </footer>
@@ -189,7 +184,7 @@
                 selectedItem: '',
                 input: '',
                 current_slide: 1,
-                search_panel: false,
+                search_panel: true,
             }
         },
         created() {
@@ -312,24 +307,21 @@
     }
 
     #map {
-        transform: scale(1.253);
+        transform: scale(1.4);
         transform-origin: 0 0;
-        margin-top: -4vh;
+        margin-top: -2vh;
         margin-bottom: 11vh;
     }
 
     #myUL {
-        height: 28vh;
+        height: 31vh;
+        padding-top: 1vh;
     }
 
     .search_panel {
-        position: absolute;
-        z-index: 10;
         width: 100%;
-        top: 0;
-        margin-top: -20vh;
         background: #fff;
-        padding: 1.5vh;
+        padding: 0;
     }
 
     .prevnextbutton {

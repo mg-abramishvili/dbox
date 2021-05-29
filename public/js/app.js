@@ -1028,11 +1028,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1050,7 +1045,7 @@ __webpack_require__.r(__webpack_exports__);
       selectedItem: '',
       input: '',
       current_slide: 1,
-      search_panel: false
+      search_panel: true
     };
   },
   created: function created() {
@@ -1235,7 +1230,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.scheme_images[data-v-4f33dd33] {\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n.route_about[data-v-4f33dd33] {\n    height: 10vh;\n}\n.prevnextbutton[data-v-4f33dd33] {\n    position: absolute;\n    bottom: 1vh;\n}\n.route_about[data-v-4f33dd33] {\n    color: #fff;\n    text-align: center;\n}\n.input[data-v-4f33dd33] {\n    width: 100%;\n    padding: 0.5vh 2vh;\n}\n#map[data-v-4f33dd33] {\n    transform: scale(1.253);\n    transform-origin: 0 0;\n    margin-top: -4vh;\n    margin-bottom: 11vh;\n}\n#myUL[data-v-4f33dd33] {\n    height: 28vh;\n}\n.search_panel[data-v-4f33dd33] {\n    position: absolute;\n    z-index: 10;\n    width: 100%;\n    top: 0;\n    margin-top: -20vh;\n    background: #fff;\n    padding: 1.5vh;\n}\n.prevnextbutton[data-v-4f33dd33] {\n    background-color: #976545;\n    color: #fff;\n    font-size: 1.25vh;\n    padding: 0.5vh 2vh;\n    display: block;\n    margin: 0 auto;\n    width: 30vw;\n    border-radius: 1vh;\n    left: 0;\n    right: 0;\n    border: 0;\n}\n.prevnextbutton[data-v-4f33dd33]:focus {\n    outline: none;\n}\n#myUL li a[data-v-4f33dd33] {\n    font-size: 1.5vh;\n}\n.search_button[data-v-4f33dd33] {\n    position: absolute;\n    top: 0;\n    right: 0;\n    background-color: rgba(255,255,255,0.5);\n    border: 0;\n    color: #222;\n    padding: 1vh 2vh;\n    font-size: 1.5vh;\n    z-index: 10;\n}\n", ""]);
+exports.push([module.i, "\n.scheme_images[data-v-4f33dd33] {\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n.route_about[data-v-4f33dd33] {\n    height: 10vh;\n}\n.prevnextbutton[data-v-4f33dd33] {\n    position: absolute;\n    bottom: 1vh;\n}\n.route_about[data-v-4f33dd33] {\n    color: #fff;\n    text-align: center;\n}\n.input[data-v-4f33dd33] {\n    width: 100%;\n    padding: 0.5vh 2vh;\n}\n#map[data-v-4f33dd33] {\n    transform: scale(1.4);\n    transform-origin: 0 0;\n    margin-top: -2vh;\n    margin-bottom: 11vh;\n}\n#myUL[data-v-4f33dd33] {\n    height: 31vh;\n    padding-top: 1vh;\n}\n.search_panel[data-v-4f33dd33] {\n    width: 100%;\n    background: #fff;\n    padding: 0;\n}\n.prevnextbutton[data-v-4f33dd33] {\n    background-color: #976545;\n    color: #fff;\n    font-size: 1.25vh;\n    padding: 0.5vh 2vh;\n    display: block;\n    margin: 0 auto;\n    width: 30vw;\n    border-radius: 1vh;\n    left: 0;\n    right: 0;\n    border: 0;\n}\n.prevnextbutton[data-v-4f33dd33]:focus {\n    outline: none;\n}\n#myUL li a[data-v-4f33dd33] {\n    font-size: 1.5vh;\n}\n.search_button[data-v-4f33dd33] {\n    position: absolute;\n    top: 0;\n    right: 0;\n    background-color: rgba(255,255,255,0.5);\n    border: 0;\n    color: #222;\n    padding: 1vh 2vh;\n    font-size: 1.5vh;\n    z-index: 10;\n}\n", ""]);
 
 // exports
 
@@ -34739,110 +34734,74 @@ var render = function() {
     [
       _c("ShkolaHeaderHorizontal"),
       _vm._v(" "),
-      _c("div", { staticClass: "container" }, [
-        _c(
-          "div",
-          {
-            staticClass: "row",
-            staticStyle: { padding: "2vh", "padding-top": "0" }
-          },
-          [
-            _c("div", { staticClass: "col-12" }, [
-              _vm.search_panel
-                ? _c(
-                    "div",
-                    { staticClass: "search_panel" },
-                    [
-                      _c(
-                        "button",
+      _c(
+        "div",
+        {
+          staticClass: "container",
+          staticStyle: { "margin-top": "17vh", width: "90vw" }
+        },
+        [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-4" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "med-route-sidebar",
+                  staticStyle: { "margin-top": "8vh", padding: "2vh" }
+                },
+                [
+                  _vm.search_panel
+                    ? _c(
+                        "div",
+                        { staticClass: "search_panel" },
+                        [
+                          _c("input", {
+                            staticClass: "input",
+                            staticStyle: { "margin-bottom": "2vh" },
+                            attrs: { placeholder: "Поиск..." },
+                            domProps: { value: _vm.input },
+                            on: { input: _vm.onInputChange }
+                          }),
+                          _vm._v(" "),
+                          _c("SimpleKeyboard", {
+                            attrs: { input: _vm.input },
+                            on: {
+                              onChange: _vm.onChange,
+                              onKeyPress: _vm.onKeyPress
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c(
+                    "ul",
+                    {
+                      staticStyle: { "margin-top": "0.5vh" },
+                      attrs: { id: "myUL" }
+                    },
+                    _vm._l(_vm.filtered_r01routes, function(routeListItem) {
+                      return _c(
+                        "li",
                         {
-                          staticStyle: {
-                            position: "absolute",
-                            width: "4vh",
-                            height: "4vh",
-                            "background-color": "#976545",
-                            color: "#fff",
-                            "font-size": "3vh",
-                            "line-height": "3vh",
-                            "text-align": "center",
-                            border: "0",
-                            "border-radius": "100%",
-                            right: "0",
-                            "margin-top": "-3vh",
-                            "margin-right": "-1.5vh"
-                          },
+                          key: routeListItem.id,
                           on: {
                             click: function($event) {
-                              return _vm.search_panel_button_close()
+                              return _vm.SelectRoute(routeListItem)
                             }
                           }
                         },
-                        [_vm._v("×")]
-                      ),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "input",
-                        attrs: { placeholder: "Поиск..." },
-                        domProps: { value: _vm.input },
-                        on: { input: _vm.onInputChange }
-                      }),
-                      _vm._v(" "),
-                      _c("SimpleKeyboard", {
-                        attrs: { input: _vm.input },
-                        on: {
-                          onChange: _vm.onChange,
-                          onKeyPress: _vm.onKeyPress
-                        }
-                      })
-                    ],
-                    1
+                        [_c("a", [_vm._v(_vm._s(routeListItem.title))])]
+                      )
+                    }),
+                    0
                   )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.search_panel === false
-                ? _c(
-                    "button",
-                    {
-                      staticClass: "search_button",
-                      on: {
-                        click: function($event) {
-                          return _vm.search_panel_button()
-                        }
-                      }
-                    },
-                    [_vm._v("Поиск")]
-                  )
-                : _vm._e()
+                ]
+              )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-12", staticStyle: { order: "2" } }, [
-              _c("div", { staticClass: "med-route-sidebar" }, [
-                _c(
-                  "ul",
-                  {
-                    staticStyle: { "margin-top": "0.5vh" },
-                    attrs: { id: "myUL" }
-                  },
-                  _vm._l(_vm.filtered_r01routes, function(routeListItem) {
-                    return _c(
-                      "li",
-                      {
-                        key: routeListItem.id,
-                        on: {
-                          click: function($event) {
-                            return _vm.SelectRoute(routeListItem)
-                          }
-                        }
-                      },
-                      [_c("a", [_vm._v(_vm._s(routeListItem.title))])]
-                    )
-                  }),
-                  0
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-12", staticStyle: { order: "1" } }, [
+            _c("div", { staticClass: "col-8", staticStyle: { order: "1" } }, [
               _c(
                 "div",
                 { staticClass: "route_about" },
@@ -36497,9 +36456,9 @@ var render = function() {
                 2
               )
             ])
-          ]
-        )
-      ]),
+          ])
+        ]
+      ),
       _vm._v(" "),
       _c("footer", [
         _c(
@@ -36509,10 +36468,10 @@ var render = function() {
             _c(
               "router-link",
               {
-                staticClass: "muzei-home muzei-home-sub",
-                attrs: { to: "/vue-index" }
+                staticClass: "shkola-home shkola-home-sub",
+                attrs: { to: { name: "shkola_Home" } }
               },
-              [_c("img", { attrs: { src: "/img/medhome.svg", alt: "" } })]
+              [_c("img", { attrs: { src: "/img/shkolahome.svg", alt: "" } })]
             ),
             _vm._v(" "),
             _vm._m(0)
@@ -36529,8 +36488,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "muzei-footer-third" }, [
-      _c("span", [_vm._v("План музея")])
+    return _c("a", { staticClass: "shkola-footer-second" }, [
+      _c("span", [_vm._v("План школы")])
     ])
   }
 ]
