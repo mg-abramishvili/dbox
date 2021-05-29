@@ -104,18 +104,6 @@
                     require('@/../../public/css/bootstrap.min.css');
                     require('@/../../public/css/style-shkola.css');
                 });
-            fetch(`/api/front/banners/`)
-                .then(response => response.json())
-                .then(json => {
-                    this.banners = json;
-                    if (json.length > 1) {
-                        this.slider_prev_next = false,
-                        this.swiperOptions.centerInsufficientSlides = false
-                    } else {
-                        this.slider_prev_next = false,
-                        this.swiperOptions.centerInsufficientSlides = true
-                    }
-                });
             fetch(`/api/front/pages/`)
                 .then(response => response.json())
                 .then(json => {

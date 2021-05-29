@@ -248,17 +248,6 @@ __webpack_require__.r(__webpack_exports__);
 
       __webpack_require__(/*! @/../../public/css/style-shkola.css */ "./public/css/style-shkola.css");
     });
-    fetch("/api/front/banners/").then(function (response) {
-      return response.json();
-    }).then(function (json) {
-      _this.banners = json;
-
-      if (json.length > 1) {
-        _this.slider_prev_next = false, _this.swiperOptions.centerInsufficientSlides = false;
-      } else {
-        _this.slider_prev_next = false, _this.swiperOptions.centerInsufficientSlides = true;
-      }
-    });
     fetch("/api/front/pages/").then(function (response) {
       return response.json();
     }).then(function (json) {
