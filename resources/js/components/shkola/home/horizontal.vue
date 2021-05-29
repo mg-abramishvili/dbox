@@ -15,7 +15,7 @@
                     </swiper-slide>
 
                     <swiper-slide v-if="settings.module_routes === 'y'">
-                        <router-link to="/vue-r01routes/" class="index-button">
+                        <router-link :to="{name: 'shkola_Routes'}" class="index-button">
                             <div class="index-button-icon">
                                 <img src="/img/icons/019-home-1.svg">
                             </div>
