@@ -702,7 +702,7 @@ footer {
 }
 
 .type-3 .page-detail-text {
-    height: 65vh;
+    height: 40vh;
     overflow-y: auto;
     padding-right: 2vh;
     font-size: 2vh !important;
@@ -716,6 +716,10 @@ footer {
 
 .type-3 .page-detail-text p {
     margin-bottom: 2vh !important;
+}
+
+.type3slider-item {
+    height: 23vh;
 }
 
 /* PAGE TYPE 3 */

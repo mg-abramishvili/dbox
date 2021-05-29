@@ -1,10 +1,8 @@
 <template>
     <div class="wrapper">
-        
-        <keep-alive v-if="settings.theme === 'shkola'">
+        <keep-alive>
             <router-view :key="$route.path" />
         </keep-alive>
-
     </div>
 </template>
 
@@ -20,6 +18,11 @@
                 .then(response => response.json())
                 .then(json => {
                     this.settings = json;
+
+                    /*if(this.settings.theme === 'shkola') {
+                        this.$router.push({ name: 'shkola_Home' })
+                    }*/
+
                 });
         },
         components: {
