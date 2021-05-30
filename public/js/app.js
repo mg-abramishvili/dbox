@@ -235,8 +235,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      settings: {},
-      reset_routes: true
+      settings: {}
     };
   },
   created: function created() {
@@ -484,7 +483,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      settings: {}
+      settings: {},
+      reset_routes: true
     };
   },
   created: function created() {

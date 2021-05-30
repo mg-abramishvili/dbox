@@ -15,6 +15,7 @@
         data() {
             return {
                 settings: {},
+                reset_routes: true,
             }
         },
         created() {
