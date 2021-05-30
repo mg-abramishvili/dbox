@@ -51,7 +51,7 @@
                     </swiper-slide>
 
                     <swiper-slide v-if="settings.module_reviews === 'y'">
-                        <router-link to="/vue-reviews/" class="index-button">
+                        <router-link :to="{name: 'shkola_Reviews'}" class="index-button">
                             <div class="index-button-icon">
                                 <img src="/img/icons/021-email.svg">
                             </div>

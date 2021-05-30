@@ -189,12 +189,14 @@
             }
         },
         created() {
+            require('@/../../public/css/bootstrap.min.css');
+            require('@/../../public/css/style-shkola.css');
+            
             fetch(`/api/front/settings/`)
                 .then(response => response.json())
                 .then(json => {
                     this.settings = json;
-                    require('@/../../public/css/bootstrap.min.css');
-                    require('@/../../public/css/style-shkola.css');
+                    
                 });
             fetch(`/api/front/schemes`)
                 .then(response => response.json())
