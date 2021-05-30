@@ -23,7 +23,7 @@ class FrontController extends Controller
 
     public function pages()
     {
-        return Page::with('icons')->orderBy('created_at', 'asc')->where('parent_id', NULL)->get();
+        return Page::with('icons', 'types')->orderBy('created_at', 'asc')->where('parent_id', NULL)->get();
     }
 
     public function pages_all()

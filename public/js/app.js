@@ -398,7 +398,7 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    GoToPage: function GoToPage(id) {
+    GoToPage: function GoToPage(id, types) {
       this.$router.push({
         name: 'shkola_PageItem',
         params: {
@@ -406,7 +406,10 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
       this.$refs.ShkolaIndexAllSwiper.$swiper.slideTo(1, false);
-      this.$parent.reset_video = true;
+
+      if (types[0].id === 5) {
+        this.$parent.reset_video = true;
+      }
     },
     GoToPhotoalbums: function GoToPhotoalbums() {
       this.$router.push({
@@ -35888,7 +35891,7 @@ var render = function() {
                     staticClass: "index-button",
                     on: {
                       click: function($event) {
-                        return _vm.GoToPage(page.id)
+                        return _vm.GoToPage(page.id, page.types)
                       }
                     }
                   },

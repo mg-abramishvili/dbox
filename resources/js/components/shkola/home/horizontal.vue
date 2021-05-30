@@ -4,7 +4,7 @@
             
             <swiper ref="ShkolaIndexAllSwiper" :options="swiperOptions">
                 <swiper-slide v-for="page in pages" :key="page.id">
-                    <div @click="GoToPage(page.id)" class="index-button">
+                    <div @click="GoToPage(page.id, page.types)" class="index-button">
                         <div v-if="page.image_as_icon === '1'" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(' + page.image + ')' }"></div>
                         <span v-if="page.image_as_icon === '1'" class="t6-p">{{ page.title }}</span>
                         <div v-if="page.image_as_icon === '0' && page.icons[0]" class="index-button-icon">
@@ -129,10 +129,13 @@
                 });
         },
         methods: {
-            GoToPage(id) {
+            GoToPage(id, types) {
                 this.$router.push({name: 'shkola_PageItem', params: {id: id}})
                 this.$refs.ShkolaIndexAllSwiper.$swiper.slideTo(1, false)
-                this.$parent.reset_video = true
+
+                if(types[0].id === 5) {
+                    this.$parent.reset_video = true
+                }
             },
             GoToPhotoalbums() {
                 this.$router.push({name: 'shkola_Photoalbums'})
