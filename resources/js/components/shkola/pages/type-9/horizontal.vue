@@ -26,7 +26,7 @@
             return {
                 page: {},
                 file: null,
-                excel_file: {},
+                excel_file: '',
             }
         },
         created() {
@@ -35,7 +35,9 @@
                 .then(json => {
                     this.page = json;
                     fetch(`${this.page.excel}`)
-                        .then(response => response.blob())
+                        .then(response =>
+                            response.blob()
+                        )
                         .then(blob => {
                             this.excel_file = blob;
                         });
