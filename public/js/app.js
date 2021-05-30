@@ -839,7 +839,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -35049,18 +35048,6 @@ var render = function() {
         "div",
         { staticClass: "col-12", staticStyle: { "margin-top": "-2vh" } },
         [
-          _c(
-            "button",
-            {
-              on: {
-                click: function($event) {
-                  return _vm.reload()
-                }
-              }
-            },
-            [_vm._v("reload")]
-          ),
-          _vm._v(" "),
           _c(
             "div",
             {
