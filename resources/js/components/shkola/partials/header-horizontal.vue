@@ -7,7 +7,7 @@
                         <div class="header-logo-img">
                             <img :src="settings.logo">
                         </div>
-                        <p class="header-title">{{ settings.title }}</p>
+                        <div v-if="settings.title" class="header-title" v-html="settings.title.replace('*','<br>')"></div>
                     </router-link>
                 </div>
                 <div class="col-4 text-right">

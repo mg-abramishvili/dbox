@@ -35178,9 +35178,14 @@ var render = function() {
                 _c("img", { attrs: { src: _vm.settings.logo } })
               ]),
               _vm._v(" "),
-              _c("p", { staticClass: "header-title" }, [
-                _vm._v(_vm._s(_vm.settings.title))
-              ])
+              _vm.settings.title
+                ? _c("div", {
+                    staticClass: "header-title",
+                    domProps: {
+                      innerHTML: _vm._s(_vm.settings.title.replace("*", "<br>"))
+                    }
+                  })
+                : _vm._e()
             ])
           ],
           1
