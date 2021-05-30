@@ -33,7 +33,7 @@
                     </swiper-slide>
 
                     <swiper-slide v-if="settings.module_photoalbums === 'y'">
-                        <router-link to="/vue-photoalbums/" class="index-button">
+                        <router-link :to="{name: 'shkola_Photoalbums'}" class="index-button">
                             <div class="index-button-icon">
                                 <img src="/img/icons/001-picture.svg">
                             </div>

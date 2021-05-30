@@ -487,15 +487,14 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.5;
-    margin: 0 5vh;
+    margin: 0;
 }
 
 .gallery-detail-item img,
 .gallery-detail-item video {
     display: block;
     max-height: 100%;
-    transform: scale(0.25);
+    max-width: 90%;
 }
 
 .gallery-detail-item.is-selected {
