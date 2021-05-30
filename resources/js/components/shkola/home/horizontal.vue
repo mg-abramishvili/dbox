@@ -1,83 +1,78 @@
 <template>
-    <div>
-        <ShkolaHeaderHorizontal />
-
-        <div class="container container-index">
-            <div class="sortable">
-                
-                <swiper ref="ShkolaIndexAllSwiper" :options="swiperOptions">
-                    <swiper-slide v-for="page in pages" :key="page.id">
-                        <div @click="GoToPage(page.id)" class="index-button">
-                            <div v-if="page.image_as_icon === '1'" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(' + page.image + ')' }"></div>
-                            <span v-if="page.image_as_icon === '1'" class="t6-p">{{ page.title }}</span>
-                            <div v-if="page.image_as_icon === '0' && page.icons[0]" class="index-button-icon">
-                                <img :src="page.icons[0].icon">
-                            </div>
-                            <div v-if="page.image_as_icon === '0' && page.icons.length <= 0" class="index-button-icon">
-                                <img src="/img/icons/029-information.svg">
-                            </div>
-                            <span v-if="page.image_as_icon === '0'">{{ page.title }}</span>
-                        </div>
-                    </swiper-slide>
-
-                    <swiper-slide v-if="settings.module_routes === 'y'">
-                        <div @click="GoToRoutes()" class="index-button">
-                            <div class="index-button-icon">
-                                <img src="/img/icons/019-home-1.svg">
-                            </div>
-                            <span>План школы</span>
-                        </div>
-                    </swiper-slide>
-
-                    <swiper-slide v-if="settings.module_news === 'y'">
-                        <div @click="GoToNews()" class="index-button">
-                            <div class="index-button-icon">
-                                <img src="/img/icons/002-newspaper.svg">
-                            </div>
-                            <span>Новости</span>
-                        </div>
-                    </swiper-slide>
-
-                    <swiper-slide v-if="settings.module_photoalbums === 'y'">
-                        <div @click="GoToPhotoalbums()" class="index-button">
-                            <div class="index-button-icon">
-                                <img src="/img/icons/001-picture.svg">
-                            </div>
-                            <span>Фотогалерея</span>
-                        </div>
-                    </swiper-slide>
-
-                    <swiper-slide v-if="settings.module_videoalbums === 'y'">
-                        <div @click="GoToVideoalbums()" class="index-button">
-                            <div class="index-button-icon">
-                                <img src="/img/icons/006-video-player.svg">
-                            </div>
-                            <span>Видеогалерея</span>
-                        </div>
-                    </swiper-slide>
-
-                    <swiper-slide v-if="settings.module_reviews === 'y'">
-                        <div @click="GoToReviews()" class="index-button">
-                            <div class="index-button-icon">
-                                <img src="/img/icons/021-email.svg">
-                            </div>
-                            <span>Оставить отзыв</span>
-                        </div>
-                    </swiper-slide>
-
-                    
-                </swiper>
-
-                <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev" style="margin-left: 2vw"></div>
-                <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next" style="margin-right: 2vw"></div>
+    <div class="container container-index">
+        <div class="sortable">
             
-            </div>
+            <swiper ref="ShkolaIndexAllSwiper" :options="swiperOptions">
+                <swiper-slide v-for="page in pages" :key="page.id">
+                    <div @click="GoToPage(page.id)" class="index-button">
+                        <div v-if="page.image_as_icon === '1'" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(' + page.image + ')' }"></div>
+                        <span v-if="page.image_as_icon === '1'" class="t6-p">{{ page.title }}</span>
+                        <div v-if="page.image_as_icon === '0' && page.icons[0]" class="index-button-icon">
+                            <img :src="page.icons[0].icon">
+                        </div>
+                        <div v-if="page.image_as_icon === '0' && page.icons.length <= 0" class="index-button-icon">
+                            <img src="/img/icons/029-information.svg">
+                        </div>
+                        <span v-if="page.image_as_icon === '0'">{{ page.title }}</span>
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide v-if="settings.module_routes === 'y'">
+                    <div @click="GoToRoutes()" class="index-button">
+                        <div class="index-button-icon">
+                            <img src="/img/icons/019-home-1.svg">
+                        </div>
+                        <span>План школы</span>
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide v-if="settings.module_news === 'y'">
+                    <div @click="GoToNews()" class="index-button">
+                        <div class="index-button-icon">
+                            <img src="/img/icons/002-newspaper.svg">
+                        </div>
+                        <span>Новости</span>
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide v-if="settings.module_photoalbums === 'y'">
+                    <div @click="GoToPhotoalbums()" class="index-button">
+                        <div class="index-button-icon">
+                            <img src="/img/icons/001-picture.svg">
+                        </div>
+                        <span>Фотогалерея</span>
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide v-if="settings.module_videoalbums === 'y'">
+                    <div @click="GoToVideoalbums()" class="index-button">
+                        <div class="index-button-icon">
+                            <img src="/img/icons/006-video-player.svg">
+                        </div>
+                        <span>Видеогалерея</span>
+                    </div>
+                </swiper-slide>
+
+                <swiper-slide v-if="settings.module_reviews === 'y'">
+                    <div @click="GoToReviews()" class="index-button">
+                        <div class="index-button-icon">
+                            <img src="/img/icons/021-email.svg">
+                        </div>
+                        <span>Оставить отзыв</span>
+                    </div>
+                </swiper-slide>
+
+                
+            </swiper>
+
+            <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev" style="margin-left: 2vw"></div>
+            <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next" style="margin-right: 2vw"></div>
+        
         </div>
     </div>
 </template>
 
 <script>
-    import ShkolaHeaderHorizontal from '../partials/header-horizontal'
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
 
@@ -104,9 +99,6 @@
             }
         },
         created() {
-            require('@/../../public/css/bootstrap.min.css');
-            require('@/../../public/css/style-shkola.css');
-
             fetch(`/api/front/settings/`)
                 .then(response => response.json())
                 .then(json => {
@@ -178,7 +170,6 @@
         components: {
             Swiper,
             SwiperSlide,
-            ShkolaHeaderHorizontal
         },
     }
 </script>

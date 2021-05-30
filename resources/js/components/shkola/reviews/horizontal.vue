@@ -1,7 +1,5 @@
 <template>
     <div>
-    <ShkolaHeaderHorizontal />
-
         <div class="container" style="margin-top: 25vh; width: 90vw;">
             <h5 v-if="success" style="font-size: 4vh; text-align: center; margin-top: 24vh; color: #333;">Ваш отзыв принят!</h5>
 
@@ -45,7 +43,6 @@
 </template>
 
 <script>
-    import ShkolaHeaderHorizontal from '../partials/header-horizontal'
     import SimpleKeyboard from "../partials/SimpleKeyboard";
 
     export default {
@@ -62,9 +59,6 @@
             }
         },
         created() {
-            require('@/../../public/css/bootstrap.min.css');
-            require('@/../../public/css/style-shkola.css');
-
             fetch(`/api/front/settings/`)
                 .then(response => response.json())
                 .then(json => {
@@ -125,7 +119,6 @@
         },
         components: {
             SimpleKeyboard,
-            ShkolaHeaderHorizontal
         }
     }
 </script>

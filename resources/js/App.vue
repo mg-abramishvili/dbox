@@ -1,12 +1,14 @@
 <template>
     <div class="wrapper">
-        <keep-alive :exclude="/shkola_VideoalbumItem/">
-            <router-view :key="$route.path"></router-view> 
-        </keep-alive>
+        <template v-if="settings.theme === 'shkola'">
+            <ShkolaLayout />
+        </template>
     </div>
 </template>
 
 <script>
+    import ShkolaLayout from './components/shkola/layout';
+
     export default {
         data() {
             return {
@@ -22,6 +24,7 @@
                 });
         },
         components: {
+            ShkolaLayout
         }
     }
 </script>

@@ -1,7 +1,5 @@
 <template>
     <div>
-        <ShkolaHeaderHorizontal />
-
         <div class="container" style="margin-top: 17vh; width: 90vw;">
         <div class="row">
             <div class="col-4">
@@ -162,7 +160,6 @@
 </template>
 
 <script>
-    import ShkolaHeaderHorizontal from '../partials/header-horizontal'
     import SimpleKeyboard from "../../shkola/partials/SimpleKeyboard";
 
     export default {
@@ -186,9 +183,6 @@
         created() {
             this.windowWidth = window.screen.availWidth
 
-            require('@/../../public/css/bootstrap.min.css');
-            require('@/../../public/css/style-shkola.css');
-            
             fetch(`/api/front/settings/`)
                 .then(response => response.json())
                 .then(json => {
@@ -273,7 +267,6 @@
         },
         components: {
             SimpleKeyboard,
-            ShkolaHeaderHorizontal
         }
     }
 </script>

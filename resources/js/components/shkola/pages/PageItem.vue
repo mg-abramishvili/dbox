@@ -1,48 +1,42 @@
 <template>
-    <div>
-        <ShkolaHeaderHorizontal />
-
-        <div v-if="settings.orientation === 'horizontal'">
-            <div v-for="type in page.types" :key="type.id" class="container" style="margin-top: 25vh; width: 90vw;">
-                <div class="page-item">
-                    <ShkolaPageType1Horizontal v-if="type.id == '1'" />
-                    <ShkolaPageType2Horizontal v-if="type.id == '2'" />
-                    <ShkolaPageType3Horizontal v-if="type.id == '3'" />
-                    <ShkolaPageType4Horizontal v-if="type.id == '4'" />
-                    <ShkolaPageType5Horizontal v-if="type.id == '5'" />
-                    <ShkolaPageType6Horizontal v-if="type.id == '6'" />
-                    <ShkolaPageType7Horizontal v-if="type.id == '7'" />
-                    <ShkolaPageType9Horizontal v-if="type.id == '9'" />
-                    <ShkolaPageType10Horizontal v-if="type.id == '10'" />
-                </div>
+    <div v-if="settings.orientation === 'horizontal'">
+        <div v-for="type in page.types" :key="type.id" class="container" style="margin-top: 25vh; width: 90vw;">
+            <div class="page-item">
+                <ShkolaPageType1Horizontal v-if="type.id == '1'" />
+                <ShkolaPageType2Horizontal v-if="type.id == '2'" />
+                <ShkolaPageType3Horizontal v-if="type.id == '3'" />
+                <ShkolaPageType4Horizontal v-if="type.id == '4'" />
+                <ShkolaPageType5Horizontal v-if="type.id == '5'" />
+                <ShkolaPageType6Horizontal v-if="type.id == '6'" />
+                <ShkolaPageType7Horizontal v-if="type.id == '7'" />
+                <ShkolaPageType9Horizontal v-if="type.id == '9'" />
+                <ShkolaPageType10Horizontal v-if="type.id == '10'" />
             </div>
-            <footer>
-                <div class="container">
-                    <router-link :to="{name: 'shkola_Home'}" class="shkola-home shkola-home-sub">
-                        <img src="/img/shkolahome.svg" alt="">
-                    </router-link>
+        </div>
+        <footer>
+            <div class="container">
+                <router-link :to="{name: 'shkola_Home'}" class="shkola-home shkola-home-sub">
+                    <img src="/img/shkolahome.svg" alt="">
+                </router-link>
 
-                    <template v-if="page.parent_id">
-                        <template v-for="parent_page in pages">
-                            <template v-if="parent_page.id == page.parent_id">
-                                <router-link :to="{name: 'shkola_PageItem', params: {id: parent_page.id}}" class="shkola-footer-second"><span>{{ parent_page.title }}</span></router-link>
-                                <router-link :to="{name: 'shkola_PageItem', params: {id: page.id}}" class="shkola-footer-third"><span>{{ page.title }}</span></router-link>
-                            </template>
+                <template v-if="page.parent_id">
+                    <template v-for="parent_page in pages">
+                        <template v-if="parent_page.id == page.parent_id">
+                            <router-link :to="{name: 'shkola_PageItem', params: {id: parent_page.id}}" class="shkola-footer-second"><span>{{ parent_page.title }}</span></router-link>
+                            <router-link :to="{name: 'shkola_PageItem', params: {id: page.id}}" class="shkola-footer-third"><span>{{ page.title }}</span></router-link>
                         </template>
                     </template>
-                    <template v-else>
-                        <router-link :to="{name: 'shkola_PageItem', params: {id: page.id}}" class="shkola-footer-second"><span>{{ page.title }}</span></router-link>
-                    </template>
+                </template>
+                <template v-else>
+                    <router-link :to="{name: 'shkola_PageItem', params: {id: page.id}}" class="shkola-footer-second"><span>{{ page.title }}</span></router-link>
+                </template>
 
-                </div>
-            </footer>
-        </div>
-
+            </div>
+        </footer>
     </div>
 </template>
 
 <script>
-    import ShkolaHeaderHorizontal from '../partials/header-horizontal'
     import ShkolaPageType1Horizontal from '../pages/type-1/horizontal'
     import ShkolaPageType2Horizontal from '../pages/type-2/horizontal'
     import ShkolaPageType3Horizontal from '../pages/type-3/horizontal'
@@ -62,9 +56,6 @@
             }
         },
         created() {
-            require('@/../../public/css/bootstrap.min.css');
-            require('@/../../public/css/style-shkola.css');
-
             fetch(`/api/front/settings/`)
                 .then(response => response.json())
                 .then(json => {
@@ -89,7 +80,6 @@
                 });
         },
         components: {
-            ShkolaHeaderHorizontal,
             ShkolaPageType1Horizontal,
             ShkolaPageType2Horizontal,
             ShkolaPageType3Horizontal,

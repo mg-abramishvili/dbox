@@ -1,7 +1,5 @@
 <template>
     <div>
-        <ShkolaHeaderHorizontal />
-
         <div class="videoalbum-detail" style="margin-top: 23vh;">
             <video :src="videoalbumItem.gallery" autoplay controls disablePictureInPicture controlsList="nodownload"></video>
         </div>
@@ -21,8 +19,6 @@
 </template>
 
 <script>
-    import ShkolaHeaderHorizontal from '../partials/header-horizontal'
-
     export default {
         name: 'shkola_VideoalbumItem',
         data() {
@@ -31,9 +27,6 @@
             }
         },
         created() {
-            require('@/../../public/css/bootstrap.min.css');
-            require('@/../../public/css/style-shkola.css');
-
             fetch(`/api/front/videoalbum/${this.$route.params.id}`)
                 .then(response => response.json())
                 .then(json => {
@@ -41,7 +34,6 @@
                 });
         },
         components: {
-            ShkolaHeaderHorizontal
         }
     }
 </script>

@@ -1,7 +1,5 @@
 <template>
     <div>
-        <ShkolaHeaderHorizontal />
-
         <div class="container container-index" style="margin-top: 25vh;">
             <div v-if="news.length" class="news sortable">
                 <swiper ref="ShkolaNewsAllSwiper" :options="swiperOptions">
@@ -46,7 +44,6 @@
 </template>
 
 <script>
-    import ShkolaHeaderHorizontal from '../partials/header-horizontal'
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
 
@@ -66,9 +63,6 @@
             }
         },
         created() {
-            require('@/../../public/css/bootstrap.min.css');
-            require('@/../../public/css/style-shkola.css');
-
             fetch(`/api/front/newsAll`)
                 .then(response => response.json())
                 .then(json => {
@@ -99,7 +93,6 @@
             }
         },
         components: {
-            ShkolaHeaderHorizontal,
             Swiper,
             SwiperSlide
         },

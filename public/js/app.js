@@ -222,6 +222,7 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_shkola_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/shkola/layout */ "./resources/js/components/shkola/layout.vue");
 //
 //
 //
@@ -230,6 +231,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -246,7 +248,9 @@ __webpack_require__.r(__webpack_exports__);
       _this.settings = json;
     });
   },
-  components: {}
+  components: {
+    ShkolaLayout: _components_shkola_layout__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
 });
 
 /***/ }),
@@ -260,11 +264,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../partials/header-horizontal */ "./resources/js/components/shkola/partials/header-horizontal.vue");
-/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
-/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/css/swiper.css */ "./node_modules/swiper/css/swiper.css");
-/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/css/swiper.css */ "./node_modules/swiper/css/swiper.css");
+/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -339,11 +342,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -370,10 +368,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     var _this = this;
-
-    __webpack_require__(/*! @/../../public/css/bootstrap.min.css */ "./public/css/bootstrap.min.css");
-
-    __webpack_require__(/*! @/../../public/css/style-shkola.css */ "./public/css/style-shkola.css");
 
     fetch("/api/front/settings/").then(function (response) {
       return response.json();
@@ -459,8 +453,54 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   components: {
-    Swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["Swiper"],
-    SwiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["SwiperSlide"],
+    Swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__["Swiper"],
+    SwiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__["SwiperSlide"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/shkola/layout.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/shkola/layout.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./partials/header-horizontal */ "./resources/js/components/shkola/partials/header-horizontal.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      settings: {}
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    __webpack_require__(/*! @/../../public/css/bootstrap.min.css */ "./public/css/bootstrap.min.css");
+
+    __webpack_require__(/*! @/../../public/css/style-shkola.css */ "./public/css/style-shkola.css");
+
+    fetch("/api/front/settings/").then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      _this.settings = json;
+    });
+  },
+  components: {
     ShkolaHeaderHorizontal: _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
@@ -476,11 +516,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../partials/header-horizontal */ "./resources/js/components/shkola/partials/header-horizontal.vue");
-/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
-/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/css/swiper.css */ "./node_modules/swiper/css/swiper.css");
-/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/css/swiper.css */ "./node_modules/swiper/css/swiper.css");
+/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -526,9 +565,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -548,10 +584,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     var _this = this;
-
-    __webpack_require__(/*! @/../../public/css/bootstrap.min.css */ "./public/css/bootstrap.min.css");
-
-    __webpack_require__(/*! @/../../public/css/style-shkola.css */ "./public/css/style-shkola.css");
 
     fetch("/api/front/newsAll").then(function (response) {
       return response.json();
@@ -597,9 +629,8 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   components: {
-    ShkolaHeaderHorizontal: _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["Swiper"],
-    SwiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["SwiperSlide"]
+    Swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__["Swiper"],
+    SwiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__["SwiperSlide"]
   }
 });
 
@@ -614,7 +645,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../partials/header-horizontal */ "./resources/js/components/shkola/partials/header-horizontal.vue");
 //
 //
 //
@@ -657,9 +687,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -670,19 +697,13 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    __webpack_require__(/*! @/../../public/css/bootstrap.min.css */ "./public/css/bootstrap.min.css");
-
-    __webpack_require__(/*! @/../../public/css/style-shkola.css */ "./public/css/style-shkola.css");
-
     fetch("/api/front/newsitem/".concat(this.$route.params.id)).then(function (response) {
       return response.json();
     }).then(function (json) {
       _this.newsItem = json;
     });
   },
-  components: {
-    ShkolaHeaderHorizontal: _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"]
-  }
+  components: {}
 });
 
 /***/ }),
@@ -696,16 +717,15 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../partials/header-horizontal */ "./resources/js/components/shkola/partials/header-horizontal.vue");
-/* harmony import */ var _pages_type_1_horizontal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/type-1/horizontal */ "./resources/js/components/shkola/pages/type-1/horizontal.vue");
-/* harmony import */ var _pages_type_2_horizontal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/type-2/horizontal */ "./resources/js/components/shkola/pages/type-2/horizontal.vue");
-/* harmony import */ var _pages_type_3_horizontal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/type-3/horizontal */ "./resources/js/components/shkola/pages/type-3/horizontal.vue");
-/* harmony import */ var _pages_type_4_horizontal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/type-4/horizontal */ "./resources/js/components/shkola/pages/type-4/horizontal.vue");
-/* harmony import */ var _pages_type_5_horizontal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/type-5/horizontal */ "./resources/js/components/shkola/pages/type-5/horizontal.vue");
-/* harmony import */ var _pages_type_6_horizontal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../pages/type-6/horizontal */ "./resources/js/components/shkola/pages/type-6/horizontal.vue");
-/* harmony import */ var _pages_type_7_horizontal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../pages/type-7/horizontal */ "./resources/js/components/shkola/pages/type-7/horizontal.vue");
-/* harmony import */ var _pages_type_9_horizontal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../pages/type-9/horizontal */ "./resources/js/components/shkola/pages/type-9/horizontal.vue");
-/* harmony import */ var _pages_type_10_horizontal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../pages/type-10/horizontal */ "./resources/js/components/shkola/pages/type-10/horizontal.vue");
+/* harmony import */ var _pages_type_1_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pages/type-1/horizontal */ "./resources/js/components/shkola/pages/type-1/horizontal.vue");
+/* harmony import */ var _pages_type_2_horizontal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/type-2/horizontal */ "./resources/js/components/shkola/pages/type-2/horizontal.vue");
+/* harmony import */ var _pages_type_3_horizontal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/type-3/horizontal */ "./resources/js/components/shkola/pages/type-3/horizontal.vue");
+/* harmony import */ var _pages_type_4_horizontal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/type-4/horizontal */ "./resources/js/components/shkola/pages/type-4/horizontal.vue");
+/* harmony import */ var _pages_type_5_horizontal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/type-5/horizontal */ "./resources/js/components/shkola/pages/type-5/horizontal.vue");
+/* harmony import */ var _pages_type_6_horizontal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/type-6/horizontal */ "./resources/js/components/shkola/pages/type-6/horizontal.vue");
+/* harmony import */ var _pages_type_7_horizontal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../pages/type-7/horizontal */ "./resources/js/components/shkola/pages/type-7/horizontal.vue");
+/* harmony import */ var _pages_type_9_horizontal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../pages/type-9/horizontal */ "./resources/js/components/shkola/pages/type-9/horizontal.vue");
+/* harmony import */ var _pages_type_10_horizontal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../pages/type-10/horizontal */ "./resources/js/components/shkola/pages/type-10/horizontal.vue");
 //
 //
 //
@@ -744,12 +764,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-
 
 
 
@@ -769,10 +783,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     var _this = this;
-
-    __webpack_require__(/*! @/../../public/css/bootstrap.min.css */ "./public/css/bootstrap.min.css");
-
-    __webpack_require__(/*! @/../../public/css/style-shkola.css */ "./public/css/style-shkola.css");
 
     fetch("/api/front/settings/").then(function (response) {
       return response.json();
@@ -799,16 +809,15 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   components: {
-    ShkolaHeaderHorizontal: _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"],
-    ShkolaPageType1Horizontal: _pages_type_1_horizontal__WEBPACK_IMPORTED_MODULE_1__["default"],
-    ShkolaPageType2Horizontal: _pages_type_2_horizontal__WEBPACK_IMPORTED_MODULE_2__["default"],
-    ShkolaPageType3Horizontal: _pages_type_3_horizontal__WEBPACK_IMPORTED_MODULE_3__["default"],
-    ShkolaPageType4Horizontal: _pages_type_4_horizontal__WEBPACK_IMPORTED_MODULE_4__["default"],
-    ShkolaPageType5Horizontal: _pages_type_5_horizontal__WEBPACK_IMPORTED_MODULE_5__["default"],
-    ShkolaPageType6Horizontal: _pages_type_6_horizontal__WEBPACK_IMPORTED_MODULE_6__["default"],
-    ShkolaPageType7Horizontal: _pages_type_7_horizontal__WEBPACK_IMPORTED_MODULE_7__["default"],
-    ShkolaPageType9Horizontal: _pages_type_9_horizontal__WEBPACK_IMPORTED_MODULE_8__["default"],
-    ShkolaPageType10Horizontal: _pages_type_10_horizontal__WEBPACK_IMPORTED_MODULE_9__["default"]
+    ShkolaPageType1Horizontal: _pages_type_1_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"],
+    ShkolaPageType2Horizontal: _pages_type_2_horizontal__WEBPACK_IMPORTED_MODULE_1__["default"],
+    ShkolaPageType3Horizontal: _pages_type_3_horizontal__WEBPACK_IMPORTED_MODULE_2__["default"],
+    ShkolaPageType4Horizontal: _pages_type_4_horizontal__WEBPACK_IMPORTED_MODULE_3__["default"],
+    ShkolaPageType5Horizontal: _pages_type_5_horizontal__WEBPACK_IMPORTED_MODULE_4__["default"],
+    ShkolaPageType6Horizontal: _pages_type_6_horizontal__WEBPACK_IMPORTED_MODULE_5__["default"],
+    ShkolaPageType7Horizontal: _pages_type_7_horizontal__WEBPACK_IMPORTED_MODULE_6__["default"],
+    ShkolaPageType9Horizontal: _pages_type_9_horizontal__WEBPACK_IMPORTED_MODULE_7__["default"],
+    ShkolaPageType10Horizontal: _pages_type_10_horizontal__WEBPACK_IMPORTED_MODULE_8__["default"]
   }
 });
 
@@ -1500,11 +1509,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../partials/header-horizontal */ "./resources/js/components/shkola/partials/header-horizontal.vue");
-/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
-/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/css/swiper.css */ "./node_modules/swiper/css/swiper.css");
-/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/css/swiper.css */ "./node_modules/swiper/css/swiper.css");
+/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -1541,9 +1549,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1565,10 +1570,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     var _this = this;
-
-    __webpack_require__(/*! @/../../public/css/bootstrap.min.css */ "./public/css/bootstrap.min.css");
-
-    __webpack_require__(/*! @/../../public/css/style-shkola.css */ "./public/css/style-shkola.css");
 
     fetch("/api/front/photoalbums").then(function (response) {
       return response.json();
@@ -1602,9 +1603,8 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   components: {
-    Swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["Swiper"],
-    SwiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["SwiperSlide"],
-    ShkolaHeaderHorizontal: _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__["Swiper"],
+    SwiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__["SwiperSlide"]
   }
 });
 
@@ -1619,11 +1619,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../partials/header-horizontal */ "./resources/js/components/shkola/partials/header-horizontal.vue");
-/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
-/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/css/swiper.css */ "./node_modules/swiper/css/swiper.css");
-/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/css/swiper.css */ "./node_modules/swiper/css/swiper.css");
+/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -1652,9 +1651,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1673,10 +1669,6 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    __webpack_require__(/*! @/../../public/css/bootstrap.min.css */ "./public/css/bootstrap.min.css");
-
-    __webpack_require__(/*! @/../../public/css/style-shkola.css */ "./public/css/style-shkola.css");
-
     fetch("/api/front/photoalbum/".concat(this.$route.params.id)).then(function (response) {
       return response.json();
     }).then(function (json) {
@@ -1689,9 +1681,8 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   components: {
-    ShkolaHeaderHorizontal: _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["Swiper"],
-    SwiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["SwiperSlide"]
+    Swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__["Swiper"],
+    SwiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__["SwiperSlide"]
   }
 });
 
@@ -1708,8 +1699,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../partials/header-horizontal */ "./resources/js/components/shkola/partials/header-horizontal.vue");
-/* harmony import */ var _partials_SimpleKeyboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../partials/SimpleKeyboard */ "./resources/js/components/shkola/partials/SimpleKeyboard.vue");
+/* harmony import */ var _partials_SimpleKeyboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../partials/SimpleKeyboard */ "./resources/js/components/shkola/partials/SimpleKeyboard.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -1760,9 +1750,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'shkola_Reviews',
@@ -1779,10 +1766,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   created: function created() {
     var _this = this;
-
-    __webpack_require__(/*! @/../../public/css/bootstrap.min.css */ "./public/css/bootstrap.min.css");
-
-    __webpack_require__(/*! @/../../public/css/style-shkola.css */ "./public/css/style-shkola.css");
 
     fetch("/api/front/settings/").then(function (response) {
       return response.json();
@@ -1871,8 +1854,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   components: {
-    SimpleKeyboard: _partials_SimpleKeyboard__WEBPACK_IMPORTED_MODULE_2__["default"],
-    ShkolaHeaderHorizontal: _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_1__["default"]
+    SimpleKeyboard: _partials_SimpleKeyboard__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -1887,8 +1869,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../partials/header-horizontal */ "./resources/js/components/shkola/partials/header-horizontal.vue");
-/* harmony import */ var _shkola_partials_SimpleKeyboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shkola/partials/SimpleKeyboard */ "./resources/js/components/shkola/partials/SimpleKeyboard.vue");
+/* harmony import */ var _shkola_partials_SimpleKeyboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shkola/partials/SimpleKeyboard */ "./resources/js/components/shkola/partials/SimpleKeyboard.vue");
 //
 //
 //
@@ -2050,9 +2031,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'shkola_Routes',
@@ -2073,11 +2051,6 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     this.windowWidth = window.screen.availWidth;
-
-    __webpack_require__(/*! @/../../public/css/bootstrap.min.css */ "./public/css/bootstrap.min.css");
-
-    __webpack_require__(/*! @/../../public/css/style-shkola.css */ "./public/css/style-shkola.css");
-
     fetch("/api/front/settings/").then(function (response) {
       return response.json();
     }).then(function (json) {
@@ -2159,8 +2132,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   components: {
-    SimpleKeyboard: _shkola_partials_SimpleKeyboard__WEBPACK_IMPORTED_MODULE_1__["default"],
-    ShkolaHeaderHorizontal: _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"]
+    SimpleKeyboard: _shkola_partials_SimpleKeyboard__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
@@ -2175,11 +2147,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../partials/header-horizontal */ "./resources/js/components/shkola/partials/header-horizontal.vue");
-/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
-/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/css/swiper.css */ "./node_modules/swiper/css/swiper.css");
-/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/css/swiper.css */ "./node_modules/swiper/css/swiper.css");
+/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -2217,9 +2188,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2241,10 +2209,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     var _this = this;
-
-    __webpack_require__(/*! @/../../public/css/bootstrap.min.css */ "./public/css/bootstrap.min.css");
-
-    __webpack_require__(/*! @/../../public/css/style-shkola.css */ "./public/css/style-shkola.css");
 
     fetch("/api/front/videoalbums").then(function (response) {
       return response.json();
@@ -2277,9 +2241,8 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   components: {
-    Swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["Swiper"],
-    SwiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["SwiperSlide"],
-    ShkolaHeaderHorizontal: _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__["Swiper"],
+    SwiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__["SwiperSlide"]
   }
 });
 
@@ -2294,7 +2257,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../partials/header-horizontal */ "./resources/js/components/shkola/partials/header-horizontal.vue");
 //
 //
 //
@@ -2315,9 +2277,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'shkola_VideoalbumItem',
   data: function data() {
@@ -2328,19 +2287,13 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    __webpack_require__(/*! @/../../public/css/bootstrap.min.css */ "./public/css/bootstrap.min.css");
-
-    __webpack_require__(/*! @/../../public/css/style-shkola.css */ "./public/css/style-shkola.css");
-
     fetch("/api/front/videoalbum/".concat(this.$route.params.id)).then(function (response) {
       return response.json();
     }).then(function (json) {
       _this.videoalbumItem = json;
     });
   },
-  components: {
-    ShkolaHeaderHorizontal: _partials_header_horizontal__WEBPACK_IMPORTED_MODULE_0__["default"]
-  }
+  components: {}
 });
 
 /***/ }),
@@ -35860,15 +35813,8 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "wrapper" },
-    [
-      _c(
-        "keep-alive",
-        { attrs: { exclude: /shkola_VideoalbumItem/ } },
-        [_c("router-view", { key: _vm.$route.path })],
-        1
-      )
-    ],
-    1
+    [_vm.settings.theme === "shkola" ? [_c("ShkolaLayout")] : _vm._e()],
+    2
   )
 }
 var staticRenderFns = []
@@ -35893,222 +35839,251 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container container-index" }, [
+    _c(
+      "div",
+      { staticClass: "sortable" },
+      [
+        _c(
+          "swiper",
+          {
+            ref: "ShkolaIndexAllSwiper",
+            attrs: { options: _vm.swiperOptions }
+          },
+          [
+            _vm._l(_vm.pages, function(page) {
+              return _c("swiper-slide", { key: page.id }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "index-button",
+                    on: {
+                      click: function($event) {
+                        return _vm.GoToPage(page.id)
+                      }
+                    }
+                  },
+                  [
+                    page.image_as_icon === "1"
+                      ? _c("div", {
+                          staticClass: "user-pages-item-image",
+                          style: {
+                            "background-image": "url(" + page.image + ")"
+                          }
+                        })
+                      : _vm._e(),
+                    _vm._v(" "),
+                    page.image_as_icon === "1"
+                      ? _c("span", { staticClass: "t6-p" }, [
+                          _vm._v(_vm._s(page.title))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    page.image_as_icon === "0" && page.icons[0]
+                      ? _c("div", { staticClass: "index-button-icon" }, [
+                          _c("img", { attrs: { src: page.icons[0].icon } })
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    page.image_as_icon === "0" && page.icons.length <= 0
+                      ? _c("div", { staticClass: "index-button-icon" }, [
+                          _c("img", {
+                            attrs: { src: "/img/icons/029-information.svg" }
+                          })
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    page.image_as_icon === "0"
+                      ? _c("span", [_vm._v(_vm._s(page.title))])
+                      : _vm._e()
+                  ]
+                )
+              ])
+            }),
+            _vm._v(" "),
+            _vm.settings.module_routes === "y"
+              ? _c("swiper-slide", [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "index-button",
+                      on: {
+                        click: function($event) {
+                          return _vm.GoToRoutes()
+                        }
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "index-button-icon" }, [
+                        _c("img", {
+                          attrs: { src: "/img/icons/019-home-1.svg" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("План школы")])
+                    ]
+                  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.settings.module_news === "y"
+              ? _c("swiper-slide", [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "index-button",
+                      on: {
+                        click: function($event) {
+                          return _vm.GoToNews()
+                        }
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "index-button-icon" }, [
+                        _c("img", {
+                          attrs: { src: "/img/icons/002-newspaper.svg" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("Новости")])
+                    ]
+                  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.settings.module_photoalbums === "y"
+              ? _c("swiper-slide", [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "index-button",
+                      on: {
+                        click: function($event) {
+                          return _vm.GoToPhotoalbums()
+                        }
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "index-button-icon" }, [
+                        _c("img", {
+                          attrs: { src: "/img/icons/001-picture.svg" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("Фотогалерея")])
+                    ]
+                  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.settings.module_videoalbums === "y"
+              ? _c("swiper-slide", [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "index-button",
+                      on: {
+                        click: function($event) {
+                          return _vm.GoToVideoalbums()
+                        }
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "index-button-icon" }, [
+                        _c("img", {
+                          attrs: { src: "/img/icons/006-video-player.svg" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("Видеогалерея")])
+                    ]
+                  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.settings.module_reviews === "y"
+              ? _c("swiper-slide", [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "index-button",
+                      on: {
+                        click: function($event) {
+                          return _vm.GoToReviews()
+                        }
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "index-button-icon" }, [
+                        _c("img", {
+                          attrs: { src: "/img/icons/021-email.svg" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("Оставить отзыв")])
+                    ]
+                  )
+                ])
+              : _vm._e()
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _vm.slider_prev_next
+          ? _c("div", {
+              staticClass: "swiper-button-prev",
+              staticStyle: { "margin-left": "2vw" },
+              attrs: { slot: "button-prev" },
+              slot: "button-prev"
+            })
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.slider_prev_next
+          ? _c("div", {
+              staticClass: "swiper-button-next",
+              staticStyle: { "margin-right": "2vw" },
+              attrs: { slot: "button-next" },
+              slot: "button-next"
+            })
+          : _vm._e()
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/shkola/layout.vue?vue&type=template&id=57471cf0&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/shkola/layout.vue?vue&type=template&id=57471cf0& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
   return _c(
     "div",
     [
       _c("ShkolaHeaderHorizontal"),
       _vm._v(" "),
-      _c("div", { staticClass: "container container-index" }, [
-        _c(
-          "div",
-          { staticClass: "sortable" },
-          [
-            _c(
-              "swiper",
-              {
-                ref: "ShkolaIndexAllSwiper",
-                attrs: { options: _vm.swiperOptions }
-              },
-              [
-                _vm._l(_vm.pages, function(page) {
-                  return _c("swiper-slide", { key: page.id }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "index-button",
-                        on: {
-                          click: function($event) {
-                            return _vm.GoToPage(page.id)
-                          }
-                        }
-                      },
-                      [
-                        page.image_as_icon === "1"
-                          ? _c("div", {
-                              staticClass: "user-pages-item-image",
-                              style: {
-                                "background-image": "url(" + page.image + ")"
-                              }
-                            })
-                          : _vm._e(),
-                        _vm._v(" "),
-                        page.image_as_icon === "1"
-                          ? _c("span", { staticClass: "t6-p" }, [
-                              _vm._v(_vm._s(page.title))
-                            ])
-                          : _vm._e(),
-                        _vm._v(" "),
-                        page.image_as_icon === "0" && page.icons[0]
-                          ? _c("div", { staticClass: "index-button-icon" }, [
-                              _c("img", { attrs: { src: page.icons[0].icon } })
-                            ])
-                          : _vm._e(),
-                        _vm._v(" "),
-                        page.image_as_icon === "0" && page.icons.length <= 0
-                          ? _c("div", { staticClass: "index-button-icon" }, [
-                              _c("img", {
-                                attrs: { src: "/img/icons/029-information.svg" }
-                              })
-                            ])
-                          : _vm._e(),
-                        _vm._v(" "),
-                        page.image_as_icon === "0"
-                          ? _c("span", [_vm._v(_vm._s(page.title))])
-                          : _vm._e()
-                      ]
-                    )
-                  ])
-                }),
-                _vm._v(" "),
-                _vm.settings.module_routes === "y"
-                  ? _c("swiper-slide", [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "index-button",
-                          on: {
-                            click: function($event) {
-                              return _vm.GoToRoutes()
-                            }
-                          }
-                        },
-                        [
-                          _c("div", { staticClass: "index-button-icon" }, [
-                            _c("img", {
-                              attrs: { src: "/img/icons/019-home-1.svg" }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("План школы")])
-                        ]
-                      )
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.settings.module_news === "y"
-                  ? _c("swiper-slide", [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "index-button",
-                          on: {
-                            click: function($event) {
-                              return _vm.GoToNews()
-                            }
-                          }
-                        },
-                        [
-                          _c("div", { staticClass: "index-button-icon" }, [
-                            _c("img", {
-                              attrs: { src: "/img/icons/002-newspaper.svg" }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Новости")])
-                        ]
-                      )
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.settings.module_photoalbums === "y"
-                  ? _c("swiper-slide", [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "index-button",
-                          on: {
-                            click: function($event) {
-                              return _vm.GoToPhotoalbums()
-                            }
-                          }
-                        },
-                        [
-                          _c("div", { staticClass: "index-button-icon" }, [
-                            _c("img", {
-                              attrs: { src: "/img/icons/001-picture.svg" }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Фотогалерея")])
-                        ]
-                      )
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.settings.module_videoalbums === "y"
-                  ? _c("swiper-slide", [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "index-button",
-                          on: {
-                            click: function($event) {
-                              return _vm.GoToVideoalbums()
-                            }
-                          }
-                        },
-                        [
-                          _c("div", { staticClass: "index-button-icon" }, [
-                            _c("img", {
-                              attrs: { src: "/img/icons/006-video-player.svg" }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Видеогалерея")])
-                        ]
-                      )
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.settings.module_reviews === "y"
-                  ? _c("swiper-slide", [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "index-button",
-                          on: {
-                            click: function($event) {
-                              return _vm.GoToReviews()
-                            }
-                          }
-                        },
-                        [
-                          _c("div", { staticClass: "index-button-icon" }, [
-                            _c("img", {
-                              attrs: { src: "/img/icons/021-email.svg" }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Оставить отзыв")])
-                        ]
-                      )
-                    ])
-                  : _vm._e()
-              ],
-              2
-            ),
-            _vm._v(" "),
-            _vm.slider_prev_next
-              ? _c("div", {
-                  staticClass: "swiper-button-prev",
-                  staticStyle: { "margin-left": "2vw" },
-                  attrs: { slot: "button-prev" },
-                  slot: "button-prev"
-                })
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.slider_prev_next
-              ? _c("div", {
-                  staticClass: "swiper-button-next",
-                  staticStyle: { "margin-right": "2vw" },
-                  attrs: { slot: "button-next" },
-                  slot: "button-next"
-                })
-              : _vm._e()
-          ],
-          1
-        )
-      ])
+      _c(
+        "keep-alive",
+        { attrs: { exclude: /shkola_VideoalbumItem/ } },
+        [_c("router-view", { key: _vm.$route.path })],
+        1
+      )
     ],
     1
   )
@@ -36135,168 +36110,156 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("ShkolaHeaderHorizontal"),
-      _vm._v(" "),
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "container container-index",
+        staticStyle: { "margin-top": "25vh" }
+      },
+      [
+        _vm.news.length
+          ? _c(
+              "div",
+              { staticClass: "news sortable" },
+              [
+                _c(
+                  "swiper",
+                  {
+                    ref: "ShkolaNewsAllSwiper",
+                    attrs: { options: _vm.swiperOptions }
+                  },
+                  _vm._l(_vm.news, function(newsItem) {
+                    return _c("swiper-slide", { key: newsItem.id }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "index-button index-button-full",
+                          on: {
+                            click: function($event) {
+                              return _vm.GoToNewsItem(newsItem.id)
+                            }
+                          }
+                        },
+                        [
+                          newsItem.image
+                            ? _c("div", {
+                                staticClass: "user-pages-item-image",
+                                style: {
+                                  "background-image":
+                                    "url(" + newsItem.image + ")"
+                                }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          newsItem.image
+                            ? _c("span", { staticClass: "t6-p" }, [
+                                _c(
+                                  "small",
+                                  {
+                                    staticStyle: {
+                                      "font-size": "1vw",
+                                      color: "#999",
+                                      display: "block",
+                                      "margin-bottom": "1vh"
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      _vm._s(
+                                        _vm._f("moment")(newsItem.created_at)
+                                      )
+                                    )
+                                  ]
+                                ),
+                                _vm._v(
+                                  "\n                                " +
+                                    _vm._s(newsItem.title) +
+                                    "\n                            "
+                                )
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          !newsItem.image
+                            ? _c("div", { staticClass: "index-button-icon" }, [
+                                _c("img", {
+                                  attrs: { src: "/img/icons/002-newspaper.svg" }
+                                })
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          !newsItem.image
+                            ? _c("span", [
+                                _c(
+                                  "small",
+                                  {
+                                    staticStyle: {
+                                      "font-size": "1vw",
+                                      color: "#999",
+                                      display: "block",
+                                      "margin-bottom": "1vh"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(newsItem.created_at))]
+                                ),
+                                _vm._v(
+                                  "\n                                " +
+                                    _vm._s(newsItem.title) +
+                                    "\n                            "
+                                )
+                              ])
+                            : _vm._e()
+                        ]
+                      )
+                    ])
+                  }),
+                  1
+                ),
+                _vm._v(" "),
+                _vm.slider_prev_next
+                  ? _c("div", {
+                      staticClass: "swiper-button-prev",
+                      staticStyle: { "margin-left": "2vw" },
+                      attrs: { slot: "button-prev" },
+                      slot: "button-prev"
+                    })
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.slider_prev_next
+                  ? _c("div", {
+                      staticClass: "swiper-button-next",
+                      staticStyle: { "margin-right": "2vw" },
+                      attrs: { slot: "button-next" },
+                      slot: "button-next"
+                    })
+                  : _vm._e()
+              ],
+              1
+            )
+          : _vm._e()
+      ]
+    ),
+    _vm._v(" "),
+    _c("footer", [
       _c(
         "div",
-        {
-          staticClass: "container container-index",
-          staticStyle: { "margin-top": "25vh" }
-        },
+        { staticClass: "container" },
         [
-          _vm.news.length
-            ? _c(
-                "div",
-                { staticClass: "news sortable" },
-                [
-                  _c(
-                    "swiper",
-                    {
-                      ref: "ShkolaNewsAllSwiper",
-                      attrs: { options: _vm.swiperOptions }
-                    },
-                    _vm._l(_vm.news, function(newsItem) {
-                      return _c("swiper-slide", { key: newsItem.id }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "index-button index-button-full",
-                            on: {
-                              click: function($event) {
-                                return _vm.GoToNewsItem(newsItem.id)
-                              }
-                            }
-                          },
-                          [
-                            newsItem.image
-                              ? _c("div", {
-                                  staticClass: "user-pages-item-image",
-                                  style: {
-                                    "background-image":
-                                      "url(" + newsItem.image + ")"
-                                  }
-                                })
-                              : _vm._e(),
-                            _vm._v(" "),
-                            newsItem.image
-                              ? _c("span", { staticClass: "t6-p" }, [
-                                  _c(
-                                    "small",
-                                    {
-                                      staticStyle: {
-                                        "font-size": "1vw",
-                                        color: "#999",
-                                        display: "block",
-                                        "margin-bottom": "1vh"
-                                      }
-                                    },
-                                    [
-                                      _vm._v(
-                                        _vm._s(
-                                          _vm._f("moment")(newsItem.created_at)
-                                        )
-                                      )
-                                    ]
-                                  ),
-                                  _vm._v(
-                                    "\n                                " +
-                                      _vm._s(newsItem.title) +
-                                      "\n                            "
-                                  )
-                                ])
-                              : _vm._e(),
-                            _vm._v(" "),
-                            !newsItem.image
-                              ? _c(
-                                  "div",
-                                  { staticClass: "index-button-icon" },
-                                  [
-                                    _c("img", {
-                                      attrs: {
-                                        src: "/img/icons/002-newspaper.svg"
-                                      }
-                                    })
-                                  ]
-                                )
-                              : _vm._e(),
-                            _vm._v(" "),
-                            !newsItem.image
-                              ? _c("span", [
-                                  _c(
-                                    "small",
-                                    {
-                                      staticStyle: {
-                                        "font-size": "1vw",
-                                        color: "#999",
-                                        display: "block",
-                                        "margin-bottom": "1vh"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(newsItem.created_at))]
-                                  ),
-                                  _vm._v(
-                                    "\n                                " +
-                                      _vm._s(newsItem.title) +
-                                      "\n                            "
-                                  )
-                                ])
-                              : _vm._e()
-                          ]
-                        )
-                      ])
-                    }),
-                    1
-                  ),
-                  _vm._v(" "),
-                  _vm.slider_prev_next
-                    ? _c("div", {
-                        staticClass: "swiper-button-prev",
-                        staticStyle: { "margin-left": "2vw" },
-                        attrs: { slot: "button-prev" },
-                        slot: "button-prev"
-                      })
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.slider_prev_next
-                    ? _c("div", {
-                        staticClass: "swiper-button-next",
-                        staticStyle: { "margin-right": "2vw" },
-                        attrs: { slot: "button-next" },
-                        slot: "button-next"
-                      })
-                    : _vm._e()
-                ],
-                1
-              )
-            : _vm._e()
-        ]
-      ),
-      _vm._v(" "),
-      _c("footer", [
-        _c(
-          "div",
-          { staticClass: "container" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "shkola-home shkola-home-sub",
-                attrs: { to: { name: "shkola_Home" } }
-              },
-              [_c("img", { attrs: { src: "/img/shkolahome.svg", alt: "" } })]
-            ),
-            _vm._v(" "),
-            _vm._m(0)
-          ],
-          1
-        )
-      ])
-    ],
-    1
-  )
+          _c(
+            "router-link",
+            {
+              staticClass: "shkola-home shkola-home-sub",
+              attrs: { to: { name: "shkola_Home" } }
+            },
+            [_c("img", { attrs: { src: "/img/shkolahome.svg", alt: "" } })]
+          ),
+          _vm._v(" "),
+          _vm._m(0)
+        ],
+        1
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -36329,100 +36292,94 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("ShkolaHeaderHorizontal"),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "container",
-          staticStyle: { "margin-top": "25vh", width: "90vw" }
-        },
-        [
-          _c("div", { staticClass: "news-item" }, [
-            _c("div", { staticClass: "row" }, [
-              _vm.newsItem.image
-                ? _c("div", { staticClass: "col-4" }, [
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "container",
+        staticStyle: { "margin-top": "25vh", width: "90vw" }
+      },
+      [
+        _c("div", { staticClass: "news-item" }, [
+          _c("div", { staticClass: "row" }, [
+            _vm.newsItem.image
+              ? _c("div", { staticClass: "col-4" }, [
+                  _c("div", {
+                    staticClass: "news-item-img",
+                    style: {
+                      "background-image": "url(" + _vm.newsItem.image + ")"
+                    }
+                  })
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.newsItem.image
+              ? _c("div", { staticClass: "col-8" }, [
+                  _c("div", { staticClass: "news-item-text" }, [
+                    _c("span", [
+                      _vm._v(
+                        _vm._s(
+                          _vm
+                            .moment(_vm.newsItem.created_at)
+                            .format("D MMMM YYYY")
+                        )
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("h1", [_vm._v(_vm._s(_vm.newsItem.title))]),
+                    _vm._v(" "),
                     _c("div", {
-                      staticClass: "news-item-img",
-                      style: {
-                        "background-image": "url(" + _vm.newsItem.image + ")"
-                      }
+                      domProps: { innerHTML: _vm._s(_vm.newsItem.text) }
                     })
                   ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.newsItem.image
-                ? _c("div", { staticClass: "col-8" }, [
-                    _c("div", { staticClass: "news-item-text" }, [
-                      _c("span", [
-                        _vm._v(
-                          _vm._s(
-                            _vm
-                              .moment(_vm.newsItem.created_at)
-                              .format("D MMMM YYYY")
-                          )
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("h1", [_vm._v(_vm._s(_vm.newsItem.title))]),
-                      _vm._v(" "),
-                      _c("div", {
-                        domProps: { innerHTML: _vm._s(_vm.newsItem.text) }
-                      })
-                    ])
+                ])
+              : _c("div", { staticClass: "col-12" }, [
+                  _c("div", { staticClass: "news-item-text" }, [
+                    _c("span", [_vm._v(_vm._s(_vm.newsItem.created_at))]),
+                    _vm._v(" "),
+                    _c("h1", [_vm._v(_vm._s(_vm.newsItem.title))]),
+                    _vm._v(" "),
+                    _c("div", {
+                      domProps: { innerHTML: _vm._s(_vm.newsItem.text) }
+                    })
                   ])
-                : _c("div", { staticClass: "col-12" }, [
-                    _c("div", { staticClass: "news-item-text" }, [
-                      _c("span", [_vm._v(_vm._s(_vm.newsItem.created_at))]),
-                      _vm._v(" "),
-                      _c("h1", [_vm._v(_vm._s(_vm.newsItem.title))]),
-                      _vm._v(" "),
-                      _c("div", {
-                        domProps: { innerHTML: _vm._s(_vm.newsItem.text) }
-                      })
-                    ])
-                  ])
-            ])
+                ])
           ])
-        ]
-      ),
-      _vm._v(" "),
-      _c("footer", [
-        _c(
-          "div",
-          { staticClass: "container" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "shkola-home shkola-home-sub",
-                attrs: { to: { name: "shkola_Home" } }
-              },
-              [_c("img", { attrs: { src: "/img/shkolahome.svg", alt: "" } })]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "shkola-footer-second",
-                attrs: { to: { name: "shkola_News" } }
-              },
-              [_c("span", [_vm._v("Новости")])]
-            ),
-            _vm._v(" "),
-            _c("a", { staticClass: "shkola-footer-third" }, [
-              _c("span", [_vm._v(_vm._s(_vm.newsItem.title))])
-            ])
-          ],
-          1
-        )
-      ])
-    ],
-    1
-  )
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("footer", [
+      _c(
+        "div",
+        { staticClass: "container" },
+        [
+          _c(
+            "router-link",
+            {
+              staticClass: "shkola-home shkola-home-sub",
+              attrs: { to: { name: "shkola_Home" } }
+            },
+            [_c("img", { attrs: { src: "/img/shkolahome.svg", alt: "" } })]
+          ),
+          _vm._v(" "),
+          _c(
+            "router-link",
+            {
+              staticClass: "shkola-footer-second",
+              attrs: { to: { name: "shkola_News" } }
+            },
+            [_c("span", [_vm._v("Новости")])]
+          ),
+          _vm._v(" "),
+          _c("a", { staticClass: "shkola-footer-third" }, [
+            _c("span", [_vm._v(_vm._s(_vm.newsItem.title))])
+          ])
+        ],
+        1
+      )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -36446,160 +36403,132 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("ShkolaHeaderHorizontal"),
-      _vm._v(" "),
-      _vm.settings.orientation === "horizontal"
-        ? _c(
-            "div",
-            [
-              _vm._l(_vm.page.types, function(type) {
-                return _c(
-                  "div",
-                  {
-                    key: type.id,
-                    staticClass: "container",
-                    staticStyle: { "margin-top": "25vh", width: "90vw" }
-                  },
-                  [
-                    _c(
-                      "div",
-                      { staticClass: "page-item" },
-                      [
-                        type.id == "1"
-                          ? _c("ShkolaPageType1Horizontal")
-                          : _vm._e(),
-                        _vm._v(" "),
-                        type.id == "2"
-                          ? _c("ShkolaPageType2Horizontal")
-                          : _vm._e(),
-                        _vm._v(" "),
-                        type.id == "3"
-                          ? _c("ShkolaPageType3Horizontal")
-                          : _vm._e(),
-                        _vm._v(" "),
-                        type.id == "4"
-                          ? _c("ShkolaPageType4Horizontal")
-                          : _vm._e(),
-                        _vm._v(" "),
-                        type.id == "5"
-                          ? _c("ShkolaPageType5Horizontal")
-                          : _vm._e(),
-                        _vm._v(" "),
-                        type.id == "6"
-                          ? _c("ShkolaPageType6Horizontal")
-                          : _vm._e(),
-                        _vm._v(" "),
-                        type.id == "7"
-                          ? _c("ShkolaPageType7Horizontal")
-                          : _vm._e(),
-                        _vm._v(" "),
-                        type.id == "9"
-                          ? _c("ShkolaPageType9Horizontal")
-                          : _vm._e(),
-                        _vm._v(" "),
-                        type.id == "10"
-                          ? _c("ShkolaPageType10Horizontal")
-                          : _vm._e()
-                      ],
-                      1
-                    )
-                  ]
-                )
-              }),
-              _vm._v(" "),
-              _c("footer", [
+  return _vm.settings.orientation === "horizontal"
+    ? _c(
+        "div",
+        [
+          _vm._l(_vm.page.types, function(type) {
+            return _c(
+              "div",
+              {
+                key: type.id,
+                staticClass: "container",
+                staticStyle: { "margin-top": "25vh", width: "90vw" }
+              },
+              [
                 _c(
                   "div",
-                  { staticClass: "container" },
+                  { staticClass: "page-item" },
                   [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "shkola-home shkola-home-sub",
-                        attrs: { to: { name: "shkola_Home" } }
-                      },
-                      [
-                        _c("img", {
-                          attrs: { src: "/img/shkolahome.svg", alt: "" }
-                        })
-                      ]
-                    ),
+                    type.id == "1" ? _c("ShkolaPageType1Horizontal") : _vm._e(),
                     _vm._v(" "),
-                    _vm.page.parent_id
-                      ? [
-                          _vm._l(_vm.pages, function(parent_page) {
-                            return [
-                              parent_page.id == _vm.page.parent_id
-                                ? [
-                                    _c(
-                                      "router-link",
-                                      {
-                                        staticClass: "shkola-footer-second",
-                                        attrs: {
-                                          to: {
-                                            name: "shkola_PageItem",
-                                            params: { id: parent_page.id }
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c("span", [
-                                          _vm._v(_vm._s(parent_page.title))
-                                        ])
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "router-link",
-                                      {
-                                        staticClass: "shkola-footer-third",
-                                        attrs: {
-                                          to: {
-                                            name: "shkola_PageItem",
-                                            params: { id: _vm.page.id }
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c("span", [
-                                          _vm._v(_vm._s(_vm.page.title))
-                                        ])
-                                      ]
-                                    )
-                                  ]
-                                : _vm._e()
-                            ]
-                          })
-                        ]
-                      : [
-                          _c(
-                            "router-link",
-                            {
-                              staticClass: "shkola-footer-second",
-                              attrs: {
-                                to: {
-                                  name: "shkola_PageItem",
-                                  params: { id: _vm.page.id }
-                                }
-                              }
-                            },
-                            [_c("span", [_vm._v(_vm._s(_vm.page.title))])]
-                          )
-                        ]
+                    type.id == "2" ? _c("ShkolaPageType2Horizontal") : _vm._e(),
+                    _vm._v(" "),
+                    type.id == "3" ? _c("ShkolaPageType3Horizontal") : _vm._e(),
+                    _vm._v(" "),
+                    type.id == "4" ? _c("ShkolaPageType4Horizontal") : _vm._e(),
+                    _vm._v(" "),
+                    type.id == "5" ? _c("ShkolaPageType5Horizontal") : _vm._e(),
+                    _vm._v(" "),
+                    type.id == "6" ? _c("ShkolaPageType6Horizontal") : _vm._e(),
+                    _vm._v(" "),
+                    type.id == "7" ? _c("ShkolaPageType7Horizontal") : _vm._e(),
+                    _vm._v(" "),
+                    type.id == "9" ? _c("ShkolaPageType9Horizontal") : _vm._e(),
+                    _vm._v(" "),
+                    type.id == "10"
+                      ? _c("ShkolaPageType10Horizontal")
+                      : _vm._e()
                   ],
-                  2
+                  1
                 )
-              ])
-            ],
-            2
-          )
-        : _vm._e()
-    ],
-    1
-  )
+              ]
+            )
+          }),
+          _vm._v(" "),
+          _c("footer", [
+            _c(
+              "div",
+              { staticClass: "container" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "shkola-home shkola-home-sub",
+                    attrs: { to: { name: "shkola_Home" } }
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: "/img/shkolahome.svg", alt: "" }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _vm.page.parent_id
+                  ? [
+                      _vm._l(_vm.pages, function(parent_page) {
+                        return [
+                          parent_page.id == _vm.page.parent_id
+                            ? [
+                                _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "shkola-footer-second",
+                                    attrs: {
+                                      to: {
+                                        name: "shkola_PageItem",
+                                        params: { id: parent_page.id }
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("span", [
+                                      _vm._v(_vm._s(parent_page.title))
+                                    ])
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "shkola-footer-third",
+                                    attrs: {
+                                      to: {
+                                        name: "shkola_PageItem",
+                                        params: { id: _vm.page.id }
+                                      }
+                                    }
+                                  },
+                                  [_c("span", [_vm._v(_vm._s(_vm.page.title))])]
+                                )
+                              ]
+                            : _vm._e()
+                        ]
+                      })
+                    ]
+                  : [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "shkola-footer-second",
+                          attrs: {
+                            to: {
+                              name: "shkola_PageItem",
+                              params: { id: _vm.page.id }
+                            }
+                          }
+                        },
+                        [_c("span", [_vm._v(_vm._s(_vm.page.title))])]
+                      )
+                    ]
+              ],
+              2
+            )
+          ])
+        ],
+        2
+      )
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37248,124 +37177,118 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("ShkolaHeaderHorizontal"),
-      _vm._v(" "),
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "container",
+        staticStyle: { "margin-top": "25vh", width: "90vw" }
+      },
+      [
+        _vm.photoalbums.length
+          ? _c("div", { staticClass: "gallery" }, [
+              _c(
+                "div",
+                { staticClass: "gallery-list" },
+                [
+                  _c(
+                    "swiper",
+                    {
+                      ref: "PhotoalbumsAllSwiper",
+                      attrs: { options: _vm.swiperOptions }
+                    },
+                    _vm._l(_vm.photoalbums, function(photoalbum) {
+                      return _c(
+                        "swiper-slide",
+                        {
+                          key: photoalbum.id,
+                          staticClass: "gallery-list-item"
+                        },
+                        [
+                          _c(
+                            "a",
+                            {
+                              on: {
+                                click: function($event) {
+                                  return _vm.GoToPhotoalbum(photoalbum.id)
+                                }
+                              }
+                            },
+                            [
+                              _vm._l(photoalbum.gallery.slice(0, 1), function(
+                                cover
+                              ) {
+                                return _c("div", {
+                                  key: cover.id,
+                                  staticClass: "gallery-list-item-pic",
+                                  style: {
+                                    "background-image": "url(" + cover + ")"
+                                  }
+                                })
+                              }),
+                              _vm._v(" "),
+                              _c("h2", [_vm._v(_vm._s(photoalbum.title))])
+                            ],
+                            2
+                          )
+                        ]
+                      )
+                    }),
+                    1
+                  ),
+                  _vm._v(" "),
+                  _vm.slider_prev_next
+                    ? _c("div", {
+                        staticClass: "swiper-button-prev",
+                        staticStyle: { "margin-left": "2vw" },
+                        attrs: { slot: "button-prev" },
+                        slot: "button-prev"
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.slider_prev_next
+                    ? _c("div", {
+                        staticClass: "swiper-button-next",
+                        staticStyle: { "margin-right": "2vw" },
+                        attrs: { slot: "button-next" },
+                        slot: "button-next"
+                      })
+                    : _vm._e()
+                ],
+                1
+              )
+            ])
+          : _c("div", [_vm._v("\n            Фотогалерея пуста\n        ")])
+      ]
+    ),
+    _vm._v(" "),
+    _c("footer", [
       _c(
         "div",
-        {
-          staticClass: "container",
-          staticStyle: { "margin-top": "25vh", width: "90vw" }
-        },
+        { staticClass: "container" },
         [
-          _vm.photoalbums.length
-            ? _c("div", { staticClass: "gallery" }, [
-                _c(
-                  "div",
-                  { staticClass: "gallery-list" },
-                  [
-                    _c(
-                      "swiper",
-                      {
-                        ref: "PhotoalbumsAllSwiper",
-                        attrs: { options: _vm.swiperOptions }
-                      },
-                      _vm._l(_vm.photoalbums, function(photoalbum) {
-                        return _c(
-                          "swiper-slide",
-                          {
-                            key: photoalbum.id,
-                            staticClass: "gallery-list-item"
-                          },
-                          [
-                            _c(
-                              "a",
-                              {
-                                on: {
-                                  click: function($event) {
-                                    return _vm.GoToPhotoalbum(photoalbum.id)
-                                  }
-                                }
-                              },
-                              [
-                                _vm._l(photoalbum.gallery.slice(0, 1), function(
-                                  cover
-                                ) {
-                                  return _c("div", {
-                                    key: cover.id,
-                                    staticClass: "gallery-list-item-pic",
-                                    style: {
-                                      "background-image": "url(" + cover + ")"
-                                    }
-                                  })
-                                }),
-                                _vm._v(" "),
-                                _c("h2", [_vm._v(_vm._s(photoalbum.title))])
-                              ],
-                              2
-                            )
-                          ]
-                        )
-                      }),
-                      1
-                    ),
-                    _vm._v(" "),
-                    _vm.slider_prev_next
-                      ? _c("div", {
-                          staticClass: "swiper-button-prev",
-                          staticStyle: { "margin-left": "2vw" },
-                          attrs: { slot: "button-prev" },
-                          slot: "button-prev"
-                        })
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _vm.slider_prev_next
-                      ? _c("div", {
-                          staticClass: "swiper-button-next",
-                          staticStyle: { "margin-right": "2vw" },
-                          attrs: { slot: "button-next" },
-                          slot: "button-next"
-                        })
-                      : _vm._e()
-                  ],
-                  1
-                )
-              ])
-            : _c("div", [_vm._v("\n            Фотогалерея пуста\n        ")])
-        ]
-      ),
-      _vm._v(" "),
-      _c("footer", [
-        _c(
-          "div",
-          { staticClass: "container" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "shkola-home shkola-home-sub",
-                attrs: { to: { name: "shkola_Home" } }
-              },
-              [_c("img", { attrs: { src: "/img/shkolahome.svg", alt: "" } })]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "shkola-footer-second",
-                attrs: { to: { name: "shkola_Photoalbums" } }
-              },
-              [_c("span", [_vm._v("Фотогалерея")])]
-            )
-          ],
-          1
-        )
-      ])
-    ],
-    1
-  )
+          _c(
+            "router-link",
+            {
+              staticClass: "shkola-home shkola-home-sub",
+              attrs: { to: { name: "shkola_Home" } }
+            },
+            [_c("img", { attrs: { src: "/img/shkolahome.svg", alt: "" } })]
+          ),
+          _vm._v(" "),
+          _c(
+            "router-link",
+            {
+              staticClass: "shkola-footer-second",
+              attrs: { to: { name: "shkola_Photoalbums" } }
+            },
+            [_c("span", [_vm._v("Фотогалерея")])]
+          )
+        ],
+        1
+      )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37389,107 +37312,99 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("ShkolaHeaderHorizontal"),
-      _vm._v(" "),
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "container",
+        staticStyle: { "margin-top": "25vh", width: "90vw" }
+      },
+      [
+        _vm.photoalbumItem
+          ? _c(
+              "div",
+              { staticClass: "gallery-detail" },
+              [
+                _c(
+                  "swiper",
+                  {
+                    ref: "PhotoalbumsItemSwiper",
+                    attrs: { options: _vm.swiperOptions }
+                  },
+                  [
+                    _vm._l(_vm.photoalbumItem.gallery, function(photoalbumPic) {
+                      return _c(
+                        "swiper-slide",
+                        {
+                          key: photoalbumPic,
+                          staticClass: "gallery-detail-item"
+                        },
+                        [_c("img", { attrs: { src: photoalbumPic } })]
+                      )
+                    }),
+                    _vm._v(" "),
+                    _c("div", {
+                      staticClass: "swiper-button-prev",
+                      attrs: { slot: "button-prev" },
+                      slot: "button-prev"
+                    }),
+                    _vm._v(" "),
+                    _c("div", {
+                      staticClass: "swiper-button-next",
+                      attrs: { slot: "button-next" },
+                      slot: "button-next"
+                    })
+                  ],
+                  2
+                )
+              ],
+              1
+            )
+          : _vm._e()
+      ]
+    ),
+    _vm._v(" "),
+    _c("footer", [
       _c(
         "div",
-        {
-          staticClass: "container",
-          staticStyle: { "margin-top": "25vh", width: "90vw" }
-        },
+        { staticClass: "container" },
         [
-          _vm.photoalbumItem
-            ? _c(
-                "div",
-                { staticClass: "gallery-detail" },
-                [
-                  _c(
-                    "swiper",
-                    {
-                      ref: "PhotoalbumsItemSwiper",
-                      attrs: { options: _vm.swiperOptions }
-                    },
-                    [
-                      _vm._l(_vm.photoalbumItem.gallery, function(
-                        photoalbumPic
-                      ) {
-                        return _c(
-                          "swiper-slide",
-                          {
-                            key: photoalbumPic,
-                            staticClass: "gallery-detail-item"
-                          },
-                          [_c("img", { attrs: { src: photoalbumPic } })]
-                        )
-                      }),
-                      _vm._v(" "),
-                      _c("div", {
-                        staticClass: "swiper-button-prev",
-                        attrs: { slot: "button-prev" },
-                        slot: "button-prev"
-                      }),
-                      _vm._v(" "),
-                      _c("div", {
-                        staticClass: "swiper-button-next",
-                        attrs: { slot: "button-next" },
-                        slot: "button-next"
-                      })
-                    ],
-                    2
-                  )
-                ],
-                1
-              )
-            : _vm._e()
-        ]
-      ),
-      _vm._v(" "),
-      _c("footer", [
-        _c(
-          "div",
-          { staticClass: "container" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "shkola-home shkola-home-sub",
-                attrs: { to: { name: "shkola_Home" } }
-              },
-              [_c("img", { attrs: { src: "/img/shkolahome.svg", alt: "" } })]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "shkola-footer-second",
-                attrs: { to: { name: "shkola_Photoalbums" } }
-              },
-              [_c("span", [_vm._v("Фотогалерея")])]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "shkola-footer-third",
-                attrs: {
-                  to: {
-                    name: "shkola_PhotoalbumItem",
-                    params: { id: _vm.photoalbumItem.id }
-                  }
+          _c(
+            "router-link",
+            {
+              staticClass: "shkola-home shkola-home-sub",
+              attrs: { to: { name: "shkola_Home" } }
+            },
+            [_c("img", { attrs: { src: "/img/shkolahome.svg", alt: "" } })]
+          ),
+          _vm._v(" "),
+          _c(
+            "router-link",
+            {
+              staticClass: "shkola-footer-second",
+              attrs: { to: { name: "shkola_Photoalbums" } }
+            },
+            [_c("span", [_vm._v("Фотогалерея")])]
+          ),
+          _vm._v(" "),
+          _c(
+            "router-link",
+            {
+              staticClass: "shkola-footer-third",
+              attrs: {
+                to: {
+                  name: "shkola_PhotoalbumItem",
+                  params: { id: _vm.photoalbumItem.id }
                 }
-              },
-              [_c("span", [_vm._v(_vm._s(_vm.photoalbumItem.title))])]
-            )
-          ],
-          1
-        )
-      ])
-    ],
-    1
-  )
+              }
+            },
+            [_c("span", [_vm._v(_vm._s(_vm.photoalbumItem.title))])]
+          )
+        ],
+        1
+      )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37513,56 +37428,64 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("ShkolaHeaderHorizontal"),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "container",
-          staticStyle: { "margin-top": "25vh", width: "90vw" }
-        },
-        [
-          _vm.success
-            ? _c(
-                "h5",
-                {
-                  staticStyle: {
-                    "font-size": "4vh",
-                    "text-align": "center",
-                    "margin-top": "24vh",
-                    color: "#333"
-                  }
-                },
-                [_vm._v("Ваш отзыв принят!")]
-              )
-            : _vm._e(),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-12 review-form" }, [
-              _vm.show_form
-                ? _c("textarea", {
-                    staticClass: "form-control input",
-                    staticStyle: { "margin-bottom": "2vh" },
-                    attrs: { placeholder: "Ваш отзыв..." },
-                    domProps: { value: _vm.input },
-                    on: { input: _vm.onInputChange }
-                  })
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.error
-                ? _c("h6", { staticClass: "alert alert-danger text-center" }, [
-                    _vm._v("\n                    Ошибка\n                ")
-                  ])
-                : _vm._e()
-            ]),
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "container",
+        staticStyle: { "margin-top": "25vh", width: "90vw" }
+      },
+      [
+        _vm.success
+          ? _c(
+              "h5",
+              {
+                staticStyle: {
+                  "font-size": "4vh",
+                  "text-align": "center",
+                  "margin-top": "24vh",
+                  color: "#333"
+                }
+              },
+              [_vm._v("Ваш отзыв принят!")]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-12 review-form" }, [
+            _vm.show_form
+              ? _c("textarea", {
+                  staticClass: "form-control input",
+                  staticStyle: { "margin-bottom": "2vh" },
+                  attrs: { placeholder: "Ваш отзыв..." },
+                  domProps: { value: _vm.input },
+                  on: { input: _vm.onInputChange }
+                })
+              : _vm._e(),
             _vm._v(" "),
-            _c("div", { staticClass: "col-12" }, [
-              _c(
-                "div",
-                {
+            _vm.error
+              ? _c("h6", { staticClass: "alert alert-danger text-center" }, [
+                  _vm._v("\n                    Ошибка\n                ")
+                ])
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-12" }, [
+            _c(
+              "div",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.show_form,
+                    expression: "show_form"
+                  }
+                ],
+                staticClass: "keyboard-reviews"
+              },
+              [
+                _c("SimpleKeyboard", {
                   directives: [
                     {
                       name: "show",
@@ -37571,74 +37494,60 @@ var render = function() {
                       expression: "show_form"
                     }
                   ],
-                  staticClass: "keyboard-reviews"
-                },
-                [
-                  _c("SimpleKeyboard", {
-                    directives: [
+                  attrs: { input: _vm.input },
+                  on: { onChange: _vm.onChange, onKeyPress: _vm.onKeyPress }
+                }),
+                _vm._v(" "),
+                _vm.show_button
+                  ? _c(
+                      "button",
                       {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.show_form,
-                        expression: "show_form"
-                      }
-                    ],
-                    attrs: { input: _vm.input },
-                    on: { onChange: _vm.onChange, onKeyPress: _vm.onKeyPress }
-                  }),
-                  _vm._v(" "),
-                  _vm.show_button
-                    ? _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-lg btn-primary",
-                          staticStyle: {
-                            padding: "1.5vh 3vh",
-                            "font-size": "2.5vh",
-                            width: "15vw",
-                            display: "block",
-                            margin: "0 auto",
-                            "margin-top": "2vh"
-                          },
-                          on: {
-                            click: function($event) {
-                              return _vm.createReview(_vm.input)
-                            }
-                          }
+                        staticClass: "btn btn-lg btn-primary",
+                        staticStyle: {
+                          padding: "1.5vh 3vh",
+                          "font-size": "2.5vh",
+                          width: "15vw",
+                          display: "block",
+                          margin: "0 auto",
+                          "margin-top": "2vh"
                         },
-                        [_vm._v("Отправить")]
-                      )
-                    : _vm._e()
-                ],
-                1
-              )
-            ])
+                        on: {
+                          click: function($event) {
+                            return _vm.createReview(_vm.input)
+                          }
+                        }
+                      },
+                      [_vm._v("Отправить")]
+                    )
+                  : _vm._e()
+              ],
+              1
+            )
           ])
-        ]
-      ),
-      _vm._v(" "),
-      _c("footer", [
-        _c(
-          "div",
-          { staticClass: "container" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "shkola-home shkola-home-sub",
-                attrs: { to: { name: "shkola_Home" } }
-              },
-              [_c("img", { attrs: { src: "/img/shkolahome.svg", alt: "" } })]
-            ),
-            _vm._v(" "),
-            _vm._m(0)
-          ],
-          1
-        )
-      ])
-    ],
-    1
-  )
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("footer", [
+      _c(
+        "div",
+        { staticClass: "container" },
+        [
+          _c(
+            "router-link",
+            {
+              staticClass: "shkola-home shkola-home-sub",
+              attrs: { to: { name: "shkola_Home" } }
+            },
+            [_c("img", { attrs: { src: "/img/shkolahome.svg", alt: "" } })]
+          ),
+          _vm._v(" "),
+          _vm._m(0)
+        ],
+        1
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -37671,1739 +37580,1720 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("ShkolaHeaderHorizontal"),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "container",
-          staticStyle: { "margin-top": "17vh", width: "90vw" }
-        },
-        [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-4" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "med-route-sidebar",
-                  staticStyle: { "margin-top": "8vh", padding: "2vh" }
-                },
-                [
-                  _vm.search_panel
-                    ? _c(
-                        "div",
-                        { staticClass: "search_panel" },
-                        [
-                          _c("input", {
-                            staticClass: "input",
-                            staticStyle: { "margin-bottom": "2vh" },
-                            attrs: { placeholder: "Поиск..." },
-                            domProps: { value: _vm.input },
-                            on: { input: _vm.onInputChange }
-                          }),
-                          _vm._v(" "),
-                          _c("SimpleKeyboard", {
-                            attrs: { input: _vm.input },
-                            on: {
-                              onChange: _vm.onChange,
-                              onKeyPress: _vm.onKeyPress
-                            }
-                          })
-                        ],
-                        1
-                      )
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _c(
-                    "ul",
-                    {
-                      staticStyle: { "margin-top": "0.5vh" },
-                      attrs: { id: "myUL" }
-                    },
-                    _vm._l(_vm.filtered_routes, function(route) {
-                      return _c(
-                        "li",
-                        {
-                          key: route.id,
-                          on: {
-                            click: function($event) {
-                              return _vm.SelectRoute(route)
-                            }
-                          }
-                        },
-                        [_c("a", [_vm._v(_vm._s(route.title))])]
-                      )
-                    }),
-                    0
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-8", staticStyle: { order: "1" } }, [
-              _c("div", { staticClass: "route_about" }),
-              _vm._v(" "),
-              _vm.current_slide === 2
-                ? _c(
-                    "button",
-                    {
-                      staticClass: "prevnextbutton prev_button",
-                      on: {
-                        click: function($event) {
-                          return _vm.PrevScheme(_vm.current_route)
-                        }
-                      }
-                    },
-                    [_vm._v("\n                Начало маршрута\n            ")]
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.current_route.schemes2 &&
-              _vm.current_route.schemes2.length > 0 &&
-              _vm.current_slide === 1
-                ? _c(
-                    "button",
-                    {
-                      staticClass: "prevnextbutton next_button",
-                      on: {
-                        click: function($event) {
-                          return _vm.NextScheme(_vm.current_route)
-                        }
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                Продолжить маршрут\n            "
-                      )
-                    ]
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  class: ["" + (_vm.windowWidth > 1920 ? "map4K" : "map1080")],
-                  attrs: { id: "map" }
-                },
-                [
-                  _vm._l(_vm.schemes, function(scheme) {
-                    return _c(
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "container",
+        staticStyle: { "margin-top": "17vh", width: "90vw" }
+      },
+      [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-4" }, [
+            _c(
+              "div",
+              {
+                staticClass: "med-route-sidebar",
+                staticStyle: { "margin-top": "8vh", padding: "2vh" }
+              },
+              [
+                _vm.search_panel
+                  ? _c(
                       "div",
-                      {
-                        key: scheme.id,
-                        staticClass: "scheme_images",
-                        attrs: { id: "scheme_image_" + scheme.id }
-                      },
+                      { staticClass: "search_panel" },
                       [
-                        _c("img", {
-                          directives: [
-                            {
-                              name: "show",
-                              rawName: "v-show",
-                              value: scheme.id.toString() === _vm.current_floor,
-                              expression:
-                                "scheme.id.toString() === current_floor"
-                            }
-                          ],
-                          staticStyle: { width: "800px", height: "450px" },
-                          attrs: { src: scheme.image }
+                        _c("input", {
+                          staticClass: "input",
+                          staticStyle: { "margin-bottom": "2vh" },
+                          attrs: { placeholder: "Поиск..." },
+                          domProps: { value: _vm.input },
+                          on: { input: _vm.onInputChange }
+                        }),
+                        _vm._v(" "),
+                        _c("SimpleKeyboard", {
+                          attrs: { input: _vm.input },
+                          on: {
+                            onChange: _vm.onChange,
+                            onKeyPress: _vm.onKeyPress
+                          }
                         })
-                      ]
+                      ],
+                      1
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _c(
+                  "ul",
+                  {
+                    staticStyle: { "margin-top": "0.5vh" },
+                    attrs: { id: "myUL" }
+                  },
+                  _vm._l(_vm.filtered_routes, function(route) {
+                    return _c(
+                      "li",
+                      {
+                        key: route.id,
+                        on: {
+                          click: function($event) {
+                            return _vm.SelectRoute(route)
+                          }
+                        }
+                      },
+                      [_c("a", [_vm._v(_vm._s(route.title))])]
                     )
                   }),
-                  _vm._v(" "),
-                  _vm.current_slide === 1
-                    ? _c(
-                        "svg",
-                        {
-                          staticClass: "map-path svg1",
-                          attrs: { viewBox: "0 0 800 450" }
-                        },
-                        [
-                          _vm.current_route.x_01
-                            ? _c("path", {
-                                staticClass: "key-anim01",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_01 +
-                                    " " +
-                                    _vm.current_route.y_01 +
-                                    ", "
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_01
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "01",
-                                  cx: _vm.current_route.x_01,
-                                  cy: _vm.current_route.y_01,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_01
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_01,
-                                    y: _vm.current_route.y_01,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [
-                                      _vm._v(
-                                        _vm._s(_vm.current_route.t_1_begin)
-                                      )
-                                    ]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_02
-                            ? _c("path", {
-                                staticClass: "key-anim02",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_02 +
-                                    " " +
-                                    _vm.current_route.y_02 +
-                                    ", " +
-                                    _vm.current_route.x_01 +
-                                    " " +
-                                    _vm.current_route.y_01
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_02
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "02",
-                                  cx: _vm.current_route.x_02,
-                                  cy: _vm.current_route.y_02,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_02 && !_vm.current_route.x_03
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_02,
-                                    y: _vm.current_route.y_02,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_1_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_03
-                            ? _c("path", {
-                                staticClass: "key-anim03",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_03 +
-                                    " " +
-                                    _vm.current_route.y_03 +
-                                    ", " +
-                                    _vm.current_route.x_02 +
-                                    " " +
-                                    _vm.current_route.y_02
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_03
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "03",
-                                  cx: _vm.current_route.x_03,
-                                  cy: _vm.current_route.y_03,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_03 && !_vm.current_route.x_04
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_03,
-                                    y: _vm.current_route.y_03,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_1_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_04
-                            ? _c("path", {
-                                staticClass: "key-anim04",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_04 +
-                                    " " +
-                                    _vm.current_route.y_04 +
-                                    ", " +
-                                    _vm.current_route.x_03 +
-                                    " " +
-                                    _vm.current_route.y_03
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_04
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "04",
-                                  cx: _vm.current_route.x_04,
-                                  cy: _vm.current_route.y_04,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_04 && !_vm.current_route.x_05
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_04,
-                                    y: _vm.current_route.y_04,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_1_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_05
-                            ? _c("path", {
-                                staticClass: "key-anim05",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_05 +
-                                    " " +
-                                    _vm.current_route.y_05 +
-                                    ", " +
-                                    _vm.current_route.x_04 +
-                                    " " +
-                                    _vm.current_route.y_04
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_05
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "05",
-                                  cx: _vm.current_route.x_05,
-                                  cy: _vm.current_route.y_05,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_05 && !_vm.current_route.x_06
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_05,
-                                    y: _vm.current_route.y_05,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_1_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_06
-                            ? _c("path", {
-                                staticClass: "key-anim06",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_06 +
-                                    " " +
-                                    _vm.current_route.y_06 +
-                                    ", " +
-                                    _vm.current_route.x_05 +
-                                    " " +
-                                    _vm.current_route.y_05
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_06
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "06",
-                                  cx: _vm.current_route.x_06,
-                                  cy: _vm.current_route.y_06,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_06 && !_vm.current_route.x_07
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_06,
-                                    y: _vm.current_route.y_06,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_1_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_07
-                            ? _c("path", {
-                                staticClass: "key-anim07",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_07 +
-                                    " " +
-                                    _vm.current_route.y_07 +
-                                    ", " +
-                                    _vm.current_route.x_06 +
-                                    " " +
-                                    _vm.current_route.y_06
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_07
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "07",
-                                  cx: _vm.current_route.x_07,
-                                  cy: _vm.current_route.y_07,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_07 && !_vm.current_route.x_08
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_07,
-                                    y: _vm.current_route.y_07,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_1_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_08
-                            ? _c("path", {
-                                staticClass: "key-anim08",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_08 +
-                                    " " +
-                                    _vm.current_route.y_08 +
-                                    ", " +
-                                    _vm.current_route.x_07 +
-                                    " " +
-                                    _vm.current_route.y_07
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_08
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "08",
-                                  cx: _vm.current_route.x_08,
-                                  cy: _vm.current_route.y_08,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_08 && !_vm.current_route.x_09
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_08,
-                                    y: _vm.current_route.y_08,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_1_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_09
-                            ? _c("path", {
-                                staticClass: "key-anim09",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_09 +
-                                    " " +
-                                    _vm.current_route.y_09 +
-                                    ", " +
-                                    _vm.current_route.x_08 +
-                                    " " +
-                                    _vm.current_route.y_08
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_09
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "09",
-                                  cx: _vm.current_route.x_09,
-                                  cy: _vm.current_route.y_09,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_09 && !_vm.current_route.x_10
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_09,
-                                    y: _vm.current_route.y_09,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_1_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_10
-                            ? _c("path", {
-                                staticClass: "key-anim10",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_10 +
-                                    " " +
-                                    _vm.current_route.y_10 +
-                                    ", " +
-                                    _vm.current_route.x_09 +
-                                    " " +
-                                    _vm.current_route.y_09
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_10
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "10",
-                                  cx: _vm.current_route.x_10,
-                                  cy: _vm.current_route.y_10,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_10 && !_vm.current_route.x_11
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_10,
-                                    y: _vm.current_route.y_10,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_1_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_11
-                            ? _c("path", {
-                                staticClass: "key-anim11",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_11 +
-                                    " " +
-                                    _vm.current_route.y_11 +
-                                    ", " +
-                                    _vm.current_route.x_10 +
-                                    " " +
-                                    _vm.current_route.y_10
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_11
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "11",
-                                  cx: _vm.current_route.x_11,
-                                  cy: _vm.current_route.y_11,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_11 && !_vm.current_route.x_12
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_11,
-                                    y: _vm.current_route.y_11,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_1_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_12
-                            ? _c("path", {
-                                staticClass: "key-anim12",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_12 +
-                                    " " +
-                                    _vm.current_route.y_12 +
-                                    ", " +
-                                    _vm.current_route.x_11 +
-                                    " " +
-                                    _vm.current_route.y_11
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_12
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "12",
-                                  cx: _vm.current_route.x_12,
-                                  cy: _vm.current_route.y_12,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_12
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_12,
-                                    y: _vm.current_route.y_12,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_1_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e()
-                        ]
-                      )
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.current_slide === 2
-                    ? _c(
-                        "svg",
-                        {
-                          staticClass: "map-path svg2",
-                          attrs: { viewBox: "0 0 800 450" }
-                        },
-                        [
-                          _vm.current_route.x_101
-                            ? _c("path", {
-                                staticClass: "key-anim01",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_101 +
-                                    " " +
-                                    _vm.current_route.y_101 +
-                                    ", "
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_101
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "01",
-                                  cx: _vm.current_route.x_101,
-                                  cy: _vm.current_route.y_101,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_101
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_101,
-                                    y: _vm.current_route.y_101,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [
-                                      _vm._v(
-                                        _vm._s(_vm.current_route.t_2_begin)
-                                      )
-                                    ]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_102
-                            ? _c("path", {
-                                staticClass: "key-anim02",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_102 +
-                                    " " +
-                                    _vm.current_route.y_102 +
-                                    ", " +
-                                    _vm.current_route.x_101 +
-                                    " " +
-                                    _vm.current_route.y_101
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_102
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "02",
-                                  cx: _vm.current_route.x_102,
-                                  cy: _vm.current_route.y_102,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_102 && !_vm.current_route.x_103
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_102,
-                                    y: _vm.current_route.y_102,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_2_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_103
-                            ? _c("path", {
-                                staticClass: "key-anim03",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_103 +
-                                    " " +
-                                    _vm.current_route.y_103 +
-                                    ", " +
-                                    _vm.current_route.x_102 +
-                                    " " +
-                                    _vm.current_route.y_102
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_103
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "03",
-                                  cx: _vm.current_route.x_103,
-                                  cy: _vm.current_route.y_103,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_103 && !_vm.current_route.x_104
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_103,
-                                    y: _vm.current_route.y_103,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_2_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_104
-                            ? _c("path", {
-                                staticClass: "key-anim04",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_104 +
-                                    " " +
-                                    _vm.current_route.y_104 +
-                                    ", " +
-                                    _vm.current_route.x_103 +
-                                    " " +
-                                    _vm.current_route.y_103
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_104
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "04",
-                                  cx: _vm.current_route.x_104,
-                                  cy: _vm.current_route.y_104,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_104 && !_vm.current_route.x_105
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_104,
-                                    y: _vm.current_route.y_104,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_2_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_105
-                            ? _c("path", {
-                                staticClass: "key-anim05",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_105 +
-                                    " " +
-                                    _vm.current_route.y_105 +
-                                    ", " +
-                                    _vm.current_route.x_104 +
-                                    " " +
-                                    _vm.current_route.y_104
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_105
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "05",
-                                  cx: _vm.current_route.x_105,
-                                  cy: _vm.current_route.y_105,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_105 && !_vm.current_route.x_106
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_105,
-                                    y: _vm.current_route.y_105,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_2_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_106
-                            ? _c("path", {
-                                staticClass: "key-anim06",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_106 +
-                                    " " +
-                                    _vm.current_route.y_106 +
-                                    ", " +
-                                    _vm.current_route.x_105 +
-                                    " " +
-                                    _vm.current_route.y_105
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_106
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "06",
-                                  cx: _vm.current_route.x_106,
-                                  cy: _vm.current_route.y_106,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_106 && !_vm.current_route.x_107
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_106,
-                                    y: _vm.current_route.y_106,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_2_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_107
-                            ? _c("path", {
-                                staticClass: "key-anim07",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_107 +
-                                    " " +
-                                    _vm.current_route.y_107 +
-                                    ", " +
-                                    _vm.current_route.x_106 +
-                                    " " +
-                                    _vm.current_route.y_106
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_107
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "07",
-                                  cx: _vm.current_route.x_107,
-                                  cy: _vm.current_route.y_107,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_107 && !_vm.current_route.x_108
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_107,
-                                    y: _vm.current_route.y_107,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_2_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_108
-                            ? _c("path", {
-                                staticClass: "key-anim08",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_108 +
-                                    " " +
-                                    _vm.current_route.y_108 +
-                                    ", " +
-                                    _vm.current_route.x_107 +
-                                    " " +
-                                    _vm.current_route.y_107
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_108
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "08",
-                                  cx: _vm.current_route.x_108,
-                                  cy: _vm.current_route.y_108,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_108 && !_vm.current_route.x_109
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_108,
-                                    y: _vm.current_route.y_108,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_2_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_109
-                            ? _c("path", {
-                                staticClass: "key-anim09",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_109 +
-                                    " " +
-                                    _vm.current_route.y_109 +
-                                    ", " +
-                                    _vm.current_route.x_108 +
-                                    " " +
-                                    _vm.current_route.y_108
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_109
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "09",
-                                  cx: _vm.current_route.x_109,
-                                  cy: _vm.current_route.y_109,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_109 && !_vm.current_route.x_110
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_109,
-                                    y: _vm.current_route.y_109,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_2_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_110
-                            ? _c("path", {
-                                staticClass: "key-anim10",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_110 +
-                                    " " +
-                                    _vm.current_route.y_110 +
-                                    ", " +
-                                    _vm.current_route.x_109 +
-                                    " " +
-                                    _vm.current_route.y_109
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_110
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "10",
-                                  cx: _vm.current_route.x_110,
-                                  cy: _vm.current_route.y_110,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_110 && !_vm.current_route.x_111
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_110,
-                                    y: _vm.current_route.y_110,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_2_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_111
-                            ? _c("path", {
-                                staticClass: "key-anim11",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_111 +
-                                    " " +
-                                    _vm.current_route.y_111 +
-                                    ", " +
-                                    _vm.current_route.x_110 +
-                                    " " +
-                                    _vm.current_route.y_110
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_111
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "11",
-                                  cx: _vm.current_route.x_111,
-                                  cy: _vm.current_route.y_111,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_111 && !_vm.current_route.x_112
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_111,
-                                    y: _vm.current_route.y_111,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_2_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_112
-                            ? _c("path", {
-                                staticClass: "key-anim12",
-                                attrs: {
-                                  fill: "none",
-                                  "stroke-width": "5px",
-                                  stroke: "rgba(255,51,51,0.8)",
-                                  d:
-                                    "M" +
-                                    _vm.current_route.x_112 +
-                                    " " +
-                                    _vm.current_route.y_112 +
-                                    ", " +
-                                    _vm.current_route.x_111 +
-                                    " " +
-                                    _vm.current_route.y_111
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_112
-                            ? _c("circle", {
-                                attrs: {
-                                  id: "12",
-                                  cx: _vm.current_route.x_112,
-                                  cy: _vm.current_route.y_112,
-                                  r: "7",
-                                  fill: "#f33"
-                                }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.current_route.x_112
-                            ? _c(
-                                "text",
-                                {
-                                  staticStyle: {
-                                    stroke: "#ffffff",
-                                    "stroke-width": "0.5px"
-                                  },
-                                  attrs: {
-                                    x: _vm.current_route.x_112,
-                                    y: _vm.current_route.y_112,
-                                    "font-family": "Verdana",
-                                    "font-size": "12",
-                                    fill: "red"
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "tspan",
-                                    {
-                                      attrs: {
-                                        dx: "-20",
-                                        dy: "30",
-                                        "font-weight": "bold"
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(_vm.current_route.t_2_end))]
-                                  )
-                                ]
-                              )
-                            : _vm._e()
-                        ]
-                      )
-                    : _vm._e()
-                ],
-                2
-              )
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c("footer", [
-        _c(
-          "div",
-          { staticClass: "container" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "shkola-home shkola-home-sub",
-                attrs: { to: { name: "shkola_Home" } }
-              },
-              [_c("img", { attrs: { src: "/img/shkolahome.svg", alt: "" } })]
-            ),
+                  0
+                )
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-8", staticStyle: { order: "1" } }, [
+            _c("div", { staticClass: "route_about" }),
             _vm._v(" "),
-            _vm._m(0)
-          ],
-          1
-        )
-      ])
-    ],
-    1
-  )
+            _vm.current_slide === 2
+              ? _c(
+                  "button",
+                  {
+                    staticClass: "prevnextbutton prev_button",
+                    on: {
+                      click: function($event) {
+                        return _vm.PrevScheme(_vm.current_route)
+                      }
+                    }
+                  },
+                  [_vm._v("\n                Начало маршрута\n            ")]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.current_route.schemes2 &&
+            _vm.current_route.schemes2.length > 0 &&
+            _vm.current_slide === 1
+              ? _c(
+                  "button",
+                  {
+                    staticClass: "prevnextbutton next_button",
+                    on: {
+                      click: function($event) {
+                        return _vm.NextScheme(_vm.current_route)
+                      }
+                    }
+                  },
+                  [_vm._v("\n                Продолжить маршрут\n            ")]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                class: ["" + (_vm.windowWidth > 1920 ? "map4K" : "map1080")],
+                attrs: { id: "map" }
+              },
+              [
+                _vm._l(_vm.schemes, function(scheme) {
+                  return _c(
+                    "div",
+                    {
+                      key: scheme.id,
+                      staticClass: "scheme_images",
+                      attrs: { id: "scheme_image_" + scheme.id }
+                    },
+                    [
+                      _c("img", {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: scheme.id.toString() === _vm.current_floor,
+                            expression: "scheme.id.toString() === current_floor"
+                          }
+                        ],
+                        staticStyle: { width: "800px", height: "450px" },
+                        attrs: { src: scheme.image }
+                      })
+                    ]
+                  )
+                }),
+                _vm._v(" "),
+                _vm.current_slide === 1
+                  ? _c(
+                      "svg",
+                      {
+                        staticClass: "map-path svg1",
+                        attrs: { viewBox: "0 0 800 450" }
+                      },
+                      [
+                        _vm.current_route.x_01
+                          ? _c("path", {
+                              staticClass: "key-anim01",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_01 +
+                                  " " +
+                                  _vm.current_route.y_01 +
+                                  ", "
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_01
+                          ? _c("circle", {
+                              attrs: {
+                                id: "01",
+                                cx: _vm.current_route.x_01,
+                                cy: _vm.current_route.y_01,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_01
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_01,
+                                  y: _vm.current_route.y_01,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_1_begin))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_02
+                          ? _c("path", {
+                              staticClass: "key-anim02",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_02 +
+                                  " " +
+                                  _vm.current_route.y_02 +
+                                  ", " +
+                                  _vm.current_route.x_01 +
+                                  " " +
+                                  _vm.current_route.y_01
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_02
+                          ? _c("circle", {
+                              attrs: {
+                                id: "02",
+                                cx: _vm.current_route.x_02,
+                                cy: _vm.current_route.y_02,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_02 && !_vm.current_route.x_03
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_02,
+                                  y: _vm.current_route.y_02,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_1_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_03
+                          ? _c("path", {
+                              staticClass: "key-anim03",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_03 +
+                                  " " +
+                                  _vm.current_route.y_03 +
+                                  ", " +
+                                  _vm.current_route.x_02 +
+                                  " " +
+                                  _vm.current_route.y_02
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_03
+                          ? _c("circle", {
+                              attrs: {
+                                id: "03",
+                                cx: _vm.current_route.x_03,
+                                cy: _vm.current_route.y_03,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_03 && !_vm.current_route.x_04
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_03,
+                                  y: _vm.current_route.y_03,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_1_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_04
+                          ? _c("path", {
+                              staticClass: "key-anim04",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_04 +
+                                  " " +
+                                  _vm.current_route.y_04 +
+                                  ", " +
+                                  _vm.current_route.x_03 +
+                                  " " +
+                                  _vm.current_route.y_03
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_04
+                          ? _c("circle", {
+                              attrs: {
+                                id: "04",
+                                cx: _vm.current_route.x_04,
+                                cy: _vm.current_route.y_04,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_04 && !_vm.current_route.x_05
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_04,
+                                  y: _vm.current_route.y_04,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_1_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_05
+                          ? _c("path", {
+                              staticClass: "key-anim05",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_05 +
+                                  " " +
+                                  _vm.current_route.y_05 +
+                                  ", " +
+                                  _vm.current_route.x_04 +
+                                  " " +
+                                  _vm.current_route.y_04
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_05
+                          ? _c("circle", {
+                              attrs: {
+                                id: "05",
+                                cx: _vm.current_route.x_05,
+                                cy: _vm.current_route.y_05,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_05 && !_vm.current_route.x_06
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_05,
+                                  y: _vm.current_route.y_05,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_1_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_06
+                          ? _c("path", {
+                              staticClass: "key-anim06",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_06 +
+                                  " " +
+                                  _vm.current_route.y_06 +
+                                  ", " +
+                                  _vm.current_route.x_05 +
+                                  " " +
+                                  _vm.current_route.y_05
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_06
+                          ? _c("circle", {
+                              attrs: {
+                                id: "06",
+                                cx: _vm.current_route.x_06,
+                                cy: _vm.current_route.y_06,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_06 && !_vm.current_route.x_07
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_06,
+                                  y: _vm.current_route.y_06,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_1_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_07
+                          ? _c("path", {
+                              staticClass: "key-anim07",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_07 +
+                                  " " +
+                                  _vm.current_route.y_07 +
+                                  ", " +
+                                  _vm.current_route.x_06 +
+                                  " " +
+                                  _vm.current_route.y_06
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_07
+                          ? _c("circle", {
+                              attrs: {
+                                id: "07",
+                                cx: _vm.current_route.x_07,
+                                cy: _vm.current_route.y_07,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_07 && !_vm.current_route.x_08
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_07,
+                                  y: _vm.current_route.y_07,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_1_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_08
+                          ? _c("path", {
+                              staticClass: "key-anim08",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_08 +
+                                  " " +
+                                  _vm.current_route.y_08 +
+                                  ", " +
+                                  _vm.current_route.x_07 +
+                                  " " +
+                                  _vm.current_route.y_07
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_08
+                          ? _c("circle", {
+                              attrs: {
+                                id: "08",
+                                cx: _vm.current_route.x_08,
+                                cy: _vm.current_route.y_08,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_08 && !_vm.current_route.x_09
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_08,
+                                  y: _vm.current_route.y_08,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_1_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_09
+                          ? _c("path", {
+                              staticClass: "key-anim09",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_09 +
+                                  " " +
+                                  _vm.current_route.y_09 +
+                                  ", " +
+                                  _vm.current_route.x_08 +
+                                  " " +
+                                  _vm.current_route.y_08
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_09
+                          ? _c("circle", {
+                              attrs: {
+                                id: "09",
+                                cx: _vm.current_route.x_09,
+                                cy: _vm.current_route.y_09,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_09 && !_vm.current_route.x_10
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_09,
+                                  y: _vm.current_route.y_09,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_1_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_10
+                          ? _c("path", {
+                              staticClass: "key-anim10",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_10 +
+                                  " " +
+                                  _vm.current_route.y_10 +
+                                  ", " +
+                                  _vm.current_route.x_09 +
+                                  " " +
+                                  _vm.current_route.y_09
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_10
+                          ? _c("circle", {
+                              attrs: {
+                                id: "10",
+                                cx: _vm.current_route.x_10,
+                                cy: _vm.current_route.y_10,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_10 && !_vm.current_route.x_11
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_10,
+                                  y: _vm.current_route.y_10,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_1_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_11
+                          ? _c("path", {
+                              staticClass: "key-anim11",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_11 +
+                                  " " +
+                                  _vm.current_route.y_11 +
+                                  ", " +
+                                  _vm.current_route.x_10 +
+                                  " " +
+                                  _vm.current_route.y_10
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_11
+                          ? _c("circle", {
+                              attrs: {
+                                id: "11",
+                                cx: _vm.current_route.x_11,
+                                cy: _vm.current_route.y_11,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_11 && !_vm.current_route.x_12
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_11,
+                                  y: _vm.current_route.y_11,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_1_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_12
+                          ? _c("path", {
+                              staticClass: "key-anim12",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_12 +
+                                  " " +
+                                  _vm.current_route.y_12 +
+                                  ", " +
+                                  _vm.current_route.x_11 +
+                                  " " +
+                                  _vm.current_route.y_11
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_12
+                          ? _c("circle", {
+                              attrs: {
+                                id: "12",
+                                cx: _vm.current_route.x_12,
+                                cy: _vm.current_route.y_12,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_12
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_12,
+                                  y: _vm.current_route.y_12,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_1_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e()
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.current_slide === 2
+                  ? _c(
+                      "svg",
+                      {
+                        staticClass: "map-path svg2",
+                        attrs: { viewBox: "0 0 800 450" }
+                      },
+                      [
+                        _vm.current_route.x_101
+                          ? _c("path", {
+                              staticClass: "key-anim01",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_101 +
+                                  " " +
+                                  _vm.current_route.y_101 +
+                                  ", "
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_101
+                          ? _c("circle", {
+                              attrs: {
+                                id: "01",
+                                cx: _vm.current_route.x_101,
+                                cy: _vm.current_route.y_101,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_101
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_101,
+                                  y: _vm.current_route.y_101,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_2_begin))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_102
+                          ? _c("path", {
+                              staticClass: "key-anim02",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_102 +
+                                  " " +
+                                  _vm.current_route.y_102 +
+                                  ", " +
+                                  _vm.current_route.x_101 +
+                                  " " +
+                                  _vm.current_route.y_101
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_102
+                          ? _c("circle", {
+                              attrs: {
+                                id: "02",
+                                cx: _vm.current_route.x_102,
+                                cy: _vm.current_route.y_102,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_102 && !_vm.current_route.x_103
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_102,
+                                  y: _vm.current_route.y_102,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_2_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_103
+                          ? _c("path", {
+                              staticClass: "key-anim03",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_103 +
+                                  " " +
+                                  _vm.current_route.y_103 +
+                                  ", " +
+                                  _vm.current_route.x_102 +
+                                  " " +
+                                  _vm.current_route.y_102
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_103
+                          ? _c("circle", {
+                              attrs: {
+                                id: "03",
+                                cx: _vm.current_route.x_103,
+                                cy: _vm.current_route.y_103,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_103 && !_vm.current_route.x_104
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_103,
+                                  y: _vm.current_route.y_103,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_2_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_104
+                          ? _c("path", {
+                              staticClass: "key-anim04",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_104 +
+                                  " " +
+                                  _vm.current_route.y_104 +
+                                  ", " +
+                                  _vm.current_route.x_103 +
+                                  " " +
+                                  _vm.current_route.y_103
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_104
+                          ? _c("circle", {
+                              attrs: {
+                                id: "04",
+                                cx: _vm.current_route.x_104,
+                                cy: _vm.current_route.y_104,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_104 && !_vm.current_route.x_105
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_104,
+                                  y: _vm.current_route.y_104,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_2_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_105
+                          ? _c("path", {
+                              staticClass: "key-anim05",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_105 +
+                                  " " +
+                                  _vm.current_route.y_105 +
+                                  ", " +
+                                  _vm.current_route.x_104 +
+                                  " " +
+                                  _vm.current_route.y_104
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_105
+                          ? _c("circle", {
+                              attrs: {
+                                id: "05",
+                                cx: _vm.current_route.x_105,
+                                cy: _vm.current_route.y_105,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_105 && !_vm.current_route.x_106
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_105,
+                                  y: _vm.current_route.y_105,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_2_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_106
+                          ? _c("path", {
+                              staticClass: "key-anim06",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_106 +
+                                  " " +
+                                  _vm.current_route.y_106 +
+                                  ", " +
+                                  _vm.current_route.x_105 +
+                                  " " +
+                                  _vm.current_route.y_105
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_106
+                          ? _c("circle", {
+                              attrs: {
+                                id: "06",
+                                cx: _vm.current_route.x_106,
+                                cy: _vm.current_route.y_106,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_106 && !_vm.current_route.x_107
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_106,
+                                  y: _vm.current_route.y_106,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_2_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_107
+                          ? _c("path", {
+                              staticClass: "key-anim07",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_107 +
+                                  " " +
+                                  _vm.current_route.y_107 +
+                                  ", " +
+                                  _vm.current_route.x_106 +
+                                  " " +
+                                  _vm.current_route.y_106
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_107
+                          ? _c("circle", {
+                              attrs: {
+                                id: "07",
+                                cx: _vm.current_route.x_107,
+                                cy: _vm.current_route.y_107,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_107 && !_vm.current_route.x_108
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_107,
+                                  y: _vm.current_route.y_107,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_2_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_108
+                          ? _c("path", {
+                              staticClass: "key-anim08",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_108 +
+                                  " " +
+                                  _vm.current_route.y_108 +
+                                  ", " +
+                                  _vm.current_route.x_107 +
+                                  " " +
+                                  _vm.current_route.y_107
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_108
+                          ? _c("circle", {
+                              attrs: {
+                                id: "08",
+                                cx: _vm.current_route.x_108,
+                                cy: _vm.current_route.y_108,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_108 && !_vm.current_route.x_109
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_108,
+                                  y: _vm.current_route.y_108,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_2_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_109
+                          ? _c("path", {
+                              staticClass: "key-anim09",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_109 +
+                                  " " +
+                                  _vm.current_route.y_109 +
+                                  ", " +
+                                  _vm.current_route.x_108 +
+                                  " " +
+                                  _vm.current_route.y_108
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_109
+                          ? _c("circle", {
+                              attrs: {
+                                id: "09",
+                                cx: _vm.current_route.x_109,
+                                cy: _vm.current_route.y_109,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_109 && !_vm.current_route.x_110
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_109,
+                                  y: _vm.current_route.y_109,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_2_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_110
+                          ? _c("path", {
+                              staticClass: "key-anim10",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_110 +
+                                  " " +
+                                  _vm.current_route.y_110 +
+                                  ", " +
+                                  _vm.current_route.x_109 +
+                                  " " +
+                                  _vm.current_route.y_109
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_110
+                          ? _c("circle", {
+                              attrs: {
+                                id: "10",
+                                cx: _vm.current_route.x_110,
+                                cy: _vm.current_route.y_110,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_110 && !_vm.current_route.x_111
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_110,
+                                  y: _vm.current_route.y_110,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_2_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_111
+                          ? _c("path", {
+                              staticClass: "key-anim11",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_111 +
+                                  " " +
+                                  _vm.current_route.y_111 +
+                                  ", " +
+                                  _vm.current_route.x_110 +
+                                  " " +
+                                  _vm.current_route.y_110
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_111
+                          ? _c("circle", {
+                              attrs: {
+                                id: "11",
+                                cx: _vm.current_route.x_111,
+                                cy: _vm.current_route.y_111,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_111 && !_vm.current_route.x_112
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_111,
+                                  y: _vm.current_route.y_111,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_2_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_112
+                          ? _c("path", {
+                              staticClass: "key-anim12",
+                              attrs: {
+                                fill: "none",
+                                "stroke-width": "5px",
+                                stroke: "rgba(255,51,51,0.8)",
+                                d:
+                                  "M" +
+                                  _vm.current_route.x_112 +
+                                  " " +
+                                  _vm.current_route.y_112 +
+                                  ", " +
+                                  _vm.current_route.x_111 +
+                                  " " +
+                                  _vm.current_route.y_111
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_112
+                          ? _c("circle", {
+                              attrs: {
+                                id: "12",
+                                cx: _vm.current_route.x_112,
+                                cy: _vm.current_route.y_112,
+                                r: "7",
+                                fill: "#f33"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.current_route.x_112
+                          ? _c(
+                              "text",
+                              {
+                                staticStyle: {
+                                  stroke: "#ffffff",
+                                  "stroke-width": "0.5px"
+                                },
+                                attrs: {
+                                  x: _vm.current_route.x_112,
+                                  y: _vm.current_route.y_112,
+                                  "font-family": "Verdana",
+                                  "font-size": "12",
+                                  fill: "red"
+                                }
+                              },
+                              [
+                                _c(
+                                  "tspan",
+                                  {
+                                    attrs: {
+                                      dx: "-20",
+                                      dy: "30",
+                                      "font-weight": "bold"
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(_vm.current_route.t_2_end))]
+                                )
+                              ]
+                            )
+                          : _vm._e()
+                      ]
+                    )
+                  : _vm._e()
+              ],
+              2
+            )
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("footer", [
+      _c(
+        "div",
+        { staticClass: "container" },
+        [
+          _c(
+            "router-link",
+            {
+              staticClass: "shkola-home shkola-home-sub",
+              attrs: { to: { name: "shkola_Home" } }
+            },
+            [_c("img", { attrs: { src: "/img/shkolahome.svg", alt: "" } })]
+          ),
+          _vm._v(" "),
+          _vm._m(0)
+        ],
+        1
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -39436,127 +39326,121 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("ShkolaHeaderHorizontal"),
-      _vm._v(" "),
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "container",
+        staticStyle: { "margin-top": "25vh", width: "90vw" }
+      },
+      [
+        _vm.videoalbums.length
+          ? _c("div", { staticClass: "gallery" }, [
+              _c(
+                "div",
+                { staticClass: "gallery-list" },
+                [
+                  _c(
+                    "swiper",
+                    {
+                      ref: "VideoalbumsAllSwiper",
+                      attrs: { options: _vm.swiperOptions }
+                    },
+                    _vm._l(_vm.videoalbums, function(videoalbum) {
+                      return _c(
+                        "swiper-slide",
+                        {
+                          key: videoalbum.id,
+                          staticClass: "gallery-list-item"
+                        },
+                        [
+                          _c(
+                            "a",
+                            {
+                              on: {
+                                click: function($event) {
+                                  return _vm.GoToVideoalbum(videoalbum.id)
+                                }
+                              }
+                            },
+                            [
+                              videoalbum.cover
+                                ? _c("div", {
+                                    staticClass: "gallery-list-item-pic",
+                                    style: {
+                                      "background-image":
+                                        "url(" + videoalbum.cover + ")"
+                                    }
+                                  })
+                                : _c("div", {
+                                    staticClass: "gallery-list-item-pic",
+                                    staticStyle: {
+                                      "background-image":
+                                        "url(/img/Video-Placeholder.jpg)"
+                                    }
+                                  }),
+                              _vm._v(" "),
+                              _c("h2", [_vm._v(_vm._s(videoalbum.title))])
+                            ]
+                          )
+                        ]
+                      )
+                    }),
+                    1
+                  ),
+                  _vm._v(" "),
+                  _vm.slider_prev_next
+                    ? _c("div", {
+                        staticClass: "swiper-button-prev",
+                        staticStyle: { "margin-left": "2vw" },
+                        attrs: { slot: "button-prev" },
+                        slot: "button-prev"
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.slider_prev_next
+                    ? _c("div", {
+                        staticClass: "swiper-button-next",
+                        staticStyle: { "margin-right": "2vw" },
+                        attrs: { slot: "button-next" },
+                        slot: "button-next"
+                      })
+                    : _vm._e()
+                ],
+                1
+              )
+            ])
+          : _c("div", [_vm._v("\n            Видеогалерея пуста\n        ")])
+      ]
+    ),
+    _vm._v(" "),
+    _c("footer", [
       _c(
         "div",
-        {
-          staticClass: "container",
-          staticStyle: { "margin-top": "25vh", width: "90vw" }
-        },
+        { staticClass: "container" },
         [
-          _vm.videoalbums.length
-            ? _c("div", { staticClass: "gallery" }, [
-                _c(
-                  "div",
-                  { staticClass: "gallery-list" },
-                  [
-                    _c(
-                      "swiper",
-                      {
-                        ref: "VideoalbumsAllSwiper",
-                        attrs: { options: _vm.swiperOptions }
-                      },
-                      _vm._l(_vm.videoalbums, function(videoalbum) {
-                        return _c(
-                          "swiper-slide",
-                          {
-                            key: videoalbum.id,
-                            staticClass: "gallery-list-item"
-                          },
-                          [
-                            _c(
-                              "a",
-                              {
-                                on: {
-                                  click: function($event) {
-                                    return _vm.GoToVideoalbum(videoalbum.id)
-                                  }
-                                }
-                              },
-                              [
-                                videoalbum.cover
-                                  ? _c("div", {
-                                      staticClass: "gallery-list-item-pic",
-                                      style: {
-                                        "background-image":
-                                          "url(" + videoalbum.cover + ")"
-                                      }
-                                    })
-                                  : _c("div", {
-                                      staticClass: "gallery-list-item-pic",
-                                      staticStyle: {
-                                        "background-image":
-                                          "url(/img/Video-Placeholder.jpg)"
-                                      }
-                                    }),
-                                _vm._v(" "),
-                                _c("h2", [_vm._v(_vm._s(videoalbum.title))])
-                              ]
-                            )
-                          ]
-                        )
-                      }),
-                      1
-                    ),
-                    _vm._v(" "),
-                    _vm.slider_prev_next
-                      ? _c("div", {
-                          staticClass: "swiper-button-prev",
-                          staticStyle: { "margin-left": "2vw" },
-                          attrs: { slot: "button-prev" },
-                          slot: "button-prev"
-                        })
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _vm.slider_prev_next
-                      ? _c("div", {
-                          staticClass: "swiper-button-next",
-                          staticStyle: { "margin-right": "2vw" },
-                          attrs: { slot: "button-next" },
-                          slot: "button-next"
-                        })
-                      : _vm._e()
-                  ],
-                  1
-                )
-              ])
-            : _c("div", [_vm._v("\n            Видеогалерея пуста\n        ")])
-        ]
-      ),
-      _vm._v(" "),
-      _c("footer", [
-        _c(
-          "div",
-          { staticClass: "container" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "shkola-home shkola-home-sub",
-                attrs: { to: { name: "shkola_Home" } }
-              },
-              [_c("img", { attrs: { src: "/img/shkolahome.svg", alt: "" } })]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "shkola-footer-second",
-                attrs: { to: { name: "shkola_Videoalbums" } }
-              },
-              [_c("span", [_vm._v("Видеогалерея")])]
-            )
-          ],
-          1
-        )
-      ])
-    ],
-    1
-  )
+          _c(
+            "router-link",
+            {
+              staticClass: "shkola-home shkola-home-sub",
+              attrs: { to: { name: "shkola_Home" } }
+            },
+            [_c("img", { attrs: { src: "/img/shkolahome.svg", alt: "" } })]
+          ),
+          _vm._v(" "),
+          _c(
+            "router-link",
+            {
+              staticClass: "shkola-footer-second",
+              attrs: { to: { name: "shkola_Videoalbums" } }
+            },
+            [_c("span", [_vm._v("Видеогалерея")])]
+          )
+        ],
+        1
+      )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -39580,73 +39464,67 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("ShkolaHeaderHorizontal"),
-      _vm._v(" "),
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "videoalbum-detail",
+        staticStyle: { "margin-top": "23vh" }
+      },
+      [
+        _c("video", {
+          attrs: {
+            src: _vm.videoalbumItem.gallery,
+            autoplay: "",
+            controls: "",
+            disablePictureInPicture: "",
+            controlsList: "nodownload"
+          }
+        })
+      ]
+    ),
+    _vm._v(" "),
+    _c("footer", [
       _c(
         "div",
-        {
-          staticClass: "videoalbum-detail",
-          staticStyle: { "margin-top": "23vh" }
-        },
+        { staticClass: "container" },
         [
-          _c("video", {
-            attrs: {
-              src: _vm.videoalbumItem.gallery,
-              autoplay: "",
-              controls: "",
-              disablePictureInPicture: "",
-              controlsList: "nodownload"
-            }
-          })
-        ]
-      ),
-      _vm._v(" "),
-      _c("footer", [
-        _c(
-          "div",
-          { staticClass: "container" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "shkola-home shkola-home-sub",
-                attrs: { to: { name: "shkola_Home" } }
-              },
-              [_c("img", { attrs: { src: "/img/shkolahome.svg", alt: "" } })]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "shkola-footer-second",
-                attrs: { to: { name: "shkola_Videoalbums" } }
-              },
-              [_c("span", [_vm._v("Видеогалерея")])]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "shkola-footer-third",
-                attrs: {
-                  to: {
-                    name: "shkola_VideoalbumItem",
-                    params: { id: _vm.videoalbumItem.id }
-                  }
+          _c(
+            "router-link",
+            {
+              staticClass: "shkola-home shkola-home-sub",
+              attrs: { to: { name: "shkola_Home" } }
+            },
+            [_c("img", { attrs: { src: "/img/shkolahome.svg", alt: "" } })]
+          ),
+          _vm._v(" "),
+          _c(
+            "router-link",
+            {
+              staticClass: "shkola-footer-second",
+              attrs: { to: { name: "shkola_Videoalbums" } }
+            },
+            [_c("span", [_vm._v("Видеогалерея")])]
+          ),
+          _vm._v(" "),
+          _c(
+            "router-link",
+            {
+              staticClass: "shkola-footer-third",
+              attrs: {
+                to: {
+                  name: "shkola_VideoalbumItem",
+                  params: { id: _vm.videoalbumItem.id }
                 }
-              },
-              [_c("span", [_vm._v(_vm._s(_vm.videoalbumItem.title))])]
-            )
-          ],
-          1
-        )
-      ])
-    ],
-    1
-  )
+              }
+            },
+            [_c("span", [_vm._v(_vm._s(_vm.videoalbumItem.title))])]
+          )
+        ],
+        1
+      )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -56874,6 +56752,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_horizontal_vue_vue_type_template_id_619ec104___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_horizontal_vue_vue_type_template_id_619ec104___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/shkola/layout.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/components/shkola/layout.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _layout_vue_vue_type_template_id_57471cf0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./layout.vue?vue&type=template&id=57471cf0& */ "./resources/js/components/shkola/layout.vue?vue&type=template&id=57471cf0&");
+/* harmony import */ var _layout_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./layout.vue?vue&type=script&lang=js& */ "./resources/js/components/shkola/layout.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _layout_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _layout_vue_vue_type_template_id_57471cf0___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _layout_vue_vue_type_template_id_57471cf0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/shkola/layout.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/shkola/layout.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/shkola/layout.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_layout_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./layout.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/shkola/layout.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_layout_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/shkola/layout.vue?vue&type=template&id=57471cf0&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/shkola/layout.vue?vue&type=template&id=57471cf0& ***!
+  \**********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_layout_vue_vue_type_template_id_57471cf0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./layout.vue?vue&type=template&id=57471cf0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/shkola/layout.vue?vue&type=template&id=57471cf0&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_layout_vue_vue_type_template_id_57471cf0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_layout_vue_vue_type_template_id_57471cf0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

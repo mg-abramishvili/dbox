@@ -1,7 +1,5 @@
 <template>
     <div>
-        <ShkolaHeaderHorizontal />
-
         <div class="container" style="margin-top: 25vh; width: 90vw;">
             <div class="news-item">
                 <div class="row">
@@ -43,8 +41,6 @@
 </template>
 
 <script>
-    import ShkolaHeaderHorizontal from '../partials/header-horizontal'
-
     export default {
         data() {
             return {
@@ -53,9 +49,6 @@
             }
         },
         created() {
-            require('@/../../public/css/bootstrap.min.css');
-            require('@/../../public/css/style-shkola.css');
-
             fetch(`/api/front/newsitem/${this.$route.params.id}`)
                 .then(response => response.json())
                 .then(json => {
@@ -63,7 +56,6 @@
                 });
         },
         components: {
-            ShkolaHeaderHorizontal
         }
     }
 </script>
