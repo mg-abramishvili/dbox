@@ -4,23 +4,23 @@
 
         <div class="container container-index">
             <div class="sortable">
-
+                
                 <swiper ref="ShkolaIndexAllSwiper" :options="swiperOptions">
                     <swiper-slide v-for="page in pages" :key="page.id">
-                        <router-link :to="{name: 'shkola_PageItem', params: {id: page.id}}" class="index-button">
+                        <div @click="GoToPage(page.id)" class="index-button">
                             <div v-if="page.image_as_icon === '1'" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(' + page.image + ')' }"></div>
                             <span v-if="page.image_as_icon === '1'" class="t6-p">{{ page.title }}</span>
                             <span v-if="page.image_as_icon === '0'">{{ page.title }}</span>
-                        </router-link>
+                        </div>
                     </swiper-slide>
 
                     <swiper-slide v-if="settings.module_routes === 'y'">
-                        <router-link :to="{name: 'shkola_Routes'}" class="index-button">
+                        <div @click="GoToRoutes()" class="index-button">
                             <div class="index-button-icon">
                                 <img src="/img/icons/019-home-1.svg">
                             </div>
                             <span>План школы</span>
-                        </router-link>
+                        </div>
                     </swiper-slide>
 
                     <swiper-slide v-if="settings.module_news === 'y'">
@@ -33,30 +33,30 @@
                     </swiper-slide>
 
                     <swiper-slide v-if="settings.module_photoalbums === 'y'">
-                        <router-link :to="{name: 'shkola_Photoalbums'}" class="index-button">
+                        <div @click="GoToPhotoalbums()" class="index-button">
                             <div class="index-button-icon">
                                 <img src="/img/icons/001-picture.svg">
                             </div>
                             <span>Фотогалерея</span>
-                        </router-link>
+                        </div>
                     </swiper-slide>
 
                     <swiper-slide v-if="settings.module_videoalbums === 'y'">
-                        <router-link :to="{name: 'shkola_Videoalbums'}" class="index-button">
+                        <div @click="GoToVideoalbums()" class="index-button">
                             <div class="index-button-icon">
                                 <img src="/img/icons/006-video-player.svg">
                             </div>
                             <span>Видеогалерея</span>
-                        </router-link>
+                        </div>
                     </swiper-slide>
 
                     <swiper-slide v-if="settings.module_reviews === 'y'">
-                        <router-link :to="{name: 'shkola_Reviews'}" class="index-button">
+                        <div @click="GoToReviews()" class="index-button">
                             <div class="index-button-icon">
                                 <img src="/img/icons/021-email.svg">
                             </div>
                             <span>Оставить отзыв</span>
-                        </router-link>
+                        </div>
                     </swiper-slide>
 
                     
@@ -105,7 +105,7 @@
             fetch(`/api/front/settings/`)
                 .then(response => response.json())
                 .then(json => {
-                    this.settings = json;
+                    this.settings = json
                 });
             fetch(`/api/front/pages/`)
                 .then(response => response.json())
@@ -126,12 +126,39 @@
                 .then(response => response.json())
                 .then(json => {
                     this.photoalbum_last = json;
-                    if(document.querySelectorAll('.swiper-slide').length > 8) {
-                        this.slider_prev_next = true
-                    } else {
-                        this.slider_prev_next = false
-                    }
+                    setTimeout(() => {
+                        this.swiperArrows()
+                    }, 2000);
                 });
+        },
+        methods: {
+            GoToPage(id) {
+                this.$router.push({name: 'shkola_PageItem', params: {id: id}})
+                this.$refs.ShkolaIndexAllSwiper.$swiper.slideTo(1, false)
+            },
+            GoToPhotoalbums() {
+                this.$router.push({name: 'shkola_Photoalbums'})
+                this.$refs.ShkolaIndexAllSwiper.$swiper.slideTo(1, false)
+            },
+            GoToVideoalbums() {
+                this.$router.push({name: 'shkola_Videoalbums'})
+                this.$refs.ShkolaIndexAllSwiper.$swiper.slideTo(1, false)
+            },
+            GoToReviews() {
+                this.$router.push({name: 'shkola_Reviews'})
+                this.$refs.ShkolaIndexAllSwiper.$swiper.slideTo(1, false)
+            },
+            GoToRoutes() {
+                this.$router.push({name: 'shkola_Routes'})
+                this.$refs.ShkolaIndexAllSwiper.$swiper.slideTo(1, false)
+            },
+            swiperArrows() {
+                if(document.querySelectorAll('.swiper-slide').length > 8) {
+                    this.slider_prev_next = true
+                } else {
+                    this.slider_prev_next = false
+                }
+            },
         },
         computed: {
             swiper() {

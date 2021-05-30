@@ -7,11 +7,11 @@
                 <div class="gallery-list">
                     <swiper ref="VideoalbumsAllSwiper" :options="swiperOptions">
                         <swiper-slide v-for="videoalbum in videoalbums" :key="videoalbum.id" class="gallery-list-item">
-                            <router-link :to="{name: 'shkola_VideoalbumItem', params: {id: videoalbum.id}}">
+                            <a @click="GoToVideoalbum(videoalbum.id)">
                                 <div v-if="videoalbum.cover" class="gallery-list-item-pic" v-bind:style="{ 'background-image': 'url(' + videoalbum.cover + ')' }"></div>
                                 <div v-else class="gallery-list-item-pic" style="background-image: url(/img/Video-Placeholder.jpg)"></div>
                                 <h2>{{ videoalbum.title }}</h2>
-                            </router-link>
+                            </a>
                         </swiper-slide>
                     </swiper>
 
@@ -75,6 +75,12 @@
                         this.swiperOptions.centerInsufficientSlides = true
                     }
                 });
+        },
+        methods: {
+            GoToVideoalbum(id) {
+                this.$router.push({name: 'shkola_VideoalbumItem', params: {id: id}})
+                this.$refs.VideoalbumsAllSwiper.$swiper.slideTo(1, false)
+            },
         },
         computed: {
             swiper() {

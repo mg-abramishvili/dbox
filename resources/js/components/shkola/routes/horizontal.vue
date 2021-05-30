@@ -43,7 +43,7 @@
                     Продолжить маршрут
                 </button>
 
-                <div id="map" style="position: relative; width: 800px; height: 450px;">
+                <div id="map" :class="[`${windowWidth > 1920 ? 'map4K':'map1080'}`]">
                     <div v-for="scheme in schemes" :key="scheme.id" :id="'scheme_image_' + scheme.id" class="scheme_images">
                         <img :src="scheme.image" style="width:800px; height:450px;">
                     </div>
@@ -186,9 +186,12 @@
                 input: '',
                 current_slide: 1,
                 search_panel: true,
+                windowWidth: ''
             }
         },
         created() {
+            this.windowWidth = window.screen.availWidth
+
             require('@/../../public/css/bootstrap.min.css');
             require('@/../../public/css/style-shkola.css');
             
@@ -300,7 +303,7 @@
     }
 
     .route_about {
-        color: #fff;
+        color: #333;
         text-align: center;
     }
 
@@ -309,8 +312,21 @@
         padding: 0.5vh 2vh;
     }
 
-    #map {
+    .map1080 {
+        position: relative;
+        width: 800px;
+        height: 450px;
         transform: scale(1.4);
+        transform-origin: 0 0;
+        margin-top: -2vh;
+        margin-bottom: 11vh;
+    }
+
+    .map4K {
+        position: relative;
+        width: 800px;
+        height: 450px;
+        transform: scale(2.8);
         transform-origin: 0 0;
         margin-top: -2vh;
         margin-bottom: 11vh;

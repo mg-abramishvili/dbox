@@ -18,11 +18,6 @@
                 .then(response => response.json())
                 .then(json => {
                     this.settings = json;
-
-                    /*if(this.settings.theme === 'shkola') {
-                        this.$router.push({ name: 'shkola_Home' })
-                    }*/
-
                 });
         },
         components: {

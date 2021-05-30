@@ -1010,7 +1010,12 @@ footer {
     border: 0.25vh solid #96dbfc;
     padding: 1vh 2vh;
 }
-
+.med-route-sidebar .hg-theme-default .hg-button {
+    height: 3.7vh;
+}
+.med-route-sidebar .hg-theme-default .hg-row:not(:last-child) {
+    margin-bottom: 0.5vh;
+}
 /* ROUTES */
 
 

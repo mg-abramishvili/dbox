@@ -74,6 +74,7 @@
         },
         methods: {
             async createReview(input) {
+                if(input) {
                 this.show_button = false
                 const url = '/api/front/review';
                 const data = { 'review': input }
@@ -109,6 +110,7 @@
                     setTimeout(() =>
                         this.error = false
                     , 2000);
+                }
                 }
             },
             onChange(input) {

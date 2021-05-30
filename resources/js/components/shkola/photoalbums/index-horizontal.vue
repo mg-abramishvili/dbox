@@ -7,10 +7,10 @@
                 <div class="gallery-list">
                     <swiper ref="PhotoalbumsAllSwiper" :options="swiperOptions">
                         <swiper-slide v-for="photoalbum in photoalbums" :key="photoalbum.id" class="gallery-list-item">
-                            <router-link :to="{name: 'shkola_PhotoalbumItem', params: {id: photoalbum.id}}">
+                            <a @click="GoToPhotoalbum(photoalbum.id)">
                                 <div v-for="cover in photoalbum.gallery.slice(0, 1)" :key="cover.id" class="gallery-list-item-pic" v-bind:style="{ 'background-image': 'url(' + cover + ')' }"></div>
                                 <h2>{{ photoalbum.title }}</h2>
-                            </router-link>
+                            </a>
                         </swiper-slide>
                     </swiper>
 
@@ -75,6 +75,12 @@
                         this.swiperOptions.centerInsufficientSlides = true
                     }
                 });
+        },
+        methods: {
+            GoToPhotoalbum(id) {
+                this.$router.push({name: 'shkola_PhotoalbumItem', params: {id: id}})
+                this.$refs.PhotoalbumsAllSwiper.$swiper.slideTo(1, false)
+            },
         },
         computed: {
             swiper() {
