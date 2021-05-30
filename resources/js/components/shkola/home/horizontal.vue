@@ -42,7 +42,7 @@
                     </swiper-slide>
 
                     <swiper-slide v-if="settings.module_videoalbums === 'y'">
-                        <router-link to="/vue-videoalbums/" class="index-button">
+                        <router-link :to="{name: 'shkola_Videoalbums'}" class="index-button">
                             <div class="index-button-icon">
                                 <img src="/img/icons/006-video-player.svg">
                             </div>

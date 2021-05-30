@@ -466,6 +466,8 @@ footer {
     border-radius: 2vh;
     border: 0.3vh solid #c5d0db;
     box-shadow: 0 0vh 0.5vh #c5d0db;
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 .gallery-list .flickity-page-dots {

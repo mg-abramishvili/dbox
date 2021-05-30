@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
-        <keep-alive>
-            <router-view :key="$route.path" />
+        <keep-alive :exclude="/shkola_Routes|shkola_VideoalbumItem/">
+            <router-view :key="$route.path"></router-view> 
         </keep-alive>
     </div>
 </template>

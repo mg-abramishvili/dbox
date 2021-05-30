@@ -170,6 +170,7 @@
     import SimpleKeyboard from "../../shkola/partials/SimpleKeyboard";
 
     export default {
+        name: 'shkola_Routes',
         data() {
             return {
                 settings: {},
