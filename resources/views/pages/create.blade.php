@@ -107,6 +107,11 @@
 
                         @endforeach
                     </div>
+                    @if ($errors->has('types'))
+                        <div class="alert alert-danger">
+                            Укажите тип
+                        </div>
+                    @endif
                 </dd>
             </div>
 

@@ -13,10 +13,14 @@
                                 <h2>{{ videoalbum.title }}</h2>
                             </router-link>
                         </swiper-slide>
-                        <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev"></div>
-                        <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next"></div>
                     </swiper>
+
+                    <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev" style="margin-left: 2vw"></div>
+                    <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next" style="margin-right: 2vw"></div>
                 </div>
+            </div>
+            <div v-else>
+                Видеогалерея пуста
             </div>
         </div>
 

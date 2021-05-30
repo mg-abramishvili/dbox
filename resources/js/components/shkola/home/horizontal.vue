@@ -59,10 +59,12 @@
                         </router-link>
                     </swiper-slide>
 
-                    <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev"></div>
-                    <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next"></div>
+                    
                 </swiper>
 
+                <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev" style="margin-left: 2vw"></div>
+                <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next" style="margin-right: 2vw"></div>
+            
             </div>
         </div>
     </div>
@@ -93,7 +95,7 @@
                         prevEl: '.swiper-button-prev'
                     },
                 },
-                slider_prev_next: false,
+                slider_prev_next: true,
             }
         },
         created() {
@@ -108,8 +110,7 @@
             fetch(`/api/front/pages/`)
                 .then(response => response.json())
                 .then(json => {
-                    this.pages = json;
-                    this.loading = false
+                    this.pages = json
                 });
             fetch(`/api/front/news/`)
                 .then(response => response.json())
@@ -125,6 +126,11 @@
                 .then(response => response.json())
                 .then(json => {
                     this.photoalbum_last = json;
+                    if(document.querySelectorAll('.swiper-slide').length > 8) {
+                        this.slider_prev_next = true
+                    } else {
+                        this.slider_prev_next = false
+                    }
                 });
         },
         computed: {

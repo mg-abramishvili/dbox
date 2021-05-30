@@ -130,6 +130,7 @@ class PageController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
+            'types' => 'required',
         ]);
         
         $data = request()->all();

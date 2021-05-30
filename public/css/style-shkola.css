@@ -436,13 +436,14 @@ footer {
     width: calc(25% - 2vh);
     display: inline-block;
     vertical-align: top;
-    margin: 0 1vh;
+    margin: 0vh;
     white-space: normal;
 }
 
 .gallery-list-item a {
     display: block;
     text-align: center;
+    padding: 0.75vh;
 }
 
 .gallery-list-item a:hover,
