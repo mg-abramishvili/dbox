@@ -10,6 +10,12 @@
                         <div @click="GoToPage(page.id)" class="index-button">
                             <div v-if="page.image_as_icon === '1'" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(' + page.image + ')' }"></div>
                             <span v-if="page.image_as_icon === '1'" class="t6-p">{{ page.title }}</span>
+                            <div v-if="page.image_as_icon === '0' && page.icons[0]" class="index-button-icon">
+                                <img :src="page.icons[0].icon">
+                            </div>
+                            <div v-if="page.image_as_icon === '0' && page.icons.length <= 0" class="index-button-icon">
+                                <img src="/img/icons/029-information.svg">
+                            </div>
                             <span v-if="page.image_as_icon === '0'">{{ page.title }}</span>
                         </div>
                     </swiper-slide>
@@ -24,12 +30,12 @@
                     </swiper-slide>
 
                     <swiper-slide v-if="settings.module_news === 'y'">
-                        <router-link to="/vue-news/" class="index-button">
+                        <div @click="GoToNews()" class="index-button">
                             <div class="index-button-icon">
                                 <img src="/img/icons/002-newspaper.svg">
                             </div>
                             <span>Новости</span>
-                        </router-link>
+                        </div>
                     </swiper-slide>
 
                     <swiper-slide v-if="settings.module_photoalbums === 'y'">
@@ -149,6 +155,11 @@
             },
             GoToRoutes() {
                 this.$router.push({name: 'shkola_Routes'})
+                this.$refs.ShkolaIndexAllSwiper.$swiper.slideTo(1, false)
+                this.$parent.reset_routes = true
+            },
+            GoToNews() {
+                this.$router.push({name: 'shkola_News'})
                 this.$refs.ShkolaIndexAllSwiper.$swiper.slideTo(1, false)
             },
             swiperArrows() {

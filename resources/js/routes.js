@@ -6,6 +6,8 @@ import shkola_Photoalbums from './components/shkola/photoalbums/index-horizontal
 import shkola_PhotoalbumItem from './components/shkola/photoalbums/show-horizontal';
 import shkola_Videoalbums from './components/shkola/videoalbums/index-horizontal';
 import shkola_VideoalbumItem from './components/shkola/videoalbums/show-horizontal';
+import shkola_News from './components/shkola/news/index-horizontal';
+import shkola_NewsItem from './components/shkola/news/show-horizontal';
 
 export const routes = [
     {
@@ -21,7 +23,7 @@ export const routes = [
     {
         path: '/vue-app/shkola/routes',
         name: 'shkola_Routes',
-        component: shkola_Routes
+        component: shkola_Routes,
     },
     {
         path: '/vue-app/shkola/reviews',
@@ -47,5 +49,15 @@ export const routes = [
         path: '/vue-app/shkola/videoalbum/:id',
         name: 'shkola_VideoalbumItem',
         component: shkola_VideoalbumItem
+    },
+    {
+        path: '/vue-app/shkola/news',
+        name: 'shkola_News',
+        component: shkola_News
+    },
+    {
+        path: '/vue-app/shkola/news_item/:id',
+        name: 'shkola_NewsItem',
+        component: shkola_NewsItem
     },
 ];

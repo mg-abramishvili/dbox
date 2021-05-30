@@ -68,8 +68,8 @@
                     @endif
 
                     @if($settings->module_routes == 'y')
-                    <li class="nav-item {{ Request::is('r01routes') ? 'active' : '' }}">
-                        <a href="{{ url('/r01routes') }}" class="nav-link">↳ Маршруты от К1</a>
+                    <li class="nav-item {{ Request::is('routes') ? 'active' : '' }}">
+                        <a href="{{ url('/routes') }}" class="nav-link">↳ Маршруты от К1</a>
                     </li>
                     @endif
 

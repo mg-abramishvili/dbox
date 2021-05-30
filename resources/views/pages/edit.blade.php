@@ -98,8 +98,8 @@
                         @else
                             <div class="col-3 type-radio">
                                 <div class="radio">
-                                <input name="types" id="{{ $type->id }}" type="radio" @foreach($page->types as $t)@if($type->id == $t->id)checked @endif @endforeach value="{{ $type->id }}">
-                                <label for="{{ $type->id }}">
+                                <input name="types" id="type{{ $type->id }}" type="radio" @foreach($page->types as $t)@if($type->id == $t->id)checked @endif @endforeach value="{{ $type->id }}">
+                                <label for="type{{ $type->id }}">
                                     <img src="{{ $type->image }}" style="width:100%">
                                     <span>{{ $type->type }}</span>
                                 </label>

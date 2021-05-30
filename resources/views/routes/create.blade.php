@@ -74,7 +74,7 @@
             <div class="map">
                 <img id="imageToSwap" src="/img/schemeblank.jpg"/>
             </div>
-            <svg class="map-path" viewbox="0 0 800 450"></svg>
+            <svg class="map-path" viewBox="0 0 800 450"></svg>
         </div>
     </div>
 
@@ -83,52 +83,34 @@
             <div class="map2">
                 <img id="imageToSwap2" src="/img/schemeblank.jpg"/>
             </div>
-            <svg class="map-path2" viewbox="0 0 800 450"></svg>
+            <svg class="map-path2" viewBox="0 0 800 450"></svg>
         </div>
     </div>
 
     @if ($errors->has('x_01'))
-                        <div class="alert alert-danger">
-                            <!--{{ $errors->first('x_01') }}-->
-                            Нарисуйте маршрут
-                        </div>
-                    @endif
+        <div class="alert alert-danger">
+            Нарисуйте маршрут
+        </div>
+    @endif
 
-    <div>
+    <div class="p-4">
         <div class="row align-items-center mb-4">
             <div class="col-6">
                 <h1>Добавление маршрута</h1>
             </div>
         </div>
 
-        <form action="/r10routes" method="post" enctype="multipart/form-data">@csrf
+        <form action="/routes" method="post" enctype="multipart/form-data">@csrf
             
-            <div class="row align-items-center mb-2" style="display:none;">
+            <div class="row align-items-center mb-2">
                 <dt class="col-sm-3">
                     Название
                 </dt>
                 <dd class="col-sm-9">
-                    <input type="text" class="form-control" name="title" id="title" value="T10 -> ">
-                </dd>
-            </div>
-
-            <div class="row align-items-center mb-2">
-                <dt class="col-sm-3">
-                    Магазин
-                </dt>
-                <dd class="col-sm-9">
-                    <select name="stores" class="form-control" onchange="$('#title').attr('value', this.options[this.selectedIndex].title);">
-                        <option disabled selected value>Выберите магазин</option>
-                        @foreach($stores as $store)
-                            @if(!count($store->r10routes))
-                                <option value="{{ $store->id }}" title="T10 -> {{ $store->title }}">{{ $store->title }}</option>
-                            @endif
-                        @endforeach
-                    </select>
-                    @if ($errors->has('stores'))
+                    <input type="text" class="form-control" name="title" id="title">
+                    @if ($errors->has('title'))
                         <div class="alert alert-danger">
-                            <!--{{ $errors->first('stores') }}-->
-                            Укажите магазин
+                            Укажите название
                         </div>
                     @endif
                 </dd>
@@ -136,11 +118,11 @@
 
             <div class="row align-items-center mb-2">
                 <dt class="col-sm-3">
-                    Схема
+                    План
                 </dt>
                 <dd class="col-sm-9">
                     <select name="scheme_id" class="form-control" onchange="$('#imageToSwap').attr('src', this.options[this.selectedIndex].title);">
-                        <option title="/img/schemeblank.jpg" disabled selected value>Выберите схему</option>
+                        <option title="/img/schemeblank.jpg" disabled selected value>Выберите план</option>
                         @foreach($schemes as $scheme)
                             <option value="{{ $scheme->id }}" title="{{ $scheme->image }}">{{ $scheme->title }}</option>
                         @endforeach
@@ -148,7 +130,7 @@
                     @if ($errors->has('scheme_id'))
                         <div class="alert alert-danger">
                             <!--{{ $errors->first('scheme_id') }}-->
-                            Укажите схему
+                            Укажите план
                         </div>
                     @endif
                 </dd>
@@ -156,11 +138,11 @@
 
             <div class="row align-items-center mb-2">
                 <dt class="col-sm-3">
-                    Схема 2
+                    План 2
                 </dt>
                 <dd class="col-sm-9">
                     <select name="scheme2_id" class="form-control" onchange="$('#imageToSwap2').attr('src', this.options[this.selectedIndex].title);">
-                        <option title="/img/schemeblank.jpg" selected="selected">Выберите схему</option>
+                        <option title="/img/schemeblank.jpg" selected="selected">Выберите второй план</option>
                         @foreach($schemes as $scheme)
                             <option value="{{ $scheme->id }}" title="{{ $scheme->image }}">{{ $scheme->title }}</option>
                         @endforeach
@@ -175,26 +157,26 @@
                 <dd class="col-sm-9">
                     <div class="row">
                         <div class="col-6">
-                            <label for="t_1_begin">Текст к начальной точке Схемы 1</label>
+                            <label for="t_1_begin">Текст к начальной точке Плана 1</label>
                             <input type="text" class="form-control mb-2" name="t_1_begin" id="title" value="Вы здесь">
                         </div>
                         <div class="col-6">
-                            <label for="t_1_end">Текст к конечной точке Схемы 1</label>
+                            <label for="t_1_end">Текст к конечной точке Плана 1</label>
                             <input type="text" class="form-control mb-2" name="t_1_end" id="title" value="Вы пришли">
                         </div>
                         <div class="col-6">
-                            <label for="t_2_begin">Текст к начальной точке Схемы 2</label>
+                            <label for="t_2_begin">Текст к начальной точке Плана 2</label>
                             <input type="text" class="form-control" name="t_2_begin" id="title" value="Вы здесь">
                         </div>
                         <div class="col-6">
-                            <label for="t_2_end">Текст к конечной точке Схемы 2</label>
+                            <label for="t_2_end">Текст к конечной точке Плана 2</label>
                             <input type="text" class="form-control" name="t_2_end" id="title" value="Вы пришли">
                         </div>
                     </div>
                 </dd>
             </div>
 
-            <div style="display:none;">
+            <div style="display: none;">
             <div class="row align-items-center mb-2">
                 <dt class="col-sm-3">
                     x_01
@@ -1098,10 +1080,10 @@
 
             $(element).remove();
 
-            $("#x_"+tstr+"").val(x).change();
-            $("#y_"+tstr+"").val(y).change();
-            $("#p_x_"+tstr+"").val(previousx).change();
-            $("#p_y_"+tstr+"").val(previousy).change();
+            $("#x_"+tstr+"").val(x.toString().substring(0,3).split('.').join("")).change();
+            $("#y_"+tstr+"").val(y.toString().substring(0,3).split('.').join("")).change();
+            $("#p_x_"+tstr+"").val(previousx.toString().substring(0,3).split('.').join("")).change();
+            $("#p_y_"+tstr+"").val(previousy.toString().substring(0,3).split('.').join("")).change();
             
         });
     });
@@ -1136,10 +1118,10 @@
 
             $(element2).remove();
 
-            $("#x_1"+tstr2+"").val(x2).change();
-            $("#y_1"+tstr2+"").val(y2).change();
-            $("#p_x_1"+tstr2+"").val(previousx2).change();
-            $("#p_y_1"+tstr2+"").val(previousy2).change();
+            $("#x_1"+tstr2+"").val(x2.toString().substring(0,3).split('.').join("")).change();
+            $("#y_1"+tstr2+"").val(y2.toString().substring(0,3).split('.').join("")).change();
+            $("#p_x_1"+tstr2+"").val(previousx2.toString().substring(0,3).split('.').join("")).change();
+            $("#p_y_1"+tstr2+"").val(previousy2.toString().substring(0,3).split('.').join("")).change();
             
         });
     });

@@ -9,9 +9,9 @@ use App\Models\Photoalbum;
 use App\Models\Videoalbum;
 use App\Models\Setting;
 use App\Models\Scheme;
-use App\Models\R01route;
+use App\Models\Route;
 use App\Models\Banner;
-use App\Http\Resources\R01routeResource;
+use App\Http\Resources\RouteResource;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -23,7 +23,7 @@ class FrontController extends Controller
 
     public function pages()
     {
-        return Page::orderBy('created_at', 'asc')->where('parent_id', NULL)->get();
+        return Page::with('icons')->orderBy('created_at', 'asc')->where('parent_id', NULL)->get();
     }
 
     public function pages_all()
@@ -33,7 +33,7 @@ class FrontController extends Controller
 	
 	public function pageItem($id)
     {
-        return Page::where('id', $id)->with('types', 'children')->first();
+        return Page::where('id', $id)->with('types', 'children.icons')->first();
     }
 
     public function news()
@@ -91,13 +91,13 @@ class FrontController extends Controller
         return Scheme::where('id', $id)->first();
     }
 	
-	public function r01routes()
+	public function routes()
 	{
-		return R01routeResource::collection(R01route::with('schemes')->orderBy('created_at', 'asc')->get());
+		return RouteResource::collection(Route::with('schemes')->orderBy('created_at', 'asc')->get());
 	}
 	
-	public function r01routeItem($id)
+	public function routeItem($id)
     {
-        return R01route::where('id', $id)->with('schemes', 'schemes2')->first();
+        return Route::where('id', $id)->with('schemes', 'schemes2')->first();
     }
 }

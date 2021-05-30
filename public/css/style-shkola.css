@@ -759,8 +759,17 @@ footer {
 }
 
 .type-6 .user-pages-item-item img {
-    width: 40%;
-    margin-bottom: 3vh;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    max-width: 70%;
+    max-height: 70%;
+    left: 0;
+    right: 0;
+    display: block;
+    margin: 0 auto;
 }
 
 .t6-p {
@@ -1050,6 +1059,18 @@ footer {
 
 .keyboard-reviews .keyboard .spacebutton {
     width: 17vh;
+}
+
+.keyboard-reviews .hg-theme-default {
+    padding: 0.5vh;
+}
+
+.keyboard-reviews .hg-theme-default .hg-button {
+    height: 4vh;
+}
+
+.keyboard-reviews .med-route-sidebar .hg-theme-default .hg-row:not(:last-child) {
+    margin-bottom: 1vh;
 }
 
 .review-form input[type="text"] {

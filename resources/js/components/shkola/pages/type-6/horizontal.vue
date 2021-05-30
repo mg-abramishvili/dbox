@@ -9,6 +9,12 @@
                 <div @click="GoToPage(child.id)" class="index-button">
                     <div v-if="child.image_as_icon === '1'" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(' + child.image + ')' }"></div>
                     <span v-if="child.image_as_icon === '1'" class="t6-p">{{ child.title }}</span>
+                    <div v-if="child.image_as_icon === '0' && child.icons[0]" class="index-button-icon">
+                        <img :src="child.icons[0].icon">
+                    </div>
+                    <div v-if="child.image_as_icon === '0' && child.icons.length <= 0" class="index-button-icon">
+                        <img src="/img/icons/029-information.svg">
+                    </div>
                     <span v-if="child.image_as_icon === '0'">{{ child.title }}</span>
                 </div>
             </swiper-slide>

@@ -27,6 +27,7 @@
 
 <script>
     export default {
+        name: 'shkola_Header',
         data() {
             return {
                 settings: {},
@@ -35,7 +36,7 @@
                 date: '',
             }
         },
-                methods:{
+        methods:{
             time_current:function() {
                 this.time = moment().format('H:mm')
             },

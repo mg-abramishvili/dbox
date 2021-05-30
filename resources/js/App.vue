@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <keep-alive :exclude="/shkola_Routes|shkola_VideoalbumItem/">
+        <keep-alive :exclude="/shkola_VideoalbumItem/">
             <router-view :key="$route.path"></router-view> 
         </keep-alive>
     </div>
@@ -10,7 +10,8 @@
     export default {
         data() {
             return {
-                settings: {}
+                settings: {},
+                reset_routes: true,
             }
         },
         created() {

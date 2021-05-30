@@ -27,7 +27,7 @@ Route::get('/front/banners','App\Http\Controllers\Api\FrontController@banners');
 Route::get('/front/schemes','App\Http\Controllers\Api\FrontController@schemes');
 Route::get('/front/scheme/{id}','App\Http\Controllers\Api\FrontController@schemeItem');
 
-Route::get('/front/r01routes','App\Http\Controllers\Api\FrontController@r01routes');
-Route::get('/front/r01route/{id}','App\Http\Controllers\Api\FrontController@r01routeItem');
+Route::get('/front/routes','App\Http\Controllers\Api\FrontController@routes');
+Route::get('/front/route/{id}','App\Http\Controllers\Api\FrontController@routeItem');
 
 Route::post('/front/review', 'App\Http\Controllers\FrontReviewController@store_post');
