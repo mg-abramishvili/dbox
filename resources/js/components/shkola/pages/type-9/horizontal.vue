@@ -3,10 +3,9 @@
         
         <div class="row">
             <div class="col-12">
-                <!--<h1 class="h1-page" style="margin-top: 2vh;">{{ page.title }}</h1>-->
                 <div class="page-detail-text">
-                    
                     <div class="excel-item">
+                        <h1 class="h1-page" style="font-weight: 700; font-size: 4vh;">{{ page.title }}</h1>
                         <xlsx-read :file="excel_file">
                             <xlsx-table />
                         </xlsx-read>

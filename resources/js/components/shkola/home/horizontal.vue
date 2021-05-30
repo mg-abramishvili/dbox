@@ -84,7 +84,6 @@
                 schemes: [],
                 banners: [],
                 photoalbum_last: {},
-                loading: true,
                 swiperOptions: {
                     slidesPerView: 4,
                     slidesPerColumn: 2,

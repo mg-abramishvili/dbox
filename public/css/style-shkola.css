@@ -218,7 +218,7 @@ border-color: #777777 transparent transparent transparent;
     border-radius: 2vh;
     border: 0.3vh solid #c5d0db;
     box-shadow: 0 0vh 0.5vh #c5d0db;
-    width: 21vw;
+    width: auto;
     margin: 0 0.7vw;
     margin-bottom: 3vh;
 }
@@ -839,6 +839,9 @@ footer {
     overflow-y: scroll;
     text-align: center;
     background-color: #fff;
+    border-radius: 2vh;
+    border: 0.3vh solid #c5d0db;
+    box-shadow: 0 0vh 0.5vh #c5d0db;
     padding: 2vh;
 }
 
@@ -848,7 +851,7 @@ footer {
     display: inline-block;
     overflow-x: auto;
     text-align: left;
-    font-size: 1.1vh;
+    font-size: 1.3vh;
 }
 
 .excel-item table tr {
