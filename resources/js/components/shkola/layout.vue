@@ -16,6 +16,7 @@
             return {
                 settings: {},
                 reset_routes: true,
+                reset_video: true,
             }
         },
         created() {

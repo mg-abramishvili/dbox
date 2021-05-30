@@ -406,6 +406,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
       this.$refs.ShkolaIndexAllSwiper.$swiper.slideTo(1, false);
+      this.$parent.reset_video = true;
     },
     GoToPhotoalbums: function GoToPhotoalbums() {
       this.$router.push({
@@ -484,7 +485,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       settings: {},
-      reset_routes: true
+      reset_routes: true,
+      reset_video: true
     };
   },
   created: function created() {
@@ -1122,11 +1124,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      page: {}
+      page: {},
+      paused: null
     };
   },
   created: function created() {
@@ -1137,6 +1139,33 @@ __webpack_require__.r(__webpack_exports__);
     }).then(function (json) {
       _this.page = json;
     });
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
+    this.$watch("$parent.$parent.reset_video", function (new_value, old_value) {
+      //console.log(old_value + '->' + new_value)
+      if (old_value === false && new_value === true) {
+        _this2.resetVideo();
+      }
+    });
+  },
+  computed: {
+    playing: function playing() {
+      return !this.paused;
+    }
+  },
+  methods: {
+    played: function played() {
+      this.$parent.$parent.reset_video = false;
+    },
+    resetVideo: function resetVideo() {
+      if (document.getElementById("videoElement")) {
+        var video = document.getElementById("videoElement");
+        video.load();
+        video.play();
+      }
+    }
   },
   components: {}
 });
@@ -36808,11 +36837,13 @@ var render = function() {
       _c("video", {
         attrs: {
           src: _vm.page.video,
+          id: "videoElement",
           autoplay: "",
           controls: "",
           disablePictureInPicture: "",
           controlsList: "nodownload"
-        }
+        },
+        on: { playing: _vm.played }
       })
     ])
   ])

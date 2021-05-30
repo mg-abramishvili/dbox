@@ -132,6 +132,7 @@
             GoToPage(id) {
                 this.$router.push({name: 'shkola_PageItem', params: {id: id}})
                 this.$refs.ShkolaIndexAllSwiper.$swiper.slideTo(1, false)
+                this.$parent.reset_video = true
             },
             GoToPhotoalbums() {
                 this.$router.push({name: 'shkola_Photoalbums'})
