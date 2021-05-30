@@ -3,6 +3,7 @@
 
         <div class="row">
             <div class="col-12" style="margin-top: -2vh;">
+                <button @click="reload()">reload</button>
                 <!--<h1 class="h1-page">{{ page.title }}</h1>-->
                 <div class="text" style="box-shadow: none; border: 0; overflow: hidden; width: auto; height: 67vh">
                     <iframe :src="'/lib/pdfjs/web/viewer.html?file=' + page.pdf" height="100%" width="100%" style="border: none;"></iframe>

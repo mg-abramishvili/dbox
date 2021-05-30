@@ -839,6 +839,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -35049,6 +35050,18 @@ var render = function() {
         { staticClass: "col-12", staticStyle: { "margin-top": "-2vh" } },
         [
           _c(
+            "button",
+            {
+              on: {
+                click: function($event) {
+                  return _vm.reload()
+                }
+              }
+            },
+            [_vm._v("reload")]
+          ),
+          _vm._v(" "),
+          _c(
             "div",
             {
               staticClass: "text",
@@ -55426,7 +55439,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_shkola_pages_PageItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/shkola/pages/PageItem */ "./resources/js/components/shkola/pages/PageItem.vue");
 /* harmony import */ var _components_shkola_routes_horizontal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/shkola/routes/horizontal */ "./resources/js/components/shkola/routes/horizontal.vue");
 /* harmony import */ var _components_shkola_photoalbums_index_horizontal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/shkola/photoalbums/index-horizontal */ "./resources/js/components/shkola/photoalbums/index-horizontal.vue");
-/* harmony import */ var _components_shkola_photoalbums_show_horizontal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/shkola/photoalbums/show-horizontal */ "./resources/js/components/shkola/photoalbums/show-horizontal.vue");
+/* harmony import */ var _components_shkola_photoalbums_show_horizontal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/shkola/photoalbums/show-horizontal */ "./resources/js/components/shkola/photoalbums/show-horizontal.vue");
 
 
 
@@ -55451,7 +55464,7 @@ var routes = [{
 }, {
   path: '/vue-app/shkola/photoalbum/:id',
   name: 'shkola_PhotoalbumItem',
-  component: _components_shkola_photoalbums_show_horizontal__WEBPACK_IMPORTED_MODULE_5__["default"]
+  component: _components_shkola_photoalbums_show_horizontal__WEBPACK_IMPORTED_MODULE_4__["default"]
 }];
 
 /***/ }),
