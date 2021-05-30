@@ -354,14 +354,14 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
+    __webpack_require__(/*! @/../../public/css/bootstrap.min.css */ "./public/css/bootstrap.min.css");
+
+    __webpack_require__(/*! @/../../public/css/style-shkola.css */ "./public/css/style-shkola.css");
+
     fetch("/api/front/settings/").then(function (response) {
       return response.json();
     }).then(function (json) {
       _this.settings = json;
-
-      __webpack_require__(/*! @/../../public/css/bootstrap.min.css */ "./public/css/bootstrap.min.css");
-
-      __webpack_require__(/*! @/../../public/css/style-shkola.css */ "./public/css/style-shkola.css");
     });
     fetch("/api/front/pages/").then(function (response) {
       return response.json();
@@ -476,14 +476,14 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
+    __webpack_require__(/*! @/../../public/css/bootstrap.min.css */ "./public/css/bootstrap.min.css");
+
+    __webpack_require__(/*! @/../../public/css/style-shkola.css */ "./public/css/style-shkola.css");
+
     fetch("/api/front/settings/").then(function (response) {
       return response.json();
     }).then(function (json) {
       _this.settings = json;
-
-      __webpack_require__(/*! @/../../public/css/bootstrap.min.css */ "./public/css/bootstrap.min.css");
-
-      __webpack_require__(/*! @/../../public/css/style-shkola.css */ "./public/css/style-shkola.css");
     });
     fetch("/api/front/page/".concat(this.$route.params.id)).then(function (response) {
       return response.json();
