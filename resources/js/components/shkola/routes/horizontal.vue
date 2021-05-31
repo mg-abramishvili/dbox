@@ -27,7 +27,23 @@
             </div>
             <div class="col-8" style="order: 1;"> 
                 <div class="route_about">
-                    
+                
+                    <template v-for="ra_cr in current_route.schemes">
+                        <template v-if="ra_cr.id.toString() === current_floor">
+                            {{ra_cr.title }}
+                        </template>
+                    </template>
+
+                    <template v-if="current_route.schemes2">
+                        <template v-for="ra_cr in current_route.schemes2">
+                            <template v-if="ra_cr.id.toString() === current_floor">
+                                {{ra_cr.title }}
+                            </template>
+                        </template>
+                    </template>
+
+                    <br>
+                    {{current_route.title}}
                 </div>
 
                 <button v-if="current_slide === 2" @click="PrevScheme(current_route)" class="prevnextbutton prev_button">

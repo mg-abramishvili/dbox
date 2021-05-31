@@ -2063,6 +2063,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'shkola_Routes',
@@ -37683,7 +37699,51 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-8", staticStyle: { order: "1" } }, [
-            _c("div", { staticClass: "route_about" }),
+            _c(
+              "div",
+              { staticClass: "route_about" },
+              [
+                _vm._l(_vm.current_route.schemes, function(ra_cr) {
+                  return [
+                    ra_cr.id.toString() === _vm.current_floor
+                      ? [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(ra_cr.title) +
+                              "\n                    "
+                          )
+                        ]
+                      : _vm._e()
+                  ]
+                }),
+                _vm._v(" "),
+                _vm.current_route.schemes2
+                  ? [
+                      _vm._l(_vm.current_route.schemes2, function(ra_cr) {
+                        return [
+                          ra_cr.id.toString() === _vm.current_floor
+                            ? [
+                                _vm._v(
+                                  "\n                            " +
+                                    _vm._s(ra_cr.title) +
+                                    "\n                        "
+                                )
+                              ]
+                            : _vm._e()
+                        ]
+                      })
+                    ]
+                  : _vm._e(),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.current_route.title) +
+                    "\n            "
+                )
+              ],
+              2
+            ),
             _vm._v(" "),
             _vm.current_slide === 2
               ? _c(
