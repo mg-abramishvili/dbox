@@ -22,7 +22,7 @@
             <template v-if="page.parent_id">
                 <template v-for="parent_page in pages">
                     <template v-if="parent_page.id == page.parent_id">
-                        <router-link :to="{name: 'shkola_PageItem', params: {id: parent_page.id}}" class="gal-button">
+                        <router-link :to="{name: 'default_PageItem', params: {id: parent_page.id}}" class="gal-button">
                             <img src="/img/icon-footer-back.svg">
                         </router-link>
                     </template>

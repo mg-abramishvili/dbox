@@ -524,6 +524,8 @@ main {
 .type-2 .page-detail-image {
     height: 75vh;
     border-radius: 1vh;
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 .type-2 .page-detail-text {
@@ -640,9 +642,19 @@ main {
 }
 
 .type-6 .user-pages-item-item {
-    height: 40vh;
+    height: auto;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+.type-6 .index-button {
+    height: 32vh;
+    margin: 1vh;
     background-color: #ffc940;
-    margin: 6vh 3vh;
+    border-radius: 1vh;
+    padding: 1vh;
+    padding-top: 5vh;
 }
 
 .type-6 .user-pages-item-item img {
