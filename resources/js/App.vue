@@ -3,11 +3,16 @@
         <template v-if="settings.theme === 'shkola'">
             <ShkolaLayout />
         </template>
+
+        <template v-if="settings.theme === 'default'">
+            <DefaultLayout />
+        </template>
     </div>
 </template>
 
 <script>
     import ShkolaLayout from './components/shkola/layout';
+    import DefaultLayout from './components/default/layout';
 
     export default {
         data() {
@@ -23,7 +28,8 @@
                 });
         },
         components: {
-            ShkolaLayout
+            ShkolaLayout,
+            DefaultLayout
         }
     }
 </script>

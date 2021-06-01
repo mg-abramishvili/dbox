@@ -1,3 +1,4 @@
+// Школа
 import shkola_Home from './components/shkola/home/horizontal.vue';
 import shkola_PageItem from './components/shkola/pages/PageItem';
 import shkola_Routes from './components/shkola/routes/horizontal';
@@ -9,7 +10,11 @@ import shkola_VideoalbumItem from './components/shkola/videoalbums/show-horizont
 import shkola_News from './components/shkola/news/index-horizontal';
 import shkola_NewsItem from './components/shkola/news/show-horizontal';
 
+// Стандарт
+import default_Home from './components/default/home/horizontal.vue';
+
 export const routes = [
+    // Школа
     {
         path: '/vue-app/shkola/index',
         name: 'shkola_Home',
@@ -59,5 +64,12 @@ export const routes = [
         path: '/vue-app/shkola/news_item/:id',
         name: 'shkola_NewsItem',
         component: shkola_NewsItem
+    },
+
+    // Стандарт
+    {
+        path: '/vue-app/default/index',
+        name: 'default_Home',
+        component: default_Home
     },
 ];
