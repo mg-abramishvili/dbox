@@ -25,6 +25,14 @@
                 .then(response => response.json())
                 .then(json => {
                     this.settings = json;
+
+                    if(this.settings.theme === 'default') {
+                        this.$router.push({name: 'default_Home'})
+                    }
+                    if(this.settings.theme === 'shkola') {
+                        this.$router.push({name: 'shkola_Home'})
+                    }
+
                 });
         },
         components: {

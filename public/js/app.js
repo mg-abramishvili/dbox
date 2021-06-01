@@ -251,6 +251,18 @@ __webpack_require__.r(__webpack_exports__);
       return response.json();
     }).then(function (json) {
       _this.settings = json;
+
+      if (_this.settings.theme === 'default') {
+        _this.$router.push({
+          name: 'default_Home'
+        });
+      }
+
+      if (_this.settings.theme === 'shkola') {
+        _this.$router.push({
+          name: 'shkola_Home'
+        });
+      }
     });
   },
   components: {
