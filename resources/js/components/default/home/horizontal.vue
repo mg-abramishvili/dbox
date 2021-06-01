@@ -4,29 +4,35 @@
 
         <div class="col-6">
             <div class="row">
-                <div class="col">
-                    <a class="photogalleries">
-                        <img src="/img/icon-photogal.svg">
-                        Фотогалерея
-                    </a>
+                <div v-if="settings.module_photoalbums == 'y' || settings.module_videoalbums == 'y'" class="col">
+                    <template v-if="settings.module_photoalbums == 'y'">
+                        <a class="photogalleries" :class="[`${settings.module_videoalbums == 'n' ? 'photogalleries-full':''} ${settings.module_news == 'n' ? 'photogalleries-nonews':''}`]">
+                            <img src="/img/icon-photogal.svg">
+                            Фотогалерея
+                        </a>
+                    </template>
 
-                    <a class="videogalleries">
-                        <img src="/img/icon-videogal.svg">
-                        Видеогалерея
-                    </a>
+                    <template v-if="settings.module_videoalbums == 'y'">
+                        <a class="videogalleries" :class="[`${settings.module_photoalbums == 'n' ? 'videogalleries-full':''} ${settings.module_news == 'n' ? 'videogalleries-nonews':''}`]">
+                            <img src="/img/icon-videogal.svg">
+                            Видеогалерея
+                        </a>
+                    </template>
                 </div>
 
-                <div class="col-7">
-                    <a class="news">
-                        <img src="/img/icon-news.svg">
-                        Новости
-                    </a>
-                </div>
+                <template v-if="settings.module_news == 'y'">
+                    <div :class="[`${settings.module_photoalbums == 'y' || settings.module_videoalbums == 'y' ? 'col-7':'col-12'}`]">
+                        <a class="news" :class="[`${settings.module_photoalbums == 'n' && settings.module_videoalbums == 'n' ? 'news-nogals':''}`]">
+                            <img src="/img/icon-news.svg">
+                            Новости
+                        </a>
+                    </div>
+                </template>
 
             </div>
         </div>
 
-        <div class="col-6">
+        <div :class="[`${settings.module_photoalbums == 'n' && settings.module_videoalbums == 'n' && settings.module_news == 'n' ? 'col-12':'col-6'}`]">
             <div class="user-pages">
                 <swiper ref="DefaultIndexAllSwiper" :options="swiperOptions">
                     <swiper-slide v-for="page in pages" :key="page.id" class="user-pages-item-item">

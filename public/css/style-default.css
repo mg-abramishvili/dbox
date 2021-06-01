@@ -48,6 +48,7 @@ main {
 .header {
     margin-top: 4vh;
     margin-bottom: 4vh;
+    height: 7vh;
 }
 
 .header-logo a {
@@ -58,7 +59,7 @@ main {
     width: auto;
     height: auto;
     max-width: 15vh;
-    max-height: 5vh;
+    max-height: 7vh;
 }
 
 .header-text {
@@ -117,7 +118,7 @@ main {
 .photogalleries {
     background-color: #45c99f;
     border-radius: 1vh;
-    height: 40vh;
+    height: 38.25vh;
     margin-bottom: 3.5vh;
     display: block;
     padding-top: 8vh;
@@ -139,12 +140,8 @@ main {
     margin-bottom: 4vh;
 }
 
-.photogalleries-nonews img {
-    width: 40%;
-}
-
 .photogalleries-full {
-    height: 83.5vh;
+    height: 80vh;
     padding-top: 28vh;
 }
 
@@ -152,10 +149,14 @@ main {
     padding-top: 22vh;
 }
 
+.photogalleries-nonews img {
+    width: 40%;
+}
+
 .videogalleries {
     background-color: #4592c9;
     border-radius: 1vh;
-    height: 40vh;
+    height: 38.25vh;
     display: block;
     padding-top: 8vh;
     text-align: center;
@@ -177,13 +178,21 @@ main {
 }
 
 .videogalleries-full {
-    height: 83.5vh;
+    height: 80vh;
     padding-top: 28vh;
+}
+
+.videogalleries-nonews {
+    padding-top: 22vh;
+}
+
+.videogalleries-nonews img {
+    width: 40%;
 }
 
 .news {
     background-color: #a745c9;
-    height: 83.5vh;
+    height: 80vh;
     border-radius: 1vh;
     display: block;
     text-align: center;
@@ -205,9 +214,17 @@ main {
     margin-bottom: 5vh;
 }
 
+.news-nogals {
+    padding-top: 22vh;
+}
+
+.news-nogals img {
+    width: 40%;
+}
+
 .user-pages {
     background-color: #ffc940;
-    height: 83.5vh;
+    height: 80vh;
     border-radius: 1vh;
 }
 
@@ -217,7 +234,7 @@ main {
 }
 
 .user-pages-item-item {
-    height: 41.5vh;
+    height: 40vh;
     position: relative;
     text-align: center;
     border-radius: 1vh;
@@ -243,7 +260,8 @@ main {
 
 .user-pages-item-item img {
     display: block;
-    width: 40%;
+    width: 15vh;
+    height: 15vh;
     margin: 0 auto;
     margin-bottom: 1vh;
 }
