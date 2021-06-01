@@ -27,10 +27,15 @@
                     this.settings = json;
 
                     if(this.settings.theme === 'default') {
-                        this.$router.push({name: 'default_Home'})
+                        if(this.$route.name !== 'default_Home') {
+                            this.$router.push({name: 'default_Home'})
+                        }
                     }
+                    
                     if(this.settings.theme === 'shkola') {
-                        this.$router.push({name: 'shkola_Home'})
+                        if(this.$route.name !== 'shkola_Home') {
+                            this.$router.push({name: 'shkola_Home'})
+                        }
                     }
 
                 });

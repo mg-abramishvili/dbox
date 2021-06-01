@@ -3,10 +3,10 @@
         <div class="header">
             <div class="row align-items-center">
                 <div class="col-4 header-logo">
-                    <router-link :to="{name: 'deafult_Home'}"><img :src="settings.logo"></router-link>
+                    <router-link :to="{name: 'default_Home'}"><img :src="settings.logo"></router-link>
                 </div>
                 <div class="col-8 header-text">
-                    {{ settings.title }}
+                    <div v-if="settings.title" class="header-title" v-html="settings.title.replace('*','<br>')"></div>
                 </div>
             </div>
         </div>

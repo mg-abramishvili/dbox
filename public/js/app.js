@@ -253,15 +253,19 @@ __webpack_require__.r(__webpack_exports__);
       _this.settings = json;
 
       if (_this.settings.theme === 'default') {
-        _this.$router.push({
-          name: 'default_Home'
-        });
+        if (_this.$route.name !== 'default_Home') {
+          _this.$router.push({
+            name: 'default_Home'
+          });
+        }
       }
 
       if (_this.settings.theme === 'shkola') {
-        _this.$router.push({
-          name: 'shkola_Home'
-        });
+        if (_this.$route.name !== 'shkola_Home') {
+          _this.$router.push({
+            name: 'shkola_Home'
+          });
+        }
       }
     });
   },
@@ -36499,7 +36503,7 @@ var render = function() {
           "div",
           { staticClass: "col-4 header-logo" },
           [
-            _c("router-link", { attrs: { to: { name: "deafult_Home" } } }, [
+            _c("router-link", { attrs: { to: { name: "default_Home" } } }, [
               _c("img", { attrs: { src: _vm.settings.logo } })
             ])
           ],
@@ -36507,9 +36511,14 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("div", { staticClass: "col-8 header-text" }, [
-          _vm._v(
-            "\n                " + _vm._s(_vm.settings.title) + "\n            "
-          )
+          _vm.settings.title
+            ? _c("div", {
+                staticClass: "header-title",
+                domProps: {
+                  innerHTML: _vm._s(_vm.settings.title.replace("*", "<br>"))
+                }
+              })
+            : _vm._e()
         ])
       ])
     ])
