@@ -6,7 +6,7 @@
             <div class="row">
                 <div v-if="settings.module_photoalbums == 'y' || settings.module_videoalbums == 'y'" class="col">
                     <template v-if="settings.module_photoalbums == 'y'">
-                        <a class="photogalleries" :class="[`${settings.module_videoalbums == 'n' ? 'photogalleries-full':''} ${settings.module_news == 'n' ? 'photogalleries-nonews':''}`]">
+                        <a @click="GoToPhotoalbums()" class="photogalleries" :class="[`${settings.module_videoalbums == 'n' ? 'photogalleries-full':''} ${settings.module_news == 'n' ? 'photogalleries-nonews':''}`]">
                             <img src="/img/icon-photogal.svg">
                             Фотогалерея
                         </a>

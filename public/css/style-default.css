@@ -351,6 +351,8 @@ main {
     height: 27vh;
     margin-bottom: 1vh;
     border-radius: 1vh;
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 .gallery-list .flickity-page-dots {

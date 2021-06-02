@@ -15,6 +15,8 @@ import default_Home from './components/default/home/horizontal.vue';
 import default_PageItem from './components/default/pages/PageItem';
 import default_Routes from './components/default/routes/horizontal';
 import default_Reviews from './components/default/reviews/horizontal';
+import default_Photoalbums from './components/default/photoalbums/index-horizontal';
+import default_PhotoalbumItem from './components/default/photoalbums/show-horizontal';
 
 export const routes = [
     // Школа
@@ -89,5 +91,15 @@ export const routes = [
         path: '/vue-app/default/reviews',
         name: 'default_Reviews',
         component: default_Reviews
+    },
+    {
+        path: '/vue-app/default/photoalbums',
+        name: 'default_Photoalbums',
+        component: default_Photoalbums
+    },
+    {
+        path: '/vue-app/default/photoalbum/:id',
+        name: 'default_PhotoalbumItem',
+        component: default_PhotoalbumItem
     },
 ];
