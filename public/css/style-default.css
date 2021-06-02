@@ -729,3 +729,227 @@ main {
 }
 
 /* type 9 */
+
+
+
+
+/* ROUTES */
+
+.key-anim01,
+.key-anim02,
+.key-anim03,
+.key-anim04,
+.key-anim05,
+.key-anim06,
+.key-anim07,
+.key-anim08,
+.key-anim09,
+.key-anim10,
+.key-anim11,
+.key-anim12 {
+    stroke-dasharray: 10;
+    stroke-dashoffset: -2000;
+    animation: Drawpath 20s linear infinite;
+}
+
+@keyframes Drawpath {
+    from {
+        stroke-dashoffset: -2000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.wrapperm {
+    width: 800px;
+    height: 450px;
+    position: relative;
+    margin: 0 auto;
+    overflow: visible;
+    background-color: #fff;
+    transform: scale(1.25);
+    transform-origin: 50% 0%;
+    margin-top: 4vh;
+    background-color: #fff;
+    border-radius: 2vh;
+    border: 0.3vh solid #c5d0db;
+    box-shadow: 0 0vh 0.5vh #c5d0db;
+}
+
+#wrapper-inner {
+    width: 800px;
+    height: 450px;
+    margin-top: 4vh;
+}
+
+.map {
+    margin-top: -4vh;
+}
+
+.map-slide {
+    width: 100%;
+}
+
+.map img {
+    width: 800px;
+    height: 450px;
+    display: block;
+    margin: 0 auto;
+}
+
+.map-path {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 800px;
+    height: 450px;
+}
+
+.med-route-sidebar,
+.shkola-route-sidebar {
+    margin-top: -2vh;
+    background-color: #4592c9;
+    padding: 3vh;
+    width: 99%;
+}
+
+.med-route-sidebar input,
+.shkola-route-sidebar input {
+    width: 100%;
+    padding: 0.5vh;
+    font-size: 2vh;
+}
+
+.keyboard {
+    margin-top: 0.5vh;
+    margin-bottom: 3vh;
+}
+
+.keyboard button {
+    width: 4.2vh;
+    height: 4.2vh;
+    line-height: 4.2vh;
+    margin-bottom: 0.5vh;
+    background-color: #fff;
+    font-size: 1.5vh;
+    text-align: center;
+    padding: 0;
+    border: 0.1vh solid;
+}
+
+.keyboard .globebutton {
+    width: 7vh;
+}
+
+.keyboard .spacebutton {
+    width: 10vh;
+}
+
+#myUL {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    height: 32vh;
+    overflow-y: auto;
+}
+
+#myUL li {
+    display: block;
+    background-color: #fff;
+    margin-bottom: 1vh;
+}
+
+#myUL li a {
+    display: block;
+    color: #222;
+    font-size: 2vh;
+    font-weight: 700;
+    border: 0.25vh solid #96dbfc;
+    padding: 1vh 2vh;
+}
+.med-route-sidebar .hg-theme-default .hg-button {
+    height: 3.7vh;
+}
+.med-route-sidebar .hg-theme-default .hg-row:not(:last-child) {
+    margin-bottom: 0.5vh;
+}
+/* ROUTES */
+
+
+
+/* REVIEWS */
+
+.keyboard-reviews .keyboard {
+    margin-top: 7vh;
+}
+
+.keyboard-reviews .keyboard button {
+    width: 6vh;
+    height: 6vh;
+    line-height: 6vh;
+    font-size: 2.5vh;
+    border-radius: 1vh;
+    border: 0.3vh solid #c5d0db;
+    box-shadow: 0 0vh 0.5vh #c5d0db;
+}
+
+.keyboard-reviews .keyboard button:hover,
+.keyboard-reviews .keyboard button:focus {
+    outline: none;
+}
+
+.keyboard-reviews .keyboard .globebutton {
+    width: 12vh;
+}
+
+.keyboard-reviews .keyboard .spacebutton {
+    width: 17vh;
+}
+
+.keyboard-reviews .hg-theme-default {
+    padding: 0.5vh;
+}
+
+.keyboard-reviews .hg-theme-default .hg-button {
+    height: 4vh;
+}
+
+.keyboard-reviews .med-route-sidebar .hg-theme-default .hg-row:not(:last-child) {
+    margin-bottom: 1vh;
+}
+
+.review-form input[type="text"] {
+    border: 1px solid #333;
+    font-size: 3vh;
+}
+
+.review-form textarea {
+    resize: none;
+    height: 30vh;
+    border: 1px solid #333;
+    font-size: 3vh;
+    border-radius: 2vh;
+    border: 0.3vh solid #c5d0db;
+    box-shadow: 0 0vh 0.5vh #c5d0db;
+    padding: 3vh;
+}
+
+.review-form .btn-shkola {
+    background-color: #5da7fe;
+    color: #fff;
+    font-size: 3vh;
+    padding: 2vh 4vh;
+    border-radius: 1vh;
+}
+
+.review-h1 {
+    font-weight: 700;
+    font-size: 4vh;
+    margin-top: 0 !important;
+    margin-bottom: 5vh !important;
+}
+
+/* REVIEWS */

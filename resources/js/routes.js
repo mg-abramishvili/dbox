@@ -13,6 +13,8 @@ import shkola_NewsItem from './components/shkola/news/show-horizontal';
 // Стандарт
 import default_Home from './components/default/home/horizontal.vue';
 import default_PageItem from './components/default/pages/PageItem';
+import default_Routes from './components/default/routes/horizontal';
+import default_Reviews from './components/default/reviews/horizontal';
 
 export const routes = [
     // Школа
@@ -77,5 +79,15 @@ export const routes = [
         path: '/vue-app/default/pages/:id',
         name: 'default_PageItem',
         component: default_PageItem
+    },
+    {
+        path: '/vue-app/default/routes',
+        name: 'default_Routes',
+        component: default_Routes,
+    },
+    {
+        path: '/vue-app/default/reviews',
+        name: 'default_Reviews',
+        component: default_Reviews
     },
 ];

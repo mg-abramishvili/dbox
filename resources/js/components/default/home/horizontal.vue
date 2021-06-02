@@ -50,6 +50,20 @@
                             {{ page.title }}
                         </a>
                     </swiper-slide>
+
+                    <swiper-slide class="user-pages-item-item">
+                        <a @click="GoToRoutes()">
+                            <img src="/img/icons/003-home.svg">
+                            План здания
+                        </a>
+                    </swiper-slide>
+
+                    <swiper-slide class="user-pages-item-item">
+                        <a @click="GoToReviews()">
+                            <img src="/img/icons/029-information.svg">
+                            Отзывы
+                        </a>
+                    </swiper-slide>
                 </swiper>
 
                 <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev" style="margin-left: 2vw"></div>
