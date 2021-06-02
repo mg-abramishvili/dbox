@@ -113,6 +113,28 @@ main {
     background-color: #A745C9;
 }
 
+
+
+::-webkit-scrollbar {
+    width: 1.5vh;
+}
+
+::-webkit-scrollbar-track {
+    background: #B8BDBD;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffc940;
+    border: 1px solid #B8BDBD;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffc940;
+}
+
+
+
+
 /* MAIN PAGE */
 
 .photogalleries {
@@ -346,20 +368,18 @@ main {
 
 .gallery-detail-item {
     width: 30%;
-    height: 70vh;
+    height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.5;
-    margin: 0 5vh;
+    margin: 0;
 }
 
 .gallery-detail-item img,
 .gallery-detail-item video {
     display: block;
     max-height: 100%;
-    transform: scale(0.25);
-    border-radius: 1.5vh;
+    max-width: 90%;
 }
 
 .gallery-detail-item.is-selected {
@@ -376,6 +396,23 @@ main {
 /* PHOTOGALS */
 
 
+/* VIDEOALBUM */
+
+.videoalbum-detail {
+    width: 100%;
+    text-align: center;
+    margin-top: -2.5vh;
+}
+
+.videoalbum-detail video {
+    width: auto;
+    height: 68.5vh;
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 2vh;
+}
+
+/* VIDEOALBUM */
 
 
 /* NEWS */
@@ -456,23 +493,6 @@ main {
     margin-bottom: 2vh !important;
 }
 
-.news-item-text::-webkit-scrollbar {
-    width: 1.5vh;
-}
-
-.news-item-text::-webkit-scrollbar-track {
-    background: #B8BDBD;
-}
-
-.news-item-text::-webkit-scrollbar-thumb {
-    background: #ffc940;
-    border: 1px solid #B8BDBD;
-}
-
-.news-item-text::-webkit-scrollbar-thumb:hover {
-    background: #ffc940;
-}
-
 /* NEWS */
 
 
@@ -495,23 +515,6 @@ main {
 
 .type-1 .page-detail-text p {
     margin-bottom: 2vh !important;
-}
-
-.type-1 .page-detail-text::-webkit-scrollbar {
-    width: 1.5vh;
-}
-
-.type-1 .page-detail-text::-webkit-scrollbar-track {
-    background: #B8BDBD;
-}
-
-.type-1 .page-detail-text::-webkit-scrollbar-thumb {
-    background: #ffc940;
-    border: 1px solid #B8BDBD;
-}
-
-.type-1 .page-detail-text::-webkit-scrollbar-thumb:hover {
-    background: #ffc940;
 }
 
 /* PAGE TYPE 1 */
@@ -545,23 +548,6 @@ main {
     margin-bottom: 2vh !important;
 }
 
-.type-2 .page-detail-text::-webkit-scrollbar {
-    width: 1.5vh;
-}
-
-.type-2 .page-detail-text::-webkit-scrollbar-track {
-    background: #B8BDBD;
-}
-
-.type-2 .page-detail-text::-webkit-scrollbar-thumb {
-    background: #ffc940;
-    border: 1px solid #B8BDBD;
-}
-
-.type-2 .page-detail-text::-webkit-scrollbar-thumb:hover {
-    background: #ffc940;
-}
-
 /* PAGE TYPE 2 */
 
 
@@ -578,7 +564,7 @@ main {
 }
 
 .type-3 .page-detail-text {
-    height: 75vh;
+    height: 47vh;
     overflow-y: auto;
     padding-right: 2vh;
     font-size: 2vh !important;
@@ -594,21 +580,10 @@ main {
     margin-bottom: 2vh !important;
 }
 
-.type-3 .page-detail-text::-webkit-scrollbar {
-    width: 1.5vh;
-}
-
-.type-3 .page-detail-text::-webkit-scrollbar-track {
-    background: #B8BDBD;
-}
-
-.type-3 .page-detail-text::-webkit-scrollbar-thumb {
-    background: #ffc940;
-    border: 1px solid #B8BDBD;
-}
-
-.type-3 .page-detail-text::-webkit-scrollbar-thumb:hover {
-    background: #ffc940;
+.type3slider-item {
+    height: 23vh;
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 /* PAGE TYPE 3 */
@@ -674,27 +649,10 @@ main {
     overflow-y: scroll;
 }
 
-.type-7 .text::-webkit-scrollbar {
-    width: 1.5vh;
+.type-7 .pdf-nav {
+    text-align: center;
+    margin-top: 1vh;
 }
-
-.type-7 .text::-webkit-scrollbar-track {
-    background: #B8BDBD;
-}
-
-.type-7 .text::-webkit-scrollbar-thumb {
-    background: #ffc940;
-    border: 1px solid #B8BDBD;
-}
-
-.type-7 .text::-webkit-scrollbar-thumb:hover {
-    background: #ffc940;
-}
-
-  .type-7 .pdf-nav {
-      text-align: center;
-      margin-top: 1vh;
-  }
 
   .type-7 #prev,
   .type-7 #next {
@@ -741,9 +699,33 @@ main {
 
 .excel-item {
     width: 94vw;
-    height: 70vh;
-    overflow-x: scroll;
-    padding-top: 2vh;
+    width: auto;
+    height: 67vh;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+.excel-item table {
+    border-collapse: collapse;
+    margin: 1rem 0;
+    display: inline-block;
+    overflow-x: auto;
+    text-align: left;
+    font-size: 1.3vh;
+}
+
+.excel-item table tr {
+    border-top: 1px solid #dfe2e5;
+}
+
+.excel-item table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+}
+
+.excel-item table td,
+.excel-item table th {
+    border: 1px solid #dfe2e5;
+    padding: .6em 1em;
 }
 
 /* type 9 */
