@@ -51,14 +51,14 @@
                         </a>
                     </swiper-slide>
 
-                    <swiper-slide class="user-pages-item-item">
+                    <swiper-slide v-if="settings.module_routes == 'y'" class="user-pages-item-item">
                         <a @click="GoToRoutes()">
                             <img src="/img/icons/003-home.svg">
                             План здания
                         </a>
                     </swiper-slide>
 
-                    <swiper-slide class="user-pages-item-item">
+                    <swiper-slide v-if="settings.module_reviews == 'y'" class="user-pages-item-item">
                         <a @click="GoToReviews()">
                             <img src="/img/icons/029-information.svg">
                             Отзывы

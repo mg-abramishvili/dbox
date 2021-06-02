@@ -37869,47 +37869,59 @@ var render = function() {
                     )
                   }),
                   _vm._v(" "),
-                  _c("swiper-slide", { staticClass: "user-pages-item-item" }, [
-                    _c(
-                      "a",
-                      {
-                        on: {
-                          click: function($event) {
-                            return _vm.GoToRoutes()
-                          }
-                        }
-                      },
-                      [
-                        _c("img", {
-                          attrs: { src: "/img/icons/003-home.svg" }
-                        }),
-                        _vm._v(
-                          "\n                        План здания\n                    "
-                        )
-                      ]
-                    )
-                  ]),
+                  _vm.settings.module_routes == "y"
+                    ? _c(
+                        "swiper-slide",
+                        { staticClass: "user-pages-item-item" },
+                        [
+                          _c(
+                            "a",
+                            {
+                              on: {
+                                click: function($event) {
+                                  return _vm.GoToRoutes()
+                                }
+                              }
+                            },
+                            [
+                              _c("img", {
+                                attrs: { src: "/img/icons/003-home.svg" }
+                              }),
+                              _vm._v(
+                                "\n                        План здания\n                    "
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    : _vm._e(),
                   _vm._v(" "),
-                  _c("swiper-slide", { staticClass: "user-pages-item-item" }, [
-                    _c(
-                      "a",
-                      {
-                        on: {
-                          click: function($event) {
-                            return _vm.GoToReviews()
-                          }
-                        }
-                      },
-                      [
-                        _c("img", {
-                          attrs: { src: "/img/icons/029-information.svg" }
-                        }),
-                        _vm._v(
-                          "\n                        Отзывы\n                    "
-                        )
-                      ]
-                    )
-                  ])
+                  _vm.settings.module_reviews == "y"
+                    ? _c(
+                        "swiper-slide",
+                        { staticClass: "user-pages-item-item" },
+                        [
+                          _c(
+                            "a",
+                            {
+                              on: {
+                                click: function($event) {
+                                  return _vm.GoToReviews()
+                                }
+                              }
+                            },
+                            [
+                              _c("img", {
+                                attrs: { src: "/img/icons/029-information.svg" }
+                              }),
+                              _vm._v(
+                                "\n                        Отзывы\n                    "
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    : _vm._e()
                 ],
                 2
               ),
