@@ -13,7 +13,7 @@
                     </template>
 
                     <template v-if="settings.module_videoalbums == 'y'">
-                        <a class="videogalleries" :class="[`${settings.module_photoalbums == 'n' ? 'videogalleries-full':''} ${settings.module_news == 'n' ? 'videogalleries-nonews':''}`]">
+                        <a @click="GoToVideoalbums()" class="videogalleries" :class="[`${settings.module_photoalbums == 'n' ? 'videogalleries-full':''} ${settings.module_news == 'n' ? 'videogalleries-nonews':''}`]">
                             <img src="/img/icon-videogal.svg">
                             Видеогалерея
                         </a>

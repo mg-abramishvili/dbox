@@ -2,7 +2,7 @@
     <div>
         <DefaultHeaderHorizontal />
         
-        <keep-alive>
+        <keep-alive :exclude="/default_VideoalbumItem/">
             <router-view :key="$route.path"></router-view> 
         </keep-alive>
     </div>

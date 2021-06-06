@@ -17,6 +17,8 @@ import default_Routes from './components/default/routes/horizontal';
 import default_Reviews from './components/default/reviews/horizontal';
 import default_Photoalbums from './components/default/photoalbums/index-horizontal';
 import default_PhotoalbumItem from './components/default/photoalbums/show-horizontal';
+import default_Videoalbums from './components/default/videoalbums/index-horizontal';
+import default_VideoalbumItem from './components/default/videoalbums/show-horizontal';
 import default_News from './components/default/news/index-horizontal';
 import default_NewsItem from './components/default/news/show-horizontal';
 
@@ -103,6 +105,16 @@ export const routes = [
         path: '/vue-app/default/photoalbum/:id',
         name: 'default_PhotoalbumItem',
         component: default_PhotoalbumItem
+    },
+    {
+        path: '/vue-app/default/videoalbums',
+        name: 'default_Videoalbums',
+        component: default_Videoalbums
+    },
+    {
+        path: '/vue-app/default/videoalbum/:id',
+        name: 'default_VideoalbumItem',
+        component: default_VideoalbumItem
     },
     {
         path: '/vue-app/default/news',
