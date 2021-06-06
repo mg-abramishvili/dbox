@@ -22,7 +22,7 @@
 
                 <template v-if="settings.module_news == 'y'">
                     <div :class="[`${settings.module_photoalbums == 'y' || settings.module_videoalbums == 'y' ? 'col-7':'col-12'}`]">
-                        <a class="news" :class="[`${settings.module_photoalbums == 'n' && settings.module_videoalbums == 'n' ? 'news-nogals':''}`]">
+                        <a @click="GoToNews()" class="news" :class="[`${settings.module_photoalbums == 'n' && settings.module_videoalbums == 'n' ? 'news-nogals':''}`]">
                             <img src="/img/icon-news.svg">
                             Новости
                         </a>

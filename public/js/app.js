@@ -538,6 +538,201 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/default/news/index-horizontal.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/default/news/index-horizontal.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/css/swiper.css */ "./node_modules/swiper/css/swiper.css");
+/* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      news: [],
+      moment: moment,
+      swiperOptions: {
+        slidesPerView: 4,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      },
+      slider_prev_next: false
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    fetch("/api/front/newsAll").then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      _this.news = json;
+
+      if (json.length > 4) {
+        _this.slider_prev_next = true, _this.swiperOptions.centerInsufficientSlides = false;
+      } else {
+        _this.slider_prev_next = false, _this.swiperOptions.centerInsufficientSlides = true;
+      }
+    });
+  },
+  methods: {
+    GoToNewsItem: function GoToNewsItem(id) {
+      this.$router.push({
+        name: 'default_NewsItem',
+        params: {
+          id: id
+        }
+      });
+      this.$refs.DefaultNewsAllSwiper.$swiper.slideTo(0, false);
+    }
+  },
+  filters: {
+    moment: function (_moment) {
+      function moment(_x) {
+        return _moment.apply(this, arguments);
+      }
+
+      moment.toString = function () {
+        return _moment.toString();
+      };
+
+      return moment;
+    }(function (date) {
+      return moment(date).format('DD.MM.YYYY');
+    })
+  },
+  computed: {
+    swiper: function swiper() {
+      return this.$refs.DefaultNewsAllSwiper.$swiper;
+    }
+  },
+  components: {
+    Swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__["Swiper"],
+    SwiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__["SwiperSlide"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/default/news/show-horizontal.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/default/news/show-horizontal.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      newsItem: {},
+      moment: moment
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    fetch("/api/front/newsitem/".concat(this.$route.params.id)).then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      _this.newsItem = json;
+    });
+  },
+  components: {}
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/default/pages/PageItem.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/default/pages/PageItem.vue?vue&type=script&lang=js& ***!
@@ -4127,7 +4322,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "html {\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n  -webkit-touch-callout: none;\r\n  -khtml-user-select: none;\r\n  /*cursor: none;*/\r\n}\r\n\r\nbody {\r\n    margin: 0 !important;\r\n    font-size: 2vh;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    position: relative;\r\n}\r\n\r\n.container {\r\n    max-width: 95vw;\r\n}\r\n\r\n.row {\r\n    margin-left: -2vh;\r\n    margin-right: -2vh;\r\n}\r\n\r\n.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {\r\n    padding-left: 2vh;\r\n    padding-right: 2vh;\r\n}\r\n\r\nmain {\r\n    position: relative;\r\n}\r\n\r\n.wrapper {\r\n    position: relative;\r\n    width: 100vw;\r\n    max-width: 177.78vh;\r\n    height: 56.25vw;\r\n    max-height: 100vh;\r\n    overflow: hidden;\r\n    margin: 0 auto;\r\n    background: #fff;\r\n    border: 1px solid #ccc;\r\n}\r\n\r\n.header {\r\n    margin-top: 4vh;\r\n    margin-bottom: 4vh;\r\n    height: 7vh;\r\n}\r\n\r\n.header-logo a {\r\n    display: block;\r\n}\r\n\r\n.header-logo a img {\r\n    width: auto;\r\n    height: auto;\r\n    max-width: 15vh;\r\n    max-height: 7vh;\r\n}\r\n\r\n.header-text {\r\n    text-align: right;\r\n    color: #696969;\r\n    font-size: 3vh;\r\n}\r\n\r\n.footer {\r\n    text-align: center;\r\n    position: absolute;\r\n    bottom: 2vh;\r\n    left: 2vh;\r\n    right: 2vh;\r\n}\r\n\r\n.footer a {\r\n    display: inline-block;\r\n    width: 6vh;\r\n    height: 6vh;\r\n    margin: 0 0.5vh;\r\n    position: relative;\r\n    border-radius: 0.75vh;\r\n}\r\n\r\n.footer a img {\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    width: 70%;\r\n    height: 70%;\r\n    display: block;\r\n    margin: 0 auto;\r\n    left: 0;\r\n    right: 0;\r\n}\r\n\r\n.home-button {\r\n    background-color: #ADB9C8;\r\n}\r\n\r\n.gal-button {\r\n    background-color: #45C99F;\r\n}\r\n\r\n.vgal-button {\r\n    background-color: #4592C9;\r\n}\r\n\r\n.news-button {\r\n    background-color: #A745C9;\r\n}\r\n\r\n\r\n\r\n::-webkit-scrollbar {\r\n    width: 1.5vh;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n    background: #B8BDBD;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n    background: #ffc940;\r\n    border: 1px solid #B8BDBD;\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n    background: #ffc940;\r\n}\r\n\r\n\r\n\r\n\r\n/* MAIN PAGE */\r\n\r\n.photogalleries {\r\n    background-color: #45c99f;\r\n    border-radius: 1vh;\r\n    height: 38.25vh;\r\n    margin-bottom: 3.5vh;\r\n    display: block;\r\n    padding-top: 8vh;\r\n    text-align: center;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n}\r\n\r\n.photogalleries:hover,\r\n.photogalleries:focus {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n\r\n.photogalleries img {\r\n    display: block;\r\n    width: 60%;\r\n    margin: 0 auto;\r\n    margin-bottom: 4vh;\r\n}\r\n\r\n.photogalleries-full {\r\n    height: 80vh;\r\n    padding-top: 28vh;\r\n}\r\n\r\n.photogalleries-nonews {\r\n    padding-top: 22vh;\r\n}\r\n\r\n.photogalleries-nonews img {\r\n    width: 40%;\r\n}\r\n\r\n.videogalleries {\r\n    background-color: #4592c9;\r\n    border-radius: 1vh;\r\n    height: 38.25vh;\r\n    display: block;\r\n    padding-top: 8vh;\r\n    text-align: center;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n}\r\n\r\n.videogalleries:hover,\r\n.videogalleries:focus {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n\r\n.videogalleries img {\r\n    display: block;\r\n    width: 60%;\r\n    margin: 0 auto;\r\n    margin-bottom: 4vh;\r\n}\r\n\r\n.videogalleries-full {\r\n    height: 80vh;\r\n    padding-top: 28vh;\r\n}\r\n\r\n.videogalleries-nonews {\r\n    padding-top: 22vh;\r\n}\r\n\r\n.videogalleries-nonews img {\r\n    width: 40%;\r\n}\r\n\r\n.news {\r\n    background-color: #a745c9;\r\n    height: 80vh;\r\n    border-radius: 1vh;\r\n    display: block;\r\n    text-align: center;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n    padding-top: 27vh;\r\n}\r\n\r\n.news:hover,\r\n.news:focus {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n\r\n.news img {\r\n    display: block;\r\n    width: 45%;\r\n    margin: 0 auto;\r\n    margin-bottom: 5vh;\r\n}\r\n\r\n.news-nogals {\r\n    padding-top: 22vh;\r\n}\r\n\r\n.news-nogals img {\r\n    width: 40%;\r\n}\r\n\r\n.user-pages {\r\n    background-color: #ffc940;\r\n    height: 80vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.user-pages-item {\r\n    width: 50%;\r\n    position: relative;\r\n}\r\n\r\n.user-pages-item-item {\r\n    height: 40vh;\r\n    position: relative;\r\n    text-align: center;\r\n    border-radius: 1vh;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n    padding-top: 9vh;\r\n    padding-left: 15px;\r\n    padding-right: 15px;\r\n}\r\n\r\n.user-pages-item-item a {\r\n    display: block;\r\n    color: #fff;\r\n    line-height: 1.25;\r\n    padding: 0 1vh;\r\n}\r\n\r\n.user-pages-item-item a:hover,\r\n.user-pages-item-item a:focus {\r\n    text-decoration: none;\r\n    color: #fff;\r\n}\r\n\r\n.user-pages-item-item img {\r\n    display: block;\r\n    width: 15vh;\r\n    height: 15vh;\r\n    margin: 0 auto;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.user-pages-item-image {\r\n    width: 15vh;\r\n    height: 15vh;\r\n    background-size: cover;\r\n    background-repeat: no-repeat;\r\n    background-position: 50% 50%;\r\n    border-radius: 100%;\r\n    border: 0.75vh solid #fff;\r\n    display: block;\r\n    margin: 0 auto;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n/* MAIN PAGE */\r\n\r\n\r\n/* PHOTOGALS */\r\n\r\n.gallery-list {\r\n    overflow: hidden;\r\n    overflow-x: auto;\r\n    white-space: nowrap;\r\n    margin-left: -1vh;\r\n    margin-right: -1vh;\r\n}\r\n\r\n.gallery-list-item-slide {\r\n    width: 100%;\r\n    white-space: normal;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.gallery-list-item {\r\n    width: calc(25% - 2vh);\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    margin: 0 1vh;\r\n    white-space: normal;\r\n}\r\n\r\n.gallery-list-item a {\r\n    display: block;\r\n    text-align: center;\r\n}\r\n\r\n.gallery-list-item a:hover,\r\n.gallery-list-item a:focus {\r\n    text-decoration: none;\r\n}\r\n\r\n.gallery-list-item a h2 {\r\n    height: 7vh;\r\n    color: #333;\r\n    margin: 0;\r\n    line-height: 1.35;\r\n    font-size: 2vh;\r\n    overflow: hidden;\r\n}\r\n\r\n.gallery-list-item-pic {\r\n    height: 27vh;\r\n    margin-bottom: 1vh;\r\n    border-radius: 1vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.gallery-list .flickity-page-dots {\r\n    bottom: 0;\r\n}\r\n\r\n.gallery-list .flickity-page-dots .dot {\r\n    width: 5vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.gallery-detail {\r\n    padding: 0 2.5vh;\r\n}\r\n\r\n.gallery-detail-item {\r\n    width: 30%;\r\n    height: 60vh;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin: 0;\r\n}\r\n\r\n.gallery-detail-item img,\r\n.gallery-detail-item video {\r\n    display: block;\r\n    max-height: 100%;\r\n    max-width: 90%;\r\n}\r\n\r\n.gallery-detail-item.is-selected {\r\n    opacity: 1;\r\n    z-index: 20;\r\n}\r\n\r\n.gallery-detail-item.is-selected img,\r\n.gallery-detail-item.is-selected video {\r\n    transform: none;\r\n    border-radius: 1vh;\r\n}\r\n\r\n/* PHOTOGALS */\r\n\r\n\r\n/* VIDEOALBUM */\r\n\r\n.videoalbum-detail {\r\n    width: 100%;\r\n    text-align: center;\r\n    margin-top: -2.5vh;\r\n}\r\n\r\n.videoalbum-detail video {\r\n    width: auto;\r\n    height: 68.5vh;\r\n    max-width: 100%;\r\n    max-height: 70vh;\r\n    border-radius: 2vh;\r\n}\r\n\r\n/* VIDEOALBUM */\r\n\r\n\r\n/* NEWS */\r\n\r\n.news-list {\r\n    overflow: hidden;\r\n    overflow-x: auto;\r\n    white-space: nowrap;\r\n    margin-left: -1vh;\r\n    margin-right: -1vh;\r\n}\r\n\r\n.news-list-item {\r\n    width: calc(25% - 2vh);\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    margin: 0 1vh;\r\n    white-space: normal;\r\n}\r\n\r\n.news-list-item a {\r\n    display: block;\r\n    text-align: left;\r\n    color: #696969;\r\n    margin-bottom: 3vh;\r\n}\r\n\r\n.news-list-item a:hover,\r\n.news-list-item a:focus {\r\n    text-decoration: none;\r\n}\r\n\r\n.news-list-item a h2 {\r\n    height: 8vh;\r\n    font-weight: 700;\r\n    color: #333;\r\n    margin: 0;\r\n    line-height: 1.35;\r\n    font-size: 2.5vh;\r\n    overflow: hidden;\r\n}\r\n\r\n.news-list-item-pic {\r\n    height: 40vh;\r\n    margin-bottom: 3vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.news-list .flickity-page-dots {\r\n    bottom: 0;\r\n}\r\n\r\n.news-list .flickity-page-dots .dot {\r\n    width: 4vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.news-detail-image {\r\n    height: 75vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.news-item-text {\r\n    height: 75vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n}\r\n\r\n.news-item-text h1 {\r\n    font-weight: bold;\r\n    font-size: 4vh;\r\n    margin-bottom: 4vh;\r\n}\r\n\r\n.news-item-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n/* NEWS */\r\n\r\n\r\n\r\n/* PAGE TYPE 1 */\r\n\r\n.type-1 .page-detail-text {\r\n    height: 75vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n}\r\n\r\n.type-1 .page-detail-text h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n    margin-bottom: 3vh !important;\r\n}\r\n\r\n.type-1 .page-detail-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n/* PAGE TYPE 1 */\r\n\r\n\r\n\r\n\r\n/* PAGE TYPE 2 */\r\n\r\n.type-2 .page-detail-image {\r\n    height: 75vh;\r\n    border-radius: 1vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-2 .page-detail-text {\r\n    height: 75vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n}\r\n\r\n.type-2 .page-detail-text h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n}\r\n\r\n.type-2 .page-detail-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n/* PAGE TYPE 2 */\r\n\r\n\r\n\r\n/* PAGE TYPE 3 */\r\n\r\n.type-3 #gallery a {\r\n    height: 75vh;\r\n    margin-bottom: 1.5vh;\r\n    display: block;\r\n    border-radius: 1vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-3 .page-detail-text {\r\n    height: 47vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n}\r\n\r\n.type-3 .page-detail-text h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n}\r\n\r\n.type-3 .page-detail-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n.type3slider-item {\r\n    height: 23vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n/* PAGE TYPE 3 */\r\n\r\n\r\n\r\n\r\n/* PAGE TYPE 4 */\r\n\r\n.type-4 .gallery-item {\r\n    width: 100%;\r\n}\r\n\r\n/* PAGE TYPE 4 */\r\n\r\n\r\n\r\n\r\n/* PAGE TYPE 6 */\r\n\r\n.type-6 .user-pages {\r\n    height: auto;\r\n    background: none;\r\n    margin-left: -3vh;\r\n    margin-right: -3vh;\r\n    margin-top: -6vh;\r\n}\r\n\r\n.type-6 .user-pages-item {\r\n    width: 25%;\r\n}\r\n\r\n.type-6 .user-pages-item-item {\r\n    height: auto;\r\n    background-color: transparent;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n.type-6 .index-button {\r\n    height: 32vh;\r\n    margin: 1vh;\r\n    background-color: #ffc940;\r\n    border-radius: 1vh;\r\n    padding: 1vh;\r\n    padding-top: 5vh;\r\n}\r\n\r\n.type-6 .user-pages-item-item img {\r\n    width: 40%;\r\n    margin-bottom: 3vh;\r\n}\r\n\r\n/* PAGE TYPE 6 */\r\n\r\n\r\n\r\n/* PAGE TYPE 7 */\r\n\r\n.type-7 .text {\r\n    height: 73vh;\r\n    overflow: hidden;\r\n    overflow-y: scroll;\r\n}\r\n\r\n.type-7 .pdf-nav {\r\n    text-align: center;\r\n    margin-top: 1vh;\r\n}\r\n\r\n  .type-7 #prev,\r\n  .type-7 #next {\r\n    background: #ffc940;\r\n    color: #fff;\r\n    padding: 0.5vh 2vh;\r\n    box-shadow: none;\r\n    border: 0;\r\n    font-size: 2vh;\r\n    font-weight: bold;\r\n    border-radius: 1vh;\r\n  }\r\n\r\n/* PAGE TYPE 7 */\r\n\r\n\r\n\r\n/* PAGE TYPE 8 */\r\n\r\n.buttons {\r\n    position: absolute;\r\n    z-index: 20;\r\n    left: 50px;\r\n    right: 50px;\r\n    text-align: center;\r\n}\r\n\r\n#prevBtn,\r\n#nextBtn {\r\n    background: #ffc940;\r\n    color: #fff;\r\n    padding: 10px 30px;\r\n    box-shadow: none;\r\n    border: 0;\r\n    font-size: 30px;\r\n    font-weight: bold;\r\n    border-radius: 10px;\r\n}\r\n\r\n/* PAGE TYPE 8 */\r\n\r\n\r\n/* type 9 */\r\n\r\n.excel-item {\r\n    width: 94vw;\r\n    width: auto;\r\n    height: 67vh;\r\n    overflow-y: scroll;\r\n    text-align: center;\r\n}\r\n\r\n.excel-item table {\r\n    border-collapse: collapse;\r\n    margin: 1rem 0;\r\n    display: inline-block;\r\n    overflow-x: auto;\r\n    text-align: left;\r\n    font-size: 1.3vh;\r\n}\r\n\r\n.excel-item table tr {\r\n    border-top: 1px solid #dfe2e5;\r\n}\r\n\r\n.excel-item table tr:nth-child(2n) {\r\n    background-color: #f6f8fa;\r\n}\r\n\r\n.excel-item table td,\r\n.excel-item table th {\r\n    border: 1px solid #dfe2e5;\r\n    padding: .6em 1em;\r\n}\r\n\r\n/* type 9 */\r\n\r\n\r\n\r\n\r\n/* ROUTES */\r\n\r\n.key-anim01,\r\n.key-anim02,\r\n.key-anim03,\r\n.key-anim04,\r\n.key-anim05,\r\n.key-anim06,\r\n.key-anim07,\r\n.key-anim08,\r\n.key-anim09,\r\n.key-anim10,\r\n.key-anim11,\r\n.key-anim12 {\r\n    stroke-dasharray: 10;\r\n    stroke-dashoffset: -2000;\r\n    -webkit-animation: Drawpath 20s linear infinite;\r\n            animation: Drawpath 20s linear infinite;\r\n}\r\n\r\n@-webkit-keyframes Drawpath {\r\n    from {\r\n        stroke-dashoffset: -2000;\r\n    }\r\n    to {\r\n        stroke-dashoffset: 0;\r\n    }\r\n}\r\n\r\n@keyframes Drawpath {\r\n    from {\r\n        stroke-dashoffset: -2000;\r\n    }\r\n    to {\r\n        stroke-dashoffset: 0;\r\n    }\r\n}\r\n\r\n.wrapperm {\r\n    width: 800px;\r\n    height: 450px;\r\n    position: relative;\r\n    margin: 0 auto;\r\n    overflow: visible;\r\n    background-color: #fff;\r\n    transform: scale(1.25);\r\n    transform-origin: 50% 0%;\r\n    margin-top: 4vh;\r\n    background-color: #fff;\r\n    border-radius: 2vh;\r\n    border: 0.3vh solid #c5d0db;\r\n    box-shadow: 0 0vh 0.5vh #c5d0db;\r\n}\r\n\r\n#wrapper-inner {\r\n    width: 800px;\r\n    height: 450px;\r\n    margin-top: 4vh;\r\n}\r\n\r\n.map {\r\n    margin-top: -4vh;\r\n}\r\n\r\n.map-slide {\r\n    width: 100%;\r\n}\r\n\r\n.map img {\r\n    width: 800px;\r\n    height: 450px;\r\n    display: block;\r\n    margin: 0 auto;\r\n}\r\n\r\n.map-path {\r\n    position: absolute;\r\n    left: 0;\r\n    right: 0;\r\n    top: 0;\r\n    bottom: 0;\r\n    width: 800px;\r\n    height: 450px;\r\n}\r\n\r\n.med-route-sidebar,\r\n.shkola-route-sidebar {\r\n    margin-top: -2vh;\r\n    background-color: #4592c9;\r\n    padding: 3vh;\r\n    width: 99%;\r\n}\r\n\r\n.med-route-sidebar input,\r\n.shkola-route-sidebar input {\r\n    width: 100%;\r\n    padding: 0.5vh;\r\n    font-size: 2vh;\r\n}\r\n\r\n.keyboard {\r\n    margin-top: 0.5vh;\r\n    margin-bottom: 3vh;\r\n}\r\n\r\n.keyboard button {\r\n    width: 4.2vh;\r\n    height: 4.2vh;\r\n    line-height: 4.2vh;\r\n    margin-bottom: 0.5vh;\r\n    background-color: #fff;\r\n    font-size: 1.5vh;\r\n    text-align: center;\r\n    padding: 0;\r\n    border: 0.1vh solid;\r\n}\r\n\r\n.keyboard .globebutton {\r\n    width: 7vh;\r\n}\r\n\r\n.keyboard .spacebutton {\r\n    width: 10vh;\r\n}\r\n\r\n#myUL {\r\n    padding: 0;\r\n    margin: 0;\r\n    list-style-type: none;\r\n    height: 32vh;\r\n    overflow-y: auto;\r\n}\r\n\r\n#myUL li {\r\n    display: block;\r\n    background-color: #fff;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n#myUL li a {\r\n    display: block;\r\n    color: #222;\r\n    font-size: 2vh;\r\n    font-weight: 700;\r\n    border: 0.25vh solid #96dbfc;\r\n    padding: 1vh 2vh;\r\n}\r\n.med-route-sidebar .hg-theme-default .hg-button {\r\n    height: 3.7vh;\r\n}\r\n.med-route-sidebar .hg-theme-default .hg-row:not(:last-child) {\r\n    margin-bottom: 0.5vh;\r\n}\r\n/* ROUTES */\r\n\r\n\r\n\r\n/* REVIEWS */\r\n\r\n.keyboard-reviews .keyboard {\r\n    margin-top: 7vh;\r\n}\r\n\r\n.keyboard-reviews .keyboard button {\r\n    width: 6vh;\r\n    height: 6vh;\r\n    line-height: 6vh;\r\n    font-size: 2.5vh;\r\n    border-radius: 1vh;\r\n    border: 0.3vh solid #c5d0db;\r\n    box-shadow: 0 0vh 0.5vh #c5d0db;\r\n}\r\n\r\n.keyboard-reviews .keyboard button:hover,\r\n.keyboard-reviews .keyboard button:focus {\r\n    outline: none;\r\n}\r\n\r\n.keyboard-reviews .keyboard .globebutton {\r\n    width: 12vh;\r\n}\r\n\r\n.keyboard-reviews .keyboard .spacebutton {\r\n    width: 17vh;\r\n}\r\n\r\n.keyboard-reviews .hg-theme-default {\r\n    padding: 0.5vh;\r\n}\r\n\r\n.keyboard-reviews .hg-theme-default .hg-button {\r\n    height: 4vh;\r\n}\r\n\r\n.keyboard-reviews .med-route-sidebar .hg-theme-default .hg-row:not(:last-child) {\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.review-form input[type=\"text\"] {\r\n    border: 1px solid #333;\r\n    font-size: 3vh;\r\n}\r\n\r\n.review-form textarea {\r\n    resize: none;\r\n    height: 30vh;\r\n    border: 1px solid #333;\r\n    font-size: 3vh;\r\n    border-radius: 2vh;\r\n    border: 0.3vh solid #c5d0db;\r\n    box-shadow: 0 0vh 0.5vh #c5d0db;\r\n    padding: 3vh;\r\n}\r\n\r\n.review-form .btn-shkola {\r\n    background-color: #5da7fe;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n    padding: 2vh 4vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.review-h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n    margin-top: 0 !important;\r\n    margin-bottom: 5vh !important;\r\n}\r\n\r\n/* REVIEWS */", ""]);
+exports.push([module.i, "html {\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n  -webkit-touch-callout: none;\r\n  -khtml-user-select: none;\r\n  /*cursor: none;*/\r\n}\r\n\r\nbody {\r\n    margin: 0 !important;\r\n    font-size: 2vh;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    position: relative;\r\n}\r\n\r\n.container {\r\n    max-width: 95vw;\r\n}\r\n\r\n.row {\r\n    margin-left: -2vh;\r\n    margin-right: -2vh;\r\n}\r\n\r\n.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {\r\n    padding-left: 2vh;\r\n    padding-right: 2vh;\r\n}\r\n\r\nmain {\r\n    position: relative;\r\n}\r\n\r\n.wrapper {\r\n    position: relative;\r\n    width: 100vw;\r\n    max-width: 177.78vh;\r\n    height: 56.25vw;\r\n    max-height: 100vh;\r\n    overflow: hidden;\r\n    margin: 0 auto;\r\n    background: #fff;\r\n    border: 1px solid #ccc;\r\n}\r\n\r\n.header {\r\n    margin-top: 4vh;\r\n    margin-bottom: 4vh;\r\n    height: 7vh;\r\n}\r\n\r\n.header-logo a {\r\n    display: block;\r\n}\r\n\r\n.header-logo a img {\r\n    width: auto;\r\n    height: auto;\r\n    max-width: 15vh;\r\n    max-height: 7vh;\r\n}\r\n\r\n.header-text {\r\n    text-align: right;\r\n    color: #696969;\r\n    font-size: 3vh;\r\n}\r\n\r\n.footer {\r\n    text-align: center;\r\n    position: absolute;\r\n    bottom: 2vh;\r\n    left: 2vh;\r\n    right: 2vh;\r\n}\r\n\r\n.footer a {\r\n    display: inline-block;\r\n    width: 6vh;\r\n    height: 6vh;\r\n    margin: 0 0.5vh;\r\n    position: relative;\r\n    border-radius: 0.75vh;\r\n}\r\n\r\n.footer a img {\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    width: 70%;\r\n    height: 70%;\r\n    display: block;\r\n    margin: 0 auto;\r\n    left: 0;\r\n    right: 0;\r\n}\r\n\r\n.home-button {\r\n    background-color: #ADB9C8;\r\n}\r\n\r\n.gal-button {\r\n    background-color: #45C99F;\r\n}\r\n\r\n.vgal-button {\r\n    background-color: #4592C9;\r\n}\r\n\r\n.news-button {\r\n    background-color: #A745C9;\r\n}\r\n\r\n\r\n\r\n::-webkit-scrollbar {\r\n    width: 1.5vh;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n    background: #B8BDBD;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n    background: #ffc940;\r\n    border: 1px solid #B8BDBD;\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n    background: #ffc940;\r\n}\r\n\r\n\r\n\r\n\r\n/* MAIN PAGE */\r\n\r\n.photogalleries {\r\n    background-color: #45c99f;\r\n    border-radius: 1vh;\r\n    height: 38.25vh;\r\n    margin-bottom: 3.5vh;\r\n    display: block;\r\n    padding-top: 8vh;\r\n    text-align: center;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n}\r\n\r\n.photogalleries:hover,\r\n.photogalleries:focus {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n\r\n.photogalleries img {\r\n    display: block;\r\n    width: 60%;\r\n    margin: 0 auto;\r\n    margin-bottom: 4vh;\r\n}\r\n\r\n.photogalleries-full {\r\n    height: 80vh;\r\n    padding-top: 28vh;\r\n}\r\n\r\n.photogalleries-nonews {\r\n    padding-top: 22vh;\r\n}\r\n\r\n.photogalleries-nonews img {\r\n    width: 40%;\r\n}\r\n\r\n.videogalleries {\r\n    background-color: #4592c9;\r\n    border-radius: 1vh;\r\n    height: 38.25vh;\r\n    display: block;\r\n    padding-top: 8vh;\r\n    text-align: center;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n}\r\n\r\n.videogalleries:hover,\r\n.videogalleries:focus {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n\r\n.videogalleries img {\r\n    display: block;\r\n    width: 60%;\r\n    margin: 0 auto;\r\n    margin-bottom: 4vh;\r\n}\r\n\r\n.videogalleries-full {\r\n    height: 80vh;\r\n    padding-top: 28vh;\r\n}\r\n\r\n.videogalleries-nonews {\r\n    padding-top: 22vh;\r\n}\r\n\r\n.videogalleries-nonews img {\r\n    width: 40%;\r\n}\r\n\r\n.news {\r\n    background-color: #a745c9;\r\n    height: 80vh;\r\n    border-radius: 1vh;\r\n    display: block;\r\n    text-align: center;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n    padding-top: 27vh;\r\n}\r\n\r\n.news:hover,\r\n.news:focus {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n\r\n.news img {\r\n    display: block;\r\n    width: 45%;\r\n    margin: 0 auto;\r\n    margin-bottom: 5vh;\r\n}\r\n\r\n.news-nogals {\r\n    padding-top: 22vh;\r\n}\r\n\r\n.news-nogals img {\r\n    width: 40%;\r\n}\r\n\r\n.user-pages {\r\n    background-color: #ffc940;\r\n    height: 80vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.user-pages-item {\r\n    width: 50%;\r\n    position: relative;\r\n}\r\n\r\n.user-pages-item-item {\r\n    height: 40vh;\r\n    position: relative;\r\n    text-align: center;\r\n    border-radius: 1vh;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n    padding-top: 9vh;\r\n    padding-left: 15px;\r\n    padding-right: 15px;\r\n}\r\n\r\n.user-pages-item-item a {\r\n    display: block;\r\n    color: #fff;\r\n    line-height: 1.25;\r\n    padding: 0 1vh;\r\n}\r\n\r\n.user-pages-item-item a:hover,\r\n.user-pages-item-item a:focus {\r\n    text-decoration: none;\r\n    color: #fff;\r\n}\r\n\r\n.user-pages-item-item img {\r\n    display: block;\r\n    width: 15vh;\r\n    height: 15vh;\r\n    margin: 0 auto;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.user-pages-item-image {\r\n    width: 15vh;\r\n    height: 15vh;\r\n    background-size: cover;\r\n    background-repeat: no-repeat;\r\n    background-position: 50% 50%;\r\n    border-radius: 100%;\r\n    border: 0.75vh solid #fff;\r\n    display: block;\r\n    margin: 0 auto;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n/* MAIN PAGE */\r\n\r\n\r\n/* PHOTOGALS */\r\n\r\n.gallery-list {\r\n    overflow: hidden;\r\n    overflow-x: auto;\r\n    white-space: nowrap;\r\n    margin-left: -1vh;\r\n    margin-right: -1vh;\r\n}\r\n\r\n.gallery-list-item-slide {\r\n    width: 100%;\r\n    white-space: normal;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.gallery-list-item {\r\n    width: calc(25% - 2vh);\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    margin: 0;\r\n    white-space: normal;\r\n    padding: 1vh;\r\n}\r\n\r\n.gallery-list-item a {\r\n    display: block;\r\n    text-align: center;\r\n}\r\n\r\n.gallery-list-item a:hover,\r\n.gallery-list-item a:focus {\r\n    text-decoration: none;\r\n}\r\n\r\n.gallery-list-item a h2 {\r\n    height: 7vh;\r\n    color: #333;\r\n    margin: 0;\r\n    line-height: 1.35;\r\n    font-size: 2vh;\r\n    overflow: hidden;\r\n}\r\n\r\n.gallery-list-item-pic {\r\n    height: 27vh;\r\n    margin-bottom: 1vh;\r\n    border-radius: 1vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.gallery-list .flickity-page-dots {\r\n    bottom: 0;\r\n}\r\n\r\n.gallery-list .flickity-page-dots .dot {\r\n    width: 5vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.gallery-detail {\r\n    padding: 0 2.5vh;\r\n}\r\n\r\n.gallery-detail-item {\r\n    width: 30%;\r\n    height: 60vh;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin: 0;\r\n}\r\n\r\n.gallery-detail-item img,\r\n.gallery-detail-item video {\r\n    display: block;\r\n    max-height: 100%;\r\n    max-width: 90%;\r\n}\r\n\r\n.gallery-detail-item.is-selected {\r\n    opacity: 1;\r\n    z-index: 20;\r\n}\r\n\r\n.gallery-detail-item.is-selected img,\r\n.gallery-detail-item.is-selected video {\r\n    transform: none;\r\n    border-radius: 1vh;\r\n}\r\n\r\n/* PHOTOGALS */\r\n\r\n\r\n/* VIDEOALBUM */\r\n\r\n.videoalbum-detail {\r\n    width: 100%;\r\n    text-align: center;\r\n    margin-top: -2.5vh;\r\n}\r\n\r\n.videoalbum-detail video {\r\n    width: auto;\r\n    height: 68.5vh;\r\n    max-width: 100%;\r\n    max-height: 70vh;\r\n    border-radius: 2vh;\r\n}\r\n\r\n/* VIDEOALBUM */\r\n\r\n\r\n/* NEWS */\r\n\r\n.news-list .index-button-full {\r\n    height: 67vh;\r\n    text-align: left;\r\n    display: block;\r\n    padding: 1vh;\r\n    color: #333;\r\n    font-weight: bold;\r\n    font-size: 2.5vh;\r\n}\r\n\r\n.news-list .index-button-full .index-button-icon {\r\n    height: 36vh;\r\n    background-color: #e0e0e0;\r\n    border-radius: 1vh;\r\n    padding-top: 8vh;\r\n}\r\n\r\n.news-list .index-button-icon img {\r\n    width: 45%;\r\n    display: block;\r\n    margin: 0 auto;\r\n}\r\n\r\n.news-list .index-button-full span {\r\n    margin-top: 25vh;\r\n}\r\n\r\n.news-list .index-button-full .user-pages-item-image {\r\n    width: 100%;\r\n    height: 36vh;\r\n    border-radius: 2vh;\r\n    border: 0;\r\n    margin: 0;\r\n}\r\n\r\n.news-item {\r\n    background-color: #fff;\r\n}\r\n\r\n.news-item-img {\r\n    height: 70vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n    border-radius: 1.5vh;\r\n}\r\n\r\n.news-item-text {\r\n    font-size: 2vh;\r\n    line-height: 1.75;\r\n    height: 67vh;\r\n    overflow: hidden;\r\n    overflow-y: auto;\r\n}\r\n\r\n  .news-item-text h1 {\r\n      color: #5da7fe;\r\n      font-size: 4vh;\r\n      font-weight: 700;\r\n      text-align: left;\r\n      margin: 0;\r\n      margin-bottom: 2vh;\r\n  }\r\n\r\n  .news-item-text span {\r\n      display: block;\r\n      color: #777;\r\n      margin-bottom: 1.5vh;\r\n      font-size: 2.5vh;\r\n  }\r\n\r\n/* NEWS */\r\n\r\n\r\n\r\n/* PAGE TYPE 1 */\r\n\r\n.type-1 .page-detail-text {\r\n    height: 75vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n}\r\n\r\n.type-1 .page-detail-text h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n    margin-bottom: 3vh !important;\r\n}\r\n\r\n.type-1 .page-detail-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n/* PAGE TYPE 1 */\r\n\r\n\r\n\r\n\r\n/* PAGE TYPE 2 */\r\n\r\n.type-2 .page-detail-image {\r\n    height: 75vh;\r\n    border-radius: 1vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-2 .page-detail-text {\r\n    height: 75vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n}\r\n\r\n.type-2 .page-detail-text h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n}\r\n\r\n.type-2 .page-detail-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n/* PAGE TYPE 2 */\r\n\r\n\r\n\r\n/* PAGE TYPE 3 */\r\n\r\n.type-3 #gallery a {\r\n    height: 75vh;\r\n    margin-bottom: 1.5vh;\r\n    display: block;\r\n    border-radius: 1vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-3 .page-detail-text {\r\n    height: 47vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n}\r\n\r\n.type-3 .page-detail-text h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n}\r\n\r\n.type-3 .page-detail-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n.type3slider-item {\r\n    height: 23vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n/* PAGE TYPE 3 */\r\n\r\n\r\n\r\n\r\n/* PAGE TYPE 4 */\r\n\r\n.type-4 .gallery-item {\r\n    width: 100%;\r\n}\r\n\r\n/* PAGE TYPE 4 */\r\n\r\n\r\n\r\n\r\n/* PAGE TYPE 6 */\r\n\r\n.type-6 .user-pages {\r\n    height: auto;\r\n    background: none;\r\n    margin-left: -3vh;\r\n    margin-right: -3vh;\r\n    margin-top: -6vh;\r\n}\r\n\r\n.type-6 .user-pages-item {\r\n    width: 25%;\r\n}\r\n\r\n.type-6 .user-pages-item-item {\r\n    height: auto;\r\n    background-color: transparent;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n.type-6 .index-button {\r\n    height: 32vh;\r\n    margin: 1vh;\r\n    background-color: #ffc940;\r\n    border-radius: 1vh;\r\n    padding: 1vh;\r\n    padding-top: 5vh;\r\n}\r\n\r\n.type-6 .user-pages-item-item img {\r\n    width: 40%;\r\n    margin-bottom: 3vh;\r\n}\r\n\r\n/* PAGE TYPE 6 */\r\n\r\n\r\n\r\n/* PAGE TYPE 7 */\r\n\r\n.type-7 .text {\r\n    height: 73vh;\r\n    overflow: hidden;\r\n    overflow-y: scroll;\r\n}\r\n\r\n.type-7 .pdf-nav {\r\n    text-align: center;\r\n    margin-top: 1vh;\r\n}\r\n\r\n  .type-7 #prev,\r\n  .type-7 #next {\r\n    background: #ffc940;\r\n    color: #fff;\r\n    padding: 0.5vh 2vh;\r\n    box-shadow: none;\r\n    border: 0;\r\n    font-size: 2vh;\r\n    font-weight: bold;\r\n    border-radius: 1vh;\r\n  }\r\n\r\n/* PAGE TYPE 7 */\r\n\r\n\r\n\r\n/* PAGE TYPE 8 */\r\n\r\n.buttons {\r\n    position: absolute;\r\n    z-index: 20;\r\n    left: 50px;\r\n    right: 50px;\r\n    text-align: center;\r\n}\r\n\r\n#prevBtn,\r\n#nextBtn {\r\n    background: #ffc940;\r\n    color: #fff;\r\n    padding: 10px 30px;\r\n    box-shadow: none;\r\n    border: 0;\r\n    font-size: 30px;\r\n    font-weight: bold;\r\n    border-radius: 10px;\r\n}\r\n\r\n/* PAGE TYPE 8 */\r\n\r\n\r\n/* type 9 */\r\n\r\n.excel-item {\r\n    width: 94vw;\r\n    width: auto;\r\n    height: 67vh;\r\n    overflow-y: scroll;\r\n    text-align: center;\r\n}\r\n\r\n.excel-item table {\r\n    border-collapse: collapse;\r\n    margin: 1rem 0;\r\n    display: inline-block;\r\n    overflow-x: auto;\r\n    text-align: left;\r\n    font-size: 1.3vh;\r\n}\r\n\r\n.excel-item table tr {\r\n    border-top: 1px solid #dfe2e5;\r\n}\r\n\r\n.excel-item table tr:nth-child(2n) {\r\n    background-color: #f6f8fa;\r\n}\r\n\r\n.excel-item table td,\r\n.excel-item table th {\r\n    border: 1px solid #dfe2e5;\r\n    padding: .6em 1em;\r\n}\r\n\r\n/* type 9 */\r\n\r\n\r\n\r\n\r\n/* ROUTES */\r\n\r\n.key-anim01,\r\n.key-anim02,\r\n.key-anim03,\r\n.key-anim04,\r\n.key-anim05,\r\n.key-anim06,\r\n.key-anim07,\r\n.key-anim08,\r\n.key-anim09,\r\n.key-anim10,\r\n.key-anim11,\r\n.key-anim12 {\r\n    stroke-dasharray: 10;\r\n    stroke-dashoffset: -2000;\r\n    -webkit-animation: Drawpath 20s linear infinite;\r\n            animation: Drawpath 20s linear infinite;\r\n}\r\n\r\n@-webkit-keyframes Drawpath {\r\n    from {\r\n        stroke-dashoffset: -2000;\r\n    }\r\n    to {\r\n        stroke-dashoffset: 0;\r\n    }\r\n}\r\n\r\n@keyframes Drawpath {\r\n    from {\r\n        stroke-dashoffset: -2000;\r\n    }\r\n    to {\r\n        stroke-dashoffset: 0;\r\n    }\r\n}\r\n\r\n.wrapperm {\r\n    width: 800px;\r\n    height: 450px;\r\n    position: relative;\r\n    margin: 0 auto;\r\n    overflow: visible;\r\n    background-color: #fff;\r\n    transform: scale(1.25);\r\n    transform-origin: 50% 0%;\r\n    margin-top: 4vh;\r\n    background-color: #fff;\r\n    border-radius: 2vh;\r\n    border: 0.3vh solid #c5d0db;\r\n    box-shadow: 0 0vh 0.5vh #c5d0db;\r\n}\r\n\r\n#wrapper-inner {\r\n    width: 800px;\r\n    height: 450px;\r\n    margin-top: 4vh;\r\n}\r\n\r\n.map {\r\n    margin-top: -4vh;\r\n}\r\n\r\n.map-slide {\r\n    width: 100%;\r\n}\r\n\r\n.map img {\r\n    width: 800px;\r\n    height: 450px;\r\n    display: block;\r\n    margin: 0 auto;\r\n}\r\n\r\n.map-path {\r\n    position: absolute;\r\n    left: 0;\r\n    right: 0;\r\n    top: 0;\r\n    bottom: 0;\r\n    width: 800px;\r\n    height: 450px;\r\n}\r\n\r\n.med-route-sidebar,\r\n.shkola-route-sidebar {\r\n    margin-top: -2vh;\r\n    background-color: #4592c9;\r\n    padding: 3vh;\r\n    width: 99%;\r\n}\r\n\r\n.med-route-sidebar input,\r\n.shkola-route-sidebar input {\r\n    width: 100%;\r\n    padding: 0.5vh;\r\n    font-size: 2vh;\r\n}\r\n\r\n.keyboard {\r\n    margin-top: 0.5vh;\r\n    margin-bottom: 3vh;\r\n}\r\n\r\n.keyboard button {\r\n    width: 4.2vh;\r\n    height: 4.2vh;\r\n    line-height: 4.2vh;\r\n    margin-bottom: 0.5vh;\r\n    background-color: #fff;\r\n    font-size: 1.5vh;\r\n    text-align: center;\r\n    padding: 0;\r\n    border: 0.1vh solid;\r\n}\r\n\r\n.keyboard .globebutton {\r\n    width: 7vh;\r\n}\r\n\r\n.keyboard .spacebutton {\r\n    width: 10vh;\r\n}\r\n\r\n#myUL {\r\n    padding: 0;\r\n    margin: 0;\r\n    list-style-type: none;\r\n    height: 32vh;\r\n    overflow-y: auto;\r\n}\r\n\r\n#myUL li {\r\n    display: block;\r\n    background-color: #fff;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n#myUL li a {\r\n    display: block;\r\n    color: #222;\r\n    font-size: 2vh;\r\n    font-weight: 700;\r\n    border: 0.25vh solid #96dbfc;\r\n    padding: 1vh 2vh;\r\n}\r\n.med-route-sidebar .hg-theme-default .hg-button {\r\n    height: 3.7vh;\r\n}\r\n.med-route-sidebar .hg-theme-default .hg-row:not(:last-child) {\r\n    margin-bottom: 0.5vh;\r\n}\r\n/* ROUTES */\r\n\r\n\r\n\r\n/* REVIEWS */\r\n\r\n.keyboard-reviews .keyboard {\r\n    margin-top: 7vh;\r\n}\r\n\r\n.keyboard-reviews .keyboard button {\r\n    width: 6vh;\r\n    height: 6vh;\r\n    line-height: 6vh;\r\n    font-size: 2.5vh;\r\n    border-radius: 1vh;\r\n    border: 0.3vh solid #c5d0db;\r\n    box-shadow: 0 0vh 0.5vh #c5d0db;\r\n}\r\n\r\n.keyboard-reviews .keyboard button:hover,\r\n.keyboard-reviews .keyboard button:focus {\r\n    outline: none;\r\n}\r\n\r\n.keyboard-reviews .keyboard .globebutton {\r\n    width: 12vh;\r\n}\r\n\r\n.keyboard-reviews .keyboard .spacebutton {\r\n    width: 17vh;\r\n}\r\n\r\n.keyboard-reviews .hg-theme-default {\r\n    padding: 0.5vh;\r\n}\r\n\r\n.keyboard-reviews .hg-theme-default .hg-button {\r\n    height: 4vh;\r\n}\r\n\r\n.keyboard-reviews .med-route-sidebar .hg-theme-default .hg-row:not(:last-child) {\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.review-form input[type=\"text\"] {\r\n    border: 1px solid #333;\r\n    font-size: 3vh;\r\n}\r\n\r\n.review-form textarea {\r\n    resize: none;\r\n    height: 30vh;\r\n    border: 1px solid #333;\r\n    font-size: 3vh;\r\n    border-radius: 2vh;\r\n    border: 0.3vh solid #c5d0db;\r\n    box-shadow: 0 0vh 0.5vh #c5d0db;\r\n    padding: 3vh;\r\n}\r\n\r\n.review-form .btn-shkola {\r\n    background-color: #5da7fe;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n    padding: 2vh 4vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.review-h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n    margin-top: 0 !important;\r\n    margin-bottom: 5vh !important;\r\n}\r\n\r\n/* REVIEWS */", ""]);
 
 // exports
 
@@ -37773,7 +37968,12 @@ var render = function() {
                               _vm.settings.module_videoalbums == "n"
                                 ? "news-nogals"
                                 : "")
-                          ]
+                          ],
+                          on: {
+                            click: function($event) {
+                              return _vm.GoToNews()
+                            }
+                          }
                         },
                         [
                           _c("img", { attrs: { src: "/img/icon-news.svg" } }),
@@ -37982,6 +38182,315 @@ var render = function() {
     ],
     1
   )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/default/news/index-horizontal.vue?vue&type=template&id=7d70b5b2&":
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/default/news/index-horizontal.vue?vue&type=template&id=7d70b5b2& ***!
+  \********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "container container-index" }, [
+      _c(
+        "h1",
+        {
+          staticClass: "h1-page mb-4",
+          staticStyle: {
+            "font-weight": "700",
+            "font-size": "3.5vh",
+            "text-align": "center"
+          }
+        },
+        [_vm._v("Новости")]
+      ),
+      _vm._v(" "),
+      _vm.news.length
+        ? _c(
+            "div",
+            { staticClass: "news-list sortable" },
+            [
+              _c(
+                "swiper",
+                {
+                  ref: "DefaultNewsAllSwiper",
+                  attrs: { options: _vm.swiperOptions }
+                },
+                _vm._l(_vm.news, function(newsItem) {
+                  return _c("swiper-slide", { key: newsItem.id }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "index-button index-button-full",
+                        on: {
+                          click: function($event) {
+                            return _vm.GoToNewsItem(newsItem.id)
+                          }
+                        }
+                      },
+                      [
+                        newsItem.image
+                          ? _c("div", {
+                              staticClass: "user-pages-item-image",
+                              style: {
+                                "background-image":
+                                  "url(" + newsItem.image + ")"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        newsItem.image
+                          ? _c("span", { staticClass: "t6-p" }, [
+                              _c(
+                                "small",
+                                {
+                                  staticStyle: {
+                                    "font-size": "1vw",
+                                    color: "#999",
+                                    display: "block",
+                                    "margin-bottom": "1vh",
+                                    "margin-top": "1vh"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    _vm._s(
+                                      _vm._f("moment")(newsItem.created_at)
+                                    )
+                                  )
+                                ]
+                              ),
+                              _vm._v(
+                                "\n                                " +
+                                  _vm._s(newsItem.title) +
+                                  "\n                            "
+                              )
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        !newsItem.image
+                          ? _c("div", { staticClass: "index-button-icon" }, [
+                              _c("img", {
+                                attrs: { src: "/img/icons/002-newspaper.svg" }
+                              })
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        !newsItem.image
+                          ? _c("span", [
+                              _c(
+                                "small",
+                                {
+                                  staticStyle: {
+                                    "font-size": "1vw",
+                                    color: "#999",
+                                    display: "block",
+                                    "margin-bottom": "1vh",
+                                    "margin-top": "1vh"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    _vm._s(
+                                      _vm._f("moment")(newsItem.created_at)
+                                    )
+                                  )
+                                ]
+                              ),
+                              _vm._v(
+                                "\n                                " +
+                                  _vm._s(newsItem.title) +
+                                  "\n                            "
+                              )
+                            ])
+                          : _vm._e()
+                      ]
+                    )
+                  ])
+                }),
+                1
+              ),
+              _vm._v(" "),
+              _vm.slider_prev_next
+                ? _c("div", {
+                    staticClass: "swiper-button-prev",
+                    staticStyle: { "margin-left": "1vw" },
+                    attrs: { slot: "button-prev" },
+                    slot: "button-prev"
+                  })
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.slider_prev_next
+                ? _c("div", {
+                    staticClass: "swiper-button-next",
+                    staticStyle: { "margin-right": "1vw" },
+                    attrs: { slot: "button-next" },
+                    slot: "button-next"
+                  })
+                : _vm._e()
+            ],
+            1
+          )
+        : _vm._e()
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "footer" },
+      [
+        _c(
+          "router-link",
+          {
+            staticClass: "home-button",
+            attrs: { to: { name: "default_Home" } }
+          },
+          [_c("img", { attrs: { src: "/img/icon-footer-home.svg" } })]
+        )
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/default/news/show-horizontal.vue?vue&type=template&id=1816f8de&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/default/news/show-horizontal.vue?vue&type=template&id=1816f8de& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "news-item" }, [
+        _c("div", { staticClass: "row" }, [
+          _vm.newsItem.image
+            ? _c("div", { staticClass: "col-4" }, [
+                _c("div", {
+                  staticClass: "news-item-img",
+                  style: {
+                    "background-image": "url(" + _vm.newsItem.image + ")"
+                  }
+                })
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.newsItem.image
+            ? _c("div", { staticClass: "col-8" }, [
+                _c(
+                  "h1",
+                  {
+                    staticStyle: {
+                      "font-weight": "700",
+                      "font-size": "3.5vh",
+                      "margin-bottom": "2vh"
+                    }
+                  },
+                  [_vm._v(_vm._s(_vm.newsItem.title))]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "news-item-text" }, [
+                  _c("span", [
+                    _vm._v(
+                      _vm._s(
+                        _vm
+                          .moment(_vm.newsItem.created_at)
+                          .format("D MMMM YYYY")
+                      )
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", {
+                    domProps: { innerHTML: _vm._s(_vm.newsItem.text) }
+                  })
+                ])
+              ])
+            : _c("div", { staticClass: "col-12" }, [
+                _c(
+                  "h1",
+                  {
+                    staticStyle: {
+                      "font-weight": "700",
+                      "font-size": "3.5vh",
+                      "margin-bottom": "2vh"
+                    }
+                  },
+                  [_vm._v(_vm._s(_vm.newsItem.title))]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "news-item-text" }, [
+                  _c("span", [
+                    _vm._v(
+                      _vm._s(
+                        _vm
+                          .moment(_vm.newsItem.created_at)
+                          .format("D MMMM YYYY")
+                      )
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", {
+                    domProps: { innerHTML: _vm._s(_vm.newsItem.text) }
+                  })
+                ])
+              ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "footer" },
+      [
+        _c(
+          "router-link",
+          {
+            staticClass: "home-button",
+            attrs: { to: { name: "default_Home" } }
+          },
+          [_c("img", { attrs: { src: "/img/icon-footer-home.svg" } })]
+        ),
+        _vm._v(" "),
+        _c(
+          "router-link",
+          {
+            staticClass: "gal-button",
+            attrs: { to: { name: "default_News" } }
+          },
+          [_c("img", { attrs: { src: "/img/icon-footer-back.svg" } })]
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -38511,7 +39020,7 @@ var render = function() {
             _vm.slider_prev_next
               ? _c("div", {
                   staticClass: "swiper-button-prev",
-                  staticStyle: { "margin-left": "2vw" },
+                  staticStyle: { "margin-left": "1vw" },
                   attrs: { slot: "button-prev" },
                   slot: "button-prev"
                 })
@@ -38520,7 +39029,7 @@ var render = function() {
             _vm.slider_prev_next
               ? _c("div", {
                   staticClass: "swiper-button-next",
-                  staticStyle: { "margin-right": "2vw" },
+                  staticStyle: { "margin-right": "1vw" },
                   attrs: { slot: "button-next" },
                   slot: "button-next"
                 })
@@ -38805,7 +39314,7 @@ var render = function() {
                 _vm.slider_prev_next
                   ? _c("div", {
                       staticClass: "swiper-button-prev",
-                      staticStyle: { "margin-left": "2vw" },
+                      staticStyle: { "margin-left": "1vw" },
                       attrs: { slot: "button-prev" },
                       slot: "button-prev"
                     })
@@ -38814,7 +39323,7 @@ var render = function() {
                 _vm.slider_prev_next
                   ? _c("div", {
                       staticClass: "swiper-button-next",
-                      staticStyle: { "margin-right": "2vw" },
+                      staticStyle: { "margin-right": "1vw" },
                       attrs: { slot: "button-next" },
                       slot: "button-next"
                     })
@@ -61941,6 +62450,144 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/default/news/index-horizontal.vue":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/default/news/index-horizontal.vue ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _index_horizontal_vue_vue_type_template_id_7d70b5b2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-horizontal.vue?vue&type=template&id=7d70b5b2& */ "./resources/js/components/default/news/index-horizontal.vue?vue&type=template&id=7d70b5b2&");
+/* harmony import */ var _index_horizontal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-horizontal.vue?vue&type=script&lang=js& */ "./resources/js/components/default/news/index-horizontal.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _index_horizontal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _index_horizontal_vue_vue_type_template_id_7d70b5b2___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _index_horizontal_vue_vue_type_template_id_7d70b5b2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/default/news/index-horizontal.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/default/news/index-horizontal.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/components/default/news/index-horizontal.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_horizontal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./index-horizontal.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/default/news/index-horizontal.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_horizontal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/default/news/index-horizontal.vue?vue&type=template&id=7d70b5b2&":
+/*!**************************************************************************************************!*\
+  !*** ./resources/js/components/default/news/index-horizontal.vue?vue&type=template&id=7d70b5b2& ***!
+  \**************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_horizontal_vue_vue_type_template_id_7d70b5b2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./index-horizontal.vue?vue&type=template&id=7d70b5b2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/default/news/index-horizontal.vue?vue&type=template&id=7d70b5b2&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_horizontal_vue_vue_type_template_id_7d70b5b2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_horizontal_vue_vue_type_template_id_7d70b5b2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/default/news/show-horizontal.vue":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/default/news/show-horizontal.vue ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _show_horizontal_vue_vue_type_template_id_1816f8de___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./show-horizontal.vue?vue&type=template&id=1816f8de& */ "./resources/js/components/default/news/show-horizontal.vue?vue&type=template&id=1816f8de&");
+/* harmony import */ var _show_horizontal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./show-horizontal.vue?vue&type=script&lang=js& */ "./resources/js/components/default/news/show-horizontal.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _show_horizontal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _show_horizontal_vue_vue_type_template_id_1816f8de___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _show_horizontal_vue_vue_type_template_id_1816f8de___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/default/news/show-horizontal.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/default/news/show-horizontal.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/default/news/show-horizontal.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_show_horizontal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./show-horizontal.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/default/news/show-horizontal.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_show_horizontal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/default/news/show-horizontal.vue?vue&type=template&id=1816f8de&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/components/default/news/show-horizontal.vue?vue&type=template&id=1816f8de& ***!
+  \*************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_show_horizontal_vue_vue_type_template_id_1816f8de___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./show-horizontal.vue?vue&type=template&id=1816f8de& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/default/news/show-horizontal.vue?vue&type=template&id=1816f8de&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_show_horizontal_vue_vue_type_template_id_1816f8de___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_show_horizontal_vue_vue_type_template_id_1816f8de___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/default/pages/PageItem.vue":
 /*!************************************************************!*\
   !*** ./resources/js/components/default/pages/PageItem.vue ***!
@@ -64625,6 +65272,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_default_reviews_horizontal__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/default/reviews/horizontal */ "./resources/js/components/default/reviews/horizontal.vue");
 /* harmony import */ var _components_default_photoalbums_index_horizontal__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/default/photoalbums/index-horizontal */ "./resources/js/components/default/photoalbums/index-horizontal.vue");
 /* harmony import */ var _components_default_photoalbums_show_horizontal__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/default/photoalbums/show-horizontal */ "./resources/js/components/default/photoalbums/show-horizontal.vue");
+/* harmony import */ var _components_default_news_index_horizontal__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/default/news/index-horizontal */ "./resources/js/components/default/news/index-horizontal.vue");
+/* harmony import */ var _components_default_news_show_horizontal__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/default/news/show-horizontal */ "./resources/js/components/default/news/show-horizontal.vue");
 // Школа
 
 
@@ -64636,6 +65285,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
  // Стандарт
+
+
 
 
 
@@ -64709,6 +65360,14 @@ var routes = [// Школа
   path: '/vue-app/default/photoalbum/:id',
   name: 'default_PhotoalbumItem',
   component: _components_default_photoalbums_show_horizontal__WEBPACK_IMPORTED_MODULE_15__["default"]
+}, {
+  path: '/vue-app/default/news',
+  name: 'default_News',
+  component: _components_default_news_index_horizontal__WEBPACK_IMPORTED_MODULE_16__["default"]
+}, {
+  path: '/vue-app/default/news_item/:id',
+  name: 'default_NewsItem',
+  component: _components_default_news_show_horizontal__WEBPACK_IMPORTED_MODULE_17__["default"]
 }];
 
 /***/ }),

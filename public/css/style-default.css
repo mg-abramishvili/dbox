@@ -324,8 +324,9 @@ main {
     width: calc(25% - 2vh);
     display: inline-block;
     vertical-align: top;
-    margin: 0 1vh;
+    margin: 0;
     white-space: normal;
+    padding: 1vh;
 }
 
 .gallery-list-item a {
@@ -419,81 +420,75 @@ main {
 
 /* NEWS */
 
-.news-list {
-    overflow: hidden;
-    overflow-x: auto;
-    white-space: nowrap;
-    margin-left: -1vh;
-    margin-right: -1vh;
-}
-
-.news-list-item {
-    width: calc(25% - 2vh);
-    display: inline-block;
-    vertical-align: top;
-    margin: 0 1vh;
-    white-space: normal;
-}
-
-.news-list-item a {
-    display: block;
+.news-list .index-button-full {
+    height: 67vh;
     text-align: left;
-    color: #696969;
-    margin-bottom: 3vh;
-}
-
-.news-list-item a:hover,
-.news-list-item a:focus {
-    text-decoration: none;
-}
-
-.news-list-item a h2 {
-    height: 8vh;
-    font-weight: 700;
+    display: block;
+    padding: 1vh;
     color: #333;
-    margin: 0;
-    line-height: 1.35;
+    font-weight: bold;
     font-size: 2.5vh;
-    overflow: hidden;
 }
 
-.news-list-item-pic {
-    height: 40vh;
-    margin-bottom: 3vh;
+.news-list .index-button-full .index-button-icon {
+    height: 36vh;
+    background-color: #e0e0e0;
     border-radius: 1vh;
+    padding-top: 8vh;
 }
 
-.news-list .flickity-page-dots {
-    bottom: 0;
+.news-list .index-button-icon img {
+    width: 45%;
+    display: block;
+    margin: 0 auto;
 }
 
-.news-list .flickity-page-dots .dot {
-    width: 4vh;
-    border-radius: 1vh;
+.news-list .index-button-full span {
+    margin-top: 25vh;
 }
 
-.news-detail-image {
-    height: 75vh;
-    border-radius: 1vh;
+.news-list .index-button-full .user-pages-item-image {
+    width: 100%;
+    height: 36vh;
+    border-radius: 2vh;
+    border: 0;
+    margin: 0;
+}
+
+.news-item {
+    background-color: #fff;
+}
+
+.news-item-img {
+    height: 70vh;
+    background-size: cover;
+    background-position: 50% 50%;
+    border-radius: 1.5vh;
 }
 
 .news-item-text {
-    height: 75vh;
+    font-size: 2vh;
+    line-height: 1.75;
+    height: 67vh;
+    overflow: hidden;
     overflow-y: auto;
-    padding-right: 2vh;
-    font-size: 2vh !important;
-    line-height: 1.6 !important;
 }
 
-.news-item-text h1 {
-    font-weight: bold;
-    font-size: 4vh;
-    margin-bottom: 4vh;
-}
+  .news-item-text h1 {
+      color: #5da7fe;
+      font-size: 4vh;
+      font-weight: 700;
+      text-align: left;
+      margin: 0;
+      margin-bottom: 2vh;
+  }
 
-.news-item-text p {
-    margin-bottom: 2vh !important;
-}
+  .news-item-text span {
+      display: block;
+      color: #777;
+      margin-bottom: 1.5vh;
+      font-size: 2.5vh;
+  }
 
 /* NEWS */
 
