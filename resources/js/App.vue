@@ -1,18 +1,25 @@
 <template>
     <div class="wrapper">
-        <template v-if="settings.theme === 'shkola'">
-            <ShkolaLayout />
-        </template>
 
         <template v-if="settings.theme === 'default'">
             <DefaultLayout />
         </template>
+
+        <template v-if="settings.theme === 'shkola'">
+            <ShkolaLayout />
+        </template>
+
+        <template v-if="settings.theme === 'med'">
+            <MedLayout />
+        </template>
+
     </div>
 </template>
 
 <script>
-    import ShkolaLayout from './components/shkola/layout';
     import DefaultLayout from './components/default/layout';
+    import ShkolaLayout from './components/shkola/layout';
+    import MedLayout from './components/med/layout';
 
     export default {
         data() {
@@ -38,11 +45,18 @@
                         }
                     }
 
+                    if(this.settings.theme === 'med') {
+                        if(this.$route.name !== 'med_Home') {
+                            this.$router.push({name: 'med_Home'})
+                        }
+                    }
+
                 });
         },
         components: {
+            DefaultLayout,
             ShkolaLayout,
-            DefaultLayout
+            MedLayout,
         }
     }
 </script>

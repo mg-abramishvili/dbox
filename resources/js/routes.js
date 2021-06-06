@@ -1,15 +1,3 @@
-// Школа
-import shkola_Home from './components/shkola/home/horizontal.vue';
-import shkola_PageItem from './components/shkola/pages/PageItem';
-import shkola_Routes from './components/shkola/routes/horizontal';
-import shkola_Reviews from './components/shkola/reviews/horizontal';
-import shkola_Photoalbums from './components/shkola/photoalbums/index-horizontal';
-import shkola_PhotoalbumItem from './components/shkola/photoalbums/show-horizontal';
-import shkola_Videoalbums from './components/shkola/videoalbums/index-horizontal';
-import shkola_VideoalbumItem from './components/shkola/videoalbums/show-horizontal';
-import shkola_News from './components/shkola/news/index-horizontal';
-import shkola_NewsItem from './components/shkola/news/show-horizontal';
-
 // Стандарт
 import default_Home from './components/default/home/horizontal.vue';
 import default_PageItem from './components/default/pages/PageItem';
@@ -22,7 +10,83 @@ import default_VideoalbumItem from './components/default/videoalbums/show-horizo
 import default_News from './components/default/news/index-horizontal';
 import default_NewsItem from './components/default/news/show-horizontal';
 
+// Школа
+import shkola_Home from './components/shkola/home/horizontal.vue';
+import shkola_PageItem from './components/shkola/pages/PageItem';
+import shkola_Routes from './components/shkola/routes/horizontal';
+import shkola_Reviews from './components/shkola/reviews/horizontal';
+import shkola_Photoalbums from './components/shkola/photoalbums/index-horizontal';
+import shkola_PhotoalbumItem from './components/shkola/photoalbums/show-horizontal';
+import shkola_Videoalbums from './components/shkola/videoalbums/index-horizontal';
+import shkola_VideoalbumItem from './components/shkola/videoalbums/show-horizontal';
+import shkola_News from './components/shkola/news/index-horizontal';
+import shkola_NewsItem from './components/shkola/news/show-horizontal';
+
+// Медцентр
+import med_Home from './components/med/home/horizontal.vue';
+import med_PageItem from './components/med/pages/PageItem';
+import med_Routes from './components/med/routes/horizontal';
+import med_Reviews from './components/med/reviews/horizontal';
+import med_Photoalbums from './components/med/photoalbums/index-horizontal';
+import med_PhotoalbumItem from './components/med/photoalbums/show-horizontal';
+import med_Videoalbums from './components/med/videoalbums/index-horizontal';
+import med_VideoalbumItem from './components/med/videoalbums/show-horizontal';
+import med_News from './components/med/news/index-horizontal';
+import med_NewsItem from './components/med/news/show-horizontal';
+
 export const routes = [
+    // Стандарт
+    {
+        path: '/vue-app/default/index',
+        name: 'default_Home',
+        component: default_Home
+    },
+    {
+        path: '/vue-app/default/pages/:id',
+        name: 'default_PageItem',
+        component: default_PageItem
+    },
+    {
+        path: '/vue-app/default/routes',
+        name: 'default_Routes',
+        component: default_Routes,
+    },
+    {
+        path: '/vue-app/default/reviews',
+        name: 'default_Reviews',
+        component: default_Reviews
+    },
+    {
+        path: '/vue-app/default/photoalbums',
+        name: 'default_Photoalbums',
+        component: default_Photoalbums
+    },
+    {
+        path: '/vue-app/default/photoalbum/:id',
+        name: 'default_PhotoalbumItem',
+        component: default_PhotoalbumItem
+    },
+    {
+        path: '/vue-app/default/videoalbums',
+        name: 'default_Videoalbums',
+        component: default_Videoalbums
+    },
+    {
+        path: '/vue-app/default/videoalbum/:id',
+        name: 'default_VideoalbumItem',
+        component: default_VideoalbumItem
+    },
+    {
+        path: '/vue-app/default/news',
+        name: 'default_News',
+        component: default_News
+    },
+    {
+        path: '/vue-app/default/news_item/:id',
+        name: 'default_NewsItem',
+        component: default_NewsItem
+    },
+
     // Школа
     {
         path: '/vue-app/shkola/index',
@@ -75,55 +139,55 @@ export const routes = [
         component: shkola_NewsItem
     },
 
-    // Стандарт
+    // Медцентр
     {
-        path: '/vue-app/default/index',
-        name: 'default_Home',
-        component: default_Home
+        path: '/vue-app/med/index',
+        name: 'med_Home',
+        component: med_Home
     },
     {
-        path: '/vue-app/default/pages/:id',
-        name: 'default_PageItem',
-        component: default_PageItem
+        path: '/vue-app/med/pages/:id',
+        name: 'med_PageItem',
+        component: med_PageItem
     },
     {
-        path: '/vue-app/default/routes',
-        name: 'default_Routes',
-        component: default_Routes,
+        path: '/vue-app/med/routes',
+        name: 'med_Routes',
+        component: med_Routes,
     },
     {
-        path: '/vue-app/default/reviews',
-        name: 'default_Reviews',
-        component: default_Reviews
+        path: '/vue-app/med/reviews',
+        name: 'med_Reviews',
+        component: med_Reviews
     },
     {
-        path: '/vue-app/default/photoalbums',
-        name: 'default_Photoalbums',
-        component: default_Photoalbums
+        path: '/vue-app/med/photoalbums',
+        name: 'med_Photoalbums',
+        component: med_Photoalbums
     },
     {
-        path: '/vue-app/default/photoalbum/:id',
-        name: 'default_PhotoalbumItem',
-        component: default_PhotoalbumItem
+        path: '/vue-app/med/photoalbum/:id',
+        name: 'med_PhotoalbumItem',
+        component: med_PhotoalbumItem
     },
     {
-        path: '/vue-app/default/videoalbums',
-        name: 'default_Videoalbums',
-        component: default_Videoalbums
+        path: '/vue-app/med/videoalbums',
+        name: 'med_Videoalbums',
+        component: med_Videoalbums
     },
     {
-        path: '/vue-app/default/videoalbum/:id',
-        name: 'default_VideoalbumItem',
-        component: default_VideoalbumItem
+        path: '/vue-app/med/videoalbum/:id',
+        name: 'med_VideoalbumItem',
+        component: med_VideoalbumItem
     },
     {
-        path: '/vue-app/default/news',
-        name: 'default_News',
-        component: default_News
+        path: '/vue-app/med/news',
+        name: 'med_News',
+        component: med_News
     },
     {
-        path: '/vue-app/default/news_item/:id',
-        name: 'default_NewsItem',
-        component: default_NewsItem
+        path: '/vue-app/med/news_item/:id',
+        name: 'med_NewsItem',
+        component: med_NewsItem
     },
 ];
