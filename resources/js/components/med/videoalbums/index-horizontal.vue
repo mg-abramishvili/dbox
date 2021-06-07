@@ -23,7 +23,7 @@
         </div>
 
         <div class="footer">
-            <router-link :to="{name: 'default_Home'}" class="home-button">
+            <router-link :to="{name: 'med_Home'}" class="home-button">
                 <img src="/img/icon-footer-home.svg">
             </router-link>
         </div>
@@ -67,7 +67,7 @@
         },
         methods: {
             GoToVideoalbum(id) {
-                this.$router.push({name: 'default_VideoalbumItem', params: {id: id}})
+                this.$router.push({name: 'med_VideoalbumItem', params: {id: id}})
                 this.$refs.VideoalbumsAllSwiper.$swiper.slideTo(1, false)
             },
         },

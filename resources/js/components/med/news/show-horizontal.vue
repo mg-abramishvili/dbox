@@ -8,14 +8,14 @@
                     </div>
 
                     <div v-if="newsItem.image" class="col-8">
-                        <h1 style="font-weight: 700; font-size: 3.5vh; margin-bottom: 2vh;">{{ newsItem.title }}</h1>
+                        <h1 style="font-weight: 700; font-size: 3.5vh; margin-bottom: 2vh; color: #fff;">{{ newsItem.title }}</h1>
                         <div class="news-item-text">
                             <span>{{moment(newsItem.created_at).format('D MMMM YYYY')}}</span>
                             <div v-html="newsItem.text"></div>
                         </div>
                     </div>
                     <div v-else class="col-12">
-                        <h1 style="font-weight: 700; font-size: 3.5vh; margin-bottom: 2vh;">{{ newsItem.title }}</h1>
+                        <h1 style="font-weight: 700; font-size: 3.5vh; margin-bottom: 2vh; color: #fff;">{{ newsItem.title }}</h1>
                         <div class="news-item-text">
                             <span>{{moment(newsItem.created_at).format('D MMMM YYYY')}}</span>
                             <div v-html="newsItem.text"></div>
@@ -27,11 +27,11 @@
         </div>
 
         <div class="footer">
-            <router-link :to="{name: 'default_Home'}" class="home-button">
+            <router-link :to="{name: 'med_Home'}" class="home-button">
                 <img src="/img/icon-footer-home.svg">
             </router-link>
 
-            <router-link :to="{name: 'default_News'}" class="gal-button">
+            <router-link :to="{name: 'med_News'}" class="gal-button">
                 <img src="/img/icon-footer-back.svg">
             </router-link>
         </div>

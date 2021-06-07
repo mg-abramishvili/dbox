@@ -2,78 +2,65 @@
     <div>
         <div class="bg_med_index"></div>
         <div class="container">
-            <div class="row">
 
-            <div class="col-6">
-                <div class="row">
-                    <div v-if="settings.module_photoalbums == 'y' || settings.module_videoalbums == 'y'" class="col">
-                        <template v-if="settings.module_photoalbums == 'y'">
-                            <a @click="GoToPhotoalbums()" class="photogalleries" :class="[`${settings.module_videoalbums == 'n' ? 'photogalleries-full':''} ${settings.module_news == 'n' ? 'photogalleries-nonews':''}`]">
-                                <img src="/img/icon-photogal.svg">
-                                Фотогалерея
-                            </a>
-                        </template>
+            <div class="user-pages">
+                <swiper ref="MedIndexAllSwiper" :options="swiperOptions">
+                    <swiper-slide v-if="settings.module_photoalbums == 'y'" class="user-pages-item-item">
+                        <a @click="GoToPhotoalbums()">
+                            <img src="/img/icon-photogal.svg">
+                            Фотогалерея
+                        </a>
+                    </swiper-slide>
 
-                        <template v-if="settings.module_videoalbums == 'y'">
-                            <a @click="GoToVideoalbums()" class="videogalleries" :class="[`${settings.module_photoalbums == 'n' ? 'videogalleries-full':''} ${settings.module_news == 'n' ? 'videogalleries-nonews':''}`]">
-                                <img src="/img/icon-videogal.svg">
-                                Видеогалерея
-                            </a>
-                        </template>
-                    </div>
+                    <swiper-slide v-if="settings.module_videoalbums == 'y'" class="user-pages-item-item">
+                        <a @click="GoToVideoalbums()">
+                            <img src="/img/icon-videogal.svg">
+                            Видеогалерея
+                        </a>
+                    </swiper-slide>
 
-                    <template v-if="settings.module_news == 'y'">
-                        <div :class="[`${settings.module_photoalbums == 'y' || settings.module_videoalbums == 'y' ? 'col-7':'col-12'}`]">
-                            <a @click="GoToNews()" class="news" :class="[`${settings.module_photoalbums == 'n' && settings.module_videoalbums == 'n' ? 'news-nogals':''}`]">
-                                <img src="/img/icon-news.svg">
-                                Новости
-                            </a>
-                        </div>
-                    </template>
+                    <swiper-slide v-if="settings.module_news == 'y'" class="user-pages-item-item">
+                        <a @click="GoToNews()">
+                            <img src="/img/icon-news.svg">
+                            Новости
+                        </a>
+                    </swiper-slide>
 
-                </div>
-            </div>
+                    <swiper-slide v-for="page in pages" :key="page.id" class="user-pages-item-item">
+                        <a @click="GoToPage(page.id, page.types)">
+                            <div v-if="page.image_as_icon === '1'" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(' + page.image + ')' }"></div>
+                            
+                            <template v-if="page.image_as_icon === '0' && page.icons[0]">
+                                <img :src="page.icons[0].icon">
+                            </template>
 
-            <div :class="[`${settings.module_photoalbums == 'n' && settings.module_videoalbums == 'n' && settings.module_news == 'n' ? 'col-12':'col-6'}`]">
-                <div class="user-pages">
-                    <swiper ref="MedIndexAllSwiper" :options="swiperOptions">
-                        <swiper-slide v-for="page in pages" :key="page.id" class="user-pages-item-item">
-                            <a @click="GoToPage(page.id, page.types)">
-                                <div v-if="page.image_as_icon === '1'" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(' + page.image + ')' }"></div>
-                                
-                                <template v-if="page.image_as_icon === '0' && page.icons[0]">
-                                    <img :src="page.icons[0].icon">
-                                </template>
-
-                                <template v-if="page.image_as_icon === '0' && page.icons.length <= 0">
-                                    <img src="/img/icons/029-information.svg">
-                                </template>
-
-                                {{ page.title }}
-                            </a>
-                        </swiper-slide>
-
-                        <swiper-slide v-if="settings.module_routes == 'y'" class="user-pages-item-item">
-                            <a @click="GoToRoutes()">
-                                <img src="/img/icons/003-home.svg">
-                                План здания
-                            </a>
-                        </swiper-slide>
-
-                        <swiper-slide v-if="settings.module_reviews == 'y'" class="user-pages-item-item">
-                            <a @click="GoToReviews()">
+                            <template v-if="page.image_as_icon === '0' && page.icons.length <= 0">
                                 <img src="/img/icons/029-information.svg">
-                                Отзывы
-                            </a>
-                        </swiper-slide>
-                    </swiper>
+                            </template>
 
-                    <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev" style="margin-left: 2vw"></div>
-                    <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next" style="margin-right: 2vw"></div>
-                </div>
+                            {{ page.title }}
+                        </a>
+                    </swiper-slide>
+
+                    <swiper-slide v-if="settings.module_routes == 'y'" class="user-pages-item-item">
+                        <a @click="GoToRoutes()">
+                            <img src="/img/icons/003-home.svg">
+                            План здания
+                        </a>
+                    </swiper-slide>
+
+                    <swiper-slide v-if="settings.module_reviews == 'y'" class="user-pages-item-item">
+                        <a @click="GoToReviews()">
+                            <img src="/img/icons/029-information.svg">
+                            Отзывы
+                        </a>
+                    </swiper-slide>
+                </swiper>
+
+                <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev" style="margin-left: -2.5vw"></div>
+                <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next" style="margin-right: -2.5vw"></div>
             </div>
 
-            </div>
         </div>
     </div>
 </template>

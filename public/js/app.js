@@ -2412,19 +2412,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2685,12 +2672,12 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     GoToNewsItem: function GoToNewsItem(id) {
       this.$router.push({
-        name: 'default_NewsItem',
+        name: 'med_NewsItem',
         params: {
           id: id
         }
       });
-      this.$refs.DefaultNewsAllSwiper.$swiper.slideTo(0, false);
+      this.$refs.MedNewsAllSwiper.$swiper.slideTo(0, false);
     }
   },
   filters: {
@@ -2710,7 +2697,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     swiper: function swiper() {
-      return this.$refs.DefaultNewsAllSwiper.$swiper;
+      return this.$refs.MedNewsAllSwiper.$swiper;
     }
   },
   components: {
@@ -3663,7 +3650,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     GoToPhotoalbum: function GoToPhotoalbum(id) {
       this.$router.push({
-        name: 'default_PhotoalbumItem',
+        name: 'med_PhotoalbumItem',
         params: {
           id: id
         }
@@ -3822,7 +3809,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'default_Reviews',
+  name: 'med_Reviews',
   data: function data() {
     return {
       settings: {},
@@ -3888,7 +3875,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this2.show_form = false;
                 setTimeout(function () {
                   _this2.success = false, _this2.error = false, _this2.show_form = true, _this2.show_button = true, _this2.input = '', _this2.$router.push({
-                    name: 'default_Home'
+                    name: 'med_Home'
                   });
                 }, 2000);
                 _context.next = 25;
@@ -3939,7 +3926,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _default_partials_SimpleKeyboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../default/partials/SimpleKeyboard */ "./resources/js/components/default/partials/SimpleKeyboard.vue");
+/* harmony import */ var _med_partials_SimpleKeyboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../med/partials/SimpleKeyboard */ "./resources/js/components/med/partials/SimpleKeyboard.vue");
 //
 //
 //
@@ -4213,7 +4200,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   components: {
-    SimpleKeyboard: _default_partials_SimpleKeyboard__WEBPACK_IMPORTED_MODULE_0__["default"]
+    SimpleKeyboard: _med_partials_SimpleKeyboard__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
@@ -4303,7 +4290,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     GoToVideoalbum: function GoToVideoalbum(id) {
       this.$router.push({
-        name: 'default_VideoalbumItem',
+        name: 'med_VideoalbumItem',
         params: {
           id: id
         }
@@ -4353,7 +4340,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'default_VideoalbumItem',
+  name: 'med_VideoalbumItem',
   data: function data() {
     return {
       videoalbumItem: {}
@@ -6553,7 +6540,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "html {\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n  -webkit-touch-callout: none;\r\n  -khtml-user-select: none;\r\n  /*cursor: none;*/\r\n}\r\n\r\nbody {\r\n    margin: 0 !important;\r\n    font-size: 2vh;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    position: relative;\r\n}\r\n\r\n.container {\r\n    max-width: 95vw;\r\n}\r\n\r\n.row {\r\n    margin-left: -2vh;\r\n    margin-right: -2vh;\r\n}\r\n\r\n.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {\r\n    padding-left: 2vh;\r\n    padding-right: 2vh;\r\n}\r\n\r\nmain {\r\n    position: relative;\r\n}\r\n\r\n.wrapper {\r\n    position: relative;\r\n    width: 100vw;\r\n    max-width: 177.78vh;\r\n    height: 56.25vw;\r\n    max-height: 100vh;\r\n    overflow: hidden;\r\n    margin: 0 auto;\r\n    background: #fff;\r\n    background: url('/img/med/bg.png');\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.bg_med_index {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    z-index: 0;\r\n    background: url('/img/med/bg-index.png');\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.header {\r\n    margin-top: 4vh;\r\n    margin-bottom: 4vh;\r\n    height: 7vh;\r\n}\r\n\r\n.header-logo a {\r\n    display: block;\r\n}\r\n\r\n.header-logo a img {\r\n    width: auto;\r\n    height: auto;\r\n    max-width: 15vh;\r\n    max-height: 7vh;\r\n}\r\n\r\n.header-text {\r\n    text-align: right;\r\n    color: #696969;\r\n    font-size: 3vh;\r\n}\r\n\r\n.footer {\r\n    text-align: center;\r\n    position: absolute;\r\n    bottom: 2vh;\r\n    left: 2vh;\r\n    right: 2vh;\r\n}\r\n\r\n.footer a {\r\n    display: inline-block;\r\n    width: 6vh;\r\n    height: 6vh;\r\n    margin: 0 0.5vh;\r\n    position: relative;\r\n    border-radius: 0.75vh;\r\n}\r\n\r\n.footer a img {\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    width: 70%;\r\n    height: 70%;\r\n    display: block;\r\n    margin: 0 auto;\r\n    left: 0;\r\n    right: 0;\r\n}\r\n\r\n.home-button {\r\n    background-color: #ADB9C8;\r\n}\r\n\r\n.gal-button {\r\n    background-color: #45C99F;\r\n}\r\n\r\n.vgal-button {\r\n    background-color: #4592C9;\r\n}\r\n\r\n.news-button {\r\n    background-color: #A745C9;\r\n}\r\n\r\n\r\n\r\n::-webkit-scrollbar {\r\n    width: 1.5vh;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n    background: #B8BDBD;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n    background: #ffc940;\r\n    border: 1px solid #B8BDBD;\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n    background: #ffc940;\r\n}\r\n\r\n\r\n\r\n\r\n/* MAIN PAGE */\r\n\r\n.photogalleries {\r\n    background-color: #45c99f;\r\n    border-radius: 1vh;\r\n    height: 38.25vh;\r\n    margin-bottom: 3.5vh;\r\n    display: block;\r\n    padding-top: 8vh;\r\n    text-align: center;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n}\r\n\r\n.photogalleries:hover,\r\n.photogalleries:focus {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n\r\n.photogalleries img {\r\n    display: block;\r\n    width: 60%;\r\n    margin: 0 auto;\r\n    margin-bottom: 4vh;\r\n}\r\n\r\n.photogalleries-full {\r\n    height: 80vh;\r\n    padding-top: 28vh;\r\n}\r\n\r\n.photogalleries-nonews {\r\n    padding-top: 22vh;\r\n}\r\n\r\n.photogalleries-nonews img {\r\n    width: 40%;\r\n}\r\n\r\n.videogalleries {\r\n    background-color: #4592c9;\r\n    border-radius: 1vh;\r\n    height: 38.25vh;\r\n    display: block;\r\n    padding-top: 8vh;\r\n    text-align: center;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n}\r\n\r\n.videogalleries:hover,\r\n.videogalleries:focus {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n\r\n.videogalleries img {\r\n    display: block;\r\n    width: 60%;\r\n    margin: 0 auto;\r\n    margin-bottom: 4vh;\r\n}\r\n\r\n.videogalleries-full {\r\n    height: 80vh;\r\n    padding-top: 28vh;\r\n}\r\n\r\n.videogalleries-nonews {\r\n    padding-top: 22vh;\r\n}\r\n\r\n.videogalleries-nonews img {\r\n    width: 40%;\r\n}\r\n\r\n.news {\r\n    background-color: #a745c9;\r\n    height: 80vh;\r\n    border-radius: 1vh;\r\n    display: block;\r\n    text-align: center;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n    padding-top: 27vh;\r\n}\r\n\r\n.news:hover,\r\n.news:focus {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n\r\n.news img {\r\n    display: block;\r\n    width: 45%;\r\n    margin: 0 auto;\r\n    margin-bottom: 5vh;\r\n}\r\n\r\n.news-nogals {\r\n    padding-top: 22vh;\r\n}\r\n\r\n.news-nogals img {\r\n    width: 40%;\r\n}\r\n\r\n.user-pages {\r\n    background-color: #ffc940;\r\n    height: 80vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.user-pages-item {\r\n    width: 50%;\r\n    position: relative;\r\n}\r\n\r\n.user-pages-item-item {\r\n    height: 40vh;\r\n    position: relative;\r\n    text-align: center;\r\n    border-radius: 1vh;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n    padding-top: 9vh;\r\n    padding-left: 15px;\r\n    padding-right: 15px;\r\n}\r\n\r\n.user-pages-item-item a {\r\n    display: block;\r\n    color: #fff;\r\n    line-height: 1.25;\r\n    padding: 0 1vh;\r\n}\r\n\r\n.user-pages-item-item a:hover,\r\n.user-pages-item-item a:focus {\r\n    text-decoration: none;\r\n    color: #fff;\r\n}\r\n\r\n.user-pages-item-item img {\r\n    display: block;\r\n    width: 15vh;\r\n    height: 15vh;\r\n    margin: 0 auto;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.user-pages-item-image {\r\n    width: 15vh;\r\n    height: 15vh;\r\n    background-size: cover;\r\n    background-repeat: no-repeat;\r\n    background-position: 50% 50%;\r\n    border-radius: 100%;\r\n    border: 0.75vh solid #fff;\r\n    display: block;\r\n    margin: 0 auto;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n/* MAIN PAGE */\r\n\r\n\r\n/* PHOTOGALS */\r\n\r\n.gallery-list {\r\n    overflow: hidden;\r\n    overflow-x: auto;\r\n    white-space: nowrap;\r\n    margin-left: -1vh;\r\n    margin-right: -1vh;\r\n}\r\n\r\n.gallery-list-item-slide {\r\n    width: 100%;\r\n    white-space: normal;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.gallery-list-item {\r\n    width: calc(25% - 2vh);\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    margin: 0;\r\n    white-space: normal;\r\n    padding: 1vh;\r\n}\r\n\r\n.gallery-list-item a {\r\n    display: block;\r\n    text-align: center;\r\n}\r\n\r\n.gallery-list-item a:hover,\r\n.gallery-list-item a:focus {\r\n    text-decoration: none;\r\n}\r\n\r\n.gallery-list-item a h2 {\r\n    height: 7vh;\r\n    color: #333;\r\n    margin: 0;\r\n    line-height: 1.35;\r\n    font-size: 2vh;\r\n    overflow: hidden;\r\n}\r\n\r\n.gallery-list-item-pic {\r\n    height: 27vh;\r\n    margin-bottom: 1vh;\r\n    border-radius: 1vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.gallery-list .flickity-page-dots {\r\n    bottom: 0;\r\n}\r\n\r\n.gallery-list .flickity-page-dots .dot {\r\n    width: 5vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.gallery-detail {\r\n    padding: 0 2.5vh;\r\n}\r\n\r\n.gallery-detail-item {\r\n    width: 30%;\r\n    height: 60vh;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin: 0;\r\n}\r\n\r\n.gallery-detail-item img,\r\n.gallery-detail-item video {\r\n    display: block;\r\n    max-height: 100%;\r\n    max-width: 90%;\r\n}\r\n\r\n.gallery-detail-item.is-selected {\r\n    opacity: 1;\r\n    z-index: 20;\r\n}\r\n\r\n.gallery-detail-item.is-selected img,\r\n.gallery-detail-item.is-selected video {\r\n    transform: none;\r\n    border-radius: 1vh;\r\n}\r\n\r\n/* PHOTOGALS */\r\n\r\n\r\n/* VIDEOALBUM */\r\n\r\n.videoalbum-detail {\r\n    width: 100%;\r\n    text-align: center;\r\n    margin-top: -2.5vh;\r\n}\r\n\r\n.videoalbum-detail video {\r\n    width: auto;\r\n    height: 68.5vh;\r\n    max-width: 100%;\r\n    max-height: 70vh;\r\n    border-radius: 2vh;\r\n}\r\n\r\n/* VIDEOALBUM */\r\n\r\n\r\n/* NEWS */\r\n\r\n.news-list .index-button-full {\r\n    height: 67vh;\r\n    text-align: left;\r\n    display: block;\r\n    padding: 1vh;\r\n    color: #333;\r\n    font-weight: bold;\r\n    font-size: 2.5vh;\r\n}\r\n\r\n.news-list .index-button-full .index-button-icon {\r\n    height: 36vh;\r\n    background-color: #e0e0e0;\r\n    border-radius: 1vh;\r\n    padding-top: 8vh;\r\n}\r\n\r\n.news-list .index-button-icon img {\r\n    width: 45%;\r\n    display: block;\r\n    margin: 0 auto;\r\n}\r\n\r\n.news-list .index-button-full span {\r\n    margin-top: 25vh;\r\n}\r\n\r\n.news-list .index-button-full .user-pages-item-image {\r\n    width: 100%;\r\n    height: 36vh;\r\n    border-radius: 2vh;\r\n    border: 0;\r\n    margin: 0;\r\n}\r\n\r\n.news-item {\r\n    background-color: #fff;\r\n}\r\n\r\n.news-item-img {\r\n    height: 70vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n    border-radius: 1.5vh;\r\n}\r\n\r\n.news-item-text {\r\n    font-size: 2vh;\r\n    line-height: 1.75;\r\n    height: 67vh;\r\n    overflow: hidden;\r\n    overflow-y: auto;\r\n}\r\n\r\n  .news-item-text h1 {\r\n      color: #5da7fe;\r\n      font-size: 4vh;\r\n      font-weight: 700;\r\n      text-align: left;\r\n      margin: 0;\r\n      margin-bottom: 2vh;\r\n  }\r\n\r\n  .news-item-text span {\r\n      display: block;\r\n      color: #777;\r\n      margin-bottom: 1.5vh;\r\n      font-size: 2.5vh;\r\n  }\r\n\r\n/* NEWS */\r\n\r\n\r\n\r\n/* PAGE TYPE 1 */\r\n\r\n.type-1 .page-detail-text {\r\n    height: 75vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n}\r\n\r\n.type-1 .page-detail-text h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n    margin-bottom: 3vh !important;\r\n}\r\n\r\n.type-1 .page-detail-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n/* PAGE TYPE 1 */\r\n\r\n\r\n\r\n\r\n/* PAGE TYPE 2 */\r\n\r\n.type-2 .page-detail-image {\r\n    height: 75vh;\r\n    border-radius: 1vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-2 .page-detail-text {\r\n    height: 75vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n}\r\n\r\n.type-2 .page-detail-text h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n}\r\n\r\n.type-2 .page-detail-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n/* PAGE TYPE 2 */\r\n\r\n\r\n\r\n/* PAGE TYPE 3 */\r\n\r\n.type-3 #gallery a {\r\n    height: 75vh;\r\n    margin-bottom: 1.5vh;\r\n    display: block;\r\n    border-radius: 1vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-3 .page-detail-text {\r\n    height: 47vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n}\r\n\r\n.type-3 .page-detail-text h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n}\r\n\r\n.type-3 .page-detail-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n.type3slider-item {\r\n    height: 23vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n/* PAGE TYPE 3 */\r\n\r\n\r\n\r\n\r\n/* PAGE TYPE 4 */\r\n\r\n.type-4 .gallery-item {\r\n    width: 100%;\r\n}\r\n\r\n/* PAGE TYPE 4 */\r\n\r\n\r\n\r\n\r\n/* PAGE TYPE 6 */\r\n\r\n.type-6 .user-pages {\r\n    height: auto;\r\n    background: none;\r\n    margin-left: -3vh;\r\n    margin-right: -3vh;\r\n    margin-top: -6vh;\r\n}\r\n\r\n.type-6 .user-pages-item {\r\n    width: 25%;\r\n}\r\n\r\n.type-6 .user-pages-item-item {\r\n    height: auto;\r\n    background-color: transparent;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n.type-6 .index-button {\r\n    height: 32vh;\r\n    margin: 1vh;\r\n    background-color: #ffc940;\r\n    border-radius: 1vh;\r\n    padding: 1vh;\r\n    padding-top: 5vh;\r\n}\r\n\r\n.type-6 .user-pages-item-item img {\r\n    width: 40%;\r\n    margin-bottom: 3vh;\r\n}\r\n\r\n/* PAGE TYPE 6 */\r\n\r\n\r\n\r\n/* PAGE TYPE 7 */\r\n\r\n.type-7 .text {\r\n    height: 73vh;\r\n    overflow: hidden;\r\n    overflow-y: scroll;\r\n}\r\n\r\n.type-7 .pdf-nav {\r\n    text-align: center;\r\n    margin-top: 1vh;\r\n}\r\n\r\n  .type-7 #prev,\r\n  .type-7 #next {\r\n    background: #ffc940;\r\n    color: #fff;\r\n    padding: 0.5vh 2vh;\r\n    box-shadow: none;\r\n    border: 0;\r\n    font-size: 2vh;\r\n    font-weight: bold;\r\n    border-radius: 1vh;\r\n  }\r\n\r\n/* PAGE TYPE 7 */\r\n\r\n\r\n\r\n/* PAGE TYPE 8 */\r\n\r\n.buttons {\r\n    position: absolute;\r\n    z-index: 20;\r\n    left: 50px;\r\n    right: 50px;\r\n    text-align: center;\r\n}\r\n\r\n#prevBtn,\r\n#nextBtn {\r\n    background: #ffc940;\r\n    color: #fff;\r\n    padding: 10px 30px;\r\n    box-shadow: none;\r\n    border: 0;\r\n    font-size: 30px;\r\n    font-weight: bold;\r\n    border-radius: 10px;\r\n}\r\n\r\n/* PAGE TYPE 8 */\r\n\r\n\r\n/* type 9 */\r\n\r\n.excel-item {\r\n    width: 94vw;\r\n    width: auto;\r\n    height: 67vh;\r\n    overflow-y: scroll;\r\n    text-align: center;\r\n}\r\n\r\n.excel-item table {\r\n    border-collapse: collapse;\r\n    margin: 1rem 0;\r\n    display: inline-block;\r\n    overflow-x: auto;\r\n    text-align: left;\r\n    font-size: 1.3vh;\r\n}\r\n\r\n.excel-item table tr {\r\n    border-top: 1px solid #dfe2e5;\r\n}\r\n\r\n.excel-item table tr:nth-child(2n) {\r\n    background-color: #f6f8fa;\r\n}\r\n\r\n.excel-item table td,\r\n.excel-item table th {\r\n    border: 1px solid #dfe2e5;\r\n    padding: .6em 1em;\r\n}\r\n\r\n/* type 9 */\r\n\r\n\r\n\r\n\r\n/* ROUTES */\r\n\r\n.key-anim01,\r\n.key-anim02,\r\n.key-anim03,\r\n.key-anim04,\r\n.key-anim05,\r\n.key-anim06,\r\n.key-anim07,\r\n.key-anim08,\r\n.key-anim09,\r\n.key-anim10,\r\n.key-anim11,\r\n.key-anim12 {\r\n    stroke-dasharray: 10;\r\n    stroke-dashoffset: -2000;\r\n    -webkit-animation: Drawpath 20s linear infinite;\r\n            animation: Drawpath 20s linear infinite;\r\n}\r\n\r\n@-webkit-keyframes Drawpath {\r\n    from {\r\n        stroke-dashoffset: -2000;\r\n    }\r\n    to {\r\n        stroke-dashoffset: 0;\r\n    }\r\n}\r\n\r\n@keyframes Drawpath {\r\n    from {\r\n        stroke-dashoffset: -2000;\r\n    }\r\n    to {\r\n        stroke-dashoffset: 0;\r\n    }\r\n}\r\n\r\n.wrapperm {\r\n    width: 800px;\r\n    height: 450px;\r\n    position: relative;\r\n    margin: 0 auto;\r\n    overflow: visible;\r\n    background-color: #fff;\r\n    transform: scale(1.25);\r\n    transform-origin: 50% 0%;\r\n    margin-top: 4vh;\r\n    background-color: #fff;\r\n    border-radius: 2vh;\r\n    border: 0.3vh solid #c5d0db;\r\n    box-shadow: 0 0vh 0.5vh #c5d0db;\r\n}\r\n\r\n#wrapper-inner {\r\n    width: 800px;\r\n    height: 450px;\r\n    margin-top: 4vh;\r\n}\r\n\r\n.map {\r\n    margin-top: -4vh;\r\n}\r\n\r\n.map-slide {\r\n    width: 100%;\r\n}\r\n\r\n.map img {\r\n    width: 800px;\r\n    height: 450px;\r\n    display: block;\r\n    margin: 0 auto;\r\n}\r\n\r\n.map-path {\r\n    position: absolute;\r\n    left: 0;\r\n    right: 0;\r\n    top: 0;\r\n    bottom: 0;\r\n    width: 800px;\r\n    height: 450px;\r\n}\r\n\r\n.med-route-sidebar,\r\n.shkola-route-sidebar {\r\n    margin-top: -2vh;\r\n    background-color: #4592c9;\r\n    padding: 3vh;\r\n    width: 99%;\r\n}\r\n\r\n.med-route-sidebar input,\r\n.shkola-route-sidebar input {\r\n    width: 100%;\r\n    padding: 0.5vh;\r\n    font-size: 2vh;\r\n}\r\n\r\n.keyboard {\r\n    margin-top: 0.5vh;\r\n    margin-bottom: 3vh;\r\n}\r\n\r\n.keyboard button {\r\n    width: 4.2vh;\r\n    height: 4.2vh;\r\n    line-height: 4.2vh;\r\n    margin-bottom: 0.5vh;\r\n    background-color: #fff;\r\n    font-size: 1.5vh;\r\n    text-align: center;\r\n    padding: 0;\r\n    border: 0.1vh solid;\r\n}\r\n\r\n.keyboard .globebutton {\r\n    width: 7vh;\r\n}\r\n\r\n.keyboard .spacebutton {\r\n    width: 10vh;\r\n}\r\n\r\n#myUL {\r\n    padding: 0;\r\n    margin: 0;\r\n    list-style-type: none;\r\n    height: 32vh;\r\n    overflow-y: auto;\r\n}\r\n\r\n#myUL li {\r\n    display: block;\r\n    background-color: #fff;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n#myUL li a {\r\n    display: block;\r\n    color: #222;\r\n    font-size: 2vh;\r\n    font-weight: 700;\r\n    border: 0.25vh solid #96dbfc;\r\n    padding: 1vh 2vh;\r\n}\r\n.med-route-sidebar .hg-theme-default .hg-button {\r\n    height: 3.7vh;\r\n}\r\n.med-route-sidebar .hg-theme-default .hg-row:not(:last-child) {\r\n    margin-bottom: 0.5vh;\r\n}\r\n/* ROUTES */\r\n\r\n\r\n\r\n/* REVIEWS */\r\n\r\n.keyboard-reviews .keyboard {\r\n    margin-top: 7vh;\r\n}\r\n\r\n.keyboard-reviews .keyboard button {\r\n    width: 6vh;\r\n    height: 6vh;\r\n    line-height: 6vh;\r\n    font-size: 2.5vh;\r\n    border-radius: 1vh;\r\n    border: 0.3vh solid #c5d0db;\r\n    box-shadow: 0 0vh 0.5vh #c5d0db;\r\n}\r\n\r\n.keyboard-reviews .keyboard button:hover,\r\n.keyboard-reviews .keyboard button:focus {\r\n    outline: none;\r\n}\r\n\r\n.keyboard-reviews .keyboard .globebutton {\r\n    width: 12vh;\r\n}\r\n\r\n.keyboard-reviews .keyboard .spacebutton {\r\n    width: 17vh;\r\n}\r\n\r\n.keyboard-reviews .hg-theme-default {\r\n    padding: 0.5vh;\r\n}\r\n\r\n.keyboard-reviews .hg-theme-default .hg-button {\r\n    height: 4vh;\r\n}\r\n\r\n.keyboard-reviews .med-route-sidebar .hg-theme-default .hg-row:not(:last-child) {\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.review-form input[type=\"text\"] {\r\n    border: 1px solid #333;\r\n    font-size: 3vh;\r\n}\r\n\r\n.review-form textarea {\r\n    resize: none;\r\n    height: 30vh;\r\n    border: 1px solid #333;\r\n    font-size: 3vh;\r\n    border-radius: 2vh;\r\n    border: 0.3vh solid #c5d0db;\r\n    box-shadow: 0 0vh 0.5vh #c5d0db;\r\n    padding: 3vh;\r\n}\r\n\r\n.review-form .btn-shkola {\r\n    background-color: #5da7fe;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n    padding: 2vh 4vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.review-h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n    margin-top: 0 !important;\r\n    margin-bottom: 5vh !important;\r\n}\r\n\r\n/* REVIEWS */", ""]);
+exports.push([module.i, "html {\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n  -webkit-touch-callout: none;\r\n  -khtml-user-select: none;\r\n  /*cursor: none;*/\r\n}\r\n\r\nbody {\r\n    margin: 0 !important;\r\n    font-size: 2vh;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    position: relative;\r\n}\r\n\r\n.container {\r\n    max-width: 95vw;\r\n}\r\n\r\n.row {\r\n    margin-left: -2vh;\r\n    margin-right: -2vh;\r\n}\r\n\r\n.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {\r\n    padding-left: 2vh;\r\n    padding-right: 2vh;\r\n}\r\n\r\nmain {\r\n    position: relative;\r\n}\r\n\r\n.wrapper {\r\n    position: relative;\r\n    width: 100vw;\r\n    max-width: 177.78vh;\r\n    height: 56.25vw;\r\n    max-height: 100vh;\r\n    overflow: hidden;\r\n    margin: 0 auto;\r\n    background: #fff;\r\n    background: url('/img/med/bg.png');\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.bg_med_index {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    z-index: 0;\r\n    background: url('/img/med/bg-index.png');\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.header {\r\n    margin-top: 4vh;\r\n    margin-bottom: 4vh;\r\n    height: 7vh;\r\n    position: sticky;\r\n    z-index: 10;\r\n}\r\n\r\n.header-logo a {\r\n    display: block;\r\n}\r\n\r\n.header-logo a img {\r\n    width: auto;\r\n    height: auto;\r\n    max-width: 15vh;\r\n    max-height: 7vh;\r\n}\r\n\r\n.header-text {\r\n    text-align: right;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n}\r\n\r\n.footer {\r\n    text-align: center;\r\n    position: absolute;\r\n    bottom: 2vh;\r\n    left: 2vh;\r\n    right: 2vh;\r\n}\r\n\r\n.footer a {\r\n    display: inline-block;\r\n    width: 6vh;\r\n    height: 6vh;\r\n    margin: 0 0.5vh;\r\n    position: relative;\r\n    border-radius: 0.75vh;\r\n}\r\n\r\n.footer a img {\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    width: 70%;\r\n    height: 70%;\r\n    display: block;\r\n    margin: 0 auto;\r\n    left: 0;\r\n    right: 0;\r\n}\r\n\r\n.home-button {\r\n    background-color: #F8C800;\r\n}\r\n\r\n.gal-button {\r\n    background-color: #4D9EED;\r\n}\r\n\r\n.vgal-button {\r\n    background-color: #4592C9;\r\n}\r\n\r\n.news-button {\r\n    background-color: #A745C9;\r\n}\r\n\r\n\r\n\r\n::-webkit-scrollbar {\r\n    width: 1.5vh;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n    background: #B8BDBD;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n    background: #ffc940;\r\n    border: 1px solid #B8BDBD;\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n    background: #ffc940;\r\n}\r\n\r\n\r\n.swiper-button-prev, .swiper-button-next {\r\n    color: #fff;\r\n}\r\n\r\n/* MAIN PAGE */\r\n\r\n.photogalleries {\r\n    background-color: #45c99f;\r\n    border-radius: 1vh;\r\n    height: 38.25vh;\r\n    margin-bottom: 3.5vh;\r\n    display: block;\r\n    padding-top: 8vh;\r\n    text-align: center;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n}\r\n\r\n.photogalleries:hover,\r\n.photogalleries:focus {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n\r\n.photogalleries img {\r\n    display: block;\r\n    width: 60%;\r\n    margin: 0 auto;\r\n    margin-bottom: 4vh;\r\n}\r\n\r\n.photogalleries-full {\r\n    height: 80vh;\r\n    padding-top: 28vh;\r\n}\r\n\r\n.photogalleries-nonews {\r\n    padding-top: 22vh;\r\n}\r\n\r\n.photogalleries-nonews img {\r\n    width: 40%;\r\n}\r\n\r\n.videogalleries {\r\n    background-color: #4592c9;\r\n    border-radius: 1vh;\r\n    height: 38.25vh;\r\n    display: block;\r\n    padding-top: 8vh;\r\n    text-align: center;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n}\r\n\r\n.videogalleries:hover,\r\n.videogalleries:focus {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n\r\n.videogalleries img {\r\n    display: block;\r\n    width: 60%;\r\n    margin: 0 auto;\r\n    margin-bottom: 4vh;\r\n}\r\n\r\n.videogalleries-full {\r\n    height: 80vh;\r\n    padding-top: 28vh;\r\n}\r\n\r\n.videogalleries-nonews {\r\n    padding-top: 22vh;\r\n}\r\n\r\n.videogalleries-nonews img {\r\n    width: 40%;\r\n}\r\n\r\n.news {\r\n    background-color: #a745c9;\r\n    height: 80vh;\r\n    border-radius: 1vh;\r\n    display: block;\r\n    text-align: center;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n    padding-top: 27vh;\r\n}\r\n\r\n.news:hover,\r\n.news:focus {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n\r\n.news img {\r\n    display: block;\r\n    width: 45%;\r\n    margin: 0 auto;\r\n    margin-bottom: 5vh;\r\n}\r\n\r\n.news-nogals {\r\n    padding-top: 22vh;\r\n}\r\n\r\n.news-nogals img {\r\n    width: 40%;\r\n}\r\n\r\n.user-pages {\r\n    height: auto;\r\n    border-radius: 1vh;\r\n    width: 46vw;\r\n    position: relative;\r\n    margin-top: 10vh;\r\n}\r\n\r\n.user-pages-item {\r\n    width: 50%;\r\n    position: relative;\r\n}\r\n\r\n.user-pages-item-item {\r\n    height: 35vh;\r\n    position: relative;\r\n    text-align: center;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n    padding: 1vh;\r\n}\r\n\r\n.user-pages-item-item a {\r\n    display: block;\r\n    color: #fff;\r\n    line-height: 1.25;\r\n    padding: 0 1vh;\r\n    background-color: #4D9EED;\r\n    height: 100%;\r\n    padding-top: 6vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.user-pages-item-item a:hover,\r\n.user-pages-item-item a:focus {\r\n    text-decoration: none;\r\n    color: #fff;\r\n}\r\n\r\n.user-pages-item-item img {\r\n    display: block;\r\n    width: 15vh;\r\n    height: 15vh;\r\n    margin: 0 auto;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.user-pages-item-image {\r\n    width: 15vh;\r\n    height: 15vh;\r\n    background-size: cover;\r\n    background-repeat: no-repeat;\r\n    background-position: 50% 50%;\r\n    border-radius: 100%;\r\n    border: 0.75vh solid #fff;\r\n    display: block;\r\n    margin: 0 auto;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n/* MAIN PAGE */\r\n\r\n\r\n/* PHOTOGALS */\r\n\r\n.gallery-list {\r\n    overflow: hidden;\r\n    overflow-x: auto;\r\n    white-space: nowrap;\r\n    margin-left: -1vh;\r\n    margin-right: -1vh;\r\n}\r\n\r\n.gallery-list-item-slide {\r\n    width: 100%;\r\n    white-space: normal;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.gallery-list-item {\r\n    width: calc(25% - 2vh);\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    margin: 0;\r\n    white-space: normal;\r\n    padding: 1vh;\r\n}\r\n\r\n.gallery-list-item a {\r\n    display: block;\r\n    text-align: center;\r\n}\r\n\r\n.gallery-list-item a:hover,\r\n.gallery-list-item a:focus {\r\n    text-decoration: none;\r\n}\r\n\r\n.gallery-list-item a h2 {\r\n    height: 7vh;\r\n    color: #fff;\r\n    margin: 0;\r\n    line-height: 1.35;\r\n    font-size: 2vh;\r\n    overflow: hidden;\r\n}\r\n\r\n.gallery-list-item-pic {\r\n    height: 27vh;\r\n    margin-bottom: 1vh;\r\n    border-radius: 1vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.gallery-list .flickity-page-dots {\r\n    bottom: 0;\r\n}\r\n\r\n.gallery-list .flickity-page-dots .dot {\r\n    width: 5vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.gallery-detail {\r\n    padding: 0 2.5vh;\r\n}\r\n\r\n.gallery-detail-item {\r\n    width: 30%;\r\n    height: 60vh;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin: 0;\r\n}\r\n\r\n.gallery-detail-item img,\r\n.gallery-detail-item video {\r\n    display: block;\r\n    max-height: 100%;\r\n    max-width: 90%;\r\n}\r\n\r\n.gallery-detail-item.is-selected {\r\n    opacity: 1;\r\n    z-index: 20;\r\n}\r\n\r\n.gallery-detail-item.is-selected img,\r\n.gallery-detail-item.is-selected video {\r\n    transform: none;\r\n    border-radius: 1vh;\r\n}\r\n\r\n/* PHOTOGALS */\r\n\r\n\r\n/* VIDEOALBUM */\r\n\r\n.videoalbum-detail {\r\n    width: 100%;\r\n    text-align: center;\r\n    margin-top: -2.5vh;\r\n}\r\n\r\n.videoalbum-detail video {\r\n    width: auto;\r\n    height: 68.5vh;\r\n    max-width: 100%;\r\n    max-height: 70vh;\r\n    border-radius: 2vh;\r\n}\r\n\r\n/* VIDEOALBUM */\r\n\r\n\r\n/* NEWS */\r\n\r\n.news-list .index-button-full {\r\n    height: 67vh;\r\n    text-align: left;\r\n    display: block;\r\n    padding: 1vh;\r\n    color: #fff;\r\n    font-weight: bold;\r\n    font-size: 2.5vh;\r\n}\r\n\r\n.news-list .index-button-full .index-button-icon {\r\n    height: 36vh;\r\n    background-color: #e0e0e0;\r\n    border-radius: 1vh;\r\n    padding-top: 8vh;\r\n}\r\n\r\n.news-list .index-button-icon img {\r\n    width: 45%;\r\n    display: block;\r\n    margin: 0 auto;\r\n}\r\n\r\n.news-list .index-button-full span {\r\n    margin-top: 25vh;\r\n}\r\n\r\n.news-list .index-button-full .user-pages-item-image {\r\n    width: 100%;\r\n    height: 36vh;\r\n    border-radius: 2vh;\r\n    border: 0;\r\n    margin: 0;\r\n}\r\n\r\n.news-item {\r\n    background-color: #fff;\r\n    background-color: transparent;\r\n}\r\n\r\n.news-item-img {\r\n    height: 70vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n    border-radius: 1.5vh;\r\n}\r\n\r\n.news-item-text {\r\n    font-size: 2vh;\r\n    line-height: 1.75;\r\n    height: 67vh;\r\n    overflow: hidden;\r\n    overflow-y: auto;\r\n    color: #fff !important;\r\n}\r\n\r\n  .news-item-text h1 {\r\n      color: #5da7fe;\r\n      font-size: 4vh;\r\n      font-weight: 700;\r\n      text-align: left;\r\n      margin: 0;\r\n      margin-bottom: 2vh;\r\n  }\r\n\r\n  .news-item-text span {\r\n      display: block;\r\n      color: #acacac;\r\n      margin-bottom: 1.5vh;\r\n      font-size: 2.5vh;\r\n  }\r\n\r\n/* NEWS */\r\n\r\n\r\n\r\n/* PAGE TYPE 1 */\r\n\r\n.type-1 .page-detail-text {\r\n    height: 75vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n    color: #fff !important;\r\n}\r\n\r\n.type-1 .page-detail-text h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n    margin-bottom: 3vh !important;\r\n    color: #fff;\r\n}\r\n\r\n.type-1 .page-detail-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n/* PAGE TYPE 1 */\r\n\r\n\r\n\r\n\r\n/* PAGE TYPE 2 */\r\n\r\n.type-2 .page-detail-image {\r\n    height: 75vh;\r\n    border-radius: 1vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-2 .page-detail-text {\r\n    height: 75vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n    color: #fff !important;\r\n}\r\n\r\n.type-2 .page-detail-text h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n    color: #fff;\r\n}\r\n\r\n.type-2 .page-detail-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n/* PAGE TYPE 2 */\r\n\r\n\r\n\r\n/* PAGE TYPE 3 */\r\n\r\n.type-3 #gallery a {\r\n    height: 75vh;\r\n    margin-bottom: 1.5vh;\r\n    display: block;\r\n    border-radius: 1vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n.type-3 .page-detail-text {\r\n    height: 47vh;\r\n    overflow-y: auto;\r\n    padding-right: 2vh;\r\n    font-size: 2vh !important;\r\n    line-height: 1.6 !important;\r\n    color: #fff !important;\r\n}\r\n\r\n.type-3 .page-detail-text h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n    color: #fff;\r\n}\r\n\r\n.type-3 .page-detail-text p {\r\n    margin-bottom: 2vh !important;\r\n}\r\n\r\n.type3slider-item {\r\n    height: 23vh;\r\n    background-size: cover;\r\n    background-position: 50% 50%;\r\n}\r\n\r\n/* PAGE TYPE 3 */\r\n\r\n\r\n\r\n\r\n/* PAGE TYPE 4 */\r\n\r\n.type-4 .gallery-item {\r\n    width: 100%;\r\n}\r\n\r\n/* PAGE TYPE 4 */\r\n\r\n\r\n\r\n\r\n/* PAGE TYPE 6 */\r\n\r\n.type-6 .user-pages {\r\n    height: auto;\r\n    background: none;\r\n    margin-left: -3vh;\r\n    margin-right: -3vh;\r\n    margin-top: -6vh;\r\n}\r\n\r\n.type-6 .user-pages-item {\r\n    width: 25%;\r\n}\r\n\r\n.type-6 .user-pages-item-item {\r\n    height: auto;\r\n    background-color: transparent;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n.type-6 .index-button {\r\n    height: 32vh;\r\n    margin: 1vh;\r\n    background-color: #4D9EED;\r\n    border-radius: 1vh;\r\n    padding: 1vh;\r\n    padding-top: 5vh;\r\n}\r\n\r\n.type-6 .user-pages-item-item img {\r\n    width: 40%;\r\n    margin-bottom: 3vh;\r\n}\r\n\r\n/* PAGE TYPE 6 */\r\n\r\n\r\n\r\n/* PAGE TYPE 7 */\r\n\r\n.type-7 .text {\r\n    height: 73vh;\r\n    overflow: hidden;\r\n    overflow-y: scroll;\r\n}\r\n\r\n.type-7 .pdf-nav {\r\n    text-align: center;\r\n    margin-top: 1vh;\r\n}\r\n\r\n  .type-7 #prev,\r\n  .type-7 #next {\r\n    background: #ffc940;\r\n    color: #fff;\r\n    padding: 0.5vh 2vh;\r\n    box-shadow: none;\r\n    border: 0;\r\n    font-size: 2vh;\r\n    font-weight: bold;\r\n    border-radius: 1vh;\r\n  }\r\n\r\n/* PAGE TYPE 7 */\r\n\r\n\r\n\r\n/* PAGE TYPE 8 */\r\n\r\n.buttons {\r\n    position: absolute;\r\n    z-index: 20;\r\n    left: 50px;\r\n    right: 50px;\r\n    text-align: center;\r\n}\r\n\r\n#prevBtn,\r\n#nextBtn {\r\n    background: #ffc940;\r\n    color: #fff;\r\n    padding: 10px 30px;\r\n    box-shadow: none;\r\n    border: 0;\r\n    font-size: 30px;\r\n    font-weight: bold;\r\n    border-radius: 10px;\r\n}\r\n\r\n/* PAGE TYPE 8 */\r\n\r\n\r\n/* type 9 */\r\n\r\n.excel-item {\r\n    width: 94vw;\r\n    width: auto;\r\n    height: 67vh;\r\n    overflow-y: scroll;\r\n    text-align: center;\r\n}\r\n\r\n.excel-item table {\r\n    border-collapse: collapse;\r\n    margin: 1rem 0;\r\n    display: inline-block;\r\n    overflow-x: auto;\r\n    text-align: left;\r\n    font-size: 1.3vh;\r\n    background-color: #fff;\r\n}\r\n\r\n.excel-item table tr {\r\n    border-top: 1px solid #dfe2e5;\r\n}\r\n\r\n.excel-item table tr:nth-child(2n) {\r\n    background-color: #f6f8fa;\r\n}\r\n\r\n.excel-item table td,\r\n.excel-item table th {\r\n    border: 1px solid #dfe2e5;\r\n    padding: .6em 1em;\r\n}\r\n\r\n/* type 9 */\r\n\r\n\r\n\r\n\r\n/* ROUTES */\r\n\r\n.key-anim01,\r\n.key-anim02,\r\n.key-anim03,\r\n.key-anim04,\r\n.key-anim05,\r\n.key-anim06,\r\n.key-anim07,\r\n.key-anim08,\r\n.key-anim09,\r\n.key-anim10,\r\n.key-anim11,\r\n.key-anim12 {\r\n    stroke-dasharray: 10;\r\n    stroke-dashoffset: -2000;\r\n    -webkit-animation: Drawpath 20s linear infinite;\r\n            animation: Drawpath 20s linear infinite;\r\n}\r\n\r\n@-webkit-keyframes Drawpath {\r\n    from {\r\n        stroke-dashoffset: -2000;\r\n    }\r\n    to {\r\n        stroke-dashoffset: 0;\r\n    }\r\n}\r\n\r\n@keyframes Drawpath {\r\n    from {\r\n        stroke-dashoffset: -2000;\r\n    }\r\n    to {\r\n        stroke-dashoffset: 0;\r\n    }\r\n}\r\n\r\n.wrapperm {\r\n    width: 800px;\r\n    height: 450px;\r\n    position: relative;\r\n    margin: 0 auto;\r\n    overflow: visible;\r\n    background-color: #fff;\r\n    transform: scale(1.25);\r\n    transform-origin: 50% 0%;\r\n    margin-top: 4vh;\r\n    background-color: #fff;\r\n    border-radius: 2vh;\r\n    border: 0.3vh solid #c5d0db;\r\n    box-shadow: 0 0vh 0.5vh #c5d0db;\r\n}\r\n\r\n#wrapper-inner {\r\n    width: 800px;\r\n    height: 450px;\r\n    margin-top: 4vh;\r\n}\r\n\r\n.map {\r\n    margin-top: -4vh;\r\n}\r\n\r\n.map-slide {\r\n    width: 100%;\r\n}\r\n\r\n.map img {\r\n    width: 800px;\r\n    height: 450px;\r\n    display: block;\r\n    margin: 0 auto;\r\n}\r\n\r\n.map-path {\r\n    position: absolute;\r\n    left: 0;\r\n    right: 0;\r\n    top: 0;\r\n    bottom: 0;\r\n    width: 800px;\r\n    height: 450px;\r\n}\r\n\r\n.med-route-sidebar,\r\n.shkola-route-sidebar {\r\n    margin-top: -2vh;\r\n    background-color: #4592c9;\r\n    padding: 3vh;\r\n    width: 99%;\r\n}\r\n\r\n.med-route-sidebar input,\r\n.shkola-route-sidebar input {\r\n    width: 100%;\r\n    padding: 0.5vh;\r\n    font-size: 2vh;\r\n}\r\n\r\n.keyboard {\r\n    margin-top: 0.5vh;\r\n    margin-bottom: 3vh;\r\n}\r\n\r\n.keyboard button {\r\n    width: 4.2vh;\r\n    height: 4.2vh;\r\n    line-height: 4.2vh;\r\n    margin-bottom: 0.5vh;\r\n    background-color: #fff;\r\n    font-size: 1.5vh;\r\n    text-align: center;\r\n    padding: 0;\r\n    border: 0.1vh solid;\r\n}\r\n\r\n.keyboard .globebutton {\r\n    width: 7vh;\r\n}\r\n\r\n.keyboard .spacebutton {\r\n    width: 10vh;\r\n}\r\n\r\n#myUL {\r\n    padding: 0;\r\n    margin: 0;\r\n    list-style-type: none;\r\n    height: 32vh;\r\n    overflow-y: auto;\r\n}\r\n\r\n#myUL li {\r\n    display: block;\r\n    background-color: #fff;\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n#myUL li a {\r\n    display: block;\r\n    color: #222;\r\n    font-size: 2vh;\r\n    font-weight: 700;\r\n    border: 0.25vh solid #96dbfc;\r\n    padding: 1vh 2vh;\r\n}\r\n.med-route-sidebar .hg-theme-default .hg-button {\r\n    height: 3.7vh;\r\n}\r\n.med-route-sidebar .hg-theme-default .hg-row:not(:last-child) {\r\n    margin-bottom: 0.5vh;\r\n}\r\n/* ROUTES */\r\n\r\n\r\n\r\n/* REVIEWS */\r\n\r\n.keyboard-reviews .keyboard {\r\n    margin-top: 7vh;\r\n}\r\n\r\n.keyboard-reviews .keyboard button {\r\n    width: 6vh;\r\n    height: 6vh;\r\n    line-height: 6vh;\r\n    font-size: 2.5vh;\r\n    border-radius: 1vh;\r\n    border: 0.3vh solid #c5d0db;\r\n    box-shadow: 0 0vh 0.5vh #c5d0db;\r\n}\r\n\r\n.keyboard-reviews .keyboard button:hover,\r\n.keyboard-reviews .keyboard button:focus {\r\n    outline: none;\r\n}\r\n\r\n.keyboard-reviews .keyboard .globebutton {\r\n    width: 12vh;\r\n}\r\n\r\n.keyboard-reviews .keyboard .spacebutton {\r\n    width: 17vh;\r\n}\r\n\r\n.keyboard-reviews .hg-theme-default {\r\n    padding: 0.5vh;\r\n}\r\n\r\n.keyboard-reviews .hg-theme-default .hg-button {\r\n    height: 4vh;\r\n}\r\n\r\n.keyboard-reviews .med-route-sidebar .hg-theme-default .hg-row:not(:last-child) {\r\n    margin-bottom: 1vh;\r\n}\r\n\r\n.review-form input[type=\"text\"] {\r\n    border: 1px solid #333;\r\n    font-size: 3vh;\r\n}\r\n\r\n.review-form textarea {\r\n    resize: none;\r\n    height: 30vh;\r\n    border: 1px solid #333;\r\n    font-size: 3vh;\r\n    border-radius: 2vh;\r\n    border: 0.3vh solid #c5d0db;\r\n    box-shadow: 0 0vh 0.5vh #c5d0db;\r\n    padding: 3vh;\r\n}\r\n\r\n.review-form .btn-shkola {\r\n    background-color: #5da7fe;\r\n    color: #fff;\r\n    font-size: 3vh;\r\n    padding: 2vh 4vh;\r\n    border-radius: 1vh;\r\n}\r\n\r\n.review-h1 {\r\n    font-weight: 700;\r\n    font-size: 4vh;\r\n    margin-top: 0 !important;\r\n    margin-bottom: 5vh !important;\r\n}\r\n\r\n/* REVIEWS */", ""]);
 
 // exports
 
@@ -6610,7 +6597,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.scheme_images[data-v-1bcea36a] {\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n.route_about[data-v-1bcea36a] {\n    height: 10vh;\n}\n.prevnextbutton[data-v-1bcea36a] {\n    position: absolute;\n    bottom: 1vh;\n}\n.route_about[data-v-1bcea36a] {\n    color: #333;\n    text-align: center;\n}\n.input[data-v-1bcea36a] {\n    width: 100%;\n    padding: 0.5vh 2vh;\n}\n.map1080[data-v-1bcea36a] {\n    position: relative;\n    width: 800px;\n    height: 450px;\n    transform: scale(1.4);\n    transform-origin: 0 0;\n    margin-top: -2vh;\n    margin-bottom: 11vh;\n}\n.map4K[data-v-1bcea36a] {\n    position: relative;\n    width: 800px;\n    height: 450px;\n    transform: scale(2.8);\n    transform-origin: 0 0;\n    margin-top: -2vh;\n    margin-bottom: 11vh;\n}\n#myUL[data-v-1bcea36a] {\n    height: 31vh;\n    padding-top: 1vh;\n}\n.search_panel[data-v-1bcea36a] {\n    width: 100%;\n    padding: 0;\n}\n.prevnextbutton[data-v-1bcea36a] {\n    background-color: #976545;\n    color: #fff;\n    font-size: 1.25vh;\n    padding: 0.5vh 2vh;\n    display: block;\n    margin: 0 auto;\n    width: 30vw;\n    border-radius: 1vh;\n    left: 0;\n    right: 0;\n    border: 0;\n}\n.prevnextbutton[data-v-1bcea36a]:focus {\n    outline: none;\n}\n#myUL li a[data-v-1bcea36a] {\n    font-size: 1.5vh;\n}\n.search_button[data-v-1bcea36a] {\n    position: absolute;\n    top: 0;\n    right: 0;\n    background-color: rgba(255,255,255,0.5);\n    border: 0;\n    color: #222;\n    padding: 1vh 2vh;\n    font-size: 1.5vh;\n    z-index: 10;\n}\n", ""]);
+exports.push([module.i, "\n.scheme_images[data-v-1bcea36a] {\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n.route_about[data-v-1bcea36a] {\n    height: 10vh;\n}\n.prevnextbutton[data-v-1bcea36a] {\n    position: absolute;\n    bottom: 1vh;\n}\n.route_about[data-v-1bcea36a] {\n    color: #fff;\n    text-align: center;\n}\n.input[data-v-1bcea36a] {\n    width: 100%;\n    padding: 0.5vh 2vh;\n}\n.map1080[data-v-1bcea36a] {\n    position: relative;\n    width: 800px;\n    height: 450px;\n    transform: scale(1.4);\n    transform-origin: 0 0;\n    margin-top: -2vh;\n    margin-bottom: 11vh;\n}\n.map4K[data-v-1bcea36a] {\n    position: relative;\n    width: 800px;\n    height: 450px;\n    transform: scale(2.8);\n    transform-origin: 0 0;\n    margin-top: -2vh;\n    margin-bottom: 11vh;\n}\n#myUL[data-v-1bcea36a] {\n    height: 31vh;\n    padding-top: 1vh;\n}\n.search_panel[data-v-1bcea36a] {\n    width: 100%;\n    padding: 0;\n}\n.prevnextbutton[data-v-1bcea36a] {\n    background-color: #4D9EED;\n    color: #fff;\n    font-size: 1.25vh;\n    padding: 0.5vh 2vh;\n    display: block;\n    margin: 0 auto;\n    width: 30vw;\n    border-radius: 1vh;\n    left: 0;\n    right: 0;\n    border: 0;\n}\n.prevnextbutton[data-v-1bcea36a]:focus {\n    outline: none;\n}\n#myUL li a[data-v-1bcea36a] {\n    font-size: 1.5vh;\n}\n.search_button[data-v-1bcea36a] {\n    position: absolute;\n    top: 0;\n    right: 0;\n    background-color: rgba(255,255,255,0.5);\n    border: 0;\n    color: #222;\n    padding: 1vh 2vh;\n    font-size: 1.5vh;\n    z-index: 10;\n}\n", ""]);
 
 // exports
 
@@ -43875,296 +43862,193 @@ var render = function() {
     _c("div", { staticClass: "bg_med_index" }),
     _vm._v(" "),
     _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-6" }, [
+      _c(
+        "div",
+        { staticClass: "user-pages" },
+        [
           _c(
-            "div",
-            { staticClass: "row" },
+            "swiper",
+            { ref: "MedIndexAllSwiper", attrs: { options: _vm.swiperOptions } },
             [
-              _vm.settings.module_photoalbums == "y" ||
-              _vm.settings.module_videoalbums == "y"
-                ? _c(
-                    "div",
-                    { staticClass: "col" },
-                    [
-                      _vm.settings.module_photoalbums == "y"
-                        ? [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "photogalleries",
-                                class: [
-                                  (_vm.settings.module_videoalbums == "n"
-                                    ? "photogalleries-full"
-                                    : "") +
-                                    " " +
-                                    (_vm.settings.module_news == "n"
-                                      ? "photogalleries-nonews"
-                                      : "")
-                                ],
-                                on: {
-                                  click: function($event) {
-                                    return _vm.GoToPhotoalbums()
-                                  }
-                                }
-                              },
-                              [
-                                _c("img", {
-                                  attrs: { src: "/img/icon-photogal.svg" }
-                                }),
-                                _vm._v(
-                                  "\n                            Фотогалерея\n                        "
-                                )
-                              ]
-                            )
-                          ]
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.settings.module_videoalbums == "y"
-                        ? [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "videogalleries",
-                                class: [
-                                  (_vm.settings.module_photoalbums == "n"
-                                    ? "videogalleries-full"
-                                    : "") +
-                                    " " +
-                                    (_vm.settings.module_news == "n"
-                                      ? "videogalleries-nonews"
-                                      : "")
-                                ],
-                                on: {
-                                  click: function($event) {
-                                    return _vm.GoToVideoalbums()
-                                  }
-                                }
-                              },
-                              [
-                                _c("img", {
-                                  attrs: { src: "/img/icon-videogal.svg" }
-                                }),
-                                _vm._v(
-                                  "\n                            Видеогалерея\n                        "
-                                )
-                              ]
-                            )
-                          ]
-                        : _vm._e()
-                    ],
-                    2
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.settings.module_news == "y"
-                ? [
+              _vm.settings.module_photoalbums == "y"
+                ? _c("swiper-slide", { staticClass: "user-pages-item-item" }, [
                     _c(
-                      "div",
+                      "a",
                       {
-                        class: [
-                          "" +
-                            (_vm.settings.module_photoalbums == "y" ||
-                            _vm.settings.module_videoalbums == "y"
-                              ? "col-7"
-                              : "col-12")
-                        ]
+                        on: {
+                          click: function($event) {
+                            return _vm.GoToPhotoalbums()
+                          }
+                        }
                       },
                       [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "news",
-                            class: [
-                              "" +
-                                (_vm.settings.module_photoalbums == "n" &&
-                                _vm.settings.module_videoalbums == "n"
-                                  ? "news-nogals"
-                                  : "")
-                            ],
-                            on: {
-                              click: function($event) {
-                                return _vm.GoToNews()
-                              }
-                            }
-                          },
-                          [
-                            _c("img", { attrs: { src: "/img/icon-news.svg" } }),
-                            _vm._v(
-                              "\n                            Новости\n                        "
-                            )
-                          ]
+                        _c("img", { attrs: { src: "/img/icon-photogal.svg" } }),
+                        _vm._v(
+                          "\n                        Фотогалерея\n                    "
                         )
                       ]
                     )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.settings.module_videoalbums == "y"
+                ? _c("swiper-slide", { staticClass: "user-pages-item-item" }, [
+                    _c(
+                      "a",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.GoToVideoalbums()
+                          }
+                        }
+                      },
+                      [
+                        _c("img", { attrs: { src: "/img/icon-videogal.svg" } }),
+                        _vm._v(
+                          "\n                        Видеогалерея\n                    "
+                        )
+                      ]
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.settings.module_news == "y"
+                ? _c("swiper-slide", { staticClass: "user-pages-item-item" }, [
+                    _c(
+                      "a",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.GoToNews()
+                          }
+                        }
+                      },
+                      [
+                        _c("img", { attrs: { src: "/img/icon-news.svg" } }),
+                        _vm._v(
+                          "\n                        Новости\n                    "
+                        )
+                      ]
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm._l(_vm.pages, function(page) {
+                return _c(
+                  "swiper-slide",
+                  { key: page.id, staticClass: "user-pages-item-item" },
+                  [
+                    _c(
+                      "a",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.GoToPage(page.id, page.types)
+                          }
+                        }
+                      },
+                      [
+                        page.image_as_icon === "1"
+                          ? _c("div", {
+                              staticClass: "user-pages-item-image",
+                              style: {
+                                "background-image": "url(" + page.image + ")"
+                              }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        page.image_as_icon === "0" && page.icons[0]
+                          ? [_c("img", { attrs: { src: page.icons[0].icon } })]
+                          : _vm._e(),
+                        _vm._v(" "),
+                        page.image_as_icon === "0" && page.icons.length <= 0
+                          ? [
+                              _c("img", {
+                                attrs: { src: "/img/icons/029-information.svg" }
+                              })
+                            ]
+                          : _vm._e(),
+                        _vm._v(
+                          "\n\n                        " +
+                            _vm._s(page.title) +
+                            "\n                    "
+                        )
+                      ],
+                      2
+                    )
                   ]
+                )
+              }),
+              _vm._v(" "),
+              _vm.settings.module_routes == "y"
+                ? _c("swiper-slide", { staticClass: "user-pages-item-item" }, [
+                    _c(
+                      "a",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.GoToRoutes()
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { src: "/img/icons/003-home.svg" }
+                        }),
+                        _vm._v(
+                          "\n                        План здания\n                    "
+                        )
+                      ]
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.settings.module_reviews == "y"
+                ? _c("swiper-slide", { staticClass: "user-pages-item-item" }, [
+                    _c(
+                      "a",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.GoToReviews()
+                          }
+                        }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { src: "/img/icons/029-information.svg" }
+                        }),
+                        _vm._v(
+                          "\n                        Отзывы\n                    "
+                        )
+                      ]
+                    )
+                  ])
                 : _vm._e()
             ],
             2
-          )
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            class: [
-              "" +
-                (_vm.settings.module_photoalbums == "n" &&
-                _vm.settings.module_videoalbums == "n" &&
-                _vm.settings.module_news == "n"
-                  ? "col-12"
-                  : "col-6")
-            ]
-          },
-          [
-            _c(
-              "div",
-              { staticClass: "user-pages" },
-              [
-                _c(
-                  "swiper",
-                  {
-                    ref: "MedIndexAllSwiper",
-                    attrs: { options: _vm.swiperOptions }
-                  },
-                  [
-                    _vm._l(_vm.pages, function(page) {
-                      return _c(
-                        "swiper-slide",
-                        { key: page.id, staticClass: "user-pages-item-item" },
-                        [
-                          _c(
-                            "a",
-                            {
-                              on: {
-                                click: function($event) {
-                                  return _vm.GoToPage(page.id, page.types)
-                                }
-                              }
-                            },
-                            [
-                              page.image_as_icon === "1"
-                                ? _c("div", {
-                                    staticClass: "user-pages-item-image",
-                                    style: {
-                                      "background-image":
-                                        "url(" + page.image + ")"
-                                    }
-                                  })
-                                : _vm._e(),
-                              _vm._v(" "),
-                              page.image_as_icon === "0" && page.icons[0]
-                                ? [
-                                    _c("img", {
-                                      attrs: { src: page.icons[0].icon }
-                                    })
-                                  ]
-                                : _vm._e(),
-                              _vm._v(" "),
-                              page.image_as_icon === "0" &&
-                              page.icons.length <= 0
-                                ? [
-                                    _c("img", {
-                                      attrs: {
-                                        src: "/img/icons/029-information.svg"
-                                      }
-                                    })
-                                  ]
-                                : _vm._e(),
-                              _vm._v(
-                                "\n\n                            " +
-                                  _vm._s(page.title) +
-                                  "\n                        "
-                              )
-                            ],
-                            2
-                          )
-                        ]
-                      )
-                    }),
-                    _vm._v(" "),
-                    _vm.settings.module_routes == "y"
-                      ? _c(
-                          "swiper-slide",
-                          { staticClass: "user-pages-item-item" },
-                          [
-                            _c(
-                              "a",
-                              {
-                                on: {
-                                  click: function($event) {
-                                    return _vm.GoToRoutes()
-                                  }
-                                }
-                              },
-                              [
-                                _c("img", {
-                                  attrs: { src: "/img/icons/003-home.svg" }
-                                }),
-                                _vm._v(
-                                  "\n                            План здания\n                        "
-                                )
-                              ]
-                            )
-                          ]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _vm.settings.module_reviews == "y"
-                      ? _c(
-                          "swiper-slide",
-                          { staticClass: "user-pages-item-item" },
-                          [
-                            _c(
-                              "a",
-                              {
-                                on: {
-                                  click: function($event) {
-                                    return _vm.GoToReviews()
-                                  }
-                                }
-                              },
-                              [
-                                _c("img", {
-                                  attrs: {
-                                    src: "/img/icons/029-information.svg"
-                                  }
-                                }),
-                                _vm._v(
-                                  "\n                            Отзывы\n                        "
-                                )
-                              ]
-                            )
-                          ]
-                        )
-                      : _vm._e()
-                  ],
-                  2
-                ),
-                _vm._v(" "),
-                _vm.slider_prev_next
-                  ? _c("div", {
-                      staticClass: "swiper-button-prev",
-                      staticStyle: { "margin-left": "2vw" },
-                      attrs: { slot: "button-prev" },
-                      slot: "button-prev"
-                    })
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.slider_prev_next
-                  ? _c("div", {
-                      staticClass: "swiper-button-next",
-                      staticStyle: { "margin-right": "2vw" },
-                      attrs: { slot: "button-next" },
-                      slot: "button-next"
-                    })
-                  : _vm._e()
-              ],
-              1
-            )
-          ]
-        )
-      ])
+          ),
+          _vm._v(" "),
+          _vm.slider_prev_next
+            ? _c("div", {
+                staticClass: "swiper-button-prev",
+                staticStyle: { "margin-left": "-2.5vw" },
+                attrs: { slot: "button-prev" },
+                slot: "button-prev"
+              })
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.slider_prev_next
+            ? _c("div", {
+                staticClass: "swiper-button-next",
+                staticStyle: { "margin-right": "-2.5vw" },
+                attrs: { slot: "button-next" },
+                slot: "button-next"
+              })
+            : _vm._e()
+        ],
+        1
+      )
     ])
   ])
 }
@@ -44231,7 +44115,8 @@ var render = function() {
           staticStyle: {
             "font-weight": "700",
             "font-size": "3.5vh",
-            "text-align": "center"
+            "text-align": "center",
+            color: "#fff"
           }
         },
         [_vm._v("Новости")]
@@ -44245,7 +44130,7 @@ var render = function() {
               _c(
                 "swiper",
                 {
-                  ref: "DefaultNewsAllSwiper",
+                  ref: "MedNewsAllSwiper",
                   attrs: { options: _vm.swiperOptions }
                 },
                 _vm._l(_vm.news, function(newsItem) {
@@ -44278,7 +44163,7 @@ var render = function() {
                                 {
                                   staticStyle: {
                                     "font-size": "1vw",
-                                    color: "#999",
+                                    color: "#fff",
                                     display: "block",
                                     "margin-bottom": "1vh",
                                     "margin-top": "1vh"
@@ -44315,7 +44200,7 @@ var render = function() {
                                 {
                                   staticStyle: {
                                     "font-size": "1vw",
-                                    color: "#999",
+                                    color: "#fff",
                                     display: "block",
                                     "margin-bottom": "1vh",
                                     "margin-top": "1vh"
@@ -44372,10 +44257,7 @@ var render = function() {
       [
         _c(
           "router-link",
-          {
-            staticClass: "home-button",
-            attrs: { to: { name: "default_Home" } }
-          },
+          { staticClass: "home-button", attrs: { to: { name: "med_Home" } } },
           [_c("img", { attrs: { src: "/img/icon-footer-home.svg" } })]
         )
       ],
@@ -44428,7 +44310,8 @@ var render = function() {
                     staticStyle: {
                       "font-weight": "700",
                       "font-size": "3.5vh",
-                      "margin-bottom": "2vh"
+                      "margin-bottom": "2vh",
+                      color: "#fff"
                     }
                   },
                   [_vm._v(_vm._s(_vm.newsItem.title))]
@@ -44457,7 +44340,8 @@ var render = function() {
                     staticStyle: {
                       "font-weight": "700",
                       "font-size": "3.5vh",
-                      "margin-bottom": "2vh"
+                      "margin-bottom": "2vh",
+                      color: "#fff"
                     }
                   },
                   [_vm._v(_vm._s(_vm.newsItem.title))]
@@ -44489,19 +44373,13 @@ var render = function() {
       [
         _c(
           "router-link",
-          {
-            staticClass: "home-button",
-            attrs: { to: { name: "default_Home" } }
-          },
+          { staticClass: "home-button", attrs: { to: { name: "med_Home" } } },
           [_c("img", { attrs: { src: "/img/icon-footer-home.svg" } })]
         ),
         _vm._v(" "),
         _c(
           "router-link",
-          {
-            staticClass: "gal-button",
-            attrs: { to: { name: "default_News" } }
-          },
+          { staticClass: "gal-button", attrs: { to: { name: "med_News" } } },
           [_c("img", { attrs: { src: "/img/icon-footer-back.svg" } })]
         )
       ],
@@ -44839,7 +44717,8 @@ var render = function() {
               "font-weight": "700",
               "font-size": "3.5vh",
               "text-align": "center",
-              "margin-bottom": "5vh"
+              "margin-bottom": "5vh",
+              color: "#fff"
             }
           },
           [_vm._v(_vm._s(_vm.page.title))]
@@ -44911,7 +44790,8 @@ var render = function() {
             "font-weight": "700",
             "font-size": "3.5vh",
             "text-align": "center",
-            "margin-bottom": "2vh"
+            "margin-bottom": "2vh",
+            color: "#fff"
           }
         },
         [_vm._v(_vm._s(_vm.page.title))]
@@ -44965,7 +44845,8 @@ var render = function() {
                 staticStyle: {
                   "font-weight": "700",
                   "font-size": "3.5vh",
-                  "text-align": "center"
+                  "text-align": "center",
+                  color: "#fff"
                 }
               },
               [_vm._v(_vm._s(_vm.page.title))]
@@ -45090,7 +44971,8 @@ var render = function() {
               "font-weight": "700",
               "font-size": "3.5vh",
               "text-align": "center",
-              "margin-bottom": "2vh"
+              "margin-bottom": "2vh",
+              color: "#fff"
             }
           },
           [_vm._v(_vm._s(_vm.page.title))]
@@ -45157,7 +45039,8 @@ var render = function() {
                 "font-weight": "700",
                 "font-size": "3.5vh",
                 "text-align": "center",
-                "margin-bottom": "2vh"
+                "margin-bottom": "2vh",
+                color: "#fff"
               }
             },
             [_vm._v(_vm._s(_vm.page.title))]
@@ -45358,10 +45241,7 @@ var render = function() {
       [
         _c(
           "router-link",
-          {
-            staticClass: "home-button",
-            attrs: { to: { name: "default_Home" } }
-          },
+          { staticClass: "home-button", attrs: { to: { name: "med_Home" } } },
           [_c("img", { attrs: { src: "/img/icon-footer-home.svg" } })]
         )
       ],
@@ -45401,7 +45281,8 @@ var render = function() {
             "font-weight": "700",
             "font-size": "3.5vh",
             "text-align": "center",
-            "margin-bottom": "5vh"
+            "margin-bottom": "5vh",
+            color: "#fff"
           }
         },
         [_vm._v(_vm._s(_vm.photoalbumItem.title))]
@@ -45456,10 +45337,7 @@ var render = function() {
       [
         _c(
           "router-link",
-          {
-            staticClass: "home-button",
-            attrs: { to: { name: "default_Home" } }
-          },
+          { staticClass: "home-button", attrs: { to: { name: "med_Home" } } },
           [_c("img", { attrs: { src: "/img/icon-footer-home.svg" } })]
         ),
         _vm._v(" "),
@@ -45467,7 +45345,7 @@ var render = function() {
           "router-link",
           {
             staticClass: "gal-button",
-            attrs: { to: { name: "default_Photoalbums" } }
+            attrs: { to: { name: "med_Photoalbums" } }
           },
           [_c("img", { attrs: { src: "/img/icon-footer-back.svg" } })]
         )
@@ -45601,10 +45479,7 @@ var render = function() {
       [
         _c(
           "router-link",
-          {
-            staticClass: "home-button",
-            attrs: { to: { name: "default_Home" } }
-          },
+          { staticClass: "home-button", attrs: { to: { name: "med_Home" } } },
           [_c("img", { attrs: { src: "/img/icon-footer-home.svg" } })]
         )
       ],
@@ -47371,10 +47246,7 @@ var render = function() {
       [
         _c(
           "router-link",
-          {
-            staticClass: "home-button",
-            attrs: { to: { name: "default_Home" } }
-          },
+          { staticClass: "home-button", attrs: { to: { name: "med_Home" } } },
           [_c("img", { attrs: { src: "/img/icon-footer-home.svg" } })]
         )
       ],
@@ -47488,10 +47360,7 @@ var render = function() {
       [
         _c(
           "router-link",
-          {
-            staticClass: "home-button",
-            attrs: { to: { name: "default_Home" } }
-          },
+          { staticClass: "home-button", attrs: { to: { name: "med_Home" } } },
           [_c("img", { attrs: { src: "/img/icon-footer-home.svg" } })]
         )
       ],
@@ -47531,7 +47400,8 @@ var render = function() {
             "font-weight": "700",
             "font-size": "3.5vh",
             "text-align": "center",
-            "margin-bottom": "2vh"
+            "margin-bottom": "2vh",
+            color: "#fff"
           }
         },
         [_vm._v(_vm._s(_vm.videoalbumItem.title))]
@@ -47554,10 +47424,7 @@ var render = function() {
       [
         _c(
           "router-link",
-          {
-            staticClass: "home-button",
-            attrs: { to: { name: "default_Home" } }
-          },
+          { staticClass: "home-button", attrs: { to: { name: "med_Home" } } },
           [_c("img", { attrs: { src: "/img/icon-footer-home.svg" } })]
         ),
         _vm._v(" "),
@@ -47565,7 +47432,7 @@ var render = function() {
           "router-link",
           {
             staticClass: "gal-button",
-            attrs: { to: { name: "default_Videoalbums" } }
+            attrs: { to: { name: "med_Videoalbums" } }
           },
           [_c("img", { attrs: { src: "/img/icon-footer-back.svg" } })]
         )

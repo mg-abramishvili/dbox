@@ -163,7 +163,7 @@
         </div>
 
         <div class="footer">
-            <router-link :to="{name: 'default_Home'}" class="home-button">
+            <router-link :to="{name: 'med_Home'}" class="home-button">
                 <img src="/img/icon-footer-home.svg">
             </router-link>
         </div>
@@ -171,7 +171,7 @@
 </template>
 
 <script>
-    import SimpleKeyboard from "../../default/partials/SimpleKeyboard";
+    import SimpleKeyboard from "../../med/partials/SimpleKeyboard";
 
     export default {
         name: 'shkola_Routes',
@@ -299,7 +299,7 @@
     }
 
     .route_about {
-        color: #333;
+        color: #fff;
         text-align: center;
     }
 
@@ -339,7 +339,7 @@
     }
 
     .prevnextbutton {
-        background-color: #976545;
+        background-color: #4D9EED;
         color: #fff;
         font-size: 1.25vh;
         padding: 0.5vh 2vh;

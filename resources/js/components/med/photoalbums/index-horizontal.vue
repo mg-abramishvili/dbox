@@ -22,7 +22,7 @@
         </div>
 
         <div class="footer">
-            <router-link :to="{name: 'default_Home'}" class="home-button">
+            <router-link :to="{name: 'med_Home'}" class="home-button">
                 <img src="/img/icon-footer-home.svg">
             </router-link>
         </div>
@@ -67,7 +67,7 @@
         },
         methods: {
             GoToPhotoalbum(id) {
-                this.$router.push({name: 'default_PhotoalbumItem', params: {id: id}})
+                this.$router.push({name: 'med_PhotoalbumItem', params: {id: id}})
                 this.$refs.PhotoalbumsAllSwiper.$swiper.slideTo(1, false)
             },
         },

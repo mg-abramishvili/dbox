@@ -1,15 +1,15 @@
 <template>
     <div>
         <div class="container container-index">
-            <h1 class="h1-page mb-4" style="font-weight: 700; font-size: 3.5vh; text-align: center;">Новости</h1>
+            <h1 class="h1-page mb-4" style="font-weight: 700; font-size: 3.5vh; text-align: center; color: #fff;">Новости</h1>
             <div v-if="news.length" class="news-list sortable">
-                <swiper ref="DefaultNewsAllSwiper" :options="swiperOptions">
+                <swiper ref="MedNewsAllSwiper" :options="swiperOptions">
                     <swiper-slide v-for="newsItem in news" :key="newsItem.id">
                         <a @click="GoToNewsItem(newsItem.id)" class="index-button index-button-full">
 
                                 <div v-if="newsItem.image" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(' + newsItem.image + ')' }"></div>
                                 <span v-if="newsItem.image" class="t6-p">
-                                    <small style="font-size: 1vw; color: #999; display:block; margin-bottom: 1vh; margin-top: 1vh">{{ newsItem.created_at | moment }}</small>
+                                    <small style="font-size: 1vw; color: #fff; display:block; margin-bottom: 1vh; margin-top: 1vh">{{ newsItem.created_at | moment }}</small>
                                     {{ newsItem.title }}
                                 </span>
                                 
@@ -17,7 +17,7 @@
                                     <img src="/img/icons/002-newspaper.svg">
                                 </div>
                                 <span v-if="!newsItem.image">
-                                    <small style="font-size: 1vw; color: #999; display:block; margin-bottom: 1vh; margin-top: 1vh">{{ newsItem.created_at | moment }}</small>
+                                    <small style="font-size: 1vw; color: #fff; display:block; margin-bottom: 1vh; margin-top: 1vh">{{ newsItem.created_at | moment }}</small>
                                     {{ newsItem.title }}
                                 </span>
 
@@ -31,7 +31,7 @@
         </div>
 
         <div class="footer">
-            <router-link :to="{name: 'default_Home'}" class="home-button">
+            <router-link :to="{name: 'med_Home'}" class="home-button">
                 <img src="/img/icon-footer-home.svg">
             </router-link>
         </div>
@@ -74,8 +74,8 @@
         },
         methods: {
             GoToNewsItem(id) {
-                this.$router.push({name: 'default_NewsItem', params: {id: id}})
-                this.$refs.DefaultNewsAllSwiper.$swiper.slideTo(0, false)
+                this.$router.push({name: 'med_NewsItem', params: {id: id}})
+                this.$refs.MedNewsAllSwiper.$swiper.slideTo(0, false)
             },
         },
         filters: {
@@ -85,7 +85,7 @@
         },
         computed: {
             swiper() {
-                return this.$refs.DefaultNewsAllSwiper.$swiper
+                return this.$refs.MedNewsAllSwiper.$swiper
             }
         },
         components: {

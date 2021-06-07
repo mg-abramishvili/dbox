@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-detail-text">
-                    <h1 class="h1-page" style="font-weight: 700; font-size: 3.5vh; text-align: center; margin-bottom: 2vh;">{{ page.title }}</h1>
+                    <h1 class="h1-page" style="font-weight: 700; font-size: 3.5vh; text-align: center; margin-bottom: 2vh; color: #fff;">{{ page.title }}</h1>
                     <div class="excel-item">
                         <xlsx-read :file="excel_file">
                             <xlsx-table />

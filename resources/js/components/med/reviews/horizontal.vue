@@ -31,7 +31,7 @@
         </div>
 
         <div class="footer">
-            <router-link :to="{name: 'default_Home'}" class="home-button">
+            <router-link :to="{name: 'med_Home'}" class="home-button">
                 <img src="/img/icon-footer-home.svg">
             </router-link>
         </div>
@@ -42,7 +42,7 @@
     import SimpleKeyboard from "../partials/SimpleKeyboard";
 
     export default {
-        name: 'default_Reviews',
+        name: 'med_Reviews',
         data() {
             return {
                 settings: {},
@@ -89,7 +89,7 @@
                     this.show_form = true,
                     this.show_button = true,
                     this.input = '',
-                    this.$router.push({ name: 'default_Home'})
+                    this.$router.push({ name: 'med_Home'})
                 }, 2000);
                 } catch (error) {
                     this.success = false

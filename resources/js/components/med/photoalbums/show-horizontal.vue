@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="container">
-            <h1 class="h1-page" style="font-weight: 700; font-size: 3.5vh; text-align: center; margin-bottom: 5vh;">{{ photoalbumItem.title }}</h1>
+            <h1 class="h1-page" style="font-weight: 700; font-size: 3.5vh; text-align: center; margin-bottom: 5vh; color: #fff;">{{ photoalbumItem.title }}</h1>
 
             <div v-if="photoalbumItem" class="gallery-detail">
                 <swiper ref="PhotoalbumsItemSwiper" :options="swiperOptions">
@@ -15,11 +15,11 @@
         </div>
 
         <div class="footer">
-            <router-link :to="{name: 'default_Home'}" class="home-button">
+            <router-link :to="{name: 'med_Home'}" class="home-button">
                 <img src="/img/icon-footer-home.svg">
             </router-link>
 
-            <router-link :to="{name: 'default_Photoalbums'}" class="gal-button">
+            <router-link :to="{name: 'med_Photoalbums'}" class="gal-button">
                 <img src="/img/icon-footer-back.svg">
             </router-link>
         </div>

@@ -63,6 +63,8 @@ main {
     margin-top: 4vh;
     margin-bottom: 4vh;
     height: 7vh;
+    position: sticky;
+    z-index: 10;
 }
 
 .header-logo a {
@@ -78,7 +80,7 @@ main {
 
 .header-text {
     text-align: right;
-    color: #696969;
+    color: #fff;
     font-size: 3vh;
 }
 
@@ -112,11 +114,11 @@ main {
 }
 
 .home-button {
-    background-color: #ADB9C8;
+    background-color: #F8C800;
 }
 
 .gal-button {
-    background-color: #45C99F;
+    background-color: #4D9EED;
 }
 
 .vgal-button {
@@ -147,7 +149,9 @@ main {
 }
 
 
-
+.swiper-button-prev, .swiper-button-next {
+    color: #fff;
+}
 
 /* MAIN PAGE */
 
@@ -259,9 +263,11 @@ main {
 }
 
 .user-pages {
-    background-color: #ffc940;
-    height: 80vh;
+    height: auto;
     border-radius: 1vh;
+    width: 46vw;
+    position: relative;
+    margin-top: 10vh;
 }
 
 .user-pages-item {
@@ -270,15 +276,12 @@ main {
 }
 
 .user-pages-item-item {
-    height: 40vh;
+    height: 35vh;
     position: relative;
     text-align: center;
-    border-radius: 1vh;
     color: #fff;
     font-size: 3vh;
-    padding-top: 9vh;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 1vh;
 }
 
 .user-pages-item-item a {
@@ -286,6 +289,10 @@ main {
     color: #fff;
     line-height: 1.25;
     padding: 0 1vh;
+    background-color: #4D9EED;
+    height: 100%;
+    padding-top: 6vh;
+    border-radius: 1vh;
 }
 
 .user-pages-item-item a:hover,
@@ -355,7 +362,7 @@ main {
 
 .gallery-list-item a h2 {
     height: 7vh;
-    color: #333;
+    color: #fff;
     margin: 0;
     line-height: 1.35;
     font-size: 2vh;
@@ -439,7 +446,7 @@ main {
     text-align: left;
     display: block;
     padding: 1vh;
-    color: #333;
+    color: #fff;
     font-weight: bold;
     font-size: 2.5vh;
 }
@@ -471,6 +478,7 @@ main {
 
 .news-item {
     background-color: #fff;
+    background-color: transparent;
 }
 
 .news-item-img {
@@ -486,6 +494,7 @@ main {
     height: 67vh;
     overflow: hidden;
     overflow-y: auto;
+    color: #fff !important;
 }
 
   .news-item-text h1 {
@@ -499,7 +508,7 @@ main {
 
   .news-item-text span {
       display: block;
-      color: #777;
+      color: #acacac;
       margin-bottom: 1.5vh;
       font-size: 2.5vh;
   }
@@ -516,12 +525,14 @@ main {
     padding-right: 2vh;
     font-size: 2vh !important;
     line-height: 1.6 !important;
+    color: #fff !important;
 }
 
 .type-1 .page-detail-text h1 {
     font-weight: 700;
     font-size: 4vh;
     margin-bottom: 3vh !important;
+    color: #fff;
 }
 
 .type-1 .page-detail-text p {
@@ -548,11 +559,13 @@ main {
     padding-right: 2vh;
     font-size: 2vh !important;
     line-height: 1.6 !important;
+    color: #fff !important;
 }
 
 .type-2 .page-detail-text h1 {
     font-weight: 700;
     font-size: 4vh;
+    color: #fff;
 }
 
 .type-2 .page-detail-text p {
@@ -580,11 +593,13 @@ main {
     padding-right: 2vh;
     font-size: 2vh !important;
     line-height: 1.6 !important;
+    color: #fff !important;
 }
 
 .type-3 .page-detail-text h1 {
     font-weight: 700;
     font-size: 4vh;
+    color: #fff;
 }
 
 .type-3 .page-detail-text p {
@@ -637,7 +652,7 @@ main {
 .type-6 .index-button {
     height: 32vh;
     margin: 1vh;
-    background-color: #ffc940;
+    background-color: #4D9EED;
     border-radius: 1vh;
     padding: 1vh;
     padding-top: 5vh;
@@ -723,6 +738,7 @@ main {
     overflow-x: auto;
     text-align: left;
     font-size: 1.3vh;
+    background-color: #fff;
 }
 
 .excel-item table tr {
