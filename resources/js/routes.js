@@ -22,6 +22,18 @@ import shkola_VideoalbumItem from './components/shkola/videoalbums/show-horizont
 import shkola_News from './components/shkola/news/index-horizontal';
 import shkola_NewsItem from './components/shkola/news/show-horizontal';
 
+// ВУЗ
+import vuz_Home from './components/vuz/home/horizontal.vue';
+import vuz_PageItem from './components/vuz/pages/PageItem';
+import vuz_Routes from './components/vuz/routes/horizontal';
+import vuz_Reviews from './components/vuz/reviews/horizontal';
+import vuz_Photoalbums from './components/vuz/photoalbums/index-horizontal';
+import vuz_PhotoalbumItem from './components/vuz/photoalbums/show-horizontal';
+import vuz_Videoalbums from './components/vuz/videoalbums/index-horizontal';
+import vuz_VideoalbumItem from './components/vuz/videoalbums/show-horizontal';
+import vuz_News from './components/vuz/news/index-horizontal';
+import vuz_NewsItem from './components/vuz/news/show-horizontal';
+
 // Медцентр
 import med_Home from './components/med/home/horizontal.vue';
 import med_PageItem from './components/med/pages/PageItem';
@@ -137,6 +149,58 @@ export const routes = [
         path: '/vue-app/shkola/news_item/:id',
         name: 'shkola_NewsItem',
         component: shkola_NewsItem
+    },
+
+    // ВУЗ
+    {
+        path: '/vue-app/vuz/index',
+        name: 'vuz_Home',
+        component: vuz_Home
+    },
+    {
+        path: '/vue-app/vuz/pages/:id',
+        name: 'vuz_PageItem',
+        component: vuz_PageItem
+    },
+    {
+        path: '/vue-app/vuz/routes',
+        name: 'vuz_Routes',
+        component: vuz_Routes,
+    },
+    {
+        path: '/vue-app/vuz/reviews',
+        name: 'vuz_Reviews',
+        component: vuz_Reviews
+    },
+    {
+        path: '/vue-app/vuz/photoalbums',
+        name: 'vuz_Photoalbums',
+        component: vuz_Photoalbums
+    },
+    {
+        path: '/vue-app/vuz/photoalbum/:id',
+        name: 'vuz_PhotoalbumItem',
+        component: vuz_PhotoalbumItem
+    },
+    {
+        path: '/vue-app/vuz/videoalbums',
+        name: 'vuz_Videoalbums',
+        component: vuz_Videoalbums
+    },
+    {
+        path: '/vue-app/vuz/videoalbum/:id',
+        name: 'vuz_VideoalbumItem',
+        component: vuz_VideoalbumItem
+    },
+    {
+        path: '/vue-app/vuz/news',
+        name: 'vuz_News',
+        component: vuz_News
+    },
+    {
+        path: '/vue-app/vuz/news_item/:id',
+        name: 'vuz_NewsItem',
+        component: vuz_NewsItem
     },
 
     // Медцентр

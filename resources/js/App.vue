@@ -9,6 +9,10 @@
             <ShkolaLayout />
         </template>
 
+        <template v-if="settings.theme === 'vuz'">
+            <VuzLayout />
+        </template>
+
         <template v-if="settings.theme === 'med'">
             <MedLayout />
         </template>
@@ -19,6 +23,7 @@
 <script>
     import DefaultLayout from './components/default/layout';
     import ShkolaLayout from './components/shkola/layout';
+    import VuzLayout from './components/vuz/layout';
     import MedLayout from './components/med/layout';
 
     export default {
@@ -45,6 +50,12 @@
                         }
                     }
 
+                    if(this.settings.theme === 'vuz') {
+                        if(this.$route.name !== 'vuz_Home') {
+                            this.$router.push({name: 'vuz_Home'})
+                        }
+                    }
+
                     if(this.settings.theme === 'med') {
                         if(this.$route.name !== 'med_Home') {
                             this.$router.push({name: 'med_Home'})
@@ -56,6 +67,7 @@
         components: {
             DefaultLayout,
             ShkolaLayout,
+            VuzLayout,
             MedLayout,
         }
     }

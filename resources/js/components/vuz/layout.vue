@@ -1,15 +1,15 @@
 <template>
     <div>
-        <MedHeaderHorizontal />
+        <VuzHeaderHorizontal />
         
-        <keep-alive :exclude="/med_VideoalbumItem/">
+        <keep-alive :exclude="/vuz_VideoalbumItem/">
             <router-view :key="$route.path"></router-view> 
         </keep-alive>
     </div>
 </template>
 
 <script>
-    import MedHeaderHorizontal from './partials/header-horizontal'
+    import VuzHeaderHorizontal from './partials/header-horizontal'
 
     export default {
         data() {
@@ -21,7 +21,7 @@
         },
         created() {
             require('@/../../public/css/bootstrap.min.css');
-            require('@/../../public/css/style-med.css');
+            require('@/../../public/css/style-vuz.css');
 
             fetch(`/api/front/settings/`)
                 .then(response => response.json())
@@ -30,7 +30,7 @@
                 });
         },
         components: {
-            MedHeaderHorizontal
+            VuzHeaderHorizontal
         },
     }
 </script>
