@@ -1,7 +1,7 @@
 <template>
     <div v-if="settings.orientation === 'horizontal'">
-        <div class="pic_index" style="width: 17vw; background-position: 30% 50%;"></div>
-        <div v-for="type in page.types" :key="type.id" class="container" style="position: relative; width: 75vw; margin-left: 8vw; height: 100vh; background: #fff; border: 2vh solid #ffd648; padding: 4vh;">
+        
+        <div v-for="type in page.types" :key="type.id" class="container" style="position: relative; width: 75vw; margin-left: 8vw; height: 100vh; background: transparent; padding: 6vh;">
             <div class="page-item">
                 <VuzPageType1Horizontal v-if="type.id == '1'" />
                 <VuzPageType2Horizontal v-if="type.id == '2'" />
@@ -15,7 +15,7 @@
             </div>
         </div>
         
-        <div class="sidebar">
+        <!--<div class="sidebar">
             <div class="sidebar-inner">
                 <router-link :to="{name: 'vuz_Home'}" class="logo-button">
                     <img :src="settings.logo">
@@ -35,7 +35,7 @@
                     </template>
                 </template>
             </div>
-        </div>
+        </div>-->
     </div>
 </template>
 

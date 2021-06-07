@@ -20,8 +20,8 @@
             </swiper-slide>
         </swiper>
 
-            <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev" style="margin-left: 0.15vw"></div>
-            <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next" style="margin-right: 0.15vw"></div>
+            <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev" style="margin-left: 1.3vw"></div>
+            <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next" style="margin-right: 1.3vw"></div>
         </div>
     </div>
 </template>
@@ -52,7 +52,7 @@
                 .then(response => response.json())
                 .then(json => {
                     this.page = json;
-                    if (json.children.length > 8) {
+                    if (json.children.length > 12) {
                         this.swiperOptions.centerInsufficientSlides = false,
                         this.slider_prev_next = true
                     } else {

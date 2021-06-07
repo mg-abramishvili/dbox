@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="background: #FFD648; height: 100vh; padding-top: 4vh;">
         <div class="pic_index"></div>
 
         <div class="container" style="width: 51.5vw; margin: 0; margin-left: 1.75vw;">
