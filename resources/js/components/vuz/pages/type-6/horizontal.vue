@@ -36,7 +36,7 @@
                 page: [],
                 swiperOptions: {
                     slidesPerView: 4,
-                    slidesPerColumn: 2,
+                    slidesPerColumn: 3,
                     slidesPerGroup: 2,
                     slidesPerColumnFill: 'row',
                     navigation: {

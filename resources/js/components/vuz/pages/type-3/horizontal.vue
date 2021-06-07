@@ -2,9 +2,9 @@
     <div class="type-3">
         
         <div v-if="page.gallery">
-                
-            <div class="page-detail-text mb-4">
-                <h1 class="h1-page">{{ page.title }}</h1>
+            <h1 class="mb-4"  style="font-weight: 700; font-size: 3.5vh; text-align: center; margin-bottom: 2vh; color: #1631A4">{{ page.title }}</h1>
+
+            <div class="page-detail-text mb-4" style="height: 57vh;">
                 <div v-html="page.text"></div>
             </div>
 

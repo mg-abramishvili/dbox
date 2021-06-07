@@ -284,13 +284,10 @@ main {
 }
 
 .user-pages-item-image {
-    width: 15vh;
-    height: 15vh;
+    height: 18vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    border-radius: 100%;
-    border: 0.75vh solid #fff;
     display: block;
     margin: 0 auto;
     margin-bottom: 1vh;
@@ -390,7 +387,7 @@ main {
 
 .gallery-detail-item {
     width: 30%;
-    height: 60vh;
+    height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -541,14 +538,14 @@ main {
 /* PAGE TYPE 2 */
 
 .type-2 .page-detail-image {
-    height: 75vh;
+    height: 55vh;
     border-radius: 1vh;
     background-size: cover;
     background-position: 50% 50%;
 }
 
 .type-2 .page-detail-text {
-    height: 75vh;
+    height: 87vh;
     overflow-y: auto;
     padding-right: 2vh;
     font-size: 2vh !important;
@@ -558,6 +555,7 @@ main {
 .type-2 .page-detail-text h1 {
     font-weight: 700;
     font-size: 4vh;
+    color: #1631A4;
 }
 
 .type-2 .page-detail-text p {
@@ -640,17 +638,23 @@ main {
 }
 
 .type-6 .index-button {
-    height: 32vh;
+    height: 26vh;
     margin: 1vh;
-    background-color: #ffc940;
     border-radius: 1vh;
-    padding: 1vh;
-    padding-top: 5vh;
 }
 
 .type-6 .user-pages-item-item img {
     width: 40%;
     margin-bottom: 3vh;
+}
+
+.type-6 .index-button-icon {
+    height: 18vh;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1vh;
+    position: relative;
+    background-color: #e0e0e0;
 }
 
 /* PAGE TYPE 6 */
@@ -716,7 +720,7 @@ main {
 .excel-item {
     width: 94vw;
     width: auto;
-    height: 67vh;
+    height: 82vh;
     overflow-y: scroll;
     text-align: center;
 }
