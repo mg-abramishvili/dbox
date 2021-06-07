@@ -1,75 +1,126 @@
 <template>
-    <div class="container">
-        <div class="row">
+    <div>
+        <div class="pic_index"></div>
 
-        <div class="col-6">
-            <div class="row">
-                <div v-if="settings.module_photoalbums == 'y' || settings.module_videoalbums == 'y'" class="col">
-                    <template v-if="settings.module_photoalbums == 'y'">
-                        <a @click="GoToPhotoalbums()" class="photogalleries" :class="[`${settings.module_videoalbums == 'n' ? 'photogalleries-full':''} ${settings.module_news == 'n' ? 'photogalleries-nonews':''}`]">
-                            <img src="/img/icon-photogal.svg">
-                            Фотогалерея
-                        </a>
-                    </template>
-
-                    <template v-if="settings.module_videoalbums == 'y'">
-                        <a @click="GoToVideoalbums()" class="videogalleries" :class="[`${settings.module_photoalbums == 'n' ? 'videogalleries-full':''} ${settings.module_news == 'n' ? 'videogalleries-nonews':''}`]">
-                            <img src="/img/icon-videogal.svg">
-                            Видеогалерея
-                        </a>
-                    </template>
-                </div>
-
-                <template v-if="settings.module_news == 'y'">
-                    <div :class="[`${settings.module_photoalbums == 'y' || settings.module_videoalbums == 'y' ? 'col-7':'col-12'}`]">
-                        <a @click="GoToNews()" class="news" :class="[`${settings.module_photoalbums == 'n' && settings.module_videoalbums == 'n' ? 'news-nogals':''}`]">
-                            <img src="/img/icon-news.svg">
-                            Новости
-                        </a>
+        <div class="container" style="width: 51.5vw; margin: 0; margin-left: 1.75vw;">
+            <div class="header">
+                <div class="row align-items-center">
+                    <div class="col-4 header-logo">
+                        <router-link :to="{name: 'vuz_Home'}"><img :src="settings.logo"></router-link>
                     </div>
-                </template>
-
+                    <div class="col-8 header-text">
+                        <div v-if="settings.title" class="header-title" v-html="settings.title.replace('*','<br>')"></div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div :class="[`${settings.module_photoalbums == 'n' && settings.module_videoalbums == 'n' && settings.module_news == 'n' ? 'col-12':'col-6'}`]">
+        <div class="container">
+
             <div class="user-pages">
                 <swiper ref="VuzIndexAllSwiper" :options="swiperOptions">
+                    <swiper-slide v-if="settings.module_photoalbums == 'y'" class="user-pages-item-item">
+                        <a @click="GoToPhotoalbums()">
+                            <div class="user-pages-item-item_icon">
+                                <img src="/img/icon-photogal.svg">
+                            </div>
+                            <div class="user-pages-item-item_label">
+                                Фотогалерея
+                            </div>
+                        </a>
+                    </swiper-slide>
+
+                    <swiper-slide v-if="settings.module_videoalbums == 'y'" class="user-pages-item-item">
+                        <a @click="GoToVideoalbums()">
+                            <div class="user-pages-item-item_icon">
+                                <img src="/img/icon-videogal.svg">
+                            </div>
+                            <div class="user-pages-item-item_label">
+                                Видеогалерея
+                            </div>
+                        </a>
+                    </swiper-slide>
+
+                    <swiper-slide v-if="settings.module_news == 'y'" class="user-pages-item-item">
+                        <a @click="GoToNews()">
+                            <div class="user-pages-item-item_icon">
+                                <img src="/img/icon-news.svg">
+                            </div>
+                            <div class="user-pages-item-item_label">
+                                Новости
+                            </div>
+                        </a>
+                    </swiper-slide>
+
                     <swiper-slide v-for="page in pages" :key="page.id" class="user-pages-item-item">
                         <a @click="GoToPage(page.id, page.types)">
-                            <div v-if="page.image_as_icon === '1'" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(' + page.image + ')' }"></div>
+                            <template v-if="page.image_as_icon === '1'">
+                                <div class="user-pages-item-item_icon">
+                                    <img :src="page.image">
+                                </div>
+                            </template>
                             
                             <template v-if="page.image_as_icon === '0' && page.icons[0]">
-                                <img :src="page.icons[0].icon">
+                                <div class="user-pages-item-item_icon">
+                                    <img :src="page.icons[0].icon">
+                                </div>
                             </template>
 
                             <template v-if="page.image_as_icon === '0' && page.icons.length <= 0">
-                                <img src="/img/icons/029-information.svg">
+                                <div class="user-pages-item-item_icon">
+                                    <img src="/img/icons/029-information.svg">
+                                </div>
                             </template>
-
-                            {{ page.title }}
+                            
+                            <div class="user-pages-item-item_label">
+                                {{ page.title }}
+                            </div>
+                            
                         </a>
                     </swiper-slide>
 
                     <swiper-slide v-if="settings.module_routes == 'y'" class="user-pages-item-item">
                         <a @click="GoToRoutes()">
-                            <img src="/img/icons/003-home.svg">
-                            План здания
+                            <div class="user-pages-item-item_icon">
+                                <img src="/img/icons/003-home.svg">
+                            </div>
+                            <div class="user-pages-item-item_label">
+                                План здания
+                            </div>
                         </a>
                     </swiper-slide>
 
                     <swiper-slide v-if="settings.module_reviews == 'y'" class="user-pages-item-item">
                         <a @click="GoToReviews()">
-                            <img src="/img/icons/029-information.svg">
-                            Отзывы
+                            <div class="user-pages-item-item_icon">
+                                <img src="/img/icons/029-information.svg">
+                            </div>
+                            <div class="user-pages-item-item_label">
+                                Отзывы
+                            </div>
                         </a>
                     </swiper-slide>
                 </swiper>
 
-                <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev" style="margin-left: 2vw"></div>
-                <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next" style="margin-right: 2vw"></div>
+                <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev" style="margin-left: -1.8vw"></div>
+                <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next" style="margin-right: -1.8vw"></div>
             </div>
-        </div>
+
+
+            <div class="latest_news" style="width: 50.5vw; margin-left: 0.5vw;">
+                <div class="row">
+                    <div v-for="newsItem in news" :key="newsItem.id" class="col-4">
+                        <div v-if="newsItem.image" class="latest_news_item_image" v-bind:style="{ 'background-image': 'url(' + newsItem.image + ')' }"></div>
+                        <div v-else class="latest_news_item_image" style="background-image: url(/img/no-image.jpg)"></div>
+                        <template v-if="newsItem.title.length > 65">
+                            {{ newsItem.title.substring(0, 65) + "..." }}
+                        </template>
+                        <template v-else>
+                            {{ newsItem.title }}
+                        </template>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -90,7 +141,7 @@
                 photoalbum_last: {},
                 swiperOptions: {
                     slidesPerView: 2,
-                    slidesPerColumn: 2,
+                    slidesPerColumn: 3,
                     slidesPerGroup: 2,
                     slidesPerColumnFill: 'row',
                     navigation: {
@@ -112,7 +163,7 @@
                 .then(json => {
                     this.pages = json
                 });
-            fetch(`/api/front/news/`)
+            fetch(`/api/front/news_three/`)
                 .then(response => response.json())
                 .then(json => {
                     this.news = json;
@@ -162,7 +213,7 @@
                 this.$refs.VuzIndexAllSwiper.$swiper.slideTo(1, false)
             },
             swiperArrows() {
-                if(document.querySelectorAll('.swiper-slide').length > 4) {
+                if(document.querySelectorAll('.swiper-slide').length > 6) {
                     this.slider_prev_next = true
                 } else {
                     this.slider_prev_next = false

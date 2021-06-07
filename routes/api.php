@@ -12,6 +12,7 @@ Route::get('/front/pages_all','App\Http\Controllers\Api\FrontController@pages_al
 Route::get('/front/page/{id}','App\Http\Controllers\Api\FrontController@pageItem');
 
 Route::get('/front/news','App\Http\Controllers\Api\FrontController@news');
+Route::get('/front/news_three','App\Http\Controllers\Api\FrontController@news_three');
 Route::get('/front/newsAll','App\Http\Controllers\Api\FrontController@newsAll');
 Route::get('/front/newsitem/{id}','App\Http\Controllers\Api\FrontController@newsItem');
 

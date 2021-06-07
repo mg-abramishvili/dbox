@@ -40,6 +40,11 @@ class FrontController extends Controller
     {
         return News::orderBy('created_at', 'desc')->take(2)->get();
     }
+
+    public function news_three()
+    {
+        return News::orderBy('created_at', 'desc')->take(3)->get();
+    }
 	
 	public function newsAll()
     {

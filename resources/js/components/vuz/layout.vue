@@ -1,6 +1,6 @@
 <template>
     <div>
-        <VuzHeaderHorizontal />
+        <VuzHeaderHorizontal v-show="this.$route.name !== 'vuz_Home'"/>
         
         <keep-alive :exclude="/vuz_VideoalbumItem/">
             <router-view :key="$route.path"></router-view> 
