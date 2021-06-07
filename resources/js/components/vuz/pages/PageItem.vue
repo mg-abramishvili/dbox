@@ -1,6 +1,7 @@
 <template>
     <div v-if="settings.orientation === 'horizontal'">
-        <div v-for="type in page.types" :key="type.id" class="container">
+        <div class="pic_index" style="width: 17vw; background-position: 30% 50%;"></div>
+        <div v-for="type in page.types" :key="type.id" class="container" style="position: relative; width: 75vw; margin-left: 8vw; height: 100vh; background: #fff; border: 2vh solid #ffd648; padding: 4vh;">
             <div class="page-item">
                 <VuzPageType1Horizontal v-if="type.id == '1'" />
                 <VuzPageType2Horizontal v-if="type.id == '2'" />
@@ -14,20 +15,26 @@
             </div>
         </div>
         
-        <div class="footer">
-            <router-link :to="{name: 'vuz_Home'}" class="home-button">
-                <img src="/img/icon-footer-home.svg">
-            </router-link>
+        <div class="sidebar">
+            <div class="sidebar-inner">
+                <router-link :to="{name: 'vuz_Home'}" class="logo-button">
+                    <img :src="settings.logo">
+                </router-link>
 
-            <template v-if="page.parent_id">
-                <template v-for="parent_page in pages">
-                    <template v-if="parent_page.id == page.parent_id">
-                        <router-link :to="{name: 'vuz_PageItem', params: {id: parent_page.id}}" class="gal-button">
-                            <img src="/img/icon-footer-back.svg">
-                        </router-link>
+                <router-link :to="{name: 'vuz_Home'}" class="home-button">
+                    <img src="/img/icon-footer-home.svg">
+                </router-link>
+
+                <template v-if="page.parent_id">
+                    <template v-for="parent_page in pages">
+                        <template v-if="parent_page.id == page.parent_id">
+                            <router-link :to="{name: 'vuz_PageItem', params: {id: parent_page.id}}" class="gal-button">
+                                <img src="/img/icon-footer-back.svg">
+                            </router-link>
+                        </template>
                     </template>
                 </template>
-            </template>
+            </div>
         </div>
     </div>
 </template>

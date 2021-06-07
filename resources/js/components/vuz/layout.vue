@@ -1,7 +1,5 @@
 <template>
     <div>
-        <VuzHeaderHorizontal v-show="this.$route.name !== 'vuz_Home'"/>
-        
         <keep-alive :exclude="/vuz_VideoalbumItem/">
             <router-view :key="$route.path"></router-view> 
         </keep-alive>
@@ -9,8 +7,6 @@
 </template>
 
 <script>
-    import VuzHeaderHorizontal from './partials/header-horizontal'
-
     export default {
         data() {
             return {
@@ -30,7 +26,6 @@
                 });
         },
         components: {
-            VuzHeaderHorizontal
         },
     }
 </script>

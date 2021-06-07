@@ -2,7 +2,7 @@
     <div class="type-6 container-index">
 
         <div v-if="page.children">
-        <h1 class="h1-page mb-4" style="font-weight: 700; font-size: 3.5vh; text-align: center;">{{ page.title }}</h1>
+        <h1 class="h1-page mb-4" style="font-weight: 700; font-size: 3.5vh; text-align: center; color: #1631A4">{{ page.title }}</h1>
 
         <swiper ref="PagesSwiper" :options="swiperOptions" class="PagesSwiper">
             <swiper-slide v-for="child in page.children" :key="child.id" class="user-pages-item-item">
@@ -20,8 +20,8 @@
             </swiper-slide>
         </swiper>
 
-            <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev" style="margin-left: 1vw"></div>
-            <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next" style="margin-right: 1vw"></div>
+            <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev" style="margin-left: 0.15vw"></div>
+            <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next" style="margin-right: 0.15vw"></div>
         </div>
     </div>
 </template>
