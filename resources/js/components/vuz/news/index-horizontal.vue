@@ -2,7 +2,7 @@
     <div>
         <div class="container container-index" style="position: relative; width: 75vw; margin-left: 8vw; height: 100vh; background: transparent; padding: 6vh;">
             <h1 class="h1-page mb-4" style="font-weight: 700; font-size: 3.5vh; text-align: center;">Новости</h1>
-            <div v-if="news.length" class="news-list sortable">
+            <div v-if="news.length" class="news-list sortable" style="margin-top: 10vh;">
                 <swiper ref="VuzNewsAllSwiper" :options="swiperOptions">
                     <swiper-slide v-for="newsItem in news" :key="newsItem.id">
                         <a @click="GoToNewsItem(newsItem.id)" class="index-button index-button-full">
@@ -43,7 +43,7 @@
                 news: [],
                 moment: moment,
                 swiperOptions: {
-                    slidesPerView: 4,
+                    slidesPerView: 3,
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev'
@@ -57,7 +57,7 @@
                 .then(response => response.json())
                 .then(json => {
                     this.news = json;
-                    if (json.length > 4) {
+                    if (json.length > 3) {
                         this.slider_prev_next = true,
                         this.swiperOptions.centerInsufficientSlides = false
                     } else {

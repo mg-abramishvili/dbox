@@ -355,7 +355,7 @@ main {
 }
 
 .gallery-list-item a h2 {
-    height: 7vh;
+    height: 9vh;
     color: #333;
     margin: 0;
     line-height: 1.35;
@@ -364,7 +364,7 @@ main {
 }
 
 .gallery-list-item-pic {
-    height: 27vh;
+    height: 30vh;
     margin-bottom: 1vh;
     border-radius: 1vh;
     background-size: cover;
@@ -436,7 +436,7 @@ main {
 /* NEWS */
 
 .news-list .index-button-full {
-    height: 67vh;
+    height: 58vh;
     text-align: left;
     display: block;
     padding: 1vh;

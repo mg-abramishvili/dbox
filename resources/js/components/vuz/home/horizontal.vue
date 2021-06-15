@@ -110,14 +110,16 @@
             <div class="latest_news" style="width: 50.5vw; margin-left: 0.5vw;">
                 <div class="row">
                     <div v-for="newsItem in news" :key="newsItem.id" class="col-4">
-                        <div v-if="newsItem.image" class="latest_news_item_image" v-bind:style="{ 'background-image': 'url(' + newsItem.image + ')' }"></div>
-                        <div v-else class="latest_news_item_image" style="background-image: url(/img/no-image.jpg)"></div>
-                        <template v-if="newsItem.title.length > 65">
-                            {{ newsItem.title.substring(0, 65) + "..." }}
-                        </template>
-                        <template v-else>
-                            {{ newsItem.title }}
-                        </template>
+                        <router-link :to="{name: 'vuz_NewsItem', params: {id: newsItem.id}}" style="color: #333">
+                            <div v-if="newsItem.image" class="latest_news_item_image" v-bind:style="{ 'background-image': 'url(' + newsItem.image + ')' }"></div>
+                            <div v-else class="latest_news_item_image" style="background-image: url(/img/no-image.jpg)"></div>
+                            <template v-if="newsItem.title.length > 65">
+                                {{ newsItem.title.substring(0, 65) + "..." }}
+                            </template>
+                            <template v-else>
+                                {{ newsItem.title }}
+                            </template>
+                        </router-link>
                     </div>
                 </div>
             </div>

@@ -1,31 +1,35 @@
 <template>
     <div>
-        <div class="container"  style="position: relative; width: 75vw; margin-left: 8vw; height: 100vh; background: transparent; padding: 6vh;">
+        <div class="container" style="position: relative; width: 75vw; margin-left: 8vw; height: 100vh; background: transparent; padding: 6vh;">
         <div class="row">
-            <div class="col-4">
+            <div class="col-12" style="order: 2">
                 <div class="med-route-sidebar" style="margin-top: 8vh; padding: 2vh;">
 
-                <div v-if="search_panel" class="search_panel">
-
-                    <input
-                    :value="input"
-                    class="input"
-                    @input="onInputChange"
-                    placeholder="Поиск..."
-                    style="margin-bottom: 2vh;"
-                    >
-                    <SimpleKeyboard @onChange="onChange" @onKeyPress="onKeyPress" :input="input"/>
-                </div>
-
-                    <ul id="myUL" style="margin-top: 0.5vh;">
-                        <li v-for="route in filtered_routes" :key="route.id" @click="SelectRoute(route)">
-                            <a>{{ route.title }}</a>
-                        </li>
-                    </ul>
+                    <div class="row">
+                        <div class="col-6">
+                            <div v-if="search_panel" class="search_panel">
+                                <input
+                                :value="input"
+                                class="input"
+                                @input="onInputChange"
+                                placeholder="Поиск..."
+                                style="margin-bottom: 2vh;"
+                                >
+                                <SimpleKeyboard @onChange="onChange" @onKeyPress="onKeyPress" :input="input"/>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <ul id="myUL" style="margin-top: 0.5vh;">
+                                <li v-for="route in filtered_routes" :key="route.id" @click="SelectRoute(route)">
+                                    <a>{{ route.title }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     
                 </div>
             </div>
-            <div class="col-8" style="order: 1;"> 
+            <div class="col-12" style="order: 1"> 
                 <div class="route_about">
                 
                     <template v-for="ra_cr in current_route.schemes">
@@ -309,8 +313,9 @@
         height: 450px;
         transform: scale(1.4);
         transform-origin: 0 0;
-        margin-top: -2vh;
-        margin-bottom: 11vh;
+        margin-top: -4vh;
+        margin-bottom: 7vh;
+        margin-left: 7vw;
     }
 
     .map4K {
@@ -319,13 +324,13 @@
         height: 450px;
         transform: scale(2.8);
         transform-origin: 0 0;
-        margin-top: -2vh;
-        margin-bottom: 11vh;
+        margin-top: -4vh;
+        margin-bottom: 26vh;
+        margin-left: 7vw;
     }
 
     #myUL {
-        height: 31vh;
-        padding-top: 1vh;
+        height: 26.5vh;
     }
 
     .search_panel {

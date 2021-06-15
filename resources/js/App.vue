@@ -64,6 +64,9 @@
 
                 });
         },
+        beforeMount() {
+            //document.oncontextmenu = new Function("return false;");
+        },
         components: {
             DefaultLayout,
             ShkolaLayout,

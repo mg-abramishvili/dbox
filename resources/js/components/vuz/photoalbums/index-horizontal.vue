@@ -1,6 +1,7 @@
 <template>
     <div>
         <div class="container"  style="position: relative; width: 75vw; margin-left: 8vw; height: 100vh; background: transparent; padding: 6vh;">
+            <h1 class="h1-page mb-4" style="font-weight: 700; font-size: 3.5vh; text-align: center;">Фотогалерея</h1>
             <div v-if="photoalbums.length" class="gallery">
                 <div class="gallery-list">
                     <swiper ref="PhotoalbumsAllSwiper" :options="swiperOptions">
@@ -33,7 +34,7 @@
             return {
                 photoalbums: [],
                 swiperOptions: {
-                    slidesPerView: 4,
+                    slidesPerView: 3,
                     slidesPerColumn: 2,
                     slidesPerGroup: 2,
                     slidesPerColumnFill: 'row',
@@ -51,7 +52,7 @@
                 .then(json => {
                     this.photoalbums = json;
                     this.loading = false
-                    if (json.length > 8) {
+                    if (json.length > 6) {
                         this.slider_prev_next = true
                         this.swiperOptions.centerInsufficientSlides = false
                     } else {
