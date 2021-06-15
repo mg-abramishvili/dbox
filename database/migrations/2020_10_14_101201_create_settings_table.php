@@ -21,6 +21,7 @@ class CreateSettingsTable extends Migration
             $table->string('logo')->nullable();
             $table->string('serial_key')->nullable();
             $table->string('seeder')->nullable();
+            $table->string('nta')->nullable();
 
             $table->string('module_photoalbums')->nullable();
             $table->string('module_photoalbums_sort')->nullable();

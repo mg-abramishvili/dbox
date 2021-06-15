@@ -10,6 +10,16 @@ class Setting extends Model
     use HasFactory;
 
     protected $fillable = [
-        'theme', 'title', 'logo',
+        'theme',
+        'orientation',
+        'title',
+        'logo',
+        'nta',
+        'serial_key',
+        'module_news',
+        'module_photoalbums',
+        'module_videoalbums',
+        'module_routes',
+        'module_reviews',
     ];
 }

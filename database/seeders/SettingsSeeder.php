@@ -16,6 +16,8 @@ class SettingsSeeder extends Seeder
             'id' => '1',
             'theme' => 'default',
             'orientation' => 'horizontal',
+            'nta' => 'y',
+            'logo' => '/img/shkola/logo.png',
             'module_photoalbums' => 'y',
             'module_videoalbums' => 'y',
             'module_news' => 'y',

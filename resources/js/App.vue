@@ -1,6 +1,8 @@
 <template>
     <div class="wrapper">
 
+        <ActivationPanel v-if="nta === 'y'" />
+
         <template v-if="settings.theme === 'default'">
             <DefaultLayout />
         </template>
@@ -21,6 +23,7 @@
 </template>
 
 <script>
+    import ActivationPanel from './ActivationPanel.vue';
     import DefaultLayout from './components/default/layout';
     import ShkolaLayout from './components/shkola/layout';
     import VuzLayout from './components/vuz/layout';
@@ -30,13 +33,17 @@
         data() {
             return {
                 settings: {},
+                nta: '',
             }
         },
         created() {
+            require('@/../../public/css/activation.css');
+
             fetch(`/api/front/settings/`)
                 .then(response => response.json())
                 .then(json => {
                     this.settings = json;
+                    this.nta = json.nta
 
                     if(this.settings.theme === 'default') {
                         if(this.$route.name !== 'default_Home') {
@@ -68,6 +75,7 @@
             //document.oncontextmenu = new Function("return false;");
         },
         components: {
+            ActivationPanel,
             DefaultLayout,
             ShkolaLayout,
             VuzLayout,
