@@ -1,8 +1,13 @@
 <template>
     <div>
-        <div class="container"  style="position: relative; width: 75vw; margin-left: 8vw; height: 100vh; background: transparent; padding: 6vh;">
-            <h5 v-if="success" style="font-size: 4vh; text-align: center; margin-top: 24vh; color: #333;">Ваш отзыв принят!</h5>
+        <div class="container"  style="position: relative; height: 100vh; background: transparent;">
+            <div class="subheader">
+            <h1 class="h1-page mb-4" style="font-weight: 400; text-transform: uppercase; font-size: 3.5vh; text-align: center; color: #C0C2B7; margin: 0; text-align: left;">Оставить отзыв</h1>
+        </div>
+            
+            <h5 v-if="success" style="font-size: 4vh; text-align: center; margin-top: 24vh; color: #fff;">Ваш отзыв принят!</h5>
 
+<div style="padding: 4vh">
             <div class="row">
                 <div class="col-12 review-form">
                     
@@ -23,11 +28,18 @@
                 <div class="col-12">
                     <div v-show="show_form" class="keyboard-reviews">
                         <SimpleKeyboard v-show="show_form" @onChange="onChange" @onKeyPress="onKeyPress" :input="input"/>
-                        <button v-if="show_button" class="btn btn-lg btn-primary" v-on:click="createReview(input)" style="padding: 1.5vh 3vh; font-size: 2.5vh; width: 15vw; display: block; margin: 0 auto; margin-top: 2vh;">Отправить</button>
+                        <button v-if="show_button" class="btn btn-lg btn-primary" v-on:click="createReview(input)" style="padding: 1.5vh 3vh; font-size: 2.5vh; width: 15vw; display: block; margin: 0 auto; margin-top: 2vh; background:#bb7a29">Отправить</button>
                     </div>
                 </div>
             </div>
+            </div>
 
+        </div>
+
+        <div class="subback">
+            <router-link :to="{name: 'muzei_Home'}">
+                <i style="font-style: normal; color: #fff">←</i> Главная
+            </router-link>
         </div>
 
     </div>
@@ -37,7 +49,7 @@
     import SimpleKeyboard from "../partials/SimpleKeyboard";
 
     export default {
-        name: 'vuz_Reviews',
+        name: 'muzei_Reviews',
         data() {
             return {
                 settings: {},
@@ -84,7 +96,7 @@
                     this.show_form = true,
                     this.show_button = true,
                     this.input = '',
-                    this.$router.push({ name: 'vuz_Home'})
+                    this.$router.push({ name: 'muzei_Home'})
                 }, 2000);
                 } catch (error) {
                     this.success = false

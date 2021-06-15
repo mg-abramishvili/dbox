@@ -1,6 +1,11 @@
 <template>
     <div>
-        <div class="container" style="position: relative; width: 75vw; margin-left: 8vw; height: 100vh; background: transparent; padding: 6vh;">
+        <div class="container" style="position: relative; height: 100vh; background: transparent;">
+        
+        <div class="subheader">
+            <h1 class="h1-page mb-4" style="font-weight: 400; text-transform: uppercase; font-size: 3.5vh; text-align: center; color: #C0C2B7; margin: 0; text-align: left;">План музея</h1>
+        </div>
+        <div style="background: white; padding: 2vh 4vh">
         <div class="row">
             <div class="col-12" style="order: 2">
                 <div class="med-route-sidebar" style="margin-top: 8vh; padding: 2vh;">
@@ -165,7 +170,12 @@
             </div>
         </div>
         </div>
-
+        </div>
+<div class="subback">
+            <router-link :to="{name: 'muzei_Home'}">
+                <i style="font-style: normal; color: #fff">←</i> Главная
+            </router-link>
+        </div>
     </div>
 </template>
 
@@ -311,10 +321,10 @@
         position: relative;
         width: 800px;
         height: 450px;
-        transform: scale(1.4);
+        transform: scale(1.3);
         transform-origin: 0 0;
         margin-top: -4vh;
-        margin-bottom: 7vh;
+        margin-bottom: 4vh;
         margin-left: 7vw;
     }
 
@@ -322,15 +332,17 @@
         position: relative;
         width: 800px;
         height: 450px;
-        transform: scale(2.8);
+        transform: scale(2.65);
         transform-origin: 0 0;
         margin-top: -4vh;
-        margin-bottom: 26vh;
+        margin-bottom: 23vh;
         margin-left: 7vw;
     }
 
     #myUL {
         height: 26.5vh;
+        padding-left: 2vh;
+        margin-top: 0 !important;
     }
 
     .search_panel {

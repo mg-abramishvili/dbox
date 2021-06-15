@@ -456,7 +456,10 @@ html {
   }
   
   .news-list .index-button-full span {
-      margin-top: 25vh;
+      top: 3vh;
+      left: 3vh;
+      position: absolute;
+      text-transform: uppercase;
   }
   
   .news-list .index-button-full .user-pages-item-image {
@@ -824,7 +827,7 @@ html {
   .med-route-sidebar,
   .shkola-route-sidebar {
       margin-top: -2vh;
-      background-color: #4592c9;
+      background-color: #976545;
       padding: 3vh;
       width: 99%;
   }
@@ -983,6 +986,11 @@ html {
       display: block;
       margin: 0 auto;
       position: relative;
+  }
+
+  .sidebar-index .sidebar-logo a {
+      display: block;
+      height: 100%;
   }
 
   .sidebar-index .sidebar-logo img {

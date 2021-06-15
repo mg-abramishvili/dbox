@@ -4,20 +4,20 @@
             <div class="subheader">
             <h1 class="h1-page mb-4" style="font-weight: 400; text-transform: uppercase; font-size: 3.5vh; text-align: center; color: #C0C2B7; margin: 0; text-align: left;">{{ newsItem.title }}</h1>
         </div>
-            <div class="news-item" style="height: 88vh; padding: 4vh">
+            <div class="news-item">
                 <div class="row">
                     <div v-if="newsItem.image" class="col-5">
                         <div class="news-item-img" v-bind:style="{ 'background-image': 'url(' + newsItem.image + ')' }"></div>
                     </div>
 
                     <div v-if="newsItem.image" class="col-7">
-                        <div class="news-item-text" style="padding-left: 4vh">
+                        <div class="news-item-text"  style="height: 88vh; padding: 4vh">
                             <span>{{moment(newsItem.created_at).format('D MMMM YYYY')}}</span>
                             <div v-html="newsItem.text"></div>
                         </div>
                     </div>
                     <div v-else class="col-12">
-                        <div class="news-item-text">
+                        <div class="news-item-text" style="height: 88vh; padding: 4vh">
                             <span>{{moment(newsItem.created_at).format('D MMMM YYYY')}}</span>
                             <div v-html="newsItem.text"></div>
                         </div>
