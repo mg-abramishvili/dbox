@@ -58,6 +58,18 @@ import med_VideoalbumItem from './components/med/videoalbums/show-horizontal';
 import med_News from './components/med/news/index-horizontal';
 import med_NewsItem from './components/med/news/show-horizontal';
 
+// Музей
+import muzei_Home from './components/muzei/home/horizontal.vue';
+import muzei_PageItem from './components/muzei/pages/PageItem';
+import muzei_Routes from './components/muzei/routes/horizontal';
+import muzei_Reviews from './components/muzei/reviews/horizontal';
+import muzei_Photoalbums from './components/muzei/photoalbums/index-horizontal';
+import muzei_PhotoalbumItem from './components/muzei/photoalbums/show-horizontal';
+import muzei_Videoalbums from './components/muzei/videoalbums/index-horizontal';
+import muzei_VideoalbumItem from './components/muzei/videoalbums/show-horizontal';
+import muzei_News from './components/muzei/news/index-horizontal';
+import muzei_NewsItem from './components/muzei/news/show-horizontal';
+
 export const routes = [
     // Стандарт
     {
@@ -317,5 +329,57 @@ export const routes = [
         path: '/vue-app/med/news_item/:id',
         name: 'med_NewsItem',
         component: med_NewsItem
+    },
+
+    // Музей
+    {
+        path: '/vue-app/muzei/index',
+        name: 'muzei_Home',
+        component: muzei_Home
+    },
+    {
+        path: '/vue-app/muzei/pages/:id',
+        name: 'muzei_PageItem',
+        component: muzei_PageItem
+    },
+    {
+        path: '/vue-app/muzei/routes',
+        name: 'muzei_Routes',
+        component: muzei_Routes,
+    },
+    {
+        path: '/vue-app/muzei/reviews',
+        name: 'muzei_Reviews',
+        component: muzei_Reviews
+    },
+    {
+        path: '/vue-app/muzei/photoalbums',
+        name: 'muzei_Photoalbums',
+        component: muzei_Photoalbums
+    },
+    {
+        path: '/vue-app/muzei/photoalbum/:id',
+        name: 'muzei_PhotoalbumItem',
+        component: muzei_PhotoalbumItem
+    },
+    {
+        path: '/vue-app/muzei/videoalbums',
+        name: 'muzei_Videoalbums',
+        component: muzei_Videoalbums
+    },
+    {
+        path: '/vue-app/muzei/videoalbum/:id',
+        name: 'muzei_VideoalbumItem',
+        component: muzei_VideoalbumItem
+    },
+    {
+        path: '/vue-app/muzei/news',
+        name: 'muzei_News',
+        component: muzei_News
+    },
+    {
+        path: '/vue-app/muzei/news_item/:id',
+        name: 'muzei_NewsItem',
+        component: muzei_NewsItem
     },
 ];

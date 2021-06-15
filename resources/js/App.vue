@@ -23,6 +23,10 @@
             <MedLayout />
         </template>
 
+        <template v-if="settings.theme === 'muzei'">
+            <MuzeiLayout />
+        </template>
+
     </div>
 </template>
 
@@ -33,6 +37,7 @@
     import VuzLayout from './components/vuz/layout';
     import DetsadLayout from './components/detsad/layout';
     import MedLayout from './components/med/layout';
+    import MuzeiLayout from './components/muzei/layout';
 
     export default {
         data() {
@@ -80,6 +85,12 @@
                         }
                     }
 
+                    if(this.settings.theme === 'muzei') {
+                        if(this.$route.name !== 'muzei_Home') {
+                            this.$router.push({name: 'muzei_Home'})
+                        }
+                    }
+
                 });
         },
         beforeMount() {
@@ -92,6 +103,7 @@
             VuzLayout,
             DetsadLayout,
             MedLayout,
+            MuzeiLayout
         }
     }
 </script>
