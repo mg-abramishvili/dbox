@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container">
+        <div class="container"  style="position: relative; width: 75vw; margin-left: 8vw; height: 100vh; background: transparent; padding: 6vh;">
         <div class="row">
             <div class="col-4">
                 <div class="med-route-sidebar" style="margin-top: 8vh; padding: 2vh;">
@@ -162,11 +162,6 @@
         </div>
         </div>
 
-        <div class="footer">
-            <router-link :to="{name: 'vuz_Home'}" class="home-button">
-                <img src="/img/icon-footer-home.svg">
-            </router-link>
-        </div>
     </div>
 </template>
 

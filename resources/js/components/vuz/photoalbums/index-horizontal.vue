@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container">
+        <div class="container"  style="position: relative; width: 75vw; margin-left: 8vw; height: 100vh; background: transparent; padding: 6vh;">
             <div v-if="photoalbums.length" class="gallery">
                 <div class="gallery-list">
                     <swiper ref="PhotoalbumsAllSwiper" :options="swiperOptions">
@@ -21,11 +21,6 @@
             </div>
         </div>
 
-        <div class="footer">
-            <router-link :to="{name: 'vuz_Home'}" class="home-button">
-                <img src="/img/icon-footer-home.svg">
-            </router-link>
-        </div>
     </div>
 </template>
 

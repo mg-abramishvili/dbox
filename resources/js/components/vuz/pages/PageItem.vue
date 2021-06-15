@@ -14,28 +14,17 @@
                 <VuzPageType10Horizontal v-if="type.id == '10'" />
             </div>
         </div>
-        
-        <!--<div class="sidebar">
-            <div class="sidebar-inner">
-                <router-link :to="{name: 'vuz_Home'}" class="logo-button">
-                    <img :src="settings.logo">
-                </router-link>
 
-                <router-link :to="{name: 'vuz_Home'}" class="home-button">
-                    <img src="/img/icon-footer-home.svg">
-                </router-link>
-
-                <template v-if="page.parent_id">
-                    <template v-for="parent_page in pages">
-                        <template v-if="parent_page.id == page.parent_id">
-                            <router-link :to="{name: 'vuz_PageItem', params: {id: parent_page.id}}" class="gal-button">
-                                <img src="/img/icon-footer-back.svg">
-                            </router-link>
-                        </template>
-                    </template>
+        <template v-if="page.parent_id">
+            <template v-for="parent_page in pages">
+                <template v-if="parent_page.id == page.parent_id">
+                    <router-link :to="{name: 'vuz_PageItem', params: {id: parent_page.id}}" class="gal-button">
+                        <img src="/img/icon-footer-back.svg">
+                    </router-link>
                 </template>
-            </div>
-        </div>-->
+            </template>
+        </template>
+
     </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container">
+        <div class="container"  style="position: relative; width: 75vw; margin-left: 8vw; height: 100vh; background: transparent; padding: 6vh;">
             <h1 class="h1-page" style="font-weight: 700; font-size: 3.5vh; text-align: center; margin-bottom: 5vh;">{{ photoalbumItem.title }}</h1>
 
             <div v-if="photoalbumItem" class="gallery-detail">
@@ -14,15 +14,10 @@
             </div>
         </div>
 
-        <div class="footer">
-            <router-link :to="{name: 'vuz_Home'}" class="home-button">
-                <img src="/img/icon-footer-home.svg">
-            </router-link>
-
-            <router-link :to="{name: 'vuz_Photoalbums'}" class="gal-button">
-                <img src="/img/icon-footer-back.svg">
-            </router-link>
-        </div>
+        <router-link :to="{name: 'vuz_Photoalbums'}" class="gal-button">
+            <img src="/img/icon-footer-back.svg">
+        </router-link>
+        
     </div>
 </template>
 

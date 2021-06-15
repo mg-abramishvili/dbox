@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container container-index">
+        <div class="container container-index" style="position: relative; width: 75vw; margin-left: 8vw; height: 100vh; background: transparent; padding: 6vh;">
             <h1 class="h1-page mb-4" style="font-weight: 700; font-size: 3.5vh; text-align: center;">Новости</h1>
             <div v-if="news.length" class="news-list sortable">
                 <swiper ref="VuzNewsAllSwiper" :options="swiperOptions">
@@ -28,12 +28,6 @@
                 <div v-if="slider_prev_next" class="swiper-button-prev" slot="button-prev" style="margin-left: 1vw;"></div>
                 <div v-if="slider_prev_next" class="swiper-button-next" slot="button-next" style="margin-right: 1vw;"></div>
             </div>
-        </div>
-
-        <div class="footer">
-            <router-link :to="{name: 'vuz_Home'}" class="home-button">
-                <img src="/img/icon-footer-home.svg">
-            </router-link>
         </div>
 
     </div>

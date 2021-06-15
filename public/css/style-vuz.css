@@ -475,7 +475,7 @@ main {
 }
 
 .news-item-img {
-    height: 70vh;
+    height: 55vh;
     background-size: cover;
     background-position: 50% 50%;
     border-radius: 1.5vh;
@@ -484,7 +484,7 @@ main {
 .news-item-text {
     font-size: 2vh;
     line-height: 1.75;
-    height: 67vh;
+    height: 73vh;
     overflow: hidden;
     overflow-y: auto;
 }
@@ -1030,9 +1030,8 @@ main {
 .gal-button {
     position: absolute;
     bottom: 3vh;
+    left: 2.5vw;
     display: block;
-    margin: 0 auto;
-    width: 100%;
     text-align: center;
     padding: 3vh 0;
 }

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container" style="margin-top: 5vh;">
+        <div class="container"  style="position: relative; width: 75vw; margin-left: 8vw; height: 100vh; background: transparent; padding: 6vh;">
             <h5 v-if="success" style="font-size: 4vh; text-align: center; margin-top: 24vh; color: #333;">Ваш отзыв принят!</h5>
 
             <div class="row">
@@ -30,11 +30,6 @@
 
         </div>
 
-        <div class="footer">
-            <router-link :to="{name: 'vuz_Home'}" class="home-button">
-                <img src="/img/icon-footer-home.svg">
-            </router-link>
-        </div>
     </div>
 </template>
 
