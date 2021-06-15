@@ -311,7 +311,7 @@
         position: relative;
         width: 800px;
         height: 450px;
-        transform: scale(1.4);
+        transform: scale(1.3);
         transform-origin: 0 0;
         margin-top: -4vh;
         margin-bottom: 7vh;
@@ -322,10 +322,10 @@
         position: relative;
         width: 800px;
         height: 450px;
-        transform: scale(2.8);
+        transform: scale(2.45);
         transform-origin: 0 0;
         margin-top: -4vh;
-        margin-bottom: 26vh;
+        margin-bottom: 23vh;
         margin-left: 7vw;
     }
 

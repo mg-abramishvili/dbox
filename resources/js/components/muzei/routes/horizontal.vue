@@ -321,10 +321,10 @@
         position: relative;
         width: 800px;
         height: 450px;
-        transform: scale(1.3);
+        transform: scale(1.1);
         transform-origin: 0 0;
         margin-top: -4vh;
-        margin-bottom: 4vh;
+        margin-bottom: -2vh;
         margin-left: 7vw;
     }
 
@@ -332,10 +332,10 @@
         position: relative;
         width: 800px;
         height: 450px;
-        transform: scale(2.65);
+        transform: scale(2.3);
         transform-origin: 0 0;
         margin-top: -4vh;
-        margin-bottom: 23vh;
+        margin-bottom: 20vh;
         margin-left: 7vw;
     }
 
