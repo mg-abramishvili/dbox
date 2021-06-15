@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container" style="margin-top: 25vh; width: 90vw;">
+        <div class="container" style="margin-top: 5vh; width: 90vw;">
             <div v-if="photoalbums.length" class="gallery">
                 <div class="gallery-list">
                     <swiper ref="PhotoalbumsAllSwiper" :options="swiperOptions">
@@ -23,11 +23,11 @@
 
         <footer>
             <div class="container">
-                <router-link :to="{name: 'shkola_Home'}" class="shkola-home shkola-home-sub">
-                    <img src="/img/shkolahome.svg" alt="">
+                <router-link :to="{name: 'detsad_Home'}" class="detsad-home detsad-home-sub">
+                    <img src="/img/detsadhome.svg" alt="">
                 </router-link>
 
-                <router-link :to="{name: 'shkola_Photoalbums'}" class="shkola-footer-second"><span>Фотогалерея</span></router-link>
+                <router-link :to="{name: 'detsad_Photoalbums'}" class="detsad-footer-second"><span>Фотогалерея</span></router-link>
 
             </div>
         </footer>
@@ -72,7 +72,7 @@
         },
         methods: {
             GoToPhotoalbum(id) {
-                this.$router.push({name: 'shkola_PhotoalbumItem', params: {id: id}})
+                this.$router.push({name: 'detsad_PhotoalbumItem', params: {id: id}})
                 this.$refs.PhotoalbumsAllSwiper.$swiper.slideTo(1, false)
             },
         },

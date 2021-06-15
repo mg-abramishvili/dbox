@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container" style="margin-top: 25vh; width: 90vw;">
+        <div class="container" style="margin-top: 5vh; width: 90vw;">
             <h5 v-if="success" style="font-size: 4vh; text-align: center; margin-top: 24vh; color: #333;">Ваш отзыв принят!</h5>
 
             <div class="row">
@@ -23,7 +23,7 @@
                 <div class="col-12">
                     <div v-show="show_form" class="keyboard-reviews">
                         <SimpleKeyboard v-show="show_form" @onChange="onChange" @onKeyPress="onKeyPress" :input="input"/>
-                        <button v-if="show_button" class="btn btn-lg btn-primary" v-on:click="createReview(input)" style="padding: 1.5vh 3vh; font-size: 2.5vh; width: 15vw; display: block; margin: 0 auto; margin-top: 2vh;">Отправить</button>
+                        <button v-if="show_button" class="btn btn-lg btn-primary" v-on:click="createReview(input)" style="padding: 1.5vh 3vh; font-size: 2.5vh; width: 15vw; display: block; margin: 0 auto; margin-top: 2vh; background-color: #8A4E9F;">Отправить</button>
                     </div>
                 </div>
             </div>
@@ -31,11 +31,11 @@
         </div>
         <footer>
             <div class="container">
-                <router-link :to="{name: 'shkola_Home'}" class="shkola-home shkola-home-sub">
-                    <img src="/img/shkolahome.svg" alt="">
+                <router-link :to="{name: 'detsad_Home'}" class="detsad-home detsad-home-sub">
+                    <img src="/img/detsadhome.svg" alt="">
                 </router-link>
 
-                <a class="shkola-footer-second"><span>Оставить отзыв</span></a>
+                <a class="detsad-footer-second"><span>Оставить отзыв</span></a>
 
             </div>
         </footer>
@@ -46,7 +46,7 @@
     import SimpleKeyboard from "../partials/SimpleKeyboard";
 
     export default {
-        name: 'shkola_Reviews',
+        name: 'detsad_Reviews',
         data() {
             return {
                 settings: {},
@@ -93,7 +93,7 @@
                     this.show_form = true,
                     this.show_button = true,
                     this.input = '',
-                    this.$router.push({ name: 'shkola_Home'})
+                    this.$router.push({ name: 'detsad_Home'})
                 }, 2000);
                 } catch (error) {
                     this.success = false

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container" style="margin-top: 17vh; width: 90vw;">
+        <div class="container" style="margin-top: -4vh; width: 90vw;">
         <div class="row">
             <div class="col-4">
                 <div class="med-route-sidebar" style="margin-top: 8vh; padding: 2vh;">
@@ -345,7 +345,7 @@
     }
 
     .prevnextbutton {
-        background-color: #976545;
+        background-color: #8A4E9F;
         color: #fff;
         font-size: 1.25vh;
         padding: 0.5vh 2vh;

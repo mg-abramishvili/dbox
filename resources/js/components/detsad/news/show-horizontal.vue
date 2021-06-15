@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container" style="margin-top: 25vh; width: 90vw;">
+        <div class="container" style="margin-top: 5vh; width: 90vw;">
             <div class="news-item">
                 <div class="row">
                     <div v-if="newsItem.image" class="col-4">
@@ -10,14 +10,14 @@
                     <div v-if="newsItem.image" class="col-8">
                         <div class="news-item-text">
                             <span>{{moment(newsItem.created_at).format('D MMMM YYYY')}}</span>
-                            <h1>{{ newsItem.title }}</h1>
+                            <h1 style="color: #8A4E9F;">{{ newsItem.title }}</h1>
                             <div v-html="newsItem.text"></div>
                         </div>
                     </div>
                     <div v-else class="col-12">
                         <div class="news-item-text">
                             <span>{{ newsItem.created_at }}</span>
-                            <h1>{{ newsItem.title }}</h1>
+                            <h1 style="color: #8A4E9F;">{{ newsItem.title }}</h1>
                             <div v-html="newsItem.text"></div>
                         </div>
                     </div>
@@ -28,12 +28,13 @@
 
         <footer>
             <div class="container">
-                <router-link :to="{name: 'shkola_Home'}" class="shkola-home shkola-home-sub">
-                    <img src="/img/shkolahome.svg" alt="">
+                <router-link :to="{name: 'detsad_Home'}" class="detsad-home detsad-home-sub">
+                    <img src="/img/detsadhome.svg" alt="">
                 </router-link>
 
-                <router-link :to="{name: 'shkola_News'}" class="shkola-footer-second"><span>Новости</span></router-link>
-                <a class="shkola-footer-third"><span>{{ newsItem.title }}</span></a>
+                <router-link :to="{name: 'detsad_News'}" class="detsad-footer-second"><span>Новости</span></router-link>
+
+                <a class="detsad-footer-third"><span>{{ newsItem.title }}</span></a>
 
             </div>
         </footer>

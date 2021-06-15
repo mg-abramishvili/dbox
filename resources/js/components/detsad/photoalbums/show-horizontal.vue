@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container" style="margin-top: 25vh; width: 90vw;">
+        <div class="container" style="margin-top: 5vh; width: 90vw;">
             <div v-if="photoalbumItem" class="gallery-detail">
                 <swiper ref="PhotoalbumsItemSwiper" :options="swiperOptions">
                     <swiper-slide v-for="photoalbumPic in photoalbumItem.gallery" :key="photoalbumPic" class="gallery-detail-item">
@@ -14,12 +14,12 @@
 
         <footer>
             <div class="container">
-                <router-link :to="{name: 'shkola_Home'}" class="shkola-home shkola-home-sub">
-                    <img src="/img/shkolahome.svg" alt="">
+                <router-link :to="{name: 'detsad_Home'}" class="detsad-home detsad-home-sub">
+                    <img src="/img/detsadhome.svg" alt="">
                 </router-link>
 
-                <router-link :to="{name: 'shkola_Photoalbums'}" class="shkola-footer-second"><span>Фотогалерея</span></router-link>
-                <router-link :to="{name: 'shkola_PhotoalbumItem', params: {id: photoalbumItem.id}}" class="shkola-footer-third"><span>{{ photoalbumItem.title }}</span></router-link>
+                <router-link :to="{name: 'detsad_Photoalbums'}" class="detsad-footer-second"><span>Фотогалерея</span></router-link>
+                <router-link :to="{name: 'detsad_PhotoalbumItem', params: {id: photoalbumItem.id}}" class="detsad-footer-third"><span>{{ photoalbumItem.title }}</span></router-link>
 
             </div>
         </footer>

@@ -1,17 +1,17 @@
 <template>
     <div>
-        <div class="videoalbum-detail" style="margin-top: 23vh;">
+        <div class="videoalbum-detail" style="margin-top: -3vh;">
             <video :src="videoalbumItem.gallery" autoplay controls disablePictureInPicture controlsList="nodownload"></video>
         </div>
 
         <footer>
             <div class="container">
-                <router-link :to="{name: 'shkola_Home'}" class="shkola-home shkola-home-sub">
-                    <img src="/img/shkolahome.svg" alt="">
+                <router-link :to="{name: 'detsad_Home'}" class="detsad-home detsad-home-sub">
+                    <img src="/img/detsadhome.svg" alt="">
                 </router-link>
 
-                <router-link :to="{name: 'shkola_Videoalbums'}" class="shkola-footer-second"><span>Видеогалерея</span></router-link>
-                <router-link :to="{name: 'shkola_VideoalbumItem', params: {id: videoalbumItem.id}}" class="shkola-footer-third"><span>{{ videoalbumItem.title }}</span></router-link>
+                <router-link :to="{name: 'detsad_Videoalbums'}" class="detsad-footer-second"><span>Видеогалерея</span></router-link>
+                <router-link :to="{name: 'detsad_VideoalbumItem', params: {id: videoalbumItem.id}}" class="detsad-footer-third"><span>{{ videoalbumItem.title }}</span></router-link>
 
             </div>
         </footer>
@@ -20,7 +20,7 @@
 
 <script>
     export default {
-        name: 'shkola_VideoalbumItem',
+        name: 'detsad_VideoalbumItem',
         data() {
             return {
                 videoalbumItem: {},

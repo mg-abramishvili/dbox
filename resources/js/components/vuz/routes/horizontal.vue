@@ -345,11 +345,12 @@
         padding: 0.5vh 2vh;
         display: block;
         margin: 0 auto;
-        width: 30vw;
+        width: 10vw;
         border-radius: 1vh;
-        left: 0;
-        right: 0;
+        right: 2vw;
         border: 0;
+        bottom: -5vh;
+        z-index: 5;
     }
 
     .prevnextbutton:focus {

@@ -291,8 +291,8 @@ border-color: #777777 transparent transparent transparent;
 }
 
 .index-button-full span {
-    margin-top: 25vh;
     text-align: center;
+    margin-top: -9vh;
 }
 
 .type-6 .index-button {
@@ -781,10 +781,9 @@ footer {
 }
 
 .index-button-full .user-pages-item-image {
-    width: 20vh;
-    height: 20vh;
+    width: 100%;
+    height: 40vh;
     margin: 0 auto;
-    margin-top: 7vh;
 }
 
 .type-6 .user-pages-item-item img {

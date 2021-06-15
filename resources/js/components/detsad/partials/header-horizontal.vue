@@ -21,7 +21,7 @@
                     </router-link>
                 </div>
                 <div class="col-3 text-right">
-                    План здания
+                    <div @click="GoToRoutes()">План здания</div>
                 </div>
             </div>
         </div>
@@ -45,6 +45,10 @@
             },
             date_current:function() {
                 this.date = moment().format('D MMMM, dddd')
+            },
+            GoToRoutes() {
+                this.$router.push({name: 'detsad_Routes'})
+                this.$parent.reset_routes = true
             },
         },
         mounted() {

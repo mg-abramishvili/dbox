@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div class="container container-index" style="margin-top: 25vh;">
+        <div class="container container-index" style="margin-top: 5vh;">
             <div v-if="news.length" class="news sortable">
-                <swiper ref="ShkolaNewsAllSwiper" :options="swiperOptions">
+                <swiper ref="DetsadNewsAllSwiper" :options="swiperOptions">
                     <swiper-slide v-for="newsItem in news" :key="newsItem.id">
                         <a @click="GoToNewsItem(newsItem.id)" class="index-button index-button-full">
 
@@ -31,11 +31,11 @@
 
         <footer>
             <div class="container">
-                <router-link :to="{name: 'shkola_Home'}" class="shkola-home shkola-home-sub">
-                    <img src="/img/shkolahome.svg" alt="">
+                <router-link :to="{name: 'detsad_Home'}" class="detsad-home detsad-home-sub">
+                    <img src="/img/detsadhome.svg" alt="">
                 </router-link>
 
-                <a class="shkola-footer-second"><span>Новости</span></a>
+                <a class="detsad-footer-second"><span>Новости</span></a>
 
             </div>
         </footer>
@@ -53,7 +53,7 @@
                 news: [],
                 moment: moment,
                 swiperOptions: {
-                    slidesPerView: 4,
+                    slidesPerView: 5,
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev'
@@ -67,7 +67,7 @@
                 .then(response => response.json())
                 .then(json => {
                     this.news = json;
-                    if (json.length > 4) {
+                    if (json.length > 5) {
                         this.slider_prev_next = true,
                         this.swiperOptions.centerInsufficientSlides = false
                     } else {
@@ -78,8 +78,8 @@
         },
         methods: {
             GoToNewsItem(id) {
-                this.$router.push({name: 'shkola_NewsItem', params: {id: id}})
-                this.$refs.ShkolaNewsAllSwiper.$swiper.slideTo(0, false)
+                this.$router.push({name: 'detsad_NewsItem', params: {id: id}})
+                this.$refs.DetsadNewsAllSwiper.$swiper.slideTo(0, false)
             },
         },
         filters: {
@@ -89,7 +89,7 @@
         },
         computed: {
             swiper() {
-                return this.$refs.ShkolaNewsAllSwiper.$swiper
+                return this.$refs.DetsadNewsAllSwiper.$swiper
             }
         },
         components: {

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container" style="margin-top: 25vh; width: 90vw;">
+        <div class="container" style="margin-top: 5vh; width: 90vw;">
             <div v-if="videoalbums.length" class="gallery">
                 <div class="gallery-list">
                     <swiper ref="VideoalbumsAllSwiper" :options="swiperOptions">
@@ -24,11 +24,11 @@
 
         <footer>
             <div class="container">
-                <router-link :to="{name: 'shkola_Home'}" class="shkola-home shkola-home-sub">
-                    <img src="/img/shkolahome.svg" alt="">
+                <router-link :to="{name: 'detsad_Home'}" class="detsad-home detsad-home-sub">
+                    <img src="/img/detsadhome.svg" alt="">
                 </router-link>
 
-                <router-link :to="{name: 'shkola_Videoalbums'}" class="shkola-footer-second"><span>Видеогалерея</span></router-link>
+                <router-link :to="{name: 'detsad_Videoalbums'}" class="detsad-footer-second"><span>Видеогалерея</span></router-link>
 
             </div>
         </footer>
@@ -72,7 +72,7 @@
         },
         methods: {
             GoToVideoalbum(id) {
-                this.$router.push({name: 'shkola_VideoalbumItem', params: {id: id}})
+                this.$router.push({name: 'detsad_VideoalbumItem', params: {id: id}})
                 this.$refs.VideoalbumsAllSwiper.$swiper.slideTo(1, false)
             },
         },
