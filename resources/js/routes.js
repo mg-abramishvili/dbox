@@ -34,6 +34,18 @@ import vuz_VideoalbumItem from './components/vuz/videoalbums/show-horizontal';
 import vuz_News from './components/vuz/news/index-horizontal';
 import vuz_NewsItem from './components/vuz/news/show-horizontal';
 
+// Детсад
+import detsad_Home from './components/detsad/home/horizontal.vue';
+import detsad_PageItem from './components/detsad/pages/PageItem';
+import detsad_Routes from './components/detsad/routes/horizontal';
+import detsad_Reviews from './components/detsad/reviews/horizontal';
+import detsad_Photoalbums from './components/detsad/photoalbums/index-horizontal';
+import detsad_PhotoalbumItem from './components/detsad/photoalbums/show-horizontal';
+import detsad_Videoalbums from './components/detsad/videoalbums/index-horizontal';
+import detsad_VideoalbumItem from './components/detsad/videoalbums/show-horizontal';
+import detsad_News from './components/detsad/news/index-horizontal';
+import detsad_NewsItem from './components/detsad/news/show-horizontal';
+
 // Медцентр
 import med_Home from './components/med/home/horizontal.vue';
 import med_PageItem from './components/med/pages/PageItem';
@@ -201,6 +213,58 @@ export const routes = [
         path: '/vue-app/vuz/news_item/:id',
         name: 'vuz_NewsItem',
         component: vuz_NewsItem
+    },
+
+    // Детсад
+    {
+        path: '/vue-app/detsad/index',
+        name: 'detsad_Home',
+        component: detsad_Home
+    },
+    {
+        path: '/vue-app/detsad/pages/:id',
+        name: 'detsad_PageItem',
+        component: detsad_PageItem
+    },
+    {
+        path: '/vue-app/detsad/routes',
+        name: 'detsad_Routes',
+        component: detsad_Routes,
+    },
+    {
+        path: '/vue-app/detsad/reviews',
+        name: 'detsad_Reviews',
+        component: detsad_Reviews
+    },
+    {
+        path: '/vue-app/detsad/photoalbums',
+        name: 'detsad_Photoalbums',
+        component: detsad_Photoalbums
+    },
+    {
+        path: '/vue-app/detsad/photoalbum/:id',
+        name: 'detsad_PhotoalbumItem',
+        component: detsad_PhotoalbumItem
+    },
+    {
+        path: '/vue-app/detsad/videoalbums',
+        name: 'detsad_Videoalbums',
+        component: detsad_Videoalbums
+    },
+    {
+        path: '/vue-app/detsad/videoalbum/:id',
+        name: 'detsad_VideoalbumItem',
+        component: detsad_VideoalbumItem
+    },
+    {
+        path: '/vue-app/detsad/news',
+        name: 'detsad_News',
+        component: detsad_News
+    },
+    {
+        path: '/vue-app/detsad/news_item/:id',
+        name: 'detsad_NewsItem',
+        component: detsad_NewsItem
     },
 
     // Медцентр

@@ -43,34 +43,12 @@ class SettingController extends Controller
 
     public function update(Request $request)
     {
-        Artisan::call('migrate:fresh --seed');
-
         $data = request()->all();
         $settings = Setting::find($data['id']);
-
-        if ($data['theme'] == 'default') {
-            Artisan::call('db:seed --class=ContentShkolaSeeder');
-        }
-        if ($data['theme'] == 'vuz') {
-            Artisan::call('db:seed --class=ContentShkolaSeeder');
-        }
-        if ($data['theme'] == 'detsad') {
-            Artisan::call('db:seed --class=ContentShkolaSeeder');
-        }
-        if($data['theme'] == 'med') {
-            Artisan::call('db:seed --class=ContentShkolaSeeder');
-        }
-        if ($data['theme'] == 'shkola') {
-            Artisan::call('db:seed --class=ContentShkolaSeeder');
-        }
-        if ($data['theme'] == 'muzei') {
-            Artisan::call('db:seed --class=ContentShkolaSeeder');
-        }
 
         $settings->theme = $data['theme'];
         $settings->orientation = $data['orientation'];
         $settings->title = $data['title'];
-        $settings->nta = $data['nta'];
 
         if (isset($data['logo'])) {
             $settings->logo = $data['logo'];
@@ -127,6 +105,56 @@ class SettingController extends Controller
         } else {
 			$settings->email_to = NULL;
 		}
+
+        $settings->save();
+
+        return back();
+    }
+
+    public function activate(Request $request)
+    {
+        Artisan::call('migrate:fresh --seed');
+
+        $data = request()->all();
+        $settings = Setting::find($data['id']);
+
+        if ($data['theme'] == 'default') {
+            Artisan::call('db:seed --class=ContentShkolaSeeder');
+        }
+        if ($data['theme'] == 'vuz') {
+            Artisan::call('db:seed --class=ContentShkolaSeeder');
+        }
+        if ($data['theme'] == 'detsad') {
+            Artisan::call('db:seed --class=ContentShkolaSeeder');
+        }
+        if($data['theme'] == 'med') {
+            Artisan::call('db:seed --class=ContentShkolaSeeder');
+        }
+        if ($data['theme'] == 'shkola') {
+            Artisan::call('db:seed --class=ContentShkolaSeeder');
+        }
+        if ($data['theme'] == 'muzei') {
+            Artisan::call('db:seed --class=ContentShkolaSeeder');
+        }
+
+        $settings->theme = $data['theme'];
+        $settings->orientation = $data['orientation'];
+        $settings->title = $data['title'];
+        $settings->nta = $data['nta'];
+
+        if (isset($data['logo'])) {
+            $settings->logo = $data['logo'];
+        }
+
+        if (isset($data['serial_key'])) {
+            $settings->serial_key = $data['serial_key'];
+        }
+
+        $settings->module_news = $data['module_news'];
+        $settings->module_photoalbums = $data['module_photoalbums'];
+        $settings->module_videoalbums = $data['module_videoalbums'];
+        $settings->module_routes = $data['module_routes'];
+        $settings->module_reviews = $data['module_reviews'];
 
         $settings->save();
 

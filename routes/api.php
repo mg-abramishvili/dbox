@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\FrontController;
 
 Route::get('/front/settings','App\Http\Controllers\Api\FrontController@settings');
-Route::post('/front/settings','App\Http\Controllers\SettingController@update');
+Route::post('/front/settings','App\Http\Controllers\SettingController@activate');
 
 Route::get('/front/pages','App\Http\Controllers\Api\FrontController@pages');
 Route::get('/front/pages_all','App\Http\Controllers\Api\FrontController@pages_all');

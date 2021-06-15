@@ -15,6 +15,10 @@
             <VuzLayout />
         </template>
 
+        <template v-if="settings.theme === 'detsad'">
+            <DetsadLayout />
+        </template>
+
         <template v-if="settings.theme === 'med'">
             <MedLayout />
         </template>
@@ -27,6 +31,7 @@
     import DefaultLayout from './components/default/layout';
     import ShkolaLayout from './components/shkola/layout';
     import VuzLayout from './components/vuz/layout';
+    import DetsadLayout from './components/detsad/layout';
     import MedLayout from './components/med/layout';
 
     export default {
@@ -63,6 +68,12 @@
                         }
                     }
 
+                    if(this.settings.theme === 'detsad') {
+                        if(this.$route.name !== 'detsad_Home') {
+                            this.$router.push({name: 'detsad_Home'})
+                        }
+                    }
+
                     if(this.settings.theme === 'med') {
                         if(this.$route.name !== 'med_Home') {
                             this.$router.push({name: 'med_Home'})
@@ -79,6 +90,7 @@
             DefaultLayout,
             ShkolaLayout,
             VuzLayout,
+            DetsadLayout,
             MedLayout,
         }
     }
