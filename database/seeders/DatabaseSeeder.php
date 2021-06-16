@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             GallerySeeder::class,
             VideoGallerySeeder::class,
             SettingsSeeder::class,
+            BannerSeeder::class,
         ]);
     }
 }

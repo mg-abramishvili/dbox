@@ -11,7 +11,7 @@
 
                                 <div v-if="newsItem.image" class="user-pages-item-image" v-bind:style="{ 'background-image': 'url(' + newsItem.image + ')' }"></div>
                                 <span v-if="newsItem.image" class="t6-p">
-                                    <small style="font-size: 1vw; color: #999; display:block; margin-bottom: 1vh; margin-top: 1vh">{{ newsItem.created_at | moment }}</small>
+                                    <small style="font-size: 1vw; color: #fff; display:block; margin-bottom: 1vh; margin-top: 1vh">{{ newsItem.created_at | moment }}</small>
                                     {{ newsItem.title }}
                                 </span>
                                 
@@ -19,7 +19,7 @@
                                     <img src="/img/icons/002-newspaper.svg">
                                 </div>
                                 <span v-if="!newsItem.image">
-                                    <small style="font-size: 1vw; color: #999; display:block; margin-bottom: 1vh; margin-top: 1vh">{{ newsItem.created_at | moment }}</small>
+                                    <small style="font-size: 1vw; color: #fff; display:block; margin-bottom: 1vh; margin-top: 1vh">{{ newsItem.created_at | moment }}</small>
                                     {{ newsItem.title }}
                                 </span>
 

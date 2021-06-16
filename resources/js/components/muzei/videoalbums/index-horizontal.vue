@@ -1,7 +1,11 @@
 <template>
     <div>
-        <div class="container"  style="position: relative; width: 75vw; margin-left: 8vw; height: 100vh; background: transparent; padding: 6vh;">
-            <h1 class="h1-page mb-4" style="font-weight: 700; font-size: 3.5vh; text-align: center;">Видеогалерея</h1>
+        <div class="container" style="position: relative; height: 100vh; background: transparent;">
+            
+            <div class="subheader">
+                <h1 class="h1-page mb-4" style="font-weight: 400; text-transform: uppercase; font-size: 3.5vh; text-align: center; color: #C0C2B7; margin: 0; text-align: left;">Видеогалерея</h1>
+            </div>
+
             <div v-if="videoalbums.length" class="gallery">
                 <div class="gallery-list">
                     <swiper ref="VideoalbumsAllSwiper" :options="swiperOptions">
@@ -21,6 +25,12 @@
             <div v-else>
                 Видеогалерея пуста
             </div>
+        </div>
+
+        <div class="subback">
+            <router-link :to="{name: 'muzei_Home'}">
+                <i style="font-style: normal; color: #fff">←</i> Главная
+            </router-link>
         </div>
 
     </div>

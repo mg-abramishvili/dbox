@@ -2313,7 +2313,8 @@ __webpack_require__.r(__webpack_exports__);
       }
     });
   },
-  beforeMount: function beforeMount() {//document.oncontextmenu = new Function("return false;");
+  beforeMount: function beforeMount() {
+    document.oncontextmenu = new Function("return false;");
   },
   components: {
     ActivationPanel: _ActivationPanel_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -8649,24 +8650,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -8681,7 +8664,7 @@ __webpack_require__.r(__webpack_exports__);
       swiperOptions: {
         slidesPerView: 2,
         slidesPerColumn: 3,
-        slidesPerGroup: 2,
+        slidesPerGroup: 3,
         slidesPerColumnFill: 'row',
         navigation: {
           nextEl: '.swiper-button-next',
@@ -9903,6 +9886,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -9943,7 +9936,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     GoToPhotoalbum: function GoToPhotoalbum(id) {
       this.$router.push({
-        name: 'vuz_PhotoalbumItem',
+        name: 'muzei_PhotoalbumItem',
         params: {
           id: id
         }
@@ -9977,6 +9970,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/css/swiper.css */ "./node_modules/swiper/css/swiper.css");
 /* harmony import */ var swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(swiper_css_swiper_css__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -10551,6 +10552,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -10620,6 +10631,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -14913,7 +14932,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "html {\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n    -webkit-touch-callout: none;\r\n    -khtml-user-select: none;\r\n    /*cursor: none;*/\r\n  }\r\n  \r\n  body {\r\n      margin: 0 !important;\r\n      font-size: 2vh;\r\n      font-family: Arial, Helvetica, sans-serif;\r\n      position: relative;\r\n  }\r\n  \r\n  .container {\r\n      max-width: 100vw;\r\n      padding: 0;\r\n  }\r\n  \r\n  .row {\r\n      margin-left: 0;\r\n      margin-right: 0;\r\n  }\r\n  \r\n  .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {\r\n      padding-left: 0;\r\n      padding-right: 0;\r\n  }\r\n  \r\n  main {\r\n      position: relative;\r\n  }\r\n  \r\n  .wrapper {\r\n      position: relative;\r\n      width: 100vw;\r\n      max-width: 177.78vh;\r\n      height: 56.25vw;\r\n      max-height: 100vh;\r\n      overflow: hidden;\r\n      margin: 0 auto;\r\n  }\r\n  \r\n  .header {\r\n      margin-top: 0;\r\n      margin-bottom: 3vh;\r\n      height: 7vh;\r\n      position: sticky;\r\n      z-index: 10;\r\n  }\r\n  \r\n  .header-logo a {\r\n      display: block;\r\n  }\r\n  \r\n  .header-logo a img {\r\n      width: auto;\r\n      height: auto;\r\n      max-width: 15vh;\r\n      max-height: 7vh;\r\n  }\r\n  \r\n  .header-text {\r\n      text-align: right;\r\n      color: #696969;\r\n      font-size: 3vh;\r\n  }\r\n  \r\n  \r\n  \r\n  ::-webkit-scrollbar {\r\n      width: 1.5vh;\r\n  }\r\n  \r\n  ::-webkit-scrollbar-track {\r\n      background: #B8BDBD;\r\n  }\r\n  \r\n  ::-webkit-scrollbar-thumb {\r\n      background: #bb7a29;\r\n      border: 1px solid #B8BDBD;\r\n  }\r\n  \r\n  ::-webkit-scrollbar-thumb:hover {\r\n      background: #bb7a29;\r\n  }\r\n  \r\n  \r\n  \r\n  \r\n  /* MAIN PAGE */\r\n  \r\n  .photogalleries {\r\n      background-color: #45c99f;\r\n      border-radius: 1vh;\r\n      height: 38.25vh;\r\n      margin-bottom: 3.5vh;\r\n      display: block;\r\n      padding-top: 8vh;\r\n      text-align: center;\r\n      color: #fff;\r\n      font-size: 3vh;\r\n  }\r\n  \r\n  .photogalleries:hover,\r\n  .photogalleries:focus {\r\n      color: #fff;\r\n      text-decoration: none;\r\n  }\r\n  \r\n  .photogalleries img {\r\n      display: block;\r\n      width: 60%;\r\n      margin: 0 auto;\r\n      margin-bottom: 4vh;\r\n  }\r\n  \r\n  .photogalleries-full {\r\n      height: 80vh;\r\n      padding-top: 28vh;\r\n  }\r\n  \r\n  .photogalleries-nonews {\r\n      padding-top: 22vh;\r\n  }\r\n  \r\n  .photogalleries-nonews img {\r\n      width: 40%;\r\n  }\r\n  \r\n  .videogalleries {\r\n      background-color: #4592c9;\r\n      border-radius: 1vh;\r\n      height: 38.25vh;\r\n      display: block;\r\n      padding-top: 8vh;\r\n      text-align: center;\r\n      color: #fff;\r\n      font-size: 3vh;\r\n  }\r\n  \r\n  .videogalleries:hover,\r\n  .videogalleries:focus {\r\n      color: #fff;\r\n      text-decoration: none;\r\n  }\r\n  \r\n  .videogalleries img {\r\n      display: block;\r\n      width: 60%;\r\n      margin: 0 auto;\r\n      margin-bottom: 4vh;\r\n  }\r\n  \r\n  .videogalleries-full {\r\n      height: 80vh;\r\n      padding-top: 28vh;\r\n  }\r\n  \r\n  .videogalleries-nonews {\r\n      padding-top: 22vh;\r\n  }\r\n  \r\n  .videogalleries-nonews img {\r\n      width: 40%;\r\n  }\r\n  \r\n  .news {\r\n      background-color: #a745c9;\r\n      height: 80vh;\r\n      border-radius: 1vh;\r\n      display: block;\r\n      text-align: center;\r\n      color: #fff;\r\n      font-size: 3vh;\r\n      padding-top: 27vh;\r\n  }\r\n  \r\n  .news:hover,\r\n  .news:focus {\r\n      color: #fff;\r\n      text-decoration: none;\r\n  }\r\n  \r\n  .news img {\r\n      display: block;\r\n      width: 45%;\r\n      margin: 0 auto;\r\n      margin-bottom: 5vh;\r\n  }\r\n  \r\n  .news-nogals {\r\n      padding-top: 22vh;\r\n  }\r\n  \r\n  .news-nogals img {\r\n      width: 40%;\r\n  }\r\n  \r\n  .pic_index {\r\n      position: absolute;\r\n      top: 0;\r\n      right: 0;\r\n      width: 45vw;\r\n      height: 100vh;\r\n      background: url('/img/vuz/pic.png');\r\n      background-size: cover;\r\n      background-position: 50% 50%;\r\n  }\r\n  \r\n  .user-pages {\r\n      height: auto;\r\n      border-radius: 1vh;\r\n      width: 70vw;\r\n  }\r\n  \r\n  .user-pages-item {\r\n      width: 50%;\r\n      position: relative;\r\n  }\r\n  \r\n  .user-pages-item-item {\r\n      position: relative;\r\n  }\r\n  \r\n  .user-pages-item-item a {\r\n      display: block;\r\n      color: #1631A4;\r\n      line-height: 1.25;\r\n      padding: 0;\r\n      height: 15vh;\r\n      background-color: #fff;\r\n  }\r\n  \r\n  .user-pages-item-item a:hover,\r\n  .user-pages-item-item a:focus {\r\n      text-decoration: none;\r\n      color: #fff;\r\n  }\r\n  \r\n  .user-pages-item-item_icon {\r\n      background-color: #1631A4;\r\n      width: 30%;\r\n      height: 100%;\r\n      position: relative;\r\n      display: inline-block;\r\n      vertical-align: middle;\r\n      position: relative;\r\n  }\r\n  \r\n  .user-pages-item-item_icon::after {\r\n      content: '';\r\n      -webkit-clip-path: polygon(0 0, 0% 100%, 100% 50%);\r\n              clip-path: polygon(0 0, 0% 100%, 100% 50%);\r\n      width: 1.3vh;\r\n      height: 2.5vh;\r\n      display: block;\r\n      position: absolute;\r\n      right: 0;\r\n      margin-right: -1.2vh;\r\n      z-index: 10;\r\n      background-color: #1631A4;\r\n      top: 50%;\r\n      transform: translateY(-50%);\r\n  }\r\n  \r\n  .user-pages-item-item img {\r\n      display: block;\r\n      width: auto;\r\n      height: auto;\r\n      max-width: 70%;\r\n      max-height: 70%;\r\n      margin: 0 auto;\r\n      margin-bottom: 1vh;\r\n      position: absolute;\r\n      top: 50%;\r\n      left: 0;\r\n      right: 0;\r\n      transform: translateY(-50%);\r\n  }\r\n  \r\n  .user-pages-item-image {\r\n      height: 88vh;\r\n      background-size: cover;\r\n      background-repeat: no-repeat;\r\n      background-position: 50% 50%;\r\n      display: block;\r\n      margin: 0 auto;\r\n      margin-bottom: 1vh;\r\n  }\r\n  \r\n  .user-pages-item-item_label {\r\n      color: #1631A4;\r\n      display: inline-block;\r\n      vertical-align: middle;\r\n      width: calc(100% - 32%);\r\n      font-size: 3vh;\r\n      padding-left: 2vh;\r\n      padding-right: 1vh;\r\n  }\r\n  \r\n  .latest_news {\r\n      font-size: 2vh;\r\n      color: #4A4A4A;\r\n      font-weight: bold;\r\n      margin-top: 4vh;\r\n  }\r\n  \r\n  .latest_news_item_image {\r\n      height: 15vh;\r\n      background-size: cover;\r\n      background-position: 50% 50%;\r\n      margin-bottom: 1vh;\r\n  }\r\n  \r\n  /* MAIN PAGE */\r\n  \r\n  \r\n  /* PHOTOGALS */\r\n  \r\n  .gallery-list {\r\n      overflow: hidden;\r\n      overflow-x: auto;\r\n      white-space: nowrap;\r\n      margin-left: -1vh;\r\n      margin-right: -1vh;\r\n  }\r\n  \r\n  .gallery-list-item-slide {\r\n      width: 100%;\r\n      white-space: normal;\r\n      margin-bottom: 1vh;\r\n  }\r\n  \r\n  .gallery-list-item {\r\n      width: calc(25% - 2vh);\r\n      display: inline-block;\r\n      vertical-align: top;\r\n      margin: 0;\r\n      white-space: normal;\r\n      padding: 1vh;\r\n  }\r\n  \r\n  .gallery-list-item a {\r\n      display: block;\r\n      text-align: center;\r\n  }\r\n  \r\n  .gallery-list-item a:hover,\r\n  .gallery-list-item a:focus {\r\n      text-decoration: none;\r\n  }\r\n  \r\n  .gallery-list-item a h2 {\r\n      height: 9vh;\r\n      color: #333;\r\n      margin: 0;\r\n      line-height: 1.35;\r\n      font-size: 2vh;\r\n      overflow: hidden;\r\n  }\r\n  \r\n  .gallery-list-item-pic {\r\n      height: 30vh;\r\n      margin-bottom: 1vh;\r\n      border-radius: 1vh;\r\n      background-size: cover;\r\n      background-position: 50% 50%;\r\n  }\r\n  \r\n  .gallery-list .flickity-page-dots {\r\n      bottom: 0;\r\n  }\r\n  \r\n  .gallery-list .flickity-page-dots .dot {\r\n      width: 5vh;\r\n      border-radius: 1vh;\r\n  }\r\n  \r\n  .gallery-detail {\r\n      padding: 0 2.5vh;\r\n  }\r\n  \r\n  .gallery-detail-item {\r\n      width: 30%;\r\n      height: 85vh;\r\n      display: flex;\r\n      align-items: center;\r\n      justify-content: center;\r\n      margin: 0;\r\n  }\r\n  \r\n  .gallery-detail-item img,\r\n  .gallery-detail-item video {\r\n      display: block;\r\n      max-height: 100%;\r\n      max-width: 90%;\r\n  }\r\n  \r\n  .gallery-detail-item.is-selected {\r\n      opacity: 1;\r\n      z-index: 20;\r\n  }\r\n  \r\n  .gallery-detail-item.is-selected img,\r\n  .gallery-detail-item.is-selected video {\r\n      transform: none;\r\n      border-radius: 1vh;\r\n  }\r\n  \r\n  /* PHOTOGALS */\r\n  \r\n  \r\n  /* VIDEOALBUM */\r\n  \r\n  .videoalbum-detail {\r\n      width: 100%;\r\n      text-align: center;\r\n      margin-top: -2.5vh;\r\n  }\r\n  \r\n  .videoalbum-detail video {\r\n      width: auto;\r\n      height: 68.5vh;\r\n      max-width: 100%;\r\n      max-height: 70vh;\r\n      border-radius: 2vh;\r\n  }\r\n  \r\n  /* VIDEOALBUM */\r\n  \r\n  \r\n  /* NEWS */\r\n  \r\n  .news-list .index-button-full {\r\n      height: 88vh;\r\n      text-align: left;\r\n      display: block;\r\n      color: #333;\r\n      font-weight: bold;\r\n      font-size: 2.5vh;\r\n  }\r\n  \r\n  .news-list .index-button-full .index-button-icon {\r\n      height: 88vh;\r\n      background-color: #e0e0e0;\r\n      padding-top: 8vh;\r\n  }\r\n  \r\n  .news-list .index-button-icon img {\r\n      width: 45%;\r\n      display: block;\r\n      margin: 0 auto;\r\n  }\r\n  \r\n  .news-list .index-button-full span {\r\n      top: 3vh;\r\n      left: 3vh;\r\n      position: absolute;\r\n      text-transform: uppercase;\r\n  }\r\n  \r\n  .news-list .index-button-full .user-pages-item-image {\r\n      width: 100%;\r\n      height: 88vh;\r\n      border: 0;\r\n      margin: 0;\r\n  }\r\n  \r\n  .news-item {\r\n      background-color: #fff;\r\n  }\r\n  \r\n  .news-item-img {\r\n      height: 55vh;\r\n      background-size: cover;\r\n      background-position: 50% 50%;\r\n  }\r\n  \r\n  .news-item-text {\r\n      font-size: 2vh;\r\n      line-height: 1.75;\r\n      height: 80vh;\r\n      overflow: hidden;\r\n      overflow-y: auto;\r\n  }\r\n  \r\n    .news-item-text h1 {\r\n        color: #5da7fe;\r\n        font-size: 4vh;\r\n        font-weight: 700;\r\n        text-align: left;\r\n        margin: 0;\r\n        margin-bottom: 2vh;\r\n    }\r\n  \r\n    .news-item-text span {\r\n        display: block;\r\n        color: #777;\r\n        margin-bottom: 1.5vh;\r\n        font-size: 2.5vh;\r\n    }\r\n  \r\n  /* NEWS */\r\n  \r\n  \r\n  \r\n  /* PAGE TYPE 1 */\r\n  \r\n  .type-1 .page-detail-text {\r\n      height: 75vh;\r\n      overflow-y: auto;\r\n      padding-right: 2vh;\r\n      font-size: 2vh !important;\r\n      line-height: 1.6 !important;\r\n  }\r\n  \r\n  .type-1 .page-detail-text h1 {\r\n      font-weight: 700;\r\n      font-size: 4vh;\r\n      margin-bottom: 3vh !important;\r\n  }\r\n  \r\n  .type-1 .page-detail-text p {\r\n      margin-bottom: 2vh !important;\r\n  }\r\n  \r\n  /* PAGE TYPE 1 */\r\n  \r\n  \r\n  \r\n  \r\n  /* PAGE TYPE 2 */\r\n  \r\n  .type-2 .page-detail-image {\r\n      height: 55vh;\r\n      border-radius: 1vh;\r\n      background-size: cover;\r\n      background-position: 50% 50%;\r\n  }\r\n  \r\n  .type-2 .page-detail-text {\r\n      height: 87vh;\r\n      overflow-y: auto;\r\n      padding-right: 2vh;\r\n      font-size: 2vh !important;\r\n      line-height: 1.6 !important;\r\n  }\r\n  \r\n  .type-2 .page-detail-text h1 {\r\n      font-weight: 700;\r\n      font-size: 4vh;\r\n      color: #1631A4;\r\n  }\r\n  \r\n  .type-2 .page-detail-text p {\r\n      margin-bottom: 2vh !important;\r\n  }\r\n  \r\n  /* PAGE TYPE 2 */\r\n  \r\n  \r\n  \r\n  /* PAGE TYPE 3 */\r\n  \r\n  .type-3 #gallery a {\r\n      height: 75vh;\r\n      margin-bottom: 1.5vh;\r\n      display: block;\r\n      border-radius: 1vh;\r\n      background-size: cover;\r\n      background-position: 50% 50%;\r\n  }\r\n  \r\n  .type-3 .page-detail-text {\r\n      height: 47vh;\r\n      overflow-y: auto;\r\n      padding-right: 2vh;\r\n      font-size: 2vh !important;\r\n      line-height: 1.6 !important;\r\n  }\r\n  \r\n  .type-3 .page-detail-text h1 {\r\n      font-weight: 700;\r\n      font-size: 4vh;\r\n  }\r\n  \r\n  .type-3 .page-detail-text p {\r\n      margin-bottom: 2vh !important;\r\n  }\r\n  \r\n  .type3slider-item {\r\n      height: 23vh;\r\n      background-size: cover;\r\n      background-position: 50% 50%;\r\n  }\r\n  \r\n  /* PAGE TYPE 3 */\r\n  \r\n  \r\n  \r\n  \r\n  /* PAGE TYPE 4 */\r\n  \r\n  .type-4 .gallery-item {\r\n      width: 100%;\r\n  }\r\n  \r\n  /* PAGE TYPE 4 */\r\n  \r\n  \r\n  \r\n  \r\n  /* PAGE TYPE 6 */\r\n  \r\n  .type-6 .user-pages {\r\n      height: auto;\r\n      background: none;\r\n      margin-left: -3vh;\r\n      margin-right: -3vh;\r\n      margin-top: -6vh;\r\n  }\r\n  \r\n  .type-6 .user-pages-item {\r\n      width: 25%;\r\n  }\r\n  \r\n  .type-6 .user-pages-item-item {\r\n      height: auto;\r\n      background-color: transparent;\r\n      margin: 0;\r\n      padding: 0;\r\n  }\r\n  \r\n  .type-6 .index-button {\r\n      height: 88vh;\r\n      margin: 0;\r\n  }\r\n  \r\n  .type-6 .user-pages-item-item img {\r\n      width: 40%;\r\n      margin-bottom: 3vh;\r\n  }\r\n  \r\n  .type-6 .index-button-icon {\r\n      height: 88vh;\r\n      display: block;\r\n      margin: 0 auto;\r\n      margin-bottom: 1vh;\r\n      position: relative;\r\n      background-color: #e0e0e0;\r\n  }\r\n  \r\n  /* PAGE TYPE 6 */\r\n  \r\n  \r\n  \r\n  /* PAGE TYPE 7 */\r\n  \r\n  .type-7 .text {\r\n      height: 73vh;\r\n      overflow: hidden;\r\n      overflow-y: scroll;\r\n  }\r\n  \r\n  .type-7 .pdf-nav {\r\n      text-align: center;\r\n      margin-top: 1vh;\r\n  }\r\n  \r\n    .type-7 #prev,\r\n    .type-7 #next {\r\n      background: #ffc940;\r\n      color: #fff;\r\n      padding: 0.5vh 2vh;\r\n      box-shadow: none;\r\n      border: 0;\r\n      font-size: 2vh;\r\n      font-weight: bold;\r\n      border-radius: 1vh;\r\n    }\r\n  \r\n  /* PAGE TYPE 7 */\r\n  \r\n  \r\n  \r\n  /* PAGE TYPE 8 */\r\n  \r\n  .buttons {\r\n      position: absolute;\r\n      z-index: 20;\r\n      left: 50px;\r\n      right: 50px;\r\n      text-align: center;\r\n  }\r\n  \r\n  #prevBtn,\r\n  #nextBtn {\r\n      background: #ffc940;\r\n      color: #fff;\r\n      padding: 10px 30px;\r\n      box-shadow: none;\r\n      border: 0;\r\n      font-size: 30px;\r\n      font-weight: bold;\r\n      border-radius: 10px;\r\n  }\r\n  \r\n  /* PAGE TYPE 8 */\r\n  \r\n  \r\n  /* type 9 */\r\n  \r\n  .excel-item {\r\n      width: 94vw;\r\n      width: auto;\r\n      height: 82vh;\r\n      overflow-y: scroll;\r\n      text-align: center;\r\n  }\r\n  \r\n  .excel-item table {\r\n      border-collapse: collapse;\r\n      margin: 1rem 0;\r\n      display: inline-block;\r\n      overflow-x: auto;\r\n      text-align: left;\r\n      font-size: 1.3vh;\r\n  }\r\n  \r\n  .excel-item table tr {\r\n      border-top: 1px solid #dfe2e5;\r\n  }\r\n  \r\n  .excel-item table tr:nth-child(2n) {\r\n      background-color: #f6f8fa;\r\n  }\r\n  \r\n  .excel-item table td,\r\n  .excel-item table th {\r\n      border: 1px solid #dfe2e5;\r\n      padding: .6em 1em;\r\n  }\r\n  \r\n  /* type 9 */\r\n  \r\n  \r\n  \r\n  \r\n  /* ROUTES */\r\n  \r\n  .key-anim01,\r\n  .key-anim02,\r\n  .key-anim03,\r\n  .key-anim04,\r\n  .key-anim05,\r\n  .key-anim06,\r\n  .key-anim07,\r\n  .key-anim08,\r\n  .key-anim09,\r\n  .key-anim10,\r\n  .key-anim11,\r\n  .key-anim12 {\r\n      stroke-dasharray: 10;\r\n      stroke-dashoffset: -2000;\r\n      -webkit-animation: Drawpath 20s linear infinite;\r\n              animation: Drawpath 20s linear infinite;\r\n  }\r\n  \r\n  @-webkit-keyframes Drawpath {\r\n      from {\r\n          stroke-dashoffset: -2000;\r\n      }\r\n      to {\r\n          stroke-dashoffset: 0;\r\n      }\r\n  }\r\n  \r\n  @keyframes Drawpath {\r\n      from {\r\n          stroke-dashoffset: -2000;\r\n      }\r\n      to {\r\n          stroke-dashoffset: 0;\r\n      }\r\n  }\r\n  \r\n  .wrapperm {\r\n      width: 800px;\r\n      height: 450px;\r\n      position: relative;\r\n      margin: 0 auto;\r\n      overflow: visible;\r\n      background-color: #fff;\r\n      transform: scale(1.25);\r\n      transform-origin: 50% 0%;\r\n      margin-top: 4vh;\r\n      background-color: #fff;\r\n      border-radius: 2vh;\r\n      border: 0.3vh solid #c5d0db;\r\n      box-shadow: 0 0vh 0.5vh #c5d0db;\r\n  }\r\n  \r\n  #wrapper-inner {\r\n      width: 800px;\r\n      height: 450px;\r\n      margin-top: 4vh;\r\n  }\r\n  \r\n  .map {\r\n      margin-top: -4vh;\r\n  }\r\n  \r\n  .map-slide {\r\n      width: 100%;\r\n  }\r\n  \r\n  .map img {\r\n      width: 800px;\r\n      height: 450px;\r\n      display: block;\r\n      margin: 0 auto;\r\n  }\r\n  \r\n  .map-path {\r\n      position: absolute;\r\n      left: 0;\r\n      right: 0;\r\n      top: 0;\r\n      bottom: 0;\r\n      width: 800px;\r\n      height: 450px;\r\n  }\r\n  \r\n  .med-route-sidebar,\r\n  .shkola-route-sidebar {\r\n      margin-top: -2vh;\r\n      background-color: #976545;\r\n      padding: 3vh;\r\n      width: 99%;\r\n  }\r\n  \r\n  .med-route-sidebar input,\r\n  .shkola-route-sidebar input {\r\n      width: 100%;\r\n      padding: 0.5vh;\r\n      font-size: 2vh;\r\n  }\r\n  \r\n  .keyboard {\r\n      margin-top: 0.5vh;\r\n      margin-bottom: 3vh;\r\n  }\r\n  \r\n  .keyboard button {\r\n      width: 4.2vh;\r\n      height: 4.2vh;\r\n      line-height: 4.2vh;\r\n      margin-bottom: 0.5vh;\r\n      background-color: #fff;\r\n      font-size: 1.5vh;\r\n      text-align: center;\r\n      padding: 0;\r\n      border: 0.1vh solid;\r\n  }\r\n  \r\n  .keyboard .globebutton {\r\n      width: 7vh;\r\n  }\r\n  \r\n  .keyboard .spacebutton {\r\n      width: 10vh;\r\n  }\r\n  \r\n  #myUL {\r\n      padding: 0;\r\n      margin: 0;\r\n      list-style-type: none;\r\n      height: 32vh;\r\n      overflow-y: auto;\r\n  }\r\n  \r\n  #myUL li {\r\n      display: block;\r\n      background-color: #fff;\r\n      margin-bottom: 1vh;\r\n  }\r\n  \r\n  #myUL li a {\r\n      display: block;\r\n      color: #222;\r\n      font-size: 2vh;\r\n      font-weight: 700;\r\n      border: 0.25vh solid #96dbfc;\r\n      padding: 1vh 2vh;\r\n  }\r\n  .med-route-sidebar .hg-theme-default .hg-button {\r\n      height: 3.7vh;\r\n  }\r\n  .med-route-sidebar .hg-theme-default .hg-row:not(:last-child) {\r\n      margin-bottom: 0.5vh;\r\n  }\r\n  /* ROUTES */\r\n  \r\n  \r\n  \r\n  /* REVIEWS */\r\n  \r\n  .keyboard-reviews .keyboard {\r\n      margin-top: 7vh;\r\n  }\r\n  \r\n  .keyboard-reviews .keyboard button {\r\n      width: 6vh;\r\n      height: 6vh;\r\n      line-height: 6vh;\r\n      font-size: 2.5vh;\r\n      border-radius: 1vh;\r\n      border: 0.3vh solid #c5d0db;\r\n      box-shadow: 0 0vh 0.5vh #c5d0db;\r\n  }\r\n  \r\n  .keyboard-reviews .keyboard button:hover,\r\n  .keyboard-reviews .keyboard button:focus {\r\n      outline: none;\r\n  }\r\n  \r\n  .keyboard-reviews .keyboard .globebutton {\r\n      width: 12vh;\r\n  }\r\n  \r\n  .keyboard-reviews .keyboard .spacebutton {\r\n      width: 17vh;\r\n  }\r\n  \r\n  .keyboard-reviews .hg-theme-default {\r\n      padding: 0.5vh;\r\n  }\r\n  \r\n  .keyboard-reviews .hg-theme-default .hg-button {\r\n      height: 4vh;\r\n  }\r\n  \r\n  .keyboard-reviews .med-route-sidebar .hg-theme-default .hg-row:not(:last-child) {\r\n      margin-bottom: 1vh;\r\n  }\r\n  \r\n  .review-form input[type=\"text\"] {\r\n      border: 1px solid #333;\r\n      font-size: 3vh;\r\n  }\r\n  \r\n  .review-form textarea {\r\n      resize: none;\r\n      height: 30vh;\r\n      border: 1px solid #333;\r\n      font-size: 3vh;\r\n      border-radius: 2vh;\r\n      border: 0.3vh solid #c5d0db;\r\n      box-shadow: 0 0vh 0.5vh #c5d0db;\r\n      padding: 3vh;\r\n  }\r\n  \r\n  .review-form .btn-shkola {\r\n      background-color: #5da7fe;\r\n      color: #fff;\r\n      font-size: 3vh;\r\n      padding: 2vh 4vh;\r\n      border-radius: 1vh;\r\n  }\r\n  \r\n  .review-h1 {\r\n      font-weight: 700;\r\n      font-size: 4vh;\r\n      margin-top: 0 !important;\r\n      margin-bottom: 5vh !important;\r\n  }\r\n  \r\n  /* REVIEWS */\r\n  \r\n  \r\n  .sidebar-index {\r\n    height: 100vh;\r\n    border-right: 0.5vh solid #B4A085;\r\n    padding-top: 6vh;\r\n  }\r\n\r\n  .sidebar-index .sidebar-logo {\r\n      width: 30vh;\r\n      height: 30vh;\r\n      background-color: #fff;\r\n      border: 1vh solid #B4A085;\r\n      border-radius: 100%;\r\n      display: block;\r\n      margin: 0 auto;\r\n      position: relative;\r\n  }\r\n\r\n  .sidebar-index .sidebar-logo a {\r\n      display: block;\r\n      height: 100%;\r\n  }\r\n\r\n  .sidebar-index .sidebar-logo img {\r\n      position: absolute;\r\n      top: 50%;\r\n      transform: translateY(-50%);\r\n      width: auto;\r\n      height: auto;\r\n      max-width: 70%;\r\n      max-height: 70%;\r\n      left: 0;\r\n      right: 0;\r\n      margin: 0 auto;\r\n  }\r\n\r\n  .sidebar-index .sidebar-text {\r\n      text-transform: uppercase;\r\n      color: #C0C2B7;\r\n      font-size: 3.5vh;\r\n      text-align: center;\r\n      margin-top: 3vh;\r\n  }\r\n\r\n  .sidebar-index .videogal {\r\n      position: absolute;\r\n      bottom: 3vh;\r\n      left: 6vh;\r\n      right: 6vh;\r\n      color: #4B7F2D;\r\n      font-size: 3.5vh;\r\n      text-transform: uppercase;\r\n  }\r\n\r\n  .sidebar-index .videogal img {\r\n      width: 100%;\r\n      margin-top: 2vh;\r\n  }\r\n\r\n  .index-banner-slide {\r\n      height: 55vh;\r\n      background-size: cover;\r\n      background-position: 50%;\r\n  }\r\n\r\n  .subheader {\r\n      height: 12vh;\r\n      padding: 0 3vh;\r\n      padding-top: 5.5vh;\r\n  }\r\n\r\n  .subback {\r\n      position: absolute;\r\n      top: 1vh;\r\n      z-index: 1;\r\n      color: #fff;\r\n    left: 3vh;\r\n  }\r\n\r\n  .subback a {\r\n    color: #bb7a29;\r\n  }", ""]);
+exports.push([module.i, "html {\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n    -webkit-touch-callout: none;\r\n    -khtml-user-select: none;\r\n    /*cursor: none;*/\r\n  }\r\n  \r\n  body {\r\n      margin: 0 !important;\r\n      font-size: 2vh;\r\n      font-family: Arial, Helvetica, sans-serif;\r\n      position: relative;\r\n  }\r\n  \r\n  .container {\r\n      max-width: 100vw;\r\n      padding: 0;\r\n  }\r\n  \r\n  .row {\r\n      margin-left: 0;\r\n      margin-right: 0;\r\n  }\r\n  \r\n  .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {\r\n      padding-left: 0;\r\n      padding-right: 0;\r\n  }\r\n  \r\n  main {\r\n      position: relative;\r\n  }\r\n  \r\n  .wrapper {\r\n      position: relative;\r\n      width: 100vw;\r\n      max-width: 177.78vh;\r\n      height: 56.25vw;\r\n      max-height: 100vh;\r\n      overflow: hidden;\r\n      margin: 0 auto;\r\n  }\r\n  \r\n  .header {\r\n      margin-top: 0;\r\n      margin-bottom: 3vh;\r\n      height: 7vh;\r\n      position: sticky;\r\n      z-index: 10;\r\n  }\r\n  \r\n  .header-logo a {\r\n      display: block;\r\n  }\r\n  \r\n  .header-logo a img {\r\n      width: auto;\r\n      height: auto;\r\n      max-width: 15vh;\r\n      max-height: 7vh;\r\n  }\r\n  \r\n  .header-text {\r\n      text-align: right;\r\n      color: #696969;\r\n      font-size: 3vh;\r\n  }\r\n  \r\n  \r\n  \r\n  ::-webkit-scrollbar {\r\n      width: 1.5vh;\r\n  }\r\n  \r\n  ::-webkit-scrollbar-track {\r\n      background: #B8BDBD;\r\n  }\r\n  \r\n  ::-webkit-scrollbar-thumb {\r\n      background: #bb7a29;\r\n      border: 1px solid #B8BDBD;\r\n  }\r\n  \r\n  ::-webkit-scrollbar-thumb:hover {\r\n      background: #bb7a29;\r\n  }\r\n  \r\n  \r\n  \r\n  \r\n  /* MAIN PAGE */\r\n  \r\n  .photogalleries {\r\n      background-color: #45c99f;\r\n      border-radius: 1vh;\r\n      height: 38.25vh;\r\n      margin-bottom: 3.5vh;\r\n      display: block;\r\n      padding-top: 8vh;\r\n      text-align: center;\r\n      color: #fff;\r\n      font-size: 3vh;\r\n  }\r\n  \r\n  .photogalleries:hover,\r\n  .photogalleries:focus {\r\n      color: #fff;\r\n      text-decoration: none;\r\n  }\r\n  \r\n  .photogalleries img {\r\n      display: block;\r\n      width: 60%;\r\n      margin: 0 auto;\r\n      margin-bottom: 4vh;\r\n  }\r\n  \r\n  .photogalleries-full {\r\n      height: 80vh;\r\n      padding-top: 28vh;\r\n  }\r\n  \r\n  .photogalleries-nonews {\r\n      padding-top: 22vh;\r\n  }\r\n  \r\n  .photogalleries-nonews img {\r\n      width: 40%;\r\n  }\r\n  \r\n  .videogalleries {\r\n      background-color: #4592c9;\r\n      border-radius: 1vh;\r\n      height: 38.25vh;\r\n      display: block;\r\n      padding-top: 8vh;\r\n      text-align: center;\r\n      color: #fff;\r\n      font-size: 3vh;\r\n  }\r\n  \r\n  .videogalleries:hover,\r\n  .videogalleries:focus {\r\n      color: #fff;\r\n      text-decoration: none;\r\n  }\r\n  \r\n  .videogalleries img {\r\n      display: block;\r\n      width: 60%;\r\n      margin: 0 auto;\r\n      margin-bottom: 4vh;\r\n  }\r\n  \r\n  .videogalleries-full {\r\n      height: 80vh;\r\n      padding-top: 28vh;\r\n  }\r\n  \r\n  .videogalleries-nonews {\r\n      padding-top: 22vh;\r\n  }\r\n  \r\n  .videogalleries-nonews img {\r\n      width: 40%;\r\n  }\r\n  \r\n  .news {\r\n      background-color: #a745c9;\r\n      height: 80vh;\r\n      border-radius: 1vh;\r\n      display: block;\r\n      text-align: center;\r\n      color: #fff;\r\n      font-size: 3vh;\r\n      padding-top: 27vh;\r\n  }\r\n  \r\n  .news:hover,\r\n  .news:focus {\r\n      color: #fff;\r\n      text-decoration: none;\r\n  }\r\n  \r\n  .news img {\r\n      display: block;\r\n      width: 45%;\r\n      margin: 0 auto;\r\n      margin-bottom: 5vh;\r\n  }\r\n  \r\n  .news-nogals {\r\n      padding-top: 22vh;\r\n  }\r\n  \r\n  .news-nogals img {\r\n      width: 40%;\r\n  }\r\n  \r\n  .pic_index {\r\n      position: absolute;\r\n      top: 0;\r\n      right: 0;\r\n      width: 45vw;\r\n      height: 100vh;\r\n      background: url('/img/vuz/pic.png');\r\n      background-size: cover;\r\n      background-position: 50% 50%;\r\n  }\r\n  \r\n  .user-pages {\r\n      height: auto;\r\n      border-radius: 1vh;\r\n      width: 70vw;\r\n  }\r\n  \r\n  .user-pages-item {\r\n      width: 50%;\r\n      position: relative;\r\n  }\r\n  \r\n  .user-pages-item-item {\r\n      position: relative;\r\n  }\r\n  \r\n  .user-pages-item-item_bg {\r\n      position: absolute;\r\n      top: 0;\r\n      bottom: 0;\r\n      left: 0;\r\n      right: 0;\r\n      width: 100%;\r\n      height: 100%;\r\n      background-size: cover;\r\n      background-position: 50% 50%;\r\n  }\r\n\r\n  .user-pages-item-item_bg:before {\r\n      content: '';\r\n      position: absolute;\r\n      top: 0;\r\n      bottom: 0;\r\n      left: 0;\r\n      right: 0;\r\n      width: 100%;\r\n      height: 100%;\r\n      background-image: linear-gradient(to right, rgba(75, 127, 45, 0.8), rgba(75, 127, 45, 0.5));\r\n  }\r\n\r\n  .user-pages .user-pages-item-item:nth-child(3n) .user-pages-item-item_bg:before,\r\n  .user-pages .user-pages-item-item:nth-child(2) .user-pages-item-item_bg:before {\r\n    background-image: linear-gradient(to bottom, rgba(174, 114, 38, 0.8), rgba(174, 114, 38, 0.5));\r\n  }\r\n\r\n  .user-pages-item-item a {\r\n      display: block;\r\n      color: #1631A4;\r\n      line-height: 1.25;\r\n      padding: 0;\r\n      height: 15vh;\r\n      background-color: #fff;\r\n  }\r\n  \r\n  .user-pages-item-item a:hover,\r\n  .user-pages-item-item a:focus {\r\n      text-decoration: none;\r\n      color: #fff;\r\n  }\r\n  \r\n  .user-pages-item-item_icon {\r\n      background-color: #1631A4;\r\n      width: 30%;\r\n      height: 100%;\r\n      position: relative;\r\n      display: inline-block;\r\n      vertical-align: middle;\r\n      position: relative;\r\n  }\r\n  \r\n  .user-pages-item-item_icon::after {\r\n      content: '';\r\n      -webkit-clip-path: polygon(0 0, 0% 100%, 100% 50%);\r\n              clip-path: polygon(0 0, 0% 100%, 100% 50%);\r\n      width: 1.3vh;\r\n      height: 2.5vh;\r\n      display: block;\r\n      position: absolute;\r\n      right: 0;\r\n      margin-right: -1.2vh;\r\n      z-index: 10;\r\n      background-color: #1631A4;\r\n      top: 50%;\r\n      transform: translateY(-50%);\r\n  }\r\n  \r\n  .user-pages-item-item img {\r\n      display: block;\r\n      width: auto;\r\n      height: auto;\r\n      max-width: 70%;\r\n      max-height: 70%;\r\n      margin: 0 auto;\r\n      margin-bottom: 1vh;\r\n      position: absolute;\r\n      top: 50%;\r\n      left: 0;\r\n      right: 0;\r\n      transform: translateY(-50%);\r\n  }\r\n  \r\n  .user-pages-item-image {\r\n      height: 88vh;\r\n      background-size: cover;\r\n      background-repeat: no-repeat;\r\n      background-position: 50% 50%;\r\n      display: block;\r\n      margin: 0 auto;\r\n      margin-bottom: 1vh;\r\n      position: relative;\r\n  }\r\n  \r\n  .user-pages-item-item_label {\r\n      color: #1631A4;\r\n      display: inline-block;\r\n      vertical-align: middle;\r\n      width: calc(100% - 32%);\r\n      font-size: 3vh;\r\n      padding-left: 2vh;\r\n      padding-right: 1vh;\r\n      position: absolute;\r\n      left: 3vh;\r\n      right: 3vh;\r\n      top: 50%;\r\n      transform: translateY(-50%);\r\n      color: #fff;\r\n      z-index: 10;\r\n  }\r\n\r\n  .user-pages .user-pages-item-item {\r\n      border: 0.3vh solid #B4A085;\r\n      border: 0.3vh solid #fff;\r\n  }\r\n\r\n  .user-pages .user-pages-item-item a {\r\n    height: 14.35vh;\r\n}\r\n  \r\n  .latest_news {\r\n      font-size: 2vh;\r\n      color: #4A4A4A;\r\n      font-weight: bold;\r\n      margin-top: 4vh;\r\n  }\r\n  \r\n  .latest_news_item_image {\r\n      height: 15vh;\r\n      background-size: cover;\r\n      background-position: 50% 50%;\r\n      margin-bottom: 1vh;\r\n  }\r\n  \r\n  /* MAIN PAGE */\r\n  \r\n  \r\n  /* PHOTOGALS */\r\n  \r\n  .gallery-list {\r\n      overflow: hidden;\r\n      overflow-x: auto;\r\n      white-space: nowrap;\r\n      margin-left: -1vh;\r\n      margin-right: -1vh;\r\n  }\r\n  \r\n  .gallery-list-item-slide {\r\n      width: 100%;\r\n      white-space: normal;\r\n      margin-bottom: 1vh;\r\n  }\r\n  \r\n  .gallery-list-item {\r\n      width: calc(25% - 2vh);\r\n      display: inline-block;\r\n      vertical-align: top;\r\n      margin: 0;\r\n      white-space: normal;\r\n      height: 88vh;\r\n  }\r\n  \r\n  .gallery-list-item a {\r\n      display: block;\r\n      text-align: center;\r\n  }\r\n  \r\n  .gallery-list-item a:hover,\r\n  .gallery-list-item a:focus {\r\n      text-decoration: none;\r\n  }\r\n  \r\n  .gallery-list-item a h2 {\r\n      color: #fff;\r\n      margin: 0;\r\n      line-height: 1.35;\r\n      font-size: 3vh;\r\n      overflow: hidden;\r\n      position: absolute;\r\n      top: 3vh;\r\n      left: 3vh;\r\n      right: 3vh;\r\n      text-transform: uppercase;\r\n      text-align: left;\r\n  }\r\n  \r\n  .gallery-list-item-pic {\r\n      height: 88vh;\r\n      margin-bottom: 1vh;\r\n      background-size: cover;\r\n      background-position: 50% 50%;\r\n      position: relative;\r\n  }\r\n\r\n  .gallery-list-item-pic:before {\r\n      content: '';\r\n      position: absolute;\r\n      top: 0;\r\n      bottom: 0;\r\n      left: 0;\r\n      right: 0;\r\n      width: 100%;\r\n      height: 100%;\r\n      background-image: linear-gradient(to bottom, rgba(75, 127, 45, 0.73), rgba(245, 246, 252, 0.52));\r\n  }\r\n\r\n  .gallery-list-item:nth-child(2n) .gallery-list-item-pic:before {\r\n    background-image: linear-gradient(to bottom, rgba(174, 114, 38, 0.73), rgba(245, 246, 252, 0.52));\r\n  }\r\n  \r\n  .gallery-list .flickity-page-dots {\r\n      bottom: 0;\r\n  }\r\n  \r\n  .gallery-list .flickity-page-dots .dot {\r\n      width: 5vh;\r\n      border-radius: 1vh;\r\n  }\r\n  \r\n  .gallery-detail {\r\n      padding: 0 2.5vh;\r\n  }\r\n  \r\n  .gallery-detail-item {\r\n      width: 30%;\r\n      height: 85vh;\r\n      display: flex;\r\n      align-items: center;\r\n      justify-content: center;\r\n      margin: 0;\r\n  }\r\n  \r\n  .gallery-detail-item img,\r\n  .gallery-detail-item video {\r\n      display: block;\r\n      max-height: 100%;\r\n      max-width: 90%;\r\n  }\r\n  \r\n  .gallery-detail-item.is-selected {\r\n      opacity: 1;\r\n      z-index: 20;\r\n  }\r\n  \r\n  .gallery-detail-item.is-selected img,\r\n  .gallery-detail-item.is-selected video {\r\n      transform: none;\r\n      border-radius: 1vh;\r\n  }\r\n  \r\n  /* PHOTOGALS */\r\n  \r\n  \r\n  /* VIDEOALBUM */\r\n  \r\n  .videoalbum-detail {\r\n      width: 100%;\r\n      text-align: center;\r\n      margin-top: -2.5vh;\r\n  }\r\n  \r\n  .videoalbum-detail video {\r\n      width: auto;\r\n      height: 68.5vh;\r\n      max-width: 100%;\r\n      max-height: 70vh;\r\n      border-radius: 2vh;\r\n  }\r\n  \r\n  /* VIDEOALBUM */\r\n  \r\n  \r\n  /* NEWS */\r\n  \r\n  .news-list .index-button-full {\r\n      height: 88vh;\r\n      text-align: left;\r\n      display: block;\r\n      color: #333;\r\n      font-weight: bold;\r\n      font-size: 2.5vh;\r\n      position: relative;\r\n  }\r\n  \r\n  .news-list .index-button-full .index-button-icon {\r\n      height: 88vh;\r\n      background-color: #e0e0e0;\r\n      padding-top: 35vh;\r\n      position: relative;\r\n  }\r\n\r\n  .news-list .index-button-full .index-button-icon:before,\r\n  .news-list .index-button-full .user-pages-item-image:before {\r\n    content: '';\r\n    position: absolute;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-image: linear-gradient(to bottom, rgba(75, 127, 45, 0.73), rgba(245, 246, 252, 0.52));\r\n}\r\n\r\n.news-list .swiper-slide:nth-child(2n) .index-button-icon:before,\r\n.news-list .swiper-slide:nth-child(2n) .user-pages-item-image:before {\r\n  background-image: linear-gradient(to bottom, rgba(174, 114, 38, 0.73), rgba(245, 246, 252, 0.52));\r\n}\r\n  \r\n  .news-list .index-button-icon img {\r\n      width: 45%;\r\n      display: block;\r\n      margin: 0 auto;\r\n  }\r\n  \r\n  .news-list .index-button-full span {\r\n    color: #fff;\r\n    margin: 0;\r\n    line-height: 1.35;\r\n    font-size: 3vh;\r\n    overflow: hidden;\r\n    position: absolute;\r\n    top: 3vh;\r\n    left: 3vh;\r\n    right: 3vh;\r\n    text-transform: uppercase;\r\n    text-align: left;\r\n    font-weight: 400;\r\n  }\r\n  \r\n  .news-list .index-button-full .user-pages-item-image {\r\n      width: 100%;\r\n      height: 88vh;\r\n      border: 0;\r\n      margin: 0;\r\n      position: relative;\r\n  }\r\n  \r\n  .news-item {\r\n      background-color: #fff;\r\n  }\r\n  \r\n  .news-item-img {\r\n      height: 55vh;\r\n      background-size: cover;\r\n      background-position: 50% 50%;\r\n  }\r\n  \r\n  .news-item-text {\r\n      font-size: 2vh;\r\n      line-height: 1.75;\r\n      height: 80vh;\r\n      overflow: hidden;\r\n      overflow-y: auto;\r\n  }\r\n  \r\n    .news-item-text h1 {\r\n        color: #5da7fe;\r\n        font-size: 4vh;\r\n        font-weight: 700;\r\n        text-align: left;\r\n        margin: 0;\r\n        margin-bottom: 2vh;\r\n    }\r\n  \r\n    .news-item-text span {\r\n        display: block;\r\n        color: #777;\r\n        margin-bottom: 1.5vh;\r\n        font-size: 2.5vh;\r\n    }\r\n  \r\n  /* NEWS */\r\n  \r\n  \r\n  \r\n  /* PAGE TYPE 1 */\r\n  \r\n  .type-1 .page-detail-text {\r\n      height: 75vh;\r\n      overflow-y: auto;\r\n      padding-right: 2vh;\r\n      font-size: 2vh !important;\r\n      line-height: 1.6 !important;\r\n  }\r\n  \r\n  .type-1 .page-detail-text h1 {\r\n      font-weight: 700;\r\n      font-size: 4vh;\r\n      margin-bottom: 3vh !important;\r\n  }\r\n  \r\n  .type-1 .page-detail-text p {\r\n      margin-bottom: 2vh !important;\r\n  }\r\n  \r\n  /* PAGE TYPE 1 */\r\n  \r\n  \r\n  \r\n  \r\n  /* PAGE TYPE 2 */\r\n  \r\n  .type-2 .page-detail-image {\r\n      height: 55vh;\r\n      border-radius: 1vh;\r\n      background-size: cover;\r\n      background-position: 50% 50%;\r\n  }\r\n  \r\n  .type-2 .page-detail-text {\r\n      height: 87vh;\r\n      overflow-y: auto;\r\n      padding-right: 2vh;\r\n      font-size: 2vh !important;\r\n      line-height: 1.6 !important;\r\n  }\r\n  \r\n  .type-2 .page-detail-text h1 {\r\n      font-weight: 700;\r\n      font-size: 4vh;\r\n      color: #1631A4;\r\n  }\r\n  \r\n  .type-2 .page-detail-text p {\r\n      margin-bottom: 2vh !important;\r\n  }\r\n  \r\n  /* PAGE TYPE 2 */\r\n  \r\n  \r\n  \r\n  /* PAGE TYPE 3 */\r\n  \r\n  .type-3 #gallery a {\r\n      height: 75vh;\r\n      margin-bottom: 1.5vh;\r\n      display: block;\r\n      border-radius: 1vh;\r\n      background-size: cover;\r\n      background-position: 50% 50%;\r\n  }\r\n  \r\n  .type-3 .page-detail-text {\r\n      height: 47vh;\r\n      overflow-y: auto;\r\n      padding-right: 2vh;\r\n      font-size: 2vh !important;\r\n      line-height: 1.6 !important;\r\n  }\r\n  \r\n  .type-3 .page-detail-text h1 {\r\n      font-weight: 700;\r\n      font-size: 4vh;\r\n  }\r\n  \r\n  .type-3 .page-detail-text p {\r\n      margin-bottom: 2vh !important;\r\n  }\r\n  \r\n  .type3slider-item {\r\n      height: 23vh;\r\n      background-size: cover;\r\n      background-position: 50% 50%;\r\n  }\r\n  \r\n  /* PAGE TYPE 3 */\r\n  \r\n  \r\n  \r\n  \r\n  /* PAGE TYPE 4 */\r\n  \r\n  .type-4 .gallery-item {\r\n      width: 100%;\r\n  }\r\n  \r\n  /* PAGE TYPE 4 */\r\n  \r\n  \r\n  \r\n  \r\n  /* PAGE TYPE 6 */\r\n  \r\n  .type-6 .user-pages {\r\n      height: auto;\r\n      background: none;\r\n      margin-left: -3vh;\r\n      margin-right: -3vh;\r\n      margin-top: -6vh;\r\n  }\r\n  \r\n  .type-6 .user-pages-item {\r\n      width: 25%;\r\n  }\r\n  \r\n  .type-6 .user-pages-item-item {\r\n      height: auto;\r\n      background-color: transparent;\r\n      margin: 0;\r\n      padding: 0;\r\n  }\r\n  \r\n  .type-6 .index-button {\r\n      height: 88vh;\r\n      margin: 0;\r\n  }\r\n  \r\n  .type-6 .user-pages-item-item img {\r\n      width: 40%;\r\n      margin-bottom: 3vh;\r\n  }\r\n  \r\n  .type-6 .index-button-icon {\r\n      height: 88vh;\r\n      display: block;\r\n      margin: 0 auto;\r\n      margin-bottom: 1vh;\r\n      position: relative;\r\n      background-color: #e0e0e0;\r\n  }\r\n\r\n  .type-6 .index-button .index-button-icon:before,\r\n  .type-6 .index-button .user-pages-item-image:before {\r\n    content: '';\r\n    position: absolute;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-image: linear-gradient(to bottom, rgba(75, 127, 45, 0.73), rgba(245, 246, 252, 0.52));\r\n}\r\n\r\n.type-6 .swiper-slide:nth-child(2n) .index-button-icon:before,\r\n.type-6 .swiper-slide:nth-child(2n) .user-pages-item-image:before {\r\n  background-image: linear-gradient(to bottom, rgba(174, 114, 38, 0.73), rgba(245, 246, 252, 0.52));\r\n}\r\n\r\n.type-6 .t6-p,\r\n.type-6 .index-button span {\r\n    color: #fff;\r\n    margin: 0;\r\n    line-height: 1.35;\r\n    font-size: 3vh;\r\n    overflow: hidden;\r\n    position: absolute;\r\n    top: 3vh;\r\n    left: 3vh;\r\n    right: 3vh;\r\n    text-transform: uppercase;\r\n    text-align: left;\r\n    font-weight: 400;\r\n}\r\n  \r\n  /* PAGE TYPE 6 */\r\n  \r\n  \r\n  \r\n  /* PAGE TYPE 7 */\r\n  \r\n  .type-7 .text {\r\n      height: 73vh;\r\n      overflow: hidden;\r\n      overflow-y: scroll;\r\n  }\r\n  \r\n  .type-7 .pdf-nav {\r\n      text-align: center;\r\n      margin-top: 1vh;\r\n  }\r\n  \r\n    .type-7 #prev,\r\n    .type-7 #next {\r\n      background: #ffc940;\r\n      color: #fff;\r\n      padding: 0.5vh 2vh;\r\n      box-shadow: none;\r\n      border: 0;\r\n      font-size: 2vh;\r\n      font-weight: bold;\r\n      border-radius: 1vh;\r\n    }\r\n  \r\n  /* PAGE TYPE 7 */\r\n  \r\n  \r\n  \r\n  /* PAGE TYPE 8 */\r\n  \r\n  .buttons {\r\n      position: absolute;\r\n      z-index: 20;\r\n      left: 50px;\r\n      right: 50px;\r\n      text-align: center;\r\n  }\r\n  \r\n  #prevBtn,\r\n  #nextBtn {\r\n      background: #ffc940;\r\n      color: #fff;\r\n      padding: 10px 30px;\r\n      box-shadow: none;\r\n      border: 0;\r\n      font-size: 30px;\r\n      font-weight: bold;\r\n      border-radius: 10px;\r\n  }\r\n  \r\n  /* PAGE TYPE 8 */\r\n  \r\n  \r\n  /* type 9 */\r\n  \r\n  .excel-item {\r\n      width: 94vw;\r\n      width: auto;\r\n      height: 82vh;\r\n      overflow-y: scroll;\r\n      text-align: center;\r\n  }\r\n  \r\n  .excel-item table {\r\n      border-collapse: collapse;\r\n      margin: 1rem 0;\r\n      display: inline-block;\r\n      overflow-x: auto;\r\n      text-align: left;\r\n      font-size: 1.3vh;\r\n  }\r\n  \r\n  .excel-item table tr {\r\n      border-top: 1px solid #dfe2e5;\r\n  }\r\n  \r\n  .excel-item table tr:nth-child(2n) {\r\n      background-color: #f6f8fa;\r\n  }\r\n  \r\n  .excel-item table td,\r\n  .excel-item table th {\r\n      border: 1px solid #dfe2e5;\r\n      padding: .6em 1em;\r\n  }\r\n  \r\n  /* type 9 */\r\n  \r\n  \r\n  \r\n  \r\n  /* ROUTES */\r\n  \r\n  .key-anim01,\r\n  .key-anim02,\r\n  .key-anim03,\r\n  .key-anim04,\r\n  .key-anim05,\r\n  .key-anim06,\r\n  .key-anim07,\r\n  .key-anim08,\r\n  .key-anim09,\r\n  .key-anim10,\r\n  .key-anim11,\r\n  .key-anim12 {\r\n      stroke-dasharray: 10;\r\n      stroke-dashoffset: -2000;\r\n      -webkit-animation: Drawpath 20s linear infinite;\r\n              animation: Drawpath 20s linear infinite;\r\n  }\r\n  \r\n  @-webkit-keyframes Drawpath {\r\n      from {\r\n          stroke-dashoffset: -2000;\r\n      }\r\n      to {\r\n          stroke-dashoffset: 0;\r\n      }\r\n  }\r\n  \r\n  @keyframes Drawpath {\r\n      from {\r\n          stroke-dashoffset: -2000;\r\n      }\r\n      to {\r\n          stroke-dashoffset: 0;\r\n      }\r\n  }\r\n  \r\n  .wrapperm {\r\n      width: 800px;\r\n      height: 450px;\r\n      position: relative;\r\n      margin: 0 auto;\r\n      overflow: visible;\r\n      background-color: #fff;\r\n      transform: scale(1.25);\r\n      transform-origin: 50% 0%;\r\n      margin-top: 4vh;\r\n      background-color: #fff;\r\n      border-radius: 2vh;\r\n      border: 0.3vh solid #c5d0db;\r\n      box-shadow: 0 0vh 0.5vh #c5d0db;\r\n  }\r\n  \r\n  #wrapper-inner {\r\n      width: 800px;\r\n      height: 450px;\r\n      margin-top: 4vh;\r\n  }\r\n  \r\n  .map {\r\n      margin-top: -4vh;\r\n  }\r\n  \r\n  .map-slide {\r\n      width: 100%;\r\n  }\r\n  \r\n  .map img {\r\n      width: 800px;\r\n      height: 450px;\r\n      display: block;\r\n      margin: 0 auto;\r\n  }\r\n  \r\n  .map-path {\r\n      position: absolute;\r\n      left: 0;\r\n      right: 0;\r\n      top: 0;\r\n      bottom: 0;\r\n      width: 800px;\r\n      height: 450px;\r\n  }\r\n  \r\n  .med-route-sidebar,\r\n  .shkola-route-sidebar {\r\n      margin-top: -2vh;\r\n      background-color: #976545;\r\n      padding: 3vh;\r\n      width: 99%;\r\n  }\r\n  \r\n  .med-route-sidebar input,\r\n  .shkola-route-sidebar input {\r\n      width: 100%;\r\n      padding: 0.5vh;\r\n      font-size: 2vh;\r\n  }\r\n  \r\n  .keyboard {\r\n      margin-top: 0.5vh;\r\n      margin-bottom: 3vh;\r\n  }\r\n  \r\n  .keyboard button {\r\n      width: 4.2vh;\r\n      height: 4.2vh;\r\n      line-height: 4.2vh;\r\n      margin-bottom: 0.5vh;\r\n      background-color: #fff;\r\n      font-size: 1.5vh;\r\n      text-align: center;\r\n      padding: 0;\r\n      border: 0.1vh solid;\r\n  }\r\n  \r\n  .keyboard .globebutton {\r\n      width: 7vh;\r\n  }\r\n  \r\n  .keyboard .spacebutton {\r\n      width: 10vh;\r\n  }\r\n  \r\n  #myUL {\r\n      padding: 0;\r\n      margin: 0;\r\n      list-style-type: none;\r\n      height: 32vh;\r\n      overflow-y: auto;\r\n  }\r\n  \r\n  #myUL li {\r\n      display: block;\r\n      background-color: #fff;\r\n      margin-bottom: 1vh;\r\n  }\r\n  \r\n  #myUL li a {\r\n      display: block;\r\n      color: #222;\r\n      font-size: 2vh;\r\n      font-weight: 700;\r\n      border: 0.25vh solid #96dbfc;\r\n      padding: 1vh 2vh;\r\n  }\r\n  .med-route-sidebar .hg-theme-default .hg-button {\r\n      height: 3.7vh;\r\n  }\r\n  .med-route-sidebar .hg-theme-default .hg-row:not(:last-child) {\r\n      margin-bottom: 0.5vh;\r\n  }\r\n  /* ROUTES */\r\n  \r\n  \r\n  \r\n  /* REVIEWS */\r\n  \r\n  .keyboard-reviews .keyboard {\r\n      margin-top: 7vh;\r\n  }\r\n  \r\n  .keyboard-reviews .keyboard button {\r\n      width: 6vh;\r\n      height: 6vh;\r\n      line-height: 6vh;\r\n      font-size: 2.5vh;\r\n      border-radius: 1vh;\r\n      border: 0.3vh solid #c5d0db;\r\n      box-shadow: 0 0vh 0.5vh #c5d0db;\r\n  }\r\n  \r\n  .keyboard-reviews .keyboard button:hover,\r\n  .keyboard-reviews .keyboard button:focus {\r\n      outline: none;\r\n  }\r\n  \r\n  .keyboard-reviews .keyboard .globebutton {\r\n      width: 12vh;\r\n  }\r\n  \r\n  .keyboard-reviews .keyboard .spacebutton {\r\n      width: 17vh;\r\n  }\r\n  \r\n  .keyboard-reviews .hg-theme-default {\r\n      padding: 0.5vh;\r\n  }\r\n  \r\n  .keyboard-reviews .hg-theme-default .hg-button {\r\n      height: 4vh;\r\n  }\r\n  \r\n  .keyboard-reviews .med-route-sidebar .hg-theme-default .hg-row:not(:last-child) {\r\n      margin-bottom: 1vh;\r\n  }\r\n  \r\n  .review-form input[type=\"text\"] {\r\n      border: 1px solid #333;\r\n      font-size: 3vh;\r\n  }\r\n  \r\n  .review-form textarea {\r\n      resize: none;\r\n      height: 30vh;\r\n      border: 1px solid #333;\r\n      font-size: 3vh;\r\n      border-radius: 2vh;\r\n      border: 0.3vh solid #c5d0db;\r\n      box-shadow: 0 0vh 0.5vh #c5d0db;\r\n      padding: 3vh;\r\n  }\r\n  \r\n  .review-form .btn-shkola {\r\n      background-color: #5da7fe;\r\n      color: #fff;\r\n      font-size: 3vh;\r\n      padding: 2vh 4vh;\r\n      border-radius: 1vh;\r\n  }\r\n  \r\n  .review-h1 {\r\n      font-weight: 700;\r\n      font-size: 4vh;\r\n      margin-top: 0 !important;\r\n      margin-bottom: 5vh !important;\r\n  }\r\n  \r\n  /* REVIEWS */\r\n  \r\n  \r\n  .sidebar-index {\r\n    height: 100vh;\r\n    border-right: 0.5vh solid #B4A085;\r\n    padding-top: 6vh;\r\n  }\r\n\r\n  .sidebar-index .sidebar-logo {\r\n      width: 30vh;\r\n      height: 30vh;\r\n      background-color: #fff;\r\n      border: 1vh solid #B4A085;\r\n      border-radius: 100%;\r\n      display: block;\r\n      margin: 0 auto;\r\n      position: relative;\r\n  }\r\n\r\n  .sidebar-index .sidebar-logo a {\r\n      display: block;\r\n      height: 100%;\r\n  }\r\n\r\n  .sidebar-index .sidebar-logo img {\r\n      position: absolute;\r\n      top: 50%;\r\n      transform: translateY(-50%);\r\n      width: auto;\r\n      height: auto;\r\n      max-width: 70%;\r\n      max-height: 70%;\r\n      left: 0;\r\n      right: 0;\r\n      margin: 0 auto;\r\n  }\r\n\r\n  .sidebar-index .sidebar-text {\r\n      text-transform: uppercase;\r\n      color: #C0C2B7;\r\n      font-size: 3.5vh;\r\n      text-align: center;\r\n      margin-top: 3vh;\r\n  }\r\n\r\n  .sidebar-index .videogal {\r\n      position: absolute;\r\n      bottom: 3vh;\r\n      left: 6vh;\r\n      right: 6vh;\r\n      color: #4B7F2D;\r\n      font-size: 3.5vh;\r\n      text-transform: uppercase;\r\n  }\r\n\r\n  .sidebar-index .videogal img {\r\n      width: 100%;\r\n      margin-top: 2vh;\r\n  }\r\n\r\n  .index-banner-slide {\r\n      height: 55vh;\r\n      background-size: cover;\r\n      background-position: 50%;\r\n  }\r\n\r\n  .subheader {\r\n      height: 12vh;\r\n      padding: 0 3vh;\r\n      padding-top: 5.5vh;\r\n  }\r\n\r\n  .subback {\r\n      position: absolute;\r\n      top: 1vh;\r\n      z-index: 1;\r\n      color: #fff;\r\n    left: 3vh;\r\n  }\r\n\r\n  .subback a {\r\n    color: #bb7a29;\r\n  }", ""]);
 
 // exports
 
@@ -59924,9 +59943,12 @@ var render = function() {
                       }
                     },
                     [
-                      _c("div", { staticClass: "user-pages-item-item_icon" }, [
-                        _c("img", { attrs: { src: "/img/icon-photogal.svg" } })
-                      ]),
+                      _c("div", {
+                        staticClass: "user-pages-item-item_bg",
+                        staticStyle: {
+                          "background-image": "url(/img/muzei/7.jpg)"
+                        }
+                      }),
                       _vm._v(" "),
                       _c("div", { staticClass: "user-pages-item-item_label" }, [
                         _vm._v(
@@ -59950,9 +59972,12 @@ var render = function() {
                       }
                     },
                     [
-                      _c("div", { staticClass: "user-pages-item-item_icon" }, [
-                        _c("img", { attrs: { src: "/img/icon-news.svg" } })
-                      ]),
+                      _c("div", {
+                        staticClass: "user-pages-item-item_bg",
+                        staticStyle: {
+                          "background-image": "url(/img/muzei/6.jpg)"
+                        }
+                      }),
                       _vm._v(" "),
                       _c("div", { staticClass: "user-pages-item-item_label" }, [
                         _vm._v(
@@ -59981,43 +60006,18 @@ var render = function() {
                     [
                       page.image_as_icon === "1"
                         ? [
-                            _c(
-                              "div",
-                              { staticClass: "user-pages-item-item_icon" },
-                              [_c("img", { attrs: { src: page.image } })]
-                            )
+                            _c("div", {
+                              staticClass: "user-pages-item-item_bg",
+                              style: {
+                                "background-image": "url(" + page.image + ")"
+                              }
+                            })
                           ]
-                        : _vm._e(),
-                      _vm._v(" "),
-                      page.image_as_icon === "0" && page.icons[0]
-                        ? [
-                            _c(
-                              "div",
-                              { staticClass: "user-pages-item-item_icon" },
-                              [
-                                _c("img", {
-                                  attrs: { src: page.icons[0].icon }
-                                })
-                              ]
-                            )
-                          ]
-                        : _vm._e(),
-                      _vm._v(" "),
-                      page.image_as_icon === "0" && page.icons.length <= 0
-                        ? [
-                            _c(
-                              "div",
-                              { staticClass: "user-pages-item-item_icon" },
-                              [
-                                _c("img", {
-                                  attrs: {
-                                    src: "/img/icons/029-information.svg"
-                                  }
-                                })
-                              ]
-                            )
-                          ]
-                        : _vm._e(),
+                        : [
+                            _c("div", {
+                              staticClass: "user-pages-item-item_bg"
+                            })
+                          ],
                       _vm._v(" "),
                       _c("div", { staticClass: "user-pages-item-item_label" }, [
                         _vm._v(
@@ -60045,9 +60045,12 @@ var render = function() {
                       }
                     },
                     [
-                      _c("div", { staticClass: "user-pages-item-item_icon" }, [
-                        _c("img", { attrs: { src: "/img/icons/003-home.svg" } })
-                      ]),
+                      _c("div", {
+                        staticClass: "user-pages-item-item_bg",
+                        staticStyle: {
+                          "background-image": "url(/img/muzei/2.jpg)"
+                        }
+                      }),
                       _vm._v(" "),
                       _c("div", { staticClass: "user-pages-item-item_label" }, [
                         _vm._v(
@@ -60071,11 +60074,12 @@ var render = function() {
                       }
                     },
                     [
-                      _c("div", { staticClass: "user-pages-item-item_icon" }, [
-                        _c("img", {
-                          attrs: { src: "/img/icons/029-information.svg" }
-                        })
-                      ]),
+                      _c("div", {
+                        staticClass: "user-pages-item-item_bg",
+                        staticStyle: {
+                          "background-image": "url(/img/muzei/3.jpg)"
+                        }
+                      }),
                       _vm._v(" "),
                       _c("div", { staticClass: "user-pages-item-item_label" }, [
                         _vm._v(
@@ -60253,7 +60257,7 @@ var render = function() {
                                   {
                                     staticStyle: {
                                       "font-size": "1vw",
-                                      color: "#999",
+                                      color: "#fff",
                                       display: "block",
                                       "margin-bottom": "1vh",
                                       "margin-top": "1vh"
@@ -60290,7 +60294,7 @@ var render = function() {
                                   {
                                     staticStyle: {
                                       "font-size": "1vw",
-                                      color: "#999",
+                                      color: "#fff",
                                       display: "block",
                                       "margin-bottom": "1vh",
                                       "margin-top": "1vh"
@@ -61474,18 +61478,7 @@ var render = function() {
         }
       },
       [
-        _c(
-          "h1",
-          {
-            staticClass: "h1-page mb-4",
-            staticStyle: {
-              "font-weight": "700",
-              "font-size": "3.5vh",
-              "text-align": "center"
-            }
-          },
-          [_vm._v("Фотогалерея")]
-        ),
+        _vm._m(0),
         _vm._v(" "),
         _vm.photoalbums.length
           ? _c("div", { staticClass: "gallery" }, [
@@ -61562,10 +61555,47 @@ var render = function() {
             ])
           : _c("div", [_vm._v("\n            Фотогалерея пуста\n        ")])
       ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "subback" },
+      [
+        _c("router-link", { attrs: { to: { name: "muzei_Home" } } }, [
+          _c("i", { staticStyle: { "font-style": "normal", color: "#fff" } }, [
+            _vm._v("←")
+          ]),
+          _vm._v(" Главная\n        ")
+        ])
+      ],
+      1
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "subheader" }, [
+      _c(
+        "h1",
+        {
+          staticClass: "h1-page mb-4",
+          staticStyle: {
+            "font-weight": "400",
+            "text-transform": "uppercase",
+            "font-size": "3.5vh",
+            "text-align": "left",
+            color: "#C0C2B7",
+            margin: "0"
+          }
+        },
+        [_vm._v("Фотогалерея")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -61587,94 +61617,111 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "div",
-        {
-          staticClass: "container",
-          staticStyle: {
-            position: "relative",
-            width: "75vw",
-            "margin-left": "8vw",
-            height: "100vh",
-            background: "transparent",
-            padding: "6vh"
-          }
-        },
-        [
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "container",
+        staticStyle: {
+          position: "relative",
+          height: "100vh",
+          background: "transparent"
+        }
+      },
+      [
+        _c("div", { staticClass: "subheader" }, [
           _c(
             "h1",
             {
-              staticClass: "h1-page",
+              staticClass: "h1-page mb-4",
               staticStyle: {
-                "font-weight": "700",
+                "font-weight": "400",
+                "text-transform": "uppercase",
                 "font-size": "3.5vh",
-                "text-align": "center",
-                "margin-bottom": "5vh"
+                "text-align": "left",
+                color: "#C0C2B7",
+                margin: "0"
               }
             },
             [_vm._v(_vm._s(_vm.photoalbumItem.title))]
-          ),
-          _vm._v(" "),
-          _vm.photoalbumItem
-            ? _c(
-                "div",
-                { staticClass: "gallery-detail" },
-                [
-                  _c(
-                    "swiper",
-                    {
-                      ref: "PhotoalbumsItemSwiper",
-                      attrs: { options: _vm.swiperOptions }
-                    },
-                    [
-                      _vm._l(_vm.photoalbumItem.gallery, function(
-                        photoalbumPic
-                      ) {
-                        return _c(
-                          "swiper-slide",
-                          {
-                            key: photoalbumPic,
-                            staticClass: "gallery-detail-item"
-                          },
-                          [_c("img", { attrs: { src: photoalbumPic } })]
-                        )
-                      }),
-                      _vm._v(" "),
-                      _c("div", {
-                        staticClass: "swiper-button-prev",
-                        attrs: { slot: "button-prev" },
-                        slot: "button-prev"
-                      }),
-                      _vm._v(" "),
-                      _c("div", {
-                        staticClass: "swiper-button-next",
-                        attrs: { slot: "button-next" },
-                        slot: "button-next"
-                      })
-                    ],
-                    2
-                  )
-                ],
-                1
-              )
-            : _vm._e()
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "router-link",
-        {
-          staticClass: "gal-button",
-          attrs: { to: { name: "vuz_Photoalbums" } }
-        },
-        [_c("img", { attrs: { src: "/img/icon-footer-back.svg" } })]
-      )
-    ],
-    1
-  )
+          )
+        ]),
+        _vm._v(" "),
+        _vm.photoalbumItem
+          ? _c(
+              "div",
+              { staticClass: "gallery-detail" },
+              [
+                _c(
+                  "swiper",
+                  {
+                    ref: "PhotoalbumsItemSwiper",
+                    attrs: { options: _vm.swiperOptions }
+                  },
+                  [
+                    _vm._l(_vm.photoalbumItem.gallery, function(photoalbumPic) {
+                      return _c(
+                        "swiper-slide",
+                        {
+                          key: photoalbumPic,
+                          staticClass: "gallery-detail-item"
+                        },
+                        [_c("img", { attrs: { src: photoalbumPic } })]
+                      )
+                    }),
+                    _vm._v(" "),
+                    _c("div", {
+                      staticClass: "swiper-button-prev",
+                      attrs: { slot: "button-prev" },
+                      slot: "button-prev"
+                    }),
+                    _vm._v(" "),
+                    _c("div", {
+                      staticClass: "swiper-button-next",
+                      attrs: { slot: "button-next" },
+                      slot: "button-next"
+                    })
+                  ],
+                  2
+                )
+              ],
+              1
+            )
+          : _vm._e()
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "subback" },
+      [
+        _c("router-link", { attrs: { to: { name: "muzei_Home" } } }, [
+          _c("i", { staticStyle: { "font-style": "normal", color: "#fff" } }, [
+            _vm._v("←")
+          ]),
+          _vm._v(" Главная\n        ")
+        ]),
+        _vm._v(" "),
+        _c(
+          "router-link",
+          {
+            staticClass: "gal-button",
+            staticStyle: { "margin-left": "1vh" },
+            attrs: { to: { name: "muzei_Photoalbums" } }
+          },
+          [
+            _c(
+              "i",
+              { staticStyle: { "font-style": "normal", color: "#fff" } },
+              [_vm._v("←")]
+            ),
+            _vm._v(" Фотогалерея\n        ")
+          ]
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -63818,26 +63865,12 @@ var render = function() {
         staticClass: "container",
         staticStyle: {
           position: "relative",
-          width: "75vw",
-          "margin-left": "8vw",
           height: "100vh",
-          background: "transparent",
-          padding: "6vh"
+          background: "transparent"
         }
       },
       [
-        _c(
-          "h1",
-          {
-            staticClass: "h1-page mb-4",
-            staticStyle: {
-              "font-weight": "700",
-              "font-size": "3.5vh",
-              "text-align": "center"
-            }
-          },
-          [_vm._v("Видеогалерея")]
-        ),
+        _vm._m(0),
         _vm._v(" "),
         _vm.videoalbums.length
           ? _c("div", { staticClass: "gallery" }, [
@@ -63917,10 +63950,47 @@ var render = function() {
             ])
           : _c("div", [_vm._v("\n            Видеогалерея пуста\n        ")])
       ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "subback" },
+      [
+        _c("router-link", { attrs: { to: { name: "muzei_Home" } } }, [
+          _c("i", { staticStyle: { "font-style": "normal", color: "#fff" } }, [
+            _vm._v("←")
+          ]),
+          _vm._v(" Главная\n        ")
+        ])
+      ],
+      1
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "subheader" }, [
+      _c(
+        "h1",
+        {
+          staticClass: "h1-page mb-4",
+          staticStyle: {
+            "font-weight": "400",
+            "text-transform": "uppercase",
+            "font-size": "3.5vh",
+            "text-align": "left",
+            color: "#C0C2B7",
+            margin: "0"
+          }
+        },
+        [_vm._v("Видеогалерея")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -63942,60 +64012,80 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
+  return _c("div", [
+    _c("div", { staticClass: "subheader" }, [
       _c(
-        "div",
+        "h1",
         {
-          staticClass: "videoalbum-detail",
+          staticClass: "h1-page mb-4",
           staticStyle: {
-            position: "relative",
-            width: "75vw",
-            "margin-left": "8vw",
-            height: "100vh",
-            background: "transparent",
-            padding: "6vh"
+            "font-weight": "400",
+            "text-transform": "uppercase",
+            "font-size": "3.5vh",
+            "text-align": "left",
+            color: "#C0C2B7",
+            margin: "0"
           }
         },
-        [
-          _c(
-            "h1",
-            {
-              staticClass: "h1-page",
-              staticStyle: {
-                "font-weight": "700",
-                "font-size": "3.5vh",
-                "text-align": "center",
-                "margin-bottom": "2vh"
-              }
-            },
-            [_vm._v(_vm._s(_vm.videoalbumItem.title))]
-          ),
-          _vm._v(" "),
-          _c("video", {
-            attrs: {
-              src: _vm.videoalbumItem.gallery,
-              autoplay: "",
-              controls: "",
-              disablePictureInPicture: "",
-              controlsList: "nodownload"
-            }
-          })
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "router-link",
-        {
-          staticClass: "gal-button",
-          attrs: { to: { name: "muzei_Videoalbums" } }
-        },
-        [_c("img", { attrs: { src: "/img/icon-footer-back.svg" } })]
+        [_vm._v(_vm._s(_vm.videoalbumItem.title))]
       )
-    ],
-    1
-  )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "videoalbum-detail",
+        staticStyle: {
+          position: "relative",
+          height: "100vh",
+          background: "transparent",
+          "margin-top": "4vh"
+        }
+      },
+      [
+        _c("video", {
+          attrs: {
+            src: _vm.videoalbumItem.gallery,
+            autoplay: "",
+            controls: "",
+            disablePictureInPicture: "",
+            controlsList: "nodownload"
+          }
+        })
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "subback" },
+      [
+        _c("router-link", { attrs: { to: { name: "muzei_Home" } } }, [
+          _c("i", { staticStyle: { "font-style": "normal", color: "#fff" } }, [
+            _vm._v("←")
+          ]),
+          _vm._v(" Главная\n        ")
+        ]),
+        _vm._v(" "),
+        _c(
+          "router-link",
+          {
+            staticClass: "gal-button",
+            staticStyle: { "margin-left": "1vh" },
+            attrs: { to: { name: "muzei_Videoalbums" } }
+          },
+          [
+            _c(
+              "i",
+              { staticStyle: { "font-style": "normal", color: "#fff" } },
+              [_vm._v("←")]
+            ),
+            _vm._v(" Видеогалерея\n        ")
+          ]
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

@@ -9,9 +9,7 @@
             <swiper ref="MuzeiIndexAllSwiper" :options="swiperOptions">
                 <swiper-slide v-if="settings.module_photoalbums == 'y'" class="user-pages-item-item">
                     <a @click="GoToPhotoalbums()">
-                        <div class="user-pages-item-item_icon">
-                            <img src="/img/icon-photogal.svg">
-                        </div>
+                        <div class="user-pages-item-item_bg" style="background-image: url(/img/muzei/7.jpg);"></div>
                         <div class="user-pages-item-item_label">
                             Фотогалерея
                         </div>
@@ -20,9 +18,7 @@
 
                 <swiper-slide v-if="settings.module_news == 'y'" class="user-pages-item-item">
                     <a @click="GoToNews()">
-                        <div class="user-pages-item-item_icon">
-                            <img src="/img/icon-news.svg">
-                        </div>
+                        <div class="user-pages-item-item_bg" style="background-image: url(/img/muzei/6.jpg);"></div>
                         <div class="user-pages-item-item_label">
                             Новости
                         </div>
@@ -32,21 +28,11 @@
                 <swiper-slide v-for="page in pages" :key="page.id" class="user-pages-item-item">
                     <a @click="GoToPage(page.id, page.types)">
                         <template v-if="page.image_as_icon === '1'">
-                            <div class="user-pages-item-item_icon">
-                                <img :src="page.image">
-                            </div>
+                            <div class="user-pages-item-item_bg" v-bind:style="{ 'background-image': 'url(' + page.image + ')' }"></div>
                         </template>
                         
-                        <template v-if="page.image_as_icon === '0' && page.icons[0]">
-                            <div class="user-pages-item-item_icon">
-                                <img :src="page.icons[0].icon">
-                            </div>
-                        </template>
-
-                        <template v-if="page.image_as_icon === '0' && page.icons.length <= 0">
-                            <div class="user-pages-item-item_icon">
-                                <img src="/img/icons/029-information.svg">
-                            </div>
+                        <template v-else>
+                            <div class="user-pages-item-item_bg"></div>
                         </template>
                         
                         <div class="user-pages-item-item_label">
@@ -58,9 +44,7 @@
 
                 <swiper-slide v-if="settings.module_routes == 'y'" class="user-pages-item-item">
                     <a @click="GoToRoutes()">
-                        <div class="user-pages-item-item_icon">
-                            <img src="/img/icons/003-home.svg">
-                        </div>
+                        <div class="user-pages-item-item_bg" style="background-image: url(/img/muzei/2.jpg);"></div>
                         <div class="user-pages-item-item_label">
                             План здания
                         </div>
@@ -69,9 +53,7 @@
 
                 <swiper-slide v-if="settings.module_reviews == 'y'" class="user-pages-item-item">
                     <a @click="GoToReviews()">
-                        <div class="user-pages-item-item_icon">
-                            <img src="/img/icons/029-information.svg">
-                        </div>
+                        <div class="user-pages-item-item_bg" style="background-image: url(/img/muzei/3.jpg);"></div>
                         <div class="user-pages-item-item_label">
                             Отзывы
                         </div>
@@ -101,7 +83,7 @@
                 swiperOptions: {
                     slidesPerView: 2,
                     slidesPerColumn: 3,
-                    slidesPerGroup: 2,
+                    slidesPerGroup: 3,
                     slidesPerColumnFill: 'row',
                     navigation: {
                         nextEl: '.swiper-button-next',

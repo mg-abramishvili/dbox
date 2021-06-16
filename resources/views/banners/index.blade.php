@@ -16,9 +16,6 @@
             <table class="table table-bordered table-hover">
                 @forelse($banners as $banner)
                 <tr>
-                    <td style="width: 100px; font-size: 13px;">
-                        {{$banner->created_at->format('d.m.Y')}}
-                    </td>
                     <td style="text-align: left; padding-left: 20px; padding-right: 20px;">
                         {{$banner->title}}
                     </td>

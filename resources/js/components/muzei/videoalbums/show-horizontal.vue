@@ -1,13 +1,21 @@
 <template>
     <div>
-        <div class="videoalbum-detail"  style="position: relative; width: 75vw; margin-left: 8vw; height: 100vh; background: transparent; padding: 6vh;">
-            <h1 class="h1-page" style="font-weight: 700; font-size: 3.5vh; text-align: center; margin-bottom: 2vh;">{{ videoalbumItem.title }}</h1>
+        <div class="subheader">
+            <h1 class="h1-page mb-4" style="font-weight: 400; text-transform: uppercase; font-size: 3.5vh; text-align: center; color: #C0C2B7; margin: 0; text-align: left;">{{ videoalbumItem.title }}</h1>
+        </div>
+
+        <div class="videoalbum-detail" style="position: relative; height: 100vh; background: transparent; margin-top: 4vh;">
             <video :src="videoalbumItem.gallery" autoplay controls disablePictureInPicture controlsList="nodownload"></video>
         </div>
 
-        <router-link :to="{name: 'muzei_Videoalbums'}" class="gal-button">
-            <img src="/img/icon-footer-back.svg">
-        </router-link>
+        <div class="subback">
+            <router-link :to="{name: 'muzei_Home'}">
+                <i style="font-style: normal; color: #fff">←</i> Главная
+            </router-link>
+            <router-link :to="{name: 'muzei_Videoalbums'}" class="gal-button" style="margin-left: 1vh;">
+                <i style="font-style: normal; color: #fff">←</i> Видеогалерея
+            </router-link>
+        </div>
         
     </div>
 </template>

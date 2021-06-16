@@ -1,7 +1,11 @@
 <template>
     <div>
-        <div class="container"  style="position: relative; height: 100vh; background: transparent;">
-            <h1 class="h1-page mb-4" style="font-weight: 700; font-size: 3.5vh; text-align: center;">Фотогалерея</h1>
+        <div class="container" style="position: relative; height: 100vh; background: transparent;">
+            
+            <div class="subheader">
+                <h1 class="h1-page mb-4" style="font-weight: 400; text-transform: uppercase; font-size: 3.5vh; text-align: center; color: #C0C2B7; margin: 0; text-align: left;">Фотогалерея</h1>
+            </div>
+
             <div v-if="photoalbums.length" class="gallery">
                 <div class="gallery-list">
                     <swiper ref="PhotoalbumsAllSwiper" :options="swiperOptions">
@@ -20,6 +24,12 @@
             <div v-else>
                 Фотогалерея пуста
             </div>
+        </div>
+
+        <div class="subback">
+            <router-link :to="{name: 'muzei_Home'}">
+                <i style="font-style: normal; color: #fff">←</i> Главная
+            </router-link>
         </div>
 
     </div>
@@ -63,7 +73,7 @@
         },
         methods: {
             GoToPhotoalbum(id) {
-                this.$router.push({name: 'vuz_PhotoalbumItem', params: {id: id}})
+                this.$router.push({name: 'muzei_PhotoalbumItem', params: {id: id}})
                 this.$refs.PhotoalbumsAllSwiper.$swiper.slideTo(1, false)
             },
         },
