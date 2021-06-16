@@ -2313,6 +2313,16 @@ __webpack_require__.r(__webpack_exports__);
       }
     });
   },
+  mounted: function mounted() {
+    this._keyListener = function (e) {
+      if (e.key === 'q' && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        window.location.href = '/login';
+      }
+    };
+
+    document.addEventListener('keydown', this._keyListener.bind(this));
+  },
   beforeMount: function beforeMount() {
     document.oncontextmenu = new Function("return false;");
   },
