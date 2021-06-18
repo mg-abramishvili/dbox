@@ -88,10 +88,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <button type="submit" class="nav-link" style="background: transparent; border: 0; box-shadow: none;">Выйти</button>
-                        </form>
+                        <a href="{{ url('/vue-index') }}" class="nav-link">Выйти</a>
                     </li>
                     @if($settings->serial_key)
                         <li class="nav-item">
