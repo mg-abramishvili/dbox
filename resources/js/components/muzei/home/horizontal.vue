@@ -83,8 +83,7 @@
                 swiperOptions: {
                     slidesPerView: 2,
                     slidesPerColumn: 3,
-                    slidesPerGroup: 3,
-                    slidesPerColumnFill: 'row',
+                    slidesPerColumnFill: 'column',
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev'

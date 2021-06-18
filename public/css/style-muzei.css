@@ -250,8 +250,7 @@ html {
       background-image: linear-gradient(to right, rgba(75, 127, 45, 0.8), rgba(75, 127, 45, 0.5));
   }
 
-  .user-pages .user-pages-item-item:nth-child(3n) .user-pages-item-item_bg:before,
-  .user-pages .user-pages-item-item:nth-child(2) .user-pages-item-item_bg:before {
+  .user-pages .user-pages-item-item:nth-child(2n) .user-pages-item-item_bg:before {
     background-image: linear-gradient(to bottom, rgba(174, 114, 38, 0.8), rgba(174, 114, 38, 0.5));
   }
 
@@ -345,6 +344,14 @@ html {
 
   .user-pages .user-pages-item-item a {
     height: 14.35vh;
+}
+
+.user-pages .swiper-container-multirow-column > .swiper-wrapper {
+    height: 45vh;
+}
+
+.user-pages .user-pages-item-item {
+    height: auto;
 }
   
   .latest_news {
