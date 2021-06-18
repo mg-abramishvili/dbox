@@ -8728,7 +8728,7 @@ __webpack_require__.r(__webpack_exports__);
           id: id
         }
       });
-      this.$refs.MuzeiIndexAllSwiper.$swiper.slideTo(1, false);
+      this.$refs.MuzeiIndexAllSwiper.$swiper.slideTo(0, false);
 
       if (types[0].id === 5) {
         this.$parent.reset_video = true;
@@ -8738,32 +8738,32 @@ __webpack_require__.r(__webpack_exports__);
       this.$router.push({
         name: 'muzei_Photoalbums'
       });
-      this.$refs.MuzeiIndexAllSwiper.$swiper.slideTo(1, false);
+      this.$refs.MuzeiIndexAllSwiper.$swiper.slideTo(0, false);
     },
     GoToVideoalbums: function GoToVideoalbums() {
       this.$router.push({
         name: 'muzei_Videoalbums'
       });
-      this.$refs.MuzeiIndexAllSwiper.$swiper.slideTo(1, false);
+      this.$refs.MuzeiIndexAllSwiper.$swiper.slideTo(0, false);
     },
     GoToReviews: function GoToReviews() {
       this.$router.push({
         name: 'muzei_Reviews'
       });
-      this.$refs.MuzeiIndexAllSwiper.$swiper.slideTo(1, false);
+      this.$refs.MuzeiIndexAllSwiper.$swiper.slideTo(0, false);
     },
     GoToRoutes: function GoToRoutes() {
       this.$router.push({
         name: 'muzei_Routes'
       });
-      this.$refs.MuzeiIndexAllSwiper.$swiper.slideTo(1, false);
+      this.$refs.MuzeiIndexAllSwiper.$swiper.slideTo(0, false);
       this.$parent.reset_routes = true;
     },
     GoToNews: function GoToNews() {
       this.$router.push({
         name: 'muzei_News'
       });
-      this.$refs.MuzeiIndexAllSwiper.$swiper.slideTo(1, false);
+      this.$refs.MuzeiIndexAllSwiper.$swiper.slideTo(0, false);
     },
     swiperArrows: function swiperArrows() {
       if (document.querySelectorAll('.swiper-slide').length > 6) {
