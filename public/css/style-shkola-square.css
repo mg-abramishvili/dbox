@@ -4,3 +4,15 @@
     height: 1024px;
     max-height: 1024px;
 }
+
+.container-index {
+    width: 95vw;
+}
+
+header .container {
+    width: 95vw;
+}
+
+.shkola-home {
+    margin-left: -5vh;
+}

@@ -1,28 +1,37 @@
 <template>
     <div>
-        <div v-for="type in page.types" :key="type.id" class="container" style="margin-top: 25vh; width: 90vw;">
-            <div class="page-item">
-                <ShkolaPageType1Horizontal v-if="type.id == '1' && settings.orientation === 'horizontal'" />
-                <ShkolaPageType2Horizontal v-if="type.id == '2' && settings.orientation === 'horizontal'" />
-                <ShkolaPageType3Horizontal v-if="type.id == '3' && settings.orientation === 'horizontal'" />
-                <ShkolaPageType4Horizontal v-if="type.id == '4' && settings.orientation === 'horizontal'" />
-                <ShkolaPageType5Horizontal v-if="type.id == '5' && settings.orientation === 'horizontal'" />
-                <ShkolaPageType6Horizontal v-if="type.id == '6' && settings.orientation === 'horizontal'" />
-                <ShkolaPageType7Horizontal v-if="type.id == '7' && settings.orientation === 'horizontal'" />
-                <ShkolaPageType9Horizontal v-if="type.id == '9' && settings.orientation === 'horizontal'" />
-                <ShkolaPageType10Horizontal v-if="type.id == '10' && settings.orientation === 'horizontal'" />
-
-                <ShkolaPageType1Square v-if="type.id == '1' && settings.orientation === 'square'" />
-                <ShkolaPageType2Square v-if="type.id == '2' && settings.orientation === 'square'" />
-                <ShkolaPageType3Square v-if="type.id == '3' && settings.orientation === 'square'" />
-                <ShkolaPageType4Square v-if="type.id == '4' && settings.orientation === 'square'" />
-                <ShkolaPageType5Square v-if="type.id == '5' && settings.orientation === 'square'" />
-                <ShkolaPageType6Square v-if="type.id == '6' && settings.orientation === 'square'" />
-                <ShkolaPageType7Square v-if="type.id == '7' && settings.orientation === 'square'" />
-                <ShkolaPageType9Square v-if="type.id == '9' && settings.orientation === 'square'" />
-                <ShkolaPageType10Square v-if="type.id == '10' && settings.orientation === 'square'" />
+        <template v-if="settings.orientation === 'horizontal'">
+            <div v-for="type in page.types" :key="type.id" class="container" style="margin-top: 25vh; width: 90vw;">
+                <div class="page-item">
+                    <ShkolaPageType1Horizontal v-if="type.id == '1'" />
+                    <ShkolaPageType2Horizontal v-if="type.id == '2'" />
+                    <ShkolaPageType3Horizontal v-if="type.id == '3'" />
+                    <ShkolaPageType4Horizontal v-if="type.id == '4'" />
+                    <ShkolaPageType5Horizontal v-if="type.id == '5'" />
+                    <ShkolaPageType6Horizontal v-if="type.id == '6'" />
+                    <ShkolaPageType7Horizontal v-if="type.id == '7'" />
+                    <ShkolaPageType9Horizontal v-if="type.id == '9'" />
+                    <ShkolaPageType10Horizontal v-if="type.id == '10'" />
+                </div>
             </div>
-        </div>
+        </template>
+
+        <template v-if="settings.orientation === 'square'">
+            <div v-for="type in page.types" :key="type.id" class="container" style="margin-top: 25vh; width: 95vw;">
+                <div class="page-item">
+                    <ShkolaPageType1Square v-if="type.id == '1'" />
+                    <ShkolaPageType2Square v-if="type.id == '2'" />
+                    <ShkolaPageType3Square v-if="type.id == '3'" />
+                    <ShkolaPageType4Square v-if="type.id == '4'" />
+                    <ShkolaPageType5Square v-if="type.id == '5'" />
+                    <ShkolaPageType6Square v-if="type.id == '6'" />
+                    <ShkolaPageType7Square v-if="type.id == '7'" />
+                    <ShkolaPageType9Square v-if="type.id == '9'" />
+                    <ShkolaPageType10Square v-if="type.id == '10'" />
+                </div>
+            </div>
+        </template>
+
         <footer>
             <div class="container">
                 <router-link :to="{name: 'shkola_Home'}" class="shkola-home shkola-home-sub">
