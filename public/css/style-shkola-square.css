@@ -16,3 +16,7 @@ header .container {
 .shkola-home {
     margin-left: -5vh;
 }
+
+.videoalbum-detail video {
+    height: 64.5vh;
+}
