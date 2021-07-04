@@ -11,16 +11,16 @@ import default_News from './components/default/news/index-horizontal';
 import default_NewsItem from './components/default/news/show-horizontal';
 
 // Школа
-import shkola_Home from './components/shkola/home/horizontal.vue';
+import shkola_Home from './components/shkola/home/_home.vue';
 import shkola_PageItem from './components/shkola/pages/PageItem';
-import shkola_Routes from './components/shkola/routes/horizontal';
-import shkola_Reviews from './components/shkola/reviews/horizontal';
-import shkola_Photoalbums from './components/shkola/photoalbums/index-horizontal';
-import shkola_PhotoalbumItem from './components/shkola/photoalbums/show-horizontal';
-import shkola_Videoalbums from './components/shkola/videoalbums/index-horizontal';
-import shkola_VideoalbumItem from './components/shkola/videoalbums/show-horizontal';
-import shkola_News from './components/shkola/news/index-horizontal';
-import shkola_NewsItem from './components/shkola/news/show-horizontal';
+import shkola_Routes from './components/shkola/routes/_routes';
+import shkola_Reviews from './components/shkola/reviews/_reviews';
+import shkola_Photoalbums from './components/shkola/photoalbums/_index';
+import shkola_PhotoalbumItem from './components/shkola/photoalbums/_show';
+import shkola_Videoalbums from './components/shkola/videoalbums/_index';
+import shkola_VideoalbumItem from './components/shkola/videoalbums/_show';
+import shkola_News from './components/shkola/news/_index';
+import shkola_NewsItem from './components/shkola/news/_show';
 
 // ВУЗ
 import vuz_Home from './components/vuz/home/horizontal.vue';

@@ -1,16 +1,26 @@
 <template>
-    <div v-if="settings.orientation === 'horizontal'">
+    <div>
         <div v-for="type in page.types" :key="type.id" class="container" style="margin-top: 25vh; width: 90vw;">
             <div class="page-item">
-                <ShkolaPageType1Horizontal v-if="type.id == '1'" />
-                <ShkolaPageType2Horizontal v-if="type.id == '2'" />
-                <ShkolaPageType3Horizontal v-if="type.id == '3'" />
-                <ShkolaPageType4Horizontal v-if="type.id == '4'" />
-                <ShkolaPageType5Horizontal v-if="type.id == '5'" />
-                <ShkolaPageType6Horizontal v-if="type.id == '6'" />
-                <ShkolaPageType7Horizontal v-if="type.id == '7'" />
-                <ShkolaPageType9Horizontal v-if="type.id == '9'" />
-                <ShkolaPageType10Horizontal v-if="type.id == '10'" />
+                <ShkolaPageType1Horizontal v-if="type.id == '1' && settings.orientation === 'horizontal'" />
+                <ShkolaPageType2Horizontal v-if="type.id == '2' && settings.orientation === 'horizontal'" />
+                <ShkolaPageType3Horizontal v-if="type.id == '3' && settings.orientation === 'horizontal'" />
+                <ShkolaPageType4Horizontal v-if="type.id == '4' && settings.orientation === 'horizontal'" />
+                <ShkolaPageType5Horizontal v-if="type.id == '5' && settings.orientation === 'horizontal'" />
+                <ShkolaPageType6Horizontal v-if="type.id == '6' && settings.orientation === 'horizontal'" />
+                <ShkolaPageType7Horizontal v-if="type.id == '7' && settings.orientation === 'horizontal'" />
+                <ShkolaPageType9Horizontal v-if="type.id == '9' && settings.orientation === 'horizontal'" />
+                <ShkolaPageType10Horizontal v-if="type.id == '10' && settings.orientation === 'horizontal'" />
+
+                <ShkolaPageType1Square v-if="type.id == '1' && settings.orientation === 'square'" />
+                <ShkolaPageType2Square v-if="type.id == '2' && settings.orientation === 'square'" />
+                <ShkolaPageType3Square v-if="type.id == '3' && settings.orientation === 'square'" />
+                <ShkolaPageType4Square v-if="type.id == '4' && settings.orientation === 'square'" />
+                <ShkolaPageType5Square v-if="type.id == '5' && settings.orientation === 'square'" />
+                <ShkolaPageType6Square v-if="type.id == '6' && settings.orientation === 'square'" />
+                <ShkolaPageType7Square v-if="type.id == '7' && settings.orientation === 'square'" />
+                <ShkolaPageType9Square v-if="type.id == '9' && settings.orientation === 'square'" />
+                <ShkolaPageType10Square v-if="type.id == '10' && settings.orientation === 'square'" />
             </div>
         </div>
         <footer>
@@ -46,6 +56,16 @@
     import ShkolaPageType7Horizontal from '../pages/type-7/horizontal'
     import ShkolaPageType9Horizontal from '../pages/type-9/horizontal'
     import ShkolaPageType10Horizontal from '../pages/type-10/horizontal'
+
+    import ShkolaPageType1Square from '../pages/type-1/square'
+    import ShkolaPageType2Square from '../pages/type-2/square'
+    import ShkolaPageType3Square from '../pages/type-3/square'
+    import ShkolaPageType4Square from '../pages/type-4/square'
+    import ShkolaPageType5Square from '../pages/type-5/square'
+    import ShkolaPageType6Square from '../pages/type-6/square'
+    import ShkolaPageType7Square from '../pages/type-7/square'
+    import ShkolaPageType9Square from '../pages/type-9/square'
+    import ShkolaPageType10Square from '../pages/type-10/square'
 
     export default {
         data() {
@@ -88,7 +108,16 @@
             ShkolaPageType6Horizontal,
             ShkolaPageType7Horizontal,
             ShkolaPageType9Horizontal,
-            ShkolaPageType10Horizontal
+            ShkolaPageType10Horizontal,
+            ShkolaPageType1Square,
+            ShkolaPageType2Square,
+            ShkolaPageType3Square,
+            ShkolaPageType4Square,
+            ShkolaPageType5Square,
+            ShkolaPageType6Square,
+            ShkolaPageType7Square,
+            ShkolaPageType9Square,
+            ShkolaPageType10Square
         }
     }
 </script>
